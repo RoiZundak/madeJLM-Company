@@ -1,7 +1,7 @@
 # madeJLM ActiveC
 
 
-![project logo (this one is taken from basecamp)](https://github.com/RoiZundak/madeJLM-Company/Logo.jpg)
+![project logo (this one is taken from basecamp)](https://www.dropbox.com/s/ntaa6scwp2ytr0g/Logo.jpg?dl=0)
 
 ## Please visit our [live application](https://demo.reactstarterkit.com/)
 - Alright, currently only a landing page...
