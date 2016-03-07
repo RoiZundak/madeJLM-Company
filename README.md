@@ -1,4 +1,4 @@
-# madeJLM ActiveC
+# madeJLM
 
 
 ![project logo (this one is taken from basecamp)](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/logo.png)
