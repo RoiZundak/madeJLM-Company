@@ -1,7 +1,7 @@
 # madeJLM ActiveC
 
 
-![project logo (this one is taken from basecamp)](https://www.dropbox.com/home/%D7%9C%D7%99%D7%9E%D7%95%D7%93%D7%99%D7%9D/%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%9C%D7%94%D7%92%D7%A9%D7%94%2B%D7%91%D7%99%D7%AA/%D7%94%D7%A0%D7%93%D7%A1%D7%AA%20%D7%AA%D7%9B%D7%A0%D7%94/%D7%9E%D7%A6%D7%92%D7%AA%20madeJLM/Design/logos?preview=Logo_NoBack.png)
+![project logo (this one is taken from basecamp)](https://github.com/RoiZundak/madeJLM-Company/Logo_NoBack.png)
 
 ## Please visit our [live application](https://demo.reactstarterkit.com/)
 - Alright, currently only a landing page...
