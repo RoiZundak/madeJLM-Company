@@ -1,8 +1,7 @@
-# seproject-team-template
+# madeJLM ActiveC
 
-A template repository with wiki for a team project at JCE's software engineering course
 
-![project logo (this one is taken from basecamp)](http://klipfolio.com/sites/default/files/integrations/basecamp.png)
+![project logo (this one is taken from basecamp)](https://www.dropbox.com/s/25rwztvldkj8rp3/Logo_NoBack.png?dl=0)
 
 ## Please visit our [live application](https://demo.reactstarterkit.com/)
 - Alright, currently only a landing page...
