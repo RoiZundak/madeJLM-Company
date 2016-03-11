@@ -1,7 +1,7 @@
 # madeJLM
 
 
-![project logo (this one is taken from basecamp)](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/logo.png)
+![project logo (this one is taken from basecamp)](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/logo.png?v=3&s=100)
 
 ## Please visit our [live application](https://demo.reactstarterkit.com/)
 - Alright, currently only a landing page...
@@ -33,6 +33,7 @@ Please visit our wiki for furthur project info:
 - [Project Inception](../../wiki/inception)
 - [Software Requirements Specification](../../wiki/srs)
 - [Software Design Specification](../../wiki/sds)
+- [Organization Facebook page] (https://www.facebook.com/MadeinJLM/?fref=ts)
 
 ### Iteration Pages
 - [Iteration 0 - ZFR](../../wiki/iter0-zfr)
