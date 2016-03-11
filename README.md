@@ -1,5 +1,7 @@
 # madeJLM
-
+####Did you find Hi-Tech workers and didn't find?
+####We are here to give you a active assignment solution
+<br />
 
 ![project logo (this one is taken from basecamp)](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/logo.png?v=3&s=100)
 
