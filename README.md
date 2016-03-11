@@ -22,10 +22,10 @@ Please visit our wiki for furthur project info:
 
 ### [Team Page](../../wiki/team)
 [![Roi](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/roi.jpg)](https://github.com/RoiZundak)
-[![David](https://avatars3.githubusercontent.com/u/17547266?v=3&s=80)](https://github.com/sh00ki)
-[![Moria](https://avatars1.githubusercontent.com/u/17547064?v=3&s=80)](https://github.com/moria0525)
-[![Yuval](https://avatars1.githubusercontent.com/u/17564511?v=3&s=80)](https://github.com/Dor-H)
-[![Noy](https://avatars2.githubusercontent.com/u/9195309?v=3&s=80)](https://github.com/Think-Smart)
+[![David](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/david.jpg)](https://github.com/DavidOhayonSe)
+[![Moria](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/moria.jpg)](https://github.com/moriatu)
+[![Yuval](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/yuval.jpg)](https://github.com/yuval66)
+[![Noy](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/noy.jpg)](https://github.com/noyBarak)
 
 
 ### Project Documents
