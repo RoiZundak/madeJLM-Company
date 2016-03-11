@@ -24,7 +24,7 @@ Please visit our wiki for furthur project info:
 
 ### [Team Page](../../wiki/team)
 [![Roi](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/roi.jpg?v=1&s=20)](https://github.com/RoiZundak)
-[![David](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/david.jpg ?v=3&s=80)](https://github.com/DavidOhayonSe)
+[![David](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/david.jpg?v=3&s=80)](https://github.com/DavidOhayonSe)
 [![Moria](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/moria.jpg?v=3&s=80)](https://github.com/moriatu)
 [![Yuval](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/yuval.jpg?v=3&s=80)](https://github.com/yuval66)
 [![Noy](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/noy.jpg?v=3&s=80)](https://github.com/noyBarak)
