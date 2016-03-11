@@ -21,7 +21,7 @@ Please visit our wiki for furthur project info:
 ### [User Manual](../../wiki/user-manual) (empty)
 
 ### [Team Page](../../wiki/team)
-[![Roi](https://www.facebook.com/photo.php?fbid=10206523727584778&set=a.1493657934253.2069194.1018175128&type=3&theater)](https://github.com/RoiZundak)
+[![Roi](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/roi.jpg)](https://github.com/RoiZundak)
 [![David](https://avatars3.githubusercontent.com/u/17547266?v=3&s=80)](https://github.com/sh00ki)
 [![Moria](https://avatars1.githubusercontent.com/u/17547064?v=3&s=80)](https://github.com/moria0525)
 [![Yuval](https://avatars1.githubusercontent.com/u/17564511?v=3&s=80)](https://github.com/Dor-H)
