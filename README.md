@@ -7,8 +7,11 @@
 - Alright, currently only a landing page...
 
 [![Gitter](https://badges.gitter.im/RoiZundak/madeJLM-Company.svg)](https://gitter.im/RoiZundak/madeJLM-Company?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+<br />
+Our Email
+Roizundak@gmail.com
 
-## [Issue Board](https://huboard.com/robi-y/seproject-team-template#/)
+## [Issue Board](https://huboard.com/robi-y/seproject-team-template#/) (Coming Soon...)
 
 ## Disclaimer
 This project is developed as part of the requirements for a [software engineering course](https://github.com/jce-il/se-class/wiki) at the software engineering department - [Azrieli College of Engineering](http://www.jce.ac.il/), Jerusalem, Israel.
@@ -18,6 +21,12 @@ Please visit our wiki for furthur project info:
 ### [User Manual](../../wiki/user-manual) (empty)
 
 ### [Team Page](../../wiki/team)
+[![Roi](https://www.facebook.com/photo.php?fbid=10206523727584778&set=a.1493657934253.2069194.1018175128&type=3&theater)](https://github.com/RoiZundak)
+[![David](https://avatars3.githubusercontent.com/u/17547266?v=3&s=80)](https://github.com/sh00ki)
+[![Moria](https://avatars1.githubusercontent.com/u/17547064?v=3&s=80)](https://github.com/moria0525)
+[![Yuval](https://avatars1.githubusercontent.com/u/17564511?v=3&s=80)](https://github.com/Dor-H)
+[![Noy](https://avatars2.githubusercontent.com/u/9195309?v=3&s=80)](https://github.com/Think-Smart)
+
 
 ### Project Documents
 - [Project Idea](docs/idea.pdf) ([Presentation](docs/idea-slides.pdf))
