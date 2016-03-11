@@ -23,11 +23,11 @@ Please visit our wiki for furthur project info:
 ### [User Manual](../../wiki/user-manual) (empty)
 
 ### [Team Page](../../wiki/team)
-[![Roi](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/roi.jpg?v=1&s=40)](https://github.com/RoiZundak)
-[![David](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/david.jpg?v=1&s=40)](https://github.com/DavidOhayonSe)
-[![Moria](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/moria.jpg?v=1&s=40)](https://github.com/moriatu)
-[![Yuval](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/yuval.jpg?v=1&s=40)](https://github.com/yuval66)
-[![Noy](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/noy.jpg?v=1&s=40)](https://github.com/noyBarak)
+[![Roi](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/roi.jpg =200x200)](https://github.com/RoiZundak)
+[![David](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/david.jpg =200x200)](https://github.com/DavidOhayonSe)
+[![Moria](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/moria.jpg =200x200)](https://github.com/moriatu)
+[![Yuval](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/yuval.jpg =200x200)](https://github.com/yuval66)
+[![Noy](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/noy.jpg =200x200)](https://github.com/noyBarak)
 
 
 ### Project Documents
