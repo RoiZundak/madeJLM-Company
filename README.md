@@ -11,7 +11,7 @@
 [![Gitter](https://badges.gitter.im/RoiZundak/madeJLM-Company.svg)](https://gitter.im/RoiZundak/madeJLM-Company?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 <br />
 Our Email
-Activec-madeJlm@gmail.co.il
+Activec-madeJlm@gmail.com
 
 ## [Issue Board](https://huboard.com/robi-y/seproject-team-template#/) (Coming Soon...)
 
