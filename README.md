@@ -1,4 +1,4 @@
-<img src="https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/logo.png?v=3&s=100" width ="350" height="130">
+<img src="https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/Images/Logos/logo.png?v=3&s=100" width ="350" height="130">
 # Activec - madeJLM 
 ####Did you serach for Hi-Tech workers and didn't find?
 ####We are here to give you a active assignment solution
