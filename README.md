@@ -24,8 +24,6 @@ Please visit our wiki for furthur project info:
 
 ### [Team Page](../../wiki/team)
 
-
-
 ### Project Documents
 - [Project Idea](docs/idea.pdf) ([Presentation](docs/idea-slides.pdf))
 - [Project Inception](../../wiki/inception)
