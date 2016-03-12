@@ -1,17 +1,17 @@
-# madeJLM
+<img src="https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/logo.png?v=3&s=100" width ="350" height="130">
+# Activec - madeJLM 
 ####Did you serach for Hi-Tech workers and didn't find?
 ####We are here to give you a active assignment solution
 <br />
 
-![project logo (this one is taken from basecamp)](https://github.com/RoiZundak/madeJLM-Company/blob/master/Doc/logo.png?v=3&s=100)
+
 
 ## Please visit our [live application](https://demo.reactstarterkit.com/)
-- Alright, currently only a landing page...
 
 [![Gitter](https://badges.gitter.im/RoiZundak/madeJLM-Company.svg)](https://gitter.im/RoiZundak/madeJLM-Company?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 <br />
 Our Email
-Roizundak@gmail.com
+Activec-madeJlm@gmail.com
 
 ## [Issue Board](https://huboard.com/robi-y/seproject-team-template#/) (Coming Soon...)
 
