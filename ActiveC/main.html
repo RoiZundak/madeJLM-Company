@@ -1,4 +1,5 @@
 <html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <head>
     <link href='mainCss.css' rel='stylesheet' />
 </head>
@@ -6,7 +7,13 @@
 
 <div id="wrapper">
 
-Active-c
+    <div ng-app="">
+
+        <p>Box for input:</p>
+        <p><input id="inputBox"type="text" ng-model="name"></p>
+        <p id="inputBox" ng-bind="name"></p>
+
+    </div>
 </div>
 
 </body>
