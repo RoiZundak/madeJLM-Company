@@ -1,0 +1,292 @@
+*{
+    margin-top:0;
+}
+
+body{
+    margin:0;
+    background-color: silver;
+    font-family: verdana;
+	background: linear-gradient(to bottom, #8b9dc3,#dfe3ee,#8b9dc3, #dfe3ee); 
+
+}
+
+.main_page{
+    max-width: 650px;
+    min-height: 100%;
+    background-color: black;
+    margin:0 auto 10px;
+    padding: 10px;
+    box-sizing: border-box;
+	border-radius: 15px;
+
+    
+}
+
+ h1{
+    margin: 5px;
+    text-align: center;
+    
+}
+
+h2{
+  margin: 5px ;  
+  font-size: 1.4em;
+}
+
+.search{
+    width:100%;
+    background-color: #84C6EC;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.search label{
+    font-size: 1.3em;
+    margin-bottom: 6px;
+    display: inline-block;
+}
+
+
+.box{
+    width:100%;
+    background-color: #CEDFF4 ;
+    border-bottom: 1px solid appworkspace;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition:0.8s;
+    
+    
+}
+
+.box:hover{
+    background-color: #83B2EF;
+}
+.textfields{
+	margin-top:10px;
+margin-left:200px;
+margin-bottom: 10px;
+
+}
+#user{
+margin-bottom:20px;
+border-radius: 15px;
+text-align: center;
+width:50%;
+}
+
+#password{
+margin-bottom:20px;
+border-radius: 15px;
+width:50%;
+text-align: center;
+}
+
+#connectButton{
+	margin-left:60px;
+   border: 1px solid black;
+    color: black;
+	padding:6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+ 
+    cursor: pointer;
+    float: left;
+	border-radius: 8px;
+}
+.loginBox{
+	
+     width:100%;
+	height:70%;
+	background: linear-gradient(to bottom, #3b5998,#dfe3ee,#3b5998, #dfe3ee); 
+
+    border-bottom: 1px solid appworkspace;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition:0.8s;
+	
+}
+.nav{
+	
+    width:100%;
+	height:30%;
+    background: linear-gradient(to bottom, white , 	#dfe3ee); 
+    border-bottom: 1px solid appworkspace;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition:0.8s;
+	
+}
+.nav h1{
+color:#210D73;
+font-family:"Comic Sans MS", cursive, sans-serif;
+}
+.loginBox textfields {
+ display: block;
+    width: 40%;
+    height: 36px;
+    padding: 6px 6px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    font-size: 1.3em;
+}
+.box:first-of-type {
+    border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    
+}
+
+.box:last-of-type {
+    border-radius: 0px 0px 10px 10px;
+    -moz-border-radius: 0px 0px 10px 10px;
+    -webkit-border-radius: 0px 0px 10px 10px;
+    
+}
+
+.box img{
+    float: left;
+    margin-right: 10px;
+    max-width: 35%; 
+    
+    border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+    transition: 0.8s;
+}
+
+.box img:hover{
+    transform: scale(1.1,1.1);
+}
+
+.box h3{
+    color:black;
+}
+
+input[type="text"], textarea {
+ display: block;
+    width: 40%;
+    height: 35px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    font-size: 1.3em;
+}
+
+select{
+    font-size: 1.3em;
+    display: block;
+    width: 30%;
+    height: 40px;
+    padding: 0px 12px;
+    
+    line-height: 1.428571429;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
+    
+}
+
+.box img.img_box{
+    width:100%;
+    opacity: 0.8;
+    max-width: 500px;
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+.wrapper{
+background: linear-gradient(to bottom, #DDD1F4,#A583E9 ); 
+	width : 100%;
+	height: 100%;
+	margin:auto;
+	
+}
+
+#logo{
+	margin-top: 10%;
+	margin-left: 30%;
+	background-image:url('jlm.jpg');
+	width : 37%;
+	height: 225px;
+}
+#lock{
+	margin-left: 30%;
+	background-image:url('lock.jpg');
+	width : 37%;
+	height:225px;
+}
+#forget{
+	margin-left: 30%;
+	margin-top:10%;
+}
+
+#forget a{
+	color:red;
+}
+
+.forgetPge{
+	background-color: white; 
+	width : 100%;
+	height: 100%;
+	margin:auto;
+}
+.forgetPge h1{
+	font-size:90px;
+	margin-bottom: 100px;
+}
+#mailBox{
+	margin-bottom:20px;
+	margin-left:5%;
+	border-radius: 15px;
+	text-align: center;
+	width:90%;
+}
+
+#SendtButton{
+	width:50%;
+	margin-left:25%;
+	margin-top:3%;
+	height:7%;
+	font-size:30px;
+	background-color:#33FF33;
+
+}
+
+#backButton{
+	width:50%;
+	margin-left:25%;
+	margin-top:5%;
+	height:5%;
+	font-size:25px;
+}

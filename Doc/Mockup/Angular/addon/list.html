@@ -1,0 +1,27 @@
+<div class = "search">
+	<label>Search Students</label>
+	<input type = "text" ng-model= "search_question"></input>
+	<label>Order by:</label>
+	<select ng-model = "order">
+		<option value = "name" >name</option>
+		<option value = "age" >age</option>
+		<option value = "profession" >profession</option>
+		<option value = "Degree" >Degree at</option>
+	</select>
+</div>
+	
+
+<div class="box" ng-repeat="item in students | filter:search_question | orderBy: order" >
+    <a href="#/detail/{{students.indexOf(item)}}">
+        <img ng-src="images/{{ item.image }}" >
+        <h3>{{ item.name }}</h3>
+        <article>
+            <strong>Age: </strong>{{item.age}}
+            <br>
+            <strong>Profession: </strong>{{item.profession}}
+			 <br>
+			 <strong>Degree at: </strong>{{item.degree}}
+
+        </article>
+    </a>
+</div>
