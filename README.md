@@ -25,7 +25,7 @@ Please visit our wiki for furthur project info:
 ### [Team Page](../../wiki/team)
 
 ### Project Documents
-- [Project Idea](SDF-Software Ducument Folder/idea.pdf) ([Presentation](SDF-Software Ducument Folder/idea-slides.pdf))
+- [Project Idea](SDF-Software Ducument Folder/First_presentation.pptx)
 - [Project Inception](../../wiki/inception)
 - [Software Requirements Specification](../../wiki/srs)
 - [Software Design Specification](../../wiki/sds)
