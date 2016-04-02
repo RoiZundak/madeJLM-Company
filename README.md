@@ -13,14 +13,14 @@
 Our Email
 Activec-madeJlm@gmail.com
 
-## [Issue Board](https://huboard.com/robi-y/seproject-team-template#/) (Coming Soon...)
+## [Issue Board](https://huboard.com/RoiZundak/madeJLM-Company/#/milestones)
 
 ## Disclaimer
 This project is developed as part of the requirements for a [software engineering course](https://github.com/jce-il/se-class/wiki) at the software engineering department - [Azrieli College of Engineering](http://www.jce.ac.il/), Jerusalem, Israel.
 
 Please visit our wiki for furthur project info: 
 
-### [User Manual](../../wiki/user-manual) (empty)
+### [User Manual](../../wiki/user-manual)
 
 ### [Team Page](../../wiki/team)
 
@@ -32,11 +32,12 @@ Please visit our wiki for furthur project info:
 - [Organization Facebook page] (https://www.facebook.com/MadeinJLM/?fref=ts)
 
 ### Iteration Pages
-- [Iteration 0 - ZFR](../../wiki/iter0-zfr)
+- [Iteration 0 - ZFR](../../wiki/ZFR)
 - [Iteration 1 - MVP]()
 - [Iteration 2 - Feature X]()
 - [Iteration 3 - Feature Y]()
 - [Iteration 4 - Feature Z]()
+
 
 
 
