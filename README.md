@@ -1,5 +1,5 @@
 <img src="https://github.com/RoiZundak/madeJLM-Company/blob/master/SDF-Software Ducument Folder/Images/Logos/logo.png?v=3&s=100" width ="350" height="130">
-# Activec - madeJLM 
+# ActiveC - madeinJLM 
 ####Did you serach for Hi-Tech workers and didn't find?
 ####We are here to give you a active assignment solution
 <br />
