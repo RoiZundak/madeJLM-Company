@@ -14,7 +14,7 @@ Our style
     height: 550px;
 }
 #filter_main{
-    background-color: #2C9E76;
+    background-color:rgba(44,158,118,0.7);
     float: left;
     min-width:20%;
     min-height: 60%;
@@ -23,7 +23,7 @@ Our style
     border-color: black;
 }
 .filters{
-    background-color: #3EDEA6;
+    background-color:rgba(62,222,166,1);
     width:80%;
     margin:auto;
     height: 20%;
@@ -31,18 +31,22 @@ Our style
 }
 #show_std{
     background-color:#F1AB35 ;
-    float: right;
+    float:right;
     min-width: 34%;
     min-height: 100%;
+    opacity: 0.7;
     margin-left: 1%;
     border-style: solid;
     border-width: 2px;
     border-color: black;
 }
 #std_info{
+    float:left;
     background-color: #7ECEC3;
-    min-width: 65%;
-    max-width: 65%;
+    opacity: 0.7;
+    margin-left:1%;
+    min-width: 44%;
+    max-width: 44%;
     min-height: 100%;
     border-style: solid;
     border-width: 2px;
