@@ -14,23 +14,39 @@ Our style
     height: 650px;
 }
 #filter_main{
-    background-color: red;
+    background-color: #2C9E76;
     float: left;
     min-width:20%;
     min-height: 60%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+.filters{
+    background-color: #3EDEA6;
+    width:80%;
+    margin:auto;
+    height: 20%;
+    text-align: center;
 }
 #show_std{
-    background-color: blue;
+    background-color:#F1AB35 ;
     float: right;
     min-width: 34%;
     min-height: 100%;
     margin-left: 1%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
 }
 #std_info{
-    background-color: yellow;
+    background-color: #7ECEC3;
     min-width: 65%;
     max-width: 65%;
     min-height: 100%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
 }
 /*
 Custom CSS for...
