@@ -24,10 +24,23 @@ Our style
 }
 .filters{
     background-color:rgba(62,222,166,1);
-    width:80%;
+    width:100%;
     margin:auto;
-    height: 20%;
+    margin-top: 2%;
+    height: 40%;
     text-align: center;
+    cursor: pointer;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
+    transition-property: background, border-radius;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
+}
+.filters:hover{
+    background-color:white;
+    color: black;
+
 }
 #show_std{
     background-color:#F1AB35 ;
