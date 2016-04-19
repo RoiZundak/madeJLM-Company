@@ -49,7 +49,14 @@ app.controller('PageCtrl', function (/* $scope, $location, $http */) {
   $('.carousel').carousel({
     interval: 5000
   });
-
+  $("#main_wrap").ready( function () {
+    $("#show_std").toggle();
+  });
+  $("#std_info").click(function(){
+    $("#show_std").toggle("slow", function() {
+      // Animation complete.
+    });
+  });
   // Activates Tooltips for Social Links
   $('.tooltip-social').tooltip({
     selector: "a[data-toggle=tooltip]"

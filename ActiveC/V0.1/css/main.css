@@ -10,6 +10,28 @@ Our style
     width : 200px;
     height:200px;
 }
+#main_wrap{
+    height: 650px;
+}
+#filter_main{
+    background-color: red;
+    float: left;
+    min-width:20%;
+    min-height: 60%;
+}
+#show_std{
+    background-color: blue;
+    float: right;
+    min-width: 34%;
+    min-height: 100%;
+    margin-left: 1%;
+}
+#std_info{
+    background-color: yellow;
+    min-width: 65%;
+    max-width: 65%;
+    min-height: 100%;
+}
 /*
 Custom CSS for...
 'Modern Business' HTML Theme by Start Bootstrap
