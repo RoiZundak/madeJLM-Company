@@ -21,10 +21,10 @@ app.config(['$routeProvider', function ($routeProvider) {
       .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
       .when("/login", {templateUrl: "partials/login.html", controller: "PageCtrl"})
       .when("/faq", {templateUrl: "partials/faq.html", controller: "PageCtrl"})
-      .when("/main", {templateUrl: "partials/main.html", controller: "PageCtrl"})
+      .when("/main", {templateUrl: "partials/main.php", controller: "PageCtrl"})
       .when("/forgot", {templateUrl: "partials/forgot.html", controller: "PageCtrl"})
     .when("/services", {templateUrl: "partials/services.html", controller: "PageCtrl"})
-    .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
+    .when("/contact", {templateUrl: "partials/contact.php", controller: "PageCtrl"})
     // Blog
     .when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
     .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
@@ -53,12 +53,19 @@ app.controller('PageCtrl', function (/* $scope, $location, $http */) {
     $("#show_std").toggle();
   });
   $("#std_info").click(function(){
-    $("#show_std").toggle("slow", function() {
+   /* $("#show_std").toggle("slow", function() {
       // Animation complete.
-    });
+    });*/
   });
   // Activates Tooltips for Social Links
   $('.tooltip-social').tooltip({
     selector: "a[data-toggle=tooltip]"
   })
 });
+
+	
+
+
+
+
+
