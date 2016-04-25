@@ -1,9 +1,10 @@
 
 
 <?php
+	session_start();
 	$func = intval($_GET['func']);
 
-	$con = mysqli_connect('localhost','David','248613579','students');
+	$con = mysqli_connect('localhost',$_SESSION["user_name"],$_SESSION["user_pass"],'students');
 	if (!$con) {
 		die('Could not connect: ' . mysqli_error($con));
 	}
