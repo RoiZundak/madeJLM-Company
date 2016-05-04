@@ -9,13 +9,11 @@ session_start();
         <br>
         <h3>Login</h3>
 		<?php
-
 			if (isset ($_SESSION["what_is_wrong"]) ) {
 				echo("incorrect ".$_SESSION["what_is_wrong"]);
 			}
-		
 		?>
-        <form method="post"  action="partials/login.php" class="login"  >
+        <form method="POST"   class="login"  >
             <p>
                 <label for="login">Email: </label>
                 <input type="text" name="user_name" id="login" value="Example@example.com" onfocus="if($(this).val()=='Example@example.com')$(this).val('')" onblur="if($(this).val()=='')$(this).val('Example@example.com')">
@@ -39,6 +37,7 @@ session_start();
 <?php
     // define variables and set to empty values
     $name = $email = "";
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $name = test_input($_POST["user_name"]);
       $pass = test_input($_POST["user_password"]);
