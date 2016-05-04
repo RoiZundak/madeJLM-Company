@@ -1,6 +1,4 @@
-
 <div id="main_wrap">
-<?php session_start(); ?>
     <div id = "filter_main">
     Filter<br>
         <div class="filters" id="over80_filter">
@@ -22,7 +20,7 @@ two
     </div>
     <div id = "std_info">
 	<?php
-
+		session_start();
 		$link = mysql_connect("server.thinksmart.co.il", $_SESSION["user_name"], $_SESSION["user_pass"]);
 		if (!$link) {
 			die("Could not connect: " . mysql_error());
