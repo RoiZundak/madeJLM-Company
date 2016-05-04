@@ -13,7 +13,7 @@ session_start();
 				echo("incorrect ".$_SESSION["what_is_wrong"]);
 			}
 		?>
-        <form method="POST"   class="login"  >
+        <form method="POST" class="login"  >
             <p>
                 <label for="login">Email: </label>
                 <input type="text" name="user_name" id="login" value="Example@example.com" onfocus="if($(this).val()=='Example@example.com')$(this).val('')" onblur="if($(this).val()=='')$(this).val('Example@example.com')">
