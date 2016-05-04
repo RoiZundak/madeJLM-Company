@@ -1,5 +1,6 @@
-<?php session_start(); ?>
+
 <div id="main_wrap">
+<?php session_start(); ?>
     <div id = "filter_main">
     Filter<br>
         <div class="filters" id="over80_filter">
