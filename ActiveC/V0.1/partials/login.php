@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 <div id ="login_container">
 
@@ -5,7 +8,7 @@
         <br>
         <h3>Login</h3>
 		<?php
-			session_start();
+
 			if (isset ($_SESSION["what_is_wrong"]) ) {
 				echo("incorrect ".$_SESSION["what_is_wrong"]);
 			}
