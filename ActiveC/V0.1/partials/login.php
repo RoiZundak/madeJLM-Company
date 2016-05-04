@@ -5,7 +5,7 @@
         <br>
         <h3>Login</h3>
 		<?php
-			session_start();
+			//session_start();
 			if (isset ($_SESSION["what_is_wrong"]) ) {
 				echo("incorrect ".$_SESSION["what_is_wrong"]);
 			}
