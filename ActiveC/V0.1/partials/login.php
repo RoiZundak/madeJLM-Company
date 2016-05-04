@@ -37,18 +37,17 @@ $name = $email = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $name = test_input($_POST["user_name"]);
   $pass = test_input($_POST["user_password"]);
-  if($name=="David" && $pass=="248613579"){
+  if($name=="jobmadeinjlm" && $pass=="q1w2e3r4"){
 	  unset($_SESSION["what_is_wrong"]);
 	  $_SESSION["user_name"]= $name;
 	  $_SESSION["user_pass"]= $pass;
 	  header( 'Location: http://localhost/madeinJLM/#/main' );
   }else{
-	  if($name=="David"){
+	  if($name=="jobmadeinjlm"){
 		  $_SESSION["what_is_wrong"]= "Password";
 	  }else{
 		  $_SESSION["what_is_wrong"]= "User Name";
 	  }
-	  
 	  header( 'Location: http://localhost/madeinJLM/#/login' );
   }
   
