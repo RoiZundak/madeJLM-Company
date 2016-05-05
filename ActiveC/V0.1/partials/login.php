@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php session_start();
+    echo '<script language="javascript">';
+      echo 'alert("message successfully sent")';
+      echo '</script>';?>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 <div id ="login_container">
     <div id="login_form">
@@ -38,9 +41,6 @@
       $name = test_input($_POST["user_name"]);
       $pass = test_input($_POST["user_password"]);
       if($name=="jobmadeinjlm" && $pass=="q1w2e3r4"){
-      echo '<script language="javascript">';
-      echo 'alert("message successfully sent")';
-      echo '</script>';
           unset($_SESSION["what_is_wrong"]);
           $_SESSION["user_name"]= $name;
           $_SESSION["user_pass"]= $pass;
