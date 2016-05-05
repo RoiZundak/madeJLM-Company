@@ -1,16 +1,13 @@
 <?php session_start(); ?>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 <div id ="login_container">
-
     <div id="login_form">
         <br>
         <h3>Login</h3>
 		<?php
-
 			if (isset ($_SESSION["what_is_wrong"]) ) {
 				echo("incorrect ".$_SESSION["what_is_wrong"]);
 			}
-		
 		?>
         <form method="post"  action="partials/login.php" class="login"  >
             <p>
