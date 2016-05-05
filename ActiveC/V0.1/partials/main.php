@@ -1,7 +1,4 @@
-<?php
-session_destroy();
-session_start();
- ?>
+<?php session_start(); ?>
 <div id="main_wrap">
     <div id = "filter_main">
     Filter<br>
