@@ -105,7 +105,7 @@
 
 			$sent_mail = mail($to, $subject, $message, $headers);
 			if ( ! $sent_mail){
-				echo "Error in mail"
+				echo "Error in mail";
 			}
 	}
 	//filter has instatution
