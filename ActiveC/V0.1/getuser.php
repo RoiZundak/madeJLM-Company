@@ -83,7 +83,7 @@
 		$sql="SELECT * FROM students WHERE github <> '' ORDER BY first_name DESC";
 		$result = mysql_query ($sql);
 		if (!$result) {
-			printf("Error);
+			print_r("Error);
 			exit();
 		}
 		while ($row = mysql_fetch_assoc($result)) {
