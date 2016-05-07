@@ -98,9 +98,6 @@
 		    }
 
 	}
-	
-	
-	
 	//filter has instatution
 	if($func=="3"){
 		$sql="SELECT * FROM student WHERE linkedin<>'' ";
