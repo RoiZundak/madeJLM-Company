@@ -18,11 +18,15 @@
 			printf("Error ");
 			exit();
 		}
+		$img_src = "./img/profilepic.png";
 		while($row = mysql_fetch_assoc($result)) {
+		if( $row['profile'] ){
+		    $img_src=$row['profile'];
+		}
 		echo "<table>
 		<tr >
 			<td >
-					<img src='./img/profilepic.png' width='120px' height='110px'>
+				<img src=".$img_src." width='120px' height='110px'>
 			</td>
 			
 			<td class ='line_td'>
