@@ -27,8 +27,8 @@
 			
 			<td class ='line_td'>
 				<p>
-					<h2>" . $row['first_name'] . $row['last_name'] . "</h2>"
-					 "<td>" . $row['Email'] . "</td><br>
+					<h2>" . $row['first_name'] . $row['last_name'] . "</h2><td>"
+					. $row['Email'] . "</td><br>
 			
 				</p>
 			</td>
