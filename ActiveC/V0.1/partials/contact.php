@@ -11,7 +11,7 @@
                 To contact us you can either use the git system or our ActiveC e-mail.
                 Our private e-mails are provided but not for technical support.</p>
 
-            <form role="form" method="POST" action="#" onsubmit="sub_contact(document.getElementById("input1") ,document.getElementById("input2"),document.getElementById("input3"),document.getElementById("input4") )" >
+            <form role="form" method="POST" action="#"  >
                 <div class="row">
                     <div class="form-group col-lg-4">
                         <label for="input1">Name</label>
@@ -37,7 +37,22 @@
                 </div>
             </form>
         </div>
+        <?php
+        if($_POST['name']){
+            echo "<script>alert('m'); </script>";
+        }
+            $to      = 'ohayon109@gmail.com';
+            $subject = 'the subject';
+            $message = 'hello';
+            $headers = 'From: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
+                'Reply-To: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
+                'X-Mailer: PHP/' . phpversion();
 
+            $sent_mail = mail($to, $subject, $message, $headers);
+            if ( ! $sent_mail){
+                echo "<script> alert('lala');</script>";
+            }
+        ?>
         <div class="col-sm-4">
             <h3>ActiveC</h3>
             <p>
