@@ -30,9 +30,15 @@ two
 			die ("Can't use internet_database : " . mysql_error());
 		}
 		$result = mysql_query ('SELECT * FROM student');
+		$img_src = "./img/profilepic.png";
 		while ($row = mysql_fetch_assoc($result)) {
+		    if( $row['profile'] ){
+                    $img_src="..../MadeinJLM-students/mockup/".$row['profile'];
+                }
 			echo "<div class='head' id='head_".$row['ID']."' > ";
-			echo "<div class='head_image' id='headimage_".$row['ID']."' > </div>";
+			echo "<div class='head_image' id='headimage_".$row['ID']."' >".
+			    "<img src=".$img_src." width='120px' height='110px'>".
+			 "</div>";
 			print_r($row['first_name']);
 			echo "</div>";
 		}
