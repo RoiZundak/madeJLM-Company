@@ -44,8 +44,27 @@
 			</td></p>
 		</th>
 		";
-		
+		echo "<table id='show_student_info'>
+        		<tr>
+        		<th>Firstname</th>
+        		<th>Lastname</th>
+        		<th>basic education years</th>
+        		<th>subject</th>
+        		<th>semesters left</th>
+        		</tr>";
+
+        					echo "<tr>";
+                			echo "<td>" . $row['first_name'] . "</td>";
+                			echo "<td>" . $row['last_name'] . "</td>";
+                			echo "<td>" . $row['basic_education_years'] . "</td>";
+                			echo "<td>" . $row['basic_education_subject'] . "</td>";
+                			echo "<td>" . $row['semesters_left'] . "</td>";
+
+                			echo "</tr>";
+                			echo "</table>";
+
 		}
+		/*
 		echo "<table id='show_student_info'>
 		<tr>
 		<th>Firstname</th>
@@ -55,7 +74,6 @@
 		<th>semesters left</th>
 		</tr>";
 		while($row = mysql_fetch_assoc($result)) {
-		    echo "dscsdcsd ";
 			echo "<tr>";
 			echo "<td>" . $row['first_name'] . "</td>";
 			echo "<td>" . $row['last_name'] . "</td>";
@@ -66,7 +84,7 @@
 			echo "</tr>";
 		}
 		echo "</table>";
-
+*/
 		mysql_close($con);
 	}
 	
