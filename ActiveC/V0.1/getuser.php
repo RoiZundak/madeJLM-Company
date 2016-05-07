@@ -8,12 +8,12 @@
 	if (!$con) {
 		die('Could not connect');
 	}
-	mysql_select_db("jobmadei_db", $link);
+	mysql_select_db("jobmadei_db", $con);
 
 	if($func=="1"){
 		$q = intval($_GET['q']);
 		$sql="SELECT * FROM students WHERE student_id = '".$q."'";
-		$result = mysql_query ($con,$sql);
+		$result = mysql_query ($sql);
 		if (!$result) {
 			printf("Error ");
 			exit();
