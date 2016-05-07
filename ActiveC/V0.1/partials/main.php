@@ -30,7 +30,7 @@ two
 			die ("Can't use internet_database : " . mysql_error());
 		}
 		$result = mysql_query ('SELECT * FROM student');
-		$img_src = "./img/profilepic.png";
+		$img_src = "../img/profilepic.png";
 		while ($row = mysql_fetch_assoc($result)) {
 		    if( !is_null($row['profile']) ){
                     $img_src="../../../../MadeinJLM-students/mockup/".$row['profile'];
