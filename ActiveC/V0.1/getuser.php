@@ -20,6 +20,7 @@
 		}
 		$img_src = "./img/profilepic.png";
 		while($row = mysql_fetch_assoc($result)) {
+
 			echo "<script >console.log('david')</script>";
 		    $img_src ="";
             if(  $row['profile']=="" ){
