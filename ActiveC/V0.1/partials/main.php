@@ -58,9 +58,7 @@ two
 		
         if(target.className =="head" || target.className =="head_image"){
             console.log("this is the id : "+target.id);
-            $("#show_std").hide("fast", function() {
-                // Animation complete.
-            });
+            $("#show_std").hide();
             id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
             console.log("this is the id : "+id);
             xmlhttp.onreadystatechange = function() {
