@@ -51,6 +51,7 @@ two
 	<script>
 	var id="-1";
 	document.addEventListener('click', function(e) {
+	console.log("Roi");
 		e = e || window.event;
 		var target = e.target || e.srcElement;
 		if (window.XMLHttpRequest) {
