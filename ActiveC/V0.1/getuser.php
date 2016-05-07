@@ -1,12 +1,12 @@
 
 
 <?php
-	session_start();
+	//session_start();
 	$func = intval($_GET['func']);
 
 	$con = mysql_connect("5.100.253.198", "jobmadeinjlm","q1w2e3r4");
 	if (!$con) {
-		die('Could not connect: ' . mysqli_error($con));
+		die('Could not connect');
 	}
 	mysql_select_db("jobmadei_db", $link);
 
@@ -15,7 +15,7 @@
 		$sql="SELECT * FROM students WHERE student_id = '".$q."'";
 		$result = mysql_query ($con,$sql);
 		if (!$result) {
-			printf("Error: %s\n", mysqli_error($con));
+			printf("Error ");
 			exit();
 		}
 		while($row = mysql_fetch_assoc($result)) {
