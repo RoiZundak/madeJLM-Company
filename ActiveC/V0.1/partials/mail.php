@@ -1,6 +1,5 @@
 
 <?php
-//contact_email
     if(isset($_POST)){
         $to      = 'Activec.madejlm@gmail.com';
         $subject = 'Contact mail from company';
@@ -8,7 +7,7 @@
             "<br><br>".
             "<br>Name: ".$_POST['contact_name'].
             "<br>Phone Number: ".$_POST['contact_phone'].
-            "<br>Email: ".$_POST['contact_message']
+            "<br>Email: ".$_POST['contact_email']
         ;
         $headers = 'From: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
             'Reply-To: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
@@ -20,5 +19,6 @@
             echo "<script> alert('lala');</script>";
         }
     }
+    header("location:conatact");
 
 ?>
