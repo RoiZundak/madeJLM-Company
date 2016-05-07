@@ -106,6 +106,7 @@
 			if ( ! $sent_mail){
 				echo "<script> alert('lala');</script>";
 			}
+				echo "<script> alert('lala2');</script>";
 	}
 	//filter has instatution
 	if($func=="3"){
