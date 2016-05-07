@@ -20,10 +20,10 @@
 		}
 		$img_src = "./img/profilepic.png";
 		while($row = mysql_fetch_assoc($result)) {
-            if( !is_null($row['profile']) ){
-                $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+            if(  $row['profile']=="" ){
+                $img_src = "../img/profilepic.png";
             }else{
-                  $img_src = "../img/profilepic.png";
+                $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
              }
             echo "<table>
             <tr >

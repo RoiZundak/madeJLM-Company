@@ -32,11 +32,11 @@ two
 		$result = mysql_query ('SELECT * FROM student');
 		$img_src = "../img/profilepic.png";
 		while ($row = mysql_fetch_assoc($result)) {
-		    if( !is_null($row['profile'])  ){
-                 $img_src="../../../../MadeinJLM-students/mockup/".$row['profile'];
+		    if(  $row['profile']=="" ){
+                $img_src = "../img/profilepic.png";
             }else{
-                 $img_src = "../img/profilepic.png";
-            }
+                $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+             }
 			echo "<div class='head' id='head_".$row['ID']."' > ";
 			echo "<div class='head_image' id='headimage_".$row['ID']."' >".
 			    "<img src=".$img_src." width='120px' height='110px'>".
