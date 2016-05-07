@@ -75,7 +75,7 @@
 	}
 	//filter Git
 	if($func=="2"){
-		$sql="SELECT * FROM student WHERE github != '' ORDER BY first_name DESC";
+		$sql="SELECT * FROM student WHERE github <> ''";
     		$result = mysql_query ($sql);
     		if (!$result) {
     			print_r("Error ");
