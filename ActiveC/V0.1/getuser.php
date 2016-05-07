@@ -20,6 +20,7 @@
 		}
 		$img_src = "./V0.1/img/profilepic.png";
 		while($row = mysql_fetch_assoc($result)) {
+		    $img_src ="";
             if(  $row['profile']=="" ){
                 $img_src = "./V0.1/img/profilepic.png";
             }else{
