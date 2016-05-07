@@ -42,9 +42,6 @@ two
 			print_r($row['first_name']);
 			echo "</div>";
 		}
-
-
-
 	?>
 	<script>
 	var id="-1";
@@ -71,6 +68,9 @@ two
             };
             xmlhttp.open("GET","getuser.php?q="+id+"&func="+"1",true);
             xmlhttp.send();
+            $("#show_std").hide("fast", function() {
+                // Animation complete.
+            });
             $("#show_std").show("slow", function() {
                 // Animation complete.
             });
