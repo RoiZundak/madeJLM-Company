@@ -96,7 +96,7 @@
 	//filter has instatution
 	if($func=="3"){
 		$q = intval($_GET['q']);
-		$sql="SELECT * FROM students WHERE student_acInc = 'OXFORD'";
+		$sql="SELECT * FROM student WHERE student_acInc = 'OXFORD'";
 		$result = mysql_query ($con,$sql);
 		if (!$result) {
 			printf("Error: %s\n", mysqli_error($con));
