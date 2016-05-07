@@ -11,7 +11,7 @@
                 To contact us you can either use the git system or our ActiveC e-mail.
                 Our private e-mails are provided but not for technical support.</p>
 
-            <form role="form" method="POST" action="#"  >
+            <form role="form" method="POST" action="#/contact"  >
                 <div class="row">
                     <div class="form-group col-lg-4">
                         <label for="input1">Name</label>
