@@ -38,7 +38,7 @@ two
                 $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
              }
 			echo "<div class='head' id='head_".$row['ID']."' > ";
-			echo "<img id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+			echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
 			print_r($row['first_name']);
 			echo "</div>";
 		}
