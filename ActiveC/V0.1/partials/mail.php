@@ -1,5 +1,6 @@
 
 <?php
+echo "dscdscdscdsc";
     if(isset($_POST)){
         echo "<script>   console.log('csdcsdds');   </script>";
     }
