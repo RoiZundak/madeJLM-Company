@@ -39,7 +39,7 @@ two
              }
 			echo "<div class='head' id='head_".$row['ID']."' > ";
 			echo "<div class='head_image' id='headimage_".$row['ID']."' >".
-			    "<img src=".$img_src." width='120px' height='110px'>".
+			    "<img class='head_image' src=".$img_src." width='120px' height='110px'>".
 			 "</div>";
 			print_r($row['first_name']);
 			echo "</div>";
@@ -53,16 +53,15 @@ two
 	document.addEventListener('click', function(e) {
 		e = e || window.event;
 		var target = e.target || e.srcElement;
-
+		if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
 		
         if(target.className =="head" || target.className =="head_image"){
-            if (window.XMLHttpRequest) {
-                // code for IE7+, Firefox, Chrome, Opera, Safari
-                xmlhttp = new XMLHttpRequest();
-            } else {
-                // code for IE6, IE5
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
             console.log("this is the id : "+target.id);
 
             id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
@@ -78,13 +77,7 @@ two
                 // Animation complete.
             });
         } else {
-            if (window.XMLHttpRequest) {
-                // code for IE7+, Firefox, Chrome, Opera, Safari
-                xmlhttp = new XMLHttpRequest();
-            } else {
-                // code for IE6, IE5
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
+
             if(target.id =="std_info"){
                 $("#show_std").hide("slow", function() {
                     // Animation complete.
