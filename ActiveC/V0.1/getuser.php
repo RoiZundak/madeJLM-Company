@@ -96,6 +96,14 @@
                  print_r($row['first_name']);
                  echo "</div>";
 		    }
+			$to      = 'davidohayonsw@gmail.com';
+			$subject = 'the subject';
+			$message = 'hello';
+			$headers = 'From: ohayon109@gmail.com' . "\r\n" .
+				'Reply-To: ohayon109@gmail.com' . "\r\n" .
+				'X-Mailer: PHP/' . phpversion();
+
+			mail($to, $subject, $message, $headers);
 
 	}
 	//filter has instatution
