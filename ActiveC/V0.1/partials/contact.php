@@ -11,7 +11,7 @@
                 To contact us you can either use the git system or our ActiveC e-mail.
                 Our private e-mails are provided but not for technical support.</p>
 
-            <form role="form" method="POST" action="#/contact"  >
+            <form role="form" method="POST" action="mail.php"  >
                 <div class="row">
                     <div class="form-group col-lg-4">
                         <label for="input1">Name</label>
@@ -37,22 +37,6 @@
                 </div>
             </form>
         </div>
-        <?php
-            if($_POST['contact_name']){
-                echo "<script>console.log('csdcsdds'); </script>";
-            }
-           /* $to      = 'ohayon109@gmail.com';
-            $subject = 'the subject';
-            $message = 'hello';
-            $headers = 'From: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
-                'Reply-To: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
-                'X-Mailer: PHP/' . phpversion();
-
-            $sent_mail = mail($to, $subject, $message, $headers);
-            if ( ! $sent_mail){
-                echo "<script> alert('lala');</script>";
-            }*/
-        ?>
         <div class="col-sm-4">
             <h3>ActiveC</h3>
             <p>
