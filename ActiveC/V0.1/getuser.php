@@ -81,9 +81,9 @@
 	if($func=="2"){
 		$q = intval($_GET['q']);
 		$sql="SELECT * FROM students WHERE github <> '' ORDER BY first_name DESC";
-		$result = mysql_query ($con,$sql);
+		$result = mysql_query ($sql);
 		if (!$result) {
-			printf("Error: %s\n", mysqli_error($con));
+			printf("Error);
 			exit();
 		}
 		while ($row = mysql_fetch_assoc($result)) {
