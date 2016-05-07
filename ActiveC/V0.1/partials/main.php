@@ -39,7 +39,7 @@ two
              }
 			echo "<div class='head' id='head_".$row['ID']."' > ";
 			echo "<div class='head_image' id='headimage_".$row['ID']."' >".
-			    "<img class='head_image' src=".$img_src." width='120px' height='110px'>".
+			    "<img id='headimage_".$row['ID']. "' src=".$img_src." width='120px' height='110px'>".
 			 "</div>";
 			print_r($row['first_name']);
 			echo "</div>";
