@@ -11,7 +11,7 @@
                 To contact us you can either use the git system or our ActiveC e-mail.
                 Our private e-mails are provided but not for technical support.</p>
 
-            <form role="form" method="POST" action=""  >
+            <form role="form" method="POST" action="contact.php"  >
                 <div class="row">
                     <div class="form-group col-lg-4">
                         <label for="input1">Name</label>
@@ -39,9 +39,7 @@
         </div>
 
         <?php
-        echo "<script> alert('lala');</script>";
             if(isset($_POST)){
-                echo "<script> alert('lala');</script>";
                 $to      = 'Activec.madejlm@gmail.com';
                 $subject = 'Contact mail from company';
                 $message = $_POST['contact_message'].
