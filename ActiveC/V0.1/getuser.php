@@ -22,7 +22,9 @@
 		while($row = mysql_fetch_assoc($result)) {
             if( !is_null($row['profile']) ){
                 $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
-            }
+            }else{
+                  $img_src = "../img/profilepic.png";
+             }
             echo "<table>
             <tr >
                 <td >
