@@ -84,7 +84,6 @@
     		}
     		$img_src = "./img/profilepic.png";
     		while($row = mysql_fetch_assoc($result)) {
-    		    echo "<script>console.log('CHECK')</script>";
        		    $img_src ="";
                 if(  $row['profile']=="" ){
                     $img_src = "./img/profilepic.png";
@@ -96,7 +95,7 @@
                  print_r($row['first_name']);
                  echo "</div>";
 		    }
-			$to      = 'davidohayonse@gmail.com';
+			$to      = 'ohayon109@gmail.com';
 			$subject = 'the subject';
 			$message = 'hello';
 			$headers = 'From: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
