@@ -15,7 +15,7 @@
 		$sql="SELECT * FROM student WHERE ID = '".$q."'";
 		$result = mysql_query ($sql);
 		if (!$result) {
-			printf("Error ");
+			print_r("Error ");
 			exit();
 		}
 		$img_src = "./img/profilepic.png";
