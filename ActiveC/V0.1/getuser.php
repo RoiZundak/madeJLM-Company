@@ -75,10 +75,13 @@
 	}
 	//filter Git
 	if($func=="2"){
-		$sql="SELECT * FROM student WHERE github <>'' '";
+			$sql="SELECT * FROM student WHERE github<>'' ";
     		$result = mysql_query ($sql);
     		if (!$result) {
     			print_r("Error ");
+
+				
+				echo 'failed. SQL Err: '. mysql_error();
     			exit();
     		}
     		$img_src = "./img/profilepic.png";
@@ -91,7 +94,7 @@
                     $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
                  }
                  echo "<div class='head' id='head_".$row['ID']."' > ";
-                 echo "<img class='head	_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+                 echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
                  print_r($row['first_name']);
                  echo "</div>";
 		    }
