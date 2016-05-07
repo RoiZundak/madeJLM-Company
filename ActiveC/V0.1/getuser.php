@@ -75,10 +75,13 @@
 	}
 	//filter Git
 	if($func=="2"){
-		$sql="SELECT * FROM student WHERE github <> '' ";
+			$sql="SELECT * FROM student WHERE github<>'' '";
     		$result = mysql_query ($sql);
     		if (!$result) {
     			print_r("Error ");
+
+				
+				echo 'failed. SQL Err: '. mysql_error();
     			exit();
     		}
     		$img_src = "./img/profilepic.png";
