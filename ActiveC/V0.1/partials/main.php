@@ -21,15 +21,15 @@ two
     </div>
     <div id = "std_info">
 	<?php
-		$link = new mysqli("5.100.253.198", "jobmadeinjlm","q1w2e3r4","jobmadei_db");
+		$link = mysql_connect("5.100.253.198", "jobmadeinjlm","q1w2e3r4");
 		if (!$link) {
 			die("Could not connect: " . mysql_error());
 		}
-		/*$db_selected = mysql_select_db("students", $link);
+		$db_selected = mysql_select_db("jobmadei_db", $link);
 		if (!$db_selected) {
 			die ("Can't use internet_database : " . mysql_error());
-		}*/
-		$result = $link->query('SELECT * FROM student');
+		}
+		$result = mysql_query ('SELECT * FROM student');
 		while ($row = mysql_fetch_assoc($result)) {
 			echo "<div class='head' id='head_".$row['ID']."' > ";
 			echo "<div class='head_image' id='headimage_".$row['ID']."' > </div>";
