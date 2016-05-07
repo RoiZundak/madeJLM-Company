@@ -38,9 +38,9 @@
             </form>
         </div>
         <?php
-        if($_POST['name']){
-            echo "<script>console.log('csdcsdds'); </script>";
-        }
+            if($_POST['contact_name']){
+                echo "<script>console.log('csdcsdds'); </script>";
+            }
            /* $to      = 'ohayon109@gmail.com';
             $subject = 'the subject';
             $message = 'hello';
