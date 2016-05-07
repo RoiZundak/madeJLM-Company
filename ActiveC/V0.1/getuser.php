@@ -73,14 +73,10 @@
 		}
 		mysql_close($con);
 	}
-	
-	
-	
-	
 	//filter Git
 	if($func=="2"){
 		$q = intval($_GET['q']);
-		$sql="SELECT * FROM students WHERE github <> '' ORDER BY first_name DESC";
+		$sql="SELECT * FROM student WHERE github <> '' ORDER BY first_name DESC";
 		$result = mysql_query ($sql);
 		if (!$result) {
 			print_r("Error);
