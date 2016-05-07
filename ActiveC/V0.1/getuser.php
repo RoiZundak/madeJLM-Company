@@ -4,21 +4,21 @@
 	session_start();
 	$func = intval($_GET['func']);
 
-	$con = mysqli_connect('localhost',$_SESSION["user_name"],$_SESSION["user_pass"],'students');
+	$con = mysql_connect("5.100.253.198", "jobmadeinjlm","q1w2e3r4");
 	if (!$con) {
 		die('Could not connect: ' . mysqli_error($con));
 	}
-	mysqli_select_db($con,"students");
+	mysql_select_db("jobmadei_db", $link);
 
 	if($func=="1"){
 		$q = intval($_GET['q']);
 		$sql="SELECT * FROM students WHERE student_id = '".$q."'";
-		$result = mysqli_query($con,$sql);
+		$result = mysql_query ($con,$sql);
 		if (!$result) {
 			printf("Error: %s\n", mysqli_error($con));
 			exit();
 		}
-		while($row = mysqli_fetch_array($result)) {
+		while($row = mysql_fetch_assoc($result)) {
 		echo "<table>
 		<tr >
 			<td >
@@ -57,7 +57,7 @@
 		<th>GPA</th>
 		<th>instatution</th>
 		</tr>";
-		while($row = mysqli_fetch_array($result)) {
+		while($row = mysql_fetch_assoc($result)) {
 			echo "<tr>";
 			echo "<td>" . $row['student_name'] . "</td>";
 			echo "<td>" . $row['student_age'] . "</td>";
@@ -78,12 +78,12 @@
 	if($func=="2"){
 		$q = intval($_GET['q']);
 		$sql="SELECT * FROM students WHERE student_gpa > '80' ORDER BY student_gpa DESC";
-		$result = mysqli_query($con,$sql);
+		$result = mysql_query ($con,$sql);
 		if (!$result) {
 			printf("Error: %s\n", mysqli_error($con));
 			exit();
 		}
-		while ($row = mysqli_fetch_array($result)) {
+		while ($row = mysql_fetch_assoc($result)) {
 			echo "<div class='head' id='head_".$row['student_id']."' > ";
 			echo "<div class='head_image' id='headimage_".$row['student_id']."' > </div>";
 			print_r($row['student_name']);
@@ -98,12 +98,12 @@
 	if($func=="3"){
 		$q = intval($_GET['q']);
 		$sql="SELECT * FROM students WHERE student_acInc = 'OXFORD'";
-		$result = mysqli_query($con,$sql);
+		$result = mysql_query ($con,$sql);
 		if (!$result) {
 			printf("Error: %s\n", mysqli_error($con));
 			exit();
 		}
-		while ($row = mysqli_fetch_array($result)) {
+		while ($row = mysql_fetch_assoc($result)) {
 			echo "<div class='head' id='head_".$row['student_id']."' > ";
 			echo "<div class='head_image' id='headimage_".$row['student_id']."' > </div>";
 			print_r($row['student_name']);
@@ -112,8 +112,8 @@
 
 	}
 	if($func=="4"){
-		$result = mysqli_query($con,'SELECT * FROM students');
-		while ($row = mysqli_fetch_array($result)) {
+		$result = mysql_query( $con,'SELECT * FROM students');
+		while ($row = mysql_fetch_assoc($result)) {
 			echo "<div class='head' id='head_".$row['student_id']."' > ";
 			echo "<div class='head_image' id='headimage_".$row['student_id']."' > </div>";
 			print_r($row['student_name']);
