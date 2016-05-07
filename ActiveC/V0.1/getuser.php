@@ -18,11 +18,11 @@
 			printf("Error ");
 			exit();
 		}
-		$img_src = "./V0.1/img/profilepic.png";
+		$img_src = "./img/profilepic.png";
 		while($row = mysql_fetch_assoc($result)) {
 		    $img_src ="";
             if(  $row['profile']=="" ){
-                $img_src = "./V0.1/img/profilepic.png";
+                $img_src = "./img/profilepic.png";
             }else{
                 $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
              }
