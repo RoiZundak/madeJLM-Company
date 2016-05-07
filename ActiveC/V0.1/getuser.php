@@ -27,10 +27,8 @@
 			
 			<td class ='line_td'>
 				<p>
-					<h2>" . $row['first_name'] . "</h2>
-					Studies at " . $row['student_acInc'] . "<br>
-					 <td>" . $row['email'] . "</td><br>
-					+9720577224    
+					<h2>" . $row['first_name'] . $row['last_name'] . "</h2>"
+					 "<td>" . $row['Email'] . "</td><br>
 			
 				</p>
 			</td>
@@ -48,7 +46,6 @@
 		";
 		
 		}
-		/*
 		echo "<table>
 		<tr>
 		<th>Firstname</th>
@@ -68,7 +65,7 @@
 			echo "</tr>";
 		}
 		echo "</table>";
-		*/
+
 		mysql_close($con);
 	}
 	
