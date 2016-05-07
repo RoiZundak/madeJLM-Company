@@ -29,7 +29,7 @@
 				<p>
 					<h2>" . $row['first_name'] . "</h2>
 					Studies at " . $row['student_acInc'] . "<br>
-					. "<td>" . $row['email'] . "</td>"<br>
+					 <td>" . $row['email'] . "</td><br>
 					+9720577224    
 			
 				</p>
