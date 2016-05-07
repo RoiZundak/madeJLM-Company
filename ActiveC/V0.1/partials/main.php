@@ -33,7 +33,7 @@ two
 		$img_src = "./img/profilepic.png";
 		while ($row = mysql_fetch_assoc($result)) {
 		    if( $row['profile'] ){
-                    $img_src="..../MadeinJLM-students/mockup/".$row['profile'];
+                    $img_src="../../../../MadeinJLM-students/mockup/".$row['profile'];
                 }
 			echo "<div class='head' id='head_".$row['ID']."' > ";
 			echo "<div class='head_image' id='headimage_".$row['ID']."' >".
