@@ -5,15 +5,15 @@
         <div class="filters" id="has_git">
             Has Git
         </div>
-        <div class="filters"id="hasInstatution_filter">
-            Oxford only
+        <div class="filters"id="has_linkedin">
+            Has Linkedin
         </div>
         <div class="filters">
             GenderA
 
         </div>
         <div class="filters" id='clr_filter'>
-            Clear
+            Clear All
         </div>
     </div>
     <div id = "show_std">
@@ -90,7 +90,7 @@ two
                 xmlhttp.open("GET","getuser.php?q="+id+"&func="+"2",true);
                 xmlhttp.send();
             }
-            if(target.id == "hasInstatution_filter" ){
+            if(target.id == "has_linkedin" ){
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         document.getElementById("std_info").innerHTML = xmlhttp.responseText;
