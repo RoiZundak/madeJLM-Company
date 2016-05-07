@@ -75,7 +75,6 @@
 	}
 	//filter Git
 	if($func=="2"){
-		$q = intval($_GET['q']);
 		$sql="SELECT * FROM student WHERE github <> '' ORDER BY first_name DESC";
 		$result = mysql_query ($sql);
 		if (!$result) {
@@ -83,9 +82,9 @@
 			exit();
 		}
 		while ($row = mysql_fetch_assoc($result)) {
-			echo "<div class='head' id='head_".$row['student_id']."' > ";
-			echo "<div class='head_image' id='headimage_".$row['student_id']."' > </div>";
-			print_r($row['student_name']);
+			echo "<div class='head' id='head_".$row['ID']."' > ";
+			echo "<div class='head_image' id='headimage_".$row['ID']."' > </div>";
+			print_r($row['first_name']);
 			echo "</div>";
 		}
 
@@ -95,7 +94,6 @@
 	
 	//filter has instatution
 	if($func=="3"){
-		$q = intval($_GET['q']);
 		$sql="SELECT * FROM student WHERE student_acInc = 'OXFORD'";
 		$result = mysql_query ($con,$sql);
 		if (!$result) {
