@@ -12,7 +12,7 @@
 
 	if($func=="1"){
 		$q = intval($_GET['q']);
-		$sql="SELECT * FROM students WHERE student_id = '".$q."'";
+		$sql="SELECT * FROM student WHERE ID = '".$q."'";
 		$result = mysql_query ($sql);
 		if (!$result) {
 			printf("Error ");
