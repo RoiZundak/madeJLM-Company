@@ -20,7 +20,7 @@
 		}
 		$img_src = "./img/profilepic.png";
 		while($row = mysql_fetch_assoc($result)) {
-            if( $row['profile'] ){
+            if( !is_null($row['profile']) ){
                 $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
             }
             echo "<table>
