@@ -77,10 +77,10 @@
 	
 	
 	
-	//filter gpa 80
+	//filter Git
 	if($func=="2"){
 		$q = intval($_GET['q']);
-		$sql="SELECT * FROM students WHERE student_gpa > '80' ORDER BY student_gpa DESC";
+		$sql="SELECT * FROM students WHERE github <> "" ORDER BY first_name DESC";
 		$result = mysql_query ($con,$sql);
 		if (!$result) {
 			printf("Error: %s\n", mysqli_error($con));

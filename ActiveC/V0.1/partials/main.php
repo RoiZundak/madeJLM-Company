@@ -2,8 +2,8 @@
 <div id="main_wrap">
     <div id = "filter_main">
     Filter<br>
-        <div class="filters" id="over80_filter">
-            GPA 80+
+        <div class="filters" id="has_git">
+            Has Git
         </div>
         <div class="filters"id="hasInstatution_filter">
             Oxford only
@@ -81,7 +81,7 @@ two
             }
 
             }
-            if(target.id == "over80_filter" ){
+            if(target.id == "has_git" ){
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         document.getElementById("std_info").innerHTML = xmlhttp.responseText;
