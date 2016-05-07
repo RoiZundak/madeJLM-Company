@@ -1,7 +1,4 @@
-<?php session_start();
-    echo '<script language="javascript">';
-      echo 'alert("message successfully sent")';
-      echo '</script>';?>
+<?php session_start();?>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 <div id ="login_container">
     <div id="login_form">

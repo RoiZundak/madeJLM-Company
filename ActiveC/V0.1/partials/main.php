@@ -21,19 +21,19 @@ two
     </div>
     <div id = "std_info">
 	<?php
-		$link = mysql_connect("localhost", $_SESSION["user_name"], $_SESSION["user_pass"]);
+		$link = mysqli_connect("5.100.253.198", "jobmadeinjlm","q1w2e3r4","jobmadei_db");
 		if (!$link) {
 			die("Could not connect: " . mysql_error());
 		}
-		$db_selected = mysql_select_db("students", $link);
+		/*$db_selected = mysql_select_db("students", $link);
 		if (!$db_selected) {
 			die ("Can't use internet_database : " . mysql_error());
-		}
-		$result = mysql_query('SELECT * FROM students');
+		}*/
+		$result = $link->query('SELECT * FROM student');
 		while ($row = mysql_fetch_assoc($result)) {
-			echo "<div class='head' id='head_".$row['student_id']."' > ";
-			echo "<div class='head_image' id='headimage_".$row['student_id']."' > </div>";
-			print_r($row['student_name']);
+			echo "<div class='head' id='head_".$row['ID']."' > ";
+			echo "<div class='head_image' id='headimage_".$row['ID']."' > </div>";
+			print_r($row['first_name']);
 			echo "</div>";
 		}
 	?>
