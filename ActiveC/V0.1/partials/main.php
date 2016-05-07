@@ -58,7 +58,9 @@ two
 		
         if(target.className =="head" || target.className =="head_image"){
             console.log("this is the id : "+target.id);
-
+            $("#show_std").hide("fast", function() {
+                // Animation complete.
+            });
             id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
             console.log("this is the id : "+id);
             xmlhttp.onreadystatechange = function() {
@@ -68,9 +70,7 @@ two
             };
             xmlhttp.open("GET","getuser.php?q="+id+"&func="+"1",true);
             xmlhttp.send();
-            $("#show_std").hide("fast", function() {
-                // Animation complete.
-            });
+
             $("#show_std").show("slow", function() {
                 // Animation complete.
             });
