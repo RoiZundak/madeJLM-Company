@@ -19,6 +19,6 @@
             echo "<script> alert('lala');</script>";
         }
     }
-    header("location:conatact");
+    header( 'Location: http://localhost/madeinJLM/#/main' );
 
 ?>
