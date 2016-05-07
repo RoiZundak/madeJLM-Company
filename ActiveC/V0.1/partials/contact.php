@@ -39,9 +39,9 @@
         </div>
         <?php
         if($_POST['name']){
-            echo "<script>alert('m'); </script>";
+            echo "<script>console.log('csdcsdds'); </script>";
         }
-            $to      = 'ohayon109@gmail.com';
+           /* $to      = 'ohayon109@gmail.com';
             $subject = 'the subject';
             $message = 'hello';
             $headers = 'From: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
@@ -51,7 +51,7 @@
             $sent_mail = mail($to, $subject, $message, $headers);
             if ( ! $sent_mail){
                 echo "<script> alert('lala');</script>";
-            }
+            }*/
         ?>
         <div class="col-sm-4">
             <h3>ActiveC</h3>
