@@ -83,7 +83,7 @@
     		}
     		$img_src = "./img/profilepic.png";
     		while($row = mysql_fetch_assoc($result)) {
-    		    echo "<script>console.log("CHECK")</script>";
+    		    echo "<script>console.log('CHECK')</script>";
        		    $img_src ="";
                 if(  $row['profile']=="" ){
                     $img_src = "./img/profilepic.png";
