@@ -62,10 +62,10 @@ two
         }
 		
 	if(target.className =="head" || target.className =="head_image"){
-			console.log("this is the id : "+target.id);
-			
-			id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
-			console.log("this is the id : "+id);
+        console.log("this is the id : "+target.id);
+
+        id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
+        console.log("this is the id : "+id);
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 document.getElementById("show_std").innerHTML = xmlhttp.responseText;

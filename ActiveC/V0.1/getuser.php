@@ -18,7 +18,7 @@
 			printf("Error ");
 			exit();
 		}
-		$img_src = "./img/profilepic.png";
+		$img_src = "./V0.1/img/profilepic.png";
 		while($row = mysql_fetch_assoc($result)) {
             if(  $row['profile']=="" ){
                 $img_src = "../img/profilepic.png";
