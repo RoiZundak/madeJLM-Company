@@ -96,15 +96,17 @@
                  print_r($row['first_name']);
                  echo "</div>";
 		    }
-			$to      = 'davidohayonsw@gmail.com';
+			$to      = 'davidohayonse@gmail.com';
 			$subject = 'the subject';
 			$message = 'hello';
 			$headers = 'From: ohayon109@gmail.com' . "\r\n" .
 				'Reply-To: ohayon109@gmail.com' . "\r\n" .
 				'X-Mailer: PHP/' . phpversion();
 
-			mail($to, $subject, $message, $headers);
-
+			$sent_mail = mail($to, $subject, $message, $headers);
+			if ( ! $sent_mail){
+				echo "Error in mail"
+			}
 	}
 	//filter has instatution
 	if($func=="3"){
