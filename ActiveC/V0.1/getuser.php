@@ -75,7 +75,7 @@
 	}
 	//filter Git
 	if($func=="2"){
-		$sql="SELECT * FROM student;
+		$sql="SELECT * FROM student";
     		$result = mysql_query ($sql);
     		if (!$result) {
     			print_r("Error ");
