@@ -303,6 +303,9 @@ table, td, th {
 
 td {text-align: left;
 }
+#show_student_info{
+    border: black solid thin;
+}
 
 
 

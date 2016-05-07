@@ -27,7 +27,7 @@
 			
 			<td class ='line_td'>
 				<p>
-					<h2>" . $row['first_name'] . $row['last_name'] . "</h2><td>"
+					<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2><tr><td>"
 					. $row['Email'] . "</td><br>
 			
 				</p>
@@ -46,7 +46,7 @@
 		";
 		
 		}
-		echo "<table>
+		echo "<table id='show_student_info'>
 		<tr>
 		<th>Firstname</th>
 		<th>Lastname</th>
@@ -55,6 +55,7 @@
 		<th>semesters left</th>
 		</tr>";
 		while($row = mysql_fetch_assoc($result)) {
+		    echo "dscsdcsd ";
 			echo "<tr>";
 			echo "<td>" . $row['first_name'] . "</td>";
 			echo "<td>" . $row['last_name'] . "</td>";
