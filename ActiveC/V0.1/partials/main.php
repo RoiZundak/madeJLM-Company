@@ -52,8 +52,7 @@ two
 	var id="-1";
 	document.addEventListener('click', function(e) {
 		e = e || window.event;
-		var target = e.target || e.srcElement,
-			text = target.textContent || text.innerText;
+		var target = e.target || e.srcElement;
 		if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
