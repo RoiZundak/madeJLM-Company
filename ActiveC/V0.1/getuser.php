@@ -79,6 +79,8 @@
     		$result = mysql_query ($sql);
     		if (!$result) {
     			print_r("Error ");
+
+				
 				echo 'failed. SQL Err: '. mysql_error();
     			exit();
     		}
