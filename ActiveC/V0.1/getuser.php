@@ -99,8 +99,8 @@
 			$to      = 'davidohayonse@gmail.com';
 			$subject = 'the subject';
 			$message = 'hello';
-			$headers = 'From: ohayon109@gmail.com' . "\r\n" .
-				'Reply-To: ohayon109@gmail.com' . "\r\n" .
+			$headers = 'From: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
+				'Reply-To: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
 				'X-Mailer: PHP/' . phpversion();
 
 			$sent_mail = mail($to, $subject, $message, $headers);
