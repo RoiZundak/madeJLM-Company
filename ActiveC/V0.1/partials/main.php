@@ -21,7 +21,7 @@ two
     </div>
     <div id = "std_info">
 	<?php
-		$link = mysqli_connect("5.100.253.198", "jobmadeinjlm","q1w2e3r4","jobmadei_db");
+		$link = new mysqli("5.100.253.198", "jobmadeinjlm","q1w2e3r4","jobmadei_db");
 		if (!$link) {
 			die("Could not connect: " . mysql_error());
 		}
