@@ -27,9 +27,9 @@
 			
 			<td class ='line_td'>
 				<p>
-					<h2>" . $row['student_name'] . "</h2>
+					<h2>" . $row['first_name'] . "</h2>
 					Studies at " . $row['student_acInc'] . "<br>
-					Roizundak@Gmail.com <br>
+					. "<td>" . $row['email'] . "</td>"<br>
 					+9720577224    
 			
 				</p>
@@ -53,22 +53,23 @@
 		<tr>
 		<th>Firstname</th>
 		<th>Lastname</th>
-		<th>Age</th>
-		<th>GPA</th>
-		<th>instatution</th>
+		<th>basic education years</th>
+		<th>subject</th>
+		<th>semesters left</th>
 		</tr>";
 		while($row = mysql_fetch_assoc($result)) {
 			echo "<tr>";
-			echo "<td>" . $row['student_name'] . "</td>";
-			echo "<td>" . $row['student_age'] . "</td>";
-			echo "<td>" . $row['student_sex'] . "</td>";
-			echo "<td>" . $row['student_gpa'] . "</td>";
-			echo "<td>" . $row['student_acInc'] . "</td>";
+			echo "<td>" . $row['first_name'] . "</td>";
+			echo "<td>" . $row['last_name'] . "</td>";
+			echo "<td>" . $row['basic_education_years'] . "</td>";
+			echo "<td>" . $row['basic_education_subject'] . "</td>";
+			echo "<td>" . $row['semesters_left'] . "</td>";
+
 			echo "</tr>";
 		}
 		echo "</table>";
 		*/
-		mysqli_close($con);
+		mysql_close($con);
 	}
 	
 	
