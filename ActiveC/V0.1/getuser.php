@@ -80,7 +80,7 @@
 	//filter Git
 	if($func=="2"){
 		$q = intval($_GET['q']);
-		$sql="SELECT * FROM students WHERE github <> "" ORDER BY first_name DESC";
+		$sql="SELECT * FROM students WHERE github <> '' ORDER BY first_name DESC";
 		$result = mysql_query ($con,$sql);
 		if (!$result) {
 			printf("Error: %s\n", mysqli_error($con));
