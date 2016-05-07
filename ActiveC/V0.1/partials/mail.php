@@ -6,8 +6,7 @@ if(isset($_POST)){
         "<br><br>".
         "<br>Name: ".$_POST['contact_name'].
         "<br>Phone Number: ".$_POST['contact_phone'].
-        "<br>Email: ".$_POST['contact_email']
-    ;
+        "<br>Email: ".$_POST['contact_email'];
     $headers = 'From: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
         'Reply-To: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();

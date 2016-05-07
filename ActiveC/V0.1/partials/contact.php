@@ -53,13 +53,13 @@
             <ul class="list-unstyled list-inline list-social-icons">
                 <li class="tooltip-social facebook-link"><a href="https://www.facebook.com/MadeinJLM/?pnref=lhc&__mref=message_bubble" data-toggle="tooltip"
                                                             data-placement="top" title="Facebook"><i
-                        class="fa fa-facebook-square fa-2x"></i></a></li>
+                            class="fa fa-facebook-square fa-2x"></i></a></li>
                 <li class="tooltip-social twitter-link"><a href="https://twitter.com/MadeinJLM" data-toggle="tooltip"
                                                            data-placement="top" title="Twitter"><i
-                        class="fa fa-twitter-square fa-2x"></i></a></li>
+                            class="fa fa-twitter-square fa-2x"></i></a></li>
                 <li class="tooltip-social google-plus-link"><a href="https://plus.google.com/+MadeinjlmOrg1" data-toggle="tooltip"
                                                                data-placement="top" title="Google+"><i
-                        class="fa fa-google-plus-square fa-2x"></i></a></li>
+                            class="fa fa-google-plus-square fa-2x"></i></a></li>
             </ul>
         </div>
 
