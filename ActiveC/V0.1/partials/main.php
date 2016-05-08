@@ -8,6 +8,16 @@
         <div class="filters"id="has_linkedin">
             Has Linkedin
         </div>
+        <div class="filters"id="area">
+            Area
+        </div>
+        <div class="filters"id="skills">
+            Skills
+         </div>
+         <div class="filters"id="nearby">
+            Nearby
+         </div>
+
         <div class="filters" id='clr_filter'>
             Clear All
         </div>
