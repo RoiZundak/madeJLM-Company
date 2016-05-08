@@ -15,7 +15,7 @@ Our style
     height: 550px;
 }
 #filter_main{
-    background-color:black ;
+    background-color:white;
     float: left;
 	width:200px;
     min-height: 60%;
@@ -37,11 +37,12 @@ Our style
     transition-duration: 300ms;
     transition-timing-function: linear;
 	font-size:1.1em;
-
+}
+.filters:hover{
+    background-color:black;
+    color: white;
 
 }
-
-
 .line_td{
 	border-bottom-color : grey;
 	border-bottom-width : 1px;
@@ -50,11 +51,7 @@ Our style
 	
 	
 }
-.filters:hover{
-    background-color:rgba(44,108,218,0.7);
-    color: black;
 
-}
 .head{
 	display:inline-block;
 	width:140px;
