@@ -8,6 +8,18 @@
         <div class="filters"id="has_linkedin">
             Has Linkedin
         </div>
+        <div class="filters"id="">
+            Nearby
+        </div>
+        <div class="filters"id="">
+            Student only
+        </div>
+        <div class="filters"id="">
+            Excellent Students
+        </div>
+        <div class="filters"id="">
+            GPA greater then 85
+        </div>
         <div class="filters" id='clr_filter'>
             Clear All
         </div>
