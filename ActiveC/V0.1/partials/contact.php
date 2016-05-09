@@ -1,7 +1,5 @@
 <?php
-    echo "in php";
     if(isset($_POST['submit'])) {
-        echo "lalal";
         $to      = 'Activec.madejlm@gmail.com';
         $subject = 'Contact mail from company';
         $message = $_POST['contact_message'].
@@ -18,6 +16,7 @@
         if ( ! $sent_mail){
             echo "<script> alert('lala');</script>";
         }
+        header("Location:/contact");
     }
 ?>
 <!-- Page Content -->
