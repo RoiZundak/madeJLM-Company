@@ -77,7 +77,8 @@
 	}
 	//filter Git
 	if($func=="2"){
-		$sql="SELECT * FROM student WHERE github <>'' '";
+
+		$sql="SELECT * FROM student WHERE github <>'' ";
     		$result = mysql_query ($sql);
     		if (!$result) {
 				echo "Error1 : ";
@@ -104,8 +105,9 @@
 	
 	//filter has instatution
 	if($func=="3"){
+
 		$sql="SELECT * FROM student WHERE student_acInc = 'OXFORD'";
-		$result = mysql_query ($con,$sql);
+		$result = mysql_query ($sql);
 		if (!$result) {
 			echo "Error1 : ";
 			die('Invalid query: ' . mysql_error());
@@ -120,7 +122,8 @@
 
 	}
 	if($func=="4"){
-		$result = mysql_query( $con,'SELECT * FROM students');
+		$sql="SELECT * FROM student";
+		$result = mysql_query ($sql);
 		while ($row = mysql_fetch_assoc($result)) {
 			echo "<div class='head' id='head_".$row['student_id']."' > ";
 			echo "<div class='head_image' id='headimage_".$row['student_id']."' > </div>";
