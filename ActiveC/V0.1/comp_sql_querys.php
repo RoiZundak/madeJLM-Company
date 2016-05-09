@@ -106,10 +106,10 @@
 	//filter has instatution
 	if($func=="3"){
 
-		$sql="SELECT * FROM student WHERE student_acInc = 'OXFORD'";
+		$sql="SELECT * FROM student WHERE linkedin <> '' ";
 		$result = mysql_query ($sql);
 		if (!$result) {
-			echo "Error1 : ";
+			echo "Error2 : ";
 			die('Invalid query: ' . mysql_error());
 			exit();
 		}
@@ -124,6 +124,11 @@
 	if($func=="4"){
 		$sql="SELECT * FROM student";
 		$result = mysql_query ($sql);
+		if (!$result) {
+			echo "Error3 : ";
+			die('Invalid query: ' . mysql_error());
+			exit();
+		}
 		while ($row = mysql_fetch_assoc($result)) {
 			echo "<div class='head' id='head_".$row['student_id']."' > ";
 			echo "<div class='head_image' id='headimage_".$row['student_id']."' > </div>";
