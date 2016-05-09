@@ -15,7 +15,7 @@ Our style
     height: 550px;
 }
 #filter_main{
-    background-color:#888888 ;
+    background-color:white;
     float: left;
 	width:200px;
     min-height: 60%;
@@ -36,13 +36,13 @@ Our style
     transition-property: background, border-radius;
     transition-duration: 300ms;
     transition-timing-function: linear;
-	font-family:"FontAwesome";
 	font-size:1.1em;
-
+}
+.filters:hover{
+    background-color:black;
+    color: white;
 
 }
-
-
 .line_td{
 	border-bottom-color : grey;
 	border-bottom-width : 1px;
@@ -51,11 +51,7 @@ Our style
 	
 	
 }
-.filters:hover{
-    background-color:rgba(44,108,218,0.7);
-    color: black;
 
-}
 .head{
 	display:inline-block;
 	width:140px;
@@ -66,7 +62,6 @@ Our style
 	padding:2px;
 	cursor:pointer;
 	text-align:center;
-	font-family:"FontAwesome";
 	font-size:1.1em;
 }
 .head:Hover{
@@ -77,6 +72,7 @@ Our style
 	height:110px;
 	margin-left:5px;
     background-position: center;
+    border-radius: 2px;
 
 	
 }
@@ -98,7 +94,7 @@ Our style
     max-width: 44%;
 	max-height: 100%;
     min-height: 100%;
-    overflow: scroll;
+    overflow: auto;
 	text-align:center;
 }
 /*
@@ -266,7 +262,6 @@ h3{
     -moz-border-radius:5px;
     -webkit-border-radius:5px;
     border:none;
-    font-family:'Helvetica Neue',Arial,sans-serif;
     font-size:16px;
     font-weight:700;
     height:36px;
@@ -291,7 +286,6 @@ table {
 	margin-top:2px;
     width: 100%;
     border-collapse: collapse;
-	font-family:"FontAwesome";
 	font-size:1.1em;
 }
 
