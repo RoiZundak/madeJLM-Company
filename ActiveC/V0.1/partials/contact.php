@@ -1,5 +1,6 @@
 <?php
     if(isset($_POST['submit'])) {
+        header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
         $to      = 'Activec.madejlm@gmail.com';
         $subject = 'Contact mail from company';
         if (!empty($_POST['contact_message'])    && !empty($_POST['contact_name'])   && !empty($_POST['contact_email']) ) {
@@ -21,12 +22,16 @@
             'X-Mailer: PHP/' . phpversion();
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+        $errLevel = error_reporting(E_ALL ^ E_NOTICE);
         $sent_mail = mail($to, $subject, $message, $headers);
         if ( ! $sent_mail){
-            echo "<script> alert('lala');</script>";
+            echo "<script> alert('Eroor cound not send mail. ');</script>";
+            error_reporting($errLevel);
+        }else{
+            echo "<script> alert('mail has been sent !');</script>";
         }
         $_POST = array();
-        header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
+
     }
 ?>
 <!-- Page Content -->
