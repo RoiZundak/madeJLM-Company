@@ -1,6 +1,6 @@
 <?php
     if(isset($_POST['submit'])) {
-        header("location:contact");
+        header("Location:http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
         $to      = 'Activec.madejlm@gmail.com';
         $subject = 'Contact mail from company';
         $message = $_POST['contact_message'].
