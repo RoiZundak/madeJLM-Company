@@ -22,10 +22,13 @@
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
         $sent_mail = mail($to, $subject, $message, $headers);
         if ( ! $sent_mail){
-            echo "<script> alert('Eroor cound not send mail. ');</script>";
+            echo '<script type="text/javascript">';
+            echo 'alert("Eroor cound not send mail.");';
+            echo '</script>';
         }else{
-            echo /** @lang html */
-            "<script>console.log(\"mail was sent. thank you! \");</script>";
+            echo '<script type="text/javascript">';
+            echo 'alert("mail was sent. thank you!");';
+            echo '</script>';
         }
         $_POST = array();
 
