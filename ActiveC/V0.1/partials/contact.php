@@ -16,7 +16,11 @@
         if ( ! $sent_mail){
             echo "<script> alert('lala');</script>";
         }*/
-        header("Location:/contact");
+        $_POST = array();
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        $extra = 'contact.php';
+        header("Location: http://$host$uri/$extra");
     }
 ?>
 <!-- Page Content -->
