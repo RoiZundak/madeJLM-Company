@@ -16,7 +16,8 @@
 		$sql="SELECT * FROM student WHERE ID = '".$q."'";
 		$result = mysql_query ($sql);
 		if (!$result) {
-			print_r("Error ");
+			echo "Error1 : ";
+			die('Invalid query: ' . mysql_error());
 			exit();
 		}
 		$img_src = "./img/profilepic.png";
@@ -79,7 +80,8 @@
 		$sql="SELECT * FROM student WHERE github <>'' '";
     		$result = mysql_query ($sql);
     		if (!$result) {
-    			print_r("Error ");
+				echo "Error1 : ";
+				die('Invalid query: ' . mysql_error());
     			exit();
     		}
     		$img_src = "./img/profilepic.png";
@@ -105,7 +107,8 @@
 		$sql="SELECT * FROM student WHERE student_acInc = 'OXFORD'";
 		$result = mysql_query ($con,$sql);
 		if (!$result) {
-			printf("Error: %s\n", mysqli_error($con));
+			echo "Error1 : ";
+			die('Invalid query: ' . mysql_error());
 			exit();
 		}
 		while ($row = mysql_fetch_assoc($result)) {
