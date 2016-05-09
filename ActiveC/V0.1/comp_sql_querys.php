@@ -115,8 +115,8 @@
 		}
 		while ($row = mysql_fetch_assoc($result)) {
 			echo "<div class='head' id='head_".$row['student_id']."' > ";
-			echo "<div class='head_image' id='headimage_".$row['student_id']."' > </div>";
-			print_r($row['student_name']);
+			echo "<div class='head_image' id='headimage_".$row['ID']."' > </div>";
+			print_r($row['first_name']);
 			echo "</div>";
 		}
 
@@ -131,8 +131,8 @@
 		}
 		while ($row = mysql_fetch_assoc($result)) {
 			echo "<div class='head' id='head_".$row['student_id']."' > ";
-			echo "<div class='head_image' id='headimage_".$row['student_id']."' > </div>";
-			print_r($row['student_name']);
+			echo "<div class='head_image' id='headimage_".$row['ID']."' > </div>";
+			print_r($row['first_name']);
 			echo "</div>";
 		}
 	}
