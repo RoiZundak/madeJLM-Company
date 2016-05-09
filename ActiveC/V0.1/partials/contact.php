@@ -1,4 +1,12 @@
 <?php
+    if(isset($GLOBALS['mail_err']) && $GLOBALS['mail_err'] != '' ){
+        echo $GLOBALS['mail_err'];
+    }
+    if(isset($GLOBALS['mail_msg']) && $GLOBALS['mail_msg'] != '' ){
+        echo $GLOBALS['mail_msg'];
+    }
+    $GLOBALS['mail_msg']='';
+    $GLOBALS['mail_err']='';
     if(isset($_POST['submit'])) {
         $to      = 'Activec.madejlm@gmail.com';
         $subject = 'Contact mail from company';
@@ -21,13 +29,13 @@
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
         $sent_mail = mail($to, $subject, $message, $headers);
         if ( ! $sent_mail){
-            echo '<script type="text/javascript">';
-            echo 'alert("Eroor cound not send mail.");';
-            echo '</script>';
+            $GLOBALS['mail_err']='<script type="text/javascript">'.
+                'alert("Eroor cound not send mail.");'.
+                '</script>';
         }else{
-            echo '<script type="text/javascript">';
-            echo 'alert("mail was sent. thank you!");';
-            echo '</script>';
+            $GLOBALS['mail_msg']='<script type="text/javascript">'.
+                'alert("mail was sent. thank you!");'.
+                '</script>';
         }
         $_POST = array();
         header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
