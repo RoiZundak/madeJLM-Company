@@ -3,7 +3,7 @@
     <div id = "filter_main">
     Filter<br>
         <div class="filters" id="has_git">
-            Has Github!??!?!?!?!
+            Has Github
         </div>
         <div class="filters" id="has_linkedin">
             Has Linkedin
@@ -64,6 +64,7 @@
 		
         if(target.className =="head" || target.className =="head_image"){
             console.log("this is the id : "+target.id);
+            //noinspection JSUnresolvedFunction
             $("#show_std").hide();
             id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
             console.log("this is the id : "+id);
