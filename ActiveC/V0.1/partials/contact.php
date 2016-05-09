@@ -16,8 +16,6 @@
         $sent_mail = mail($to, $subject, $message, $headers);
         if ( ! $sent_mail){
             echo "<script> alert('lala');</script>";
-        }else{
-            header('Location:#/contact');
         }
     }
 ?>
