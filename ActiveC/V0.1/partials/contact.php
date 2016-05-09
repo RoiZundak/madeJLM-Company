@@ -1,7 +1,7 @@
 <?php
     echo "in php";
     if(isset($_POST['submit'])) {
-    echo "lalal";
+        echo "lalal";
         $to      = 'Activec.madejlm@gmail.com';
         $subject = 'Contact mail from company';
         $message = $_POST['contact_message'].
@@ -54,7 +54,7 @@
                     </div>
                     <div class="form-group col-lg-12">
                         <input type="hidden" name="save" value="contact">
-                        <button type="submit" class="btn btn-primary" >Submit</button>
+                        <button type="submit" name ="submit" class="btn btn-primary" >Submit</button>
                     </div>
                 </div>
             </form>
