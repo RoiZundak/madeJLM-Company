@@ -3,21 +3,27 @@
     <div id = "filter_main">
     Filter<br>
         <div class="filters" id="has_git">
-            Has Git
+            Has Github
         </div>
         <div class="filters"id="has_linkedin">
             Has Linkedin
         </div>
-        <div class="filters">
-            GenderA
-
+        <div class="filters"id="area">
+            Area
         </div>
+        <div class="filters"id="skills">
+            Skills
+         </div>
+         <div class="filters"id="nearby">
+            Nearby
+         </div>
+
         <div class="filters" id='clr_filter'>
             Clear All
         </div>
     </div>
     <div id = "show_std">
-two
+
     </div>
     <div id = "std_info">
 	<?php
