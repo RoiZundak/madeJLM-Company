@@ -124,7 +124,7 @@
 	}
 	//clear
 	if($func=="4"){
-		$sql="SELECT * FROM student  ";
+		$sql="SELECT * FROM student ";
 		$result = mysql_query ($sql);
 		if (!$result) {
 			print_r("Error ");
