@@ -3,10 +3,15 @@
         $to      = 'Activec.madejlm@gmail.com';
         $subject = 'Contact mail from company';
         if (!empty($_POST['contact_message'])    && !empty($_POST['contact_name'])   && !empty($_POST['contact_email']) ) {
+            $number="";
+            if(  !empty($_POST['contact_phone']) ){
+                $number.= /** @lang text */
+                    "<br>Phone Number:".$_POST['contact_phone'];
+            }
             $message = $_POST['contact_message'].
                 "<br><br>".
                 "<br>Name: ".$_POST['contact_name'].
-                "<br>Phone Number: ".$_POST['contact_phone'].
+                $number.
                 "<br>Email: ".$_POST['contact_email'];
         }else{
             echo "<script> alert('please fill out nesscery fields');</script>";
