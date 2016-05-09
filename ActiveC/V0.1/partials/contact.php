@@ -24,7 +24,10 @@
         if ( ! $sent_mail){
             echo "<script> alert('Eroor cound not send mail. ');</script>";
         }else{
-            echo '<script> alert(\'mail has been sent !\');</script>';
+            echo "<script> 
+                console.log(\"blaaaaaaaaaaaaaaaaa\");
+                
+                    </script>";
         }
         $_POST = array();
 
