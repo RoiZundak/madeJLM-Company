@@ -14,21 +14,17 @@
                 "<br>Name: ".$_POST['contact_name'].
                 $number.
                 "<br>Email: ".$_POST['contact_email'];
-        }else{
-            echo "<script> alert('please fill out nesscery fields');</script>";
         }
         $headers = 'From: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
             'Reply-To: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-        $errLevel = error_reporting(E_ALL ^ E_NOTICE);
         $sent_mail = mail($to, $subject, $message, $headers);
         if ( ! $sent_mail){
             echo "<script> alert('Eroor cound not send mail. ');</script>";
-            error_reporting($errLevel);
         }else{
-            echo "<script> alert('mail has been sent !');</script>";
+            echo '<script> alert(\'mail has been sent !\');</script>';
         }
         $_POST = array();
 
