@@ -24,10 +24,8 @@
         if ( ! $sent_mail){
             echo "<script> alert('Eroor cound not send mail. ');</script>";
         }else{
-            echo "<script> 
-                console.log(\"blaaaaaaaaaaaaaaaaa\");
-                
-                    </script>";
+            echo /** @lang html */
+            "<script>console.log(\"mail was sent. thank you! \");</script>";
         }
         $_POST = array();
 
