@@ -3,7 +3,7 @@
     <div id = "filter_main">
     Filter<br>
         <div class="filters" id="has_git">
-            Has Github
+            Has Github!??!?!?!?!
         </div>
         <div class="filters" id="has_linkedin">
             Has Linkedin
