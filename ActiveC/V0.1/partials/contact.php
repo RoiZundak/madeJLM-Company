@@ -20,7 +20,7 @@
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         $extra = 'contact.php';
-        header("Location: http://$host$uri/$extra");
+        header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
     }
 ?>
 <!-- Page Content -->
