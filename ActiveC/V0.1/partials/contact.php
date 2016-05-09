@@ -12,10 +12,10 @@
             'X-Mailer: PHP/' . phpversion();
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-        //$sent_mail = mail($to, $subject, $message, $headers);
+        /*$sent_mail = mail($to, $subject, $message, $headers);
         if ( ! $sent_mail){
             echo "<script> alert('lala');</script>";
-        }
+        }*/
         header("Location:/contact");
     }
 ?>
