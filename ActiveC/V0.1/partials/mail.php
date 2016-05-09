@@ -1,4 +1,4 @@
-<?php
+/*<?php
 if(isset($_POST)){
     $to      = 'Activec.madejlm@gmail.com';
     $subject = 'Contact mail from company';
@@ -18,4 +18,4 @@ if(isset($_POST)){
     }
 }
 
-?>
+?>*/
