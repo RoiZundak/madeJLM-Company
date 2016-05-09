@@ -2,11 +2,20 @@
     if(isset($_POST['submit'])) {
         $to      = 'Activec.madejlm@gmail.com';
         $subject = 'Contact mail from company';
-        $message = $_POST['contact_message'].
-            "<br><br>".
-            "<br>Name: ".$_POST['contact_name'].
-            "<br>Phone Number: ".$_POST['contact_phone'].
-            "<br>Email: ".$_POST['contact_email'];
+        if (!empty($_POST['contact_message'])    && !empty($_POST['contact_name'])   && !empty($_POST['contact_email']) ) {
+            $number="";
+            if(  !empty($_POST['contact_phone']) ){
+                $number.= /** @lang text */
+                    "<br>Phone Number:".$_POST['contact_phone'];
+            }
+            $message = $_POST['contact_message'].
+                "<br><br>".
+                "<br>Name: ".$_POST['contact_name'].
+                $number.
+                "<br>Email: ".$_POST['contact_email'];
+        }else{
+            echo "<script> alert('please fill out nesscery fields');</script>";
+        }
         $headers = 'From: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
             'Reply-To: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
@@ -37,11 +46,11 @@
                 <div class="row">
                     <div class="form-group col-lg-4">
                         <label for="input1">Name</label>
-                        <input type="text" name="contact_name" class="form-control" id="input1">
+                        <input type="text" name="contact_name" class="form-control" id="input1" required>
                     </div>
                     <div class="form-group col-lg-4">
                         <label for="input2">Email Address</label>
-                        <input type="email" name="contact_email" class="form-control" id="input2">
+                        <input type="email" name="contact_email" class="form-control" id="input2" required>
                     </div>
                     <div class="form-group col-lg-4">
                         <label for="input3">Phone Number</label>
@@ -50,7 +59,7 @@
                     <div class="clearfix"></div>
                     <div class="form-group col-lg-12">
                         <label for="input4">Message</label>
-                        <textarea name="contact_message" class="form-control" rows="6" id="input4"></textarea>
+                        <textarea name="contact_message" class="form-control" rows="6" id="input4" required></textarea>
                     </div>
                     <div class="form-group col-lg-12">
                         <input type="hidden" name="save" value="contact">
