@@ -96,11 +96,6 @@ Our style
     min-height: 100%;
     overflow: auto;
     text-align: center;
-    -moz-animation: showHide 5s ease-in alternate infinite; /* Firefox */
-    -webkit-animation: showHide 5s ease-in alternate infinite; /* Safari and Chrome */
-    -ms-animation: showHide 5s ease-in alternate infinite; /* IE10 */
-    -o-animation: showHide 5s ease-in alternate infinite; /* Opera */
-    animation: showHide 5s ease-in alternate infinite;
 }
 
 /*-------------------------------------------*/
