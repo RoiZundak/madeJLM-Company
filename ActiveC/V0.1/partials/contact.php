@@ -22,11 +22,15 @@
         $sent_mail = mail($to, $subject, $message, $headers);
         $_POST = array();
         if ( ! $sent_mail){
-            header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
-            echo "me";echo "me";echo "me";echo "me";echo "me";echo "me";echo "me";echo "me";echo "me";
+            //header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
+            echo("<script>alert('User Successfully Added');</script>");
+
+            echo("<script>window.location = 'main.php';</script>");
         }else{
             header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
-            echo"me2";echo"me2";echo"me2";echo"me2";echo"me2";echo"me2";echo"me2";echo"me2";echo"me2";
+            echo("<script>alert('User Successfully Added')</script>");
+
+            echo("<script>window.location = 'main.php';</script>");
         }
 
     }
