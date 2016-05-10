@@ -63,9 +63,16 @@ Our style
 	cursor:pointer;
 	text-align:center;
 	font-size:1.1em;
+    transition-property: background, border-radius;
+    transition-duration: 500ms;
+    transition-timing-function: linear;
 }
 .head:Hover{
-	background-color:cornsilk;
+
+    font-size:1.2em;
+
+
+
 }
 .head_image{
 	width:120px;
