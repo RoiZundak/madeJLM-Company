@@ -26,12 +26,6 @@
 
     </div>
     <div id = "std_info"  >
-          <script>
-             function myFunction() {
-                location.reload();
-             }
-
-          </script>
 	<?php
 		$link = mysql_connect("5.100.253.198", "jobmadeinjlm","q1w2e3r4");
 		if (!$link) {
