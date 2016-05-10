@@ -1,4 +1,5 @@
 <?php
+echo"lalal";
     if (isset($_GET['m'])) {
         $message = $_GET['m'];
         if ($message == "win") {
