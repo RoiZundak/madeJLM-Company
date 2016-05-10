@@ -65,7 +65,7 @@ Our style
 	font-size:1.1em;
 }
 .head:Hover{
-	background-color:#9CFFF1;
+	background-color:cornsilk;
 }
 .head_image{
 	width:120px;
@@ -86,7 +86,6 @@ Our style
 
 }
 #std_info {
-    background-color: black;
     border-left-style: outset;
     float: left;
     opacity: 0.7;
