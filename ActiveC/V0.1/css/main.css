@@ -76,7 +76,7 @@ Our style
 
 	
 }
-#show_std{
+.show_std{
     border-left-style: outset;
     float:right;
     min-width: 34%;
