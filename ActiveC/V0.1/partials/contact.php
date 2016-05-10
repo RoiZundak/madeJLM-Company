@@ -1,5 +1,4 @@
 <?php
-echo"lalal";
     if (isset($_GET['m'])) {
         $message = $_GET['m'];
         if ($message == "win") {
@@ -31,9 +30,11 @@ echo"lalal";
         $sent_mail = mail($to, $subject, $message, $headers);
         $_POST = array();
         if ( ! $sent_mail){
-            header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact?m=win");
-        }else{
             header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact?m=err");
+            echo "me";
+        }else{
+            header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact?m=win");
+            echo"me2";
         }
 
 
