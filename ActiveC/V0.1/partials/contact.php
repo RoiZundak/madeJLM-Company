@@ -1,10 +1,6 @@
 <?php
     if(isset($GLOBALS['mail_err']) && $GLOBALS['mail_err'] != '' ){
         echo $GLOBALS['mail_err'];
-        echo '<script type="text/javascript">'
-        , 'alert("in");'
-        , '</script>'
-        ;
     }
 
 
