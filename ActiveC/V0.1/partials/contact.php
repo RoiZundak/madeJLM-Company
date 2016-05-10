@@ -1,12 +1,4 @@
 <?php
-    if (isset($_GET['m'])) {
-        $message = $_GET['m'];
-        if ($message == "win") {
-            echo "Success";
-        } else {
-            echo "Error";
-        }
-    }
     if(isset($_POST['submit'])) {
         $to      = 'Activec.madejlm@gmail.com';
         $subject = 'Contact mail from company';
@@ -30,14 +22,12 @@
         $sent_mail = mail($to, $subject, $message, $headers);
         $_POST = array();
         if ( ! $sent_mail){
-            header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact?m=err");
-            echo "me";
+            header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
+            echo "me";echo "me";echo "me";echo "me";echo "me";echo "me";echo "me";echo "me";echo "me";
         }else{
-            header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact?m=win");
-            echo"me2";
+            header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
+            echo"me2";echo"me2";echo"me2";echo"me2";echo"me2";echo"me2";echo"me2";echo"me2";echo"me2";
         }
-
-
 
     }
 ?>
