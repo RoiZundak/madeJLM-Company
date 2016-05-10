@@ -33,6 +33,7 @@
                 'alert("Eroor cound not send mail.");'.
                 '</script>';
         }else{
+            echo'<script>alert("adsad,jsan");</script>';
             $GLOBALS['mail_msg']='<script type="text/javascript">'.
                 'alert("mail was sent. thank you!");'.
                 '</script>';
