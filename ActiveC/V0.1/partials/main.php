@@ -27,8 +27,9 @@
     </div>
     <div id = "std_info"  >
           <script>
+             function myFunction() {
                 location.reload();
-
+             }
 
           </script>
 	<?php
