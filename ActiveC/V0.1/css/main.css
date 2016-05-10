@@ -97,6 +97,17 @@ Our style
     overflow: auto;
 	text-align:center;
 }
+.fade {
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    background: -webkit-linear-gradient(left,
+    rgba(0,0,0,0.65) 0%,
+    rgba(0,0,0,0) 20%,
+    rgba(0,0,0,0) 80%,
+    rgba(0,0,0,0.65) 100%
+    );
+}
 /*
 Custom CSS for...
 'Modern Business' HTML Theme by Start Bootstrap
