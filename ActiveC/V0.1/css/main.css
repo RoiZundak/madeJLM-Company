@@ -85,7 +85,7 @@ Our style
     margin-left: 1%;
 
 }
-.std_info {
+#std_info {
     border-left-style: outset;
     float: left;
     opacity: 0.7;
@@ -104,36 +104,6 @@ Our style
 }
 
 /*-------------------------------------------*/
-@-webkit-keyframes showHide { /* Chrome, Safari */
-    0% {width:100%}
-    40% {width:0%}
-    60% {width:0%;}
-    100% {width:100%;}
-}
-@-moz-keyframes showHide { /* FF */
-    0% {width:100%}
-    40% {width:0%}
-    60% {width:0%;}
-    100% {width:100%;}
-}
-@-ms-keyframes showHide { /* IE10 */
-    0% {width:100%}
-    40% {width:0%}
-    60% {width:0%;}
-    100% {width:100%;}
-}
-@-o-keyframes showHide { /* Opera */
-    0% {width:100%}
-    40% {width:0%}
-    60% {width:0%;}
-    100% {width:100%;}
-}
-@keyframes showHide {
-    0% {width:100%}
-    40% {width:0%}
-    60% {width:0%;}
-    100% {width:100%;}
-}
 /*-------------------------------------------*/
 
 /*
