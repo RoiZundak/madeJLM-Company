@@ -63,11 +63,14 @@ Our style
 	cursor:pointer;
 	text-align:center;
 	font-size:1.1em;
+    transition-property: background, border-radius;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
 }
 .head:Hover{
 	background-color:black;
     color: white;
-    font-size:1.3em;
+    font-size:1.2em;
 
 
 
