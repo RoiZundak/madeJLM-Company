@@ -2,6 +2,8 @@
     if(isset($GLOBALS['mail_err']) && $GLOBALS['mail_err'] != '' ){
         echo $GLOBALS['mail_err'];
     }
+
+
     if(isset($GLOBALS['mail_msg']) && $GLOBALS['mail_msg'] != '' ){
         echo $GLOBALS['mail_msg'];
     }
