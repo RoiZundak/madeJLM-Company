@@ -76,7 +76,7 @@ Our style
 
 	
 }
-.show_std{
+#show_std{
     border-left-style: outset;
     float:right;
     min-width: 34%;
@@ -85,7 +85,7 @@ Our style
     margin-left: 1%;
 
 }
-#std_info {
+.std_info {
     border-left-style: outset;
     float: left;
     opacity: 0.7;
