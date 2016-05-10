@@ -1,4 +1,8 @@
 <?php
+    if(isset($_GET['success']))
+    {
+        echo "success";
+    }
     if(isset($_POST['submit'])) {
         $to      = 'Activec.madejlm@gmail.com';
         $subject = 'Contact mail from company';
@@ -27,8 +31,8 @@
             header("Refresh:0");
           //  echo("<script>window.location = 'contact.php';</script>");
         }else{
-            header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
-            echo("<script>alert('User Successfully Added')</script>");
+            header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact?success=1");
+            //echo("<script>alert('User Successfully Added')</script>");
 
            // echo("<script>window.location = 'contact.php';</script>");
         }
