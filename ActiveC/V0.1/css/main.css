@@ -65,7 +65,12 @@ Our style
 	font-size:1.1em;
 }
 .head:Hover{
-	background-color:cornsilk;
+	background-color:black;
+    color: white;
+    font-size:1.3em;
+
+
+
 }
 .head_image{
 	width:120px;
