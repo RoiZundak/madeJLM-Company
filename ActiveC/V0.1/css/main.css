@@ -86,6 +86,7 @@ Our style
 
 }
 #std_info {
+    background-color: black;
     border-left-style: outset;
     float: left;
     opacity: 0.7;
