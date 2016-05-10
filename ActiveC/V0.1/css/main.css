@@ -71,9 +71,8 @@ Our style
 }
 .head:Hover{
 	background-color:gainsboro;
-    color: white;
     font-size:1.1em;
-    border-radius: 2px;
+    border-radius: 4px;
 
 }
 .head_image{
