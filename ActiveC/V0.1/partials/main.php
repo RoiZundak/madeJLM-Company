@@ -3,23 +3,29 @@
     <div id = "filter_main">
     Filter<br>
         <div class="filters" id="has_git">
-            Has Git
+            Has Github
         </div>
-        <div class="filters"id="has_linkedin">
+        <div class="filters" id="has_linkedin">
             Has Linkedin
         </div>
-        <div class="filters">
-            GenderA
-
+        <div class="filters" id="area">
+            Area
         </div>
+        <div class="filters" id="skills">
+            Skills
+         </div>
+         <div class="filters" id="nearby">
+            Nearby
+         </div>
+
         <div class="filters" id='clr_filter'>
             Clear All
         </div>
     </div>
     <div id = "show_std">
-two
+
     </div>
-    <div id = "std_info">
+    <div id = "std_info"  >
 	<?php
 		$link = mysql_connect("5.100.253.198", "jobmadeinjlm","q1w2e3r4");
 		if (!$link) {
@@ -58,6 +64,7 @@ two
 		
         if(target.className =="head" || target.className =="head_image"){
             console.log("this is the id : "+target.id);
+            //noinspection JSUnresolvedFunction
             $("#show_std").hide();
             id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
             console.log("this is the id : "+id);
@@ -66,7 +73,7 @@ two
                     document.getElementById("show_std").innerHTML = xmlhttp.responseText;
                 }
             };
-            xmlhttp.open("GET","getuser.php?q="+id+"&func="+"1",true);
+            xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"1",true);
             xmlhttp.send();
 
             $("#show_std").show("slow", function() {
@@ -87,7 +94,7 @@ two
                         document.getElementById("std_info").innerHTML = xmlhttp.responseText;
                     }
                 };
-                xmlhttp.open("GET","getuser.php?q="+id+"&func="+"2",true);
+                xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"2",true);
                 xmlhttp.send();
             }
             if(target.id == "has_linkedin" ){
@@ -96,7 +103,7 @@ two
                         document.getElementById("std_info").innerHTML = xmlhttp.responseText;
                     }
                 };
-                xmlhttp.open("GET","getuser.php?q="+id+"&func="+"3",true);
+                xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"3",true);
                 xmlhttp.send();
             }
             if(target.id == "clr_filter" ){
@@ -105,7 +112,7 @@ two
                         document.getElementById("std_info").innerHTML = xmlhttp.responseText;
                     }
                 };
-                xmlhttp.open("GET","getuser.php?q="+id+"&func="+"4",true);
+                xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"4",true);
                 xmlhttp.send();
             }
 
