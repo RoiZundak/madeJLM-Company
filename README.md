@@ -6,7 +6,7 @@
 
 
 
-## Please visit our [live application](https://demo.reactstarterkit.com/)
+## Please visit our [live application](http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#//)
 
 [![Gitter](https://badges.gitter.im/RoiZundak/madeJLM-Company.svg)](https://gitter.im/RoiZundak/madeJLM-Company?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 <br />
