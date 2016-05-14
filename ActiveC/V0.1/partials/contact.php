@@ -42,7 +42,7 @@
 <!-- Page Content -->
 <div class="container">
 
-    <div class="row">
+    <div class="_row">
         <div class="col-sm-8">
             <h3>Let's Get In Touch!</h3>
 
