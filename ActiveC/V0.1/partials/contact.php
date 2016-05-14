@@ -34,7 +34,13 @@
           //  echo("<script>window.location = 'contact.php';</script>");
         }else{
             //header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
-            echo("<a id='re_route' href ='#/main'><script>alert('User Successfully Added'); $('re_route').click()</script></a>");
+            echo("<a id='re_route' href ='#/main'>
+    <script>
+        alert('Before main');
+        $('re_route').click()
+        alert('After main');
+    </script>
+</a>");
         }
 
     }
