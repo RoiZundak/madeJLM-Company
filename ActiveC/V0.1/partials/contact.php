@@ -22,18 +22,24 @@
         $sent_mail = mail($to, $subject, $message, $headers);
         $_POST = array();
         if ( ! $sent_mail){
-            //header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
-            echo("<a id='re_route' href ='#/main'></a><script>alert('User Successfully Added'); $('re_route').click()</script>");
-          //  echo("<script>window.location = 'contact.php';</script>");
+            echo("<a id='re_route' href ='../#/contact'>
+                    <script>
+                        document.getElementById(\"re_route\").click();
+                        alert('Mail was not sent, please try again.');
+                    </script>
+                </a>");
         }else{
-            //header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
-            echo("<a id='re_route' href ='#/main'></a><script>alert('User Successfully Added'); $('re_route').click()</script>");
+            echo("<a id='re_route' href ='../#/contact'>
+                    <script>
+                        document.getElementById(\"re_route\").click();
+                        alert('Mail was sent! thank you.');
+                    </script>
+                </a>");
         }
 
     }
 ?>
 <!-- Page Content -->
-
 <div class="container">
 
     <div class="row">
