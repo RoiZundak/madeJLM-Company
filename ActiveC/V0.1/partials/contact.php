@@ -22,14 +22,14 @@
         $sent_mail = mail($to, $subject, $message, $headers);
         $_POST = array();
         if ( ! $sent_mail){
-            echo("<a id='re_route' href ='../#/main'>
+            echo("<a id='re_route' href ='../#/contact'>
                     <script>
                         document.getElementById(\"re_route\").click();
                         alert('Mail was not sent, please try again.');
                     </script>
                 </a>");
         }else{
-            echo("<a id='re_route' href ='../#/main'>
+            echo("<a id='re_route' href ='../#/contact'>
                     <script>
                         document.getElementById(\"re_route\").click();
                         alert('Mail was sent! thank you.');
