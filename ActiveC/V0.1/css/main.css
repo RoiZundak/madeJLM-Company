@@ -27,9 +27,11 @@ Our style
 }
 h3{
     text-align: left;
+    color: blueviolet;
 }
 .row > *{
     float: left;
+    color: #d14836;
 }
 .filters{
     background-color:white;
