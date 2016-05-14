@@ -10,7 +10,10 @@ Our style
     width : 200px;
     height:200px;
 }
-
+.img-responsive{
+    width : 800px;
+    height:300px;
+}
 #main_wrap{
     height: 550px;
 }
