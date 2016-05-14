@@ -6,7 +6,7 @@
 
 
 
-## Please visit our [live application](https://demo.reactstarterkit.com/)
+## Please visit our [live application](http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#//)
 
 [![Gitter](https://badges.gitter.im/RoiZundak/madeJLM-Company.svg)](https://gitter.im/RoiZundak/madeJLM-Company?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 <br />
@@ -33,8 +33,8 @@ Please visit our wiki for furthur project info:
 
 ### Iteration Pages
 - [Iteration 0 - ZFR](../../wiki/ZFR)
-- [Iteration 1 - MVP]()
-- [Iteration 2 - Feature X]()
+- [Iteration 1 - MVP](../../wiki/MVP)
+- [Iteration 2 - ASM](../../wiki/ASM)
 - [Iteration 3 - Feature Y]()
 - [Iteration 4 - Feature Z]()
 

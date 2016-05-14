@@ -12,7 +12,6 @@
 
 	if($func=="1"){
 		$q = intval($_GET['q']);
-		/** @var string $sql */
 		$sql="SELECT * FROM student WHERE ID = '".$q."'";
 		$result = mysql_query ($sql);
 		if (!$result) {
@@ -76,10 +75,11 @@
 	}
 	//filter Git
 	if($func=="2"){
-		$sql="SELECT * FROM student WHERE github <>'' '";
+			$sql="SELECT * FROM student WHERE github<>'' ";
     		$result = mysql_query ($sql);
     		if (!$result) {
     			print_r("Error ");
+				echo 'failed. SQL Err: '. mysql_error();
     			exit();
     		}
     		$img_src = "./img/profilepic.png";
@@ -91,37 +91,58 @@
                     $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
                  }
                  echo "<div class='head' id='head_".$row['ID']."' > ";
-                 echo "<img class='head	_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+                 echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
                  print_r($row['first_name']);
                  echo "</div>";
 		    }
 			
 	}
-	
-	
-	
 	//filter has instatution
 	if($func=="3"){
-		$sql="SELECT * FROM student WHERE student_acInc = 'OXFORD'";
-		$result = mysql_query ($con,$sql);
+		$sql="SELECT * FROM student WHERE linkedin<>'' ";
+		$result = mysql_query ($sql);
 		if (!$result) {
-			printf("Error: %s\n", mysqli_error($con));
+			print_r("Error ");
+			echo 'failed. SQL Err: '. mysql_error();
 			exit();
 		}
-		while ($row = mysql_fetch_assoc($result)) {
-			echo "<div class='head' id='head_".$row['student_id']."' > ";
-			echo "<div class='head_image' id='headimage_".$row['student_id']."' > </div>";
-			print_r($row['student_name']);
+		$img_src = "./img/profilepic.png";
+		while($row = mysql_fetch_assoc($result)) {
+			echo "<script>console.log('CHECK')</script>";
+			$img_src ="";
+			if(  $row['profile']=="" ){
+				$img_src = "./img/profilepic.png";
+			}else{
+				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+			}
+			echo "<div class='head' id='head_".$row['ID']."' > ";
+			echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+			print_r($row['first_name']);
 			echo "</div>";
 		}
 
 	}
+	//clear
 	if($func=="4"){
-		$result = mysql_query( $con,'SELECT * FROM students');
-		while ($row = mysql_fetch_assoc($result)) {
-			echo "<div class='head' id='head_".$row['student_id']."' > ";
-			echo "<div class='head_image' id='headimage_".$row['student_id']."' > </div>";
-			print_r($row['student_name']);
+		$sql="SELECT * FROM student ";
+		$result = mysql_query ($sql);
+		if (!$result) {
+			print_r("Error ");
+			echo 'failed. SQL Err: '. mysql_error();
+			exit();
+		}
+		$img_src = "./img/profilepic.png";
+		while($row = mysql_fetch_assoc($result)) {
+			echo "<script>console.log('CHECK')</script>";
+			$img_src ="";
+			if(  $row['profile']=="" ){
+				$img_src = "./img/profilepic.png";
+			}else{
+				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+			}
+			echo "<div class='head' id='head_".$row['ID']."' > ";
+			echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+			print_r($row['first_name']);
 			echo "</div>";
 		}
 	}

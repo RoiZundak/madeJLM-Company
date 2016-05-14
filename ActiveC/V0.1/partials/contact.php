@@ -13,8 +13,6 @@
                 "<br>Name: ".$_POST['contact_name'].
                 $number.
                 "<br>Email: ".$_POST['contact_email'];
-        }else{
-            echo "<script> alert('please fill out nesscery fields');</script>";
         }
         $headers = 'From: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
             'Reply-To: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
@@ -22,11 +20,16 @@
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
         $sent_mail = mail($to, $subject, $message, $headers);
-        if ( ! $sent_mail){
-            echo "<script> alert('lala');</script>";
-        }
         $_POST = array();
-        header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
+        if ( ! $sent_mail){
+            //header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
+            echo("<script>alert('User Successfully Added');</script>");
+          //  echo("<script>window.location = 'contact.php';</script>");
+        }else{
+            //header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
+            echo("<script>alert('User Successfully Added')</script>");
+        }
+
     }
 ?>
 <!-- Page Content -->
@@ -34,7 +37,6 @@
 <div class="container">
 
     <div class="row">
-
         <div class="col-sm-8">
             <h3>Let's Get In Touch!</h3>
 

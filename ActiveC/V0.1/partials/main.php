@@ -25,7 +25,7 @@
     <div id = "show_std">
 
     </div>
-    <div id = "std_info">
+    <div id = "std_info"  >
 	<?php
 		$link = mysql_connect("5.100.253.198", "jobmadeinjlm","q1w2e3r4");
 		if (!$link) {
@@ -64,6 +64,7 @@
 		
         if(target.className =="head" || target.className =="head_image"){
             console.log("this is the id : "+target.id);
+            //noinspection JSUnresolvedFunction
             $("#show_std").hide();
             id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
             console.log("this is the id : "+id);
