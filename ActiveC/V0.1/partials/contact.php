@@ -23,11 +23,11 @@
         $_POST = array();
         if ( ! $sent_mail){
             //header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
-            echo("<a id='re_route' href ='#/contact'></a><script>alert('User Successfully Added'); $('re_route').click()</script>");
+            echo("<a id='re_route' href ='#/main'></a><script>alert('User Successfully Added'); $('re_route').click()</script>");
           //  echo("<script>window.location = 'contact.php';</script>");
         }else{
             //header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
-            echo("<a id='re_route' href ='#/contact'></a><script>alert('User Successfully Added'); $('re_route').click()</script>");
+            echo("<a id='re_route' href ='#/main'></a><script>alert('User Successfully Added'); $('re_route').click()</script>");
         }
 
     }
