@@ -24,9 +24,6 @@ Our style
 	width:200px;
     min-height: 60%;
 }
-h3{
-    float: right;
-}
 .row > *{
     float: right;
 }
