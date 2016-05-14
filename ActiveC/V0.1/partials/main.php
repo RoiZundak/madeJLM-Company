@@ -2,6 +2,9 @@
 <div id="main_wrap">
     <div id = "filter_main">
     Filter<br>
+        <div class="filters" id="all">
+            All Players
+        </div>
         <div class="filters" id="has_git">
             Has Github
         </div>
