@@ -28,6 +28,7 @@ h3{
     text-align: left;
     color: red;
 }
+
 .row > *{
     float: right;
     color: #d14836;
