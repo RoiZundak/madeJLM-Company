@@ -27,7 +27,7 @@
             echo("<a id='re_route' href ='#/main'>
     <script>
         alert('Before main');
-        $('re_route').click()
+        document.getElementById(\"re_route\").click();
         alert('After main');
     </script>
 </a>");
