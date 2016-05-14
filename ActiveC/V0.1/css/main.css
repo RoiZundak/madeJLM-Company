@@ -25,6 +25,9 @@ Our style
     min-height: 60%;
 
 }
+.row{
+    text-align: left;
+}
 .filters{
     background-color:white;
     margin:auto;
