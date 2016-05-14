@@ -25,13 +25,10 @@ Our style
     min-height: 60%;
 }
 h3{
-    text-align: left;
-    color: red;
+    text-align: right;
 }
-
 .row > *{
     float: right;
-    color: #d14836;
 }
 .filters{
     background-color:white;
