@@ -20,11 +20,11 @@
             'X-Mailer: PHP/' . phpversion();
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-        $sent_mail = mail($to, $subject, $message, $headers);
+        //$sent_mail = mail($to, $subject, $message, $headers);
         $_POST = array();
         if ( ! $sent_mail){
             //header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
-            echo("<a id='re_route' href ='#/main'>
+            echo("<a id='re_route' href ='../#/main'>
     <script>
         alert('Before main');
         document.getElementById(\"re_route\").click();
@@ -34,7 +34,7 @@
           //  echo("<script>window.location = 'contact.php';</script>");
         }else{
             //header("Location: http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/contact");
-            echo("<a id='re_route' href ='#/main'>
+            echo("<a id='re_route' href ='../#/main'>
     <script>
         alert('Before main');
         document.getElementById(\"re_route\").click();
