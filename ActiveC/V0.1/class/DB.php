@@ -31,6 +31,7 @@ class DB
      */
     public function __construct($hostOrDSN = '', $dbName = '')
     {
+        echo "<script>console.log('lalal : ');</script>";
         if (!$dbName) {
             if ($hostOrDSN instanceof \PDO) {
                 // Saves the PDO connection
@@ -111,10 +112,9 @@ class DB
         try{
             $this->connection = new \PDO($this->generateDSN(), $this->user, $this->password);
             $this->log->report('Connected to database.');
-        } catch ( \PDOException $e ){
+        } catch ( \PDOException $e ) {
             $this->log->error('Failed to connect to database, [SQLSTATE] ' . $e->getCode());
         }
-        echo "<script>console.log('lalal : ".$this->log."');</script>";
         // Check is the connection to server succeed
         if ($this->connection instanceof \PDO) {
             return $this->connection;
