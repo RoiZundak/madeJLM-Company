@@ -1,62 +1,32 @@
-<?php session_start();?>
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-<div id ="login_container">
-    <div id="login_form">
-        <br>
-        <h3>Login</h3>
-		<?php
-			if (isset ($_SESSION["what_is_wrong"]) ) {
-				echo("incorrect ".$_SESSION["what_is_wrong"]);
-			}
-		?>
-        <form method="POST" class="login"  >
-            <p>
-                <label for="login">Email: </label>
-                <input type="text" name="user_name" id="login" value="Example@example.com" onfocus="if($(this).val()=='Example@example.com')$(this).val('')" onblur="if($(this).val()=='')$(this).val('Example@example.com')">
-            </p>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <div id ="login_container">
 
-            <p>
-                <label for="password">Password: </label>
-                <input type="password" name="user_password" id="password" value="688822292" onfocus="if($(this).val()=='688822292')$(this).val('')" onblur="if($(this).val()=='')$(this).val('688822292')">
-            </p>
+        <div id="login_form">
+            <br>
+            <h3>Login</h3>
+            <form class="login"  ng-submit="login()">
+                <p>
+                    <label for="login">Email: </label>
+                    <input type="text" name="user_name" id="login" ng-model="data.login.Email"   value="Example@example.com" onfocus="if($(this).val()=='Example@example.com')$(this).val('')" onblur="if($(this).val()=='')$(this).val('Example@example.com')">
+                </p>
 
-            <p class="login-submit">
-                <button type="submit" class="login-button">Login</button>
-            </p>
+                <p>
+                    <label for="password">Password: </label>
+                    <input type="password" name="user_password" id="password" ng-model="data.login.Password" value="688822292" onfocus="if($(this).val()=='688822292')$(this).val('')" onblur="if($(this).val()=='')$(this).val('688822292')">
+                </p>
 
-            <p class="forgot-password"><a href="#/forgot">Forgot your password?</a></p>
-        </form>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="data.login.auto"> Remember me
+                    </label>
+                </div>
+
+                <p class="login-submit">
+                    <button type="submit" class="login-button">Login</button>
+                </p>
+
+                <p class="forgot-password"><a href="#/forgot">Forgot your password?</a></p>
+            </form>
+        </div>
+
     </div>
-
-</div>
-
-<?php
-    // define variables and set to empty values
-    $name = $email = "";
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      $name = test_input($_POST["user_name"]);
-      $pass = test_input($_POST["user_password"]);
-      if($name=="jobmadeinjlm" && $pass=="q1w2e3r4"){
-          unset($_SESSION["what_is_wrong"]);
-          $_SESSION["user_name"]= $name;
-          $_SESSION["user_pass"]= $pass;
-          header( 'Location: http://localhost/madeinJLM/#/main' );
-      }else{
-          if($name=="jobmadeinjlm"){
-              $_SESSION["what_is_wrong"]= "Password";
-          }else{
-              $_SESSION["what_is_wrong"]= "User Name";
-          }
-          header( 'Location: http://localhost/madeinJLM/#/login' );
-      }
-  
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
