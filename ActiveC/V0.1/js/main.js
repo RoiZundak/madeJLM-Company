@@ -79,6 +79,7 @@ CHANGE THIS !
 app.controller('UserNotConnected', function ($scope, $http, $routeParams, $location, student, $rootScope) {
   "use strict";
   Company.init().success(function (data) {
+    console.log("init company");
     $rootScope.studentData = data;
     if ($rootScope.studentData !== false) {
       $location.path("/profile");
