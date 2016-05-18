@@ -4,7 +4,7 @@
         <div id="login_form">
             <br>
             <h3>Login</h3>
-            <form class="login"  ng-submit="login()">
+            <form class="login"  ng-submit="login()" ng-controller="UserNotConnected">
                 <p>
                     <label for="login">Email: </label>
                     <input type="text" name="user_name" id="login" ng-model="data.login.Email"   value="Example@example.com" onfocus="if($(this).val()=='Example@example.com')$(this).val('')" onblur="if($(this).val()=='')$(this).val('Example@example.com')">
