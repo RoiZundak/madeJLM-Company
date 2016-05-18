@@ -114,6 +114,7 @@ class DB
         } catch ( \PDOException $e ){
             $this->log->error('Failed to connect to database, [SQLSTATE] ' . $e->getCode());
         }
+        echo "<script>console.log('lalal : ".$this->log."');</script>";
         // Check is the connection to server succeed
         if ($this->connection instanceof \PDO) {
             return $this->connection;
