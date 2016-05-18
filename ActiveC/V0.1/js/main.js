@@ -79,7 +79,6 @@ CHANGE THIS !
 app.controller('UserNotConnected', function ($scope, $http, $routeParams, $location, student, $rootScope) {
   "use strict";
   Company.init().success(function (data) {
-    console.log('init company');
     $rootScope.studentData = data;
     if ($rootScope.studentData !== false) {
       $location.path("/profile");
@@ -97,7 +96,6 @@ app.controller('UserNotConnected', function ($scope, $http, $routeParams, $locat
   };
 
   $scope.login = function () {
-    console.log('login company');
     Company.login($scope.data.login).success(function (data) {
       console.log('login2 company');
       if (data.status === 'error') {
