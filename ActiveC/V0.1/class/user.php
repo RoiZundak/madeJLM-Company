@@ -7,7 +7,7 @@
  * @package ptejada\uFlex
  * @author  Pablo Tejada <pablo@ptejada.com>
  */
-class User extends UserBase
+class user extends userBase
 {
     /**
      * Class Version
