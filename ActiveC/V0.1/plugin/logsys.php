@@ -234,10 +234,9 @@ class LS {
      * $direct is for knowing whether the function is called by self::construct()
      */
     public static function config($config = null, $direct = true){
-        if($config != null){
+        if($config != null) {
             self::$config = $config;
         }
-        self::log("blabla");
         self::$config = array_replace_recursive(self::$default_config, self::$config);
         if($direct == true){
             self::construct();
@@ -367,6 +366,7 @@ class LS {
      * A function that will automatically redirect user according to his/her login status
      */
     public static function init() {
+        self::log("blabla");
         self::construct();
         if(self::$loggedIn === true && array_search(self::curPage(), self::$config['pages']['no_login']) !== false){
             self::redirect(self::$config['pages']['home_page']);
