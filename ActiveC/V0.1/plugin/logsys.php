@@ -52,12 +52,12 @@ class LS {
          * Database Configuration
          */
         "db" => array(
-            "host" => "",
+            "host" => "localhost",
             "port" => 3306,
-            "username" => "",
-            "password" => "",
-            "name" => "",
-            "table" => "users",
+            "username" => "jobmadeinjlm",
+            "password" => "q1w2e3r4",
+            "name" => "jobmadei_db",
+            "table" => "Company",
             "token_table" => "resetTokens"
         ),
 
@@ -95,7 +95,7 @@ class LS {
             /**
              * Should \Fr\LS::init() be called automatically
              */
-            "auto_init" => false,
+            "auto_init" => true,
 
             /**
              * Prevent Brute Forcing
@@ -143,17 +143,17 @@ class LS {
              * Use Relative links or $_SERVER['REQUEST_URI']
              */
             "no_login" => array(
-
+                "#/about"
             ),
             /**
              * The login page. ex : /login.php or /accounts/login.php
              */
-            "login_page" => "",
+            "login_page" => "../partials/login.php",
             /**
              * The home page. The main page for logged in users.
              * logSys redirects to here after user logs in
              */
-            "home_page" => "",
+            "home_page" => "../partials/main.php",
         ),
 
         /**
