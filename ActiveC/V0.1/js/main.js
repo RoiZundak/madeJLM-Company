@@ -9,31 +9,27 @@
 var app = angular.module('tutorialWebApp', [
   'ngRoute'
 ]);
-
-var meng = angular.module('UserMang',[]);
-
-
 /**
  * Configure the Routes
  */
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
-    // Home
-    .when("/", {templateUrl: "partials/login.php", controller: "PageCtrl"})
-    // Pages
+      // Home
+      .when("/", {templateUrl: "partials/login.php", controller: "UserNotConnected"})
+      // Pages
       .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
-      .when("/login", {templateUrl: "partials/login.php", controller: "PageCtrl"})
+      .when("/login", {templateUrl: "partials/login.php", controller: "UserNotConnected"})
       .when("/faq", {templateUrl: "partials/faq.html", controller: "PageCtrl"})
       .when("/main", {templateUrl: "partials/main.php", controller: "PageCtrl"})
       .when("/forgot", {templateUrl: "partials/forgot.html", controller: "PageCtrl"})
-	.when("/services", {templateUrl: "partials/services.html", controller: "PageCtrl"})
-    .when("/contact", {templateUrl: "partials/contact.php", controller: "PageCtrl"})
-	.when("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"})
-    // Blog
-    .when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
-    .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
-    // else 404
-    .otherwise({redirectTo: "404"});
+	  .when("/services", {templateUrl: "partials/services.html", controller: "PageCtrl"})
+      .when("/contact", {templateUrl: "partials/contact.php", controller: "PageCtrl"})
+	  .when("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"})
+      // Blog
+      .when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
+      .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
+      // else 404
+      .otherwise({redirectTo: "404"});
 }]);
 
 /**
@@ -79,7 +75,7 @@ CHANGE THIS !
 
 
  */
-meng.controller('UserNotConnected', function ($scope, $http, $routeParams, $location, student, $rootScope) {
+app.controller('UserNotConnected', function ($scope, $http, $routeParams, $location, student, $rootScope) {
   "use strict";
   Company.init().success(function (data) {
     $rootScope.studentData = data;
@@ -137,7 +133,7 @@ meng.controller('UserNotConnected', function ($scope, $http, $routeParams, $loca
   console.log(student);
 });
 
-meng.controller('UserConnected', function ($scope, $http, $routeParams, $location, student, $rootScope) {
+app.controller('UserConnected', function ($scope, $http, $routeParams, $location, student, $rootScope) {
   "use strict";
   console.log('company connected controller');
   Company.init().success(function (data) {
@@ -163,28 +159,6 @@ meng.controller('UserConnected', function ($scope, $http, $routeParams, $locatio
         $scope.alerts.changePassword = {type: 'success', msg: 'Your password was change successfully'};
       }
     });
-    /*
-     if($scope.data.changePassword.password !== $scope.data.changePassword.password2){
-     $scope.alerts.changePassword = {type: 'danger', msg: 'Passwords does not match'};
-     } else {
-     console.log($scope.data.changePassword);
-     student.changePassword($scope.data.changePassword.oldPassword, $scope.data.changePassword.password, $scope.data.changePassword.password2).success(function (data) {
-     console.log(data);
-     if (data.status === 'error') {
-     $scope.alerts.changePassword = {type: 'danger', msg: data.errors.join('<br>')};
-     } else {
-     $scope.alerts.changePassword = {type: 'success', msg: 'Your password was change successfully'};
-     }
-     */
   };
 
 });
-
-/*
-
-
-ALSO THIS !
-
-
- */
-
