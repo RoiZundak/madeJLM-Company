@@ -199,9 +199,10 @@ app.factory('Company', ['$http', '$httpParamSerializerJQLike', function ($http, 
       }).error(function () {return false; });
     },
     login: function (data) {
+      console.log('login in factory');
       return $http({
         method  : 'POST',
-        url     : 'class/Company/Login',
+        url     : '/main',
         data    : $httpParamSerializerJQLike(data),
         headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
       }).success(function (data) {
