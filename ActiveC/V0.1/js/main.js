@@ -10,6 +10,9 @@ var app = angular.module('tutorialWebApp', [
   'ngRoute'
 ]);
 
+var meng = angular.module('UserMang',[]);
+
+
 /**
  * Configure the Routes
  */
@@ -76,7 +79,7 @@ CHANGE THIS !
 
 
  */
-app.controller('UserNotConnected', function ($scope, $http, $routeParams, $location, student, $rootScope) {
+meng.controller('UserNotConnected', function ($scope, $http, $routeParams, $location, student, $rootScope) {
   "use strict";
   Company.init().success(function (data) {
     $rootScope.studentData = data;
@@ -96,6 +99,7 @@ app.controller('UserNotConnected', function ($scope, $http, $routeParams, $locat
   };
 
   $scope.login = function () {
+    console.log('login company');
     Company.login($scope.data.login).success(function (data) {
       console.log('login2 company');
       if (data.status === 'error') {
@@ -133,7 +137,7 @@ app.controller('UserNotConnected', function ($scope, $http, $routeParams, $locat
   console.log(student);
 });
 
-app.controller('UserConnected', function ($scope, $http, $routeParams, $location, student, $rootScope) {
+meng.controller('UserConnected', function ($scope, $http, $routeParams, $location, student, $rootScope) {
   "use strict";
   console.log('company connected controller');
   Company.init().success(function (data) {
