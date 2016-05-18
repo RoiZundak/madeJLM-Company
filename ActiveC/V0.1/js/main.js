@@ -79,7 +79,7 @@ CHANGE THIS !
 app.controller('UserNotConnected', function ($scope, $http, $routeParams, $location, student, $rootScope) {
   "use strict";
   Company.init().success(function (data) {
-    console.log("init company");
+    console.log('init company');
     $rootScope.studentData = data;
     if ($rootScope.studentData !== false) {
       $location.path("/profile");
@@ -97,7 +97,9 @@ app.controller('UserNotConnected', function ($scope, $http, $routeParams, $locat
   };
 
   $scope.login = function () {
+    console.log('login company');
     Company.login($scope.data.login).success(function (data) {
+      console.log('login2 company');
       if (data.status === 'error') {
         $scope.alerts.login = {type: 'danger', msg: data.errors.join('<br>')};
       } else {
@@ -135,7 +137,7 @@ app.controller('UserNotConnected', function ($scope, $http, $routeParams, $locat
 
 app.controller('UserConnected', function ($scope, $http, $routeParams, $location, student, $rootScope) {
   "use strict";
-
+  console.log('company connected controller');
   Company.init().success(function (data) {
     $rootScope.studentData = data;
     if ($rootScope.studentData === false) {
