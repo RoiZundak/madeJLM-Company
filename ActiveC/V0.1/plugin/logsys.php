@@ -237,6 +237,7 @@ class LS {
         if($config != null){
             self::$config = $config;
         }
+        self::log("blabla");
         self::$config = array_replace_recursive(self::$default_config, self::$config);
         if($direct == true){
             self::construct();
