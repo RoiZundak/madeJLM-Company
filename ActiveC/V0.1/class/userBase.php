@@ -64,7 +64,7 @@ abstract class userBase
     public function __construct(array $userData = array())
     {
         // Instantiate the logger
-        $this->log = new Log('User');
+        $this->log = new Log('Company');
 
         // Instantiate the hash generator
         $this->hash = new Hash();
