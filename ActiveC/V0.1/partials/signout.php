@@ -6,8 +6,6 @@
  */
 session_start();
 session_destroy();
-$location.path=='/login';
-exit;
 
-?>
+exit;?>
 
