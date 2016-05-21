@@ -1,5 +1,5 @@
 <?php session_start();
-if(isset($_SESSION['username'])==false){
+if(empty($_SESSION['username'])){
     header("location: ../#/login");
     exit;
 }
