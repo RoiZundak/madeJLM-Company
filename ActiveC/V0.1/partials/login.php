@@ -4,7 +4,7 @@
     /* require "../plugin/logsys.php";
    \Fr\LS::init(); */
     echo"ldld";
-    /*require "../plugin/config.php";
+    require "../plugin/config.php";
     if(isset($_POST['action_login'])){
         echo"lala";
         $identification = $_POST['user_name'];
@@ -19,8 +19,8 @@
                 $msg = array("Error", "Too many login attempts. You can attempt login after " . $login['minutes'] . " minutes (" . $login['seconds'] . " seconds)");
             }
         }
-    }*/
-?>
+    }?>
+
     <div id ="login_container">
 
         <div id="login_form">
