@@ -22,7 +22,8 @@
     }else{
         echo"grrr";
     }
-    echo "<br>out";?>
+    echo "<br>out";
+    ?>
 
     <div id ="login_container">
 
@@ -33,7 +34,8 @@
             echo"david the king";
                 if(isset($msg)){
                    echo "<script>console.log({$msg[0]} {$msg[1]})</script>";
-                }?>
+                }
+            ?>
             <form class="login"  action="login.php" method="POST">
                 <p>
                     <label for="login">Email: </label>
