@@ -1,4 +1,4 @@
 <?php
-echo("First name: " . $_POST['username'] . "<br />\n");
-echo("Last name: " . $_POST['password'] . "<br />\n");
+echo("User Name: " . $_POST['user_name'] . "<br />\n");
+echo("Password: " . $_POST['user_password'] . "<br />\n");
 ?>
