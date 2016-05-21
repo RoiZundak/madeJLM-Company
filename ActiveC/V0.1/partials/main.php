@@ -6,9 +6,11 @@ if($_SESSION['username']!==""){
 </script>";
 }
 else{
-    echo "<script>
-    console.log('noUSERname');
-</script>";
+    echo "
+            <script>
+                console.log('noUSERname');
+            </script>
+            ";
 }
 ?>
 <div id="main_wrap">
