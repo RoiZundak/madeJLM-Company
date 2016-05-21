@@ -3,8 +3,10 @@
     <?php
    /* require "../plugin/logsys.php";
    \Fr\LS::init(); */
+    echo"ldld";
     require "../plugin/config.php";
     if(isset($_POST['action_login'])){
+        echo"lala";
         $identification = $_POST['user_name'];
         $password = $_POST['user_password'];
         if($identification == "" || $password == ""){
