@@ -19,7 +19,8 @@
                 $msg = array("Error", "Too many login attempts. You can attempt login after " . $login['minutes'] . " minutes (" . $login['seconds'] . " seconds)");
             }
         }
-    }?>
+    }
+?>
 
     <div id ="login_container">
 
