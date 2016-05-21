@@ -27,7 +27,7 @@
             <h3>Login</h3>
             <?php
                 if(isset($msg)){
-                    echo "<script>console.log({$msg[0]} {$msg[1]})</script>";
+                   /* echo "<script>console.log({$msg[0]} {$msg[1]})</script>";*/
                 }
             ?>
             <form class="login"  action="login.php" method="POST">
