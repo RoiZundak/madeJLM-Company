@@ -26,7 +26,6 @@
             <br>
             <h3>Login</h3>
             <?php
-            echo"david the king";
                 if(isset($msg)){
                    echo "<script>console.log({$msg[0]} {$msg[1]})</script>";
                 }
