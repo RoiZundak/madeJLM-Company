@@ -1,7 +1,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-<?php echo"ldld";?>
-//start html code
- 
+<?php 
+require "../plugin/config.php";
+if(isset($_POST['action_login'])){
+    echo"lala";
+    $identification = $_POST['user_name'];
+    $password = $_POST['user_password'];
+    if($identification == "" || $password == ""){
+        $msg = array("Error", "Username / Password Wrong !");
+    }else{
+        $login = \Fr\LS::login($identification, $password, isset($_POST['remember_me']));
+        if($login === false){
+            $msg = array("Error", "Username / Password Wrong !");
+        }else if(is_array($login) && $login['status'] == "blocked") {
+            $msg = array("Error", "Too many login attempts. You can attempt login after " . $login['minutes'] . " minutes (" . $login['seconds'] . " seconds)");
+        }
+    }
+}
+?>
 
     <div id ="login_container">
 
