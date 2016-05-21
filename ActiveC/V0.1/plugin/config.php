@@ -21,7 +21,8 @@ require __DIR__ . "/logsys.php";
     ),
     "pages" => array(
         "no_login" => array(
-            "#/about"
+            "#/about",
+            "http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login"
         ),
         "login_page" => "#/login",
         "home_page" => "#/main"
