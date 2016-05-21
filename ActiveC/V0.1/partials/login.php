@@ -32,7 +32,7 @@ if(!empty($_POST['username'])){
         $results = $records->fetch(PDO::FETCH_ASSOC);
         if(count($results) > 0 && password_verify($password, $results['password'])){
             $_SESSION['username'] = $results['username'];
-            header('location: main.php');
+            header('location: ../#/main');
             exit;
         }else{
             $errMsg .= 'Username and Password are not found<br>';
