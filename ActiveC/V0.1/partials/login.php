@@ -30,7 +30,8 @@ if(!empty($_POST['username'])){
         $records->bindParam(':username', $username);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
-        if(count($results) > 0 && password_verify($password, $results['password'])){
+        //if(count($results) > 0 && password_verify($password, $results['password'])){
+        if(count($results) > 0 && $password=== $results['password'] ){
             $_SESSION['username'] = $results['username'];
             header('location: main.php');
             exit;
