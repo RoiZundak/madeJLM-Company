@@ -15,6 +15,7 @@ if(isset($_POST['action_login'])){
     }
 }
 ?>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 <div class="content">
     <h2>Log In</h2>
     <?php
