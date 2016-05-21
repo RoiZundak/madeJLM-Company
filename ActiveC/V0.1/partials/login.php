@@ -29,13 +29,13 @@ if(isset($_POST['submit'])){
 
 
     if($errMsg == ''){
-        $records = $databaseConnection->prepare('SELECT id,username,password FROM  tbl_users WHERE username = :username');
+        $records = $databaseConnection->prepare('SELECT id,username,password FROM  company WHERE username = :username');
         $records->bindParam(':username', $username);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
         if(count($results) > 0 && password_verify($password, $results['password'])){
             $_SESSION['username'] = $results['username'];
-            header('location:dashboard.php');
+            header('location: main.php');
             exit;
         }else{
             $errMsg .= 'Username and Password are not found<br>';
@@ -45,10 +45,6 @@ if(isset($_POST['submit'])){
 
 ?>
 
-
-<html>
-<head><title>Login Page PHP Script</title></head>
-<body>
 <div align="center">
     <div style="width:300px; border: solid 1px #006D9C; " align="left">
         <?php
@@ -66,6 +62,4 @@ if(isset($_POST['submit'])){
         </div>
     </div>
 </div>
-</body>
-</html>
 
