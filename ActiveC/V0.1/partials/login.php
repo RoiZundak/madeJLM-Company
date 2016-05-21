@@ -1,9 +1,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 <?php 
 require "../plugin/config.php";
+\Fr\LS::log("ldld");
 if(isset($_POST['action_login'])){
     echo"lala";
-    \Fr\LS::log("llala");
     $identification = $_POST['user_name'];
     $password = $_POST['user_password'];
     if($identification == "" || $password == ""){
