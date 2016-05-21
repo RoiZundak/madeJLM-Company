@@ -15,7 +15,6 @@ try {
 }
 
 if(!empty($_POST['submit'])){
-    echo"db";
     $errMsg = '';
     //username and password sent from Form
     $username = trim($_POST['username']);
