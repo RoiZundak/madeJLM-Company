@@ -6,7 +6,7 @@
  */
 session_start();
 session_destroy();
-header('location: ../#/about');
+$location.path('/login');
 exit;
 
 ?>
