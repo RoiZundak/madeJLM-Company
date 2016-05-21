@@ -5,7 +5,7 @@
    \Fr\LS::init(); */
     echo"ldld";
     require "../plugin/config.php";
-    if(isset($_POST['action_login'])){
+    /*if(isset($_POST['action_login'])){
         echo"lala";
         $identification = $_POST['user_name'];
         $password = $_POST['user_password'];
@@ -22,7 +22,7 @@
     }else{
         echo"grrr";
     }
-    echo "<br>out";
+    echo "<br>out";*/
     ?>
 
     <div id ="login_container">
