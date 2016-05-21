@@ -148,7 +148,7 @@ class LS {
             /**
              * The login page. ex : /login.php or /accounts/login.php
              */
-            "login_page" => "#/login",
+            "login_page" => "/login",
             /**
              * The home page. The main page for logged in users.
              * logSys redirects to here after user logs in
