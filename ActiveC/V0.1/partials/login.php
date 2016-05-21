@@ -37,7 +37,7 @@ if(!empty($_POST['username'])){
             exit;
         }else{
             $errMsg .= 'Username and Password are not found<br>';
-            header('location: ../#/login');
+            header('location: ../#/about');
             exit;
         }
     }
