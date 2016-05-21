@@ -1,8 +1,8 @@
 <?php
 session_start();
 if(!isset($_SESSION['username'])){
-    header("location: ../#/about");
-    exit;
+    header('location: ../#/login');
+    die();
 }
 
 ?>
