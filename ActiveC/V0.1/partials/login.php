@@ -3,9 +3,9 @@ session_start();
 
 //DB configuration Constants
 define('_HOST_NAME_', 'localhost');
-define('_USER_NAME_', 'XXXXXX');
-define('_DB_PASSWORD', 'XXXXXX');
-define('_DATABASE_NAME_', 'XXXXXXX');
+define('_USER_NAME_', 'jobmadeinjlm');
+define('_DB_PASSWORD', 'q1w2e3r4');
+define('_DATABASE_NAME_', 'jobmadei_db');
 
 //PDO Database Connection
 try {
