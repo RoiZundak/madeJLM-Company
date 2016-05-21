@@ -27,7 +27,7 @@ if(isset($_POST['action_login'])){
                    echo "<script>console.log({$msg[0]} {$msg[1]})</script>";
                 }
             ?>
-            <form class="login"  action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+            <form class="login"  action="login.php" method="POST">
                 <p>
                     <label for="login">Email: </label>
                     <input type="text" name="user_name" id="login"   value="Example@example.com" onfocus="if($(this).val()=='Example@example.com')$(this).val('')" onblur="if($(this).val()=='')$(this).val('Example@example.com')">
