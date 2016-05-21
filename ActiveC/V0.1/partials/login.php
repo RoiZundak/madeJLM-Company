@@ -3,6 +3,7 @@
 require "../plugin/config.php";
 if(isset($_POST['action_login'])){
     echo"lala";
+    \Fr\LS::log("llala");
     $identification = $_POST['user_name'];
     $password = $_POST['user_password'];
     if($identification == "" || $password == ""){
