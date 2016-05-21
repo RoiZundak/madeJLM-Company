@@ -1,8 +1,10 @@
 <?php session_start();
+echo"trying";
 if(empty($_SESSION['username'])){
     echo "Not signed in !";
     exit;
 }
+echo "Failed";
 ?>
 <div id="main_wrap">
     <div id = "filter_main">
