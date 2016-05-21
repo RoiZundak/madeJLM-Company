@@ -22,7 +22,7 @@ require __DIR__ . "/logsys.php";
     "pages" => array(
         "no_login" => array(
             "#/about",
-            "http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login",
+            "http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/",
             "#/login"
         ),
         "login_page" => "#/login",
