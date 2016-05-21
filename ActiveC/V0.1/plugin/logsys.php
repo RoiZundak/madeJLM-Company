@@ -83,7 +83,7 @@ class LS {
             /**
              * Should I Call session_start();
              */
-            "start_session" => true,
+            "start_session" => false,
             /**
              * Enable/Disable Login using Username & E-Mail
              */
