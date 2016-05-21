@@ -1,7 +1,8 @@
 <?php
-require "../plugin/config.php";
-\Fr\LS::log("");
-if(isset($_POST['action_login'])){
+    require "../plugin/config.php";
+    /*\Fr\LS::log("ldld");*/
+    if(isset($_POST['action_login'])){
+    echo"lala";
     $identification = $_POST['user_name'];
     $password = $_POST['user_password'];
     if($identification == "" || $password == ""){
@@ -15,6 +16,7 @@ if(isset($_POST['action_login'])){
         }
     }
 }
+echo "BLABLA";
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <div id ="login_container">
