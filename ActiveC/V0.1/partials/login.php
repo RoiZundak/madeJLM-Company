@@ -1,6 +1,9 @@
 <?php
 session_start();
-echo $func;
+if(!empty($_SESSION['username'])){
+    header("location: ../#/main");
+    exit;
+}
 //DB configuration Constants
 define('_HOST_NAME_', 'localhost');
 define('_USER_NAME_', 'jobmadeinjlm');
