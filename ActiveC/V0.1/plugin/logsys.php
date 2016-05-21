@@ -370,8 +370,10 @@ class LS {
     public static function init() {
         self::construct();
         if(self::$loggedIn === true && array_search(self::curPage(), self::$config['pages']['no_login']) !== false){
+            self::log("first in");
             self::redirect(self::$config['pages']['home_page']);
         }elseif(self::$loggedIn === false && array_search(self::curPage(), self::$config['pages']['no_login']) === false){
+            self::log("last out");
             self::redirect(self::$config['pages']['login_page']);
         }
         self::$init_called = true;
