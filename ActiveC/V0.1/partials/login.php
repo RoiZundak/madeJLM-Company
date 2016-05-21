@@ -1,11 +1,12 @@
 <?php
 session_start();
+echo "ok";
 //DB configuration Constants
 define('_HOST_NAME_', 'localhost');
 define('_USER_NAME_', 'jobmadeinjlm');
 define('_DB_PASSWORD', 'q1w2e3r4');
 define('_DATABASE_NAME_', 'jobmadei_db');
-
+echo "ok2";
 //PDO Database Connection
 try {
     $databaseConnection = new PDO('mysql:host='._HOST_NAME_.';dbname='._DATABASE_NAME_, _USER_NAME_, _DB_PASSWORD);
@@ -13,7 +14,7 @@ try {
 } catch(PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
-
+echo "ok3";
 if(!empty($_POST['username'])){
     $errMsg = '';
 
@@ -25,7 +26,7 @@ if(!empty($_POST['username'])){
 
     if($password == '')
         $errMsg .= 'You must enter your Password<br>';
-echo "ok";
+
     if($errMsg == ''){
         $records = $databaseConnection->prepare('SELECT id,username,password FROM  company WHERE username = :username');
         $records->bindParam(':username', $username);
