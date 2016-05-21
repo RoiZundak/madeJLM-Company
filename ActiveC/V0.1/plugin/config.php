@@ -21,8 +21,7 @@ require __DIR__ . "/logsys.php";
     ),
     "pages" => array(
         "no_login" => array(
-            "#/about",
-            "#/login"
+            "#/about"
         ),
         "login_page" => "#/login",
         "home_page" => "#/main"
