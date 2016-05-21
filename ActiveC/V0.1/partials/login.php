@@ -1,8 +1,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <?php
-   /* require "../plugin/logsys.php";
-   \Fr\LS::init(); */
     echo"ldld";
     require "../plugin/config.php";
     if(isset($_POST['action_login'])){
@@ -22,8 +20,7 @@
     }else{
         echo"grrr";
     }
-    echo "<br>out";
-    ?>
+    echo "<br>out";?>
 
     <div id ="login_container">
 
