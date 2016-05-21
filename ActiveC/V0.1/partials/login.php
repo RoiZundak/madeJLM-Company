@@ -22,7 +22,7 @@ try {
 
 if(!empty($_POST['username'])){
     $errMsg = '';
-    echo"111";
+    
     //username and password sent from Form
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
@@ -32,7 +32,6 @@ if(!empty($_POST['username'])){
     if($password == '')
         $errMsg .= 'You must enter your Password<br>';
 
-    echo "dsv";
     if($errMsg == ''){
         $records = $databaseConnection->prepare('SELECT id,username,password FROM  company WHERE username = :username');
         $records->bindParam(':username', $username);
