@@ -14,7 +14,7 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-if(isset($_POST['submit'])){
+if(!empty($_POST['submit'])){
     echo"db";
     $errMsg = '';
     //username and password sent from Form
