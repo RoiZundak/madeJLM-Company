@@ -1,7 +1,7 @@
 <?php
 session_start();
 echo "ok";
-$func = intval($_GET['username']);
+$func = $_GET['username'];
 echo $func;
 //DB configuration Constants
 define('_HOST_NAME_', 'localhost');
