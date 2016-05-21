@@ -20,7 +20,6 @@ if(isset($_POST['submit'])){
     //username and password sent from Form
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
-
     if($username == '')
         $errMsg .= 'You must enter your Username<br>';
 
