@@ -54,7 +54,7 @@ if(isset($_POST['submit'])){
         ?>
         <div style="background-color:#006D9C; color:#FFFFFF; padding:3px;"><b>Login</b></div>
         <div style="margin:30px">
-            <form action="" method="post">
+            <form action="login.php" method="post">
                 <label>Username  :</label><input type="text" name="username" class="box"/><br /><br />
                 <label>Password  :</label><input type="password" name="password" class="box" /><br/><br />
                 <input type="submit" name='submit' value="Submit" class='submit'/><br />
