@@ -1,8 +1,15 @@
 <?php
 session_start();
-echo "<script>
+if($_SESSION['username']!==""){
+    echo "<script>
     console.log('username :" .$_SESSION['username']. "');
 </script>";
+}
+else{
+    echo "<script>
+    console.log('noUSERname');
+</script>";
+}
 ?>
 <div id="main_wrap">
     <div id = "filter_main">

@@ -5,7 +5,7 @@
  * Time: 18:58
  */
 session_start();
-session_destroy();
+$_SESSION['username']="";
 
 exit;?>
 
