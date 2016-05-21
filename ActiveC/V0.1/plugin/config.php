@@ -2,6 +2,7 @@
 /**
  * For Development Purposes
  */
+session_start();
 ini_set("display_errors", "on");
 
 require __DIR__ . "/logsys.php";
@@ -15,7 +16,8 @@ require __DIR__ . "/logsys.php";
         "table" => "Company"
     ),
     "features" => array(
-        "auto_init" => true
+        "auto_init" => true,
+        "start_session" => false
     ),
     "pages" => array(
         "no_login" => array(
