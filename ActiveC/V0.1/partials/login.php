@@ -1,6 +1,5 @@
 <?php
 session_start();
-echo "ldld";
 //DB configuration Constants
 define('_HOST_NAME_', 'localhost');
 define('_USER_NAME_', 'jobmadeinjlm');
@@ -14,7 +13,7 @@ try {
 } catch(PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
-
+echo"db";
 if(isset($_POST['submit'])){
     $errMsg = '';
     //username and password sent from Form
