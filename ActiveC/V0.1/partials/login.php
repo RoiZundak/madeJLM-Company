@@ -1,10 +1,10 @@
 ob_start();
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-<?php
+<?php echo"ldld";?>
     /* require "../plugin/logsys.php";
    \Fr\LS::init(); */
-    echo"ldld";
-    require "../plugin/config.php";
+
+   /* require "../plugin/config.php";
     if(isset($_POST['action_login'])){
         echo"lala";
         $identification = $_POST['user_name'];
@@ -19,8 +19,7 @@ ob_start();
                 $msg = array("Error", "Too many login attempts. You can attempt login after " . $login['minutes'] . " minutes (" . $login['seconds'] . " seconds)");
             }
         }
-    }
-?>
+    }*/
 
     <div id ="login_container">
 
