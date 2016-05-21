@@ -1,4 +1,9 @@
 <?php
+echo("First name: " . $_POST['username'] . "<br />\n");
+echo("Last name: " . $_POST['password'] . "<br />\n");
+?>
+
+<!--<?php
 session_start();
 //DB configuration Constants
 define('_HOST_NAME_', 'localhost');
@@ -42,7 +47,7 @@ if(!empty($_POST['username'])){
     }
 }
 
-?>
+?>-->
 
 <div align="center">
     <div style="width:300px; border: solid 1px #006D9C; " align="left">
