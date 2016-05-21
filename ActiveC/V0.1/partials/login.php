@@ -1,7 +1,5 @@
-
-<?php 
+<?php
 require "../plugin/config.php";
-\Fr\LS::log("ldld");
 if(isset($_POST['action_login'])){
     echo"lala";
     $identification = $_POST['user_name'];
