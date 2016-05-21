@@ -45,7 +45,7 @@ if(isset($_POST['action_login'])){
                 </div>
 
                 <p class="login-submit">
-                    <button class="login-button" name="action_login">Log In</button>
+                    <button type='submit' class="login-button" name="action_login">Log In</button>
                 </p>
 
                 <p class="forgot-password"><a href="#/forgot">Forgot your password?</a></p>
