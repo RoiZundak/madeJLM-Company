@@ -1,6 +1,6 @@
 <?php
 //Connects to your Database
-$conect = mysqli_connect("localhost","jobmadeinjlm","q1w2e3r4", "forks") or die(mysql_error());
+$conect = mysql_connect("localhost","jobmadeinjlm","q1w2e3r4", "forks") or die(mysql_error());
 //Checks if there is a login cookie
 if(isset($_COOKIE['ID_your_site'])){ //if there is, it logs you in and directes you to the members page
     $username = $_COOKIE['ID_your_site'];
