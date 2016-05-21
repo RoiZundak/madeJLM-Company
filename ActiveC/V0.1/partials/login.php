@@ -1,4 +1,4 @@
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
 <?php 
 require "../plugin/config.php";
 \Fr\LS::log("ldld");
@@ -18,7 +18,7 @@ if(isset($_POST['action_login'])){
     }
 }
 ?>
-
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <div id ="login_container">
 
         <div id="login_form">
