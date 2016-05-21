@@ -1,10 +1,8 @@
 <?php session_start();
-echo"trying--".$_SESSION['username']."--";
 if(empty($_SESSION['username'])){
-    echo "Not signed in !";
+    header("location: ../#/login");
     exit;
 }
-echo "Failed";
 ?>
 <div id="main_wrap">
     <div id = "filter_main">

@@ -12,8 +12,9 @@ app.config(['$routeProvider', function ($routeProvider) {
     // Home
     .when("/", {templateUrl: "partials/login.html", controller: "PageCtrl"})
     // Pages
-      
+
       .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
+      .when("/signout", {templateUrl: "partials/signout.php", controller: "PageCtrl"})
       .when("/login", {templateUrl: "partials/login.html", controller: "PageCtrl"})
       .when("/faq", {templateUrl: "partials/faq.html", controller: "PageCtrl"})
       .when("/main", {templateUrl: "partials/main.php", controller: "PageCtrl"})
