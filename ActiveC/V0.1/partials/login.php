@@ -25,7 +25,7 @@ if(!empty($_POST['username'])){
 
     if($password == '')
         $errMsg .= 'You must enter your Password<br>';
-
+echo "ok";
     if($errMsg == ''){
         $records = $databaseConnection->prepare('SELECT id,username,password FROM  company WHERE username = :username');
         $records->bindParam(':username', $username);
