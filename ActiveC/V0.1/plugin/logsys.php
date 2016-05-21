@@ -145,17 +145,18 @@ class LS {
             "no_login" => array(
                 "#/about",
                 "#/login",
-                "../partials/login.php"
+                "../partials/login.php",
+                "http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login"
             ),
             /**
              * The login page. ex : /login.php or /accounts/login.php
              */
-            "login_page" => "../partials/login.php",
+            "login_page" => "http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login",
             /**
              * The home page. The main page for logged in users.
              * logSys redirects to here after user logs in
              */
-            "home_page" => "../partials/main.php",
+            "home_page" => "http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/main",
         ),
 
         /**
