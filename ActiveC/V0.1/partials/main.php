@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start();
+if(isset($_SESSION['username'])==false){
+    header("location: ../#/login");
+}
+
+?>
 <div id="main_wrap">
     <div id = "filter_main">
     Filter<br>
@@ -30,7 +35,7 @@
     </div>
     <div id = "std_info"  >
 	<?php
-		$link = mysql_connect("5.100.253.198", "jobmadeinjlm","q1w2e3r4");
+    	$link = mysql_connect("5.100.253.198", "jobmadeinjlm","q1w2e3r4");
 		if (!$link) {
 			die("Could not connect: " . mysql_error());
 		}
