@@ -2,7 +2,6 @@
 if(isset($_SESSION['username'])==false){
     header("location: ../#/login");
 }
-
 ?>
 <div id="main_wrap">
     <div id = "filter_main">
