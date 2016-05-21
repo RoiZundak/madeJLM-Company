@@ -1067,7 +1067,7 @@ class LS {
      * Do a redirect
      */
     public static function redirect($url, $status = 302){
-        header("Location: $url", false, $status);
+        header("Location: $url", true, $status);
         exit;
     }
 
