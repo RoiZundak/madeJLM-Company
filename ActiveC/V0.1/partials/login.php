@@ -1,14 +1,11 @@
 <?php
 session_start();
-echo "ok";
-$func = $_GET['username'];
 echo $func;
 //DB configuration Constants
 define('_HOST_NAME_', 'localhost');
 define('_USER_NAME_', 'jobmadeinjlm');
 define('_DB_PASSWORD', 'q1w2e3r4');
 define('_DATABASE_NAME_', 'jobmadei_db');
-echo "ok2";
 //PDO Database Connection
 try {
     $databaseConnection = new PDO('mysql:host='._HOST_NAME_.';dbname='._DATABASE_NAME_, _USER_NAME_, _DB_PASSWORD);
@@ -16,7 +13,6 @@ try {
 } catch(PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
-echo "ok3";
 if(!empty($_POST['username'])){
     $errMsg = '';
 
