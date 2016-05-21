@@ -1,6 +1,8 @@
 <?php
 session_start();
-echo"<script>console.log(username :'".$_SESSION['username']."')</script>"
+echo "<script>
+    console.log('username :" .$_SESSION['username']. "');
+</script>";
 ?>
 <div id="main_wrap">
     <div id = "filter_main">
