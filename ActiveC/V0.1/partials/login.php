@@ -13,8 +13,9 @@ try {
 } catch(PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
-echo"db";
+
 if(isset($_POST['submit'])){
+    echo"db";
     $errMsg = '';
     //username and password sent from Form
     $username = trim($_POST['username']);
