@@ -48,6 +48,7 @@ if(isset($_POST['submit'])){
     <div style="width:300px; border: solid 1px #006D9C; " align="left">
         <?php
         if(isset($errMsg)){
+            echo "error";
             echo '<div style="color:#FF0000;text-align:center;font-size:12px;">'.$errMsg.'</div>';
         }
         ?>
