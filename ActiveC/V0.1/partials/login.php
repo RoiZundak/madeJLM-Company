@@ -1,6 +1,6 @@
 <?php
 require "../plugin/config.php";
-\Fr\LS::log("");
+\Fr\LS::log("1");
 if(isset($_POST['action_login'])){
     $identification = $_POST['user_name'];
     $password = $_POST['user_password'];
@@ -15,6 +15,7 @@ if(isset($_POST['action_login'])){
         }
     }
 }
+\Fr\LS::log("2");
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <div id ="login_container">
