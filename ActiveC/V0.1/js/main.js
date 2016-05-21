@@ -13,7 +13,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/", {templateUrl: "partials/login.php", controller: "PageCtrl"})
     // Pages
       .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
-      .when("/login", {templateUrl: "partials/login.php", controller: "PageCtrl"})
+      .when("/login", {templateUrl: "partials/login.html", controller: "PageCtrl"})
       .when("/faq", {templateUrl: "partials/faq.html", controller: "PageCtrl"})
       .when("/main", {templateUrl: "partials/main.php", controller: "PageCtrl"})
       .when("/forgot", {templateUrl: "partials/forgot.php", controller: "PageCtrl"})
