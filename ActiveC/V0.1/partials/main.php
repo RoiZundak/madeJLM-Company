@@ -1,9 +1,10 @@
 <?php
 session_start();
 if(!isset($_SESSION['username'])){
-    header("location: ../#/login");
+    header("location: ../#/about");
     exit;
 }
+
 ?>
 <div id="main_wrap">
     <div id = "filter_main">
