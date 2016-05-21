@@ -1,6 +1,5 @@
 <?php
 require "../plugin/config.php";
-\Fr\LS::log("");
 if(isset($_POST['action_login'])){
     $identification = $_POST['user_name'];
     $password = $_POST['user_password'];
