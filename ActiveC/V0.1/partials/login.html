@@ -4,20 +4,20 @@
     <div id="login_form">
         <br>
         <h3>Login</h3>
-        <form class="login"  ng-submit="login()">
+        <form class="login">
             <p>
                 <label for="login">Email: </label>
-                <input type="text" name="user_name" id="login" ng-model="data.login.Email"   value="Example@example.com" onfocus="if($(this).val()=='Example@example.com')$(this).val('')" onblur="if($(this).val()=='')$(this).val('Example@example.com')">
+                <input type="text" name="username" id="login" value="Example@example.com" onfocus="if($(this).val()=='Example@example.com')$(this).val('')" onblur="if($(this).val()=='')$(this).val('Example@example.com')">
             </p>
 
             <p>
                 <label for="password">Password: </label>
-                <input type="password" name="user_password" id="password" ng-model="data.login.Password" value="688822292" onfocus="if($(this).val()=='688822292')$(this).val('')" onblur="if($(this).val()=='')$(this).val('688822292')">
+                <input type="password" name="password" id="password" value="688822292" onfocus="if($(this).val()=='688822292')$(this).val('')" onblur="if($(this).val()=='')$(this).val('688822292')">
             </p>
 
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" ng-model="data.login.auto"> Remember me
+                    <input type="checkbox"> Remember me
                 </label>
             </div>
 
