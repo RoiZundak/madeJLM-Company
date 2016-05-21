@@ -4,10 +4,10 @@ if(isset($_POST['action_login'])){
     $identification = $_POST['user_name'];
     $password = $_POST['user_password'];
     if($identification == "" || $password == ""){
-        echo("heyyyy");
+        echo "heyyyy";
         $msg = array("Error", "Username / Password Wrong !");
     }else{
-        echo("heyyyy2");
+        echo "heyyyy2";
         $login = \Fr\LS::login($identification, $password, isset($_POST['remember_me']));
         if($login === false){
             $msg = array("Error", "Username / Password Wrong !");
