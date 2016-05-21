@@ -1,5 +1,5 @@
 <?php session_start();
-echo"trying";
+echo"trying--".$_SESSION['username']."--";
 if(empty($_SESSION['username'])){
     echo "Not signed in !";
     exit;
