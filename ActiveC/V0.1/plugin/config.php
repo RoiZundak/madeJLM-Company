@@ -23,7 +23,7 @@ require __DIR__ . "/logsys.php";
         "no_login" => array(
             "#/about"
         ),
-        /*"login_page" => "#/login",*/
+        "login_page" => "#/login",
         "home_page" => "#/main"
     )
 ));
