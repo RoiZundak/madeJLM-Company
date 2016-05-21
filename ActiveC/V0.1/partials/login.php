@@ -20,6 +20,7 @@
             }
         }
     }
+    echo "<br>out";
     ?>
 
     <div id ="login_container">
@@ -45,7 +46,7 @@
                 </p>
 
                 <div class="checkbox">
-                    <label>
+                       <label>
                         <input type="checkbox" name="remember_me"> Remember me
                     </label>
                 </div>
