@@ -143,7 +143,9 @@ class LS {
              * Use Relative links or $_SERVER['REQUEST_URI']
              */
             "no_login" => array(
-                "#/about"
+                "#/about",
+                "#/login",
+                "../partials/login.php"
             ),
             /**
              * The login page. ex : /login.php or /accounts/login.php
