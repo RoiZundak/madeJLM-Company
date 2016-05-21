@@ -1,10 +1,4 @@
 <?php
-echo("User Name: " . $_POST['username'] . "<br />\n");
-echo("Password: " . $_POST['password'] . "<br />\n");
-?>
-
-
-<?php
 session_start();
 //DB configuration Constants
 define('_HOST_NAME_', 'localhost');
@@ -22,7 +16,7 @@ try {
 
 if(!empty($_POST['username'])){
     $errMsg = '';
-    
+
     //username and password sent from Form
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
