@@ -2,9 +2,6 @@
 if(isset($_SESSION['username'])==false){
     header("location: ../#/login");
     exit;
-}else{
-    header("location: ../#/about");
-    exit;
 }
 ?>
 <div id="main_wrap">
