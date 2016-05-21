@@ -43,7 +43,7 @@ class LS {
          * Basic Config of logSys
          */
         "basic" => array(
-            "company" => "My Site",
+            "company" => "ActiveC",
             "email" => "email@mysite.com",
             "email_callback" => 0
         ),
