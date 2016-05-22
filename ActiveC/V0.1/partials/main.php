@@ -9,14 +9,6 @@
         </a>");
     }
 ?>
-
-echo("<a id='re_route' href ='#/login'>
-    <script>
-        document.getElementById(\"re_route\").click();
-        alert('successfully logout.');
-    </script>
-</a>");
-
 <div id="main_wrap">
     <div id = "filter_main">
     Filter<br>
