@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+</head>
+<body>
+    <h1>Admin Page !</h1>
+        <br><br>
+    <form method="post" action="../../comp_sql_querys.php?func=5">
+        <p>
+            <label for="user_new">Name : </label>
+            <input type="text" name="username" id="user_new">
+        </p>
+
+        <p>
+            <label for="mail_new">Email : </label>
+            <input type="email" name="e_mail" id="mail_new">
+        </p>
+        <p>
+            <label for="pass_new">Password: </label>
+            <input type="password" name="password" id="pass_new">
+        </p>
+
+
+        <button type="submit" name = "submit" class="login-button">Login</button>
+    </form>
+
+</body>
+</html>

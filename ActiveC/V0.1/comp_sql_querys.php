@@ -146,5 +146,16 @@
 			echo "</div>";
 		}
 	}
+	if($func=="5"){
+
+		$sql = "INSERT INTO company (username, email, password)
+						VALUES ('John', 'Doe', 'john@example.com')";
+
+		if (mysql_query ($sql) === TRUE) {
+			echo "New record created successfully";
+		} else {
+			echo "Error: " . $sql . "<br>" . $conn->error;
+		}
+	}
 ?>
 		
