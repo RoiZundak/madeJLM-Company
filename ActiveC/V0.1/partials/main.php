@@ -5,7 +5,7 @@
     {
         echo($url);
         $mainPage = "http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/main";
-        if ((strcmp($url,$loginPage))!== 0) //the current page isn't the login page
+        if ((strcmp($url,$mainPage))!== 0) //the current page isn't the login page
         {
             echo ("<a id='re_route' href ='#/login'>
             <script>
