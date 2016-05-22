@@ -15,7 +15,6 @@
         }
         else
             echo ("<script> alert('you MUST login first.');</script>");
-
         exit;
     }
 ?>
