@@ -18,7 +18,7 @@ if(!empty($_POST['username'])){
     //username and password sent from Form
     $username = trim($_POST['username']);
     $password = md5(trim($_POST['password']));
-   // echo ("<script> alert('$password');</script>");
+    echo ("<script> alert('$password');</script>");
 
     if($username == '')
         $errMsg .= 'You must enter your Username<br>';
@@ -38,7 +38,6 @@ if(!empty($_POST['username'])){
         if(count($results) > 0 && $password === md5($results['password']) ){
             $_SESSION['username'] = $results['username'];
             header('location: ../#/main');
-            echo ("<script> alert('$password');</script>");
             exit;
         }else{
             $errMsg .= 'Username and Password are not found<br>';
