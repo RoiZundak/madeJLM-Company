@@ -18,7 +18,7 @@ if(!empty($_POST['username'])){
     //username and password sent from Form
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
-   // echo ("<script> alert('$password');</script>");
+    echo ("<script> alert('$password');</script>");
 
     if($username == '')
         $errMsg .= 'You must enter your Username<br>';
