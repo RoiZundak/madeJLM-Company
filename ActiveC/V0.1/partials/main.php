@@ -2,11 +2,12 @@
     session_start();
     if(empty($_SESSION['username'])){
         echo ("<a id='re_route' href ='#/login'>
-            //<script>
+            <script>
                 document.getElementById(\"re_route\").click();
                 alert('you MUST login.');
             </script>
         </a>");
+        exit;
     }
 ?>
 <div id="main_wrap">
