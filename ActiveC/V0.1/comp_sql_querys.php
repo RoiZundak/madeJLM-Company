@@ -150,8 +150,8 @@
 		$name =$_POST["username"] ;
 		$mail =$_POST['e_mail'];
 		$p_ass = $_POST['password'];
-		//$p_ass = md5($p_ass);
-		$sql = "INSERT INTO company (username, email, password) VALUES ($name,$mail,$p_ass)";
+		$p_ass = md5($p_ass);
+		$sql = "INSERT INTO company (username, email, password) VALUES ('$name','$mail','$p_ass')";
 
 		if (mysql_query ($sql) === TRUE) {
 			echo "New record created successfully";
