@@ -1,7 +1,14 @@
-<?php session_start();
-if(empty($_SESSION['username'])){
-    header("location: ../#/login");
-    exit;
+<?php
+session_start();
+if($_SESSION['username']!==""){
+    echo "<script>
+    console.log('username :" .$_SESSION['username']. "');
+</script>";
+}
+else{
+    echo "<script>
+    console.log('username :" .$_SESSION['username']. "');
+</script>";
 }
 ?>
 <div id="main_wrap">

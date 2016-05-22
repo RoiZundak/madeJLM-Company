@@ -14,7 +14,6 @@ app.config(['$routeProvider', function ($routeProvider) {
     // Pages
 
       .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
-      .when("/signout", {templateUrl: "partials/signout.php", controller: "PageCtrl"})
       .when("/login", {templateUrl: "partials/login.html", controller: "PageCtrl"})
       .when("/faq", {templateUrl: "partials/faq.html", controller: "PageCtrl"})
       .when("/main", {templateUrl: "partials/main.php", controller: "PageCtrl"})
@@ -23,6 +22,7 @@ app.config(['$routeProvider', function ($routeProvider) {
       .when("/contact", {templateUrl: "partials/contact.php", controller: "PageCtrl"})
 	  .when("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"})
       // Blog
+      .when("/signout", {templateUrl: "partials/signout.php", controller: "PageCtrl"})
       .when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
       .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
       // else 404
@@ -39,8 +39,8 @@ app.controller('BlogCtrl', function (/* $scope, $location, $http */) {
 /**
  * Controls all other Pages
  */
-app.controller('PageCtrl', function (/* $scope, $location, $http */) {
-  console.log("Page Controller reporting for duty.");
+app.controller('PageCtrl', function ( $location /* $scope, $location, $http */) {
+  console.log("Page Controller reporting for duty."+" "+$location.path());
 
   // Activates the Carousel
   $('.carousel').carousel({
