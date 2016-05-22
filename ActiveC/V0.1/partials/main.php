@@ -1,21 +1,21 @@
 <?php
     session_start();
-    $url =  "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}"; //the current page
+    //$url =  "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}"; //the current page
     if(empty($_SESSION['username']))
     {
-        echo($url);
-        $mainPage = "http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/main";
-        if ((strcmp($url,$mainPage))!== 0) //the current page isn't the login page
-        {
+        //echo($url);
+        //$mainPage = "http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/main";
+        //if ((strcmp($url,$mainPage))!== 0) //the current page isn't the login page
+        //{
             echo ("<a id='re_route' href ='#/login'>
             <script>
                 document.getElementById(\"re_route\").click();
                 alert('you MUST login first. redirecting...');
             </script>
             </a>");
-        }
-        else
-            echo ("<script> alert('you MUST login first.');</script>");
+        //}
+        //else
+          //  echo ("<script> alert('you MUST login first.');</script>");
         exit;
     }
 ?>
