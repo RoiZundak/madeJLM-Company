@@ -2,6 +2,10 @@
     session_start();
     unset($_SESSION['username']);
     //session_destroy();
-    header("location: ../#/about");
-    exit;
+    echo("<a id='signout' href ='../#/login'>
+        <script>
+             document.getElementById(\"signout\").click();
+                        alert('successfully logout.');
+         </script>
+     </a>");
 ?>
