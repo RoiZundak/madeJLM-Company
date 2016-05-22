@@ -15,8 +15,8 @@
         }
         else
             echo ("<script> alert('you MUST login first.');</script>");
-        exit;
     }
+    exit;
 ?>
 <div id="main_wrap">
     <div id = "filter_main">
