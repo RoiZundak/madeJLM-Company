@@ -9,7 +9,7 @@
             echo ("<a id='re_route' href ='#/login'>
             <script>
                 document.getElementById(\"re_route\").click();
-                alert('you MUST login first.');
+                alert('you MUST login first. redirecting...');
             </script>
             </a>");
         }
