@@ -4,7 +4,7 @@
         echo ("<a id='re_route' href ='#/login'>
             <script>
                 document.getElementById(\"re_route\").click();
-                alert('you MUST login.');
+                alert('you MUST login first.');
             </script>
         </a>");
         exit;
