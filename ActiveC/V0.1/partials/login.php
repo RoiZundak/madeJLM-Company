@@ -18,7 +18,7 @@ if(!empty($_POST['username'])){
     //username and password sent from Form
     $username = trim($_POST['username']);
     $password = md5(trim($_POST['password']));
-    echo ("<script> alert($password);</script>");
+    echo ("<script> alert('$password');</script>");
 
     if($username == '')
         $errMsg .= 'You must enter your Username<br>';
@@ -35,7 +35,7 @@ if(!empty($_POST['username'])){
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
         //if(count($results) > 0 && password_verify($password, $results['password'])){
-        if(count($results) > 0 && $password=== md5($results['password'] )){
+        if(count($results) > 0 && $password === md5($results['password'] )){
             $_SESSION['username'] = $results['username'];
             header('location: ../#/main');
             exit;
