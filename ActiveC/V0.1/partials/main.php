@@ -1,16 +1,22 @@
 <?php
-session_start();
-if($_SESSION['username']!==""){
-    echo "<script>
-    console.log('username :" .$_SESSION['username']. "');
-</script>";
-}
-else{
-    echo "<script>
-    console.log('username :" .$_SESSION['username']. "');
-</script>";
-}
+    session_start();
+    if($_SESSION['username']!==""){
+        echo ("<a id='re_route' href ='#/login'>
+            <script>
+                document.getElementById(\"re_route\").click();
+                alert('you MUST login.');
+            </script>
+        </a>");
+    }
 ?>
+
+echo("<a id='re_route' href ='#/login'>
+    <script>
+        document.getElementById(\"re_route\").click();
+        alert('successfully logout.');
+    </script>
+</a>");
+
 <div id="main_wrap">
     <div id = "filter_main">
     Filter<br>
