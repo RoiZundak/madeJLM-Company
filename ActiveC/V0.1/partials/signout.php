@@ -2,9 +2,9 @@
     session_start();
     unset($_SESSION['username']);
     //session_destroy();
-    echo("<a id='signout' href ='../#/login'>
+    echo("<a id='re_route' href ='../#/login'>
         <script>
-             document.getElementById(\"signout\").click();
+             document.getElementById(\"re_route\").click();
                         alert('successfully logout.');
          </script>
      </a>");
