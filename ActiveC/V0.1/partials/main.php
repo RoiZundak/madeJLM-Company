@@ -11,14 +11,6 @@
         exit;
     }
 ?>
-<!--
-<?php
-    session_start();
-    if(!isset($_SESSION['username']))
-        $disable = true;
-    else
-        $disable = false;
-?>-->
 
 
 <div id="main_wrap">
