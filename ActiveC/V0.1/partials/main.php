@@ -1,8 +1,8 @@
 <?php
     session_start();
-    if($_SESSION['username']!==""){
+    if(empty($_SESSION['username'])){
         echo ("<a id='re_route' href ='#/login'>
-            <script>
+            //<script>
                 document.getElementById(\"re_route\").click();
                 alert('you MUST login.');
             </script>
