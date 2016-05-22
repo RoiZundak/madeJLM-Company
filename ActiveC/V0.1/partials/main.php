@@ -1,23 +1,24 @@
-<!--<?php
+<?php
     session_start();
     if(empty($_SESSION['username']))
     {
             echo ("<a id='re_route' href ='#/login'>
             <script>
-                document.getElementById(\"re_route\").click();
                 alert('you MUST login first. redirecting...');
+                document.getElementById(\"re_route\").click();
             </script>
             </a>");
         exit;
     }
-?>-->
+?>
+<!--
 <?php
     session_start();
     if(!isset($_SESSION['username']))
         $disable = true;
     else
         $disable = false;
-?>
+?>-->
 
 
 <div id="main_wrap">
