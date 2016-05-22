@@ -152,7 +152,7 @@
 						VALUES ('John', 'Doe', 'john@example.com')";
 
 		if (mysql_query ($sql) === TRUE) {
-			echo "New record created successfully";
+			echo "New record created successfully".$_POST['username'];
 		} else {
 			echo "Error: " . $sql . "<br>" . $conn->error;
 		}
