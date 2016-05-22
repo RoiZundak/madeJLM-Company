@@ -147,12 +147,15 @@
 		}
 	}
 	if($func=="5"){
-
+		$name =$_POST["username"] ;
+		$mail =$_POST['e_mail'];
+		$p_ass = $_POST['password'];
+		$p_ass = md5($p_ass);
 		$sql = "INSERT INTO company (username, email, password)
-						VALUES ('John', 'Doe', 'john@example.com')";
+						VALUES ($name,$mail ,$p_ass )";
 
 		if (mysql_query ($sql) === TRUE) {
-			echo "New record created successfully".$_POST['username'];
+			echo "New record created successfully";
 		} else {
 			echo "Error: " . $sql . "<br>" . $conn->error;
 		}
