@@ -2,16 +2,10 @@
     session_start();
     if(empty($_SESSION['username']))
     {
-            echo ("
-            
-            
+            echo ("<a id='re_route' href ='#/login'></a>
             <script>
-                var node = document.getElementById(\"re_route_to_login\");
-                if(node==null){
-                    document.getElementById('body').innerHTML+='<a id=\"re_route_to_login\" href =\"#/login\"></a>';
-                }
                 alert('you MUST login first. redirecting...');
-                document.getElementById('re_route_to_login').click();
+                document.getElementById(\"re_route\").click();
             </script>
             ");
         exit;
