@@ -1,12 +1,20 @@
 <?php
     session_start();
-    if(empty($_SESSION['username'])){
-        echo ("<a id='re_route' href ='#/login'>
+    if(empty($_SESSION['username']))
+    {
+        $url =  "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}"; //the current page
+        $loginPage = "http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login";
+        if (strcmp($url,$loginPage) != 0)
+        {
+            echo ("<a id='re_route' href ='#/login'>
             <script>
                 document.getElementById(\"re_route\").click();
                 alert('you MUST login first.');
             </script>
-        </a>");
+            </a>");
+        }
+        else
+            echo ("<script> alert('you MUST login first.');</script>");
         exit;
     }
 ?>
