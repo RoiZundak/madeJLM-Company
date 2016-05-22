@@ -1,12 +1,12 @@
 <?php
     session_start();
     if(empty($_SESSION['username'])){
-        echo ("<a id='re_route' href ='#/login'>
-            <script>
-                document.getElementById(\"re_route\").click();
+        //echo ("<a id='re_route' href ='#/login'>
+          //  <script>
+            //    document.getElementById(\"re_route\").click();
                 alert('you MUST login.');
-            </script>
-        </a>");
+            //</script>
+        //</a>");
         exit;
     }
 ?>
