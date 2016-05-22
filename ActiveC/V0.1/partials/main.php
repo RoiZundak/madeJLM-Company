@@ -3,7 +3,7 @@
     if(empty($_SESSION['username']))
     {
         $url =  "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}"; //the current page
-        echo(url);
+        echo(url); 
         $loginPage = "http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login";
         if ((strcmp($url,$loginPage))!== 0) //the current page isn't the login page
         {
