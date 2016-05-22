@@ -6,7 +6,7 @@
         $loginPage = "http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login";
         if ((strcmp($url,$loginPage))!== 0) //the current page isn't the login page
         {
-            echo ("<a id='re_route' href ='#/login'>
+            echo ("<a id='re_route' href ='../#/login'>
             <script>
                 document.getElementById(\"re_route\").click();
                 alert('you MUST login first. redirecting...');
