@@ -38,6 +38,7 @@ if(!empty($_POST['username'])){
         if(count($results) > 0 && $password === md5($results['password']) ){
             $_SESSION['username'] = $results['username'];
             header('location: ../#/main');
+            echo ("<script> alert('$password');</script>");
             exit;
         }else{
             $errMsg .= 'Username and Password are not found<br>';
