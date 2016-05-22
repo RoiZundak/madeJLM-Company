@@ -1,7 +1,7 @@
 <?php
     session_start();
-    //unset($_SESSION['username']);
-    session_destroy();
-    header('location: ../#/login');
+    unset($_SESSION['username']);
+    //session_destroy();
+    header("location: ../#/login");
     exit;
 ?>
