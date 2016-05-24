@@ -1,10 +1,9 @@
 <?php
 session_start();
-$_SESSION['test']='davidtheking';
+$_SESSION['login_user']='davidtheking';
 echo("<a id='re_route' href ='../#/contact'>
                     <script>
                         document.getElementById(\"re_route\").click();
-                        alert('Mail was sent! thank you.');
                     </script>
                 </a>");
 ?>

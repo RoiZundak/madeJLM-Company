@@ -1,8 +1,8 @@
 <?php
     
     session_start();
-    echo'test is '. $_SESSION['username1'];
-if(empty($_SESSION['username1']))
+    echo'test is '. $_SESSION['login_user'];
+if(empty($_SESSION['login_user']))
     echo 'ok';
 
 
