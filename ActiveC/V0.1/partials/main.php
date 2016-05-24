@@ -1,6 +1,6 @@
 <?php
-session_set_cookie_params(0, "/");
-session_start();
+    
+    session_start();
 print_r($_SESSION);
     if(empty($_SESSION['login_user']))
     {
