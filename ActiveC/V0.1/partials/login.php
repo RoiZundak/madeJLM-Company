@@ -47,7 +47,7 @@ if(!empty($_POST['username'])){
 */
         if(count($results) > 0 && $password === $results['password'] )
         {
-            $_SESSION['username'] = $results['username'];
+            $_SESSION['username'] = $username;
             echo("<a id='re_route' href ='../#/main'>
                  <script>
                     document.getElementById(\"re_route\").click();
