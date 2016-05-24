@@ -172,13 +172,14 @@
 		}
 	}
 	if($func=="7"){
-		$sql = "SELECT * FROM company";
 		echo"<table style=\"width:100%\">
 			  <tr>
 			  	<td>id</td>
 			  	<td>Comp. Name</td>
 			  	<td>e-Mail</td>
 			  </tr>";
+		$sql = "SELECT * FROM company";
+		$result = mysql_query ($sql);
 		while($row = mysql_fetch_assoc($result)) {
 			echo "<tr> ";
 				echo "<td>".$row['id']."</td>";
