@@ -10,6 +10,8 @@
             </script>
             ");
         exit;
+    }else{
+        echo"<script>".$_SESSION['username']."</script>";
     }
 ?>
 
