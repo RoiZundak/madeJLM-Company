@@ -155,7 +155,7 @@
 		$sql = "INSERT INTO company (username, email, password) VALUES ('$name','$mail','$p_ass')";
 
 		if (mysql_query ($sql) === TRUE) {
-			$sql2 = "SELECT * FROM student WHERE email=".$mail."LIMIT 1";
+			$sql2 = "SELECT * FROM company WHERE email=".$mail."LIMIT 1";
 			$result2 = mysql_query($sql2);
 			echo"New record created successfully id : ".$result2['id'];
 		} else {
