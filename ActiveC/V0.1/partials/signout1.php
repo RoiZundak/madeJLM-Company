@@ -1,6 +1,6 @@
 <?php
     session_save_path("../js");
 session_start();
-session_unset();
+$_SESSION['login_user']=""
 header("Location: login.php");
 ?>
