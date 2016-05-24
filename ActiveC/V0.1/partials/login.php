@@ -47,10 +47,9 @@ if(!empty($_POST['username'])){
         if(count($results) > 0 && $password === $results['password'] )
         {
             $_SESSION['username'] = $results['username'];
-            echo("<a id='re_route' href ='#/main'>
+            echo("<a id='re_route' href ='../#/main'>
                  <script>
-             document.getElementById(\"re_route\").click();
-                        alert('successfully logout.');
+                    document.getElementById(\"re_route\").click();
                 </script>
             </a>");
             exit;
@@ -58,10 +57,9 @@ if(!empty($_POST['username'])){
         else
         {
             $errMsg .= 'Username and Password are not found<br>';
-            echo("<a id='re_route' href ='#/login'>
+            echo("<a id='re_route' href ='../#/login'>
                 <script>
-             document.getElementById(\"re_route\").click();
-                        alert('successfully logout.');
+                    document.getElementById(\"re_route\").click();
                 </script>
             </a>");
             exit;
