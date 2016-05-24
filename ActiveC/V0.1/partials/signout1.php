@@ -6,6 +6,7 @@
    // $_SESSION=array();
 //print_r($_SESSION);
    // $_SESSION['login_user'] = "jhgjnbvvhhjkjhgvcxcvhjkjhgfghjkjhgfghjk";
+session_unset();
 session_destroy();
 session_start();
     echo "Done , move on";
