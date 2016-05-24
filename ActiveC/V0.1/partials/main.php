@@ -7,7 +7,7 @@ print_r($_SESSION);
 $myfile = fopen("test.txt", "r") or die("Unable to open file!");
 $test =  fgets($myfile);
 fclose($myfile);
-echo $test;
+echo "username is : ". $test;
 
 
 
