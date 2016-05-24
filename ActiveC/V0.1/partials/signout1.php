@@ -4,7 +4,7 @@
 
 
 session_start(); // initialize the session variables
-echo'test is '. $_SESSION['login_user'];
+//echo'test is '. $_SESSION['login_user'];
 session_unset(); // clear the $_SESSION variable
 
 if(isset($_COOKIE[session_name()])) {
@@ -15,7 +15,7 @@ session_destroy(); // finally destroy the session
 
 
 
-echo'test is '. $_SESSION['login_user'];
+//echo'test is '. $_SESSION['login_user'];
 
 
 
