@@ -10,6 +10,8 @@
                 </script>
                 ");
         exit;
+    }else{
+        print_r($_SESSION);
     }
 
 
