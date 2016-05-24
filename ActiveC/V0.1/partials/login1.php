@@ -27,6 +27,17 @@ $records->execute();
 $results = $records->fetch(PDO::FETCH_ASSOC);
 if(count($results > 0 )) {
     $_SESSION['login_user'] = $username;
+    
+    
+    
+    $myfile = fopen("test.txt", "w") or die("Unable to open file!");
+    $txt = "$username";
+    fwrite($myfile, $txt);
+    fclose($myfile);
+    
+    
+    
+    
 }
 echo("<a id='re_route' href ='../#/main'></a>
                     <script>
