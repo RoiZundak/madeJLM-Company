@@ -1,6 +1,10 @@
 <?php
     
     session_start();
+if($_SESSION['login_user']=="ActiveC"){
+    $_SESSION['login_user']="5";
+}
+
     echo'test is '. $_SESSION['login_user'].' <br>' ;
 print_r($_SESSION);
     if(empty($_SESSION['login_user']))
