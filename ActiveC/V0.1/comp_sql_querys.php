@@ -146,6 +146,7 @@
 			echo "</div>";
 		}
 	}
+	//ADD new company
 	if($func=="5"){
 		$name =$_POST["username"] ;
 		$mail =$_POST['e_mail'];
@@ -154,13 +155,14 @@
 		$sql = "INSERT INTO company (username, email, password) VALUES ('$name','$mail','$p_ass')";
 
 		if (mysql_query ($sql) === TRUE) {
-			$sql = "SELECT * FROM student WHERE email=".$mail;
-			$result = mysql_query($sql);
-			echo"New record created successfully id : ".$result['id'];
+			$sql2 = "SELECT * FROM student WHERE email=".$mail."LIMIT 1";
+			$result2 = mysql_query($sql2);
+			echo"New record created successfully id : ".$result2['id'];
 		} else {
 			echo "Error: " . $sql . "<br>" . mysql_error();
 		}
 	}
+	//DELETE company (by id)
 	if($func=="6"){
 		$row_number =$_POST["row_id"] ;
 		$sql = "DELETE FROM company WHERE id=".$row_number;
@@ -171,6 +173,7 @@
 			echo "Error: " . $sql . "<br>" . mysql_error();
 		}
 	}
+	//echo ALL companies
 	if($func=="7"){
 		echo"<table style=\"width:100%\">
 			  <tr>
