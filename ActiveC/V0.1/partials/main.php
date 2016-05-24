@@ -11,7 +11,7 @@
             ");
         exit;
     }else{
-        echo"<script>".$_SESSION['username']."</script>";
+        echo"<script>console.log('".$_SESSION['username']."');</script>";
     }
 ?>
 
