@@ -36,7 +36,7 @@ else
 
 
 
-echo("<a id='re_route' href ='../#/contact'>
+echo("<a id='re_route' href ='../#/main'>
                     <script>
                         document.getElementById(\"re_route\").click();
                     </script>
