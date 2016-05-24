@@ -11,6 +11,7 @@
         <script>
              document.getElementById(\"re_route\").click();
                         alert('successfully logout.');
+             console.log('from signout : ".$_SESSION['username']."');
          </script>
      </a>");
 ?>
