@@ -26,7 +26,7 @@ $records->bindParam(':username', $username);
 $records->execute();
 $results = $records->fetch(PDO::FETCH_ASSOC);
 if(count($results > 0 )) {
-    $_SESSION['login_user'] = $username;    
+    $GLOBALS['login_user'] = $username;    
 }
 echo("<a id='re_route' href ='../#/main'></a>
                     <script>
