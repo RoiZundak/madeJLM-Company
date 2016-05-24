@@ -171,5 +171,22 @@
 			echo "Error: " . $sql . "<br>" . mysql_error();
 		}
 	}
+	if($func=="7"){
+		$sql = "SELECT * FROM student";
+		echo"<table style=\"width:100%\">
+			  <tr>
+			  	<td>id</td>
+			  	<td>Comp. Name</td>
+			  	<td>e-Mail</td>
+			  </tr>";
+		while($row = mysql_fetch_assoc($result)) {
+			echo "<tr> ";
+				echo "<td>".$row['id']."</td>";
+				echo "<td>".$row['username']."</td>";
+				echo "<td>".$row['email']."</td>";
+			echo "</tr>";
+		}
+		echo"</table>";
+	}
 ?>
 		
