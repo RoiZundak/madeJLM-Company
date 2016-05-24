@@ -2,6 +2,7 @@
     session_start();
     unset($_SESSION['loggedin']);
     $_SESSION['loggedin'] = 0;
+    session_write_close();
 
 echo("<a id='re_route' href ='#/login'>
         <script>
