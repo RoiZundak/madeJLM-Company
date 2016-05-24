@@ -1,5 +1,5 @@
 <?php
-    
+session_save_path("/home/jobmadeinjlm/temp");
 session_start();
 echo session_save_path();
 print_r($_SESSION);
