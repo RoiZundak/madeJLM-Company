@@ -1,5 +1,6 @@
 <?php
-
+    session_start();
+    $_SESSION['login_user']="Contact";
     if(isset($_POST['submit'])) {
         $to      = 'Activec.madejlm@gmail.com';
         $subject = 'Contact mail from company';
