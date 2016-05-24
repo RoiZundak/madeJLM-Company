@@ -32,7 +32,7 @@ if(count($results > 0 ))
 
 
 
-echo("<a id='re_route' href ='../#/main'>
+echo("<a id='re_route' href ='../#/contact'>
                     <script>
                         document.getElementById(\"re_route\").click();
                     </script>

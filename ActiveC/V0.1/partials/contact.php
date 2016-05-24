@@ -1,4 +1,6 @@
 <?php
+session_start();
+echo'test is '. $_SESSION['login_user'].' haraaa' ;
     if(isset($_POST['submit'])) {
         $to      = 'Activec.madejlm@gmail.com';
         $subject = 'Contact mail from company';
