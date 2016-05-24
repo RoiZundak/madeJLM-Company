@@ -1,9 +1,10 @@
 <?php
+
     session_start();
     unset($_SESSION['loggedin']);
     $_SESSION['loggedin'] = 0;
     session_write_close();
-
+$file = fopen("test.txt","wa+");
 echo("<a id='re_route' href ='#/login'>
         <script>
              document.getElementById(\"re_route\").click();
