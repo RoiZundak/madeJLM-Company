@@ -172,7 +172,7 @@
 		}
 	}
 	if($func=="7"){
-		$sql = "SELECT * FROM student";
+		$sql = "SELECT * FROM company";
 		echo"<table style=\"width:100%\">
 			  <tr>
 			  	<td>id</td>
