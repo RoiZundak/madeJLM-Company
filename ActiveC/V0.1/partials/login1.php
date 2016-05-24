@@ -29,10 +29,6 @@ if(count($results > 0 ))
 {
     $_SESSION['login_user'] = $username;
 }
-else
-{
-    $_SESSION['login_user'] = 'bdika';
-}
 
 
 
