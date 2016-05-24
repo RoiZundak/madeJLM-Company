@@ -1,15 +1,21 @@
 <?php
-    session_start();
-    if(empty($_SESSION['username']))
+    
+    if($_SESSION['login_user']==="")
     {
-            echo ("<a id='re_route' href ='#/login'></a>
-            <script>
-                alert('you MUST login first. redirecting...');
-                document.getElementById(\"re_route\").click();
-            </script>
-            ");
+        echo ("<a id='re_route' href ='#/login'></a>
+                <script>
+                    alert('you MUST login first. redirecting...');
+                    document.getElementById(\"re_route\").click();
+                </script>
+                ");
         exit;
     }
+
+
+
+
+
+
 ?>
 
 <div id="main_wrap">
