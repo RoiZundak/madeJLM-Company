@@ -1,7 +1,7 @@
 <?php
 session_save_path("../js");
 session_start();
-echo session_save_path();
+echo session_save_path()."<br>";
 print_r($_SESSION);
     if(empty($_SESSION['login_user']))
     {
