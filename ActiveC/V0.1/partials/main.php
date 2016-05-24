@@ -10,6 +10,7 @@
                     document.getElementById(\"re_route\").click();
                 </script>
                 ");
+        exit;
     }
 
 
