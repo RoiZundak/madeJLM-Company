@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //DB configuration Constants
 define('_HOST_NAME_', 'localhost');
 define('_USER_NAME_', 'jobmadeinjlm');
