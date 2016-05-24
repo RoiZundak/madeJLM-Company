@@ -14,22 +14,14 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$username = trim($_POST['username']);
-$password = md5(trim($_POST['password']));
 
 
-$records = $databaseConnection->prepare('SELECT id,username,password FROM  company WHERE username = :username');
-$records->bindParam(':username', $username);
-$records->execute();
-$results = $records->fetch(PDO::FETCH_ASSOC);
 
 
-if(count($results) > 0 && $password === $results['password'] )
-{
-    $_SESSION['login_user'] = 'bdika';
-}
 
-echo("<a id='re_route' href ='../#/main'>
+$_SESSION['login_user'] = 'test2';
+
+echo("<a id='re_route' href ='../#/conact'>
                     <script>
                         document.getElementById(\"re_route\").click();
                     </script>
