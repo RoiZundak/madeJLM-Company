@@ -29,14 +29,10 @@ if(count($results > 0 ))
 {
     $_SESSION['login_user'] = $username;
 }
-else
-{
-    $_SESSION['login_user'] = 'bdika';
-}
 
 
 
-echo("<a id='re_route' href ='../#/main'>
+echo("<a id='re_route' href ='../#/contact'>
                     <script>
                         document.getElementById(\"re_route\").click();
                     </script>
