@@ -1,7 +1,7 @@
 <?php
     
     session_start();
-
+    echo'test is '. $_SESSION['test'];
     if ( isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == 0 )
     {
             echo ("<a id='re_route' href ='#/login'></a>
