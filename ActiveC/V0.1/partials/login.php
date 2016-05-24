@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION['loggedin'] = 1;
 //DB configuration Constants
 define('_HOST_NAME_', 'localhost');
 define('_USER_NAME_', 'jobmadeinjlm');
@@ -34,7 +33,7 @@ if(!empty($_POST['username'])){
         $results = $records->fetch(PDO::FETCH_ASSOC);
         //if(count($results) > 0 && password_verify($password, $results['password'])){
         if(count($results) > 0 && $password === $results['password'] ){
-            $_SESSION['username'] = $results['username'];
+            $_SESSION['username1'] = $results['username'];
             header('location: ../#/main');
             exit;
         }else{
