@@ -1,6 +1,7 @@
 <?php
     
-    session_start();
+session_start();
+echo session_save_path();
 print_r($_SESSION);
     if(empty($_SESSION['login_user']))
     {
