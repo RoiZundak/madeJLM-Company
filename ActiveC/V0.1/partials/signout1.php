@@ -11,7 +11,7 @@ if(isset($_COOKIE[session_name()])) {
     setcookie(session_name(),'',time()-3600); # Unset the session id
 }
 
-session_destroy(); // finally destroy the session
+session_regenerate_id();
 
 
 
