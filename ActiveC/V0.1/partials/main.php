@@ -1,13 +1,15 @@
 <?php
-    session_name('complogin');
+    
     session_start();
-    if(($_SESSION['username'])=='moria')
+
+    if ( isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == 0 )
     {
             echo ("<a id='re_route' href ='#/login'></a>
             <script>
                 alert('you MUST login first. redirecting...');
                 document.getElementById(\"re_route\").click();
             </script>
+            flush();
             ");
         exit;
     }else{

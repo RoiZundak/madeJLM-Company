@@ -1,6 +1,6 @@
 <?php
-session_name('complogin');
 session_start();
+$_SESSION['loggedin'] = 1;
 //DB configuration Constants
 define('_HOST_NAME_', 'localhost');
 define('_USER_NAME_', 'jobmadeinjlm');
