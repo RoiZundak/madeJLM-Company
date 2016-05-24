@@ -1,6 +1,8 @@
 <?php
 session_start();
-
+if($_SESSION['login_user']=="ActiveC"){
+    $_SESSION['login_user']="5";
+}
 
 define('_HOST_NAME_', 'localhost');
 define('_USER_NAME_', 'jobmadeinjlm');
