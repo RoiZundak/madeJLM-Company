@@ -12,7 +12,6 @@
     }
 ?>
 
-
 <div id="main_wrap">
     <div id = "filter_main">
     Filter<br>
