@@ -1,6 +1,7 @@
 <?php
 session_start();
 //DB configuration Constants
+
 define('_HOST_NAME_', 'localhost');
 define('_USER_NAME_', 'jobmadeinjlm');
 define('_DB_PASSWORD', 'q1w2e3r4');
@@ -44,6 +45,7 @@ if(!empty($_POST['username'])){
             exit;
         }
 */
+        echo($_SESSION['username']);
         if(count($results) > 0 && $password === $results['password'] )
         {
             $_SESSION['username'] = $results['username'];
