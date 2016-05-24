@@ -157,6 +157,9 @@
 		if (mysql_query ($sql) === TRUE) {
 			$verify = "SELECT * FROM company WHERE username='".$name."' LIMIT 1";
 			$ver_res =mysql_query($verify);
+			if(!$ver_res){
+				echo "Error: " . $verify . "<br>" . mysql_error();
+			}
 			echo"New record created successfully id : ".$ver_res['id'];
 		} else {
 			echo "Error: " . $sql . "<br>" . mysql_error();
