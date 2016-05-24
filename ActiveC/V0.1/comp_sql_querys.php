@@ -155,15 +155,7 @@
 		$sql = "INSERT INTO company (username, email, password) VALUES ('$name','$mail','$p_ass')";
 
 		if (mysql_query ($sql) === TRUE) {
-
-			$verify = mysql_query("SELECT * FROM company WHERE username='".$name."'");
-			echo $verify."<br>";
-			if (!$verify) {
-				echo 'Could not run query: ' . mysql_error();
-				exit;
-			}
-			$row = mysql_fetch_row($result);
-			echo"New record created successfully id : ".$ver_res[0];
+			echo"New record created successfully ";
 		} else {
 			echo "Error: " . $sql . "<br>" . mysql_error();
 		}
