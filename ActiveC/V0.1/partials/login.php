@@ -1,4 +1,5 @@
 <?php
+session_name('complogin');
 session_start();
 //DB configuration Constants
 define('_HOST_NAME_', 'localhost');

@@ -1,4 +1,5 @@
 <?php
+    session_name('complogin');
     session_start();
     if(empty($_SESSION['username']))
     {
