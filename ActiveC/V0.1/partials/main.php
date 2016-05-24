@@ -1,6 +1,6 @@
 <?php
-    echo "<script>console.log('name : ". $GLOBALS['login_user']."');</script>";
-    if($GLOBALS['login_user']=="")
+    
+    if($_SESSION['login_user']==="")
     {
         echo ("<a id='re_route' href ='#/login'></a>
                 <script>
