@@ -1,7 +1,7 @@
 <?php
     session_name('complogin');
     session_start();
-    if(empty($_SESSION['username']))
+    if(($_SESSION['username'])=='moria')
     {
             echo ("<a id='re_route' href ='#/login'></a>
             <script>
