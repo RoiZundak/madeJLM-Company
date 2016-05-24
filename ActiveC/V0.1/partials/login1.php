@@ -26,7 +26,7 @@ $results = $records->fetch(PDO::FETCH_ASSOC);
 
 if(count($results) > 0 && $password === $results['password'] )
 {
-    $_SESSION['login_user'] = $results['username'];
+    $_SESSION['login_user'] = 'bdika';
 }
 
 echo("<a id='re_route' href ='../#/main'>
