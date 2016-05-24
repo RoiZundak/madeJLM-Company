@@ -4,7 +4,7 @@ session_start(); // initialize the session variables
 
 
 $myfile = fopen("test.txt", "w") or die("Unable to open file!");
-$txt = "";
+$txt = "sdvf";
 fwrite($myfile, $txt);
 fclose($myfile);
 
