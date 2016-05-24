@@ -1,20 +1,3 @@
-<?php
-require "config.php";
-?>
-
-<html>
-<head></head>
-<body>
-<div class="content">
-    <?php
-    \Fr\LS::forgotPassword();
-    ?>
-</div>
-</body>
-</html>
-
-
-
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 <div id ="login_container">
 
