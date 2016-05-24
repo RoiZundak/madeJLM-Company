@@ -1,7 +1,7 @@
 <?php
     
     session_start();
-    echo'test is '. $_SESSION['login_user'].'bdika';
+    echo'test is '. $_SESSION['login_user'].' haraaa' ;
     if(empty($_SESSION['login_user']))
     {
         echo ("<a id='re_route' href ='#/login'></a>
@@ -17,18 +17,7 @@
 
 
 
-    if ( isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == 0 )
-    {
-            echo ("<a id='re_route' href ='#/login'></a>
-            <script>
-                alert('you MUST login first. redirecting...');
-                document.getElementById(\"re_route\").click();
-            </script>
-            ");
-        exit;
-    }else{
-        echo"<script>console.log('".$_SESSION['username']."');</script>";
-    }
+
 ?>
 
 
