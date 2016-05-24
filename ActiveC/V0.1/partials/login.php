@@ -34,12 +34,7 @@ if(!empty($_POST['username'])){
         //if(count($results) > 0 && password_verify($password, $results['password'])){
         if(count($results) > 0 && $password === $results['password'] ){
             $_SESSION['username1'] = $results['username'];
-            //header('location: ../#/main');
-            echo("<a id='re_route' href ='../#/main'>
-                    <script>
-                        document.getElementById(\"re_route\").click();
-                    </script>
-                </a>");
+            header('location: ../#/main');
             exit;
         }else{
             $errMsg .= 'Username and Password are not found<br>';
