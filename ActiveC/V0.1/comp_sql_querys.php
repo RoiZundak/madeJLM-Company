@@ -155,11 +155,9 @@
 		$sql = "INSERT INTO company (username, email, password) VALUES ('$name','$mail','$p_ass')";
 
 		if (mysql_query ($sql) === TRUE) {
-
-			$result = mysql_query("SELECT id FROM company WHERE email=".$mail." LIMIT 1");
-			while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-				echo"New record created successfully id : ".$row['id'];
-			}
+			$verify = "SELECT * FROM company WHERE username='".$name."' LIMIT 1";
+			$ver_res =mysql_query($verify);
+			echo"New record created successfully id : ".$ver_res['id'];
 		} else {
 			echo "Error: " . $sql . "<br>" . mysql_error();
 		}
