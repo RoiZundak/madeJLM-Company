@@ -1,9 +1,9 @@
 <?php
 
-    //session_start();
-   // unset($_SESSION['loggedin']);
-   // $_SESSION['loggedin'] = 0;
-    //session_write_close();
+    session_start();
+    unset($_SESSION['loggedin']);
+    $_SESSION['loggedin'] = 0;
+    session_write_close();
 session_destroy();
 session_start();
 echo("<a id='re_route' href ='#/login'>
