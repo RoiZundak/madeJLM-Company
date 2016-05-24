@@ -1,6 +1,6 @@
 <?php
     session_start();
-    unset($_SESSION['username']);
+    //unset($_SESSION['username']);
     session_destroy();
     echo("<a id='re_route' href ='#/login'>
         <script>
