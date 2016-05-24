@@ -1,6 +1,7 @@
 <?php
-    
-    if($_SESSION['login_user']==="")
+    session_start();
+    echo($_SESSION['username']);
+    if(empty($_SESSION['username']))
     {
         echo ("<a id='re_route' href ='#/login'></a>
                 <script>
@@ -10,12 +11,6 @@
                 ");
         exit;
     }
-
-
-
-
-
-
 ?>
 
 <div id="main_wrap">
