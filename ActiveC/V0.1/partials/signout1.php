@@ -1,6 +1,7 @@
 <?php
 session_start();
-echo $_SESSION['test'];
+session_unset();
+echo'test is '. $_SESSION['test'];
 
 
 
