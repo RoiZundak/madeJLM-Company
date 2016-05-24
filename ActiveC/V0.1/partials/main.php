@@ -1,5 +1,5 @@
 <?php
-
+    echo $GLOBALS['login_user'];
     if($GLOBALS['login_user']=="")
     {
         echo ("<a id='re_route' href ='#/login'></a>
