@@ -3,14 +3,6 @@ session_save_path("../js");
 session_start();
 echo session_save_path();
 print_r($_SESSION);
-
-$myfile = fopen("test.txt", "r") or die("Unable to open file!");
-$test =  fgets($myfile);
-fclose($myfile);
-echo "username is : ". $test;
-
-
-
     if(empty($_SESSION['login_user']))
     {
         echo ("<a id='re_route' href ='#/login'></a>
