@@ -1,6 +1,7 @@
 <?php
     session_save_path("../js");
-   
+
+session_start();
     if(empty($_SESSION))
     {
         echo ("<a id='re_route' href ='#/login'></a>
@@ -10,8 +11,6 @@
                 </script>
                 ");
         exit;
-    }else{
-        print_r($_SESSION);
     }
 
 

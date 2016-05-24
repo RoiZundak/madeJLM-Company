@@ -1,6 +1,6 @@
 <?php
 session_save_path("../js");
-session_start();
+
 
 define('_HOST_NAME_', 'localhost');
 define('_USER_NAME_', 'jobmadeinjlm');
