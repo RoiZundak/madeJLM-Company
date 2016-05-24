@@ -1,7 +1,7 @@
 <?php
     session_save_path("../js");
 
-session_start();
+    //session_start();
     if($_SESSION['login_user']==="")
     {
         echo ("<a id='re_route' href ='#/login'></a>
