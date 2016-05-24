@@ -4,7 +4,7 @@
     {
             echo ("<a id='re_route' href ='#/login'></a>
             <script>
-                alert('you MUST login first. redirecting...');
+                alert('you MUST login first. redirecting... username = ".$_SESSION['username']."');
                 document.getElementById(\"re_route\").click();
             </script>
             ");
