@@ -16,12 +16,12 @@ try {
 
 
 
+$username = trim($_POST['username']);
 
 
+$_SESSION['login_user'] = $username;
 
-$_SESSION['login_user'] = 'test2';
-
-echo("<a id='re_route' href ='../#/conact'>
+echo("<a id='re_route' href ='../#/contact'>
                     <script>
                         document.getElementById(\"re_route\").click();
                     </script>
