@@ -1,7 +1,7 @@
 <?php
     
     session_start();
-    echo'test is '. $_SESSION['login_user'];
+    echo'test is '. $_SESSION['login_user'].'bdika';
     if(empty($_SESSION['login_user']))
     {
         echo ("<a id='re_route' href ='#/login'></a>
