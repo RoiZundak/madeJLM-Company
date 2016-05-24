@@ -19,7 +19,18 @@ try {
 $username = trim($_POST['username']);
 
 
-$_SESSION['login_user'] = $username;
+//$_SESSION['login_user'] = $username;
+
+$records = $databaseConnection->prepare('SELECT id,username,password FROM  company WHERE username = :username');
+$records->bindParam(':username', $username);
+$records->execute();
+$results = $records->fetch(PDO::FETCH_ASSOC);
+if(count($results > 0 ))
+{
+    $_SESSION['login_user'] = $username;
+}
+
+
 
 echo("<a id='re_route' href ='../#/contact'>
                     <script>
