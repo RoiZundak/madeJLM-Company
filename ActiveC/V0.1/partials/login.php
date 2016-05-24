@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //DB configuration Constants
 define('_HOST_NAME_', 'localhost');
 define('_USER_NAME_', 'jobmadeinjlm');
@@ -26,7 +26,8 @@ if(!empty($_POST['username'])){
     if($password == '')
         $errMsg .= 'You must enter your Password<br>';
 
-    if($errMsg == ''){
+    if($errMsg == '')
+    {
         $records = $databaseConnection->prepare('SELECT id,username,password FROM  company WHERE username = :username');
         $records->bindParam(':username', $username);
         $records->execute();
