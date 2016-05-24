@@ -1,7 +1,7 @@
 <?php
 
 session_start(); // initialize the session variables
-
+print_r($_SESSION);
 
 
 $params = session_get_cookie_params();
