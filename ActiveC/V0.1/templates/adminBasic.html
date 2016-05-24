@@ -7,7 +7,8 @@
 <body>
     <h1>Admin Page !</h1>
         <br><br>
-    <form method="post" action="../comp_sql_querys.php?func=5">
+    <form method="post" action="../comp_sql_querys.php?func=5" style="background-color:lightgrey;border-width: thin;border-style: solid " >
+        <h3>Add a new company</h3>
         <p>
             <label for="user_new">Name : </label>
             <input type="text" name="username" id="user_new">
@@ -23,6 +24,14 @@
         </p>
 
 
+        <button type="submit" name = "submit" class="login-button">Login</button>
+    </form>
+    <form method="post" action="../comp_sql_querys.php?func=6" style="background-color:lightgrey;border-width: thin;border-style: solid " >
+        <h3>Remove Row by id </h3>
+        <p>
+            <label for="row_id">Name : </label>
+            <input type="range" min="0" max="5000" name="row_id" id="row_id">
+        </p>
         <button type="submit" name = "submit" class="login-button">Login</button>
     </form>
 

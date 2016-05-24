@@ -154,7 +154,19 @@
 		$sql = "INSERT INTO company (username, email, password) VALUES ('$name','$mail','$p_ass')";
 
 		if (mysql_query ($sql) === TRUE) {
-			echo "New record created successfully";
+			$sql = "SELECT * FROM student WHERE email=".$mail;
+			$result = mysql_query($sql);
+			echo"New record created successfully id : ".$result['id'];
+		} else {
+			echo "Error: " . $sql . "<br>" . mysql_error();
+		}
+	}
+	if($func=="6"){
+		$row_number =$_POST["row_id"] ;
+		$sql = "DELETE FROM company WHERE id=".$row_number;
+
+		if (mysql_query ($sql) === TRUE) {
+			echo "Company number ".$row_number." has been DELETED.";
 		} else {
 			echo "Error: " . $sql . "<br>" . mysql_error();
 		}
