@@ -7,7 +7,7 @@ print_r($_SESSION);
     {
         echo ("<a id='re_route' href ='#/login'></a>
                 <script>
-                    alert('you MUST login first. redirecting...');
+                    alert('you MUST login first. redirecting...".session_save_path()."');
                     document.getElementById(\"re_route\").click();
                 </script>
                 ");
