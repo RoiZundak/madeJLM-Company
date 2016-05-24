@@ -2,7 +2,7 @@
     session_save_path("../js");
 
 session_start();
-    if(empty($_SESSION))
+    if(empty($_SESSION['bla']))
     {
         echo ("<a id='re_route' href ='#/login'></a>
                 <script>
