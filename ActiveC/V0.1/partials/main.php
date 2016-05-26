@@ -44,6 +44,32 @@
     </div>
     <div id = "std_info"  >
 	<?php
+        define('_HOST_NAME_', 'localhost');
+        define('_USER_NAME_', 'jobmadeinjlm');
+        define('_DB_PASSWORD', 'q1w2e3r4');
+        define('_DATABASE_NAME_', 'jobmadei_db');
+        //PDO Database Connection
+        try {
+            $databaseConnection = new PDO('mysql:host='._HOST_NAME_.';dbname='._DATABASE_NAME_, _USER_NAME_, _DB_PASSWORD);
+            $databaseConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch(PDOException $e) {
+            echo 'ERROR: ' . $e->getMessage();
+        }
+        $sql = 'SELECT * FROM student';
+        $img_src = "../img/profilepic.png";
+        foreach ($databaseConnection->query($sql) as $row) {
+            if(  $row['profile']=="" ){
+                $img_src = "../V0.1/img/profilepic.png";
+            }else{
+                $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+            }
+            echo "<div class='head' id='head_".$row['ID']."' > ";
+            echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+            print_r($row['first_name']);
+            echo "</div>";
+        }
+
+/*
     	$link = mysql_connect("5.100.253.198", "jobmadeinjlm","q1w2e3r4");
 		if (!$link) {
 			die("Could not connect: " . mysql_error());
@@ -65,6 +91,7 @@
 			print_r($row['first_name']);
 			echo "</div>";
 		}
+*/
 	?>
 	<script>
 	var id="-1";
