@@ -18,12 +18,15 @@ try {
 }
 
 
-//mysql connection
+/*mysql connection
 	$con = mysql_connect("5.100.253.198", "jobmadeinjlm","q1w2e3r4");
 	if (!$con) {
 		die('Could not connect');
 	}
 	mysql_select_db("jobmadei_db", $con);
+*/
+
+
 	//show single student
 	if($func=="1"){
 		$q = intval($_GET['q']);
