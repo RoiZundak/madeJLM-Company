@@ -221,6 +221,17 @@ try {
 			  	<td>e-Mail</td>
 			  </tr>";
 		$sql = "SELECT * FROM company";
+		//PDO STYLE :
+		foreach ($databaseConnection->query($sql) as $row) {
+			echo "<tr> ";
+				echo "<td>".$row['id']."</td>";
+				echo "<td>".$row['username']."</td>";
+				echo "<td>".$row['email']."</td>";
+			echo "</tr>";
+		}
+		echo"</table>";
+
+		/* MYSQL APPROACH
 		$result = mysql_query ($sql);
 		while($row = mysql_fetch_assoc($result)) {
 			echo "<tr> ";
@@ -229,7 +240,7 @@ try {
 				echo "<td>".$row['email']."</td>";
 			echo "</tr>";
 		}
-		echo"</table>";
+		echo"</table>";*/
 	}
 ?>
 		
