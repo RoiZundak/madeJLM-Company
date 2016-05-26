@@ -139,6 +139,28 @@ try {
 	}
 	//clear
 	if($func=="4"){
+
+
+		//PDO STYLE :
+		$sql = 'SELECT * FROM student';
+		$img_src = "../img/profilepic.png";
+		echo "PDO style :"
+		foreach ($databaseConnection->query($sql) as $row) {
+			$img_src ="";
+			if(  $row['profile']=="" ){
+				$img_src = "./img/profilepic.png";
+			}else{
+				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+			}
+			echo "<div class='head' id='head_".$row['ID']."' > ";
+			echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+			print_r($row['first_name']);
+			echo "</div>";
+		}
+
+
+
+		/*		MYSQL APPROACH
 		$sql="SELECT * FROM student ";
 		$result = mysql_query ($sql);
 		if (!$result) {
@@ -159,7 +181,7 @@ try {
 			echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
 			print_r($row['first_name']);
 			echo "</div>";
-		}
+		}*/
 	}
 	//ADD new company
 	if($func=="5"){
