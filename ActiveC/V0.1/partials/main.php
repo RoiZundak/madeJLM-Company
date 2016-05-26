@@ -44,6 +44,7 @@
     </div>
     <div id = "std_info"  >
 	<?php
+    
         require_once "../php/db_connect.php";
         $databaseConnection =connect_to_db();
         $sql = 'SELECT * FROM student';
