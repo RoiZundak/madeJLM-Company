@@ -175,11 +175,11 @@ try {
 		$records->bindParam(':password', $p_ass);
 		if ( $records->execute()==true){
 			$newId = $databaseConnection->lastInsertId();
-			echo "Great! ".$name."was added to the db with ID = ".$newId;
+			echo "Great! ".$name." was added to the db with ID = ".$newId;
 		}else{
 			echo "Failed to add a new company, please try again.";
 		}
-		/* 			THIS IS A MYSQL APPROACH
+			/* 			THIS IS A MYSQL APPROACH
 		$sql = "INSERT INTO company (username, email, password) VALUES ('$name','$mail','$p_ass')";
 
 		if (mysql_query ($sql) === TRUE) {
@@ -193,13 +193,24 @@ try {
 	//DELETE company (by id)
 	if($func=="6"){
 		$row_number =$_POST["row_id"] ;
+
+		//PDO STYLE :
+		$records = $databaseConnection->prepare('DELETE FROM company WHERE id= :row_id');
+		$records->bindParam(':row_id', $row_number);
+		if ( $records->execute()==true){
+			echo "Great! Company #".$row_number." was DELETED from the db ";
+		}else{
+			echo "Failed to DELETE company, please make sure you have the correct ID.";
+		}
+
+		/* MYSQL APPROACH
 		$sql = "DELETE FROM company WHERE id=".$row_number;
 
 		if (mysql_query ($sql) === TRUE) {
 			echo "Company number ".$row_number." has been DELETED.";
 		} else {
 			echo "Error: " . $sql . "<br>" . mysql_error();
-		}
+		}*/
 	}
 	//echo ALL companies
 	if($func=="7"){
