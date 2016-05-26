@@ -144,7 +144,7 @@ try {
 		//PDO STYLE :
 		$sql = 'SELECT * FROM student';
 		$img_src = "../img/profilepic.png";
-		echo "PDO style :"
+		echo "PDO style :";
 		foreach ($databaseConnection->query($sql) as $row) {
 			$img_src ="";
 			if(  $row['profile']=="" ){
