@@ -24,7 +24,7 @@ try {
 		die('Could not connect');
 	}
 	mysql_select_db("jobmadei_db", $con);
-
+	//show single student
 	if($func=="1"){
 		$q = intval($_GET['q']);
 		$sql="SELECT * FROM student WHERE ID = '".$q."'";
@@ -90,6 +90,25 @@ try {
 	}
 	//filter Git
 	if($func=="2"){
+
+			//PDO STYLE :
+			$sql = "SELECT * FROM student WHERE github<>''";
+			$img_src = "../img/profilepic.png";
+			foreach ($databaseConnection->query($sql) as $row) {
+				$img_src ="";
+				if(  $row['profile']=="" ){
+					$img_src = "./img/profilepic.png";
+				}else{
+					$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+				}
+				echo "<div class='head' id='head_".$row['ID']."' > ";
+				echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+				print_r($row['first_name']);
+				echo "</div>";
+			}
+
+
+		/* MYSQL APPROACH
 			$sql="SELECT * FROM student WHERE github<>'' ";
     		$result = mysql_query ($sql);
     		if (!$result) {
@@ -110,6 +129,7 @@ try {
                  print_r($row['first_name']);
                  echo "</div>";
 		    }
+		*/
 			
 	}
 	//filter has instatution
