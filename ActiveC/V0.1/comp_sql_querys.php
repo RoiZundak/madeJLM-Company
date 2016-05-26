@@ -179,9 +179,6 @@ try {
 		}else{
 			echo "Failed to add a new company, please try again.";
 		}
-
-
-
 		/* 			THIS IS A MYSQL APPROACH
 		$sql = "INSERT INTO company (username, email, password) VALUES ('$name','$mail','$p_ass')";
 
