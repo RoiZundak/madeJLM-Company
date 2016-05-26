@@ -27,6 +27,64 @@ try {
 	//show single student
 	if($func=="1"){
 		$q = intval($_GET['q']);
+
+
+		//PDO STYLE :
+		$sql="SELECT * FROM student WHERE ID = '".$q."'";
+		$img_src = "../img/profilepic.png";
+		foreach ($databaseConnection->query($sql) as $row) {
+			$img_src ="";
+			if(  $row['profile']=="" ){
+				$img_src = "./img/profilepic.png";
+			}else{
+				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+			}
+			echo "<table>
+            <tr >
+                <td >
+                    <img src=".$img_src." width='120px' height='110px'>
+                </td>
+
+                <td class ='line_td'>
+                    <p>
+                        <h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2>"
+				."<br>" .$row['Email'] . "
+                    </p>
+                </td>
+            </tr>
+
+            <th >
+
+                <td class ='line_td'><p>
+                <p>
+                    <h4>Professional Experince:</h4>
+                    2015- Peresnt : NOC operator, Deltathree ,INC.</br>
+                    2009-2015:Intel Corp.</br>
+                </td></p>
+            </th>
+            ";
+			echo "<table id='show_student_info'>
+                    <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>basic education years</th>
+                    <th>subject</th>
+                    <th>semesters left</th>
+                    </tr>";
+
+			echo "<tr>";
+			echo "<td>" . $row['first_name'] . "</td>";
+			echo "<td>" . $row['last_name'] . "</td>";
+			echo "<td>" . $row['basic_education_years'] . "</td>";
+			echo "<td>" . $row['basic_education_subject'] . "</td>";
+			echo "<td>" . $row['semesters_left'] . "</td>";
+			echo "</tr>";
+			echo "</table>";
+		}
+
+
+
+		/* MYSQL APPROACH
 		$sql="SELECT * FROM student WHERE ID = '".$q."'";
 		$result = mysql_query ($sql);
 		if (!$result) {
@@ -86,7 +144,7 @@ try {
             echo "</table>";
 
 		}
-		mysql_close($con);
+		mysql_close($con);*/
 	}
 	//filter Git
 	if($func=="2"){
