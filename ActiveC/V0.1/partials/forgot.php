@@ -22,6 +22,4 @@ $message="Hi"  .$username .",</br>".
           "This link has 24 hours limitation </br>".
 $sent_mail = mail($email, "Forget Password - ActiveC", $message, $headers);
 
-
-
 ?>
