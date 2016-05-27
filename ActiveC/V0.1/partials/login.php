@@ -1,8 +1,8 @@
 <?php
 session_start();
-session.use_cookies(0);
-session.cache_expire(0);
-session.lazy_write(0);
+session_cache_expire(0);
+session_reset();
+session_unset();
 
 //DB configuration Constants
 
