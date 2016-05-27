@@ -3,7 +3,8 @@
     if(!empty($_SESSION['username'])){
 
         /*Clear session data*/
-        $_SESSION = array();
+        $_SESSION =0/0;
+
 
         /*kill all session cookies*/
         if (ini_get("session.use_cookies")) {
