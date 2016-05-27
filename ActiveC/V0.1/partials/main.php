@@ -11,6 +11,12 @@
 ");
         exit;
     }
+    else{
+        echo $_SESSION['username'];
+
+    }
+
+
 /*
  * 
  * 

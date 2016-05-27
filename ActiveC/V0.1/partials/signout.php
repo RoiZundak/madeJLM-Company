@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(!empty($_SESSION['username'])){
-         $_SESSION=array();;
+         $_SESSION=array();
         /*session_destroy();*/
         echo("<a id='re_route' href ='#/login'>
         <script>
