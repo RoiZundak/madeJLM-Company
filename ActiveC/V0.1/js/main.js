@@ -25,7 +25,9 @@ app.config(['$routeProvider', function ($routeProvider) {
       .when("/signout", {templateUrl: "partials/signout.php", controller: "PageCtrl"})
       .when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
       .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
-      // else 404
+      .when("/reset", {templateUrl: "partials/reset_password.html", controller: "PageCtrl"})
+
+  // else 404
     .otherwise({redirectTo: "404"});
 }]);
 
