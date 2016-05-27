@@ -3,9 +3,7 @@
     //echo($_SESSION['username']);
     if(empty($_SESSION['username']))
     {
-        header("./#/login");
-        
-        /*echo ("
+        echo ("
                 <script>
                 
                     if(!document.getElementById(\"re_route\")){
@@ -15,7 +13,7 @@
                     alert('you MUST login first. redirecting...');
                     /*document.getElementById(\"re_route\").click();
                 </script>
-                ");*/
+                ");
         exit;
     }
 ?>
