@@ -14,7 +14,7 @@ $sql = 'SELECT * FROM company WHERE email ="'.$email.'"';
 echo $sql;
 foreach($databaseConnection->query($sql) as $row){
     echo "BLA BLA";
-    $user_name=$row['username'];
+    $username=$row['username'];
 }
 
 $message="Hi"  .$username .",<br>".
