@@ -342,6 +342,7 @@
 		}
 		echo"</table>";
 
+
 		/* MYSQL APPROACH
 		$result = mysql_query ($sql);
 		while($row = mysql_fetch_assoc($result)) {
