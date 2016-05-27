@@ -1,5 +1,9 @@
 <?php
 session_start();
+session.use_cookies(0);
+session.cache_expire(0);
+session.lazy_write(0);
+
 //DB configuration Constants
 
 require_once "../php/db_connect.php";
