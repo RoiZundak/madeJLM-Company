@@ -4,20 +4,12 @@
     if(empty($_SESSION['username']))
     {
         echo ("
-<script>
-var r = confirm(\"You are not loged-in ,\n redirecting to login page \");
 
-
-
-</script>
-
-
-
-<a id='re_route' href ='./#/login\'>CLICK TO GO BACK</a>
-
-
-
-
+    <a id='re_route' href ='./#/login\'>
+        <id='back'>
+            Go back
+        </id>
+    </a>
 ");
         exit;
     }
