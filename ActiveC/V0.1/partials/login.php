@@ -2,7 +2,7 @@
 session_start();
 //DB configuration Constants
 
-require_once "php/db_connect.php";
+require_once "../php/db_connect.php";
 $databaseConnection =connect_to_db();
 
 if(!empty($_POST['username'])){
