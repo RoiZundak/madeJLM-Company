@@ -3,7 +3,22 @@
     //echo($_SESSION['username']);
     if(empty($_SESSION['username']))
     {
-        echo ("<a id='re_route' href ='./#/login\'>CLICK TO GO BACK</a>");
+        echo ("
+<script>
+var r = confirm(\"You are not loged-in ,\n redirecting to login page \");
+
+
+
+</script>
+
+
+
+<a id='re_route' href ='./#/login\'>CLICK TO GO BACK</a>
+
+
+
+
+");
         exit;
     }
 /*
