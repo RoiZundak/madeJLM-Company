@@ -1,8 +1,6 @@
 <?php
 session_start();
-session_cache_expire(0);
-session_reset();
-session_unset();
+
 
 //DB configuration Constants
 
