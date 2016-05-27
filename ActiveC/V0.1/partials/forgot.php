@@ -20,5 +20,10 @@ foreach ($databaseConnection->query($sql) as $row)
 $message="Hi"  .$username .",</br>".
           "To  reset your password <a href='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/reset_password.html'>click here. </a></br>".
           "This link has 24 hours limitation </br>".
-$sent_mail = mail($email, "Forget Password - ActiveC", $message, $headers);
+    echo $message;
+    $sent_mail = mail($email, "Forget Password - ActiveC", $message, $headers);
+    if($sent_mail)
+        echo "ok";
+    else
+        echo  "Not Good";
 ?>
