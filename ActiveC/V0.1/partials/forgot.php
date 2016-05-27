@@ -3,14 +3,14 @@ require_once "../php/db_connect.php";
 $databaseConnection =connect_to_db();
 
 $email=$_POST['email'];
-
+echo $email;
 $headers = 'From: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
     'Reply-To: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-$sql = "SELECT * FROM company WHERE email ="Roizundak@Gmail.com";
+$sql = "SELECT * FROM company WHERE email = '$email'";
 echo $sql;
 foreach($databaseConnection->query($sql) as $row){
     $username=$row['username'];
