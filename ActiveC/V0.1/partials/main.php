@@ -6,9 +6,7 @@
         echo ("
 
     <a id='re_route' href ='./#/login\'>
-        <id='back'>
             Go back
-        </id>
     </a>
 ");
         exit;
