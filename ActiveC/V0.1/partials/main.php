@@ -3,8 +3,13 @@
     echo($_SESSION['username']);
     if(empty($_SESSION['username']))
     {
-        echo ("<a id='re_route' href ='../#/login'></a>
+        echo ("
                 <script>
+                
+                    if(!document.getElementById(\"re_route\")){
+                        document.getElementById('body').innerHTML(document.getElementById('body').innerHTML() +
+                         '  <a id=\"re_route\" href =\"../#/login\"></a>   ');
+                    }
                     alert('you MUST login first. redirecting...');
                     document.getElementById(\"re_route\").click();
                 </script>
@@ -44,7 +49,7 @@
     </div>
     <div id = "std_info"  >
 	<?php
-    
+
         require_once "../php/db_connect.php";
         $databaseConnection =connect_to_db();
         $sql = 'SELECT * FROM student';
