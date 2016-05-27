@@ -10,16 +10,16 @@ $headers = 'From: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-$sql = 'SELECT * FROM student WHERE email LIKE ":email"';
+$sql = 'SELECT * FROM company WHERE email LIKE ":email"';
 $records = $databaseConnection->prepare($sql);
 $records->bindParam(':email', $email);
 
 foreach ($databaseConnection->query($sql) as $row)
-    $username=$row['id'];
+    $username=$row['username'];
 
-$message="Hi"  .$username .",</br>".
-          "To  reset your password <a href='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/reset_password.html'>click here. </a></br>".
-          "This link has 24 hours limitation </br>";
+$message="Hi"  .$username .",<br>".
+          "To  reset your password <a href='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/reset_password.html'>click here. </a><br>".
+          "This link has 24 hours limitation <br>";
     echo $message;
     $sent_mail = mail($email, "Forget Password - ActiveC", $message, $headers);
     if($sent_mail)
