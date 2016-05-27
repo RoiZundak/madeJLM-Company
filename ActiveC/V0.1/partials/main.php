@@ -7,8 +7,8 @@
                 <script>
                 
                     if(!document.getElementById(\"re_route\")){
-                        document.getElementById('body').innerHTML(document.getElementById('body').innerHTML() +
-                         '  <a id=\"re_route\" href =\"../#/login\"></a>   ');
+                        document.getElementById('body').innerHTML+=
+                         '  <a id=\"re_route\" href =\"../#/login\"></a>   ';
                     }
                     alert('you MUST login first. redirecting...');
                     document.getElementById(\"re_route\").click();
