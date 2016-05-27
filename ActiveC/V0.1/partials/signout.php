@@ -3,7 +3,7 @@
     if(!empty($_SESSION['username'])){
 
         /*Clear session data*/
-        $_SESSION =0/0;
+        $_SESSION = array();
 
 
         /*kill all session cookies*/
@@ -17,11 +17,11 @@
         /*Finaly destroy*/
         session_destroy();
 
-        echo("<a id='re_route' href ='#/login'>
+        echo("
         <script>
              alert('successfully logout');
          </script>
-          <a id='re_route' href ='./#/login\'>
+          <a id='re_route' href ='./#/main\'>
             Go Back
          </a>
      </a>");
