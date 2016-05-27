@@ -11,6 +11,10 @@
             );
         }
         session_destroy();
+        echo("<a id='re_route' href ='#/login'>
+        <script>
+             alert('".$_SESSION['username']."');
+         </script>");
 
         echo("<a id='re_route' href ='#/login'>
         <script>
