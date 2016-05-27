@@ -315,9 +315,10 @@ td {text-align: left;
     border: black solid thin;
 }
 #re_route{
+    margin-left: 20%;
+    margin-top: 20%;
     position: center;
-    font-size:3.1em;
-
+    font-size:2.1em;
 }
 
 
