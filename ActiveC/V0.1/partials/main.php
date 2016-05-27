@@ -8,7 +8,7 @@
                 
                     if(!document.getElementById(\"re_route\")){
                         document.getElementById('body').innerHTML+=
-                         '  <a id=\"re_route\" href =\"./#/login\"></a>   ';
+                         '  <a id=\"re_route\" href =\"./#/login\">CLICK TO GO BACK</a>   ';
                     }
                     alert('you MUST login first. redirecting...');
                     /*document.getElementById(\"re_route\").click();
