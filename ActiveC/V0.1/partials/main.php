@@ -11,7 +11,7 @@
                          '  <a id=\"re_route\" href =\"./#/login\"></a>   ';
                     }
                     alert('you MUST login first. redirecting...');
-                    document.getElementById(\"re_route\").click();
+                    /*document.getElementById(\"re_route\").click();*/
                 </script>
                 ");
         exit;
