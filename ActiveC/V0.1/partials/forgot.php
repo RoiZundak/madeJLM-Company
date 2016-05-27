@@ -15,9 +15,16 @@ echo $sql;
 foreach($databaseConnection->query($sql) as $row){
     $username=$row['username'];
 }
+$length = 13;
+$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+$charactersLength = strlen($characters);
+$randomString = '';
+for ($i = 0; $i < $length; $i++) {
+    $randomString .= $characters[rand(0, $charactersLength - 1)];
+}
 
 $message="Hi "  .$username .",<br>".
-          "To reset your password <a href='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/partials/reset_password.php?p=5'>click here </a><br>".
+          "To reset your password <a href='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/partials/reset_password.php?p=\"".$randomString."\">click here </a><br>".
           "This link has 24 hours limitation. <br>";
     $sent_mail = mail($email, "Forget Password - ActiveC", $message, $headers);
 
