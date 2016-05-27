@@ -8,7 +8,7 @@
              alert('successfully logout');
          </script>
           <a id='re_route' href ='./#/login\'>
-            Go back
+            Go Back
          </a>
      </a>");
     }
