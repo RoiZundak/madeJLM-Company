@@ -1,6 +1,12 @@
 <?php
+
     session_start();
-    //echo($_SESSION['username']);
+
+echo("<a id='re_route' href ='#/login'>
+        <script>
+             alert('".$_SESSION['username']."');
+         </script>");
+
     if(empty($_SESSION['username']))
     {
         echo ("
