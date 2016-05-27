@@ -1,9 +1,10 @@
 <?php
     session_start();
-    echo($_SESSION['username']);
+    //echo($_SESSION['username']);
     if(empty($_SESSION['username']))
     {
-        echo ("
+        header("./#/login");
+        /*echo ("
                 <script>
                 
                     if(!document.getElementById(\"re_route\")){
@@ -11,9 +12,9 @@
                          '  <a id=\"re_route\" href =\"./#/login\"></a>   ';
                     }
                     alert('you MUST login first. redirecting...');
-                    /*document.getElementById(\"re_route\").click();*/
+                    /*document.getElementById(\"re_route\").click();
                 </script>
-                ");
+                ");*/
         exit;
     }
 ?>
