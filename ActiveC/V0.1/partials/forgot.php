@@ -10,12 +10,11 @@ $headers = 'From: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-$sql = 'SELECT * FROM company';//' WHERE email ="'.$email.'"';
+$sql = "SELECT * FROM company WHERE email = '$email'";
 echo $sql;
 foreach($databaseConnection->query($sql) as $row){
-    echo "BLA BLA";
     $username=$row['username'];
-    echo $username;
+
 }
 
 /*$message="Hi"  .$username .",<br>".
