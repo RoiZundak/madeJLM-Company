@@ -15,6 +15,7 @@ echo $sql;
 foreach($databaseConnection->query($sql) as $row){
     echo "BLA BLA";
     $username=$row['username'];
+    echo $username;
 }
 
 /*$message="Hi"  .$username .",<br>".
