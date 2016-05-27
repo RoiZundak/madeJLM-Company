@@ -2,33 +2,16 @@
 
     session_start();
 
-
-    if(empty($_SESSION['username']))
-    {
+    /*No session currently working*/
+    if(empty($_SESSION['username'])){
         echo ("
-
-    <a id='re_route' href ='./#/login\'>
+        <a id='re_route' href ='./#/login\'>
             Go back
-    </a>
-");
+        </a>
+    ");
         exit;
     }
 
-
-
-/*
- * 
- * 
- *  <script>
-                
-                    if(!document.getElementById("re_route")){
-                        document.getElementById('body').innerHTML+=
-                         '     ';
-                    }
-                    alert('you MUST login first. redirecting...');
-                    /*document.getElementById("re_route").click();
-                </script>
- */
 ?>
 
 <div id="main_wrap">
