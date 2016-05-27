@@ -14,14 +14,11 @@ $sql = "SELECT * FROM company WHERE email = '$email'";
 echo $sql;
 foreach($databaseConnection->query($sql) as $row){
     $username=$row['username'];
-    echo $username;
-
 }
 
-/*$message="Hi"  .$username .",<br>".
+$message="Hi"  .$username .",<br>".
           "To  reset your password <a href='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/reset'>click here </a><br>".
           "This link has 24 hours limitation. <br>";
-    echo $message;
     $sent_mail = mail($email, "Forget Password - ActiveC", $message, $headers);
-*/
+
 ?>
