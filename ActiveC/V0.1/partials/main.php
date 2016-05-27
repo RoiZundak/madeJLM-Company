@@ -8,6 +8,7 @@
         <a id='re_route' href ='./#/login\'>
             Go back
         </a>
+        <script>setTimeout(alert('3'), 3000);</script>
     ");
         exit;
     }
