@@ -1,20 +1,27 @@
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-<div id ="login_container">
+<?php
+require_once "../php/db_connect.php";
+$databaseConnection =connect_to_db();
 
-    <div id="login_form">
-        <br>
-        <h3>Forgot Password</h3>
-        <form method="post" action="index.html" class="login">
-            <p>
-                <label for="login">Email: </label>
-                <input type="text" name="login" id="login" value="Example@example.com" onfocus="if($(this).val()=='Example@example.com')$(this).val('')" onblur="if($(this).val()=='')$(this).val('Example@example.com')">
-            </p>
+$email=$_POST['email'];
 
-            <p class="login-submit">
-                <button type="submit" class="login-button">Send</button>
-            </p>
-        </form>
-        <p class="forgot-password"><a href="#/login">Back To Login</a></p>
-    </div>
+$headers = 'From: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
+    'Reply-To: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-</div>
+$sql = 'SELECT * FROM student WHERE email LIKE :email';
+$records = $databaseConnection->prepare($sql);
+$records->bindParam(':email', $email);
+
+foreach ($databaseConnection->query($sql) as $row)
+    $username=$row['id'];
+
+$message="Hi"  .$username .",</br>".
+          "To  reset your password <a href='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/reset_password.html'>click here. </a></br>".
+          "This link has 24 hours limitation </br>".
+$sent_mail = mail($email, "Forget Password - ActiveC", $message, $headers);
+
+
+
+?>

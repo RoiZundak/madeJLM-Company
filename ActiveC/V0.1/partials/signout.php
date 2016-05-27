@@ -19,9 +19,9 @@
 
         echo("
         <script>
-             alert('successfully logout');
+             alert('Successfully Logout');
          </script>
-          <a id='re_route' href ='./#/main\'>
+          <a id='re_route' href ='./#/login\'>
             Go Back
          </a>
      </a>");
