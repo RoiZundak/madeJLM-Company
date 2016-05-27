@@ -1,7 +1,7 @@
 
 <?php
-echo $_GET['p'];
-
+echo $_GET['p']."<br>";
+echo date('Y-m-d',$_GET['e']);
 
 ?>
 

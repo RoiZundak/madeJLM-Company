@@ -24,7 +24,8 @@ for ($i = 0; $i < $length; $i++) {
 }
 
 $message="Hi "  .$username .",<br>".
-          "To reset your password <a href='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/partials/reset_password.php?p=".$randomString."'>click here </a><br>".
+          "To reset your password <a href='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/partials/reset_password.php?p=".$randomString
+            ."&e=".time()+(24*60*60)."'>click here </a><br>".
           "This link has 24 hours limitation. <br>";
     $sent_mail = mail($email, "Forget Password - ActiveC", $message, $headers);
 
