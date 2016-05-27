@@ -13,7 +13,7 @@ $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 $sql = 'SELECT * FROM company WHERE email ="'.$email.'"';
 echo $sql;
 foreach($databaseConnection->query($sql) as $row){
-    print_r($row);
+    echo "BLA BLA";
     $user_name=$row['username'];
 }
 
