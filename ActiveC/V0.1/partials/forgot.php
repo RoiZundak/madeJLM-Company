@@ -14,8 +14,10 @@ $sql = 'SELECT * FROM company WHERE email LIKE ":email"';
 $records = $databaseConnection->prepare($sql);
 $records->bindParam(':email', $email);
 
-$row=$databaseConnection->query($sql);
-$username=$row['username'];
+foreach($databaseConnection->query($sql) as $row){
+    print_r($row);
+    $user_name=$row['username'];
+}
 
 $message="Hi"  .$username .",<br>".
           "To  reset your password <a href='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/reset'>click here </a><br>".
