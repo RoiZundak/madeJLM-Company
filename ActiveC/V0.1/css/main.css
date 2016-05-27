@@ -315,7 +315,9 @@ td {text-align: left;
     border: black solid thin;
 }
 #re_route{
-    height: 550px;
+    margin-left: 20%;
+    margin-top: 20%;
+    margin-bottom:60% ;
     position: center;
     font-size:2.1em;
 }
