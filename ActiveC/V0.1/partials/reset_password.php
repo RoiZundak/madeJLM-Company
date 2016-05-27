@@ -1,3 +1,11 @@
+
+<?php
+echo $_GET['p'];
+
+
+?>
+
+
 <!-- Page Content -->
 
 <div class="container">
