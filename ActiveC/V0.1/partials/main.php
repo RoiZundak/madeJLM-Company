@@ -45,7 +45,8 @@
     </div>
     <div id = "std_info"  >
 	<?php
-        //db connect
+    header('Content-Type: text/html; charset=windows-1255');
+    //db connect
         require_once "../php/db_connect.php";
         $databaseConnection =connect_to_db();
         //get all students
