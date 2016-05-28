@@ -6,12 +6,12 @@
             var name =sessionStorage.getItem('username');
             if ( !name ) {
                 alert('stop!');
-                $location.path('contact');
+                
             }else{
-                $location.path('about');
+                alert('good to go.');
             }
             
-            </script>>";
+            </script>";
     /*No session currently working
     if(empty($_SESSION['username'])){
         echo ("
