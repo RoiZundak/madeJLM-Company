@@ -15,7 +15,7 @@
                 $params["secure"], $params["httponly"]
             );
         }
-
+ 
         // Finally, destroy the session.
         session_destroy();
         echo("
