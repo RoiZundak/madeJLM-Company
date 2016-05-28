@@ -365,7 +365,7 @@
             exit;
         }
         //PDO STYLE :
-        $records = $databaseConnection->prepare("UPDATE company SET password = ".md5($pass1)." WHERE email = '$email'");
+        $records = $databaseConnection->prepare("UPDATE company SET password ='".md5($pass1)."' WHERE email = '$email'");
         if ( $records->execute()==true){
             echo "";
         }else{
