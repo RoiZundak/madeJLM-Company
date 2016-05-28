@@ -6,7 +6,7 @@
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) {
                 //document.getElementById(\"re_route_login\").click();
-                document.write('go back');
+                document.write('<a id =\'link_back\' href=\'../#/main\'> go back</a>');
                 window.stop();
                 <!--
             }
