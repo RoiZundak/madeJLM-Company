@@ -15,13 +15,14 @@
                 $params["secure"], $params["httponly"]
             );
         }
- 
+
         // Finally, destroy the session.
         session_destroy();
         echo("
         <script>
              alert('Successfully Logout');
          </script>
+          You are not logged in. <br> <br>
           <a id='re_route' href ='./#/login\'>
             Go Back
          </a>
