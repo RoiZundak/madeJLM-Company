@@ -280,7 +280,7 @@
 		$p_ass = md5($p_ass);
 
 		//PDO SYTLE :
-		$records = $databaseConnection->prepare('INSERT INTO company (username, email, password) VALUES (:user,:mail,:password)');
+		$records = $databaseConnection->prepare('INSERT INTO company (username, email, password,created) VALUES (:user,:mail,:password,NOW())');
 		$records->bindParam(':user', $name);
 		$records->bindParam(':mail', $mail);
 		$records->bindParam(':password', $p_ass);
@@ -365,7 +365,8 @@
             exit;
         }
         //PDO STYLE :
-        $records = $databaseConnection->prepare("UPDATE company SET password ='".md5($pass1)."' WHERE email = '$mail'");
+        $records = $databaseConnection->prepare("UPDATE company SET password ='".md5($pass1)."'".
+            ",f_pass='',f_exp=0 WHERE email = '$mail'");
         if ( $records->execute()==true){
             echo "Updated !";
         }else{
