@@ -51,6 +51,11 @@ if(!empty($_POST['username'])){
         }
         else
         {
+            echo("
+                 <script>
+                   alert('Wrong Password Or User Name.');
+                </script>
+            </a>");
             $errMsg .= 'Username and Password are not found<br>';
             echo("<a id='re_route' href ='../#/login'>
                 <script>
