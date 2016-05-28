@@ -1,8 +1,16 @@
 <?php
 
     session_start();
-
-    /*No session currently working*/
+    echo "<script> 
+            var name =sessionStorage.getItem('username');
+            if ( !name ) {
+                $location.path('login');
+            }else{
+            $location.path('about');
+            }
+            
+            </script>>";
+    /*No session currently working
     if(empty($_SESSION['username'])){
         echo ("
         You are not logged in. <br> <br>
@@ -12,7 +20,7 @@
     ");
         exit;
     }
-
+*/
 ?>
 
 <div id="main_wrap">

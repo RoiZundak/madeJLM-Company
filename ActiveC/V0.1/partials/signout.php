@@ -20,6 +20,7 @@
         session_destroy();
        echo("
         <script>
+            sessionStorage.removeItem('username');
              alert('Successfully Logout');
          </script>
           You are not logged in. <br> <br>
