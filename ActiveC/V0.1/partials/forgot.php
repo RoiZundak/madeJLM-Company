@@ -15,7 +15,6 @@ $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 $sql = "SELECT * FROM company WHERE email = '$email'";
 foreach($databaseConnection->query($sql) as $row){
     $username=$row['username'];
-    echo "pass : ".$row['password']."<br>";
 }
 //Create a random string
 $length = 13;

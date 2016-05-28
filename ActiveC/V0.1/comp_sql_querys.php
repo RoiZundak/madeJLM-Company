@@ -361,13 +361,13 @@
         $mail = $_POST['e_mail'];
         if(strcmp($pass1,$pass2)!=0 ){
             echo "passwords does not match , ";
-            // TODO redirect
+            // TODO redirect to index.html
             exit;
         }
         //PDO STYLE :
         $records = $databaseConnection->prepare("UPDATE company SET password ='".md5($pass1)."' WHERE email = '$mail'");
         if ( $records->execute()==true){
-            echo "Updated ! password : ".md5($pass1)."<br>".$records->rowCount()." lines were affected";
+            echo "Updated !";
         }else{
             echo "Failed.";
         }
