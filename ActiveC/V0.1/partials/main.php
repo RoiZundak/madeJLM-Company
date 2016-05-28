@@ -4,9 +4,10 @@
     echo "<script> 
             var name =sessionStorage.getItem('username');
             if ( !name ) {
+                alert('stop!');
                 $location.path('login');
             }else{
-            $location.path('about');
+                $location.path('about');
             }
             
             </script>>";
