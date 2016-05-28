@@ -1,7 +1,27 @@
 
 <?php
+//connect to db
+require_once "../php/db_connect.php";
+$databaseConnection =connect_to_db();
+/*
 echo $_GET['p']."<br>";
 echo date('Y-m-d',$_GET['e']);
+*/
+$sql = "SELECT * FROM company WHERE email = '".$_GET['mail']."'";
+foreach($databaseConnection->query($sql) as $row){
+    $exp = $row['f_exp'];
+    $code = $row ['f_pass'];
+}
+if($exp !=$_GET['e'] || $exp <= time() || strcmp ($code , $_GET['e'])!=0 ){
+    //first condition : someone is trying something fishy.
+    //second : expiration date has already passed
+    //third : code is not the same in db and link
+    echo "This link has expired , click here to go back.";
+    exit;
+}else{
+    //link is valid , move on.
+}
+
 
 ?>
 
@@ -16,29 +36,22 @@ echo date('Y-m-d',$_GET['e']);
             <h3>Reset Password</h3>
 
         <div class="col-sm-4">
-            <h3>ActiveC</h3>
-            <p>
-                Yefe Nof st.<br>
-                Jerusalem, Israel<br>
-            </p>
+            <form method="post" action="../comp_sql_querys.php?func=8" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
+                <p>
+                    <label for="new_pass">Name : </label>
+                    <input type="password" name="new_pass" id="new_pass">
+                </p>
 
-            <p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: (972) 548044784</p>
-
-            <p><i class="fa fa-envelope-o"></i> <abbr title="Email">E</abbr>: <a
-                    href="mailto:ActiveC.madejlm@gmail.com">ActiveC.madejlm@gmail.com</a></p>
-
-            <p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: 24/7</p>
-            <ul class="list-unstyled list-inline list-social-icons">
-                <li class="tooltip-social facebook-link"><a href="https://www.facebook.com/MadeinJLM/?pnref=lhc&__mref=message_bubble" data-toggle="tooltip"
-                                                            data-placement="top" title="Facebook"><i
-                        class="fa fa-facebook-square fa-2x"></i></a></li>
-                <li class="tooltip-social twitter-link"><a href="https://twitter.com/MadeinJLM" data-toggle="tooltip"
-                                                           data-placement="top" title="Twitter"><i
-                        class="fa fa-twitter-square fa-2x"></i></a></li>
-                <li class="tooltip-social google-plus-link"><a href="https://plus.google.com/+MadeinjlmOrg1" data-toggle="tooltip"
-                                                               data-placement="top" title="Google+"><i
-                        class="fa fa-google-plus-square fa-2x"></i></a></li>
-            </ul>
+                <p>
+                    <label for="new_pass_conf">Email : </label>
+                    <input type="password" name="new_pass_conf" id="new_pass_conf">
+                </p>
+                <?php
+                    echo "<input type ='hidden' name='e_mail' value='".$_GET['mail']."'>";
+                ?>
+                
+                <button type="submit" name = "submit" class="login-button">Login</button>
+            </form>
         </div>
 
     </div>

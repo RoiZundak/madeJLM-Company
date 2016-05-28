@@ -354,5 +354,24 @@
 		}
 		echo"</table>";*/
 	}
+    //Update password
+    if($func=="8"){
+        $pass1 =$_POST['new_pass'] ;
+        $pass2 =$_POST['new_pass_conf'] ;
+        $mail = $_POST['e_mail'];
+        if(strcmp($pass1,$pass2)!=0 ){
+            echo "passwords does not match , ";
+            // TODO redirect
+            exit;
+        }
+        //PDO STYLE :
+        $records = $databaseConnection->prepare("UPDATE company SET password = ".md5($pass1)." WHERE email = '$email'");
+        if ( $records->execute()==true){
+            echo "";
+        }else{
+            echo "";
+        }
+    }
+
 ?>
 		
