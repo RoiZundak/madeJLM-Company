@@ -12,11 +12,14 @@ foreach($databaseConnection->query($sql) as $row){
     $exp = $row['f_exp'];
     $code = $row ['f_pass'];
 }
-if($exp !=$_GET['e'] || $exp <= time() || strcmp ($code , $_GET['e'])!=0 ){
+if($exp !=$_GET['e'] || $exp <= time() || strcmp ($code , $_GET['p'])!=0 ){
     //first condition : someone is trying something fishy.
     //second : expiration date has already passed
     //third : code is not the same in db and link
-    echo "This link has expired , click here to go back.";
+    echo "There has been an error , printing all available options : <br>";
+    echo "experation : ".$exp . "recived from form :".$_GET['e']."<br>";
+    echo "see above , and time is :".time()."<br>";
+    echo "code is : ".$code ."recived from form :" .$_GET['p'] ;
     exit;
 }else{
     //link is valid , move on.
