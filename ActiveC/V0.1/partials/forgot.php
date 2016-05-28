@@ -15,6 +15,7 @@ $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 $sql = "SELECT * FROM company WHERE email = '$email'";
 foreach($databaseConnection->query($sql) as $row){
     $username=$row['username'];
+    echo "pass : ".$row['password']."<br>";
 }
 //Create a random string
 $length = 13;
@@ -37,8 +38,11 @@ $stmt->execute();
 //Build email message :
 $message="Hi "  .$username .",<br>".
           "To reset your password <a href='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/partials/reset_password.php?p=".$randomString."&mail=".$email."&e=".$expire."'>click here </a><br>".
-          "This link has 24 hours limitation. <br>";
+          "This link has 24 hours limitation. <br>".
+          "If you don't know why you have received this mail, please ignore it.";
 //Send mail.
 $sent_mail = mail($email, "Forget Password - ActiveC", $message, $headers);
-
+if($sent_mail){
+    echo " Email has been sent.";
+}
 ?>

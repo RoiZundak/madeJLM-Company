@@ -41,12 +41,12 @@ if($exp !=$_GET['e'] || $exp <= time() || strcmp ($code , $_GET['p'])!=0 ){
         <div class="col-sm-4">
             <form method="post" action="../comp_sql_querys.php?func=8" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
                 <p>
-                    <label for="new_pass">Name : </label>
+                    <label for="new_pass">new Password : </label>
                     <input type="password" name="new_pass" id="new_pass">
                 </p>
 
                 <p>
-                    <label for="new_pass_conf">Email : </label>
+                    <label for="new_pass_conf">confirm Password : </label>
                     <input type="password" name="new_pass_conf" id="new_pass_conf">
                 </p>
                 <?php
