@@ -11,6 +11,7 @@
     ");
         exit;
     }
+header('Content-Type: text/html; charset=windows-1255');
 
 ?>
 
@@ -45,7 +46,6 @@
     </div>
     <div id = "std_info"  >
 	<?php
-    header('Content-Type: text/html; charset=windows-1255');
     //db connect
         require_once "../php/db_connect.php";
         $databaseConnection =connect_to_db();
@@ -63,30 +63,6 @@
             print_r($row['first_name']);
             echo "</div>";
         }
-
-/*
-    	$link = mysql_connect("5.100.253.198", "jobmadeinjlm","q1w2e3r4");
-		if (!$link) {
-			die("Could not connect: " . mysql_error());
-		}
-		$db_selected = mysql_select_db("jobmadei_db", $link);
-		if (!$db_selected) {
-			die ("Can't use internet_database : " . mysql_error());
-		}
-		$result = mysql_query ('SELECT * FROM student');
-		$img_src = "../img/profilepic.png";
-		while ($row = mysql_fetch_assoc($result)) {
-		    if(  $row['profile']=="" ){
-                $img_src = "../V0.1/img/profilepic.png";
-            }else{
-                $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
-             }
-			echo "<div class='head' id='head_".$row['ID']."' > ";
-			echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
-			print_r($row['first_name']);
-			echo "</div>";
-		}
-*/
 	?>
 	<script>
 	var id="-1";
