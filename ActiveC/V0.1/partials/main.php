@@ -5,7 +5,7 @@
             var name =sessionStorage.getItem('username');
             if ( !name ) {
                 alert('stop!');
-                $location.path('login');
+                $location.path('contact');
             }else{
                 $location.path('about');
             }

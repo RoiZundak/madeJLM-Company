@@ -42,25 +42,21 @@ if(!empty($_POST['username'])){
         if(count($results) > 0 && $password === $results['password'] )
         {
             $_SESSION['username'] = $username;
-            echo("<a id='re_route' href ='../#/main'>
+            echo("<a id='re_route_main' href ='../#/main'>
                  <script>
                     sessionStorage.setItem('username', ".$username.");
-                    document.getElementById(\"re_route\").click();
+                    document.getElementById(\"re_route_main\").click();
                 </script>
             </a>");
             exit;
         }
         else
         {
-            echo("
-                 <script>
-                   alert('Wrong Password Or User Name.');
-                </script>
-            </a>");
             $errMsg .= 'Username and Password are not found<br>';
-            echo("<a id='re_route' href ='../#/login'>
+            echo("<a id='re_route_login' href ='../#/login'></a>
                 <script>
-                    document.getElementById(\"re_route\").click();
+                    alert('Wrong Password Or User Name.');
+                    document.getElementById(\"re_route_login\").click();
                 </script>
             </a>");
             exit;
