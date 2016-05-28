@@ -44,6 +44,7 @@ if(!empty($_POST['username'])){
             $_SESSION['username'] = $username;
             echo("<a id='re_route_main' href ='../#/main'>
                  <script>
+                    alert('logged in , redirecting...');
                     sessionStorage.setItem('username', ".$username.");
                     document.getElementById(\"re_route_main\").click();
                 </script>

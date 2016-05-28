@@ -2,6 +2,7 @@
 
     session_start();
     echo "<script> 
+            alert('in main page');
             var name =sessionStorage.getItem('username');
             if ( !name ) {
                 alert('stop!');
