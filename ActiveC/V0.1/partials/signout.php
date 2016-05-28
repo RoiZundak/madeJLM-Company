@@ -1,6 +1,6 @@
 <?php
 
-    session_start();
+   /* session_start();
 
         unset($_SESSION['username']);
 
@@ -17,16 +17,16 @@
         }
 
         // Finally, destroy the session.
-        session_destroy();
+        session_destroy();*/
        echo("
         <script>
-            sessionStorage.removeItem('username');
-             alert('Successfully Logout');
+            sessionStorage.removeAll();
+            alert('Successfully Logout');
          </script>
           You are not logged in. <br> <br>
           <a id='re_route' href ='./#/login\'>
             Go Back
          </a>
-      </a>");
+           ");
 
  ?>

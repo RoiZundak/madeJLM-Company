@@ -1,16 +1,14 @@
 <?php
 
-    session_start();
+   // session_start();
     echo "<script> 
             alert('in main page');
-            var name =sessionStorage.getItem('username');
-            if ( !name ) {
+            var name = sessionStorage.getItem('username');
+            if ( name ===null ) {
                 alert('stop!');
-                
             }else{
                 alert('good to go.');
             }
-            
             </script>";
     /*No session currently working
     if(empty($_SESSION['username'])){
