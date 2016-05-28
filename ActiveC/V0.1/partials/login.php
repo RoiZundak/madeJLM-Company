@@ -15,10 +15,10 @@ if(!empty($_POST['username'])){
     $password = md5(trim($_POST['password']));
    // echo ("<script> alert('$password');</script>");
 
-    if($username == '')
+    if($username == 'Example@example.com' || $username == '')
         $errMsg .= 'You must enter your Username<br>';
 
-    if($password == '')
+    if($password == '' || $password == '688822292')
         $errMsg .= 'You must enter your Password<br>';
 
     if($errMsg == '')
