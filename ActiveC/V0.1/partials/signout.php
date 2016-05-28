@@ -16,7 +16,6 @@
         }
         /*Finaly destroy*/
         session_destroy();
-        echo "User name:"+$_SESSION['username'];
         echo("
         <script>
              alert('Successfully Logout');
