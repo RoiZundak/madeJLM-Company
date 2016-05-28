@@ -19,7 +19,7 @@
         // Finally, destroy the session.
         session_destroy();*/
        echo("<script>
-                sessionStorage.removeAll();
+                sessionStorage.removeItem('username');
                 if(sessionStorage.getItem('username')){
                     alert('not really Done, sorry');
                 }else{
