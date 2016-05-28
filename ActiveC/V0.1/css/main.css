@@ -83,10 +83,9 @@ Our style
 	width:120px;
 	height:110px;
 	margin-left:5px;
-    background-position: center;
     border-radius: 2px;
+    background-image: url('../img/profilepic.png') ;
 
-	
 }
 #show_std{
     border-left-style: outset;

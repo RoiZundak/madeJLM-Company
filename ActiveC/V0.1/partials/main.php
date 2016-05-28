@@ -45,9 +45,10 @@
     </div>
     <div id = "std_info"  >
 	<?php
-
+        //db connect
         require_once "../php/db_connect.php";
         $databaseConnection =connect_to_db();
+        //get all students
         $sql = 'SELECT * FROM student';
         $img_src = "../img/profilepic.png";
         foreach ($databaseConnection->query($sql) as $row) {
