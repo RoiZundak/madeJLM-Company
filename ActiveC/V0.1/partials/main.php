@@ -1,11 +1,13 @@
 <?php
 
    // session_start();
-    echo "    <a id='re_route_login'  href ='./#/login\'></a>
+    echo "
             <script> 
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) {
-                document.getElementById(\"re_route_login\").click();
+                //document.getElementById(\"re_route_login\").click();
+                window.print('GO BACK');
+                window.stop();
             }
             </script>";
     /*No session currently working
