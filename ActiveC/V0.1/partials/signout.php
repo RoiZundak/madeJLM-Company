@@ -22,9 +22,8 @@
         <script>
              alert('Successfully Logout');
          </script>
-         
           You are not logged in. <br> <br>
-          <a id='re_route' href ='/#/contact\'>
+          <a id='re_route' href ='./#/login\'>
             Go Back
          </a>
       </a>");
