@@ -20,6 +20,7 @@
         session_destroy();*/
        echo("<script>
                 sessionStorage.removeItem('username');
+                alert('I have removed username key+value.')
                 if(sessionStorage.getItem('username')){
                     alert('not really Done, sorry');
                 }else{
