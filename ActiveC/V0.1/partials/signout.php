@@ -18,15 +18,17 @@
 
         // Finally, destroy the session.
         session_destroy();*/
-       echo("
-        <script>
-            sessionStorage.removeAll();
-            alert('Successfully Logout');
-         </script>
-          You are not logged in. <br> <br>
-          <a id='re_route' href ='./#/login\'>
+       echo("<script>
+                sessionStorage.removeAll();
+                if(sessionStorage.getItem('username')){
+                    alert('not really Done, sorry');
+                }else{
+                    alert('Successfully Logout');
+                }
+            </script>
+            You are not logged in. <br> <br>
+            <a id='re_route' href ='./#/login\'>
             Go Back
-         </a>
-           ");
+            </a>");
 
  ?>

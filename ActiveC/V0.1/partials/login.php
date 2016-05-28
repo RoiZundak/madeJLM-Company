@@ -41,14 +41,15 @@ if(!empty($_POST['username'])){
 */
         if(count($results) > 0 && $password === $results['password'] )
         {
-            $_SESSION['username'] = $username;
-            echo("<a id='re_route_main' href ='../#/main'>
+            //$_SESSION['username'] = $username;
+            echo("<a id='re_route_main' href ='../#/main'></a>
                  <script>
-                    alert('logged in , redirecting...');
+                    
                     sessionStorage.setItem('username', '".$username."');
+                    alert('logged in , redirecting...' + sessionStorage.getItem('username')+'.' );
                     document.getElementById(\"re_route_main\").click();
                 </script>
-            </a>");
+                ");
             exit;
         }
         else
@@ -59,7 +60,7 @@ if(!empty($_POST['username'])){
                     alert('Wrong Password Or User Name.');
                     document.getElementById(\"re_route_login\").click();
                 </script>
-            </a>");
+            ");
             exit;
         }
     }
