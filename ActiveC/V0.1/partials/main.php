@@ -5,6 +5,7 @@
     /*No session currently working*/
     if(empty($_SESSION['username'])){
         echo ("
+        You are not logged in <br>
         <a id='re_route' href ='./#/login\'>
             Go back
         </a>
