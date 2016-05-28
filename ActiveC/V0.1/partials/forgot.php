@@ -30,7 +30,7 @@ $expire=time()+(24*60*60);
 //UPDATE THE DB to save the newly created data
 $sql = "UPDATE company SET f_pass=".$randomString." , f_exp = ".$expire." WHERE email = '$email'";
 // Prepare statement
-$stmt = $conn->prepare($sql);
+$stmt = $databaseConnection->prepare($sql);
 // execute the query
 $stmt->execute();
 
