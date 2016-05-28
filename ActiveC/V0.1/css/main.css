@@ -88,6 +88,7 @@ Our style
 
 }
 #show_std{
+    display:inline;
     border-left-style: outset;
     float:right;
     min-width: 34%;
