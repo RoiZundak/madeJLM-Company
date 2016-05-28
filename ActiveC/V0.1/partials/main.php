@@ -4,7 +4,7 @@
     echo "<script> 
             alert('in main page');
             var name = sessionStorage.getItem('username');
-            if ( name ===null ) {
+            if ( name === null || name === 'Not_Valid_User_Name' ) {
                 alert('stop!');
             }else{
                 alert('good to go.');

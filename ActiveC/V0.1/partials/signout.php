@@ -19,13 +19,8 @@
         // Finally, destroy the session.
         session_destroy();*/
        echo("<script>
-                sessionStorage.removeItem('username');
-                alert('I have removed username key+value.')
-                if(sessionStorage.getItem('username')){
-                    alert('not really Done, sorry');
-                }else{
-                    alert('Successfully Logout');
-                }
+                sessionStorage.setItem('username', 'Not_Valid_User_Name');
+                
             </script>
             You are not logged in. <br> <br>
             <a id='re_route' href ='./#/login\'>
