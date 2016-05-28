@@ -18,9 +18,12 @@
 
         // Finally, destroy the session.
         session_destroy();
-       echo("<a id='re_route' href ='../#/login'>
+       echo("<a id='re_route' href ='/#/login'>
                 <script>
                     document.getElementById(\"re_route\").click();
+                     <a id='re_route' href ='./#/login\'>
+                     Go Back
+                    </a>
                 </script>
          </a>");
        /* echo("
