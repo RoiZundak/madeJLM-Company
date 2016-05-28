@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 
 
 //DB configuration Constants
@@ -43,10 +43,8 @@ if(!empty($_POST['username'])){
         {
             //$_SESSION['username'] = $username;
             echo("<a id='re_route_main' href ='../#/main'></a>
-                 <script>
-                    
+                 <script>                  
                     sessionStorage.setItem('username', '".$username."');
-                    alert('logged in , redirecting...' + sessionStorage.getItem('username')+'.' );
                     document.getElementById(\"re_route_main\").click();
                 </script>
                 ");

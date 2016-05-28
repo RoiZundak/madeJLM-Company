@@ -1,12 +1,10 @@
 <?php
 
    // session_start();
-    echo "    <a id='re_route_login' href ='../#/login'></a>
+    echo "    <a id='re_route_login'  href ='./#/login\'></a>
             <script> 
-            alert('in main page');
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) {
-                alert('stop!');
                 document.getElementById(\"re_route_login\").click();
             }
             </script>";
