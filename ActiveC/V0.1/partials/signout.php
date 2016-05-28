@@ -18,19 +18,19 @@
 
         // Finally, destroy the session.
         session_destroy();
-       /* echo("<a id='re_route' href ='../#/login'>
+       echo("<a id='re_route' href ='./#/login'>
                 <script>
                     document.getElementById(\"re_route\").click();
                 </script>
-         </a>");*/
-        echo("
+         </a>");
+       /* echo("
         <script>
              alert('Successfully Logout');
          </script>
           You are not logged in. <br> <br>
-          <a id='re_route' href ='\./#/login\'>
+          <a id='re_route' href ='./#/login\'>
             Go Back
          </a>
-         </a>");
+         </a>");*/
 
  ?>
