@@ -24,7 +24,7 @@
          </script>
          
           You are not logged in. <br> <br>
-          <a id='re_route' href ='/#/login\'>
+          <a id='re_route' href ='/#/contact\'>
             Go Back
          </a>
       </a>");
