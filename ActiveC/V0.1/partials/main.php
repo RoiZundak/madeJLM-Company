@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    /*echo "
+    echo "
             <script> 
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) {
@@ -12,7 +12,7 @@
             }
 
            </script>";
-    */
+
     /*No session currently working*/
     if(empty($_SESSION['username'])){
         echo ("
