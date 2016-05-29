@@ -41,6 +41,7 @@ if(empty($_SESSION['username'])){
         </div>
         <div class="filters" id="skills">
             Skills
+            
          </div>
          <div class="filters" id="nearby">
             Nearby
