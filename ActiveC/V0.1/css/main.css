@@ -73,6 +73,19 @@ Our style
     border-radius: 2px;
 
 }
+.skillBox{
+    display:inline-block;
+    width:30px;
+    height:30px;
+    margin:auto;
+    padding:5px;
+    cursor:pointer;
+    text-align:center;
+    font-size:1.1em;
+    transition-property: background, border-radius;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
+}
 .head:Hover{
 	background-color:gainsboro;
     font-size:1.1em;
