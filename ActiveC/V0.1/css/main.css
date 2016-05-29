@@ -339,7 +339,7 @@ td {text-align: left;
 h3 {
     text-align: left;
     position: relative;
+    left: -60px;
 
-    padding-left:0px;
 }
 
