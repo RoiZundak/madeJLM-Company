@@ -1,6 +1,6 @@
 <?php
     session_start();
-    /*echo("<a id='re_route' href ='./#/login'></a>
+    echo("<a id='re_route' href ='./#/login'></a>
             <script> 
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' || name =='') 
@@ -13,9 +13,9 @@
                 
             }
            </script>
-    ");*/
+    ");
 
-    No session currently working
+    //No session currently working
     if(empty($_SESSION['username'])){
         echo ("
         You are not logged in. <br> <br>
