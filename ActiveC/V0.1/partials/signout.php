@@ -24,13 +24,12 @@
                 document.getElementById(\"re_route\").click();
                 alert('You are not logged in. redaircting to login page...');
        </script>
-       </a>\");
-       
-              /*
-            You are not logged in. <br> <br>
-            /*<a id='re_route' href ='./#/login\'>
-            Go Back
-            </a>\");
-        */
+       </a>");
 
+        /*
+        You are not logged in. <br> <br>
+        /*<a id='re_route' href ='./#/login\'>
+        Go Back
+        </a>");
+        */
  ?>
