@@ -40,7 +40,7 @@
                 <td class ='line_td'>
                     <p>
                         <h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2>"
-				."<br id='mailButton'>" .$row['Email'] . "
+				."<br id='headMail'>" .$row['Email'] . "
                     </p>
                 </td>
             </tr>
