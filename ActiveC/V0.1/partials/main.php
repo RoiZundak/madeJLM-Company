@@ -1,6 +1,6 @@
 <?php
-   // session_start();
-    echo("<a id='re_route' href ='./#/login'></a> 
+    session_start();
+    /*echo("<a id='re_route' href ='./#/login'></a>
             <script> 
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' || name =='') 
@@ -13,8 +13,8 @@
                 
             }
            </script>
-    ");
-    /*
+    ");*/
+
     No session currently working
     if(empty($_SESSION['username'])){
         echo ("
@@ -25,7 +25,7 @@
     ");
         exit;
     }
-    */
+    
 ?>
 
 <div id="main_wrap">
