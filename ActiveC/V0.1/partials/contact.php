@@ -87,8 +87,13 @@
 
             <p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: (972) 548044784</p>
 
-            <p><i class="fa fa-envelope-o"></i> <abbr title="Email">E</abbr>: <a
-                    href="mailto:ActiveC.madejlm@gmail.com">ActiveC.madejlm@gmail.com</a></p>
+            <p><i class="fa fa-envelope-o"></i> <abbr title="Email">E</abbr>:
+                <a href="mailto:ActiveC.madejlm@gmail.com">
+                    <button type="button"
+                            onclick="document.getElementById('demo').innerHTML = Date()">
+                        Click me to see mail.</button>
+                </a>
+            </p>
 
             <p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: 24/7</p>
             <ul class="list-unstyled list-inline list-social-icons">
