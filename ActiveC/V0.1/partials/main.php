@@ -4,26 +4,19 @@
 echo "
             <script> 
             var name = sessionStorage.getItem('username');
-            if ( name === null || name === 'Not_Valid_User_Name' ) {
+            if ( name === null || name === 'Not_Valid_User_Name' )
+             {
                 //document.getElementById(\"re_route_login\").click();
-                </script>
-                 <a id='re_route' href ='./#/login\'>
-                    Go Back
-                </a>
                 document.write('<a href=\'./#/login\' id =\'link_back\' > go back</a>');
-                <script>
                 window.stop();
-                <!--
+             
             }
             </script>";
 /*No session currently working
-                document.write('<a href=\'./#/login\' id =\'link_back\' > go back</a>');
-
 if(empty($_SESSION['username'])){
     echo ("
     You are not logged in. <br> <br>
     <a id='re_route' href ='./#/login\'>
-
         Go Back
     </a>
 ");
