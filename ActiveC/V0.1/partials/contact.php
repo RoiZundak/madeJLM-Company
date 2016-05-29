@@ -87,7 +87,7 @@
 
             <p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: (972) 548044784</p>
 
-            <p><i class="fa fa-envelope-o"></i> <abbr title="Email">E</abbr>:
+            <p><i class="fa fa-envelope-o"></i> <abbr title="Email">E &#8209</abbr>:
 
                 <button id="b"onclick="showmail()">Click me to see mail.</button>
                 <p id="demo"></p>
