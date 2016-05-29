@@ -1,5 +1,8 @@
 <?php
     session_start();
+    require_once "../php/db_connect.php";
+    $databaseConnection =connect_to_db();
+    
     $_SESSION['login_user']="Contact";
     if(isset($_POST['submit'])) {
         $to      = 'Activec.madejlm@gmail.com';
@@ -91,6 +94,10 @@
                 <button id="b" onclick="showmail()">Click me to see mail.</button>
                 <script>
                     function showmail(){
+                        <?php
+                        $sql = 'UPDATE company SET click = click + 1 ';
+                        
+                        ?>
                         document.getElementById("b").style.visibility="hidden";
                         var x = document.createElement("INPUT");
                         x.setAttribute("type", "hidden");
