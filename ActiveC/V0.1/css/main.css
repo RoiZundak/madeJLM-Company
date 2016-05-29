@@ -319,7 +319,7 @@ td {text-align: left;
     font-size:2.1em;
 }
 
-#button{
+#b{
     background: #474747;
     background: -webkit-gradient(linear, 0 0, 0 bottom, from(#474747), to(#444));
     background: -moz-linear-gradient(#474747, #444);
