@@ -324,7 +324,9 @@ td {text-align: left;
     background: -webkit-gradient(linear, 0 0, 0 bottom, from(#474747), to(#444));
     background: -moz-linear-gradient(#474747, #444);
     background: linear-gradient(#474747, #444);
-    border: solid 25px #2f2f2f;
+    border: solid 1px #2f2f2f;
+    border-radius: solid 25px;
+    color: white;
     box-shadow: inset 0 10px 15px 0 #3e3e3e; }
 
 
