@@ -1,7 +1,5 @@
 <?php
-
    /* session_start();
-
         unset($_SESSION['username']);
 
         // Unset all of the session variables.
@@ -15,7 +13,6 @@
                 $params["secure"], $params["httponly"]
             );
         }
-
         // Finally, destroy the session.
         session_destroy();*/
        echo("<a id='re_route' href ='./#/login'>
