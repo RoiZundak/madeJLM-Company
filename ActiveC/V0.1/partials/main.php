@@ -149,7 +149,7 @@
                         document.getElementById("std_info").innerHTML = xmlhttp.responseText;
                     }
                 };
-                xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"5",true);
+                xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"9",true);
                 xmlhttp.send();
             }
 

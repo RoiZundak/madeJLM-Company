@@ -273,7 +273,26 @@
 			echo "</div>";
 		}*/
 	}
-	//ADD new company
+
+if($func=="9") {
+
+
+	//PDO STYLE :
+	$sql = 'SELECT * FROM skills';
+	$img_src = "../img/profilepic.png";
+	foreach ($databaseConnection->query($sql) as $row) {
+		$img_src = "";
+			$img_src = "../../../MadeinJLM-students/mockup/" . $row['name'];
+		echo "<div class='head' id='head_" . $row['ID'] . "' > ";
+		print_r($row['name']);
+		echo "</div>";
+	}
+
+}
+
+
+
+//ADD new company
 	if($func=="5"){
 		$name =$_POST["username"] ;
 		$mail =$_POST['e_mail'];
