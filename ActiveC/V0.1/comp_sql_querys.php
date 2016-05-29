@@ -307,7 +307,7 @@ echo "
 			}
 		}
 
-	</script>"
+	</script>";
 	echo "<div id=\'myModal\' class=\'modal\'><div class=\'modal-content\'><span class=\'close\'>×</span> <p>Some text in the Modal..</p>
 	</div></div>";
 	foreach ($databaseConnection->query($sql) as $row) {
