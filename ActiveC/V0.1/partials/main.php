@@ -8,7 +8,6 @@ echo "
                 //document.getElementById(\"re_route_login\").click();
                 document.write('<a id =\'link_back\' href=\'./#/login\'> go back</a>');
                 window.stop();
-                <!--
             }
             </script>";
 /*No session currently working
