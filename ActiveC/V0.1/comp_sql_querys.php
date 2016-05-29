@@ -158,6 +158,7 @@
 			}
 
 
+
 		/* MYSQL APPROACH
 			$sql="SELECT * FROM student WHERE github<>'' ";
     		$result = mysql_query ($sql);
@@ -375,4 +376,4 @@
     }
 
 ?>
-		
+
