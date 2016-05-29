@@ -44,7 +44,7 @@ if(empty($_SESSION['username'])){
         <div class="filters" id="area">
             Area
         </div>
-        <button  class="filters" id="skills">
+        <div  class="filters" id="skills">
             Skills
          </div>
          <div class="filters" id="nearby">
