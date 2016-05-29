@@ -97,6 +97,7 @@ Our style
 /* Modal Content */
 .modal-content {
     background-color: black;
+
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
