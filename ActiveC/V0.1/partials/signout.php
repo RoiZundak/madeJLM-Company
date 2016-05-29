@@ -26,5 +26,4 @@
             <a id='re_route' href ='./#/login\'>
             Go Back
             </a>");
-
  ?>
