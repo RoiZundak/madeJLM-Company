@@ -92,43 +92,6 @@ Our style
 }
 
 
-
-
-/* Modal Content */
-.modal-content {
-    background-color: black;
-
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-/* The Close Button */
-.close {
-    color: red;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-
-
-
-
-
-
-
-
-
 .skillBox{
     display:inline-block;
     width:30px;
