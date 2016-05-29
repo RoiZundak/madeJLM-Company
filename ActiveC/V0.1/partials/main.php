@@ -39,7 +39,7 @@ if(empty($_SESSION['username'])){
         <div class="filters" id="area">
             Area
         </div>
-        <div class="filters" id="skills">
+        <button  class="filters" <button id="myBtn">Open Modal</button> id="skills">
             Skills
          </div>
          <div class="filters" id="nearby">
