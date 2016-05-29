@@ -193,7 +193,7 @@ std_info::-webkit-scrollbar-track {
 }
 
 std_info::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
+    background-color: yellow;
     outline: 1px solid slategrey;
 }
 
