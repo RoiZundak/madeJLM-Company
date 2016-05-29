@@ -281,9 +281,8 @@ if($func=="9") {
 	$sql = 'SELECT * FROM skills';
 	$img_src = "../img/profilepic.png";
 	foreach ($databaseConnection->query($sql) as $row) {
-		$img_src = "";
 			$img_src = "../../../MadeinJLM-students/mockup/" . $row['name'];
-		echo "<div class='head' id='head_" . $row['ID'] . "' > ";
+		echo "<div class='skillBox' id='skillBox" . $row['ID'] . "' > ";
 		print_r($row['name']);
 		echo "</div>";
 	}
