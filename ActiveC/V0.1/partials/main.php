@@ -5,12 +5,13 @@
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' || name =='') 
             {
+                
+                //document.getElementById(\"re_route\").click();
+                $location.path('login');
                 alert('You MUST login first.Redirecting to login page...');
-                document.getElementById(\"re_route\").click();
                 //document.getElementById(\"re_route_login\").click();
                 //document.write('<a id =\'link_back\' href=\'./#/login\'> go back</a>');
-                window.stop();
-                <!--
+                
             }
            </script>
     </a>");
