@@ -282,7 +282,7 @@ if($func=="9") {
 	$img_src = "../img/profilepic.png";
 	foreach ($databaseConnection->query($sql) as $row) {
 			$img_src = "../../../MadeinJLM-students/mockup/" . $row['name'];
-		echo "<div class='skillBox' id='skillBox" . $row['ID'] . "' > ";
+		echo "<div class=\'modal-content\'><span class=\'close\'>×</span> <p>Some text in the Modal..</p></div>";
 		print_r($row['name']);
 		echo "</div>";
 	}

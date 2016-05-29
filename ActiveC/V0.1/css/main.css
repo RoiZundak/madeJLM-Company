@@ -71,8 +71,6 @@ Our style
     transition-duration: 300ms;
     transition-timing-function: linear;
     border-radius: 2px;
-    background-color: red;
-
 }
 .skillBox{
     display:inline-block;
