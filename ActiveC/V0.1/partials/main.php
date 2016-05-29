@@ -1,27 +1,29 @@
 <?php
 
-   // session_start();
-    echo "
+    session_start();
+    /*echo "
             <script> 
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) {
                 //document.getElementById(\"re_route_login\").click();
-                document.write('<a id =\'link_back\'  href=\'./#/login\'> go back</a>');
+                document.write('<a id =\'link_back\' href=\'./#/login\'> go back</a>');
                 window.stop();
                 <!--
             }
-            </script>";
-    /*No session currently working
+
+           </script>";
+    */
+    /*No session currently working*/
     if(empty($_SESSION['username'])){
         echo ("
         You are not logged in. <br> <br>
         <a id='re_route' href ='./#/login\'>
             Go Back
         </a>
-    ");
+         ");
         exit;
     }
-*/
+
 ?>
 
 <div id="main_wrap">

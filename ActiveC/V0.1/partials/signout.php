@@ -1,6 +1,6 @@
 <?php
 
-   /* session_start();
+   session_start();
 
         unset($_SESSION['username']);
 
@@ -17,9 +17,10 @@
         }
 
         // Finally, destroy the session.
-        session_destroy();*/
+        session_destroy();
+
        echo("<script>
-                sessionStorage.setItem('username', 'Not_Valid_User_Name');
+             //   sessionStorage.setItem('username', 'Not_Valid_User_Name');
                 
             </script>
             You are not logged in. <br> <br>
