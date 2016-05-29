@@ -53,7 +53,7 @@ if(empty($_SESSION['username'])){
     <div id = "show_std">
 
     </div>
-    <div id = "std_info"  >
+    <div class = "std_info"  >
 	<?php
     //db connect
         require_once "../php/db_connect.php";
@@ -105,7 +105,7 @@ if(empty($_SESSION['username'])){
             });
         } else {
 
-            if(target.id =="std_info"){
+            if(target.class =="std_info"){
                 $("#show_std").hide("slow", function() {
                     // Animation complete.
                 });
