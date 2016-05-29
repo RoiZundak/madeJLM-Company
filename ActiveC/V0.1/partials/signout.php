@@ -30,7 +30,7 @@
            <script>
                     sessionStorage.setItem('username', 'Not_Valid_User_Name'); 
                     document.getElementById(\"re_route\").click();
-                    alert('You are not logged in. redaircting to login page...');
+                    alert('You logout successfully. Redirecting to login page...');
            </script>
            </a>");
 ?>
