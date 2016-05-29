@@ -102,7 +102,7 @@
                         var x = document.createElement("INPUT");
                         x.setAttribute("type", "hidden");
                         document.body.appendChild(x);
-                        document.getElementById("mail").innerHTML = "E: ActiveC.madejlm@Gmail.com";
+                        document.getElementById("mail").innerHTML = "E : ActiveC.madejlm@Gmail.com";
                     }
                 </script>
             </p>
