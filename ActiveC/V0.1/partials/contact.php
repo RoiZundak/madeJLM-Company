@@ -91,6 +91,7 @@
 
                 <input type="hidden" id="mail" value="ActiveC.madejlm@gmail.com">
                 <button onclick="myFunction()">Click me to see mail.</button>
+                <p id="demo"></p>
                 <script>
                     function myFunction() {
                         var x = document.getElementById("mail   ").value;
