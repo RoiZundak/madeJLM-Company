@@ -96,7 +96,7 @@ Our style
 
 /* Modal Content */
 .modal-content {
-    background-color: #fefefe;
+    background-color: black;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
@@ -105,7 +105,7 @@ Our style
 
 /* The Close Button */
 .close {
-    color: #aaaaaa;
+    color: red;
     float: right;
     font-size: 28px;
     font-weight: bold;
