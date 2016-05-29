@@ -1,13 +1,13 @@
 <?php
-    session_start();
-    echo("<a id='re_route' href ='./#/login'></a>
+   // session_start();
+    echo("
             <script> 
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' || name =='') 
             {
                 
                 document.getElementById(\"re_route\").click();
-                alert('You MUST login first.Redirecting to login page...');
+                alert('Not Login');
                 //document.getElementById(\"re_route_login\").click();
                 //document.write('<a id =\'link_back\' href=\'./#/login\'> go back</a>');
                 
@@ -16,7 +16,7 @@
     ");
 
     //No session currently working
-    if(empty($_SESSION['username'])){
+    /*if(empty($_SESSION['username'])){
         echo ("
         You are not logged in. <br> <br>
         <a id='re_route' href ='./#/login\'>
@@ -24,7 +24,7 @@
         </a>
     ");
         exit;
-    }
+    }*/
     
 ?>
 
