@@ -5,8 +5,9 @@
             <script> 
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) {
-                document.getElementById(\"re_route_login\").click();
+                //document.getElementById(\\"re_route_login\\").click();
                 document.write('<a id =\'link_back\' href=\'./#/login\'> go back</a>');
+                document.getElementById(\\\"re_route_login\\\").click();
                 window.stop();
                 <!--
             }
