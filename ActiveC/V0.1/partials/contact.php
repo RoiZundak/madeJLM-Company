@@ -89,16 +89,16 @@
 
             <p><i class="fa fa-envelope-o"></i> <abbr title="Email">E</abbr>:
 
-                <button id="b"onclick="myFunction()">Click me to see mail.</button>
+                <button id="b"onclick="showmail()">Click me to see mail.</button>
                 <p id="demo"></p>
                 <script>
-                    function myFunction()
+                    function showmail()
                     {
+                        document.getElementById("b").style.visibility="hidden";
                         var x = document.createElement("INPUT");
                         x.setAttribute("type", "hidden");
                         document.body.appendChild(x);
-                        document.getElementById("b").style.visibility="hidden";
-                        document.getElementById("demo").innerHTML = "ActiveC.madejlm@gmail.com";
+                        document.getElementById("demo").innerHTML = "ActiveC.madejlm@Gmail.com";
                     }
                 </script>
             </p>
