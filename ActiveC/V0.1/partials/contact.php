@@ -91,7 +91,8 @@
 
                 <button type="button"
                         onclick="document.getElementById('demo').innerHTML = Date()">
-                    Click me to display Date and Time.</button>
+                    Click me to see mail.</button>
+                <p id="demo"></p>
             </p>
 
             <p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: 24/7</p>
