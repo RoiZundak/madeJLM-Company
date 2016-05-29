@@ -89,10 +89,15 @@
 
             <p><i class="fa fa-envelope-o"></i> <abbr title="Email">E</abbr>:
 
-                <button type="button"
-                        onclick="document.getElementById('demo').innerHTML = Date()">
-                    Click me to see mail.</button>
-                <p id="demo"></p>
+                <input type="hidden" id="mail" value="mailto:ActiveC.madejlm@gmail.com">
+                <button onclick="myFunction()">Click me to see mail.</button>
+                <script>
+                    function myFunction() {
+                        var x = document.getElementById("mail").value;
+                        document.getElementById("demo").innerHTML = x;
+                    }
+                </script>
+
             </p>
 
             <p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: 24/7</p>
