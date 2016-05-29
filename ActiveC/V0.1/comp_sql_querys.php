@@ -279,15 +279,13 @@ if($func=="9") {
 
 	//PDO STYLE :
 	$sql = 'SELECT * FROM skills';
-
 	echo "<div id=\'myModal\' class=\'modal\'><div class=\'modal-content\'><span class=\'close\'>×</span> <p>Some text in the Modal..</p>
 	</div></div>";
 	foreach ($databaseConnection->query($sql) as $row) {
-		//$img_src = "../../../MadeinJLM-students/mockup/" . $row['name'];
-		//print_r($row['name']);
+			$img_src = "../../../MadeinJLM-students/mockup/" . $row['name'];
+		print_r($row['name']);
 		echo "</div>";
 	}
-
 
 }
 
