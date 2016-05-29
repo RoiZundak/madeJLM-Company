@@ -90,15 +90,15 @@
 
             <p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: (972) 548044784</p>
 
-            <p><i class="fa fa-envelope-o"></i> <abbr title="Email" span="mail" style="display: inline">E </abbr>
-                <button id="b" onclick="showmail()" >Click me to see mail.</button>
+            <p><i class="fa fa-envelope-o"></i> <abbr title="Email" id="mail" ">E </abbr>
+                <button id="mailButton" onclick="showmail()" >Click Me.</button>
                 <script>
                     function showmail(){
                         <?php
                         $sql = 'UPDATE company SET click = click + 1 WHERE id=@id';
                         
                         ?>
-                        document.getElementById("b").style.visibility="hidden";
+                        document.getElementById("mailButton").style.visibility="hidden";
                         var x = document.createElement("INPUT");
                         x.setAttribute("type", "hidden");
                         document.body.appendChild(x);
