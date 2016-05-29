@@ -6,11 +6,7 @@ echo "
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) {
                 //document.getElementById(\"re_route_login\").click();
-                </script>
-                <a id='re_route' href ='./#/login\'>
-            Go Back
-            </a>\");
-            <script>
+                
                 document.write('<a id =\'link_back\' href=\'./#/login\'> go back</a>');
                 window.stop();
                 <!--
@@ -44,7 +40,11 @@ if(empty($_SESSION['username'])){
         <div class="filters" id="area">
             Area
         </div>
+<<<<<<< HEAD
+        <div class="filters" id="skills">
+=======
         <button  class="filters" id="skills">
+>>>>>>> origin/master
             Skills
          </div>
          <div class="filters" id="nearby">
