@@ -41,25 +41,6 @@ if(empty($_SESSION['username'])){
         </div>
         <div class="filters" id="skills">
             Skills
-
-            <div id="myModal" class="modal">
-
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span class="close">×</span>
-                        <h2>Modal Header</h2>
-                    </div>
-                    <div class="modal-body">
-                        <p>Some text in the Modal Body</p>
-                        <p>Some other text...</p>
-                    </div>
-                    <div class="modal-footer">
-                        <h3>Modal Footer</h3>
-                    </div>
-                </div>
-
-            </div>
          </div>
          <div class="filters" id="nearby">
             Nearby
@@ -72,7 +53,7 @@ if(empty($_SESSION['username'])){
     <div id = "show_std">
 
     </div>
-    <div class = "std_info"  >
+    <div id = "std_info"  >
 	<?php
     //db connect
         require_once "../php/db_connect.php";
@@ -104,7 +85,7 @@ if(empty($_SESSION['username'])){
             // code for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
-		
+
         if(target.className =="head" || target.className =="head_image"){
             console.log("this is the id : "+target.id);
             //noinspection JSUnresolvedFunction
@@ -124,7 +105,7 @@ if(empty($_SESSION['username'])){
             });
         } else {
 
-            if(target.class =="std_info"){
+            if(target.id =="std_info"){
                 $("#show_std").hide("slow", function() {
                     // Animation complete.
                 });
