@@ -184,18 +184,7 @@ Our style
     text-align: center;
     overflow:auto;
 }
-std_info::-webkit-scrollbar {
-    width: 0.2em;
-}
 
-std_info::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
-
-std_info::-webkit-scrollbar-thumb {
-    background-color: yellow;
-    outline: 1px solid slategrey;
-}
 
 /*
 Custom CSS for...d
