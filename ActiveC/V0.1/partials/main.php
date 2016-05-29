@@ -41,6 +41,25 @@ if(empty($_SESSION['username'])){
         </div>
         <div class="filters" id="skills">
             Skills
+
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">×</span>
+                        <h2>Modal Header</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the Modal Body</p>
+                        <p>Some other text...</p>
+                    </div>
+                    <div class="modal-footer">
+                        <h3>Modal Footer</h3>
+                    </div>
+                </div>
+
+            </div>
          </div>
          <div class="filters" id="nearby">
             Nearby
@@ -144,6 +163,7 @@ if(empty($_SESSION['username'])){
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         document.getElementById("std_info").innerHTML = xmlhttp.responseText;
                     }
+                    
                 };
                 xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"9",true);
                 xmlhttp.send();
