@@ -333,5 +333,10 @@ td {text-align: left;
 }
 
 
+h3 {
+    text-align: left;
+    position: relative;
 
+    padding-left:0px;
+}
 
