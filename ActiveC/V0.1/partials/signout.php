@@ -23,8 +23,8 @@
                 
             </script>
             You are not logged in. <br> <br>
-            <a id='re_route' href ='./#/login\'>
-            Go Back
-            </a>");
-
+            //<a id='re_route' href ='./#/login\'>
+            //Go Back
+            //</a>");
+            header("Location: login.html");
  ?>
