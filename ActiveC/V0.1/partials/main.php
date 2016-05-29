@@ -14,7 +14,7 @@
             }
            </script>
     ");
-/*
+
     //No session currently working
     if(empty($_SESSION['username'])){
         echo ("
@@ -25,7 +25,7 @@
     ");
         exit;
     }
-    */
+    
 ?>
 
 <div id="main_wrap">
