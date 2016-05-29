@@ -143,6 +143,15 @@
                 xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"4",true);
                 xmlhttp.send();
             }
+            if(target.id == "skills" ){
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        document.getElementById("std_info").innerHTML = xmlhttp.responseText;
+                    }
+                };
+                xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"5",true);
+                xmlhttp.send();
+            }
 
 
         }

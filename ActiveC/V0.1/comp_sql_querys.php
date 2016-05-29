@@ -156,6 +156,23 @@
 				print_r($row['first_name']);
 				echo "</div>";
 			}
+			if($func=="5"){
+
+				//PDO STYLE :
+				$sql = "SELECT * FROM student WHERE github<>''";
+				$img_src = "../img/profilepic.png";
+				foreach ($databaseConnection->query($sql) as $row) {
+					$img_src ="";
+					if(  $row['profile']=="" ){
+						$img_src = "./img/profilepic.png";
+					}else{
+						$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+					}
+					echo "<div class='head' id='head_".$row['ID']."' > ";
+					echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+					print_r($row['first_name']);
+					echo "</div>";
+				}
 
 
 		/* MYSQL APPROACH
