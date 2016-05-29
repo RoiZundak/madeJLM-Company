@@ -89,7 +89,6 @@
 
             <p><i class="fa fa-envelope-o"></i> <abbr title="Email" id="mail">E </abbr>:
 
-
                 <button id="b" onclick="showmail()">Click me to see mail.</button>
                 <script>
                     function showmail()
@@ -98,7 +97,7 @@
                         var x = document.createElement("INPUT");
                         x.setAttribute("type", "hidden");
                         document.body.appendChild(x);
-                        document.getElementById("mail").innerHTML = "ActiveC.madejlm@Gmail.com";
+                        document.getElementById("mail").innerHTML = "E: ActiveC.madejlm@Gmail.com";
                     }
                 </script>
             </p>
