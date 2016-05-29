@@ -17,7 +17,7 @@
         }
 
         // Finally, destroy the session.
-        session_destroy();*/
+        session_destroy();
        echo("<script>
                 sessionStorage.setItem('username', 'Not_Valid_User_Name');
                 
@@ -25,5 +25,12 @@
             You are not logged in. <br> <br>
             <a id='re_route' href ='./#/login\'>
             Go Back
-            </a>");
- ?>
+            </a>");*/
+    echo("<a id='re_route' href ='./#/login'>
+           <script>
+                    sessionStorage.setItem('username', 'Not_Valid_User_Name'); 
+                    document.getElementById(\"re_route\").click();
+                    alert('You are not logged in. redaircting to login page...');
+           </script>
+           </a>");
+?>
