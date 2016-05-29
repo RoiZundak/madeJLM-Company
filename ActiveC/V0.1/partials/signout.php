@@ -1,5 +1,7 @@
 <?php
+
    /* session_start();
+
         unset($_SESSION['username']);
 
         // Unset all of the session variables.
@@ -13,20 +15,16 @@
                 $params["secure"], $params["httponly"]
             );
         }
+
         // Finally, destroy the session.
         session_destroy();*/
-       echo("<a id='re_route' href ='./#/login'>
-       <script>
-                sessionStorage.setItem('username', 'Not_Valid_User_Name'); 
-                document.getElementById(\"re_route\").click();
-                alert('You are not logged in. redaircting to login page...');
-       </script>
-       </a>");
+       echo("<script>
+                sessionStorage.setItem('username', 'Not_Valid_User_Name');
+                
+            </script>
+            You are not logged in. <br> <br>
+            <a id='re_route' href ='./#/login\'>
+            Go Back
+            </a>");
 
-        /*
-        You are not logged in. <br> <br>
-        /*<a id='re_route' href ='./#/login\'>
-        Go Back
-        </a>");
-        */
  ?>
