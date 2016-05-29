@@ -97,9 +97,8 @@
                         var x = document.createElement("INPUT");
                         x.setAttribute("type", "hidden");
                         document.body.appendChild(x);
-                        document.getElementById("demo").innerHTML = "malito:ActiveC.madejlm@gmail.com";
                         document.getElementById("b").style.visibility="hidden";
-
+                        document.getElementById("demo").innerHTML = "ActiveC.madejlm@gmail.com";
                     }
                 </script>
             </p>
