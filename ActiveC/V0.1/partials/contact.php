@@ -89,13 +89,14 @@
 
             <p><i class="fa fa-envelope-o"></i> <abbr title="Email">E</abbr>:
 
-                <input type="hidden" id="mail" value="ActiveC.madejlm@gmail.com">
                 <button onclick="myFunction()">Click me to see mail.</button>
                 <p id="demo"></p>
                 <script>
                     function myFunction() {
-                        var x = document.getElementById("mail   ").value;
-                        document.getElementById("demo").innerHTML = x;
+                        var x = document.createElement("INPUT");
+                        x.setAttribute("type", "hidden");
+                        document.body.appendChild(x);
+                        document.getElementById("demo").innerHTML = "ActiveC.madejlm@gmail.com";
                     }
                 </script>
 
