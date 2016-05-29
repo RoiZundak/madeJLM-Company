@@ -89,17 +89,19 @@
 
             <p><i class="fa fa-envelope-o"></i> <abbr title="Email">E</abbr>:
 
-                <button onclick="myFunction()">Click me to see mail.</button>
+                <button id="b"onclick="myFunction()">Click me to see mail.</button>
                 <p id="demo"></p>
                 <script>
-                    function myFunction() {
+                    function myFunction()
+                    {
                         var x = document.createElement("INPUT");
                         x.setAttribute("type", "hidden");
                         document.body.appendChild(x);
-                        document.getElementById("demo").innerHTML = "ActiveC.madejlm@gmail.com";
+                        document.getElementById("demo").innerHTML = "malito:ActiveC.madejlm@gmail.com";
+                        document.getElementById("b").style.visibility="hidden";
+
                     }
                 </script>
-
             </p>
 
             <p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: 24/7</p>
