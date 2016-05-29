@@ -278,6 +278,11 @@ if($func=="9") {
 
 
 	//PDO STYLE :
+	echo "
+	<script>
+	var modal = document.getElementById('myModal');
+	modal.style.display = 'block'; </script>";
+
 	$sql = 'SELECT * FROM skills';
 	echo "<div id=\'myModal\' class=\'modal\'><div class=\'modal-content\'><span class=\'close\'>×</span> <p>Some text in the Modal..</p>
 	</div></div>";
