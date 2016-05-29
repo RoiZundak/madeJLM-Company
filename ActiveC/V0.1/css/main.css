@@ -185,7 +185,7 @@ Our style
     overflow:auto;
 }
 std_info::-webkit-scrollbar {
-    width: 1em;
+    width: 0.2em;
 }
 
 std_info::-webkit-scrollbar-track {
