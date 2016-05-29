@@ -1,6 +1,6 @@
 <?php
 
-    session_start();
+   // session_start();
     echo "
             <script> 
             var name = sessionStorage.getItem('username');
@@ -10,20 +10,18 @@
                 window.stop();
                 <!--
             }
-
-           </script>";
-
-    /*No session currently working*/
+            </script>";
+    /*No session currently working
     if(empty($_SESSION['username'])){
         echo ("
         You are not logged in. <br> <br>
         <a id='re_route' href ='./#/login\'>
             Go Back
         </a>
-         ");
+    ");
         exit;
     }
-
+*/
 ?>
 
 <div id="main_wrap">
