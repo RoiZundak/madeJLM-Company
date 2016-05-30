@@ -88,8 +88,9 @@
                 xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "9", true);
                 xmlhttp.send();
             }
-        
-        if(target.className =="head" || target.className =="head_image"){
+            $("#skill_std").hide();
+
+            if(target.className =="head" || target.className =="head_image"){
                 console.log("this is the id : "+target.id);
                 //noinspection JSUnresolvedFunction
 
