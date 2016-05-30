@@ -97,7 +97,8 @@ if(empty($_SESSION['username'])){
                 console.log("this is the id : "+target.id);
                 //noinspection JSUnresolvedFunction
                 $("#show_std").hide();
-                id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
+                 $("#skill_std").hide();
+            id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
                 console.log("this is the id : "+id);
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
