@@ -39,7 +39,7 @@ if(empty($_SESSION['username'])){
         <div class="filters" id="area">
             Area
         </div>
-        <div class="filters" id="skills">
+        <div class="skill" inputtype="text" id="skills">
             Skills
          </div>
          <div class="filters" id="nearby">
@@ -104,7 +104,8 @@ if(empty($_SESSION['username'])){
                 $("#show_std").show("slow", function() {
                     // Animation complete.
                 });
-        } else {
+        } 
+        else {
 
             if(target.id =="std_info"){
                 $("#show_std").hide("slow", function() {
@@ -143,7 +144,7 @@ if(empty($_SESSION['username'])){
             if(target.id == "skills" ){
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        //document.getElementById("std_info").innerHTML = xmlhttp.responseText;
+                        document.getElementById("std_info").innerHTML = xmlhttp.responseText;
                     }
                     
                 };
