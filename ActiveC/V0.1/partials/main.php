@@ -8,6 +8,7 @@ echo "
                 //document.getElementById(\"re_route_login\").click();
                 document.write('<a href=\'./#/login\' id =\'link_back\' > go back</a>');
                 document.getElementById(\"link_back\").click();
+                console.log('move : main to login\n');
                 //window.stop();
             }
             </script>";

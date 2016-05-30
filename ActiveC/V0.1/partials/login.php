@@ -45,7 +45,8 @@ if(!empty($_POST['username'])){
             echo("<a id='re_route_main' href ='../#/main'></a>
                  <script>                  
                     sessionStorage.setItem('username', '".$username."');
-                    //document.getElementById(\"re_route_main\").click();
+                    document.getElementById(\"re_route_main\").click();
+                    console.log('move : login to main\n');
                 </script>
                 ");
             exit;
@@ -57,6 +58,7 @@ if(!empty($_POST['username'])){
                 <script>
                     alert('Wrong Password Or User Name.');
                     document.getElementById(\"re_route_login\").click();
+                    console.log('move : login to login \n');
                 </script>
             ");
             exit;
