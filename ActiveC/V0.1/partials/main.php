@@ -86,7 +86,7 @@ if(empty($_SESSION['username'])){
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
 
-        if(target.className =="head" || target.className =="head_image"){
+        if(target.className =="head_skill" || target.className =="head_skill"){
             console.log("this is the id : "+target.id);
             //noinspection JSUnresolvedFunction
             $("#show_std").hide();
@@ -97,12 +97,31 @@ if(empty($_SESSION['username'])){
                     document.getElementById("show_std").innerHTML = xmlhttp.responseText;
                 }
             };
-            xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"1",true);
+            xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"10",true);
             xmlhttp.send();
 
             $("#show_std").show("slow", function() {
                 // Animation complete.
             });
+        
+        
+        if(target.className =="head" || target.className =="head_image"){
+                console.log("this is the id : "+target.id);
+                //noinspection JSUnresolvedFunction
+                $("#show_std").hide();
+                id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
+                console.log("this is the id : "+id);
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        document.getElementById("show_std").innerHTML = xmlhttp.responseText;
+                    }
+                };
+                xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"1",true);
+                xmlhttp.send();
+
+                $("#show_std").show("slow", function() {
+                    // Animation complete.
+                });
         } else {
 
             if(target.id =="std_info"){

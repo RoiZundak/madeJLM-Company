@@ -242,11 +242,39 @@
 			}else{
 				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
 			}
-			echo "<div class='head' id='head_".$row['ID']."' > ";
-			echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+			echo "<div class='head_skill' id='head_skill".$row['ID']."' > ";
+			echo "<img class='head_skill' id='head_skill".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
 			print_r($row['first_name']);
 			echo "</div>";
 		}
+
+
+
+if($func=="10"){
+
+	$q = intval($_GET['q']);
+
+
+	//PDO STYLE :
+	$sql="SELECT * FROM skills WHERE ID = '".$q."'";
+	//PDO STYLE :
+	foreach ($databaseConnection->query($sql) as $row) {
+
+		print_r($row['name']);
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
