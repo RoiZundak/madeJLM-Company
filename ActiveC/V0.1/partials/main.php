@@ -44,7 +44,7 @@
     <div id = "skill_std">
 
     </div>
-    <div id = "std_info" class='speech' >
+    <div id = "std_info"  >
 
 	<?php
     //db connect
