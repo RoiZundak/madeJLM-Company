@@ -108,7 +108,7 @@ if(empty($_SESSION['username'])){
                 console.log("this is the id : "+target.id);
                 //noinspection JSUnresolvedFunction
                 $("#show_std").hide();
-            document.getElementById("#skill_std").innerHTML = "";
+            $("#skill_std").hide();
             id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
                 console.log("this is the id : "+id);
                 xmlhttp.onreadystatechange = function() {
@@ -155,7 +155,7 @@ if(empty($_SESSION['username'])){
                 xmlhttp.send();
             }
             if(target.id == "clr_filter" ){
-                document.getElementById("#skill_std").innerHTML = "";
+
 
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
