@@ -94,7 +94,7 @@ if(empty($_SESSION['username'])){
 
                 var e = document.getElementById("skill_std");
                 if(e.style.display == 'block')
-                    e.style.display = 'none';
+                    e.style.display = 'hidden';
                 else
                     e.style.display = 'block';
                 xmlhttp.onreadystatechange = function () {
