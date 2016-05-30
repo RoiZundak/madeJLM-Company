@@ -143,7 +143,7 @@ if(empty($_SESSION['username'])){
             if(target.id == "skills" ){
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById("std_info").innerHTML = xmlhttp.responseText;
+                        document.getElementById("filter_main").innerHTML = xmlhttp.responseText;
                     }
                     
                 };
