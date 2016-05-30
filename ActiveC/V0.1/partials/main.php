@@ -81,6 +81,7 @@ if(empty($_SESSION['username'])){
 	document.addEventListener('click', function(e) {
 		e = e || window.event;
 		var target = e.target || e.srcElement;
+            $("#skill_std").hide();
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
@@ -130,6 +131,7 @@ if(empty($_SESSION['username'])){
             }
             if(target.id == "has_git" ){
 
+                $("#show_std").hide();
                 $("#skill_std").hide();
 
                 xmlhttp.onreadystatechange = function() {
@@ -152,7 +154,7 @@ if(empty($_SESSION['username'])){
                 xmlhttp.send();
             }
             if(target.id == "clr_filter" ){
-
+                $("#skill_std").show();
 
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
