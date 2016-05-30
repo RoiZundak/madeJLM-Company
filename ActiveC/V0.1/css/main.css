@@ -66,11 +66,7 @@ Our style
     transition-timing-function: linear;
     font-size:1.1em;
 }
-.skill:hover{
-    background-color:black;
-    color: white;
 
-}
 .line_td{
 	border-bottom-color : grey;
 	border-bottom-width : 1px;

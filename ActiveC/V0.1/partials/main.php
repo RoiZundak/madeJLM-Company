@@ -39,17 +39,17 @@ if(empty($_SESSION['username'])){
         <div class="filters" id="area">
             Area
         </div>
-        <div class="skill" id="skills">
-            <input type="text" class="skill" id="skills">Skills
-
-         </div>
-         <div class="filters" id="nearby">
+        <div class="filters" id="nearby">
             Nearby
-         </div>
-
+        </div>
         <div class="filters" id='clr_filter'>
             Clear All
         </div>
+        <div >
+            <input type="text" class="skill" id="skills">
+            Skills
+         </div>
+
     </div>
     <div id = "show_std">
 
