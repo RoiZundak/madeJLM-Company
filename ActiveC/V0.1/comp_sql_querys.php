@@ -279,7 +279,11 @@
 if($func=="9") {
 
 	$sql = 'SELECT * FROM skills';
-	echo "<p class='speech'><button id = 'aa'</button>Skills list</p> ";
+	function hello()
+	{
+		echo "Hello";
+	}
+	echo "<p class='speech'><<input type='button' name='Release' onclick= hello(); value='Click to Release'>Skills list</p> ";
 	//PDO STYLE :
 /*	foreach ($databaseConnection->query($sql) as $row) {
 			$img_src = "../../../MadeinJLM-students/mockup/" . $row['name'];
