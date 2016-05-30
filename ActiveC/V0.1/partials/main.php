@@ -2,7 +2,7 @@
 
 // session_start();
 echo "
-               <a id=\'re_route\' href =\'#/login\'>Go back to login</a>
+               <a id='re_route' href ='#/login'>Go back to login</a>
             <script> 
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) {
