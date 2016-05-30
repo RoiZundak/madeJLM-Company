@@ -45,10 +45,11 @@
     <div id = "show_std">
 
     </div>
-    <div id = "std_info"  >
-        <div id = "skill_std">
+    <div id = "skill_std">
 
-        </div>
+    </div>
+    <div id = "std_info"  >
+
 	<?php
     //db connect
         require_once "../php/db_connect.php";
@@ -92,7 +93,6 @@
                 xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "9", true);
                 xmlhttp.send();
             }
-            $("#skill_std").hide();
 
             if(target.className =="head" || target.className =="head_image"){
                 console.log("this is the id : "+target.id);
