@@ -288,7 +288,7 @@
 		$i = 0;
 		foreach ($databaseConnection->query($sql) as $row)
 		{
-			if (i%5 === 0)
+			if (($i%5) === 0)
 				echo '</br>';
 			echo ($row['name']);
 			$i++;
