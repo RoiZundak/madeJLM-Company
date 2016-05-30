@@ -7,7 +7,7 @@
             window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
                 setTimeout(function()
                 {
-                         alert('You Must logged in first');},1000);
+                         alert('You Must logged in first');},500);
                 
                 //window.alert('You Must logged in first');
             }
