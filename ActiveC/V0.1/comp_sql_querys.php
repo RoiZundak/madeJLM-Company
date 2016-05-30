@@ -287,15 +287,14 @@ if($func=="9") {
 	Skill:<br>
 </form></p> ";
 	//PDO STYLE :
-/*	foreach ($databaseConnection->query($sql) as $row) {
+foreach ($databaseConnection->query($sql) as $row) {
 			$img_src = "../../../MadeinJLM-students/mockup/" . $row['name'];
 		echo "<div class='head' id='head_".$row['ID']."' > ";
 		print_r($row['name']);
 		echo "</div>";
-	}*/
+	}
 
 }
-
 
 
 //ADD new company
