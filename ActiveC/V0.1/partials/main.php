@@ -91,16 +91,17 @@ if(empty($_SESSION['username'])){
             // code for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
-            if(target.id == "skills" ){
-                document.getElementById("skill_std").innerHTML =   <p class='speech'>Skills list</p>;
+            if (target.id != "skills") {
+
+                document.getElementById("skill_std").innerHTML = " <p class='speech'>Skills list</p>";
                 $("#skill_std").show();
-                xmlhttp.onreadystatechange = function() {
+                xmlhttp.onreadystatechange = function () {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        $("#skill_std").html(xmlhttp.responseText) ;
+                        $("#skill_std").html(xmlhttp.responseText);
                     }
 
                 };
-                xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"9",true);
+                xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "9", true);
                 xmlhttp.send();
             }
         
