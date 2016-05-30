@@ -279,10 +279,12 @@
 	if($func=="9") 
 	{
 		$sql = 'SELECT * FROM skills';
-        echo "function addSkillToList(var skill_to_add){
+        echo "<script>
+function addSkillToList(skill_to_add){
     alert( skill_to_add);
-    return
-}";
+    return;
+}
+</script>";
 		echo "
 			<form>	
 			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
