@@ -55,7 +55,8 @@ if(empty($_SESSION['username'])){
     </div>
     <div id = "std_info"  >
         <div id = "skill_std">
-            
+            <p class='speech'>Skills list</p>;
+
         </div>
 	<?php
     //db connect
