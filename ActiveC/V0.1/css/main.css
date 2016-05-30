@@ -129,6 +129,7 @@ p.speech {
 
 
 #show_std{
+    position: absolute;
     display:inline;
     border-left-style: outset;
     float:right;
