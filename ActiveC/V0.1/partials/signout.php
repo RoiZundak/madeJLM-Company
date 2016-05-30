@@ -20,8 +20,11 @@
      session_destroy();*/
 echo
     "<script>
-            sessionStorage.setItem('username', 'Not_Valid_User_Name');
-             window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-             alert('You have successfully logged.Redirecting to Login page..');
+             if ( name !== null && name !== 'Not_Valid_User_Name' ) 
+             {
+                sessionStorage.setItem('username', 'Not_Valid_User_Name');
+                window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                alert('You have successfully logged.Redirecting to Login page..');
+             }
      </script>";
 ?>
