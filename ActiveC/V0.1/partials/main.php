@@ -4,8 +4,8 @@
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) 
             {
-                window.alert('You Must logged in first');
                 window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                window.alert('You Must logged in first');
             }
         </script>";
 ?>
