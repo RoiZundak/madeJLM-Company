@@ -92,7 +92,7 @@ Our style
 #skill_std{
     position: absolute;
     z-index: 10;
-    margin-left: 50px;
+    margin-left: 100px;
 }
 
 p.speech {
