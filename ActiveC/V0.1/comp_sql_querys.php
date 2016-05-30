@@ -282,9 +282,8 @@ if($func=="9") {
 
 	echo "<p class='speech'>
 	<form>
-	First name:<br>
+	Skill:
   <input type='text' name='skill'><br>
-	Skill:<br>
 </form></p> ";
 	//PDO STYLE :
 foreach ($databaseConnection->query($sql) as $row) {
