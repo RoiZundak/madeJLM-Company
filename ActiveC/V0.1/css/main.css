@@ -94,6 +94,7 @@ Our style
     z-index: 10;
     margin-left: 100px;
     height: auto;
+    width: auto;
 
 }
 
@@ -101,7 +102,6 @@ Our style
     float: left;
     margin-top: 200px;
     margin-right: 50px;
-    width: 200px;
     text-align: center;
     line-height: 100px;
     background-color: #fff;
