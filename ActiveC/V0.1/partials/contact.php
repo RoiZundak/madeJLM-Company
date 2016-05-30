@@ -91,7 +91,7 @@
             <p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: (972) 548044784</p>
 
             <p><i class="fa fa-envelope-o"></i> <abbr title="Email" id="mail" ">E </abbr>
-                <button id="mailButton" onclick="showmail()" >Our E-mail</button>
+          <!--      <button id="mailButton" onclick="showmail()" >Our E-mail</button>
                 <script>
                     function showmail(){
                         <?php
@@ -104,7 +104,7 @@
                         document.body.appendChild(x);
                         document.getElementById("mail").innerHTML = "E : ActiveC.madejlm@Gmail.com";
                     }
-                </script>
+                </script> -->
             </p>
 
             <p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: 24/7</p>
