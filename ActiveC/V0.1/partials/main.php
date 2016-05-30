@@ -1,7 +1,6 @@
 <?php
-
-// session_start();
-echo "<script type='text/javascript'>
+    // session_start();
+    echo "<script type='text/javascript'>
                var name = sessionStorage.getItem('username');
                 if ( name === null || name === 'Not_Valid_User_Name' ) 
                 {
