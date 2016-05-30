@@ -76,8 +76,9 @@
             // code for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
+            $("#show_std").hide();
             if (target.id == "skills") {
-
+                $("#skill_std").show();
                 xmlhttp.onreadystatechange = function () {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         $("#skill_std").html(xmlhttp.responseText);
@@ -91,7 +92,7 @@
         if(target.className =="head" || target.className =="head_image"){
                 console.log("this is the id : "+target.id);
                 //noinspection JSUnresolvedFunction
-                $("#show_std").hide();
+
             id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
                 console.log("this is the id : "+id);
                 xmlhttp.onreadystatechange = function() {
