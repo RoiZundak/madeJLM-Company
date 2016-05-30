@@ -20,6 +20,7 @@
      session_destroy();*/
 echo
     "<script>
+             //if there is no user connected, skip those lines
              if ( name !== null && name !== 'Not_Valid_User_Name' ) 
              {
                 sessionStorage.setItem('username', 'Not_Valid_User_Name');
