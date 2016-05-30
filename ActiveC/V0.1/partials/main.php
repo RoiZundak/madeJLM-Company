@@ -92,7 +92,11 @@ if(empty($_SESSION['username'])){
         }
             if (target.id != "skills") {
 
-                $("#skill_std").show();
+                var e = document.getElementById("skill_std");
+                if(e.style.display == 'block')
+                    e.style.display = 'none';
+                else
+                    e.style.display = 'block';
                 xmlhttp.onreadystatechange = function () {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         $("#skill_std").html(xmlhttp.responseText);
@@ -107,7 +111,11 @@ if(empty($_SESSION['username'])){
                 console.log("this is the id : "+target.id);
                 //noinspection JSUnresolvedFunction
                 $("#show_std").hide();
-            $("#skill_std").hide();
+            var e = document.getElementById("skill_std");
+            if(e.style.display == 'block')
+                e.style.display = 'none';
+            else
+                e.style.display = 'block';
             id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
                 console.log("this is the id : "+id);
                 xmlhttp.onreadystatechange = function() {
@@ -132,7 +140,11 @@ if(empty($_SESSION['username'])){
             }
             if(target.id == "has_git" ){
 
-                $("#skill_std").hide();
+                var e = document.getElementById("skill_std");
+                if(e.style.display == 'block')
+                    e.style.display = 'none';
+                else
+                    e.style.display = 'block';
 
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -143,7 +155,11 @@ if(empty($_SESSION['username'])){
                 xmlhttp.send();
             }
             if(target.id == "has_linkedin" ){
-                $("#skill_std").hide();
+                var e = document.getElementById("skill_std");
+                if(e.style.display == 'block')
+                    e.style.display = 'none';
+                else
+                    e.style.display = 'block';
 
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
