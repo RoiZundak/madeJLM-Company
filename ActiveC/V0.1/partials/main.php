@@ -50,10 +50,11 @@ if(empty($_SESSION['username'])){
         <div class="filters" id='clr_filter'>
             Clear All
         </div>
-    </div>
-    <div id = "skill_std">
+        <div id = "skill_std">
 
+        </div>
     </div>
+
     <div id = "show_std">
 
     </div>

@@ -97,7 +97,7 @@ Our style
 
 
 #skill_std{
-    float:left;
+    position: absolute;
 }
 
 p.speech {
