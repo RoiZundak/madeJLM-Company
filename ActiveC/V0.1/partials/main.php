@@ -76,7 +76,7 @@
             // code for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
-            $("#show_std").hide();
+            $("#skill_std").hide();
             if (target.id == "skills") {
                 $("#skill_std").show();
                 xmlhttp.onreadystatechange = function () {
