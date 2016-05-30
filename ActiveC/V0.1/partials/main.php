@@ -57,7 +57,7 @@ if(empty($_SESSION['username'])){
     </div>
     <div id = "std_info"  >
         <div id = "skill_std">
-
+            <p class='speech'>Skills list</p>
         </div>
 	<?php
     //db connect
@@ -93,7 +93,6 @@ if(empty($_SESSION['username'])){
         }
             if (target.id != "skills") {
 
-                document.getElementById("skill_std").innerHTML = " <p class='speech'>Skills list</p>";
                 $("#skill_std").show();
                 xmlhttp.onreadystatechange = function () {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
