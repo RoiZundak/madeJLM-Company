@@ -77,7 +77,7 @@ echo "<script type='text/javascript'>
             // code for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
-            if (target.id != "skills") {
+            if (target.id == "skills") {
 
                 var e = document.getElementById("skill_std");
                 if(e.style.display == 'block')
