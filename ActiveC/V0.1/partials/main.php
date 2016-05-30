@@ -4,8 +4,12 @@
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) 
             {
-                window.alert('You Must logged in first');
-                window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+            window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                setTimeout(function()
+                {
+                         alert('You Must logged in first');},1000);
+                
+                //window.alert('You Must logged in first');
             }
         </script>";
 ?>
@@ -41,10 +45,11 @@
     <div id = "show_std">
 
     </div>
-    <div id = "std_info"  >
-        <div id = "skill_std">
+    <div id = "skill_std">
 
-        </div>
+    </div>
+    <div id = "std_info"  >
+
 	<?php
     //db connect
         require_once "../php/db_connect.php";
@@ -88,8 +93,8 @@
                 xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "9", true);
                 xmlhttp.send();
             }
-        
-        if(target.className =="head" || target.className =="head_image"){
+
+            if(target.className =="head" || target.className =="head_image"){
                 console.log("this is the id : "+target.id);
                 //noinspection JSUnresolvedFunction
 
