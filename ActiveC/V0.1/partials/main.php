@@ -95,7 +95,7 @@ if(empty($_SESSION['username'])){
                 $("#skill_std").show();
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById("skill_std").innerHTML = xmlhttp.responseText;
+                        $("#skill_std").html(xmlhttp.responseText) ;
                     }
 
                 };
