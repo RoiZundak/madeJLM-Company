@@ -300,9 +300,8 @@ body {
 }
 
 
-
 .forgot-password > a {
-    font-weight: 250;
+    font-weight: 400;
     color: #303030 ;
 }
 .login{
