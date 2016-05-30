@@ -279,16 +279,17 @@
 	if($func=="9") 
 	{
 		$sql = 'SELECT * FROM skills';
+        //style=\'display:none;\'
         echo "<script>
-function addSkillToList(skill_to_add){
-    alert( skill_to_add);
-    return;
-}
-</script>";
+        function addSkillToList(skill_to_add){
+            $('#add_skill').after('<input type=\'text\' class=\'skills\'  value=\'".skill_to_add."\' id=\'skill_".skill_to_add." \'>  ');
+        }
+        </script>";
+
 		echo "
 			<form>	
 			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
-			<button type=\"button\" onclick='addSkillToList(document.getElementById(\"skill_input\").value)'>+</button>
+			<button type=\"button\" id = 'add_skill' onclick='addSkillToList(document.getElementById(\"skill_input\").value)'>+</button>
 			<datalist id=\"skills_list\">";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
