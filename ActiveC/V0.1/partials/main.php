@@ -39,17 +39,16 @@ if(empty($_SESSION['username'])){
         <div class="filters" id="area">
             Area
         </div>
-        <div input type="text"  class="skill" id="skills" value="Skills">
-          
-        </div>
-        <div class="filters" id="nearby">
+        <div class="filters" id="skills">
+            Skills
+         </div>
+         <div class="filters" id="nearby">
             Nearby
-        </div>
+         </div>
+
         <div class="filters" id='clr_filter'>
             Clear All
         </div>
-
-
     </div>
     <div id = "show_std">
 
@@ -105,8 +104,7 @@ if(empty($_SESSION['username'])){
                 $("#show_std").show("slow", function() {
                     // Animation complete.
                 });
-        } 
-        else {
+        } else {
 
             if(target.id =="std_info"){
                 $("#show_std").hide("slow", function() {
