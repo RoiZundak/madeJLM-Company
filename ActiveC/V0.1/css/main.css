@@ -302,7 +302,7 @@ body {
 
 
 .forgot-password > a {
-    font-size: medium;
+    font-size: small;
     font-weight: bolder;
     color: #303030 ;
 }
