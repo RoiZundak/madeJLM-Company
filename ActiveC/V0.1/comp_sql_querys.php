@@ -281,7 +281,7 @@
 		$sql = 'SELECT * FROM skills';
 		echo "
 			<form>	
-  				<input type='text' name='skill' id='skill_input' ><br>
+  				<input type='text' name='skill' id='skill_input' class='skills' ><br>
 			</form> ";
 		$i = 0;
 		foreach ($databaseConnection->query($sql) as $row)
