@@ -299,7 +299,10 @@ body {
     font-weight: bold;
 
 }
-#add_skill,#conf_skill{
+#add_skill{
+    height: 25%;
+}
+#conf_skill{
     height: 25%;
 }
 
