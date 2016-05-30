@@ -278,23 +278,21 @@
 
 	if($func=="9") 
 	{
-
-	$sql = 'SELECT * FROM skills';
-
-	echo "
-	<form>
-	Skill:
-  <input type='text' name='skill'><br>
-</form> ";
-	//PDO STYLE :
-foreach ($databaseConnection->query($sql) as $row) {
+		$sql = 'SELECT * FROM skills';
+		echo "
+			<form>
+				Skill:
+  					<input type='text' name='skill'><br>
+			</form> ";
+			//PDO STYLE :
+		foreach ($databaseConnection->query($sql) as $row)
+		{
 			$img_src = "../../../MadeinJLM-students/mockup/" . $row['name'];
-		echo "<div class='head' id='head_".$row['ID']."' > ";
-		print_r($row['name']);
-		echo "</div>";
+			echo "<div class='head' id='head_".$row['ID']."' > ";
+			print_r($row['name']);
+			echo "</div>";
+		}
 	}
-
-}
 
 
 //ADD new company
