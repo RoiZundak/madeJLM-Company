@@ -24,8 +24,8 @@ echo
              //if there is no user connected, skip those lines
              if ( name !== null && name !== 'Not_Valid_User_Name' ) 
              {
-                sessionStorage.setItem('username', 'Not_Valid_User_Name');
                 alert('You have successfully logout.Redirecting to Login page..');
+                sessionStorage.setItem('username', 'Not_Valid_User_Name');
              }
      </script>";
 ?>
