@@ -282,7 +282,14 @@
         //style=\'display:none;\'
         echo "<script>
         function addSkillToList(skill_to_add){
-            $('#add_skill').after('<input type=\'text\' class=\'skills\'  value=skill_to_add id=\'skill_".skill_to_add." \'>  ');
+        $( \"p\" ).after(function() {
+  return \"<div>\" + this.className + \"</div>\";
+});
+
+
+            $('#add_skill').after(function() {
+                  return'<input type=\'text\' class=\'skills\'  value='+ skill_to_add + 'id=\'skill_".skill_to_add." \'>  ' 
+                });
         }
         </script>";
 
