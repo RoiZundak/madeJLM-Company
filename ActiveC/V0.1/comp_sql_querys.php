@@ -281,6 +281,7 @@
 		$sql = 'SELECT * FROM skills';
 		echo "
 			<form>	
+			<input type=\"text\" list=\"skills_list\" id='skill_input'>
 			<datalist id=\"skills_list\">";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
