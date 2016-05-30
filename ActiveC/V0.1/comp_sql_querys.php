@@ -242,8 +242,8 @@
 			} else {
 				$img_src = "../../../MadeinJLM-students/mockup/" . $row['profile'];
 			}
-			echo "<div class='head_skill' id='head_skill" . $row['ID'] . "' > ";
-			echo "<img class='head_skill' id='head_skill" . $row['ID'] . "' src='" . $img_src . "' width='120px' height='110px'>";
+			echo "<div class='head' id='head" . $row['ID'] . "' > ";
+			echo "<img class='head' id='head" . $row['ID'] . "' src='" . $img_src . "' width='120px' height='110px'>";
 			print_r($row['first_name']);
 			echo "</div>";
 		}
