@@ -1,27 +1,14 @@
 <?php
 
 // session_start();
-echo "
-               <a id='re_route' href ='#/login'>Go back to login</a>
-            <script> 
-            var name = sessionStorage.getItem('username');
-            if ( name === null || name === 'Not_Valid_User_Name' ) {
-                //document.getElementById(\"re_route_login\").click();
-                console.log('move : main to login');
-                //window.stop();
-            }
-            </script>";
-/*No session currently working
-if(empty($_SESSION['username'])){
-    echo ("
-    You are not logged in. <br> <br>
-    <a id='re_route' href ='./#/login\'>
-        Go Back
-    </a>
-");
-    exit;
-}
-*/
+echo "<script type='text/javascript'>
+               var name = sessionStorage.getItem('username');
+                if ( name === null || name === 'Not_Valid_User_Name' ) 
+                {
+                    console.log('move : main to login');
+                    window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                }
+    </script>";
 ?>
 
 <div id="main_wrap">
