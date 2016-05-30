@@ -288,7 +288,7 @@
 
 
             $('#add_skill').after(function() {
-                  return'<input type=\'text\' class=\'skills\'  value='+ skill_to_add + 'id=\'skill_".skill_to_add." \'>  ' 
+                  return'<input type=\'text\' class=\'skills\'  value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
                 });
         }
         </script>";
