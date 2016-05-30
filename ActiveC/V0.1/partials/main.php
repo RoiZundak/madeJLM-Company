@@ -2,12 +2,11 @@
 
 // session_start();
 echo "
-            <a id='re_route' href ='#/about'>Go back to login</a>
+            <a id='re_route' href ='#/login'>Go back to login</a>
             <script> 
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) {
                 //document.getElementById(\"re_route_login\").click();
-                //document.getElementById('body').innerHTML = '<a id=\'re_route\' href =\'#/about\'>dsvds</a>';
                 console.log('move : main to login');
                 //window.stop();
             }
