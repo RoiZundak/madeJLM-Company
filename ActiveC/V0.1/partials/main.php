@@ -41,7 +41,7 @@
     <div id = "show_std">
 
     </div>
-    <div id = "skill_std">
+    <div id = "skill_std" class='speech'>
 
     </div>
     <div id = "std_info"  >
