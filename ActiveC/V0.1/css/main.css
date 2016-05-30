@@ -299,8 +299,12 @@ body {
 
 }
 
-
+.contact_us_link{
+    font-weight: bold;
+    color: #303030 ;
+}
 .forgot-password > a {
+    font-weight: bold;
     color: #303030 ;
 }
 .login{
