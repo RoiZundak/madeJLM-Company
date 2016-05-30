@@ -40,7 +40,7 @@ if(empty($_SESSION['username'])){
             Area
         </div>
         <div class="skill" id="skills">
-            <input type="text">Skills
+            <input type="text" class="skill" id="skills">Skills
 
          </div>
          <div class="filters" id="nearby">
