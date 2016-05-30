@@ -1,13 +1,27 @@
 <?php
-    // session_start();
-    echo "<script type='text/javascript'>
-               var name = sessionStorage.getItem('username');
-                if ( name === null || name === 'Not_Valid_User_Name' ) 
-                {
-                    console.log('move : main to login');
-                    window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                }
-    </script>";
+
+// session_start();
+echo "
+               <a id='re_route' href ='#/login'>Go back to login</a>
+            <script> 
+            var name = sessionStorage.getItem('username');
+            if ( name === null || name === 'Not_Valid_User_Name' ) {
+                //document.getElementById(\"re_route_login\").click();
+                console.log('move : main to login');
+                //window.stop();
+            }
+            </script>";
+/*No session currently working
+if(empty($_SESSION['username'])){
+    echo ("
+    You are not logged in. <br> <br>
+    <a id='re_route' href ='./#/login\'>
+        Go Back
+    </a>
+");
+    exit;
+}
+*/
 ?>
 
 <div id="main_wrap">
@@ -78,11 +92,7 @@
         }
             if (target.id == "skills") {
 
-                var e = document.getElementById("skill_std");
-                if(e.style.display == 'block')
-                    e.style.display = 'hidden';
-                else
-                    e.style.display = 'block';
+                $("#skill_std").show();
                 xmlhttp.onreadystatechange = function () {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         $("#skill_std").html(xmlhttp.responseText);
@@ -97,11 +107,7 @@
                 console.log("this is the id : "+target.id);
                 //noinspection JSUnresolvedFunction
                 $("#show_std").hide();
-            var e = document.getElementById("skill_std");
-            if(e.style.display == 'block')
-                e.style.display = 'none';
-            else
-                e.style.display = 'block';
+            $("#skill_std").hide();
             id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
                 console.log("this is the id : "+id);
                 xmlhttp.onreadystatechange = function() {
@@ -126,11 +132,7 @@
             }
             if(target.id == "has_git" ){
 
-                var e = document.getElementById("skill_std");
-                if(e.style.display == 'block')
-                    e.style.display = 'none';
-                else
-                    e.style.display = 'block';
+                $("#skill_std").hide();
 
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -141,11 +143,7 @@
                 xmlhttp.send();
             }
             if(target.id == "has_linkedin" ){
-                var e = document.getElementById("skill_std");
-                if(e.style.display == 'block')
-                    e.style.display = 'none';
-                else
-                    e.style.display = 'block';
+                $("#skill_std").hide();
 
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -157,7 +155,7 @@
             }
             if(target.id == "clr_filter" ){
 
-                $("#skill_std").hide();
+
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         document.getElementById("std_info").innerHTML = xmlhttp.responseText;
