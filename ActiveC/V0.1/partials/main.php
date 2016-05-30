@@ -1,27 +1,13 @@
 <?php
-
-// session_start();
-echo "
-               <a id='re_route' href ='#/login'>Go back to login</a>
-            <script> 
+    echo
+        "<script> 
             var name = sessionStorage.getItem('username');
-            if ( name === null || name === 'Not_Valid_User_Name' ) {
-                //document.getElementById(\"re_route_login\").click();
-                console.log('move : main to login');
-                //window.stop();
+            if ( name === null || name === 'Not_Valid_User_Name' ) 
+            {
+                window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                setTimeout(function(){alert('You Must logged in first');},100);
             }
-            </script>";
-/*No session currently working
-if(empty($_SESSION['username'])){
-    echo ("
-    You are not logged in. <br> <br>
-    <a id='re_route' href ='./#/login\'>
-        Go Back
-    </a>
-");
-    exit;
-}
-*/
+        </script>";
 ?>
 
 <div id="main_wrap">
@@ -55,10 +41,11 @@ if(empty($_SESSION['username'])){
     <div id = "show_std">
 
     </div>
+    <div id = "skill_std">
+
+    </div>
     <div id = "std_info"  >
-        <div id = "skill_std">
-            
-        </div>
+
 	<?php
     //db connect
         require_once "../php/db_connect.php";
@@ -90,8 +77,8 @@ if(empty($_SESSION['username'])){
             // code for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
-            if (target.id != "skills") {
-
+            $("#skill_std").hide();
+            if (target.id == "skills") {
                 $("#skill_std").show();
                 xmlhttp.onreadystatechange = function () {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -102,12 +89,11 @@ if(empty($_SESSION['username'])){
                 xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "9", true);
                 xmlhttp.send();
             }
-        
-        if(target.className =="head" || target.className =="head_image"){
+
+            if(target.className =="head" || target.className =="head_image"){
                 console.log("this is the id : "+target.id);
                 //noinspection JSUnresolvedFunction
-                $("#show_std").hide();
-            $("#skill_std").hide();
+
             id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
                 console.log("this is the id : "+id);
                 xmlhttp.onreadystatechange = function() {
@@ -132,8 +118,6 @@ if(empty($_SESSION['username'])){
             }
             if(target.id == "has_git" ){
 
-                document.getElementById("#skill_std").innerHTML = "";
-
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         document.getElementById("std_info").innerHTML = xmlhttp.responseText;
@@ -143,7 +127,6 @@ if(empty($_SESSION['username'])){
                 xmlhttp.send();
             }
             if(target.id == "has_linkedin" ){
-                document.getElementById("#skill_std").innerHTML = "";
 
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -154,7 +137,6 @@ if(empty($_SESSION['username'])){
                 xmlhttp.send();
             }
             if(target.id == "clr_filter" ){
-
 
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
