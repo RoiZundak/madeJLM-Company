@@ -2,6 +2,7 @@
 
 // session_start();
 echo "
+            <a id='re_route' href ='#/about'>Go back to login</a>
             <script> 
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) {
@@ -84,7 +85,7 @@ if(empty($_SESSION['username'])){
 		e = e || window.event;
 		var target = e.target || e.srcElement;
            // $("#skill_std").hide();
-            if (window.XMLHttpRequest) {
+        if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
         } else {
