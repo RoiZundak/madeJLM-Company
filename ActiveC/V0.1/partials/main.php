@@ -84,7 +84,8 @@ if(empty($_SESSION['username'])){
 	document.addEventListener('click', function(e) {
 		e = e || window.event;
 		var target = e.target || e.srcElement;
-		if (window.XMLHttpRequest) {
+            $("#skill_std").hide();
+            if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
         } else {
@@ -97,7 +98,8 @@ if(empty($_SESSION['username'])){
                 console.log("this is the id : "+target.id);
                 //noinspection JSUnresolvedFunction
                 $("#show_std").hide();
-                id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
+                 $("#skill_std").hide();
+            id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
                 console.log("this is the id : "+id);
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -120,6 +122,9 @@ if(empty($_SESSION['username'])){
 
             }
             if(target.id == "has_git" ){
+                
+                $("#skill_std").hide();
+
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         document.getElementById("std_info").innerHTML = xmlhttp.responseText;
@@ -129,6 +134,7 @@ if(empty($_SESSION['username'])){
                 xmlhttp.send();
             }
             if(target.id == "has_linkedin" ){
+                $("#skill_std").hide();
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         document.getElementById("std_info").innerHTML = xmlhttp.responseText;
@@ -138,6 +144,8 @@ if(empty($_SESSION['username'])){
                 xmlhttp.send();
             }
             if(target.id == "clr_filter" ){
+                $("#skill_std").hide();
+
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         document.getElementById("std_info").innerHTML = xmlhttp.responseText;
