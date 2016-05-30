@@ -279,17 +279,11 @@
 	if($func=="9") 
 	{
 		$sql = 'SELECT * FROM skills';
-        //style=\'display:none;\'
         echo "<script>
         function addSkillToList(skill_to_add){
-        $( \"p\" ).after(function() {
-  return \"<div>\" + this.className + \"</div>\";
-});
-
-
             $('#add_skill').after(function() {
-                  return'<input type=\'text\' class=\'skills\'  value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
-                });
+              return'<input type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
+            });
         }
         </script>";
 
