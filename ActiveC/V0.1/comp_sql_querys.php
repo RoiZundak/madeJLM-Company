@@ -290,7 +290,7 @@
 		{
 			if (($i%5) === 0)
 				echo '</br>';
-			echo ($row['name']);
+			echo ($row['name'].'  ');
 			$i++;
 		}
 	}
