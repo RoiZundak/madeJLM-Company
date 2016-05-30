@@ -281,7 +281,11 @@ if($func=="9") {
 	$sql = 'SELECT * FROM skills';
 	function hello()
 	{
-		echo "Hello";
+		echo "
+            <script type=\'text/javascript\'>
+            var e = document.getElementById('skill_std'); e.hide();
+            </script>
+        ";
 	}
 	echo "<p class='speech'><<input type='button' name='Release' onclick= hello(); value='Click to Release'>Skills list</p> ";
 	//PDO STYLE :
