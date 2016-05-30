@@ -21,6 +21,7 @@
 echo
     "<script>
             sessionStorage.setItem('username', 'Not_Valid_User_Name');
+            alert('You have successfully logged.Redirecting to Login page..);
              window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
      </script>";
 ?>
