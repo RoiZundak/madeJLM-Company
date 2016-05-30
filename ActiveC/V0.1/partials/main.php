@@ -6,8 +6,7 @@ echo "
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) {
                 //document.getElementById(\"re_route_login\").click();
-                document.getElementById('body').innerHTML = '<a href=\"./#/about\" id =\"link_back\" > go back</a>';
-                //document.getElementById(\"link_back\").click();
+                document.getElementById('body').innerHTML = '<a id=\'re_route\' href =\'./#/about\'>dsvds</a>';
                 console.log('move : main to login');
                 //window.stop();
             }
