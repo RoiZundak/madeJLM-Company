@@ -26,7 +26,7 @@ echo
              if ( name !== null && name !== 'Not_Valid_User_Name' ) 
              {
                 sessionStorage.setItem('username', 'Not_Valid_User_Name');
-                setTimeout(function(){alert('You have successfully logout.Redirecting to Login page..');},500);
+                setTimeout(function(){alert('You have successfully logout.Redirecting to Login page..');},250);
                 //alert('You have successfully logout.Redirecting to Login page..');
              }
      </script>";
