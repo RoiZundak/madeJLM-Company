@@ -229,27 +229,26 @@
 
 	}
 	//clear
-	if($func=="4"){
+	if($func=="4") {
 
 
 		//PDO STYLE :
 		$sql = 'SELECT * FROM student';
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row) {
-			$img_src ="";
-			if(  $row['profile']=="" ){
+			$img_src = "";
+			if ($row['profile'] == "") {
 				$img_src = "./img/profilepic.png";
-			}else{
-				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+			} else {
+				$img_src = "../../../MadeinJLM-students/mockup/" . $row['profile'];
 			}
-			echo "<div class='head_skill' id='head_skill".$row['ID']."' > ";
-			echo "<img class='head_skill' id='head_skill".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+			echo "<div class='head_skill' id='head_skill" . $row['ID'] . "' > ";
+			echo "<img class='head_skill' id='head_skill" . $row['ID'] . "' src='" . $img_src . "' width='120px' height='110px'>";
 			print_r($row['first_name']);
 			echo "</div>";
 		}
 
-
-
+	}
 if($func=="10") {
 
 	$q = intval($_GET['q']);
@@ -301,7 +300,7 @@ if($func=="10") {
 			print_r($row['first_name']);
 			echo "</div>";
 		}*/
-	}
+
 
 if($func=="9") {
 
