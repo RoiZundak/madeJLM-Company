@@ -299,7 +299,9 @@ body {
     font-weight: bold;
 
 }
-
+#add_skill,#conf_skill{
+    height: 25%;
+}
 
 .forgot-password > a {
     font-size: small;
