@@ -300,8 +300,13 @@ body {
 }
 
 .contact_us_link{
-    font-weight: bold;
     color: #303030 ;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 9px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 15.4px;
 }
 .forgot-password > a {
     font-weight: bold;
