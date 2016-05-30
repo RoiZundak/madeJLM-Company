@@ -20,14 +20,12 @@
      session_destroy();*/
 echo
     "<script>
+             window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
              //if there is no user connected, skip those lines
              if ( name !== null && name !== 'Not_Valid_User_Name' ) 
              {
                 sessionStorage.setItem('username', 'Not_Valid_User_Name');
-                window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
                 alert('You have successfully logged.Redirecting to Login page..');
              }
-             else
-                 window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
      </script>";
 ?>
