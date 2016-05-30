@@ -281,14 +281,14 @@
 		$sql = 'SELECT * FROM skills';
 		echo "
 			<form>	
-			<input type=\"text\" list=\"skills_list\" id='skill_input'>
+			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
 			<datalist id=\"skills_list\">";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
 				echo '<option value='.$row['name'].'>';
 		}
         echo "</datalist>
-                <button type=\"submit\" class=\"conf_skill\">filter</button>
+                <button type=\"submit\" class=\"conf_skill\" class='skills'>filter</button>
                 </form>";
 	}
 
