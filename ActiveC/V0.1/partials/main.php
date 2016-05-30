@@ -23,9 +23,7 @@ if(empty($_SESSION['username'])){
 }
 */
 ?>
-<div id = "skill_std">
 
-</div>
 <div id="main_wrap">
     <div id = "filter_main">
     Filter<br>
@@ -51,6 +49,9 @@ if(empty($_SESSION['username'])){
         <div class="filters" id='clr_filter'>
             Clear All
         </div>
+    </div>
+    <div id = "skill_std">
+
     </div>
     <div id = "show_std">
 
