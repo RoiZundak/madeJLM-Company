@@ -46,8 +46,7 @@ if(empty($_SESSION['username'])){
             Clear All
         </div>
         <div >
-            <input type="text" class="skill" id="skills">
-            Skills
+            <input type="text" class="skill" id="skills" alue="Skills">
          </div>
 
     </div>
