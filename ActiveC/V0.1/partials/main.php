@@ -39,8 +39,9 @@ if(empty($_SESSION['username'])){
         <div class="filters" id="area">
             Area
         </div>
-        <div class="skill" type="text" id="skills">
-            Skills
+        <div class="skill" id="skills">
+            <input type="text">Skills
+
          </div>
          <div class="filters" id="nearby">
             Nearby
