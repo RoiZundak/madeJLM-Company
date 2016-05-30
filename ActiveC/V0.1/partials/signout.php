@@ -18,13 +18,10 @@
 
      // Finally, destroy the session.
      session_destroy();*/
-echo("<script>
+echo
+    "<script>
             sessionStorage.setItem('username', 'Not_Valid_User_Name');
-                
-            </script>
-            You are not logged in. <br> <br>
-            <a id='re_route' href ='./#/login\'>
-            Go Back
-            </a>");
-
+            alert('You have successfully logged.Redirecting to Login page..');
+             window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+     </script>";
 ?>
