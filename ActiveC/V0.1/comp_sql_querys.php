@@ -282,7 +282,7 @@
 		echo "
 			<form>	
   				<input type='text' name='skill' id='skill_input' class='skills' ><br>
-  				
+  				<button type=\"submit\" class=\"conf_skill\">filter</button>
   				</form>";
 		$i = 0;
 		foreach ($databaseConnection->query($sql) as $row)
