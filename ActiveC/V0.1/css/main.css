@@ -99,7 +99,6 @@ Our style
 #skill_std{
     position: absolute;
     z-index: 10;
-    display: none;
 }
 
 p.speech {
