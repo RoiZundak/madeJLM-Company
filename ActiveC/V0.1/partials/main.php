@@ -41,10 +41,11 @@
     <div id = "show_std">
 
     </div>
-    <div id = "std_info"  >
-        <div id = "skill_std">
+    <div id = "skill_std">
 
-        </div>
+    </div>
+    <div id = "std_info"  >
+
 	<?php
     //db connect
         require_once "../php/db_connect.php";
