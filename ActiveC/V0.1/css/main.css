@@ -296,12 +296,13 @@ body {
 
 #login_{
     left: +50px;
+    font-weight: bold;
 
 }
 
 
 .forgot-password > a {
-    font-weight: 400;
+    font-weight: bolder;
     color: #303030 ;
 }
 .login{
