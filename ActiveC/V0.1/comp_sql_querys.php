@@ -281,7 +281,9 @@
 		$sql = 'SELECT * FROM skills';
 		echo "
 			<form>	
-  				<input type='text' name='skill' id='skill_input' class='skills' ><br>";
+  				<input type='text' name='skill' id='skill_input' class='skills' ><br>
+  				
+  				</form>";
 		$i = 0;
 		foreach ($databaseConnection->query($sql) as $row)
 		{
@@ -290,7 +292,6 @@
 			echo ($row['name']. "&nbsp&nbsp&nbsp");
 			$i++;
 		}
-        echo "</form>";
 	}
 
 
