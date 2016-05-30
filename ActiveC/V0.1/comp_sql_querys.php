@@ -279,6 +279,7 @@
 if($func=="9") {
 
 	$sql = 'SELECT * FROM skills';
+	echo "<p class='speech'>Skills list</p>";
 	//PDO STYLE :
 /*	foreach ($databaseConnection->query($sql) as $row) {
 			$img_src = "../../../MadeinJLM-students/mockup/" . $row['name'];
