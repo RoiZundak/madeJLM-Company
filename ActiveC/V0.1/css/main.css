@@ -299,11 +299,9 @@ body {
 
 }
 
-.forgot-password{
 
-}
 .forgot-password > a {
-    color: white;
+    color: #303030 ;
 }
 .login{
     color:black;
