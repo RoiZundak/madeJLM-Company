@@ -288,7 +288,7 @@ function addSkillToList(skill_to_add){
 		echo "
 			<form>	
 			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
-			<button type=\"button\" oncick='addSkillToList(document.getElementById(\"skill_input\").value)'>+</button>
+			<button type=\"button\" onclick='addSkillToList(document.getElementById(\"skill_input\").value)'>+</button>
 			<datalist id=\"skills_list\">";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
