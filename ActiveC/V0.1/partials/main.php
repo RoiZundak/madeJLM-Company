@@ -132,8 +132,8 @@ if(empty($_SESSION['username'])){
 
             }
             if(target.id == "has_git" ){
+                $("#show_std").show("slow", function() {
 
-                $("#show_std").hide();
                 $("#skill_std").hide();
 
                 xmlhttp.onreadystatechange = function() {
