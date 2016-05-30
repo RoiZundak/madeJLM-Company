@@ -74,37 +74,6 @@ Our style
 }
 
 
-
-
-
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-
-.skillBox{
-    display:inline-block;
-    width:30px;
-    height:30px;
-    margin:auto;
-    padding:5px;
-    cursor:pointer;
-    text-align:center;
-    font-size:1.1em;
-    transition-property: background, border-radius;
-    transition-duration: 300ms;
-    transition-timing-function: linear;
-}
 .head:Hover{
 	background-color:gainsboro;
     font-size:1.1em;
@@ -132,9 +101,8 @@ Our style
     opacity: 0.7;
     margin-left: 1%;
 
-
 }
-.std_info {
+#std_info {
     border-left-style: outset;
     display:inline;
     float: left;
@@ -145,9 +113,8 @@ Our style
     max-height: 100%;
     min-height: 100%;
     text-align: center;
-    overflow:auto;
-}
 
+}
 
 /*
 Custom CSS for...d
