@@ -2,11 +2,11 @@
 
 // session_start();
 echo "
+            <a id='re_route' href ='#/login'>Go back to login</a>
             <script> 
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) {
                 //document.getElementById(\"re_route_login\").click();
-                document.getElementById('body').innerHTML = '<a id=\'re_route\' href =\'/#/about\'>dsvds</a>';
                 console.log('move : main to login');
                 //window.stop();
             }
@@ -84,7 +84,7 @@ if(empty($_SESSION['username'])){
 		e = e || window.event;
 		var target = e.target || e.srcElement;
            // $("#skill_std").hide();
-            if (window.XMLHttpRequest) {
+        if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
         } else {
@@ -96,7 +96,7 @@ if(empty($_SESSION['username'])){
                 $("#skill_std").show();
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById("skill_std").innerHTML = xmlhttp.responseText;
+                        $("#skill_std").html(xmlhttp.responseText) ;
                     }
 
                 };
