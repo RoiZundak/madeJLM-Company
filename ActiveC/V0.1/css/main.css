@@ -288,15 +288,12 @@ body {
     background-position: 70% 90%;
 }
 #login_form{
-    background-color:rgba(255,255,255,0.7);
+    background-color:rgba(255,255,255,0.5);
     width:20%;
     height:100%;
     margin:auto;
 }
-h3{
-    margin-top: 45px;
-    margin-left: 60px;
-}
+
 .forgot-password{
 
 }
@@ -374,6 +371,8 @@ td {text-align: left;
 }
 
 h3 {
+    margin-top: 45px;
+    margin-left: 60px;
     text-align: left;
     position: relative;
     left: -60px;
