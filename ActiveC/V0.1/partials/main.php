@@ -79,7 +79,11 @@ echo "<script type='text/javascript'>
         }
             if (target.id != "skills") {
 
-                $("#skill_std").show();
+                var e = document.getElementById("skill_std");
+                if(e.style.display == 'block')
+                    e.style.display = 'none';
+                else
+                    e.style.display = 'block';
                 xmlhttp.onreadystatechange = function () {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         $("#skill_std").html(xmlhttp.responseText);
@@ -94,7 +98,11 @@ echo "<script type='text/javascript'>
                 console.log("this is the id : "+target.id);
                 //noinspection JSUnresolvedFunction
                 $("#show_std").hide();
-            document.getElementById("#skill_std").innerHTML = "";
+            var e = document.getElementById("skill_std");
+            if(e.style.display == 'block')
+                e.style.display = 'none';
+            else
+                e.style.display = 'block';
             id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
                 console.log("this is the id : "+id);
                 xmlhttp.onreadystatechange = function() {
@@ -119,7 +127,11 @@ echo "<script type='text/javascript'>
             }
             if(target.id == "has_git" ){
 
-                document.getElementById("#skill_std").innerHTML = "";
+                var e = document.getElementById("skill_std");
+                if(e.style.display == 'block')
+                    e.style.display = 'none';
+                else
+                    e.style.display = 'block';
 
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -130,7 +142,11 @@ echo "<script type='text/javascript'>
                 xmlhttp.send();
             }
             if(target.id == "has_linkedin" ){
-                document.getElementById("#skill_std").innerHTML = "";
+                var e = document.getElementById("skill_std");
+                if(e.style.display == 'block')
+                    e.style.display = 'none';
+                else
+                    e.style.display = 'block';
 
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -141,8 +157,8 @@ echo "<script type='text/javascript'>
                 xmlhttp.send();
             }
             if(target.id == "clr_filter" ){
-                document.getElementById("#skill_std").innerHTML = "";
 
+                $("#skill_std").hide();
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         document.getElementById("std_info").innerHTML = xmlhttp.responseText;
