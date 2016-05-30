@@ -24,7 +24,9 @@ if(empty($_SESSION['username'])){
 }
 */
 ?>
+<div id = "skill_std">
 
+</div>
 <div id="main_wrap">
     <div id = "filter_main">
     Filter<br>
@@ -55,6 +57,7 @@ if(empty($_SESSION['username'])){
 
     </div>
     <div id = "std_info"  >
+
 	<?php
     //db connect
         require_once "../php/db_connect.php";
@@ -144,7 +147,7 @@ if(empty($_SESSION['username'])){
             if(target.id == "skills" ){
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById("filter_main").innerHTML = xmlhttp.responseText;
+                        document.getElementById("skill_std").innerHTML = xmlhttp.responseText;
                     }
                     
                 };
@@ -160,4 +163,5 @@ if(empty($_SESSION['username'])){
 	
 	
     </div>
+
 </div>
