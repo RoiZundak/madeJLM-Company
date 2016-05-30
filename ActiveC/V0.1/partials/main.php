@@ -132,7 +132,7 @@ if(empty($_SESSION['username'])){
             }
             if(target.id == "has_git" ){
 
-                document.getElementById("#skill_std").innerHTML = "";
+                $("#skill_std").hide();
 
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -143,7 +143,7 @@ if(empty($_SESSION['username'])){
                 xmlhttp.send();
             }
             if(target.id == "has_linkedin" ){
-                document.getElementById("#skill_std").innerHTML = "";
+                $("#skill_std").hide();
 
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -155,7 +155,7 @@ if(empty($_SESSION['username'])){
             }
             if(target.id == "clr_filter" ){
 
-
+                $("#skill_std").hide();
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         document.getElementById("std_info").innerHTML = xmlhttp.responseText;
