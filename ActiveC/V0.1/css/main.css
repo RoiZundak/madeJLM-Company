@@ -111,28 +111,6 @@ p.speech {
     box-shadow: 2px 2px 4px #888;
 }
 
-p.speech:before {
-    content: ' ';
-    position: absolute;
-    width: 0;
-    height: 0;
-    left: 30px;
-    top: 100px;
-    border: 25px solid;
-    border-color: #666 transparent transparent #666;
-}
-
-p.speech:after {
-    content: ' ';
-    position: absolute;
-    width: 0;
-    height: 0;
-    left: 38px;
-    top: 100px;
-    border: 15px solid;
-    border-color: #fff transparent transparent #fff;
-}
-
 
 
 
