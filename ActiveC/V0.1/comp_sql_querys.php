@@ -281,17 +281,14 @@
 		$sql = 'SELECT * FROM skills';
 		echo "
 			<form>	
-  				<input type='text' name='skill' id='skill_input' class='skills' ><br>
-  				<button type=\"submit\" class=\"conf_skill\">filter</button>
-  				</form>";
-		$i = 0;
+			<datalist id=\"skills_list\">";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
-			if (($i%5) === 0)
-				echo '</br>';
-			echo ($row['name']. "&nbsp&nbsp&nbsp");
-			$i++;
+				echo '<option value='.$row['name'].'>';
 		}
+        echo "</datalist>
+                <button type=\"submit\" class=\"conf_skill\">filter</button>
+                </form>";
 	}
 
 
