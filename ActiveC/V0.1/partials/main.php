@@ -5,8 +5,8 @@ echo "<script>
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) 
             {
+                alert('You Must logged in first');
                 window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                alert('You Must login first');
             }
             </script>";
 /*No session currently working
