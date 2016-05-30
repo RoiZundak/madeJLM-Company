@@ -91,7 +91,17 @@ if(empty($_SESSION['username'])){
             // code for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
-        
+            if(target.id == "skills" ){
+                $("#skill_std").show();
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        document.getElementById("skill_std").innerHTML = xmlhttp.responseText;
+                    }
+
+                };
+                xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"9",true);
+                xmlhttp.send();
+            }
         
         if(target.className =="head" || target.className =="head_image"){
                 console.log("this is the id : "+target.id);
@@ -153,17 +163,7 @@ if(empty($_SESSION['username'])){
                 xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"4",true);
                 xmlhttp.send();
             }
-            if(target.id == "skills" ){
-                $("#skill_std").show();
-                xmlhttp.onreadystatechange = function() {
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById("skill_std").innerHTML = xmlhttp.responseText;
-                    }
-                    
-                };
-                xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"9",true);
-                xmlhttp.send();
-            }
+
 
 
         }
