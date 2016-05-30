@@ -41,7 +41,7 @@
     <div id = "show_std">
 
     </div>
-    <div id = "skill_std" class='speech'>
+    <div id = "skill_std" class='speech' class='skills'>
 
     </div>
     <div id = "std_info"  >
@@ -79,7 +79,7 @@
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
             $("#skill_std").hide();
-            if (target.id == "skills") {
+            if (target.id == "skills" || target.className == "skills") {
                 $("#skill_std").show();
                 xmlhttp.onreadystatechange = function () {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
