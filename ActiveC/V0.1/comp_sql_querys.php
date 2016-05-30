@@ -281,8 +281,8 @@
 		$sql = 'SELECT * FROM skills';
 		echo "
 			<form>
-				Skill:
-  				<input type='text' name='skill'><br>
+				
+  				<input type='text' name='skill' id='skill_input' ><br>
 			</form> ";
 			//PDO STYLE :
 		/*
