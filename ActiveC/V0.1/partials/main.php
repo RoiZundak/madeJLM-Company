@@ -78,8 +78,13 @@
             // code for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
+        
+        if (target.className !== "skills")
+        {
             $("#skill_std").hide();
-            if (target.id == "skills" || target.className == "skills") {
+        }
+
+            if (target.id == "skills") {
                 $("#skill_std").show();
                 xmlhttp.onreadystatechange = function () {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
