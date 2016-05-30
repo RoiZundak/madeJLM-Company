@@ -130,7 +130,6 @@ if(empty($_SESSION['username'])){
 
             }
             if(target.id == "has_git" ){
-                $("#show_std").show("slow", function() {
 
                 $("#skill_std").hide();
 
