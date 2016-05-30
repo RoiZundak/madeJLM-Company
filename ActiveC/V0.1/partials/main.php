@@ -1,25 +1,13 @@
 <?php
-
-// session_start();
-echo "<script> 
+    echo
+        "<script> 
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) 
             {
                 alert('You Must logged in first');
                 window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
             }
-            </script>";
-/*No session currently working
-if(empty($_SESSION['username'])){
-    echo ("
-    You are not logged in. <br> <br>
-    <a id='re_route' href ='./#/login\'>
-        Go Back
-    </a>
-");
-    exit;
-}
-*/
+        </script>";
 ?>
 
 <div id="main_wrap">
