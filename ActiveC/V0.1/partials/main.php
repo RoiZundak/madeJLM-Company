@@ -78,7 +78,7 @@
         }
             $("#skill_std").hide();
             if (target.id == "skills") {
-                //$("#skill_std").show();
+                $("#skill_std").show();
                 xmlhttp.onreadystatechange = function () {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         $("#skill_std").html(xmlhttp.responseText);
@@ -88,8 +88,9 @@
                 xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "9", true);
                 xmlhttp.send();
             }
-        
-        if(target.className =="head" || target.className =="head_image"){
+            $("#skill_std").hide();
+
+            if(target.className =="head" || target.className =="head_image"){
                 console.log("this is the id : "+target.id);
                 //noinspection JSUnresolvedFunction
 
