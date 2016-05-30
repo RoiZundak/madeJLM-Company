@@ -294,6 +294,11 @@ body {
     margin:auto;
 }
 
+#login_{
+    left: +60px;
+
+}
+
 .forgot-password{
 
 }
