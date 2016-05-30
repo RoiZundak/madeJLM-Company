@@ -7,7 +7,6 @@ echo "
             if ( name === null || name === 'Not_Valid_User_Name' ) {
                 //document.getElementById(\"re_route_login\").click();
                 document.getElementById('body').innerHTML = '<a id=\'re_route\' href =\'./#/about\'>dsvds</a>';
-                //document.getElementById(\"link_back\").click();
                 console.log('move : main to login');
                 //window.stop();
             }
