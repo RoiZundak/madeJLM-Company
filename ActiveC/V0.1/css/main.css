@@ -98,6 +98,8 @@ Our style
 
 #skill_std{
     position: absolute;
+    z-index: 10;
+    display: none;
 }
 
 p.speech {
@@ -129,7 +131,6 @@ p.speech {
 
 
 #show_std{
-    position: absolute;
     display:inline;
     border-left-style: outset;
     float:right;
