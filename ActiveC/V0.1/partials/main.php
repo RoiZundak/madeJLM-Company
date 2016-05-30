@@ -39,9 +39,9 @@ if(empty($_SESSION['username'])){
         <div class="filters" id="area">
             Area
         </div>
-        <div>
-            <input type="text" class="skill" id="skills" value="Skills"onfocus="if($(this).val()=='Skills')$(this).val('')" onblur="if($(this).val()=='')$(this).val('Skills')">
-        </div><br>
+        <div input type="text"  class="skill" id="skills" value="Skills">
+          
+        </div>
         <div class="filters" id="nearby">
             Nearby
         </div>
