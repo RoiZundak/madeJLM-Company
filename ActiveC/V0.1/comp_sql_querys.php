@@ -249,31 +249,6 @@
 		}
 
 	}
-if($func=="10") {
-
-	$q = intval($_GET['q']);
-
-
-	//PDO STYLE :
-	$sql = "SELECT * FROM skills WHERE ID = '" . $q . "'";
-	//PDO STYLE :
-	foreach ($databaseConnection->query($sql) as $row) {
-
-		print_r($row['name']);
-
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
 
