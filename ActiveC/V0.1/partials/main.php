@@ -57,7 +57,7 @@ if(empty($_SESSION['username'])){
     </div>
     <div id = "std_info"  >
         <div id = "skill_std">
-            <p class='speech'>Skills list</p>
+            
         </div>
 	<?php
     //db connect
@@ -83,7 +83,6 @@ if(empty($_SESSION['username'])){
 	document.addEventListener('click', function(e) {
 		e = e || window.event;
 		var target = e.target || e.srcElement;
-           // $("#skill_std").hide();
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
@@ -108,7 +107,7 @@ if(empty($_SESSION['username'])){
                 console.log("this is the id : "+target.id);
                 //noinspection JSUnresolvedFunction
                 $("#show_std").hide();
-                 $("#skill_std").hide();
+            document.getElementById("#skill_std").innerHTML = "";
             id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
                 console.log("this is the id : "+id);
                 xmlhttp.onreadystatechange = function() {
@@ -133,7 +132,7 @@ if(empty($_SESSION['username'])){
             }
             if(target.id == "has_git" ){
 
-                $("#skill_std").hide();
+                document.getElementById("#skill_std").innerHTML = "";
 
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -144,7 +143,8 @@ if(empty($_SESSION['username'])){
                 xmlhttp.send();
             }
             if(target.id == "has_linkedin" ){
-                $("#skill_std").hide();
+                document.getElementById("#skill_std").innerHTML = "";
+
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         document.getElementById("std_info").innerHTML = xmlhttp.responseText;
@@ -154,7 +154,7 @@ if(empty($_SESSION['username'])){
                 xmlhttp.send();
             }
             if(target.id == "clr_filter" ){
-                $("#skill_std").hide();
+                document.getElementById("#skill_std").innerHTML = "";
 
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
