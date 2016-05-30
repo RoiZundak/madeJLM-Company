@@ -45,7 +45,7 @@ if(!empty($_POST['username'])){
             echo("<a id='re_route_main' href ='../#/main'></a>
                  <script>                  
                     sessionStorage.setItem('username', '".$username."');
-                    document.getElementById(\"re_route_main\").click();
+                    //document.getElementById(\"re_route_main\").click();
                 </script>
                 ");
             exit;

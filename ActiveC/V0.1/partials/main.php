@@ -9,7 +9,6 @@ echo "
                 document.write('<a href=\'./#/login\' id =\'link_back\' > go back</a>');
                 document.getElementById(\"link_back\").click();
                 //window.stop();
-                <!--
             }
             </script>";
 /*No session currently working
