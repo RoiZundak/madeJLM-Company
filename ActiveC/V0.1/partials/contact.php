@@ -90,8 +90,8 @@
 
             <p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: (972) 548044784</p>
 
-            <p><i class="fa fa-envelope-o"></i> <abbr title="Email" id="mail" ">E </abbr> :ActiveC.madejlm@Gmail.com</p>
-        
+            <p><i class="fa fa-envelope-o"></i> <abbr title="Email" id="mail" ">E: </abbr>  ActiveC.madejlm@Gmail.com</p>
+
 
             <p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: 24/7</p>
             <ul class="list-unstyled list-inline list-social-icons">
