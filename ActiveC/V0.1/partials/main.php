@@ -55,7 +55,8 @@ if(empty($_SESSION['username'])){
     </div>
     <div id = "std_info"  >
         <div id = "skill_std">
-            
+            <p class='speech'>Skills list</p>;
+
         </div>
 	<?php
     //db connect
@@ -130,7 +131,6 @@ if(empty($_SESSION['username'])){
 
             }
             if(target.id == "has_git" ){
-                $("#show_std").show("slow", function() {
 
                 $("#skill_std").hide();
 
