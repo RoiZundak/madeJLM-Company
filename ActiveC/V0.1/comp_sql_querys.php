@@ -185,8 +185,7 @@
 	}
 	//filter has instatution
 	if($func=="3"){
-
-
+		
 		//PDO STYLE :
 		$sql = "SELECT * FROM student WHERE linkedin<>''";
 		$img_src = "../img/profilepic.png";
@@ -281,7 +280,7 @@ if($func=="9") {
 
 	$sql = 'SELECT * FROM skills';
 	//PDO STYLE :
-	echo "<p class='speech'>Skills list</p>";
+	
 /*	foreach ($databaseConnection->query($sql) as $row) {
 			$img_src = "../../../MadeinJLM-students/mockup/" . $row['name'];
 		echo "<div class='head' id='head_".$row['ID']."' > ";
