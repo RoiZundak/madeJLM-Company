@@ -111,6 +111,11 @@ Our style
 
 }
 
+.skill{
+    height: 30px;
+}
+
+
 .speech {
     float: left;
     margin-top: 200px;
