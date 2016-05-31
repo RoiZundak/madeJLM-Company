@@ -99,9 +99,10 @@ Our style
 }
 
 #add_skill{
-    height: 30px;
+    height: 100px;
     background-color: red;
     margin-top: 10%;
+    width: 70px;
 
 }
 
