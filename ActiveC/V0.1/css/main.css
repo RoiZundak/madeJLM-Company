@@ -98,10 +98,12 @@ Our style
 
 }
 
-#add_skill{
-    height: 30px;
-    background-color: #3b5998;
-    float: right;
+input[type=button]{
+    background-color: red;
+    width:20px;
+    height: 20px;
+    text-align: center;
+
 }
 
 input[type=submit]{
