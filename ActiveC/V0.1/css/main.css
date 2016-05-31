@@ -101,14 +101,17 @@ Our style
     width: 70%;
     height: 30px;
     float: left;
+    margin-top: 3%;
+
 }
 
 #add_skill{
     height: 30px;
     background-color: red;
-    margin-top: 10%;
+    margin-top: 3%;
     width: 70px;
     float: right;
+    font-size: small;
 
 }
 
