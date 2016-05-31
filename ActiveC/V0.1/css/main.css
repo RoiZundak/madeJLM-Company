@@ -130,11 +130,6 @@ input[type=submit]{
 }
 
 
-#skill_input{
-    width: 80%;
-    height: 25%;
-}
-
 #show_std{
     display:inline;
     border-left-style: outset;
