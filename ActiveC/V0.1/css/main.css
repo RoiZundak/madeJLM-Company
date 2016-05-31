@@ -98,6 +98,11 @@ Our style
 
 }
 
+#add_skill{
+    height: 25%;
+}
+
+
 .speech {
     float: left;
     margin-top: 200px;
