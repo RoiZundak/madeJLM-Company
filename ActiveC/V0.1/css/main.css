@@ -101,6 +101,8 @@ Our style
 #add_skill{
     height: 20px;
     background-color: #3b5998;
+    position: absolute;
+    float: right;
 }
 
 #conf_skill{
