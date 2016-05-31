@@ -97,9 +97,13 @@ Our style
     width: auto;
 
 }
+#skill_input{
+    width: 70%;
+    height: 30px;
+}
 
 #add_skill{
-    height: 100px;
+    height: 30px;
     background-color: red;
     margin-top: 10%;
     width: 70px;
@@ -132,10 +136,7 @@ input[type=submit]{
 }
 
 
-#skill_input{
-    width: 70%;
-    height: 25%;
-}
+
 
 #show_std{
     display:inline;
