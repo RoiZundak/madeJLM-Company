@@ -100,6 +100,7 @@ Our style
 #skill_input{
     width: 70%;
     height: 30px;
+    float: left;
 }
 
 #add_skill{
@@ -107,6 +108,7 @@ Our style
     background-color: red;
     margin-top: 10%;
     width: 70px;
+    float: right;
 
 }
 
