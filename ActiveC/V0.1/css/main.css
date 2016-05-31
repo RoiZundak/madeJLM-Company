@@ -98,7 +98,7 @@ Our style
 
 }
 
-input[type=button]{
+#add_skill{
     height: 20%;
     background-color: #3b5998;
     float: right;
