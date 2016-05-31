@@ -302,6 +302,22 @@
                 </form>";
 	}
     if($func=="11"){
+        $skills_arr=array();
+        foreach($_POST as $key => $value) {
+            if (strstr($key, 'skill_')) {
+                array_push($skills_arr,$value);
+                echo $value;
+            }
+        }
+
+
+
+
+        $sql = 'SELECT * FROM skills';
+        foreach ($databaseConnection->query($sql) as $row)
+        {
+            echo '<option value='.$row['name'].'>';
+        }
         echo "<script>alert('in');</script>";
     }
 
