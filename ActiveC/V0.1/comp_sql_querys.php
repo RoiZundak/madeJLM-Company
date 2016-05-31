@@ -306,19 +306,21 @@
         foreach($_POST as $key => $value) {
             if (strstr($key, 'skill_')) {
                 array_push($skills_arr,$value);
-                echo $value;
             }
+        }
+        //  TODO : create an sql query, add all skills to it, and then print results(students)
+       // $sql = 'SELECT * FROM students WHERE ';
+        while ($t = array_pop($skills)){
+          //  $sql+=
         }
 
 
 
 
-        $sql = 'SELECT * FROM skills';
         foreach ($databaseConnection->query($sql) as $row)
         {
             echo '<option value='.$row['name'].'>';
         }
-        echo "<script>alert('in');</script>";
     }
 
 //ADD new company
