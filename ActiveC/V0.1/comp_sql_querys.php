@@ -289,7 +289,7 @@
         </script>";
 
 		echo "
-			<form method='post' action='../comp_sql_querys.php?func=11'>	
+			<form method='post' action='/comp_sql_querys.php?func=11'>	
 			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
 			<input type=\"button\" id = 'add_skill' value = \"add\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value)'>
 			<datalist id=\"skills_list\">";
