@@ -316,7 +316,7 @@
 
 
 
-        $sql = 'SELECT * FROM students'
+        $sql = 'SELECT * FROM students';
         foreach ($databaseConnection->query($sql) as $row)
         {
             echo '<option value='.$row['name'].'>';
