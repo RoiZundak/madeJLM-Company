@@ -103,10 +103,13 @@ Our style
     background-color: #3b5998;
     position: absolute;
     float: right;
+    margin-top:20% ;
 }
 
 #conf_skill{
     background-color: #3b5998;
+    width:20%;
+    height: 20%;
 
 }
 
