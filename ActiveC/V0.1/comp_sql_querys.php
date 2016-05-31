@@ -310,13 +310,13 @@
         }
         //  TODO : create an sql query, add all skills to it, and then print results(students)
        // $sql = 'SELECT * FROM students WHERE ';
-        while ($t = array_pop($skills)){
+        while ($t = array_pop($skills_arr)){
           //  $sql+=
         }
 
 
 
-
+        $sql = 'SELECT * FROM students'
         foreach ($databaseConnection->query($sql) as $row)
         {
             echo '<option value='.$row['name'].'>';
