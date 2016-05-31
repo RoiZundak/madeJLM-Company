@@ -106,8 +106,9 @@ Our style
 
 input[type=submit]{
     background-color: #3b5998;
-    width:50px;
-    height: 20px;
+    width:70px;
+    height: 40px;
+    text-align: center;
 
 }
 
