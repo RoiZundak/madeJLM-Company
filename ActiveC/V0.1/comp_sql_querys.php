@@ -297,7 +297,7 @@
 				echo '<option value='.$row['name'].'>';
 		}
         echo "</datalist>
-                <button type=\"submit\" value=\"filter\"></button>
+                <input type=\"submit\" value=\"filter\">
                 </form>";
 	}
 
