@@ -249,77 +249,6 @@
 
 	}
 
-
-
-
-		/*		MYSQL APPROACH
-		$sql="SELECT * FROM student ";
-		$result = mysql_query ($sql);
-		if (!$result) {
-			print_r("Error ");
-			echo 'failed. SQL Err: '. mysql_error();
-			exit();
-		}
-		$img_src = "./img/profilepic.png";
-		while($row = mysql_fetch_assoc($result)) {
-			echo "<script>console.log('CHECK')</script>";
-			$img_src ="";
-			if(  $row['profile']=="" ){
-				$img_src = "./img/profilepic.png";
-			}else{
-				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
-			}
-			echo "<div class='head' id='head_".$row['ID']."' > ";
-			echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
-			print_r($row['first_name']);
-			echo "</div>";
-		}*/
-
-
-	if($func=="9") 
-	{
-		$sql = 'SELECT * FROM skills';
-        echo "<script>
-        //adds a label and input text containing skill value
-        function addSkillToList(skill_to_add){
-            $('#submit_skills').after(function() {
-              return'<label class=\'skills\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+'</label> <input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
-            });
-        }
-        </script>";
-
-		echo "
-			<form method='post' action='./comp_sql_querys.php?func=11'>	
-			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
-			<input type=\"button\" id = 'add_skill' value = \"add\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value)'>
-			<datalist id=\"skills_list\">";
-		foreach ($databaseConnection->query($sql) as $row)
-		{
-				echo '<option value='.$row['name'].'>';
-		}
-        echo "</datalist>
-<br><br>
-                <input type=\"submit\" value=\"Filter\" id=\"submit_skills\">
-                </form>";
-	}
-    if($func=="11"){
-        $skills_arr=array();
-        foreach($_POST as $key => $value) {
-            if (strstr($key, 'skill_')) {
-                array_push($skills_arr,$value);
-            }
-        }
-        //  TODO : create an sql query, add all skills to it, and then print results(students)
-       // $sql = 'SELECT * FROM students WHERE ';
-        while ($t = array_pop($skills_arr)){
-          //  $sql+=
-        }
-        echo
-        "<script> 
-                window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/main';
-        </script>";
-    }
-
 //ADD new company
 	if($func=="5"){
 		$name =$_POST["username"] ;
@@ -421,6 +350,58 @@
             echo "Failed.";
         }
     }
+
+
+if($func=="9")
+{
+    $sql = 'SELECT * FROM skills';
+    echo "<script>
+        //adds a label and input text containing skill value
+        function addSkillToList(skill_to_add){
+            $('#add_skill').after(function() {
+              return'<label class=\'skills\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+'</label> <input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
+            });
+        }
+        </script>";
+
+    echo "
+			<form method='post' action='./comp_sql_querys.php?func=10'>	
+			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
+			<input type=\"button\" id = 'add_skill' value = \"add\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value)'>
+			<br>
+			<datalist id=\"skills_list\">";
+    foreach ($databaseConnection->query($sql) as $row)
+    {
+        echo '<option value='.$row['name'].'>';
+    }
+    echo "</datalist>
+<br><br>
+                <input type=\"submit\" value=\"Filter\" id=\"submit_skills\">
+                </form>";
+}
+
+
+
+
+if($func=="10"){
+    $skills_arr=array();
+    foreach($_POST as $key => $value) {
+        if (strstr($key, 'skill_')) {
+            array_push($skills_arr,$value);
+            echo $value;
+        }
+    }
+    //  TODO : create an sql query, add all skills to it, and then print results(students)
+    // $sql = 'SELECT * FROM students WHERE ';
+    while ($t = array_pop($skills_arr)){
+        //  $sql+=
+    }
+    /*    echo
+        "<script>
+                window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/main';
+        </script>";
+    */
+}
 
 ?>
 
