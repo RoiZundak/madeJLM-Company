@@ -101,7 +101,8 @@ Our style
 #add_skill{
     height: 30px;
     background-color: red;
-    float: right;
+    margin-right: auto;
+    margin-top: auto;
 }
 
 input[type=submit]{
