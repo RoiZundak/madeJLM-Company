@@ -291,7 +291,6 @@
 			<form>	
 			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
 			<input type=\"button\" id = 'add_skill' class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value)'>+</input>
-			</form>
 			<datalist id=\"skills_list\">";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
