@@ -313,14 +313,10 @@
         while ($t = array_pop($skills_arr)){
           //  $sql+=
         }
-
-
-
-        $sql = 'SELECT * FROM students';
-        foreach ($databaseConnection->query($sql) as $row)
-        {
-            echo '<option value='.$row['name'].'>';
-        }
+        echo
+        "<script> 
+                window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/main';
+        </script>";
     }
 
 //ADD new company
