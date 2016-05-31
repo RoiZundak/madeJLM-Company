@@ -100,8 +100,13 @@ Our style
 
 #add_skill{
     height: 25%;
+    background-color: #3b5998;
 }
 
+#conf_skill{
+    background-color: #3b5998;
+
+}
 
 .speech {
     float: left;
