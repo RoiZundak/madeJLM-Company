@@ -280,6 +280,7 @@
 	{
 		$sql = 'SELECT * FROM skills';
         echo "<script>
+        //adds a label and input text containing skill value
         function addSkillToList(skill_to_add){
             $('#add_skill').after(function() {
               return'<label class=\'skills\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+'</label> <input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
@@ -288,7 +289,7 @@
         </script>";
 
 		echo "
-			<form>	
+			<form method='post' action='../comp_sql_querys.php?func=11'>	
 			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
 			<input type=\"button\" id = 'add_skill' value = \"add\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value)'>
 			<datalist id=\"skills_list\">";
@@ -300,7 +301,9 @@
                 <input type=\"submit\" value=\"Filter\">
                 </form>";
 	}
-
+    if($func=="11"){
+        echo "<script>alert('in');</script>";
+    }
 
 //ADD new company
 	if($func=="5"){
