@@ -389,9 +389,9 @@ if($func=="9")
         </script>";
 
     echo "
-			<input method='post' id= 'form_skills'action='./comp_sql_querys.php?func=10'>	
+			<).va method='post' id= 'form_skills'action='./comp_sql_querys.php?func=10'>	
 			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
-			<input type=\"button\" id = 'add_skill' value='+'  class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value)'>
+			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value)'>
 			<br>
 			<datalist id=\"skills_list\">";
     foreach ($databaseConnection->query($sql) as $row)
