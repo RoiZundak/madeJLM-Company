@@ -366,6 +366,18 @@ if($func=="9")
         
         $( \"#form_skills\" ).submit(function( event ) {
           var str = $(\"#form_skills\").serialize();
+          
+          
+          xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        document.getElementById(\"show_std\").innerHTML = xmlhttp.responseText;
+                    }
+                };
+        xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=\"+\"10\"+str,true);
+        xmlhttp.send();
+          
+          
+          
           alert(str);
           event.preventDefault();
         });
@@ -396,7 +408,10 @@ if($func=="9")
 
 
 if($func=="10"){
-    $skills_arr=array();
+    if($_GET['skill_JAVA']){
+        echo '<script>alert("ok");</script>';
+    }
+    /* $skills_arr=array();
     foreach($_POST as $key => $value) {
         if (strstr($key, 'skill_')) {
             array_push($skills_arr,$value);
@@ -408,7 +423,7 @@ if($func=="10"){
     while ($t = array_pop($skills_arr)){
         //  $sql+=
     }
-    /*    echo
+       echo
         "<script>
                 window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/main';
         </script>";
