@@ -365,7 +365,7 @@ if($func=="9")
         
         
         $( \"#form_skills\" ).submit(function( event ) {
-          var str = $(\"form_skills\").serialize();
+          var str = $(\"#form_skills\").serialize();
           alert(str);
           event.preventDefault();
         });
