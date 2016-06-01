@@ -89,7 +89,7 @@ Our style
 }
 
 #form_skills{
-    width: 300px;
+   /*change to percent*/ width: 300px;
 }
 
 #skill_std{
