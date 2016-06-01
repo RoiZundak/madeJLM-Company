@@ -120,7 +120,7 @@ Our style
 }
 
 input[type=submit]{
-    font-size: 10em; /* This controls the size. */
+    font-size: 4em; /* This controls the size. */
     display: inline-block;
     width: 0.4em;
     height: 0.4em;
