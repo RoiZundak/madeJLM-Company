@@ -112,6 +112,16 @@ Our style
 
 }
 
+
+label {
+    color: #B4886B;
+    font-weight: bold;
+    display: block;
+    width: 150px;
+    float: left;
+}
+label:after { content: ": " }
+
 #add_skill{
     height: 15px;
     text-align: center;
