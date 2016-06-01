@@ -369,11 +369,11 @@ if($func=="9")
           
           
           xmlhttp.onreadystatechange = function() {
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById(\"show_std\").innerHTML = xmlhttp.responseText;
-                    }
-                };
-        xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=\"+\"10\"+str,true);
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById(\"show_std\").innerHTML = xmlhttp.responseText;
+                }
+            };
+        xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
         xmlhttp.send();
           
           
@@ -408,6 +408,8 @@ if($func=="9")
 
 
 if($func=="10"){
+    echo "Yo !";
+    echo '<script>alert("check-point");</script>';
     if($_GET['skill_JAVA']){
         echo '<script>alert("ok");</script>';
     }
