@@ -129,13 +129,13 @@ input[type=submit]{
 
 
 .speech {
-    width:50%;
+    width:60%;
     float: left;
     margin-top: 200px;
     margin-right: 50px;
     text-align: center;
     line-height: 100px;
-    background-color: #fff;
+    background-color: #dfe3ee;
     border: 8px solid #666;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
