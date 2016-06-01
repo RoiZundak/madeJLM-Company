@@ -102,7 +102,7 @@ Our style
 }
 #skill_input{
     width: 70%;
-    height: 40%;
+    height: 40px;
     float: left;
     margin-top: 3%;
     margin-left: 6%;
@@ -112,7 +112,7 @@ Our style
 }
 
 #add_skill{
-    height: 1%;
+    height: 20px;
     text-align: center;
     width: 20%;
     background-color: #cccccc;
