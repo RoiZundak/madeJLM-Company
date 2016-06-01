@@ -130,6 +130,16 @@ Our style
 }
 
 
+#add_skill:hover{
+    border:3px solid #8589BC;
+    background-color: #18AEDB; background-image: -webkit-gradient(linear, left top, left bottom, from(#18AEDB), to(#a5defb));
+    background-image: -webkit-linear-gradient(top, #18AEDB, #a5defb);
+    background-image: -moz-linear-gradient(top, #18AEDB, #a5defb);
+    background-image: -ms-linear-gradient(top, #18AEDB, #a5defb);
+    background-image: -o-linear-gradient(top, #18AEDB, #a5defb);
+    background-image: linear-gradient(to bottom, #18AEDB, #a5defb);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#18AEDB, endColorstr=#a5defb);
+}
+
 
 input[type=submit]{
     background-color: #3b5998;
