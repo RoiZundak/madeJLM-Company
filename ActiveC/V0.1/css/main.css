@@ -116,11 +116,9 @@ Our style
 label {
     color: white;
     font-weight: bold;
-    display: block;
     height:30px;
     float: left;
 }
-label:after { content: ": " }
 
 #add_skill{
     height: 15px;
