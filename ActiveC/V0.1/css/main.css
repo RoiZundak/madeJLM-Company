@@ -108,24 +108,19 @@ Our style
 
 }
 
-#add_skill {
-    background: red;
+#add_skill{
     height: 40px;
-    position: relative;
+    background-color: #cccccc;
+    margin-top: 3%;
+    margin-right: 7%;
     width: 30px;
-}
-#add_skill:after {
-    background: red;
-    content: "";
-    height: 30px;
-    left: -40px;
-    position: absolute;
-    top: 40px;
-    width: 30px;
+    float: right;
+    font-size: 10px;
+
 }
 
 input[type=submit]{
-    font-size: 4em; /* This controls the size. */
+    font-size: 10em; /* This controls the size. */
     display: inline-block;
     width: 0.4em;
     height: 0.4em;
@@ -134,27 +129,6 @@ input[type=submit]{
     border-radius: 0.35em;
 
 }
-
-
-
-input[type=submit]::before
-{
-    content: "";
-    display: inline-block;
-    position: absolute;
-    right: -0.25em;
-    bottom: -0.1em;
-    border-width: 0;
-    background: red;
-    width: 0.35em;
-    height: 0.08em;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-}
-
-
 
 
 .speech {
