@@ -113,7 +113,7 @@ Our style
 
 #add_skill{
     height: 60px;
-
+text-align: center;
     width: 30px;
     background-color: #cccccc;
     margin-top: 2%;
