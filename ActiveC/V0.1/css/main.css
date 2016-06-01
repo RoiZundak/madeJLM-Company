@@ -108,15 +108,20 @@ Our style
 
 }
 
-#add_skill{
-    height: 40px;
-    background-color: #cccccc;
-    margin-top: 3%;
-    margin-right: 7%;
-    width: 30px;
-    float: right;
-    font-size: 10px;
-
+#add_skill {
+    background: red;
+    height: 100px;
+    position: relative;
+    width: 20px;
+}
+#add_skill:after {
+    background: red;
+    content: "";
+    height: 20px;
+    left: -40px;
+    position: absolute;
+    top: 40px;
+    width: 100px;
 }
 
 input[type=submit]{
