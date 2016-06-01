@@ -114,10 +114,10 @@ Our style
 
 
 label {
-    color: #B4886B;
+    color: white;
     font-weight: bold;
     display: block;
-    width: 150px;
+    height:30px;
     float: left;
 }
 label:after { content: ": " }
@@ -131,7 +131,7 @@ label:after { content: ": " }
     margin-left: 2px;
     float: right;
     font-size: 10px;
-    border:1px solid #090B29;-webkit-box-shadow: #BAE8E0 4px 4px 4px  ;-moz-box-shadow: #BAE8E0 4px 4px 4px ; box-shadow: #BAE8E0 4px 4px 4px  ;padding: 2px 2px 2px 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px;border-radius: 2px;   display:inline-block;text-shadow: -1px -1px 0 rgba(82,255,255,0.3);font-weight:bold; color: #575757;
+    border:1px solid #090B29; ;padding: 2px 2px 2px 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px;border-radius: 2px;   display:inline-block;text-shadow: -1px -1px 0 rgba(82,255,255,0.3);font-weight:bold; color: #575757;
     background-color: #f2f9fe; background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f9fe), to(#d6f0fd));
     background-image: -webkit-linear-gradient(top, #f2f9fe, #d6f0fd);
     background-image: -moz-linear-gradient(top, #f2f9fe, #d6f0fd);
@@ -158,7 +158,7 @@ input[type=submit]{
     margin-left: 5px;
     height: 20px;
     text-align: center;
-    border:1px solid #090B29;-webkit-box-shadow: #BAE8E0 4px 4px 4px  ;-moz-box-shadow: #BAE8E0 4px 4px 4px ; box-shadow: #BAE8E0 4px 4px 4px  ;-webkit-border-radius: 5px; -moz-border-radius: 5px;border-radius: 5px;   display:inline-block;text-shadow: -1px -1px 0 rgba(82,255,255,0.3);font-weight:bold; color: #575757;
+    border:1px solid #090B29; ;-webkit-border-radius: 5px; -moz-border-radius: 5px;border-radius: 5px;   display:inline-block;text-shadow: -1px -1px 0 rgba(82,255,255,0.3);font-weight:bold; color: #575757;
     background-color: #f2f9fe; background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f9fe), to(#d6f0fd));
     background-image: -webkit-linear-gradient(top, #f2f9fe, #d6f0fd);
     background-image: -moz-linear-gradient(top, #f2f9fe, #d6f0fd);
@@ -187,7 +187,7 @@ input[type=submit]:hover{
     margin-right: 50px;
     text-align: center;
     line-height: 100px;
-    background-color:#DCDEF2;
+    background-color:black;
     border: 8px solid #666;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
