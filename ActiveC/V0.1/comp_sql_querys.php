@@ -359,7 +359,7 @@ if($func=="9")
         //adds a label and input text containing skill value
         function addSkillToList(skill_to_add){
             $('#add_skill').after(function() {
-              return'<label class=\'skills\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+'</label> ,    <input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
+              return'<label class=\'skills\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+'</label> <br> <input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
             });
         }
         
@@ -392,7 +392,7 @@ if($func=="9")
 			<form method='post' id= 'form_skills'action='./comp_sql_querys.php?func=10'>	
 			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
 			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value)'>
-			
+
 			<datalist id=\"skills_list\">";
     foreach ($databaseConnection->query($sql) as $row)
     {
