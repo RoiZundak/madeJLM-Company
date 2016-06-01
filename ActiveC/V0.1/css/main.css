@@ -89,7 +89,7 @@ Our style
 }
 
 #form_skills{
-   /*change to percent*/ width: 150%;
+   width: 90%;
 }
 
 #skill_std{
@@ -136,7 +136,7 @@ input[type=submit]{
 
 
 .speech {
-    width:60%;
+    width: 90%;
     float: left;
     margin-top: 200px;
     margin-right: 50px;
