@@ -113,13 +113,13 @@ Our style
 
 #add_skill{
    /* height: 40px;
-      width: 30px;
  */
+    width: 30px;
     background-color: #cccccc;
     margin-top: 2%;
     margin-right: 7%;
     float: right;
-    font-size: 5px;
+    font-size: 10px;
 
 }
 
