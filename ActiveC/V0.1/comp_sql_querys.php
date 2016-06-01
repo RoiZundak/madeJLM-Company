@@ -359,7 +359,7 @@ if($func=="9")
         //adds a label and input text containing skill value
         function addSkillToList(skill_to_add){
             $('#add_skill').after(function() {
-              return'<label class=\'skills\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+'</label><input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
+              return'<label class=\'skills\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+'</label>,  <input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
             });
         }
         
