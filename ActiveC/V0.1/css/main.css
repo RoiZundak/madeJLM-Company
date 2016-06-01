@@ -99,7 +99,7 @@ Our style
 }
 #skill_input{
     width: 70%;
-    height: 30px;
+    height: 40px;
     float: left;
     margin-top: 3%;
     margin-left: 3%;
@@ -107,7 +107,7 @@ Our style
 }
 
 #add_skill{
-    height: 100px;
+    height: 40px;
     background-color: red;
     margin-top: 3%;
     margin-right: 7%;
@@ -127,6 +127,7 @@ input[type=submit]{
 
 
 .speech {
+    width:50%;
     float: left;
     margin-top: 200px;
     margin-right: 50px;
