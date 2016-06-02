@@ -88,6 +88,9 @@ Our style
 
 }
 
+#form_skills{
+   width: 90%;
+}
 
 #skill_std{
     position: absolute;
@@ -97,19 +100,83 @@ Our style
     width: auto;
 
 }
+#skill_input{
+    width: 80%;
+    height: 30px;
+    float: left;
+    margin-top: 3%;
+    margin-left: 8%;
+    background-color: ghostwhite;
 
-input[type=button]{
-    height: 20%;
-    background-color: #3b5998;
+
+
+}
+
+
+label {
+    color: white;
+    font-weight: bold;
+    height:15px;
+}
+
+#add_skill{
+    height: 15px;
+    text-align: center;
+    width: 8%;
+    background-color: #cccccc;
+    margin-top: 10%;
+    margin-left: 2px;
     float: right;
+    font-size: 10px;
+    border:1px solid #090B29; ;padding: 2px 2px 2px 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px;border-radius: 2px;   display:inline-block;text-shadow: -1px -1px 0 rgba(82,255,255,0.3);font-weight:bold; color: #575757;
+    background-color: #f2f9fe; background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f9fe), to(#d6f0fd));
+    background-image: -webkit-linear-gradient(top, #f2f9fe, #d6f0fd);
+    background-image: -moz-linear-gradient(top, #f2f9fe, #d6f0fd);
+    background-image: -ms-linear-gradient(top, #f2f9fe, #d6f0fd);
+    background-image: -o-linear-gradient(top, #f2f9fe, #d6f0fd);
+    background-image: linear-gradient(to bottom, #f2f9fe, #d6f0fd);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f2f9fe, endColorstr=#d6f0fd);
 }
 
-#conf_skill{
+
+#add_skill:hover{
+    border:2px solid #8589BC;
+    background-color: #18AEDB; background-image: -webkit-gradient(linear, left top, left bottom, from(#18AEDB), to(#a5defb));
+    background-image: -webkit-linear-gradient(top, #18AEDB, #a5defb);
+    background-image: -moz-linear-gradient(top, #18AEDB, #a5defb);
+    background-image: -ms-linear-gradient(top, #18AEDB, #a5defb);
+    background-image: -o-linear-gradient(top, #18AEDB, #a5defb);
+    background-image: linear-gradient(to bottom, #18AEDB, #a5defb);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#18AEDB, endColorstr=#a5defb);
+}
+
+
+input[type=submit]{
     background-color: #3b5998;
-    width:20%;
-    height: 20%;
+    width:70%;
+    margin-left: 5px;
+    height: 20px;
+    text-align: center;
+    border:1px solid #090B29; ;-webkit-border-radius: 5px; -moz-border-radius: 5px;border-radius: 5px;   display:inline-block;text-shadow: -1px -1px 0 rgba(82,255,255,0.3);font-weight:bold; color: #575757;
+    background-color: #f2f9fe; background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f9fe), to(#d6f0fd));
+    background-image: -webkit-linear-gradient(top, #f2f9fe, #d6f0fd);
+    background-image: -moz-linear-gradient(top, #f2f9fe, #d6f0fd);
+    background-image: -ms-linear-gradient(top, #f2f9fe, #d6f0fd);
+    background-image: -o-linear-gradient(top, #f2f9fe, #d6f0fd);
+    background-image: linear-gradient(to bottom, #f2f9fe, #d6f0fd);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f2f9fe, endColorstr=#d6f0fd);
 
 }
+
+
+input[type=submit]:hover{
+    border:2px solid #8589BC;
+    background-color: #18AEDB; background-image: -webkit-gradient(linear, left top, left bottom, from(#18AEDB), to(#a5defb));
+    background-image: -webkit-linear-gradient(top, #18AEDB, #a5defb);
+    background-image: -moz-linear-gradient(top, #18AEDB, #a5defb);
+    background-image: -ms-linear-gradient(top, #18AEDB, #a5defb);
+    background-image: -o-linear-gradient(top, #18AEDB, #a5defb);
+    background-image: linear-gradient(to bottom, #18AEDB, #a5defb);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#18AEDB, endColorstr=#a5defb);
+}
+
+
 
 .speech {
     float: left;
@@ -117,7 +184,7 @@ input[type=button]{
     margin-right: 50px;
     text-align: center;
     line-height: 100px;
-    background-color: #fff;
+    background-color:black;
     border: 8px solid #666;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
@@ -128,10 +195,7 @@ input[type=button]{
 }
 
 
-#skill_input{
-    width: 80%;
-    height: 25%;
-}
+
 
 #show_std{
     display:inline;
