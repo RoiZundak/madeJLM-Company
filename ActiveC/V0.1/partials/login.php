@@ -39,6 +39,7 @@ if(!empty($_POST['username'])){
             exit;
         }
 */
+
         if(count($results) > 0 && $password === $results['password'] )
         {
             //$_SESSION['username'] = $username;
