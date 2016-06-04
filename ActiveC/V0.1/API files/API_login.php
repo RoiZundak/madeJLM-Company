@@ -1,4 +1,5 @@
 <?php
+    header('Content-Type: application/json');
     require_once "../php/db_connect.php";
     $databaseConnection =connect_to_db();
     if(!empty($_POST['username']))
@@ -22,6 +23,7 @@
 
             if (count($results) > 0 && $password === $results['password'])
             {
+                $data = array('status'=>'success');
                 echo("<a id='re_route_main' href ='../#/main'></a>
                      <script>                  
                         sessionStorage.setItem('username', '" . $username . "');
@@ -32,6 +34,7 @@
             }
             else
             {
+                $data = array('status'=>'error', 'msg' => 'Username or Password incorect');
                 $errMsg .= 'Username and Password are not found<br>';
                 echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
@@ -43,4 +46,5 @@
             }
         }
     }
+    echo json_encode($data);
 ?>
