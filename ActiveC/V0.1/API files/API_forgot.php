@@ -1,4 +1,5 @@
 <?php
+    header('Content-Type: application/json');
     //connect to db
     require_once "../php/db_connect.php";
     $databaseConnection =connect_to_db();
@@ -45,6 +46,13 @@
     //Send mail.
     $sent_mail = mail($email, "Forget Password - ActiveC", $message, $headers);
     if($sent_mail)
+    {
         echo " Email has been sent.";
+        $data = array('status'=>'success');
+    }
+    else
+        $data = array('status'=>'error', 'msg' => 'Cannot send Reset password Mail');
+
+    echo json_encode($data);
 
 ?>
