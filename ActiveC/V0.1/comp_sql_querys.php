@@ -371,7 +371,7 @@ if($func=="9")
               xmlhttp.onreadystatechange = function() {
                     alert('state change state: '+xmlhttp.readyState+' status : '+xmlhttp.status);
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById(\"show_std\").innerHTML = xmlhttp.responseText;
+                        document.getElementById(\"std_info\").innerHTML = xmlhttp.responseText;
                     }
                 };
             xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
@@ -409,6 +409,7 @@ if($func=="9")
 
 
 if($func=="10"){
+    echo 'Debug - got to func number 10 , need to start looking for skills ';
     if($_GET['skill_JAVA']){
         echo '<script>alert("ok");</script>';
     }
