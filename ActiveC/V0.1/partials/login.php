@@ -7,6 +7,18 @@
 
 require_once "../php/db_connect.php";
 $databaseConnection =connect_to_db();
+/*
+echo "<script>
+$(function()
+{
+      if (localStorage.chkbx && localStorage.chkbx != '')
+      {
+
+
+      }
+}
+ </script>";
+*/
 
 if(!empty($_POST['username'])){
     $errMsg = '';
