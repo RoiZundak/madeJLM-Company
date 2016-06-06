@@ -369,7 +369,7 @@ if($func=="9")
               
               
               xmlhttp.onreadystatechange = function() {
-                    alert('state change');
+                    alert('state change state: '+xmlhttp.readyState+' status : '+xmlhttp.status);
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         document.getElementById(\"show_std\").innerHTML = xmlhttp.responseText;
                     }
@@ -409,8 +409,6 @@ if($func=="9")
 
 
 if($func=="10"){
-    echo "Yo !";
-    echo '<script>alert("check-point");</script>';
     if($_GET['skill_JAVA']){
         echo '<script>alert("ok");</script>';
     }
