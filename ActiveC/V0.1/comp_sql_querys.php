@@ -365,22 +365,15 @@ if($func=="9")
         
         
         $( \"#form_skills\" ).submit(function( event ) {
+                event.preventDefault();
               var str = $(\"#form_skills\").serialize();
-              
-              
               xmlhttp.onreadystatechange = function() {
-                    alert('state change state: '+xmlhttp.readyState+' status : '+xmlhttp.status);
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         document.getElementById(\"std_info\").innerHTML = xmlhttp.responseText;
                     }
                 };
             xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
             xmlhttp.send();
-              
-              
-              
-              alert(str);
-              event.preventDefault();
         });
 
 
@@ -410,6 +403,11 @@ if($func=="9")
 
 if($func=="10"){
     echo 'Debug - got to func number 10 , need to start looking for skills ';
+    foreach($_GET as $key => $value)
+    {
+        echo 'Key = ' . $key . '<br />';
+        echo 'Value= ' . $value;
+    }
     if($_GET['skill_JAVA']){
         echo '<script>alert("ok");</script>';
     }
