@@ -402,25 +402,22 @@ if($func=="9")
 
 
 if($func=="10"){
-    echo 'Debug - got to func number 10 , need to start looking for skills ';
-    foreach($_GET as $key => $value)
-    {
-        echo 'Key = ' . $key . '<br />';
-        echo 'Value= ' . $value;
-    }
-    if($_GET['skill_JAVA']){
-        echo '<script>alert("ok");</script>';
-    }
-    /* $skills_arr=array();
-    foreach($_POST as $key => $value) {
+    $skills_arr=array();
+    foreach($_GET as $key => $value){
         if (strstr($key, 'skill_')) {
             array_push($skills_arr,$value);
-            echo $value;
+            //echo $value;
         }
     }
     //  TODO : create an sql query, add all skills to it, and then print results(students)
-    // $sql = 'SELECT * FROM students WHERE ';
-    while ($t = array_pop($skills_arr)){
+    /*
+     *SELECT * FROM student WHERE ID IN [ SELECT student_id FROM student_skills WHERE skill_id  IN [SELECT id FROM skills WHERE name IN [ pop from array ] AND status = 1] ]
+     */
+
+
+
+
+   /* while ($t = array_pop($skills_arr)){
         //  $sql+=
     }
        echo
