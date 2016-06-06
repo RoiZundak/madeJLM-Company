@@ -9,6 +9,8 @@
                 $('#remember_me').attr('checked', 'checked');
                 $('#login').val(localStorage.usrname);
                 $('#password').val(localStorage.password);
+
+
             } else {
                 $('#remember_me').removeAttr('checked');
                 $('#login').val('Example@example.com');
@@ -20,7 +22,7 @@
                 if ($('#remember_me').is(':checked')) {
                     // save username and password
                     localStorage.usrname = $('#login').val();
-                    localStorage.password = $('#password').val();
+                    localStorage.password = md5($('#password').val());
                     localStorage.chkbx = $('#remember_me').val();
                 } else {
                     localStorage.usrname = 'Example@example.com';
