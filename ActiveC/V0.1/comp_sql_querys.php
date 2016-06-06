@@ -358,6 +358,7 @@ if($func=="9")
     echo "<script>
         //adds a label and input text containing skill value
         function addSkillToList(skill_to_add){
+            alert('lalal: '+skill_to_add);
             $('#add_skill').after(function() {
               return'<label class=\'skills\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+'</label> <br> <input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
             });
@@ -365,21 +366,21 @@ if($func=="9")
         
         
         $( \"#form_skills\" ).submit(function( event ) {
-          var str = $(\"#form_skills\").serialize();
-          
-          
-          xmlhttp.onreadystatechange = function() {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    document.getElementById(\"show_std\").innerHTML = xmlhttp.responseText;
-                }
-            };
-        xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
-        xmlhttp.send();
-          
-          
-          
-          alert(str);
-          event.preventDefault();
+              var str = $(\"#form_skills\").serialize();
+              
+              
+              xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        document.getElementById(\"show_std\").innerHTML = xmlhttp.responseText;
+                    }
+                };
+            xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
+            xmlhttp.send();
+              
+              
+              
+              alert(str);
+              event.preventDefault();
         });
 
 
@@ -389,7 +390,7 @@ if($func=="9")
         </script>";
 
     echo "
-			<form method='post' id= 'form_skills'action='./comp_sql_querys.php?func=10'>	
+			<form method='post' id= 'form_skills' action='./comp_sql_querys.php?func=10'>	
 			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
 			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='$(\"#skill_input\").val(\" \");addSkillToList(document.getElementById(\"skill_input\").value);'>
 
