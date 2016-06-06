@@ -358,7 +358,6 @@ if($func=="9")
     echo "<script>
         //adds a label and input text containing skill value
         function addSkillToList(skill_to_add){
-            alert('lalal: '+skill_to_add);
             $('#add_skill').after(function() {
               return'<label class=\'skills\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+'</label> <br> <input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
             });
@@ -370,6 +369,7 @@ if($func=="9")
               
               
               xmlhttp.onreadystatechange = function() {
+                    alert('state change');
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         document.getElementById(\"show_std\").innerHTML = xmlhttp.responseText;
                     }
