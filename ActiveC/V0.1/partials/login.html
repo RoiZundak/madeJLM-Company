@@ -7,24 +7,24 @@
         $(function() {
             if (localStorage.chkbx && localStorage.chkbx != '') {
                 $('#remember_me').attr('checked', 'checked');
-                $('#username').val(localStorage.usrname);
-                $('#pass').val(localStorage.pass);
+                $('#login').val(localStorage.usrname);
+                $('#password').val(localStorage.password);
             } else {
                 $('#remember_me').removeAttr('checked');
-                $('#username').val('Example@example.com');
-                $('#pass').val('688822292');
+                $('#login').val('Example@example.com');
+                $('#password').val('688822292');
             }
 
             $('#remember_me').click(function() {
 
                 if ($('#remember_me').is(':checked')) {
                     // save username and password
-                    localStorage.usrname = $('#username').val();
-                    localStorage.pass = $('#pass').val();
+                    localStorage.usrname = $('#login').val();
+                    localStorage.password = $('#password').val();
                     localStorage.chkbx = $('#remember_me').val();
                 } else {
                     localStorage.usrname = 'Example@example.com';
-                    localStorage.pass = '688822292';
+                    localStorage.password = '688822292';
                     localStorage.chkbx = '';
                 }
             });
