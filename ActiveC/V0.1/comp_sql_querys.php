@@ -406,8 +406,12 @@ if($func=="10"){
     foreach($_GET as $key => $value){
         if (strstr($key, 'skill_')) {
             array_push($skills_arr,$value);
-            //echo $value;
         }
+    }
+    $arrlength = count($skills_arr);
+    for($x = 0; $x < $arrlength; $x++) {
+        echo $skills_arr[$x];
+        echo "<br>";
     }
     //  TODO : create an sql query, add all skills to it, and then print results(students)
     /*
