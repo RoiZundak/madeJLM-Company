@@ -385,7 +385,7 @@ if($func=="9")
     echo "
 			<form method='post' id= 'form_skills' action='./comp_sql_querys.php?func=10'>	
 			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
-			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value);$(\"#skill_input\").val(\" \");'>
+			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value);$(\"#skill_input\").val(\"\");'>
 
 			<datalist id=\"skills_list\">";
     foreach ($databaseConnection->query($sql) as $row)
@@ -406,8 +406,12 @@ if($func=="10"){
     foreach($_GET as $key => $value){
         if (strstr($key, 'skill_')) {
             array_push($skills_arr,$value);
-            //echo $value;
         }
+    }
+    $arrlength = count($skills_arr);
+    for($x = 0; $x < $arrlength; $x++) {
+        echo $skills_arr[$x];
+        echo "<br>";
     }
     //  TODO : create an sql query, add all skills to it, and then print results(students)
     /*
