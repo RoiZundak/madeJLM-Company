@@ -1,3 +1,17 @@
+<script>
+	document.addEventListener('click', function(e) {
+		e = e || window.event;
+		var target = e.target || e.srcElement;
+		if (window.XMLHttpRequest) {
+			// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp = new XMLHttpRequest();
+		} else {
+			// code for IE6, IE5
+			xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+		}
+	}
+</script>
+
 <?php
 	require_once "php/db_connect.php";
 	$databaseConnection =connect_to_db();
@@ -8,19 +22,7 @@
 	//show single student
 	if($func=="1")
 	{
-echo "<script>
-document.addEventListener('click', function(e) {
-	e = e || window.event;
-	var target = e.target || e.srcElement;
-	if (window.XMLHttpRequest) {
-		// code for IE7+, Firefox, Chrome, Opera, Safari
-		xmlhttp = new XMLHttpRequest();
-	} else {
-		// code for IE6, IE5
-		xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
-	}
-	}
-		</script>";
+
 		
 		$q = intval($_GET['q']);
 		
