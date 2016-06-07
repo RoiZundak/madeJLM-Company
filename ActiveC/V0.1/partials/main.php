@@ -28,11 +28,11 @@ echo
         </div>
     -->
     </div>
+    <div id = "show_stud"> </div>
 
     <div id = "skill_std" class='speech' class='skills'> </div>
 
     <div id = "show_all">
-    <div id = "show_stud"> </div>
 
 
         <?php
