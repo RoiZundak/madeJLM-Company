@@ -405,7 +405,7 @@ if($func=="10"){
     $skills_arr=array();
     foreach($_GET as $key => $value){
         if (strstr($key, 'skill_')) {
-            array_push($skills_arr,$value);
+            array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
         }
     }
     $arrlength = count($skills_arr);
