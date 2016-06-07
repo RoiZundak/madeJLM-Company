@@ -13,27 +13,17 @@ echo
 <div id="main_wrap">
     <div id = "filter_main">
         Filter<br>
-        <div class="filters" id="all">
-            All Students
-        </div>
-        <div class="filters" id="has_git">
-            Has Github
-        </div>
-        <div class="filters" id="has_linkedin">
-            Has Linkedin
-        </div>
-        <div class="filters" id="area">
-            Area
-        </div>
+
         <div class="filters" id="skills">
             Skills
         </div>
-        <div class="filters" id="nearby">
-            Nearby
+
+        <div class="filters" id="has_linkedin">
+            Has Linkedin
         </div>
 
         <div class="filters" id='clr_filter'>
-            Clear All
+            Clear Filter's
         </div>
 
     </div>
