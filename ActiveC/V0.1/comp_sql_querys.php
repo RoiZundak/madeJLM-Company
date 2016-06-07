@@ -4,7 +4,7 @@
 
 
 	$func = intval($_GET['func']);
-
+	
 
 
 	//show single student
