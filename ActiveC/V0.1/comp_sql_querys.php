@@ -2,9 +2,7 @@
 	require_once "php/db_connect.php";
 	$databaseConnection =connect_to_db();
 
-
 	$func = intval($_GET['func']);
-	myfunc(email);
 
 
 	//show single student
@@ -46,7 +44,7 @@
 								
 								</script>
 								
-								<button type=\"button\"  onclick='myfunc(\"hhhhh\");         '> ShowMail </button>
+								<button type=\"button\" onclick='window.my.myfunc(\"hhhhh\");'> ShowMail </button>
 								
 							</div>
 						   </p>
