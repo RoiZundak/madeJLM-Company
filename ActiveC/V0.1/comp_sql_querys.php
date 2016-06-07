@@ -39,14 +39,7 @@
 						."<br >
 							<div id='mailDiv'>
 								<button type=\"button\"  onclick='myfunc(".$row['Email'].");'> ShowMail </button>
-								<script>
-								    function myfunc(email){
-								        $('#mailDiv').html(email);
-                                        xmlhttp.open('GET', 'comp_sql_querys.php?q=\"".$q."\"&func=\"11\", true);
-                                        xmlhttp.send();
-								    }
 								
-								</script>
 							</div>
 						   </p>
 						</td>
