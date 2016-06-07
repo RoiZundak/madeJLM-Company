@@ -10,6 +10,8 @@ $databaseConnection =connect_to_db();
 echo
 "<script>
 $(function() {
+    alert('$#login.valueOf()');
+    alert(localStorage.password);
     if (localStorage.chkbx && localStorage.chkbx != '') {
         $('#remember_me').attr('checked', 'checked');
         $('#login').val(localStorage.usrname);
