@@ -14,7 +14,7 @@
     <div id = "filter_main">
         Filter<br>
         <div class="filters" id="all">
-            All Players
+            All Students
         </div>
         <div class="filters" id="has_git">
             Has Github
