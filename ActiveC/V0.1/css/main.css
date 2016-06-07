@@ -20,7 +20,9 @@ Our style
 }
 #filter_main{
     background-color:white;
-	width:100%;
+    float: left;
+	width:200px;
+    min-height: 60%;
 }
 .row > *{
     float: right;
@@ -69,6 +71,8 @@ Our style
     transition-timing-function: linear;
     border-radius: 2px;
 }
+
+
 .head_image{
 	width:120px;
 	height:120px;
