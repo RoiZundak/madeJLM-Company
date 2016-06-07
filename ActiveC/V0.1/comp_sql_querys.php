@@ -13,7 +13,15 @@
 	$databaseConnection =connect_to_db();
 
 	$func = intval($_GET['func']);
+echo "<script>
+	function myFunc(email)
+	{
+		$('#mailDiv').html(email);
+		xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q." \"&func=\"11\", true);
+		xmlhttp.send();
+	}
 
+</script>";
 
 	//show single student
 	if($func=="1")
@@ -35,6 +43,15 @@
 			}else{
 				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
 			}
+			echo"<script>
+	function myFunc(email)
+	{
+		$('#mailDiv').html(email);
+		xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q." \"&func=\"11\", true);
+		xmlhttp.send();
+	}
+
+</script>";
 			echo "<table>
 					<tr >
 						<td >
@@ -65,6 +82,15 @@
 						</td></p>
 					</th>
 					";
+			echo"<script>
+	function myFunc(email)
+	{
+		$('#mailDiv').html(email);
+		xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q." \"&func=\"11\", true);
+		xmlhttp.send();
+	}
+
+</script>";
 					echo "<table id='show_student_info'>
 							<tr>
 							<th>Firstname</th>
@@ -87,7 +113,15 @@
 
 	}
 	//filter Git
+echo"<script>
+	function myFunc(email)
+	{
+		$('#mailDiv').html(email);
+		xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q." \"&func=\"11\", true);
+		xmlhttp.send();
+	}
 
+</script>";
 
 	if($func=="2"){
 
