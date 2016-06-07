@@ -232,7 +232,7 @@
 
 
 		//PDO STYLE :
-		$sql = 'SELECT * FROM student';
+		$sql = 'SELECT * FROM student WHRE Activated=1';
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row) {
 			$img_src = "";
