@@ -365,21 +365,15 @@ if($func=="9")
         
         
         $( \"#form_skills\" ).submit(function( event ) {
-          var str = $(\"#form_skills\").serialize();
-          
-          
-          xmlhttp.onreadystatechange = function() {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    document.getElementById(\"show_std\").innerHTML = xmlhttp.responseText;
-                }
-            };
-        xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
-        xmlhttp.send();
-          
-          
-          
-          alert(str);
-          event.preventDefault();
+                event.preventDefault();
+              var str = $(\"#form_skills\").serialize();
+              xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        document.getElementById(\"std_info\").innerHTML = xmlhttp.responseText;
+                    }
+                };
+            xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
+            xmlhttp.send();
         });
 
 
@@ -389,9 +383,9 @@ if($func=="9")
         </script>";
 
     echo "
-			<form method='post' id= 'form_skills'action='./comp_sql_querys.php?func=10'>	
+			<form method='post' id= 'form_skills' action='./comp_sql_querys.php?func=10'>	
 			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
-			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='$(\"#skill_input\").val(\" \");addSkillToList(document.getElementById(\"skill_input\").value);'>
+			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value);$(\"#skill_input\").val(\"\");'>
 
 			<datalist id=\"skills_list\">";
     foreach ($databaseConnection->query($sql) as $row)
@@ -408,21 +402,26 @@ if($func=="9")
 
 
 if($func=="10"){
-    echo "Yo !";
-    echo '<script>alert("check-point");</script>';
-    if($_GET['skill_JAVA']){
-        echo '<script>alert("ok");</script>';
-    }
-    /* $skills_arr=array();
-    foreach($_POST as $key => $value) {
+    $skills_arr=array();
+    foreach($_GET as $key => $value){
         if (strstr($key, 'skill_')) {
             array_push($skills_arr,$value);
-            echo $value;
         }
     }
+    $arrlength = count($skills_arr);
+    for($x = 0; $x < $arrlength; $x++) {
+        echo $skills_arr[$x];
+        echo "<br>";
+    }
     //  TODO : create an sql query, add all skills to it, and then print results(students)
-    // $sql = 'SELECT * FROM students WHERE ';
-    while ($t = array_pop($skills_arr)){
+    /*
+     *SELECT * FROM student WHERE ID IN [ SELECT student_id FROM student_skills WHERE skill_id  IN [SELECT id FROM skills WHERE name IN [ pop from array ] AND status = 1] ]
+     */
+
+
+
+
+   /* while ($t = array_pop($skills_arr)){
         //  $sql+=
     }
        echo

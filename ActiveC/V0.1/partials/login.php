@@ -2,10 +2,23 @@
 //session_start();
 
 
+
 //DB configuration Constants
 
 require_once "../php/db_connect.php";
 $databaseConnection =connect_to_db();
+/*
+echo "<script>
+$(function()
+{
+      if (localStorage.chkbx && localStorage.chkbx != '')
+      {
+
+
+      }
+}
+ </script>";
+*/
 
 if(!empty($_POST['username'])){
     $errMsg = '';
@@ -42,6 +55,7 @@ if(!empty($_POST['username'])){
 
         if(count($results) > 0 && $password === $results['password'] )
         {
+
             //$_SESSION['username'] = $username;
             echo("<a id='re_route_main' href ='../#/main'></a>
                  <script>                  
