@@ -35,10 +35,9 @@
 		
 						<td class ='line_td'>
 							<p>
-								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2>"
-						."<br >
+								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2><br >
 							<div id='mailDiv'>
-								<button type=\"button\"  onclick='            alert(\"hello\")            '> ShowMail </button>
+								<button type=\"button\"  onclick='            myfunc(\"hhhhh\");         '> ShowMail </button>
 								<script>
 								    function myfunc(email){
 								        $('#mailDiv').html(email);
