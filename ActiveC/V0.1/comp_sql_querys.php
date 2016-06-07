@@ -1,14 +1,4 @@
 <?php
-echo "<script>
-								     function myFunc(email)
-								    	{
-											$('#mailDiv').html(email);
-											xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q." \"&func=\"11\", true);
-											xmlhttp.send();
-								    	}
-								
-								</script>";
-
 	require_once "php/db_connect.php";
 	$databaseConnection =connect_to_db();
 
@@ -45,7 +35,15 @@ echo "<script>
 							<p>
 								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2><br >
 							<div id='mailDiv'>
+								<script>
+								     window.myFunc = function(email)
+								    	{
+											$('#mailDiv').html(email);
+											xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q." \"&func=\"11\", true);
+											xmlhttp.send();
+								    	}
 								
+								</script>
 								
 								<button type=\"button\" id = \"but\" onclick=\"myFunc('hhhhh');\"> ShowMail </button>
 					
@@ -65,8 +63,6 @@ echo "<script>
 						</td></p>
 					</th>
 					";
-
-
 					echo "<table id='show_student_info'>
 							<tr>
 							<th>Firstname</th>
