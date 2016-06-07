@@ -16,19 +16,20 @@ Our style
 
 }
 #main_wrap{
+    background-color:RED;
     height: 550px;
 }
-#filter_main{
-    background-color:white;
+.filter_main{
+    position: absolute;
+    background-color:BLUE;
+    min-height: 10%;
+    max-height: 10%;
+    width: 100%;
+}
+
+#filters{
     float: left;
-	width:200px;
-    min-height: 60%;
-}
-.row > *{
-    float: right;
-}
-.filters{
-    background-color:white;
+    background-color:yellow;
     margin:auto;
     margin-top: 10%;
 	padding-top:2%;
@@ -45,8 +46,66 @@ Our style
 	font-size:1.1em;
 }
 .filters:hover{
-    background-color:black;
+    background-color:chartreuse;
     color: white;
+}
+#show_all {
+    float:right;
+    background-color:fuchsia;
+    opacity: 0.7;
+    border-left-style: outset;
+    margin-left: 1%;
+    margin-right: 1%;
+    min-width: 45%;
+    max-width: 45%;
+    min-height: 80%;
+    max-height: 80%;
+}
+
+#std_info {
+    float: left;
+    background-color: #210D73 ;
+    opacity: 0.7;
+    border-left-style: outset;
+    margin-left: 1%;
+    margin-right: 1%;
+    min-width: 45%;
+    max-width: 45%;
+    max-height: 80%;
+    min-height: 80%;
+
+    text-align: center;
+    overflow: auto;
+    margin-left: 1%;
+    margin-right: 1%;
+
+}
+#form_skills{
+    width: 90%;
+}
+
+#skill_std{
+
+    position: absolute;
+    z-index: 10;
+    margin-left: 100px;
+    height: auto;
+    width: auto;
+
+}
+#skill_input{
+    width: 80%;
+    height: 30px;
+    float: left;
+    margin-top: 3%;
+    margin-left: 8%;
+    background-color: ghostwhite;
+
+
+
+}
+.row > *{
+    float: right;
 }
 .line_td{
 	border-bottom-color : grey;
@@ -84,29 +143,7 @@ Our style
 
 }
 
-#form_skills{
-   width: 90%;
-}
 
-#skill_std{
-    position: absolute;
-    z-index: 10;
-    margin-left: 100px;
-    height: auto;
-    width: auto;
-
-}
-#skill_input{
-    width: 80%;
-    height: 30px;
-    float: left;
-    margin-top: 3%;
-    margin-left: 8%;
-    background-color: ghostwhite;
-
-
-
-}
 
 
 label {
@@ -193,29 +230,7 @@ input[type=submit]:hover{
 
 
 
-#show_all {
-    display:inline;
-    border-left-style: outset;
-    float:right;
-    min-width: 34%;
-    min-height: 100%;
-    opacity: 0.7;
-    margin-left: 1%;
 
-}
-#std_info {
-    border-left-style: outset;
-    display:inline;
-    float: left;
-    opacity: 0.7;
-    margin-left: 1%;
-    min-width: 44%;
-    max-width: 44%;
-    max-height: 100%;
-    min-height: 100%;
-    text-align: center;
-    overflow: auto;
-}
 ::-webkit-scrollbar {
     width: 12px;
 }

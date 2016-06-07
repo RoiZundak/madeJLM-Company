@@ -11,24 +11,26 @@ echo
 ?>
 
 <div id="main_wrap">
-    <div id = "filter_main">
-        Filter<br>
 
-        <div class="filters" id="skills">
+    <div class = "filter_main">
+        Filter
+        <!--
+        <div id="filters" >
             Skills
         </div>
 
-        <div class="filters" id="has_linkedin">
+        <div id="filters">
             Has Linkedin
         </div>
 
-        <div class="filters" id='clr_filter'>
+        <div id='filters'>
             Clear Filter's
         </div>
-
+    -->
     </div>
 
     <div id = "show_all"> </div>
+    
     <div id = "skill_std" class='speech' class='skills'> </div>
 
     <div id = "std_info">
