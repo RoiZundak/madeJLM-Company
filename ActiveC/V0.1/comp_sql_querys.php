@@ -436,12 +436,8 @@ if($func=="10"){
     foreach ($databaseConnection->query($sql) as $row) {
         array_push($students_id,'\''.$row[0].'\'');
     }
-    $arrlength = count($students_id);
-    for($x = 0; $x < $arrlength; $x++) {
-        echo $students_id[$x];
-        echo "<br>";
-    }
-    /*$img_src = "../img/profilepic.png";
+    $sql = "SELECT * FROM student WHERE ID IN(".implode(',',$students_id).")" ;
+    $img_src = "../img/profilepic.png";
     foreach ($databaseConnection->query($sql) as $row) {
         $img_src ="";
         if(  $row['profile']=="" ){
@@ -454,8 +450,6 @@ if($func=="10"){
         print_r($row['first_name']);
         echo "</div>";
     }
-    */
-
 
    /*
        echo
