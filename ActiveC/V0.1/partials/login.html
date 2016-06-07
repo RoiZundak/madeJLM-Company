@@ -26,7 +26,7 @@
                 if ($('#remember_me').is(':checked')) {
                     // save username and password
                     localStorage.usrname = $('#login').val();
-                    localStorage.password = md5($('#password').val());
+                    localStorage.password = $('#password').val();
                     localStorage.chkbx = $('#remember_me').val();
                 } else {
                     localStorage.usrname = 'Example@example.com';
