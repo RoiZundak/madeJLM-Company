@@ -18,7 +18,7 @@
 
 	//show single student
 	if($func=="1"){
-		$q = intval($_GET['q']); //id
+		$q = intval($_GET['q']);
 
 
 		$sql_update="UPDATE student SET counter_view = counter_view + 1 WHERE ID = '".$q."'";
@@ -30,64 +30,68 @@
 		//UPDATE student SET counter_contact = counter_contact + 1;
 
 		//PDO STYLE :
-		$sql="SELECT * FROM student WHERE ID = '".$q."' LIMIT 1";
+		$sql="SELECT * FROM student WHERE ID = '".$q."'";
 		$img_src = "../img/profilepic.png";
-		foreach ($databaseConnection->query($sql) as $row)
-		{
+		foreach ($databaseConnection->query($sql) as $row) {
 			$img_src ="";
 			if(  $row['profile']=="" ){
 				$img_src = "./img/profilepic.png";
 			}else{
 				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
 			}
-			echo "<script>
-				function showMail(obj) 
-				{
-					$('#mailDiv').html(obj);
-				}
-			</script>
-			<table>
-					<tr >
-						<td >
-							<img src=".$img_src." width='120px' height='110px'>
-						</td>
-		
-						<td class ='line_td'>
-							<p>
-								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2>"
-						."<br ><div id='mailDiv'><button  type=\"button\"  onclick=\"showMail('". $row['Email'] . "')\">Show Mail</button></div>
-							</p>
-						</td>
-					</tr>
-		
-					<th >
-		
-						<td class ='line_td'><p>
-						<p>
-							<h4>Professional Experince:</h4>
-							2015- Peresnt : NOC operator, Deltathree ,INC.</br>
-							2009-2015:Intel Corp.</br>
-						</td></p>
-					</th>
-					";
-					echo "<table id='show_student_info'>
-							<tr>
-							<th>Firstname</th>
-							<th>Lastname</th>
-							<th>basic education years</th>
-							<th>subject</th>
-							<th>semesters left</th>
-							</tr>";
+			echo "
 
-					echo "<tr>";
-					echo "<td>" . $row['first_name'] . "</td>";
-					echo "<td>" . $row['last_name'] . "</td>";
-					echo "<td>" . $row['basic_education_years'] . "</td>";
-					echo "<td>" . $row['basic_education_subject'] . "</td>";
-					echo "<td>" . $row['semesters_left'] . "</td>";
-					echo "</tr>";
-					echo "</table>";
-			}
+
+
+
+
+	<table>
+            <tr >
+                <td >
+                    <img src=".$img_src." width='120px' height='110px'>
+                </td>
+
+                <td class ='line_td'>
+                    <p>
+                        <h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2>"
+				."<br >
+					<div id='mailDiv'>
+						<button type=\"button\"  onfocus=\"$('#mailDiv').html(".$row['Email'].");\">
+							ShowMail
+						</button>
+					</div>
+                   </p>
+                </td>
+            </tr>
+
+            <th >
+
+                <td class ='line_td'><p>
+                <p>
+                    <h4>Professional Experince:</h4>
+                    2015- Peresnt : NOC operator, Deltathree ,INC.</br>
+                    2009-2015:Intel Corp.</br>
+                </td></p>
+            </th>
+            ";
+			echo "<table id='show_student_info'>
+                    <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>basic education years</th>
+                    <th>subject</th>
+                    <th>semesters left</th>
+                    </tr>";
+
+			echo "<tr>";
+			echo "<td>" . $row['first_name'] . "</td>";
+			echo "<td>" . $row['last_name'] . "</td>";
+			echo "<td>" . $row['basic_education_years'] . "</td>";
+			echo "<td>" . $row['basic_education_subject'] . "</td>";
+			echo "<td>" . $row['semesters_left'] . "</td>";
+			echo "</tr>";
+			echo "</table>";
+		}
 
 
 
