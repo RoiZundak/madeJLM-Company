@@ -112,16 +112,7 @@ echo
                         }
 
                     }
-                    if(target.id == "has_git" ){
 
-                        xmlhttp.onreadystatechange = function() {
-                            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                                document.getElementById("std_info").innerHTML = xmlhttp.responseText;
-                            }
-                        };
-                        xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"2",true);
-                        xmlhttp.send();
-                    }
                     if(target.id == "has_linkedin" ){
 
                         xmlhttp.onreadystatechange = function() {
