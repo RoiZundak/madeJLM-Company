@@ -20,9 +20,8 @@ Our style
 }
 #filter_main{
     background-color:white;
-    float: left;
-	width:200px;
-    min-height: 60%;
+	width:100%;
+    min-height:10%;
 }
 .row > *{
     float: right;
