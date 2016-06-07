@@ -1,8 +1,8 @@
 <?php
-    echo
-    "<script> 
+echo
+"<script> 
             var name = sessionStorage.getItem('username');
-            if ( name === null || name === 'Not_Valid_User_Name' ) 
+            if ( name === 'null' || name === 'Not_Valid_User_Name' ) 
             {
                 window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
                 setTimeout(function(){alert('You Must logged in first');},100);
@@ -51,7 +51,7 @@
         require_once "../php/db_connect.php";
         $databaseConnection =connect_to_db();
         //get all students
-        $sql = 'SELECT * FROM student WHERE Activated=1' ;
+        $sql = 'SELECT * FROM student WHERE Activated=1';
         $img_src = "../img/profilepic.png";
         foreach ($databaseConnection->query($sql) as $row) {
             if(  $row['profile']=="" ){

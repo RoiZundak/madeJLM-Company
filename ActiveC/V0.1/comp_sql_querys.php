@@ -405,7 +405,7 @@ if($func=="10"){
     $skills_arr=array();
     foreach($_GET as $key => $value){
         if (strstr($key, 'skill_')) {
-            array_push($skills_arr,$value);
+            array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
         }
     }
     $arrlength = count($skills_arr);
@@ -422,7 +422,10 @@ if($func=="10"){
 
     $sql = "SELECT id FROM skills WHERE name IN (".implode(',',$skills_arr).") AND status = 1";
     echo $sql;
-    $img_src = "../img/profilepic.png";
+foreach ($databaseConnection->query($sql) as $row) {
+    print_r($row);
+}
+    /*$img_src = "../img/profilepic.png";
     foreach ($databaseConnection->query($sql) as $row) {
         $img_src ="";
         if(  $row['profile']=="" ){
@@ -435,11 +438,10 @@ if($func=="10"){
         print_r($row['first_name']);
         echo "</div>";
     }
+    */
 
 
-   /* while ($t = array_pop($skills_arr)){
-        //  $sql+=
-    }
+   /*
        echo
         "<script>
                 window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/main';
