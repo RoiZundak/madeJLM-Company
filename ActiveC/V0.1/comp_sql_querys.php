@@ -425,6 +425,9 @@ if($func=="10"){
         array_push($skills_id,'\''.$row[0].'\'');
     }
     $sql = "SELECT student_id FROM student_skills WHERE skill_id  IN (".implode(',',$skills_id).")" ;
+    foreach ($databaseConnection->query($sql) as $row) {
+        print_r($row[0]);
+    }
     /*$img_src = "../img/profilepic.png";
     foreach ($databaseConnection->query($sql) as $row) {
         $img_src ="";
