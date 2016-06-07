@@ -29,6 +29,7 @@ Our style
 
 #filters{
     float: left;
+    clear:both;
     background-color:yellow;
     margin:auto;
     margin-top: 10%;
