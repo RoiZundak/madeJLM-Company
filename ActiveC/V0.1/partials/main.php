@@ -100,7 +100,7 @@ echo
                         console.log("this is the id : "+target.id);
                         //noinspection JSUnresolvedFunction
 
-                        id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
+                        id =target.id.substring(target.id.indexOf("_")+1,target.id.length); //student id
                         console.log("this is the id : "+id);
                         xmlhttp.onreadystatechange = function() {
                             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {

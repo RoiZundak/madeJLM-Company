@@ -18,11 +18,11 @@
 
 	//show single student
 	if($func=="1"){
-		$q = intval($_GET['q']);
+		$q = intval($_GET['q']); //id
 
 
 		//PDO STYLE :
-		$sql="SELECT * FROM student WHERE ID = '".$q."'";
+		$sql="SELECT * FROM student WHERE ID = '".$q."' LIMIT 1";
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row) {
 			$img_src ="";
