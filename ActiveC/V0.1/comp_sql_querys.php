@@ -421,6 +421,7 @@ if($func=="10"){
      */
 
     $sql = "SELECT id FROM skills WHERE name IN (".implode(',',$skills_arr).") AND status = 1";
+    echo $sql;
     $img_src = "../img/profilepic.png";
     foreach ($databaseConnection->query($sql) as $row) {
         $img_src ="";
