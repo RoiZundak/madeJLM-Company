@@ -38,7 +38,7 @@
 								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2>"
 						."<br >
 							<div id='mailDiv'>
-								<button type=\"button\"  onfocus=\"$('#mailDiv').html('".$row['Email']."');\">
+								<button type=\"button\"  onclick=\"$('#mailDiv').html('".$row['Email']."');\">
 									ShowMail
 								</button>
 							</div>
