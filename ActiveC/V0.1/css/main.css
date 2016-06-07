@@ -50,7 +50,7 @@ Our style
     color: white;
 }
 #show_all {
-    float:left;
+    float:right;
     background-color:fuchsia;
     opacity: 0.7;
     border-left-style: outset;
@@ -63,7 +63,7 @@ Our style
 }
 
 #std_info {
-    float: right;
+    float: left;
     background-color: #210D73 ;
     opacity: 0.7;
     border-left-style: outset;
