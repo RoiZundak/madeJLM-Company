@@ -11,6 +11,7 @@ echo
 ?>
 
 <div id="main_wrap">
+    <!--
     <div class = "filter_main">
         Filter<br>
 
@@ -27,7 +28,7 @@ echo
         </div>
 
     </div>
-
+    -->
     <div id = "show_all"> </div>
     <div id = "skill_std" class='speech' class='skills'> </div>
 
