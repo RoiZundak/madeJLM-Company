@@ -17,7 +17,7 @@ Our style
 }
 #main_wrap{
     background-color:RED;
-    height: 550px;
+    height: 600px;
 }
 .filter_main{
     position: absolute;
@@ -49,31 +49,32 @@ Our style
     background-color:chartreuse;
     color: white;
 }
-#show_all {
+#show_stud {
     float:right;
     background-color:fuchsia;
     opacity: 0.7;
     border-left-style: outset;
     margin-left: 1%;
     margin-right: 1%;
-    min-width: 45%;
-    max-width: 45%;
-    min-height: 40%;
-    max-height: 40%;
+    margin-top: 6%;
+    min-width: 60%;
+    max-width: 60%;
+    min-height: 80%;
+    max-height: 80%;
 }
 
-#std_info {
+#show_all {
     float: left;
-    background-color: #210D73 ;
+    background-color: BLACK;
     opacity: 0.7;
     border-left-style: outset;
     margin-left: 1%;
     margin-right: 1%;
-    min-width: 45%;
-    max-width: 45%;
-    max-height: 40%;
-    min-height: 40%;
-
+    margin-top: 6%;
+    min-width: 35%;
+    max-width: 35%;
+    max-height: 80%;
+    min-height: 80%;
     text-align: center;
     overflow: auto;
     margin-left: 1%;
