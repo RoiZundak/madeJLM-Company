@@ -3,12 +3,16 @@
 
 
 
+
+
     <script>
         $(function() {
             if (localStorage.chkbx && localStorage.chkbx != '') {
                 $('#remember_me').attr('checked', 'checked');
                 $('#login').val(localStorage.usrname);
                 $('#password').val(localStorage.password);
+
+
 
 
             } else {
@@ -33,6 +37,31 @@
         });
 
     </script>
+
+
+    <?php
+
+    $username = trim($_POST['username']);
+    $password = md5(trim($_POST['password']));
+
+    $records = $databaseConnection->prepare('SELECT id,username,password FROM  company WHERE username = :username');
+    $records->bindParam(':username', $username);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
+
+    if(count($results) > 0 && $password === $results['password'] )
+    {
+
+        echo("<a id='re_route_main' href ='../#/main'></a>
+        <script>
+            sessionStorage.setItem('username', '".$username."');
+            document.getElementById("re_route_main").click();
+        </script>
+         ");
+        exit;
+    }
+    ?>
+
     <div id="login_form">
         <br>
         <h3 id = "login_">Login</h3>
