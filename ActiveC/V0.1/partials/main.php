@@ -14,7 +14,7 @@ echo
 
     <div id= "filter_main">
 
-        <div class="filters" id="skill">
+        <div class="filters" id="skills">
             Skills
         </div>
 
