@@ -318,7 +318,7 @@ if($func=="10"){
 
 if($func=="11")
 {
-	$('#mailDiv').html('hhhh');
+	('#mailDiv').html('hhhh');
 	$q = intval($_GET['q']);
 	$sql_update="UPDATE student SET counter_contact = counter_contact + 1 WHERE ID = '".$q."'";
 	$update = $databaseConnection ->prepare($sql_update);
