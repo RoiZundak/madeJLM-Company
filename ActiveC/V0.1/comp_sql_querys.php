@@ -31,7 +31,18 @@
 			}else{
 				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
 			}
-			echo "<table>
+			echo "
+<script>
+function show_mail(var mail) {
+   $('#mailDiv').html(mail);
+   
+}
+</script>
+
+
+
+
+	<table>
             <tr >
                 <td >
                     <img src=".$img_src." width='120px' height='110px'>
@@ -40,7 +51,7 @@
                 <td class ='line_td'>
                     <p>
                         <h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2>"
-				."<br ><button type=\"button\">Click Me!</button>"."
+				."<br ><div id='mailDiv'><button  type=\"button\"  onclick=\"show_mail('". $row['Email'] . "')\">Show Mail</button></div>
                     </p>
                 </td>
             </tr>
@@ -425,6 +436,11 @@ if($func=="10"){
         array_push($skills_id,'\''.$row[0].'\'');
     }
     $sql = "SELECT student_id FROM student_skills WHERE skill_id  IN (".implode(',',$skills_id).")" ;
+    print_r($sql);
+    foreach ($databaseConnection->query($sql) as $row) {
+        print_r("my name is what");
+        print_r($row[0]);
+    }
     /*$img_src = "../img/profilepic.png";
     foreach ($databaseConnection->query($sql) as $row) {
         $img_src ="";
