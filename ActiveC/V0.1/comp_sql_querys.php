@@ -40,7 +40,7 @@
 							<div id='mailDiv'>
 								<button type=\"button\"  onclick=\"
 								$('#mailDiv').html('".$row['Email']."');
-                        		xmlhttp.open(\"GET\", \"comp_sql_querys.php?q=\" ".$q." \"&func=\" + \"11\", true);
+                        		xmlhttp.open(\'GET\', \'comp_sql_querys.php?q=\' ".$q." \'&func=\' + \'11\', true);
                         		xmlhttp.send();\"> ShowMail </button>
 							</div>
 						   </p>
