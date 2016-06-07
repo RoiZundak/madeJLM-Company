@@ -419,12 +419,12 @@ if($func=="10"){
     *
      *SELECT * FROM student WHERE ID IN [ SELECT student_id FROM student_skills WHERE skill_id  IN [SELECT id FROM skills WHERE name IN [ pop from array ] AND status = 1] ]
      */
-
+    $skills_id=array();
     $sql = "SELECT id FROM skills WHERE name IN (".implode(',',$skills_arr).") AND status = 1";
-    echo $sql;
-foreach ($databaseConnection->query($sql) as $row) {
-    print_r($row);
-}
+    foreach ($databaseConnection->query($sql) as $row) {
+        array_push($skills_id,'\''.$row[0].'\'');
+    }
+    $sql = "SELECT student_id FROM student_skills WHERE skill_id  IN (".implode(',',$skills_id).")" ;
     /*$img_src = "../img/profilepic.png";
     foreach ($databaseConnection->query($sql) as $row) {
         $img_src ="";
