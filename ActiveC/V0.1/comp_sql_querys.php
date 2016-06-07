@@ -1,16 +1,4 @@
-<script>
-	document.addEventListener('click', function(e) {
-		e = e || window.event;
-		var target = e.target || e.srcElement;
-		if (window.XMLHttpRequest) {
-			// code for IE7+, Firefox, Chrome, Opera, Safari
-			xmlhttp = new XMLHttpRequest();
-		} else {
-			// code for IE6, IE5
-			xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
-		}
-	}
-</script>
+
 
 <?php
 	require_once "php/db_connect.php";
@@ -338,10 +326,23 @@ if($func=="11")
 ?>
 
 <script>
+	document.addEventListener('click', function(e) {
+		e = e || window.event;
+		var target = e.target || e.srcElement;
+		if (window.XMLHttpRequest) {
+			// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp = new XMLHttpRequest();
+		} else {
+			// code for IE6, IE5
+			xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+		}
+	}
+
+	var id = 5;
 	if (target.id == "but") {
 		xmlhttp.onreadystatechange = function () {
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-				$("#skill_std").html(xmlhttp.responseText);
+				$("#but").html(xmlhttp.responseText);
 			}
 
 		};
