@@ -4,7 +4,7 @@
 
 
 	$func = intval($_GET['func']);
-	
+	myfunc(email);
 
 
 	//show single student
@@ -46,7 +46,7 @@
 								
 								</script>
 								
-								<button type=\"button\" onclick='window.myfunc(\"hhhhh\");'> ShowMail </button>  
+								<button type=\"button\"  onclick='myfunc(\"hhhhh\");         '> ShowMail </button>
 								
 							</div>
 						   </p>
