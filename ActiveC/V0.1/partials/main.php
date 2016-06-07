@@ -5,7 +5,7 @@ echo
             if ( name === 'null' || name === 'Not_Valid_User_Name' ) 
             {
                 window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                setTimeout(function(){alert('You Must logged in first');},100);
+                setTimeout(function(){alert('You Must login first');},100);
             }
         </script>";
 ?>
