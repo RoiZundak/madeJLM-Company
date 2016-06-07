@@ -35,7 +35,7 @@
 							<p>
 								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2><br >
 							<div id='mailDiv'>
-								<script>
+								
 								     function myFunc(email)
 								    	{
 											$('#mailDiv').html(email);
@@ -43,13 +43,9 @@
 											xmlhttp.send();
 								    	}
 								
-								</script>
+							
 								
-								<button type=\"button\" id = \"but\" > ShowMail </button>
-								<script>
-								var e1 = document.getElementById(\"but\");
-								e1.addEventListener(\"click\", myFunc(\"hhh\"),false);
-								</script>
+								<button type=\"button\" id = \"but\" onclick=\"myFunc('hhhhh');\"> ShowMail </button>
 					
 								
 							</div>
