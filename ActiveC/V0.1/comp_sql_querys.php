@@ -38,9 +38,10 @@
 								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2>"
 						."<br >
 							<div id='mailDiv'>
-								<button type=\"button\"  onclick=\"$('#mailDiv').html('".$row['Email']."');\">
-									ShowMail
-								</button>
+								<button type=\"button\"  onclick=\"
+								$('#mailDiv').html('".$row['Email']."');
+                        		xmlhttp.open(\"GET\", \"comp_sql_querys.php?q=\" ".$q." \"&func=\" + \"11\", true);
+                        		xmlhttp.send();\"> ShowMail </button>
 							</div>
 						   </p>
 						</td>
@@ -308,10 +309,14 @@ if($func=="10"){
         print_r($row['first_name']);
         echo "</div>";
     }
-
-    
 }
 
+if($func=="11")
+{
+	$q = intval($_GET['q']);
+	$sql_update="UPDATE student SET counter_contact = counter_contact + 1 WHERE ID = '".$q."'";
+	$update = $databaseConnection ->prepare($sql_update);
+}
 
 
 ?>
