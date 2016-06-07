@@ -7,18 +7,38 @@
 
 require_once "../php/db_connect.php";
 $databaseConnection =connect_to_db();
-/*
-echo "<script>
-$(function()
-{
-      if (localStorage.chkbx && localStorage.chkbx != '')
-      {
+echo
+"<script>
+$(function() {
+    if (localStorage.chkbx && localStorage.chkbx != '') {
+        $('#remember_me').attr('checked', 'checked');
+        $('#login').val(localStorage.usrname);
+        $('#password').val(localStorage.password);
 
 
-      }
-}
- </script>";
-*/
+    } else {
+        $('#remember_me').removeAttr('checked');
+        $('#login').val('Example@example.com');
+        $('#password').val('688822292');
+    }
+
+    $('#remember_me').click(function() {
+
+        if ($('#remember_me').is(':checked')) {
+            // save username and password
+            localStorage.usrname = $('#login').val();
+            localStorage.password = $('#password').val();
+            localStorage.chkbx = $('#remember_me').val();
+        } else {
+            localStorage.usrname = 'Example@example.com';
+            localStorage.password = '688822292';
+            localStorage.chkbx = '';
+        }
+    });
+});
+</script>";
+
+
 
 if(!empty($_POST['username'])){
     $errMsg = '';
@@ -26,7 +46,6 @@ if(!empty($_POST['username'])){
     //username and password sent from Form
     $username = trim($_POST['username']);
     $password = md5(trim($_POST['password']));
-   // echo ("<script> alert('$password');</script>");
 
     if($username == 'Example@example.com')
         $errMsg .= 'You must enter your Username<br>';
