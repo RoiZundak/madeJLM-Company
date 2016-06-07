@@ -40,7 +40,8 @@
 
 
     <?php
-
+require_once "../php/db_connect.php";
+$databaseConnection =connect_to_db();
     $username = trim($_POST['username']);
     $password = md5(trim($_POST['password']));
 
