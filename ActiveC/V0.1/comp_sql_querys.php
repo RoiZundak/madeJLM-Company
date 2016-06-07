@@ -33,10 +33,9 @@
 			}
 			echo "
 <script>
-function show_mail(var mail) {
-   $('#mailDiv').html(mail);
-   
-}
+	function showMail(var obj) {
+   		$('#mailDiv').html(obj);
+	}
 </script>
 
 
@@ -51,7 +50,7 @@ function show_mail(var mail) {
                 <td class ='line_td'>
                     <p>
                         <h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2>"
-				."<br ><div id='mailDiv'><button  type=\"button\"  onclick=\"show_mail('". $row['Email'] . "')\">Show Mail</button></div>
+				."<br ><div id='mailDiv'><button  type=\"button\"  onclick=\"showMail('". $row['Email'] . "')\">Show Mail</button></div>
                     </p>
                 </td>
             </tr>
