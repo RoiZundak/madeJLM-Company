@@ -51,7 +51,7 @@
         require_once "../php/db_connect.php";
         $databaseConnection =connect_to_db();
         //get all students
-        $sql = 'SELECT * FROM student';
+        $sql = 'SELECT * FROM student WHERE Activated=1' ;
         $img_src = "../img/profilepic.png";
         foreach ($databaseConnection->query($sql) as $row) {
             if(  $row['profile']=="" ){
