@@ -16,12 +16,10 @@ Our style
 
 }
 #main_wrap{
-    background-color:RED;
     height: 600px;
 }
 #filter_main{
     position: absolute;
-    background-color:BLUE;
     min-height: 10%;
     max-height: 10%;
     width: 100%;
@@ -29,7 +27,6 @@ Our style
 
 .filters{
     float: left;
-    background-color:yellow;
     margin-top: 1%;
     margin-left: 1%;
     height: 30px;
