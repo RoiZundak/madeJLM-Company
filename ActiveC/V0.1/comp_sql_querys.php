@@ -45,7 +45,7 @@
 								
 								</script>
 								
-								<button type=\"button\" id = \"but\" onclick=\"myFunc('hhhhh');\"> ShowMail </button>
+								<button class=\"filters\"  id = \"but\" onclick=\"myFunc('hhhhh');\"> ShowMail </button>
 					
 								
 							</div>
