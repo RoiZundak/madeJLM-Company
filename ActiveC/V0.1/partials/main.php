@@ -11,10 +11,10 @@ echo
 ?>
 
 <div id="main_wrap">
-    <!--
-    <div class = "filter_main">
-        Filter<br>
 
+    <div class = "filter_main">
+        Filter
+        <!--
         <div id="filters" >
             Skills
         </div>
@@ -26,9 +26,9 @@ echo
         <div id='filters'>
             Clear Filter's
         </div>
-
-    </div>
     -->
+    </div>
+
     <div id = "show_all"> </div>
     <div id = "skill_std" class='speech' class='skills'> </div>
 
