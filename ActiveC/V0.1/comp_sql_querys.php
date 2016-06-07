@@ -37,7 +37,7 @@
 							<div id='mailDiv'>
 							<script>
 								    window.MyObject = 
-								    	function(email)
+								    	function myfunc(email)
 								    	{
 											$('#mailDiv').html(email);
 											xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q." \"&func=\"11\", true);
@@ -46,7 +46,7 @@
 								
 								</script>
 								
-								<button type=\"button\" onclick=\"window.MyObject('hhhhh');\"> ShowMail </button>
+								<button type=\"button\" onclick=\"window.MyObject.myfunc('hhhhh');\"> ShowMail </button>
 								
 							</div>
 						   </p>
