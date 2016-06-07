@@ -1,8 +1,7 @@
 <?php
     echo
         "<script> 
-            var name = sessionStorage.getItem('username');
-            alert('the username is-' + .'name'.)
+            $name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) 
             {
                 window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
