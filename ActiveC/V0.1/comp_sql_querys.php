@@ -33,7 +33,7 @@
 			}
 			echo "
 <script>
-function  show_mail(mail) {
+function show_mail(mail) {
    $('#mailDiv').html(mail);
    
 }
