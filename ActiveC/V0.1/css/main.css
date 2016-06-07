@@ -57,22 +57,22 @@ Our style
     margin-left: 1%;
     margin-right: 1%;
     margin-top: 6%;
-    min-width: 45%;
-    max-width: 45%;
+    min-width: 60%;
+    max-width: 60%;
     min-height: 80%;
     max-height: 80%;
 }
 
 #show_all {
     float: left;
-    background-color: #210D73 ;
+    background-color: BLACK;
     opacity: 0.7;
     border-left-style: outset;
     margin-left: 1%;
     margin-right: 1%;
     margin-top: 6%;
-    min-width: 45%;
-    max-width: 45%;
+    min-width: 35%;
+    max-width: 35%;
     max-height: 80%;
     min-height: 80%;
     text-align: center;
