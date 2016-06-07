@@ -14,15 +14,15 @@ echo
     <div id = "filter_main">
         Filter<br>
 
-        <div class="filters" id="skills">
+        <div id="skills">
             Skills
         </div>
 
-        <div class="filters" id="has_linkedin">
+        <div id="has_linkedin">
             Has Linkedin
         </div>
 
-        <div class="filters" id='clr_filter'>
+        <div id='clr_filter'>
             Clear Filter's
         </div>
 
