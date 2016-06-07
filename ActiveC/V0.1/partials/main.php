@@ -1,6 +1,6 @@
 <?php
-    echo
-    "<script> 
+echo
+"<script> 
             var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) 
             {
@@ -14,7 +14,7 @@
     <div id = "filter_main">
         Filter<br>
         <div class="filters" id="all">
-            All Students
+            All Players
         </div>
         <div class="filters" id="has_git">
             Has Github
@@ -51,7 +51,7 @@
         require_once "../php/db_connect.php";
         $databaseConnection =connect_to_db();
         //get all students
-        $sql = 'SELECT * FROM student WHERE Activated=1' ;
+        $sql = 'SELECT * FROM student';
         $img_src = "../img/profilepic.png";
         foreach ($databaseConnection->query($sql) as $row) {
             if(  $row['profile']=="" ){
