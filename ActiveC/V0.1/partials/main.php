@@ -14,7 +14,7 @@ echo
     <div id = "filter_main">
         Filter<br>
         <div class="filters" id="all">
-            All Players
+            All Students
         </div>
         <div class="filters" id="has_git">
             Has Github
@@ -51,7 +51,7 @@ echo
         require_once "../php/db_connect.php";
         $databaseConnection =connect_to_db();
         //get all students
-        $sql = 'SELECT * FROM student';
+        $sql = 'SELECT * FROM student WHERE Activated=1';
         $img_src = "../img/profilepic.png";
         foreach ($databaseConnection->query($sql) as $row) {
             if(  $row['profile']=="" ){
