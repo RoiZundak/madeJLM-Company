@@ -9,6 +9,7 @@ require_once "../php/db_connect.php";
 $databaseConnection =connect_to_db();
 echo
 "<script>
+localStorage.clear();
 $(function() {
     if (localStorage.chkbx && localStorage.chkbx != '') {
         $('#remember_me').attr('checked', 'checked');
