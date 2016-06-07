@@ -13,8 +13,8 @@ echo
 <div id="main_wrap">
 
     <div id= "filter_main">
-        
-        <div class="filters" id="skills">
+
+        <div class="filters" id="skill">
             Skills
         </div>
 
