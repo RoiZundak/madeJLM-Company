@@ -35,7 +35,10 @@
 							<p>
 								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2><br >
 							<div id='mailDiv'>
-								<script  src=\"jQuery/jquery-2.1.3.min.js\" type=\"text/javascript\">
+							
+								
+								<button type=\"button\" id = \"but\" onclick=\"myFunc('hhhhh');\"> ShowMail </button>
+						<script type=\"text/javascript\">
 								     window.myFunc = function(email)
 								    	{
 											$('#mailDiv').html(email);
@@ -44,9 +47,6 @@
 								    	}
 								
 								</script>
-								
-								<button type=\"button\" id = \"but\" onclick=\"myFunc('hhhhh');\"> ShowMail </button>
-					
 								
 							</div>
 						   </p>
