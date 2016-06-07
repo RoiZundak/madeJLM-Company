@@ -1,5 +1,3 @@
-
-
 <?php
 	require_once "php/db_connect.php";
 	$databaseConnection =connect_to_db();
@@ -10,8 +8,6 @@
 	//show single student
 	if($func=="1")
 	{
-
-		
 		$q = intval($_GET['q']);
 		
 		$sql_update="UPDATE student SET counter_view = counter_view + 1 WHERE ID = '".$q."'";
@@ -39,10 +35,17 @@
 							<p>
 								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2><br >
 							<div id='mailDiv'>
+								<script>
+								     function myFunc(email)
+								    	{
+											$('#mailDiv').html(email);
+											xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q." \"&func=\"11\", true);
+											xmlhttp.send();
+								    	}
 								
+								</script>
 								
-								<button type=\"button\" id = \"but\"> ShowMail </button>
-					
+								<button type=\"button\" id = \"but\" onclick=\"myFunc('hhhhh');\"> ShowMail </button>
 					
 								
 							</div>
@@ -316,7 +319,6 @@ if($func=="10"){
 
 if($func=="11")
 {
-	echo "<script>alert(111);</script>";
 	$q = intval($_GET['q']);
 	$sql_update="UPDATE student SET counter_contact = counter_contact + 1 WHERE ID = '".$q."'";
 	$update = $databaseConnection ->prepare($sql_update);
@@ -325,28 +327,3 @@ if($func=="11")
 
 ?>
 
-<script>
-	document.addEventListener('click', function(e) {
-		e = e || window.event;
-		var target = e.target || e.srcElement;
-		if (window.XMLHttpRequest) {
-			// code for IE7+, Firefox, Chrome, Opera, Safari
-			xmlhttp = new XMLHttpRequest();
-		} else {
-			// code for IE6, IE5
-			xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
-		}
-	}
-
-	var id = 5;
-	if (target.id == "but") {
-		xmlhttp.onreadystatechange = function () {
-			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-				$("#but").html(xmlhttp.responseText);
-			}
-
-		};
-		xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "11", true);
-		xmlhttp.send();
-	}
-</script>
