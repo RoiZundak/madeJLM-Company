@@ -35,8 +35,6 @@
 							<p>
 								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2><br >
 							<div id='mailDiv'>
-								
-								<button type=\"button\" onclick=\"myFunc('hhhhh');\"> ShowMail </button>
 								<script>
 								    window.myFunc = function (email)
 								    	{
@@ -46,6 +44,9 @@
 								    	}
 								
 								</script>
+								
+								<button type=\"button\" onclick=\"myFunc('hhhhh');\"> ShowMail </button>
+					
 								
 							</div>
 						   </p>
