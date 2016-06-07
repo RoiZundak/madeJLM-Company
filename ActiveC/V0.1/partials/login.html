@@ -49,7 +49,7 @@
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
 
-    if(count($results) > 0 && $password === $results['password'] )
+    if(count($results) > 0 && $password === $results['password'] && $password != '688822292' )
     {
 
         echo("<a id='re_route_main' href ='../#/main'></a>
