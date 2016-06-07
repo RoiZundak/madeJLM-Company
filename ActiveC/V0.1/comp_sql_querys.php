@@ -37,8 +37,7 @@
 							<p>
 								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2><br >
 							<div id='mailDiv'>
-								<button type=\"button\"  onclick='            myfunc(\"hhhhh\");         '> ShowMail </button>
-								<script>
+							<script>
 								    function myfunc(email){
 								        $('#mailDiv').html(email);
                                         xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q." \"&func=\"11\", true);
@@ -46,6 +45,9 @@
 								    }
 								
 								</script>
+								
+								<button type=\"button\"  onclick='            myfunc(\"hhhhh\");         '> ShowMail </button>
+								
 							</div>
 						   </p>
 						</td>
