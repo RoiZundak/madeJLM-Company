@@ -19,7 +19,7 @@ Our style
     background-color:RED;
     height: 600px;
 }
-.filter_main{
+#filter_main{
     position: absolute;
     background-color:BLUE;
     min-height: 10%;
@@ -27,7 +27,7 @@ Our style
     width: 100%;
 }
 
-#filters{
+.filters{
     float: left;
     background-color:yellow;
     margin-top: 1%;

@@ -12,17 +12,17 @@ echo
 
 <div id="main_wrap">
 
-    <div class = "filter_main">
+    <div id= "filter_main">
         Filter
-        <div id="filters" >
+        <div class="filters" >
             Skills
         </div>
 
-        <div id="filters">
+        <div class="filters">
             Has Linkedin
         </div>
 
-        <div id='filters'>
+        <div class='filters'>
             Clear Filter's
         </div>
     </div>
