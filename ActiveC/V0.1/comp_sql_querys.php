@@ -415,10 +415,26 @@ if($func=="10"){
     }
     //  TODO : create an sql query, add all skills to it, and then print results(students)
     /*
+     * "SELECT id FROM skills WHERE name IN (".implode(',',$skills_arr).") AND status = 1"
+    *
      *SELECT * FROM student WHERE ID IN [ SELECT student_id FROM student_skills WHERE skill_id  IN [SELECT id FROM skills WHERE name IN [ pop from array ] AND status = 1] ]
      */
 
-
+    $sql = "SELECT id FROM skills WHERE name IN (".implode(',',$skills_arr).") AND status = 1";
+    echo $sql;
+    $img_src = "../img/profilepic.png";
+    foreach ($databaseConnection->query($sql) as $row) {
+        $img_src ="";
+        if(  $row['profile']=="" ){
+            $img_src = "./img/profilepic.png";
+        }else{
+            $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+        }
+        echo "<div class='head' id='head_".$row['ID']."' > ";
+        echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+        print_r($row['first_name']);
+        echo "</div>";
+    }
 
 
    /* while ($t = array_pop($skills_arr)){
