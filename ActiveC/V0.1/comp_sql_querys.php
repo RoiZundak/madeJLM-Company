@@ -48,7 +48,7 @@
 								<button type=\"button\" id = \"but\" > ShowMail </button>
 								<script>
 								var e1 = document.getElementById(\"but\");
-								e1.addEventListener(\"click\", function(){myFunc(\"hhh\")},false);
+								e1.addEventListener(\"click\", myFunc(\"hhh\"),false);
 								</script>
 					
 								
