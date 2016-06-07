@@ -1,10 +1,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 <div id ="login_container">
     <script>
-        //remove session in the first time
         sessionStorage.removeItem('username');
-        $(function()
-        {
+        $(function() {
             if (localStorage.chkbx && localStorage.chkbx != '')
             {
                 $('#remember_me').attr('checked', 'checked');
@@ -18,8 +16,7 @@
                 $('#password').val('688822292');
             }
 
-            $('#remember_me').click(function()
-            {
+            $('#remember_me').click(function() {
 
                 if ($('#remember_me').is(':checked')) {
                     // save username and password
@@ -30,6 +27,8 @@
                     localStorage.usrname = 'Example@example.com';
                     localStorage.password = '688822292';
                     localStorage.chkbx = '';
+
+
                 }
             });
         });

@@ -232,7 +232,7 @@
 
 
 		//PDO STYLE :
-		$sql = 'SELECT * FROM student';
+		$sql = 'SELECT * FROM student WHERE Activated=1';
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row) {
 			$img_src = "";
@@ -409,6 +409,10 @@ if($func=="10"){
         }
     }
     $arrlength = count($skills_arr);
+    for($x = 0; $x < $arrlength; $x++) {
+        echo $skills_arr[$x];
+        echo "<br>";
+    }
     //  TODO : create an sql query, add all skills to it, and then print results(students)
     /*
      * "SELECT id FROM skills WHERE name IN (".implode(',',$skills_arr).") AND status = 1"
