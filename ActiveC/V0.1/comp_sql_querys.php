@@ -34,7 +34,12 @@
 			echo "
 
 
+<script>
+function showMail(obj) {
+	$('#mailDiv').html(obj);
 
+}
+</script>
 
 
 	<table>
@@ -80,14 +85,7 @@
 			echo "</table>";
 		}
 
-echo "
-<script>
-function showMail(obj) {
-	$('#mailDiv').html(obj);
 
-}
-</script>
-"
 
 		/* MYSQL APPROACH
 		$sql="SELECT * FROM student WHERE ID = '".$q."'";
