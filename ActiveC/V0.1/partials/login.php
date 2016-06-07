@@ -7,38 +7,7 @@
 
 require_once "../php/db_connect.php";
 $databaseConnection =connect_to_db();
-echo
-"<script>
-$(function() {
-    alert('$#login.valueOf()');
-    alert(localStorage.password);
-    if (localStorage.chkbx && localStorage.chkbx != '') {
-        $('#remember_me').attr('checked', 'checked');
-        $('#login').val(localStorage.usrname);
-        $('#password').val(localStorage.password);
 
-
-    } else {
-        $('#remember_me').removeAttr('checked');
-        $('#login').val('Example@example.com');
-        $('#password').val('688822292');
-    }
-
-    $('#remember_me').click(function() {
-
-        if ($('#remember_me').is(':checked')) {
-            // save username and password
-            localStorage.usrname = $('#login').val();
-            localStorage.password = $('#password').val();
-            localStorage.chkbx = $('#remember_me').val();
-        } else {
-            localStorage.usrname = 'Example@example.com';
-            localStorage.password = '688822292';
-            localStorage.chkbx = '';
-        }
-    });
-});
-</script>";
 
 
 
