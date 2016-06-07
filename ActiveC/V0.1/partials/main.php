@@ -29,10 +29,11 @@ echo
     -->
     </div>
 
-    <p><span><div id = "show_all"> </div></p></span>
+    <div id = "show_all"> </div>
+    
     <div id = "skill_std" class='speech' class='skills'> </div>
 
-    <p><span><div id = "std_info"></p></span>
+    <div id = "std_info">
 
         <?php
         //db connect
