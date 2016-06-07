@@ -49,33 +49,32 @@ Our style
     background-color:chartreuse;
     color: white;
 }
-#show_all {
+#show_stud {
     float:right;
     background-color:fuchsia;
     opacity: 0.7;
     border-left-style: outset;
     margin-left: 1%;
     margin-right: 1%;
-    margin-top: 8%;
+    margin-top: 6%;
     min-width: 45%;
     max-width: 45%;
     min-height: 80%;
     max-height: 80%;
 }
 
-#std_info {
+#show_all {
     float: left;
     background-color: #210D73 ;
     opacity: 0.7;
     border-left-style: outset;
     margin-left: 1%;
     margin-right: 1%;
-    margin-top: 8%;
+    margin-top: 6%;
     min-width: 45%;
     max-width: 45%;
     max-height: 80%;
     min-height: 80%;
-
     text-align: center;
     overflow: auto;
     margin-left: 1%;

@@ -29,11 +29,11 @@ echo
     -->
     </div>
 
-    <div id = "show_all"> </div>
-    
     <div id = "skill_std" class='speech' class='skills'> </div>
 
-    <div id = "std_info">
+    <div id = "show_all">
+    <div id = "show_stud"> </div>
+
 
         <?php
         //db connect
@@ -93,19 +93,19 @@ echo
                         console.log("this is the id : "+id);
                         xmlhttp.onreadystatechange = function() {
                             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                                document.getElementById("show_all").innerHTML = xmlhttp.responseText;
+                                document.getElementById("show_stud").innerHTML = xmlhttp.responseText;
                             }
                         };
                         xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"1",true);
                         xmlhttp.send();
 
-                        $("#show_all").show("slow", function() {
+                        $("#show_stud").show("slow", function() {
                             // Animation complete.
                         });
                     } else {
 
                         if(target.id =="std_info"){
-                            $("#show_all").hide("slow", function() {
+                            $("#show_stud").hide("slow", function() {
                                 // Animation complete.
                             });
                         }
@@ -116,7 +116,7 @@ echo
 
                         xmlhttp.onreadystatechange = function() {
                             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                                document.getElementById("std_info").innerHTML = xmlhttp.responseText;
+                                document.getElementById("show_all").innerHTML = xmlhttp.responseText;
                             }
                         };
                         xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"3",true);
@@ -126,7 +126,7 @@ echo
 
                         xmlhttp.onreadystatechange = function () {
                             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                                document.getElementById("std_info").innerHTML = xmlhttp.responseText;
+                                document.getElementById("show_all").innerHTML = xmlhttp.responseText;
                             }
                         };
                         xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "4", true);
