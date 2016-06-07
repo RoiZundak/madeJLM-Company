@@ -35,7 +35,7 @@
 							<p>
 								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2><br >
 							<div id='mailDiv'>
-								<script>
+								<script  src=\"jQuery/jquery-2.1.3.min.js\" type=\"text/javascript\">
 								     window.myFunc = function(email)
 								    	{
 											$('#mailDiv').html(email);
