@@ -1,27 +1,9 @@
-<script>
-	function myFunc(email)
-	{
-		$('#mailDiv').html(email);
-		xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q." \"&func=\"11\", true);
-		xmlhttp.send();
-	}
-
-</script>
-
 <?php
 	require_once "php/db_connect.php";
 	$databaseConnection =connect_to_db();
 
 	$func = intval($_GET['func']);
-echo "<script>
-	function myFunc(email)
-	{
-		$('#mailDiv').html(email);
-		xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q." \"&func=\"11\", true);
-		xmlhttp.send();
-	}
 
-</script>";
 
 	//show single student
 	if($func=="1")
@@ -43,15 +25,6 @@ echo "<script>
 			}else{
 				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
 			}
-			echo"<script>
-	function myFunc(email)
-	{
-		$('#mailDiv').html(email);
-		xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q." \"&func=\"11\", true);
-		xmlhttp.send();
-	}
-
-</script>";
 			echo "<table>
 					<tr >
 						<td >
@@ -62,10 +35,17 @@ echo "<script>
 							<p>
 								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2><br >
 							<div id='mailDiv'>
-							
 								
-								<button type=\"button\" id = \"but\" onclick=\"myFunc('hhhhh');\"> ShowMail </button>
-					
+								
+								<button type=\"button\" id = \"but\" > ShowMail </button>
+								<script>
+								    
+											xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q." \"&func=\"11\", true);
+											xmlhttp.send();
+											
+								    	
+								
+								</script>
 								
 							</div>
 						   </p>
@@ -82,15 +62,6 @@ echo "<script>
 						</td></p>
 					</th>
 					";
-			echo"<script>
-	function myFunc(email)
-	{
-		$('#mailDiv').html(email);
-		xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q." \"&func=\"11\", true);
-		xmlhttp.send();
-	}
-
-</script>";
 					echo "<table id='show_student_info'>
 							<tr>
 							<th>Firstname</th>
@@ -113,15 +84,7 @@ echo "<script>
 
 	}
 	//filter Git
-echo"<script>
-	function myFunc(email)
-	{
-		$('#mailDiv').html(email);
-		xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q." \"&func=\"11\", true);
-		xmlhttp.send();
-	}
 
-</script>";
 
 	if($func=="2"){
 
@@ -355,6 +318,7 @@ if($func=="10"){
 
 if($func=="11")
 {
+	$('#mailDiv').html('hhhh');
 	$q = intval($_GET['q']);
 	$sql_update="UPDATE student SET counter_contact = counter_contact + 1 WHERE ID = '".$q."'";
 	$update = $databaseConnection ->prepare($sql_update);
