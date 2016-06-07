@@ -34,7 +34,12 @@
 			echo "
 
 
+<script>
+function showMail(obj) {
+	$('#mailDiv').html(obj);
 
+}
+</script>
 
 
 	<table>
@@ -456,11 +461,8 @@ if($func=="10"){
         </script>";
     */
 }
-<script>
-function showMail(obj) {
-	$('#mailDiv').html(obj);
 
-}
-</script>
+
+
 ?>
 
