@@ -22,7 +22,8 @@ Our style
 #filter_main{
     position: absolute;
     background-color:BLUE;
-    min-height: 60%;
+    min-height: 10%;
+    max-height: 10%;
     width: 100%;
 }
 
