@@ -55,25 +55,29 @@ Our style
     border-left-style: outset;
     float:right;
     min-width: 34%;
-    min-height: 100%;
+    min-height: 90%;
+    max-height: 90%;
     opacity: 0.7;
     margin-left: 1%;
-
+    margin-right: 1%;
 }
 
 #std_info {
     background-color: #210D73 ;
     border-left-style: outset;
     display:inline;
-    float: left;
+    float: right;
     opacity: 0.7;
     margin-left: 1%;
     min-width: 44%;
     max-width: 44%;
-    max-height: 100%;
-    min-height: 100%;
+    max-height: 90%;
+    min-height: 90%;
     text-align: center;
     overflow: auto;
+    margin-left: 1%;
+    margin-right: 1%;
+
 }
 #form_skills{
     width: 90%;
