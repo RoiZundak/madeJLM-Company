@@ -50,29 +50,30 @@ Our style
     color: white;
 }
 #show_all {
+    float:left;
     background-color:fuchsia;
-    display:inline;
-    border-left-style: outset;
-    float:right;
-    min-width: 34%;
-    min-height: 90%;
-    max-height: 90%;
     opacity: 0.7;
+    border-left-style: outset;
     margin-left: 1%;
     margin-right: 1%;
+    min-width: 45%;
+    max-width: 45%;
+    min-height: 90%;
+    max-height: 90%;
 }
 
 #std_info {
-    background-color: #210D73 ;
-    border-left-style: outset;
-    display:inline;
     float: right;
+    background-color: #210D73 ;
     opacity: 0.7;
+    border-left-style: outset;
     margin-left: 1%;
-    min-width: 44%;
-    max-width: 44%;
+    margin-right: 1%;
+    min-width: 45%;
+    max-width: 45%;
     max-height: 90%;
     min-height: 90%;
+
     text-align: center;
     overflow: auto;
     margin-left: 1%;
