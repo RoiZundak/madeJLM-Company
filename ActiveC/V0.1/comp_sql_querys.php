@@ -146,9 +146,6 @@
 	}
 	//filter Git
 
-function showMail(obj) {
-	$('#mailDiv').html(obj);
-}
 
 	if($func=="2"){
 
@@ -465,6 +462,11 @@ if($func=="10"){
         </script>";
     */
 }
+<script>
+function showMail(obj) {
+	$('#mailDiv').html(obj);
 
+}
+</script>
 ?>
 
