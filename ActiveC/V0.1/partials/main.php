@@ -13,16 +13,16 @@ echo
 <div id="main_wrap">
 
     <div id= "filter_main">
-        Filter
-        <div class="filters" >
+        
+        <div class="filters" id="skills">
             Skills
         </div>
 
-        <div class="filters">
+        <div class="filters" id="linkedin">
             Has Linkedin
         </div>
 
-        <div class='filters'>
+        <div class='filters' id="clear">
             Clear Filter's
         </div>
     </div>
