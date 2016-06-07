@@ -21,6 +21,14 @@
 		$q = intval($_GET['q']);
 
 
+		$sql_update="UPDATE student SET counter_view = counter_view + 1 WHERE ID = '".$q."'";
+		$update = $databaseConnection ->prepare($sql_update);
+		if ($update ->execute() == true)
+		{
+			echo "heeeyyyyyy";
+		}
+		//UPDATE student SET counter_contact = counter_contact + 1;
+
 		//PDO STYLE :
 		$sql="SELECT * FROM student WHERE ID = '".$q."'";
 		$img_src = "../img/profilepic.png";
@@ -32,10 +40,6 @@
 				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
 			}
 			echo "
-
-
-
-
 
 	<table>
             <tr >
