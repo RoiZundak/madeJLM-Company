@@ -32,11 +32,7 @@
 				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
 			}
 			echo "
-<script>
-	function showMail(obj) {
-   		$('#mailDiv').html(obj);
-	}
-</script>
+
 
 
 
@@ -149,6 +145,11 @@
 		mysql_close($con);*/
 	}
 	//filter Git
+
+function showMail(obj) {
+	$('#mailDiv').html(obj);
+}
+
 	if($func=="2"){
 
 			//PDO STYLE :
