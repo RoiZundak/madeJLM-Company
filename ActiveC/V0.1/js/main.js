@@ -49,7 +49,7 @@ app.controller('PageCtrl', function ( $location /* $scope, $location, $http */) 
     interval: 5000
   });
   $("#main_wrap").ready( function () {
-    $("#show_std").toggle();
+    $("#show_all").toggle();
   });
   $("#std_info").click(function(){
    /* $("#show_std").toggle("slow", function() {

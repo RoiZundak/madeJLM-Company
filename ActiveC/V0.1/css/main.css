@@ -47,10 +47,7 @@ Our style
 .filters:hover{
     background-color:black;
     color: white;
-
 }
-
-
 .line_td{
 	border-bottom-color : grey;
 	border-bottom-width : 1px;
@@ -59,7 +56,6 @@ Our style
 	
 	
 }
-
 .head{
 	display:inline-block;
 	width:140px;
@@ -197,7 +193,7 @@ input[type=submit]:hover{
 
 
 
-#show_std{
+#show_all {
     display:inline;
     border-left-style: outset;
     float:right;
