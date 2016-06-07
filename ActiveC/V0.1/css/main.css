@@ -23,6 +23,7 @@ Our style
     float: left;
 	width:100%;
     height: 100px;
+    position: absolute;
 }
 .row > *{
     float: right;
