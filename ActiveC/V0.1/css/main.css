@@ -21,7 +21,6 @@ Our style
 #filter_main{
     background-color:white;
 	width:100%;
-    min-height:10%;
 }
 .row > *{
     float: right;
@@ -42,7 +41,6 @@ Our style
     transition-duration: 300ms;
     transition-timing-function: linear;
 	font-size:1.1em;
-    float: left;
 }
 .filters:hover{
     background-color:black;
