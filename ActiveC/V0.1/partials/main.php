@@ -1,7 +1,7 @@
 <?php
-    echo
-        "<script> 
-            $name = sessionStorage.getItem('username');
+echo
+"<script> 
+            var name = sessionStorage.getItem('username');
             if ( name === null || name === 'Not_Valid_User_Name' ) 
             {
                 window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
@@ -12,7 +12,7 @@
 
 <div id="main_wrap">
     <div id = "filter_main">
-    Filter<br>
+        Filter<br>
         <div class="filters" id="all">
             All Players
         </div>
@@ -27,15 +27,15 @@
         </div>
         <div class="filters" id="skills">
             Skills
-         </div>
-         <div class="filters" id="nearby">
+        </div>
+        <div class="filters" id="nearby">
             Nearby
-         </div>
+        </div>
 
         <div class="filters" id='clr_filter'>
             Clear All
         </div>
-  
+
     </div>
 
     <div id = "show_std">
@@ -46,8 +46,8 @@
     </div>
     <div id = "std_info"  >
 
-	<?php
-    //db connect
+        <?php
+        //db connect
         require_once "../php/db_connect.php";
         $databaseConnection =connect_to_db();
         //get all students
@@ -64,103 +64,103 @@
             print_r($row['first_name']);
             echo "</div>";
         }
-	?>
-	<script>
-	var id="-1";
-    $("#skill_std").hide();
-	document.addEventListener('click', function(e) {
-		e = e || window.event;
-		var target = e.target || e.srcElement;
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        
-        if (target.className !== "skills")
-        {
+        ?>
+        <script>
+            var id="-1";
             $("#skill_std").hide();
-        }
-
-            if (target.id == "skills") {
-                $("#skill_std").show();
-                xmlhttp.onreadystatechange = function () {
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        $("#skill_std").html(xmlhttp.responseText);
+            document.addEventListener('click', function(e) {
+                    e = e || window.event;
+                    var target = e.target || e.srcElement;
+                    if (window.XMLHttpRequest) {
+                        // code for IE7+, Firefox, Chrome, Opera, Safari
+                        xmlhttp = new XMLHttpRequest();
+                    } else {
+                        // code for IE6, IE5
+                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
                     }
 
-                };
-                xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "9", true);
-                xmlhttp.send();
-            }
-
-            if(target.className =="head" || target.className =="head_image"){
-                console.log("this is the id : "+target.id);
-                //noinspection JSUnresolvedFunction
-
-            id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
-                console.log("this is the id : "+id);
-                xmlhttp.onreadystatechange = function() {
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById("show_std").innerHTML = xmlhttp.responseText;
+                    if (target.className !== "skills")
+                    {
+                        $("#skill_std").hide();
                     }
-                };
-                xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"1",true);
-                xmlhttp.send();
 
-                $("#show_std").show("slow", function() {
-                    // Animation complete.
-                });
-        } else {
+                    if (target.id == "skills") {
+                        $("#skill_std").show();
+                        xmlhttp.onreadystatechange = function () {
+                            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                                $("#skill_std").html(xmlhttp.responseText);
+                            }
 
-            if(target.id =="std_info"){
-                $("#show_std").hide("slow", function() {
-                    // Animation complete.
-                });
-            }
-
-            }
-            if(target.id == "has_git" ){
-
-                xmlhttp.onreadystatechange = function() {
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById("std_info").innerHTML = xmlhttp.responseText;
+                        };
+                        xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "9", true);
+                        xmlhttp.send();
                     }
-                };
-                xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"2",true);
-                xmlhttp.send();
-            }
-            if(target.id == "has_linkedin" ){
 
-                xmlhttp.onreadystatechange = function() {
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById("std_info").innerHTML = xmlhttp.responseText;
+                    if(target.className =="head" || target.className =="head_image"){
+                        console.log("this is the id : "+target.id);
+                        //noinspection JSUnresolvedFunction
+
+                        id =target.id.substring(target.id.indexOf("_")+1,target.id.length);
+                        console.log("this is the id : "+id);
+                        xmlhttp.onreadystatechange = function() {
+                            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                                document.getElementById("show_std").innerHTML = xmlhttp.responseText;
+                            }
+                        };
+                        xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"1",true);
+                        xmlhttp.send();
+
+                        $("#show_std").show("slow", function() {
+                            // Animation complete.
+                        });
+                    } else {
+
+                        if(target.id =="std_info"){
+                            $("#show_std").hide("slow", function() {
+                                // Animation complete.
+                            });
+                        }
+
                     }
-                };
-                xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"3",true);
-                xmlhttp.send();
-            }
-            if(target.id == "clr_filter" ){
+                    if(target.id == "has_git" ){
 
-                xmlhttp.onreadystatechange = function() {
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById("std_info").innerHTML = xmlhttp.responseText;
+                        xmlhttp.onreadystatechange = function() {
+                            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                                document.getElementById("std_info").innerHTML = xmlhttp.responseText;
+                            }
+                        };
+                        xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"2",true);
+                        xmlhttp.send();
                     }
-                };
-                xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"4",true);
-                xmlhttp.send();
-            }
+                    if(target.id == "has_linkedin" ){
+
+                        xmlhttp.onreadystatechange = function() {
+                            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                                document.getElementById("std_info").innerHTML = xmlhttp.responseText;
+                            }
+                        };
+                        xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"3",true);
+                        xmlhttp.send();
+                    }
+                    if(target.id == "clr_filter" ){
+
+                        xmlhttp.onreadystatechange = function() {
+                            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                                document.getElementById("std_info").innerHTML = xmlhttp.responseText;
+                            }
+                        };
+                        xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"4",true);
+                        xmlhttp.send();
+                    }
 
 
 
-        }
-        , false);
-	</script>
-	
-	
-	
+                }
+                , false);
+        </script>
+
+
+
     </div>
 
 </div>

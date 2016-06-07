@@ -1,48 +1,48 @@
 <?php
-    session_start();
-    require_once "../php/db_connect.php";
-    $databaseConnection =connect_to_db();
-    
-    $_SESSION['login_user']="Contact";
-    if(isset($_POST['submit'])) {
-        $to      = 'Activec.madejlm@gmail.com';
-        $subject = 'Contact mail from company';
-        if (!empty($_POST['contact_message'])    && !empty($_POST['contact_name'])   && !empty($_POST['contact_email']) ) {
-            $number="";
-            if(  !empty($_POST['contact_phone']) ){
-                $number.= /** @lang text */
-                    "<br>Phone Number:".$_POST['contact_phone'];
-            }
-            $message = $_POST['contact_message'].
-                "<br><br>".
-                "<br>Name: ".$_POST['contact_name'].
-                $number.
-                "<br>Email: ".$_POST['contact_email'];
+session_start();
+require_once "../php/db_connect.php";
+$databaseConnection =connect_to_db();
+
+$_SESSION['login_user']="Contact";
+if(isset($_POST['submit'])) {
+    $to      = 'Activec.madejlm@gmail.com';
+    $subject = 'Contact mail from company';
+    if (!empty($_POST['contact_message'])    && !empty($_POST['contact_name'])   && !empty($_POST['contact_email']) ) {
+        $number="";
+        if(  !empty($_POST['contact_phone']) ){
+            $number.= /** @lang text */
+                "<br>Phone Number:".$_POST['contact_phone'];
         }
-        $headers = 'From: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
-            'Reply-To: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();    
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-        $sent_mail = mail($to, $subject, $message, $headers);
-        $_POST = array();
-        if ( ! $sent_mail){
-            echo("<a id='re_route' href ='../#/contact'>
+        $message = $_POST['contact_message'].
+            "<br><br>".
+            "<br>Name: ".$_POST['contact_name'].
+            $number.
+            "<br>Email: ".$_POST['contact_email'];
+    }
+    $headers = 'From: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
+        'Reply-To: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+    $sent_mail = mail($to, $subject, $message, $headers);
+    $_POST = array();
+    if ( ! $sent_mail){
+        echo("<a id='re_route' href ='../#/contact'>
                     <script>
                         document.getElementById(\"re_route\").click();
                         alert('Mail was not sent, please try again.');
                     </script>
                 </a>");
-        }else{
-            echo("<a id='re_route' href ='../#/contact'>
+    }else{
+        echo("<a id='re_route' href ='../#/contact'>
                     <script>
                         document.getElementById(\"re_route\").click();
                         alert('Mail was sent! thank you.');
                     </script>
                 </a>");
-        }
-
     }
+
+}
 ?>
 <!-- Page Content -->
 <div class="container">
