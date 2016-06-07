@@ -14,7 +14,6 @@ echo
 
     <div class = "filter_main">
         Filter
-        <!--
         <div id="filters" >
             Skills
         </div>
@@ -26,7 +25,6 @@ echo
         <div id='filters'>
             Clear Filter's
         </div>
-    -->
     </div>
     <div id = "show_stud"> </div>
 
