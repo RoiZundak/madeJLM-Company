@@ -33,7 +33,7 @@
 			}
 			echo "
 <script>
-	function showMail(var obj) {
+	function showMail(obj) {
    		$('#mailDiv').html(obj);
 	}
 </script>
