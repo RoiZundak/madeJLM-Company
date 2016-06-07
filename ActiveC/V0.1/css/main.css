@@ -20,9 +20,8 @@ Our style
     height: 550px;
 }
 #filter_main{
+    position: absolute;
     background-color:BLUE;
-    float: left;
-	width:200px;
     min-height: 60%;
 }
 
