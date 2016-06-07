@@ -40,8 +40,9 @@
 
 
     <?php
-require_once "../php/db_connect.php";
-$databaseConnection =connect_to_db();
+    require_once "../php/db_connect.php";
+    $databaseConnection =connect_to_db();
+
     $username = trim($_POST['username']);
     $password = md5(trim($_POST['password']));
 
@@ -53,13 +54,7 @@ $databaseConnection =connect_to_db();
     if(count($results) > 0 && $password === $results['password'] && $password != '688822292' )
     {
 
-        echo("<a id='re_route_main' href ='../#/main'></a>
-        <script>
-            sessionStorage.setItem('username', '".$username."');
-            document.getElementById('re_route_main').click();
-        </script>
-         ");
-        exit;
+
     }
     ?>
 
