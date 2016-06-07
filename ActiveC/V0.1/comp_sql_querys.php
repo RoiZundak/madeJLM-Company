@@ -41,10 +41,6 @@
 			}
 			echo "
 
-
-
-
-
 	<table>
             <tr >
                 <td >
