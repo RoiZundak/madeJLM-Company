@@ -46,7 +46,7 @@
 		}
 			echo "
 			<table>
-			    <tr>
+			    <tr class ='line_td'>
 			        <td>
 			            <img class='head_image' src =".$img_src." width ='120px' height='110px'>
                     </td>
@@ -61,12 +61,6 @@
 							<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>			
 						</div>
 					</td>
-					<th >
-						<td class ='line_td'>
-						
-						</td>
-					</th>
-					
                 </tr>
 			</table>
 			";
