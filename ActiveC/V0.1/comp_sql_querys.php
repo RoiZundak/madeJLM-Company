@@ -265,9 +265,9 @@
 				echo '<option value='.$row['name'].'>';
 
 			echo "</datalist>
-			<div id = \"add\">
+			
 			<input type=\"submit\" value=\"Filter\" id=\"submit_skills\">
-			</div>
+			
 			</form>";
 	}
 
