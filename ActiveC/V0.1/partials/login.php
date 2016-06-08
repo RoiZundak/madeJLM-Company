@@ -25,17 +25,13 @@
 
             if(count($results) > 0 && $results['block'] != null)
             {
-               echo" <script>
-                    alert('ccchhhhhheeeeckkkkkk');
-                </script>";
-                $d=strtotime("+2 Minutes -4 hours");
+                $d=strtotime("+15 Minutes -4 hours");
                 $newTime =  date("Y-m-d h:i:sa", $d);
 
-                echo $newTime;
-                echo $results['block'];
+                $currentDateTime = $results['block'];
+                $newDateTime = date('Y-m-d  h:i:sa', strtotime($currentDateTime));
 
-
-                if($newTime < $results['block'])
+                if($newTime < $newDateTime)
                 {
                     $errMsg .= 'Time block<br>';
 
@@ -76,10 +72,6 @@
                     ");
                 exit;
             }
-
-           // $q = "SELECT attempts, (CASE when block is not NULL and DATE_ADD(LastLogin, INTERVAL ".TIME_PERIOD.
-              //  " MINUTE)>NOW() then 1 else 0 end) as Denied FROM ".TBL_ATTEMPTS." WHERE ip = '$value'";
-
 
             else if(count($results) > 0 && $password !== $results['password'])
             {
