@@ -183,7 +183,7 @@
                 </tr>
                 
                 <!--Fifth Line: All Skills + ShowAll-->
-                <tr class=\"border_bottom\">
+                <tr class=\"border_bottom\" >
                 	<td>
                 		<h4><b>".$show_all_skills."</b></h4> ".$all_skills."
 					</td>
@@ -196,10 +196,7 @@
 					
 					<td>
 							<h4><b>" . $exp . "</h4></b>" . $exprience . " 
-							<script>
-							if($exp == ' ')
-								<br>
-							</script>
+						
                 	</td>
                 </tr>
                 

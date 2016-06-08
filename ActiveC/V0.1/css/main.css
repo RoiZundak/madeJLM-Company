@@ -220,13 +220,11 @@ table {
 tr {
     border: solid;
     border-width: 1px 0;
-    min-height:30% ;
     border-color: #84C6EC;
 }
 
     td {
-    padding-top: .5em;
-    padding-bottom: .5em;
+
         text-align: left;
 }
 
