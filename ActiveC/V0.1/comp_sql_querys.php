@@ -64,7 +64,7 @@
 			$all_skills="";
 			if (count($list_skills) > 0)
 			{
-				$show_all_skills ="skill list:";
+				$show_all_skills ="Skills list:";
 				$len = count($list_skills_bck);
 				foreach ($databaseConnection->query($skills_name) as $skill) {
 					for ($i = 0; $i < $len; $i++) {
