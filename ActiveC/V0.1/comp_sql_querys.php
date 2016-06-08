@@ -322,9 +322,13 @@
 			//adds a label and input text containing skill value
 			function addSkillToList(skill_to_add,years)
 			{
+				var skill_years=skill_to_add;
+				if (years!='')
+					skill_years+=', '+ years;
+				
 				$('#add_skill').after(function() 
 				{
-				  return'<br><label class=\'skillsLabel\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+','+ years +'</label><input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add +','+ years + '\' id=\'skill_'+skill_to_add+'\'>  ' 
+				  return'<br><label class=\'skillsLabel\' for=\'skill_'+skill_to_add+'\'>'+skill_years +'</label><input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_years + '\' id=\'skill_'+skill_to_add+'\'>  ' 
 				});
 			}
 			
@@ -347,7 +351,7 @@
 			
 			
 			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
-			<input type=\"text\" list=\"years_list\" id='years_input' class='skills' value='less then 1 year'>
+			<input type=\"text\" list=\"years_list\" id='years_input' class='skills'>
 			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value,document.getElementById(\"years_input\").value);$(\"#skill_input\").val(\"\");'>
 	
 			<datalist id ='years_list'>
