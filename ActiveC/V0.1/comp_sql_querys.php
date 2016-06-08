@@ -25,7 +25,22 @@
 			}else{
 				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
 			}
-			echo /** @lang text */
+            /*
+             *
+             * <script>
+								     function myFunc(email)
+								    	{
+											$('#mailDiv').html(email);
+											xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q.' "&func="11", true);
+											xmlhttp.send();
+								    	}
+
+								</script>
+             *
+             * <!--$row[\'Email\']-->
+             */
+            $maito_string = "<a href = 'mailto:".$row['Email']."?subject=Hello!". $row['first_name'] ." '  >".$row['Email']."</a>";
+			echo
 				"<table>
 					<tr >
 						<td >
@@ -36,16 +51,9 @@
 							<p>
 								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2><br >
 							<div id='mailDiv'>
-								<script>
-								     function myFunc(email)
-								    	{
-											$('#mailDiv').html(email);
-											xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q.' "&func="11", true);
-											xmlhttp.send();
-								    	}
 								
-								</script>
-								<button class="filters"  onclick="$(\'#mailDiv\').html(\'mailto:\'+\''.$row['Email']."');\">Show Me Mail! </button>
+								
+								<button class='filters'  onclick='$(\"#mailDiv\").html(".$maito_string.");'>Show Me Mail! </button>
 								<!--<button class=\"filters\"  id = \"but\" onclick=\"myFunc('hhhhh');\"> Show Me Mail! </button>-->
 					
 								
