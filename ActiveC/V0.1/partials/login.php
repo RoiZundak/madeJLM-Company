@@ -25,8 +25,14 @@
 
             if(count($results) > 0 && $results['block'] != null)
             {
+               echo" <script>
+                    alert('ccchhhhhheeeeckkkkkk');
+                </script>";
                 $now = date("H:i:s", time());
+                echo $newTime;
                 $newTime = strtotime("$now -15 minutes");
+
+                echo $newTime;
 
                 if($newTime < $results['block'])
                 {
