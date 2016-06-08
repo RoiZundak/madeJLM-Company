@@ -159,8 +159,8 @@
 							</button>			
 						</td>	
                 </tr>
-                 <tr width='100%'>
-                	<td>
+                 <tr >
+                	<td width='100%'>
                 		" . $sentence . "
 					</td>
                 </tr>
