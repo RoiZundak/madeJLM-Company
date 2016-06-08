@@ -132,7 +132,7 @@
 			}
 //<i class="fa fa-phone"></i> <abbr title="Phone"></abbr>:
 			echo "
-			<table>
+			<table border=1 frame=void rules=rows>
 				<!--First Line: Picture+ Bubbles -->
 			    <tr>
 			    
@@ -155,7 +155,6 @@
 								Show Phone
 							</button>
 						</td>
-						
 						<td id='mailDiv'>
 							<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
 								Show Mail

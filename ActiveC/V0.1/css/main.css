@@ -211,6 +211,26 @@ label {
 }
 
 
+
+
+table {
+    border-collapse: collapse;
+}
+tr {
+    border: solid;
+    border-width: 1px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
 input[type=submit]{
 
     background-color: #3b5998;
