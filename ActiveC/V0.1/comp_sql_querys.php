@@ -93,7 +93,7 @@
                 </tr>
                 <tr>
                 	<td>
-                		<div style='font-family:Arial Black'> 
+                		<div style='font-family:Arial Black;width:100%;'> 
 							".$row['summary']."
 						</div>
                 	</td>
