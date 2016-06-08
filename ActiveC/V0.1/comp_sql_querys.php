@@ -320,8 +320,9 @@
 		$sql = 'SELECT * FROM skills';
 		echo "<script>
 			//adds a label and input text containing skill value
-			function addSkillToList(skill_to_add)
+			function addSkillToList(skill_to_add,years)
 			{
+				alert(years);
 				$('#add_skill').after(function() 
 				{
 				  return'<br><label class=\'skillsLabel\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+'</label><input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
@@ -348,7 +349,7 @@
 			
 			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
 			<input type=\"text\" list=\"years_list\" id='years_input' class='skills' value='less then 1 year'>
-			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value);$(\"#skill_input\").val(\"\");'>
+			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value,document.getElementById(\"years_input\").value);$(\"#skill_input\").val(\"\");'>
 	
 			<datalist id ='years_list'>
 			<option value='less then 1 year'></option>
