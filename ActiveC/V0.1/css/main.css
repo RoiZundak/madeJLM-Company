@@ -194,6 +194,12 @@ label {
     background-image: linear-gradient(to bottom, #18AEDB, #a5defb);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#18AEDB, endColorstr=#a5defb);
 }
 
+#submitDiv{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+}
 
 input[type=submit]{
 
