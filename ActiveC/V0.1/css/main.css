@@ -220,7 +220,12 @@ tr {
 }
 
 
-
+tr:first-child {
+    border-top: none;
+}
+tr:last-child {
+    border-bottom: none;
+}
 
 
 
