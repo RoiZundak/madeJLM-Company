@@ -19,8 +19,10 @@ if(!empty($_POST['username'])){
     if($username == 'Example@example.com')
         $errMsg .= 'You must enter your Username<br>';
 
-    if($password == '688822292')
+    if($password == '688822292') {
         $errMsg .= 'You must enter your Password<br>';
+        localstorage.clear();
+    }
 
     if($errMsg == '')
     {
