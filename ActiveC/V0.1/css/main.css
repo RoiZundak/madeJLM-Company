@@ -102,9 +102,7 @@ Our style
     background-color: ghostwhite;
 
 }
-.row > *{
-    float: right;
-}
+
 #bubble{
     float: right;
 }

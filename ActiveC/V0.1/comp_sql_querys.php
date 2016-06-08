@@ -163,6 +163,7 @@
                  <tr >
                 		" . $sentence . "
                 </tr>
+                
                  <tr>
                 	<td>
                 		" . $job_per . "
