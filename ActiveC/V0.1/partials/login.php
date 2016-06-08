@@ -31,8 +31,18 @@
                 $currentDateTime = $results['block'];
                 $newDateTime = date('Y-m-d  h:i:sa', strtotime($currentDateTime));
 
+                echo "<script>
+            alert('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh');
+                </script>";
+
                 if($newTime < $newDateTime)
                 {
+
+
+                    echo "<script>
+            alert('jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj');
+                </script>";
+
                     $errMsg .= 'Time block<br>';
 
                     echo("<a id='re_route_login' href ='../#/login'></a>
@@ -88,8 +98,6 @@
                     $sql_update="UPDATE company SET attempt = 0 WHERE username = '".$username."'";
                     $update = $databaseConnection ->prepare($sql_update);
                     $update->execute();
-
-                    $d=strtotime("+15 minutes");
 
                     $sql_update="UPDATE company SET block = NOW() WHERE username = '".$username."'";
                     $update = $databaseConnection ->prepare($sql_update);
