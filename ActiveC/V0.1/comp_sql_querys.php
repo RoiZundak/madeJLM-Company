@@ -84,17 +84,19 @@
 								<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>			
 							</div>
 						</td>
-						<div style='font-family:Arial Black'> 
-							".$row['summary']."
-						</div>
-						
                     </td>   
                 </tr>
                 <tr>
                 	<td>
                 		".$all_skills."
-					 
 					</td>
+                </tr>
+                <tr>
+                	<td>
+                		<div style='font-family:Arial Black'> 
+							".$row['summary']."
+						</div>
+                	</td>
                 </tr>
                 
 			</table>
