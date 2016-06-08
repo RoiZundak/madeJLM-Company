@@ -139,8 +139,8 @@
                 <tr>
                 	<td>
                 		<!--<div style='font-family:Arial Black;width:100%;'> -->
-							<h3>Summary: </h3>".$row['summary']."
-							<h3>Experience: </h3>".$row['experience']."
+							<h4>Summary: </h4>".$row['summary']."
+							<h4>Experience: </h4>".$row['experience']."
 						</div>
                 	</td>
                 </tr>
