@@ -148,10 +148,6 @@
 				</tr>
 				<!--Second Line: Phone + Mail-->
 				<tr>
-						<td id='phone'>
-						". $phone_number ."
-						</td>
-						
 						<td id='mail'>>
 							". $phone_number ."
 							<div id='mailDiv'>
