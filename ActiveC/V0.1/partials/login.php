@@ -37,9 +37,7 @@
                 if($newTime < $results['block'])
                 {
                     $errMsg .= 'Time block<br>';
-                    $sql_update = "UPDATE company SET block = null WHERE username = '" . $username . "'";
-                    $update = $databaseConnection ->prepare($sql_update);
-                    $update->execute();
+                    
                     echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
                         alert('Your block time did not over yet.');
