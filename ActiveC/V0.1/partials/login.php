@@ -25,7 +25,7 @@
 
             if(count($results) > 0 && $results['block'] != null)
             {
-                $d=strtotime("+15 Minutes -4 hours");
+                $d=strtotime("+1 Minutes -4 hours");
                 $newTime =  date("Y-m-d h:i:sa", $d);
 
                 $currentDateTime = $results['block'];
