@@ -149,18 +149,16 @@
 				</tr>
 				<!--Second Line: Phone + Mail-->
 				<tr>
-					<div id='contact'>
-						<td>
-						
+						<td id='phone'>
+						". $phone_number ."
 						</td>
 						
-						<td >
-							". $phone_number ."
+						<td id='mail'>
+							
 							<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
 								Show Mail
 							</button>			
 						</td>	
-					 </div>  
                 </tr>
                  <tr width='100%'>
                 	<td>
