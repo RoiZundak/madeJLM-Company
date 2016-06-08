@@ -28,7 +28,7 @@
                echo" <script>
                     alert('ccchhhhhheeeeckkkkkk');
                 </script>";
-                $d=strtotime("+1 Minutes -4 hours");
+                $d=strtotime("+2 Minutes -4 hours");
                 $newTime =  date("Y-m-d h:i:sa", $d);
 
                 echo $newTime ;
