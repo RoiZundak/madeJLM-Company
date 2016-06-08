@@ -44,7 +44,7 @@
 			}
 			$cv_file="";
 			if($row['cv'] !=="")
-				$cv_file="<a href='".$row['cv']."' download='".$row['first_name'].$row['last_name']."'> <img title=\"Cv\" alt=\"Cv\" src=\"http://rambase.com/wp-content/uploads/2014/08/file-manager-logo.png\" width=\"35\" height=\"35\" /> </a>'";
+				$cv_file="<a href='".$row['cv']."' download='".$row['first_name'].$row['last_name']."'> <img title=\"Cv\" alt=\"Cv\" src=\"http://rambase.com/wp-content/uploads/2014/08/file-manager-logo.png\" width=\"35\" height=\"35\" /> </a>";
 
 		}
 			$sentence="";
