@@ -109,9 +109,11 @@
                     </td>
                     <td class ='line_td'>
                     	<h2>".$row['first_name']." ".$row['last_name']."</h2>
-                    	".$git_string."
-						".$link_string."
-						".$cv_file."
+                    	<td>
+                    		".$git_string."
+							".$link_string."
+							".$cv_file."
+						</td>
 						<td>
 							".$phone_number."
 						</td>
