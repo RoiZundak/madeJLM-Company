@@ -55,7 +55,8 @@ echo
         <script>
             var id="-1";
             $("#skill_std").hide();
-            document.addEventListener('click', function(e) {
+            document.addEventListener('click', function(e)
+            {
                     e = e || window.event;
                     var target = e.target || e.srcElement;
                     if (window.XMLHttpRequest) {
@@ -65,6 +66,8 @@ echo
                         // code for IE6, IE5
                         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
                     }
+
+                    console.log("the id is"+ target.id);
 
                     if (target.className !== "skills")
                     {
