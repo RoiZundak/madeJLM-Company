@@ -91,7 +91,7 @@
                     </td>   
                 </tr>
                 <tr>
-                	<td>
+                	<td class='line_td'>
                 		".$all_skills."
 					 
 					</td>
