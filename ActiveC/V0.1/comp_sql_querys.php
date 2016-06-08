@@ -284,23 +284,24 @@ if($func=="10"){
             array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
         }
     }
-
-
-    //  TODO : create an sql query, add all skills to it, and then print results(students)
-    /*
-     * "SELECT id FROM skills WHERE name IN (".implode(',',$skills_arr).") AND status = 1"
-    *
-     *SELECT * FROM student WHERE ID IN [ SELECT student_id FROM student_skills WHERE skill_id  IN [SELECT id FROM skills WHERE name IN [ pop from array ] AND status = 1] ]
-     */
+    if(count($skills_arr)==0){
+        exit;
+    }
     $skills_id=array();
     $sql = "SELECT id FROM skills WHERE name IN (".implode(',',$skills_arr).") AND status = 1";
     foreach ($databaseConnection->query($sql) as $row) {
         array_push($skills_id,'\''.$row[0].'\'');
     }
+    if(count($skills_id)==0){
+        exit;
+    }
     $sql = "SELECT student_id FROM student_skills WHERE skill_id  IN (".implode(',',$skills_id).")" ;
     $students_id =array();
     foreach ($databaseConnection->query($sql) as $row) {
         array_push($students_id,'\''.$row[0].'\'');
+    }
+    if(count($students_id)==0){
+        exit;
     }
     $sql = "SELECT * FROM student WHERE ID IN(".implode(',',$students_id).")" ;
     $img_src = "../img/profilepic.png";
