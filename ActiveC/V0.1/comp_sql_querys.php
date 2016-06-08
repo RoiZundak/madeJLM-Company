@@ -39,7 +39,7 @@
              *
              * <!--$row[\'Email\']-->
              */
-            $maito_string = "\"<a href =  mailto:".$row['Email']."  ></a>\"";
+            $maito_string = "\"<a href =  mailto:".$row['Email']."  >fdgdfhs</a>\"";
 			echo
 				"<table>
 					<tr >
