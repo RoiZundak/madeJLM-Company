@@ -60,17 +60,21 @@
 			}
 			$list_skills_bck = $list_skills;
 			$skills_name = "SELECT * FROM skills WHERE id IN (" . implode(',', $list_skills) . ")";
-			if (count($list_skills) > 0) {
+			$show_all_skills="";
+			if (count($list_skills) > 0)
+			{
+				$show_all_skills ="skill list:";
 				$len = count($list_skills_bck);
 				foreach ($databaseConnection->query($skills_name) as $skill) {
 					for ($i = 0; $i < $len; $i++) {
 						if ($skill['id'] === $list_skills_bck[$i]) {
-							$all_skills .= "<span class='skill_item'> " . $skill['name'] . " for " . $list_skills_years[$i] . "</span>";
+							$all_skills .= "<span class='skill_item'> " . $skill['name'] . " for " .$list_skills_years[$i]. " years.</span>";
 						}
 					}
 
 				}
 			}
+			$show_all_skills.=" ".$all_skills;
 			$college_name = "";
 			foreach ($databaseConnection->query($sql_college) as $college) {
 				$college_name = $college['name'];
@@ -157,7 +161,7 @@
                 </tr>
                 <tr>
                 	<td>
-                		" . $all_skills . "
+                		".$show_all_skills."
 					</td>
                 </tr>
                 <tr>
@@ -359,7 +363,7 @@
 				<option value='3'>3 years</option>
 				<option value='3+'>more then 3 years</option>
 			</select>
-			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value,document.getElementById(\"years_input\").innerHTML);$(\"#skill_input\").val(\"\");'>
+			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value,$(\"#years_input option:selected\").text());$(\"#skill_input\").val(\"\");'>
 
 			
 			
@@ -380,12 +384,24 @@
 
 	if($func=="10")
 	{
-		$skills_arr=array();
+        $skills_arr=array();
+        $time_arr=array();
 		foreach($_GET as $key => $value)
 		{
-			if (strstr($key, 'skill_'))
-				array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
+			if (strstr($key, 'skill_')){
+                if(strstr($value,',')){
+                    $skill = substr($value,0,strpos($value,','));
+                    $time = substr($value,strpos($value,',')+2);
+                    echo "skill :  ".$skill." time : ".$time."<br>";
+                }else{
+                    array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
+                    array_push($time_arr,'\''.$value.'\'');
+                }
+
+            }
+
 		}
+        exit;
 		if(count($skills_arr)==0) //no skills were selected
 			exit;
 		$skills_id=array();
