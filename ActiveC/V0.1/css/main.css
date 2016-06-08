@@ -47,6 +47,7 @@ Our style
     color: white;
 }
 #show_stud {
+    background-color: #33FF33;
     float:right;
     opacity: 0.7;
     border-left-style: outset;
@@ -100,8 +101,6 @@ Our style
     margin-left: 8%;
     background-color: ghostwhite;
 
-
-
 }
 .row > *{
     float: right;
@@ -111,6 +110,7 @@ Our style
 }
 #contact{
     margin-top: 5px;
+    float: right;
 }
 
 .line_td{
