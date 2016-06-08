@@ -107,9 +107,7 @@ Our style
 	border-bottom-color : grey;
 	border-bottom-width : 1px;
 	border-bottom-style : solid;
-	
-	
-	
+	width: 100%;
 }
 .head{
 	display:inline-block;
