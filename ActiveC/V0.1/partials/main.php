@@ -56,7 +56,7 @@
                      else // code for IE6, IE5
                         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 
-                    console.log("the id is "+ target.className);
+                    console.log("the id is "+ target.className.split(" ")[0]);
 
                     if (target.className !== "skills")
                         $("#skill_std").hide();
