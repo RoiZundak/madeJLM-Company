@@ -330,6 +330,7 @@
 			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
 			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value);$(\"#skill_input\").val(\"\");'>
 			</div>
+			<br>
 			<div id = \"tableDiv\">
 			<datalist id=\"skills_list\">";
 			foreach ($databaseConnection->query($sql) as $row)
