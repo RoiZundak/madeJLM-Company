@@ -127,7 +127,7 @@
 			$phone_number="";
 			if($row['phone_number'] !=="0")
 			{
-				$phone_number="<i class='fa fa-phone'></i> <abbr title='Phone'></abbr>: 0" . $row['phone_number'];
+				$phone_number="<i class=\'fa fa-phone\'></i> <abbr title=\'Phone\'></abbr>: 0" . $row['phone_number'];
 			}
 
 			echo "
