@@ -163,31 +163,34 @@
 		}
 
 	}
+
 	//DELETE company (by id)
-	if($func=="6"){
+	if($func=="6")
+	{
 		$row_number =$_POST["row_id"] ;
 
 		//PDO STYLE :
 		$records = $databaseConnection->prepare('DELETE FROM company WHERE id= :row_id');
 		$records->bindParam(':row_id', $row_number);
-		if ( $records->execute()==true){
+		if ( $records->execute()==true)
 			echo "Great! Company #".$row_number." was DELETED from the db ";
-		}else{
+		else
 			echo "Failed to DELETE company, please make sure you have the correct ID.";
-		}
-
 	}
+
 	//echo ALL companies
-	if($func=="7"){
+	if($func=="7")
+	{
 		echo"<table style=\"width:100%\">
-			  <tr>
+			<tr>
 			  	<td>id</td>
 			  	<td>Comp. Name</td>
 			  	<td>e-Mail</td>
-			  </tr>";
+			</tr>";
 		$sql = "SELECT * FROM company";
 		//PDO STYLE :
-		foreach ($databaseConnection->query($sql) as $row) {
+		foreach ($databaseConnection->query($sql) as $row)
+		{
 			echo "<tr> ";
 				echo "<td>".$row['id']."</td>";
 				echo "<td>".$row['username']."</td>";
@@ -195,9 +198,8 @@
 			echo "</tr>";
 		}
 		echo"</table>";
-
-
 	}
+
     //Update password
     if($func=="8")
 	{
