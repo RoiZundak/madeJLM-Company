@@ -105,6 +105,15 @@
 			if($row['current_work']!=="")
 				$curr_job=$row['first_name']." is currently working at ".$row['current_work'].".";
 
+
+			$summary="";
+			if($row['summary']!=="")
+				$summary="Summary: ".$row['summary'];
+
+			$exprience="";
+			if($row['experience']!=="")
+				$summary="Experience: ".$row['experience'];
+
 			echo "
 			<table>
 			    <tr>
@@ -149,8 +158,8 @@
                 <tr>
                 	<td>
                 		<!--<div style='font-family:Arial Black;width:100%;'> -->
-							<h4>Summary: </h4>".$row['summary']."
-							<h4>Experience: </h4>".$row['experience']."
+							<h4> ".$summary." </h4>
+							<h4> ".$exprience." </h4>
 						</div>
                 	</td>
                 </tr>
