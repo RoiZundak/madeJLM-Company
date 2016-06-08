@@ -149,13 +149,10 @@
 				
 				<!--Second Line: Phone + Mail--><hr>
 				<tr>
-						<td >
-						<div id='phoneDiv'>
+						<td id='phoneDiv'>
 						    <button id = 'std_phone_" . $row['ID'] . "' class='filters' onclick='$(\"#phoneDiv\").html(\"" . $phone_number . "\");' >
 								Show Phone
 							</button>
-						    
-						</div>
 						</td>
 						
 						<td id='mailDiv'>
