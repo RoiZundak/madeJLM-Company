@@ -27,9 +27,7 @@
             {
                 $d=strtotime("+1 Minutes -4 hours");
                 $newTime =  date("Y-m-d h:i:sa", $d);
-
-                echo $newTime ;
-
+                
                 $currentDateTime = $results['block'];
                 $newDateTime = date('Y-m-d  h:i:sa', strtotime($currentDateTime));
 
@@ -74,10 +72,6 @@
                     ");
                 exit;
             }
-
-           // $q = "SELECT attempts, (CASE when block is not NULL and DATE_ADD(LastLogin, INTERVAL ".TIME_PERIOD.
-              //  " MINUTE)>NOW() then 1 else 0 end) as Denied FROM ".TBL_ATTEMPTS." WHERE ip = '$value'";
-
 
             else if(count($results) > 0 && $password !== $results['password'])
             {
