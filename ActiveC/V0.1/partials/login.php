@@ -18,7 +18,7 @@
 
         if($errMsg == '')
         {
-            $records = $databaseConnection->prepare('SELECT id,username,password FROM  company WHERE username = :username');
+            $records = $databaseConnection->prepare('SELECT * FROM  company WHERE username = :username');
             $records->bindParam(':username', $username);
             $records->execute();
             $results = $records->fetch(PDO::FETCH_ASSOC);
