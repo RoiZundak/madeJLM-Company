@@ -31,11 +31,15 @@
                 $d=strtotime("+2 Minutes -4 hours");
                 $newTime =  date("Y-m-d h:i:sa", $d);
 
-                echo $newTime;
-                echo $results['block'];
+                echo $newTime ;
+
+                $currentDateTime = $results['block'];
+                $newDateTime = date('h:i A', strtotime($currentDateTime));
+
+                echo $newDateTime;
 
 
-                if($newTime < $results['block'])
+                if($newTime < $newDateTime)
                 {
                     $errMsg .= 'Time block<br>';
 
