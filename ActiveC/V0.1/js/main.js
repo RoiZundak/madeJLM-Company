@@ -22,7 +22,6 @@ app.config(['$routeProvider', function ($routeProvider) {
 	  //.when("/services", {templateUrl: "partials/services.html", controller: "PageCtrl"})
       .when("/contact", {templateUrl: "partials/contact.php", controller: "PageCtrl"})
 	  .when("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"})
-      // Blog
       .when("/signout", {templateUrl: "partials/signout.php", controller: "PageCtrl"})
       //.when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
       .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
