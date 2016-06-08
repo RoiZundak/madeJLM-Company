@@ -18,7 +18,8 @@
 		//PDO STYLE :
 		$sql="SELECT * FROM student WHERE ID = '".$q."' LIMIT 1";
 		$img_src = "../img/profilepic.png";
-		foreach ($databaseConnection->query($sql) as $row) {
+		foreach ($databaseConnection->query($sql) as $row) 
+		{
 			$img_src ="";
 			if(  $row['profile']=="" ){
 				$img_src = "./img/profilepic.png";
@@ -73,8 +74,6 @@
 					echo "</tr>";
 					echo "</table>";
 				}
-
-
 	}
 	//filter Git
 
