@@ -98,7 +98,7 @@
 					$job_per .= "a freelancer job.";
 					break;
 				default:
-					$job_per = $row['first_name'] . "hasn't entered a preference for job percent ";
+					$job_per = $row['first_name'] . " hasn't entered a preference for job percent ";
 			}
 
 			$curr_job="";
