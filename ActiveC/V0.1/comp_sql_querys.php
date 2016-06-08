@@ -47,8 +47,8 @@
 			$sentence="";
 			$sql_degree="SELECT name FROM degree WHERE id =".$row['degree_id'];
 			$sql_college="SELECT name FROM college WHERE id =".$row['college_id'];;
-			$college_name = $databaseConnection->query($sql_college);
-			$degree_name = $databaseConnection->query($sql_degree);
+			//$college_name = $databaseConnection->query($sql_college);
+			//$degree_name = $databaseConnection->query($sql_degree);
 			$sql_skills = "SELECT skill_id FROM student_skills WHERE student_id = ".$row['ID'];
 			$all_skills = "";
 			$list_skills=array();
@@ -59,12 +59,28 @@
 				array_push($list_skills,$skill['skill_id']);
 			}
 			$skills_name ="SELECT name FROM skills WHERE id IN (".implode(',',$list_skills).")";
-			print_r($skills_name);
-			foreach ($databaseConnection->query($skills_name) as $skill)
+			if (count($list_skills)>0)
 			{
-				$all_skills+="<span class='skill_item'> ".$skill['name']."</span>";
+				foreach ($databaseConnection->query($skills_name) as $skill)
+				{
+					$all_skills.="<span class='skill_item'> ".$skill['name']."</span>";
+				}
+
+			}
+			$college_name="";
+			foreach ($databaseConnection->query($sql_college) as $college)
+			{
+				$college_name=$college['name'];
+			}
+			$degree_name="";
+			foreach ($databaseConnection->query($sql_degree) as $degree)
+			{
+				$degree_name=$degree['name'];
 			}
 
+
+			print_r($degree_name);
+			print_r($college_name);
 			echo "
 			<table>
 			    <tr>
@@ -81,14 +97,19 @@
 								<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>			
 							</div>
 						</td>
-						
                     </td>   
                 </tr>
                 <tr>
                 	<td>
                 		".$all_skills."
-					 
 					</td>
+                </tr>
+                <tr>
+                	<td>
+                		<div style='font-family:Arial Black;width:100%;'> 
+							".$row['summary']."
+						</div>
+                	</td>
                 </tr>
                 
 			</table>
