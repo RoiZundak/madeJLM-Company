@@ -12,11 +12,11 @@
 		
 		$sql_update="UPDATE student SET counter_view = counter_view + 1 WHERE ID = '".$q."'";
 		$update = $databaseConnection ->prepare($sql_update);
-
+		$update->execute();
 		//UPDATE student SET counter_contact = counter_contact + 1;
 
 		//PDO STYLE :
-		$sql="SELECT * FROM student WHERE ID = '".$q."'";
+		$sql="SELECT * FROM student WHERE ID = '".$q."' LIMIT 1";
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row) {
 			$img_src ="";
@@ -25,20 +25,7 @@
 			}else{
 				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
 			}
-            /*
-             *
-             * <script>
-								     function myFunc(email)
-								    	{
-											$('#mailDiv').html(email);
-											xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q.' "&func="11", true);
-											xmlhttp.send();
-								    	}
 
-								</script>
-             *
-             * <!--$row[\'Email\']-->
-             */
             $maito_string = "\"<a href =  mailto:".$row['Email']."  >".$row['Email']."</a>\"";
 			echo
 				"<table>
@@ -51,12 +38,8 @@
 							<p>
 								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2><br >    
 							<div id='mailDiv'>
-								
-								
-								<button id = 'std_mail_b' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>
-								<!--<button class=\"filters\"  id = \"but\" onclick=\"myFunc('hhhhh');\"> Show Me Mail! </button>-->
-					
-								
+								<button id = 'std_mail_".$row['id']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>
+								<!--<button class=\"filters\"  id = \"but\" onclick=\"myFunc('hhhhh');\"> Show Me Mail! </button>-->			
 							</div>
 						   </p>
 						</td>
@@ -332,9 +315,10 @@ if($func=="10"){
 
 if($func=="11")
 {
-	$q = intval($_GET['q']);
+	$q = intval($_GET['q']); //student id
 	$sql_update="UPDATE student SET counter_contact = counter_contact + 1 WHERE ID = '".$q."'";
 	$update = $databaseConnection ->prepare($sql_update);
+	$update->execute();
 }
 
 

@@ -83,7 +83,8 @@ echo
                         xmlhttp.send();
                     }
 
-                    if(target.className =="head" || target.className =="head_image"){
+                    if(target.className =="head" || target.className =="head_image")
+                    {
                         console.log("this is the id : "+target.id);
                         //noinspection JSUnresolvedFunction
 
@@ -100,7 +101,8 @@ echo
                         $("#show_stud").show("slow", function() {
                             // Animation complete.
                         });
-                    } else {
+                    } else 
+                    {
 
                         if(target.id =="std_info"){
                             $("#show_stud").hide("slow", function() {
@@ -110,7 +112,8 @@ echo
 
                     }
 
-                    if(target.id == "has_linkedin" ){
+                    if(target.id == "has_linkedin" )
+                    {
 
                         xmlhttp.onreadystatechange = function() {
                             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -120,7 +123,8 @@ echo
                         xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"3",true);
                         xmlhttp.send();
                     }
-                    if(target.id == "clr_filter" ) {
+                    if(target.id == "clr_filter" ) 
+                    {
 
                         xmlhttp.onreadystatechange = function () {
                             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -130,8 +134,9 @@ echo
                         xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "4", true);
                         xmlhttp.send();
                     }
-                    if(target.id == "std_mail_b" )
+                    if(target.id.indexOf("std_mail_") !== -1 )
                     {
+                        id =target.id.substring(target.id.lastIndexOf("_")+1,target.id.length); //student id
                         xmlhttp.onreadystatechange = function () {
                             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                                 document.getElementById("show_all").innerHTML = xmlhttp.responseText;
