@@ -124,6 +124,12 @@
 				$exprience = $row['experience'];
 			}
 
+			$phone_number="";
+			if($row['phone_number'] !=="")
+			{
+				$phone_number="<p><i class=\"fa fa-phone\"></i> <abbr title=\"Phone\"></abbr>: 0" . $row['phone_number'] . "</p>";
+			}
+
 			echo "
 			<table>
 			    <tr>
@@ -136,7 +142,7 @@
 						" . $link_string . "
 						" . $cv_file . "
 						<td>
-							<p><i class=\"fa fa-phone\"></i> <abbr title=\"Phone\"></abbr>: 0" . $phone_number . "</p>
+							". $phone_number ."
 						</td>
 						<td>
 							<div id='mailDiv'>
