@@ -28,9 +28,8 @@
                echo" <script>
                     alert('ccchhhhhheeeeckkkkkk');
                 </script>";
-                $now = date("H:i:s", time());
-                echo $newTime;
-                $newTime = strtotime("$now -15 minutes");
+                $d=strtotime("+15 minutes");
+                $newTime =  date("Y-m-d h:i:sa", $d);
 
                 echo $newTime;
 
