@@ -127,7 +127,8 @@
 			$phone_number="";
 			if($row['phone_number'] !=="0")
 			{
-				$phone_number="<a href='callto:0" . $row['phone_number']."'>Call with skype</a> or call ".$row['phone_number'];
+                $phone_number= "\"<a href =  callto:" . $row['phone_number'] . "  >" . $row['phone_number'] . "</a>\"";
+				//$phone_number="<a href=\"callto:0" . $row['phone_number']."'>Call with skype</a> or call ".$row['phone_number'];
 			}
 //<i class="fa fa-phone"></i> <abbr title="Phone"></abbr>:
 			echo "
