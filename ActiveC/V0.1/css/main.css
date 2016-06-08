@@ -107,6 +107,9 @@ Our style
 .row > *{
     float: right;
 }
+#bubble{
+    float: right;
+}
 .line_td{
 	border-bottom-color : grey;
 	border-bottom-width : 1px;

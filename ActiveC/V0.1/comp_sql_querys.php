@@ -135,9 +135,11 @@
 			    <tr>
 			        <td  width=\"100%\">
 			            <img class='head_image' src =" . $img_src . " width ='120px' height='110px'>
+			            <div id='bubble'>
 			            " . $git_string . "
 						" . $link_string . "
 						" . $cv_file . "
+						</div>
 			            <h2>" . $row['first_name'] . " " . $row['last_name'] . "</h2>
 			            
                     </td>  
