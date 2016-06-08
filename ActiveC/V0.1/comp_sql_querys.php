@@ -356,8 +356,12 @@
 				var str = $(\"#form_skills\").serialize();
 				xmlhttp.onreadystatechange = function() 
 				{
-					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-						document.getElementById(\"show_all\").innerHTML = xmlhttp.responseText;
+					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					    if(xmlhttp.responseText!=''){
+                                document.getElementById(\"show_all\").innerHTML = xmlhttp.responseText;
+                        }
+					}
+						
 				};
 				xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
 				xmlhttp.send();
@@ -403,7 +407,8 @@
 		foreach($_GET as $key => $value)
 		{
 			if (strstr($key, 'skill_')){
-                if(strstr($value,',')){
+
+               /* if(strstr($value,',')){
 
                     $skill = substr($value,0,strpos($value,','));//eg. 'javascript'
                     $time = substr($value,strpos($value,',')+2); //eg. '3 years'
@@ -427,13 +432,16 @@
                 }else{
                     array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
                     array_push($time_arr,'0');
-                }
+                }*/
 
             }
 
 		}
 		if(count($skills_arr)==0) //no skills were selected
-			exit;
+        {
+            exit;
+        }
+
 		$skills_id=array();
 		$sql = "SELECT id FROM skills WHERE name IN (".implode(',',$skills_arr).") AND status = 1";
 		foreach ($databaseConnection->query($sql) as $row)
@@ -448,7 +456,10 @@
 			array_push($students_id,'\''.$row[0].'\'');
 
 		if(count($students_id)==0) //noBody has that skill !
-			exit;
+        {
+            echo 'No results were found, please try again with different filters';
+            exit;
+        }
 
 		$sql = "SELECT * FROM student WHERE ID IN(".implode(',',$students_id).")" ;
 		$img_src = "../img/profilepic.png";
@@ -466,7 +477,7 @@
 			echo "</div>";
 		}
 	}
-
+    //increment student contact stats
 	if($func=="11")
 	{
 		$q = intval($_GET['q']); //student id
@@ -474,6 +485,7 @@
 		$update = $databaseConnection ->prepare($sql_update);
 		$update->execute();
 	}
+    //reset company password
     if($func=="12")
     {
         $row_id =$_POST['row_id_reset'] ;
