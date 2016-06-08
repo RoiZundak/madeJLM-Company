@@ -2,7 +2,8 @@
 <div id ="login_container">
     <script>
         sessionStorage.removeItem('username');
-        $(function() {
+        $(function()
+        {
             if (localStorage.chkbx && localStorage.chkbx != '')
             {
                 $('#remember_me').attr('checked', 'checked');
@@ -16,21 +17,21 @@
                 $('#password').val('688822292');
             }
 
-            $('#remember_me').click(function() {
-
-                if ($('#remember_me').is(':checked')) {
+            $('#remember_me').click(function()
+            {
+                if ($('#remember_me').is(':checked'))
+                {
                     // save username and password
                     localStorage.usrname = $('#login').val();
                     localStorage.password = $('#password').val();
                     localStorage.chkbx = $('#remember_me').val();
-                } else {
+                } else
+                {
                     localStorage.usrname = 'Example@example.com';
                     localStorage.password = '688822292';
                     localStorage.chkbx = '';
                 }
-
             });
-
         });
 
         function checkLS()
@@ -73,6 +74,5 @@
 
         </form>
     </div>
-
 </div>
 
