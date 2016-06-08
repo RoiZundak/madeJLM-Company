@@ -42,6 +42,9 @@
 								</a>
  							</td>";
 			}
+			$cv_file="";
+			if($row['cv'] !=="")
+				$cv_file="<a href='".$row['cv']."' download='".$row['first_name'].$row['last_name']."'> <img title=\"Cv\" alt=\"Cv\" src=\"http://rambase.com/wp-content/uploads/2014/08/file-manager-logo.png\" width=\"35\" height=\"35\" /> </a>";
 
 		}
 			$sentence="";
@@ -98,7 +101,6 @@
 			if($row['current_work']!=="")
 				$curr_job=$row['first_name']." is currently working at ".$row['current_work'].".";
 
-			$cv_file="<a href='".$row['cv']."' download='".$row['first_name'].$row['last_name']."'> Download CV </a>'";
 			echo "
 			<table>
 			    <tr>
