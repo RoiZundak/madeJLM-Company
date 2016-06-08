@@ -39,7 +39,7 @@
              *
              * <!--$row[\'Email\']-->
              */
-            $maito_string = "\"<a href = \"mailto:".$row['Email']."?subject=Hello! ". $row['first_name'] ."  >".$row['Email']."</a>\"";
+            $maito_string = "\"<a href = \'mailto:".$row['Email']."?subject=Hello! ". $row['first_name'] ." \' >".$row['Email']."</a>\"";
 			echo
 				"<table>
 					<tr >
@@ -53,7 +53,7 @@
 							<div id='mailDiv'>
 								
 								
-								<button class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Me Mail! </button>
+								<button class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>
 								<!--<button class=\"filters\"  id = \"but\" onclick=\"myFunc('hhhhh');\"> Show Me Mail! </button>-->
 					
 								
