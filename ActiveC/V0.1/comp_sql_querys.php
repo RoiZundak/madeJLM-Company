@@ -384,15 +384,24 @@
 
 	if($func=="10")
 	{
-		$skills_arr=array();
+        $skills_arr=array();
+        $time_arr=array();
 		foreach($_GET as $key => $value)
 		{
 			if (strstr($key, 'skill_')){
-                array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
-                echo $value;
+                if(strstr($value,',')){
+                    $skill = substr($value,0,strpos($value,','));
+                    $time = substr($value,strpos($value,',')+2);
+                    echo "skill :  ".$skill." time : ".$time."<br>";
+                }else{
+                    array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
+                    array_push($time_arr,'\''.$value.'\'');
+                }
+
             }
 
 		}
+        exit;
 		if(count($skills_arr)==0) //no skills were selected
 			exit;
 		$skills_id=array();
