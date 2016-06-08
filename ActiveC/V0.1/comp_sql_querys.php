@@ -159,33 +159,39 @@
 							</button>			
 						</td>	
                 </tr>
+                
                 	<!--Third Line: Sentence-->
                  <tr >
                 	<td>
                 		" . $sentence . "
 					</td>
                 </tr>
+                
+                <!--Four Line: JobPer + CurrJob-->
                  <tr>
                 	<td>
                 		" . $job_per . "
 					</td>
-                </tr>
-                <tr>
+
                 	<td>
                 		" . $curr_job . "
 					</td>
                 </tr>
+                
+                <!--Fifth Line: All Skills + ShowAll-->
                 <tr>
                 	<td>
                 		<h4><b>".$show_all_skills."</b></h4> ".$all_skills."
 					</td>
                 </tr>
+                <!--Six Line: Sum + Experince-->
                 <tr>
                 	<td>
-                		<!--<div style='font-family:Arial Black;width:100%;'> -->
-							<h4><b>" . $sum . "</h4></b>" . $summary . " 
+							<h4><b>" . $sum . "</h4></b>" . $summary . "
+					</td>
+					
+					<td>
 							<h4><b>" . $exp . "</h4></b>" . $exprience . " 
-						<!--</div>-->
                 	</td>
                 </tr>
                 
