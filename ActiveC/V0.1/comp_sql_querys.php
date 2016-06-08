@@ -124,26 +124,36 @@
 				$exprience = $row['experience'];
 			}
 
+			$phone_number="";
+			if($row['phone_number'] !=="0")
+			{
+				$phone_number="<p><i class=\"fa fa-phone\"></i> <abbr title=\"Phone\"></abbr>: 0" . $row['phone_number'] . "</p>";
+			}
+
 			echo "
 			<table>
 			    <tr>
-			        <td>
+			        <td  width=\"100%\">
 			            <img class='head_image' src =" . $img_src . " width ='120px' height='110px'>
-                    </td>
-                    <td class ='line_td'>
-                    	<h2>" . $row['first_name'] . " " . $row['last_name'] . "</h2>
-                    	" . $git_string . "
+			            <h2>" . $row['first_name'] . " " . $row['last_name'] . "</h2>
+			            " . $git_string . "
 						" . $link_string . "
 						" . $cv_file . "
-						<td>
-							<p><i class=\"fa fa-phone\"></i> <abbr title=\"Phone\"></abbr>: 0" . $phone_number . "</p>
-						</td>
-						<td>
+                    </td>
+                    
+                    
+				</tr>
+				
+				<tr>
+					<td>
+							". $phone_number ."
+					</td>
+					
+					<td>	
 							<div id='mailDiv'>
 								<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >Show Mail </button>			
 							</div>
-						</td>
-                    </td>   
+					</td>	   
                 </tr>
                  <tr>
                 	<td>
