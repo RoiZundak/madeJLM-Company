@@ -121,9 +121,7 @@ Our style
     margin-right: 20px;
 }
 
-tr.border_bottom td {
-    margin-bottom: 5px;
-}
+
 .head{
 	display:inline-block;
 	width:140px;
@@ -474,10 +472,7 @@ table {
 	font-size:1.1em;
 }
 
-table, td, th {
-    border: 1px solid white;
 
-}
 
 td {text-align: left;
 }
