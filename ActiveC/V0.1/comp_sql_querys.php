@@ -135,7 +135,7 @@
 			}
 //<i class="fa fa-phone"></i> <abbr title="Phone"></abbr>:
 			echo "
-			<table border=1 frame=void rules=rows id = 'MyTable'>
+			<table id = 'MyTable' border=1 frame=void rules=rows >
 				<!--First Line: Picture+ Bubbles -->
 			    <tr>
 			    
