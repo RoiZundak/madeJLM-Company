@@ -187,8 +187,9 @@
                 		<h4><b>".$show_all_skills."</b></h4> ".$all_skills."
 					</td>
                 </tr>
-                <!--Six Line: Sum + Experince--><hr>
+                <!--Six Line: Sum + Experince-->
                 <tr>
+                <hr>
                 	<td>
 							<h4><b>" . $sum . "</h4></b>" . $summary . "
 					</td>
