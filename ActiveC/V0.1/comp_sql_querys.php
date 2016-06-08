@@ -127,7 +127,7 @@
 			$phone_number="";
 			if($row['phone_number'] !=="0")
 			{
-				$phone_number="<p><i class=\"fa fa-phone\"></i> <abbr title=\"Phone\"></abbr>: 0" . $row['phone_number'] . "</p>";
+				$phone_number="<i class=\"fa fa-phone\"></i> <abbr title=\"Phone\"></abbr>: 0" . $row['phone_number'];
 			}
 
 			echo "
@@ -139,9 +139,8 @@
 			        
 			            <img class='head_image' src =" . $img_src . " width ='120px' height='110px'>
 			            
-			            <div id='bubble'>
      			        	<h2 >" . $row['first_name'] . " " . $row['last_name'] . "</h2>
-
+						<div id='bubble'>
 				            " . $git_string . "  " . $link_string . "   " . $cv_file . "
 						</div>
                     </td>
@@ -149,26 +148,20 @@
 				</tr>
 				<!--Second Line: Phone + Mail-->
 				<tr>
-					<div id='contact'>
-						<td>
-						
+						<td id='phone'>
+						". $phone_number ."
 						</td>
 						
-						<td <td id='mail'>>
-							". $phone_number ."
-							<div id='mailDiv'>
-                                <button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
-                                    Show Mail
-                                </button>	
-						    </div>
+						<td id='mail'>
+							
+							<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
+								Show Mail
+							</button>			
 						</td>	
-					 </div>  
                 </tr>
                 	<!--Third Line: Sentence-->
-                 <tr width='100%'>
-                	<td>
+                 <tr >
                 		" . $sentence . "
-					</td>
                 </tr>
                  <tr>
                 	<td>
