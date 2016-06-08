@@ -196,6 +196,7 @@ label {
 
 input[type=submit]{
     background-color: #3b5998;
+    margin-top: 150px;
     width:70%;
     margin-left: 5px;
     height: 20px;
