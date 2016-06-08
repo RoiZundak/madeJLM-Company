@@ -125,14 +125,13 @@
 			}
 
 			$phone_number="";
-            $phone_button1="";
-            $phone_button2="";
+            $phone_button="";
 			if($row['phone_number'] !=="0")
 			{
                 $phone_number= "\"<a href =  callto://+972" . $row['phone_number'] . "  >0" . $row['phone_number'] . "</a>\"";
-                $phone_button1="<button id = 'std_phone_" . $row['ID'] . "' class='filters' onclick='$(\"#phoneDiv\").html(" . $phone_number . ");' >
-								Show Phone";
-                $phone_button2="</button>";
+                $phone_button="<button id = 'std_phone_" . $row['ID'] . "' class='filters' onclick='$(\"#phoneDiv\").html(" . $phone_number . ");' >
+								Show Phone
+								</button>";
 			}
 //<i class="fa fa-phone"></i> <abbr title="Phone"></abbr>:
 			echo "
@@ -155,8 +154,7 @@
 				<!--Second Line: Phone + Mail-->
 				<tr class=\"border_bottom\">
 						<td id='phoneDiv'>
-						    ".$phone_button1."
-							".$phone_button2."	
+						    ".$phone_button."
 						</td>
 						<td id='mailDiv'>
 							<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
