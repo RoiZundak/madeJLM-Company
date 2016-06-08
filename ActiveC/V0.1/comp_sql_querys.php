@@ -158,8 +158,8 @@
                 <tr>
                 	<td>
                 		<!--<div style='font-family:Arial Black;width:100%;'> -->
-							<h4> ".$summary." </h4>
-							<h4> ".$exprience." </h4>
+							".$summary." </h4>
+							".$exprience." </h4>
 						</div>
                 	</td>
                 </tr>
