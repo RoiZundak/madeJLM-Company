@@ -110,7 +110,8 @@ Our style
 }
 #phone{
     margin-top: 10px;
-    margin-right: 10px;
+    margin-right: 20px;
+    padding-right: 10px;
     text-align: right;
 }
 #mail{
