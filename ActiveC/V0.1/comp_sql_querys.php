@@ -136,20 +136,28 @@
 			        <td>
 			            <img class='head_image' src =" . $img_src . " width ='120px' height='110px'>
                     </td>
+                    
                     <td >
                     	<h2>" . $row['first_name'] . " " . $row['last_name'] . "</h2>
+                    </td>
+                    
+                    <td>
                     	" . $git_string . "
 						" . $link_string . "
 						" . $cv_file . "
-						<td>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
 							". $phone_number ."
-						</td>
-						<td>
+					</td>
+					
+					<td>	
 							<div id='mailDiv'>
 								<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >Show Mail </button>			
 							</div>
-						</td>
-                    </td>   
+					</td>	   
                 </tr>
                  <tr>
                 	<td>
