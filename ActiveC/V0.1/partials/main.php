@@ -130,7 +130,16 @@ echo
                         xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "4", true);
                         xmlhttp.send();
                     }
-                //std_mail_b
+                    if(target.id == "std_mail_b" )
+                    {
+                        xmlhttp.onreadystatechange = function () {
+                            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                                document.getElementById("show_all").innerHTML = xmlhttp.responseText;
+                            }
+                        };
+                        xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "11", true);
+                        xmlhttp.send();
+                    }
                 }
                 , false);
         </script>
