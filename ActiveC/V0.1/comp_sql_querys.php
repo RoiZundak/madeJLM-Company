@@ -109,7 +109,7 @@
                     </td>
                     <td class ='line_td'>
                     	<h2>".$row['first_name']." ".$row['last_name']."</h2>
-                    	<td>
+                    	<td class ='line_td'>
                     		".$git_string."
 							".$link_string."
 							".$cv_file."
