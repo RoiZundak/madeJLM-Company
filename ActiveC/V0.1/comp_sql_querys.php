@@ -151,7 +151,7 @@
 				<!--Second Line: Phone + Mail-->
 				<tr class=\"border_bottom\">
 						<td id='phoneDiv'>
-						    <button id = 'std_phone_" . $row['ID'] . "' class='filters' onclick='$(\"#phoneDiv\").html(\"" . $phone_number . "\");' >
+						    <button id = 'std_phone_" . $row['ID'] . "' class='filters' onclick='$(\"#phoneDiv\").html(" . $phone_number . ");' >
 								Show Phone
 							</button>
 						</td>
