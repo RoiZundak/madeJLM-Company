@@ -300,7 +300,7 @@
 			{
 				$('#add_skill').after(function() 
 				{
-				  return'<label class=\'skills\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+'</label> <br> <input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
+				  return'<br><label class=\'skills\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+'</label> <br> <input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
 				});
 			}
 			
@@ -326,7 +326,7 @@
 			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
 			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value);$(\"#skill_input\").val(\"\");'>
 			</div>
-			<br>
+			
 			<div id = \"tableDiv\">
 			<datalist id=\"skills_list\">";
 			foreach ($databaseConnection->query($sql) as $row)
