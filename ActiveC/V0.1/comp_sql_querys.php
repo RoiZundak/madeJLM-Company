@@ -140,6 +140,10 @@
 			            <img class='head_image' src =" . $img_src . " width ='120px' height='110px'>
 			            
      			        	<h2 >" . $row['first_name'] . " " . $row['last_name'] . "</h2>
+     			        	
+     			        <td id='phone'>
+							". $phone_number ."
+						</td>
 						<div id='bubble'>
 				            " . $git_string . "  " . $link_string . "   " . $cv_file . "
 						</div>
@@ -148,9 +152,7 @@
 				</tr>
 				<!--Second Line: Phone + Mail-->
 				<tr>
-						<td id='phone'>
-						". $phone_number ."
-						</td>
+						
 						
 						<td id='mail'>
 							
