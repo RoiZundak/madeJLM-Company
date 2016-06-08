@@ -16,7 +16,7 @@
         <div class="filters" id="skills"> Skills </div>
         <div class="filters" id="has_linkedin"> Has Linkedin </div>
         <div class='filters' id="clr_filter"> Clear Filter's</div>
-        <div id = "skill_std" class='speech' class='skills'> </div>
+        <div id = "skill_std" class='skills speech'> </div>
 
     </div>
 
@@ -56,7 +56,7 @@
                      else // code for IE6, IE5
                         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 
-                    console.log("the id is "+ target.className);
+                    console.log("the id is "+ target.className.split(" ")[0]);
 
                     if (target.className !== "skills")
                         $("#skill_std").hide();
