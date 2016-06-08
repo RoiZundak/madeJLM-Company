@@ -44,6 +44,18 @@
 			}
 
 		}
+			$sentence="";
+			$sql_degree="SELECT name FROM degree WHRER id =".$row['degree_id'];
+			$sql_college="SELECT name FROM college WHRER id =".$row['college_id'];;
+			$college_name = $databaseConnection->query($sql_college);
+			$degree_name = $databaseConnection->query($sql_degree);
+			$sql_skills = "SELECT * FROM student_skills WHERE student_id = ".$row['ID']."AND status=1";
+			$all_skills = array();
+
+			foreach ($databaseConnection->query($sql_skills) as $skill)
+			{
+				array_push($all_skills, $skills[name]);
+			}
 			echo "
 			<table>
 			    <tr>
@@ -63,14 +75,12 @@
 						
                     </td>   
                 </tr>
-                <!--<tr>
+                <tr>
                 	<td>
-						<div id='mailDiv'>
-							<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>			
-						</div>
+                		
+						$sentence = 
 					</td>
-                
-                </tr>-->
+                </tr>
                 
 			</table>
 			";
