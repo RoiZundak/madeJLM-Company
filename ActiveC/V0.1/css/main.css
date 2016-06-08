@@ -122,8 +122,7 @@ Our style
 }
 
 tr.border_bottom td {
-    border-bottom: 1px solid grey;
-    opacity: 0.5;
+    margin-bottom: 5px;
 }
 .head{
 	display:inline-block;
