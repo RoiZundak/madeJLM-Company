@@ -300,6 +300,7 @@
 			</div>
 			<br>
 			<div id = \"submitDiv\">
+			<br>
 			<input type=\"submit\" value=\"Filter\" id=\"submit_skills\">
 			</div>
 			</div>
