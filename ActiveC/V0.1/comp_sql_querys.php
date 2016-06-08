@@ -298,6 +298,7 @@
 
 			echo "</datalist>
 			</div>
+			<br>
 			<div id = \"submitDiv\">
 			<input type=\"submit\" value=\"Filter\" id=\"submit_skills\">
 			</div>
