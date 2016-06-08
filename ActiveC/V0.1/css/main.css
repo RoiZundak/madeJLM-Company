@@ -122,9 +122,8 @@ Our style
 }
 
 tr.border_bottom td {
-    border-bottom:1pt solid black;
-
-
+    border-bottom:1pt solid grey;
+    border-bottom-width: 100%;
 }
 .head{
 	display:inline-block;
