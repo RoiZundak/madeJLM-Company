@@ -168,8 +168,9 @@ label {
 #add_skill{
     height: 30px;
     text-align: center;
-    width: 8%;
+    width: 15%;
     background-color: #cccccc;
+    margin-top: 3%;
     margin-left: 2px;
     float: right;
     font-size: 10px;
