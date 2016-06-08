@@ -25,20 +25,20 @@
 			$maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" . $row['Email'] . "</a>\"";
 			$link_string = "";
 			if ($row['linkedin'] !== "") {
-				$link_string = "<td>
+				$link_string = "
 								<a href=\"" . $row['linkedin'] . "\">
 								<img title=\"LinkedIn\" alt=\"LinkedIn\" src=\"https://socialmediawidgets.files.wordpress.com/2014/03/07_linkedin.png\" width=\"35\" height=\"35\" />
 								</a>
- 							</td>";
+ 								";
 			}
 
 			$git_string = "";
 			if ($row['github'] !== "") {
-				$git_string = "<td>
+				$git_string = "
 								<a href=\"" . $row['github'] . "\">
 								<img title=\"Github\" alt=\"Github\" src=\"http://image000.flaticon.com/icons/svg/25/25231.svg\" width=\"35\" height=\"35\" />
 								</a>
- 							</td>";
+ 							";
 			}
 			$cv_file = "";
 			if ($row['cv'] !== "")
@@ -133,23 +133,26 @@
 			echo "
 			<table>
 			    <tr>
-			        <td>
+			        <td  width=\"100%\">
 			            <img class='head_image' src =" . $img_src . " width ='120px' height='110px'>
-                    </td>
-                    <td class ='line_td'>
-                    	<h2>" . $row['first_name'] . " " . $row['last_name'] . "</h2>
-                    	" . $git_string . "
+			            " . $git_string . "
 						" . $link_string . "
 						" . $cv_file . "
-						<td>
+			            <h2>" . $row['first_name'] . " " . $row['last_name'] . "</h2>
+			            
+                    </td>  
+				</tr>
+				
+				<tr>
+					<td>
 							". $phone_number ."
-						</td>
-						<td>
+					</td>
+					
+					<td>	
 							<div id='mailDiv'>
 								<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >Show Mail </button>			
 							</div>
-						</td>
-                    </td>   
+					</td>	   
                 </tr>
                  <tr>
                 	<td>
