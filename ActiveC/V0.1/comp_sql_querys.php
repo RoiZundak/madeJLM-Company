@@ -38,7 +38,7 @@
 							<p>
 								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2><br >    
 							<div id='mailDiv'>
-								<button id = 'std_mail_".$row['id']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>
+								<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>
 								<!--<button class=\"filters\"  id = \"but\" onclick=\"myFunc('hhhhh');\"> Show Me Mail! </button>-->			
 							</div>
 						   </p>
