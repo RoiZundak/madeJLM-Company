@@ -78,11 +78,10 @@ Our style
 }
 #form_skills{
     width: 90%;
-    background-color: #33FF33;
 }
 
 #skill_std{
-    background-color: #210D73;
+
     position: absolute;
     z-index: 10;
     margin-left: 100px;
@@ -91,7 +90,6 @@ Our style
 
 }
 #skill_input{
-    background-color: #303030;
     width: 80%;
     height: 30px;
     float: left;
