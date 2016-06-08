@@ -25,24 +25,19 @@
 
             if(count($results) > 0 && $results['block'] != null)
             {
-                $d=strtotime("+2 Minutes -4 hours");
+               echo" <script>
+                    alert('ccchhhhhheeeeckkkkkk');
+                </script>";
+                $d=strtotime("+1 Minutes -4 hours");
                 $newTime =  date("Y-m-d h:i:sa", $d);
+
+                echo $newTime ;
 
                 $currentDateTime = $results['block'];
                 $newDateTime = date('Y-m-d  h:i:sa', strtotime($currentDateTime));
 
-                echo $newTime;
-                echo "<br>";
-                echo $newDateTime;
-
-                if($newTime > $newDateTime)
+                if($newTime < $newDateTime)
                 {
-
-
-                    echo "<script>
-            alert('jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj');
-                </script>";
-
                     $errMsg .= 'Time block<br>';
 
                     echo("<a id='re_route_login' href ='../#/login'></a>
@@ -83,6 +78,10 @@
                 exit;
             }
 
+           // $q = "SELECT attempts, (CASE when block is not NULL and DATE_ADD(LastLogin, INTERVAL ".TIME_PERIOD.
+              //  " MINUTE)>NOW() then 1 else 0 end) as Denied FROM ".TBL_ATTEMPTS." WHERE ip = '$value'";
+
+
             else if(count($results) > 0 && $password !== $results['password'])
             {
                 $errMsg .= 'Incorrect Password<br>';
@@ -90,7 +89,7 @@
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
 
-                if( intval( $results['attempt'] )>= 4)
+                if( intval( $results['attempt'] )>= 5)
                 {
                     echo "<script>
                         alert('You tried too much. Try again in few minuts.');
@@ -98,6 +97,8 @@
                     $sql_update="UPDATE company SET attempt = 0 WHERE username = '".$username."'";
                     $update = $databaseConnection ->prepare($sql_update);
                     $update->execute();
+
+                    $d=strtotime("+15 minutes");
 
                     $sql_update="UPDATE company SET block = NOW() WHERE username = '".$username."'";
                     $update = $databaseConnection ->prepare($sql_update);
