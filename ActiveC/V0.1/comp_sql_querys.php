@@ -300,7 +300,7 @@
 			{
 				$('#add_skill').after(function() 
 				{
-				  return'<br><label class=\'skills\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+'</label> <br> <input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
+				  return'<br><label class=\'skills\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+'</label><input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
 				});
 			}
 			
