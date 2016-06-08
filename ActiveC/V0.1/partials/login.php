@@ -51,8 +51,8 @@
                 $sql_update="UPDATE company SET attempt = attempt + 1 WHERE username = '".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
-echo $results['attempt']. " and everything else : ".$results;
-                if($results['attempt'] >= 5)
+
+                if( intval( $results['attempt'] )>= 5)
                 {
                     echo "<script>
                         alert('You tried too much. Try again in few minuts.');
