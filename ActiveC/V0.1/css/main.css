@@ -217,7 +217,7 @@ table {
 tr {
     border: solid;
     border-width: 1px 0;
-    height:10% ;
+    min-height:30% ;
     border-color: #84C6EC;
 }
 
