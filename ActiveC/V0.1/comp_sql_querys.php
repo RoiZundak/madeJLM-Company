@@ -59,7 +59,7 @@
 				array_push($list_skills,$skill['skill_id']);
 			}
 			$skills_name ="SELECT name FROM skills WHERE id IN (".implode(',',$list_skills).")";
-			if ($skills_name !== "")
+			if (count($list_skills)>0)
 			{
 				foreach ($databaseConnection->query($skills_name) as $skill)
 				{
