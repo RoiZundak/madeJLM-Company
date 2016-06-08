@@ -151,10 +151,11 @@
 				<tr>
 					<div id='contact'>
 						<td>
-							". $phone_number ."
+						
 						</td>
 						
-						<td >	
+						<td >
+							". $phone_number ."
 							<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
 								Show Mail
 							</button>			
