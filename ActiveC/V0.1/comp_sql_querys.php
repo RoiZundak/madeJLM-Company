@@ -50,20 +50,32 @@
 			$sentence="";
 			$sql_degree="SELECT name FROM degree WHERE id =".$row['degree_id'];
 			$sql_college="SELECT name FROM college WHERE id =".$row['college_id'];;
-			$sql_skills = "SELECT skill_id FROM student_skills WHERE student_id = ".$row['ID'];
+			$sql_skills = "SELECT * FROM student_skills WHERE student_id = ".$row['ID'];
 			$all_skills = "";
-			$list_skills=array();
+			$list_skills=array();       //skills ids
+            $list_skills_bck=array();   //backup skills id for further use
+            $list_skills_years=array(); //keep years of knowledge
+
+
 
 			foreach ($databaseConnection->query($sql_skills) as $skill)
 			{
-				array_push($list_skills,$skill['skill_id']);
+                array_push($list_skills,$skill['skill_id']);
+                array_push($list_skills_years,$skill['years']);
 			}
-			$skills_name ="SELECT name FROM skills WHERE id IN (".implode(',',$list_skills).")";
+            $list_skills_bck=$list_skills;
+			$skills_name ="SELECT * FROM skills WHERE id IN (".implode(',',$list_skills).")";
 			if (count($list_skills)>0)
 			{
+                $len =count($list_skills_bck);
 				foreach ($databaseConnection->query($skills_name) as $skill)
 				{
-					$all_skills.="<span class='skill_item'> ".$skill['name']."</span>";
+                    for($i=0;$i<$len;$i++){
+                        if($skill['id'] === $list_skills_bck[$i]){
+                            $all_skills.="<span class='skill_item'> ".$skill['name']." for ".$list_skills_years[$i]."</span>";
+                        }
+                    }
+
 				}
 			}
 			$college_name="";
@@ -76,7 +88,11 @@
 			{
 				$degree_name=$degree['name'];
 			}
-			$phone_number=$row['phone_number'];
+
+			$phone_number="";
+			if ($row['phone_number'] !== "0" )
+				$phone_number=$row['phone_number'];
+
 			$sentence="Studies for a ".$degree_name." in ".$row['basic_education_subject']." at ".$college_name." with GPA of ".$row['grade_average']." and has ".$row['semesters_left']." semesters left.";
 			$job_per=$row['first_name']." is avaliable for ";
 			switch($row['job_percent'])
@@ -94,12 +110,26 @@
 					$job_per .= "a freelancer job.";
 					break;
 				default:
-					$job_per = $row['first_name'] . "hasn't entered a preference for job percent ";
+					$job_per = $row['first_name'] . " hasn't entered a preference for job percent ";
 			}
 
 			$curr_job="";
 			if($row['current_work']!=="")
 				$curr_job=$row['first_name']." is currently working at ".$row['current_work'].".";
+
+			$summary_="";
+			if($row['summary']!=="")
+			{
+				$sum="Summary: ";
+				$summary=$row['summary'];
+			}
+
+			$exprience="";
+			if($row['experience']!=="")
+			{
+				$exp="Experience: ";
+				$exprience =$row['experience'];
+			}
 
 			echo "
 			<table>
@@ -145,8 +175,8 @@
                 <tr>
                 	<td>
                 		<!--<div style='font-family:Arial Black;width:100%;'> -->
-							<h4>Summary: </h4>".$row['summary']."
-							<h4>Experience: </h4>".$row['experience']."
+							<h4>.".$sum."</h4>.".$summary." 
+							<h4>.".$exp."</h4>.".$exprience." 
 						</div>
                 	</td>
                 </tr>
