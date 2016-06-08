@@ -1,29 +1,24 @@
-
 <?php
-//connect to db
-require_once "../php/db_connect.php";
-$databaseConnection =connect_to_db();
-/*
-echo $_GET['p']."<br>";
-echo date('Y-m-d',$_GET['e']);
-*/
-$sql = "SELECT * FROM company WHERE email = '".$_GET['mail']."'";
-foreach($databaseConnection->query($sql) as $row){
-    $exp = $row['f_exp'];
-    $code = $row ['f_pass'];
-}
-if($exp !=$_GET['e'] || $exp <= time() || strcmp ($code , $_GET['p'])!=0 ){
-    //first condition : someone is trying something fishy.
-    //second : expiration date has already passed
-    //third : code is not the same in db and link
-    echo "This link has expired , redirecting";
-    //  TODO : redirect to index.html
-    exit;
-}else{
-    //link is valid , move on.
-}
+    //connect to db
+    require_once "../php/db_connect.php";
+    $databaseConnection =connect_to_db();
 
-
+    $sql = "SELECT * FROM company WHERE email = '".$_GET['mail']."'";
+    foreach($databaseConnection->query($sql) as $row)
+    {
+        $exp = $row['f_exp'];
+        $code = $row ['f_pass'];
+    }
+    if($exp !=$_GET['e'] || $exp <= time() || strcmp ($code , $_GET['p'])!=0 )
+    {
+        //first condition : someone is trying something fishy.
+        //second : expiration date has already passed
+        //third : code is not the same in db and link
+        echo "<script>
+			window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+            setTimeout(function(){alert('This link has expired.Redirecting to login page..');},100);</script>";
+        exit;
+    }
 ?>
 
 
@@ -48,7 +43,7 @@ if($exp !=$_GET['e'] || $exp <= time() || strcmp ($code , $_GET['p'])!=0 ){
                         <input type="password" name="new_pass_conf" id="new_pass_conf">
                     </p>
                     <?php
-                    echo "<input type ='hidden' name='e_mail' value='".$_GET['mail']."'>";
+                        echo "<input type ='hidden' name='e_mail' value='".$_GET['mail']."'>";
                     ?>
 
                     <button type="submit" name = "submit" class="login-button">Login</button>
