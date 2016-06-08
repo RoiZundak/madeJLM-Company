@@ -147,6 +147,7 @@ label {
 }
 
 
+
 .speech {
     float: left;
     margin-right: 50px;
@@ -193,11 +194,11 @@ label {
     background-image: linear-gradient(to bottom, #18AEDB, #a5defb);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#18AEDB, endColorstr=#a5defb);
 }
 
-
+#add{
+    margin-top: 100px;
+}
 input[type=submit]{
     background-color: #3b5998;
-    margin-top: 190px;
-    margin-bottom: 0px;
     width:70%;
     margin-left: 5px;
     height: 20px;
