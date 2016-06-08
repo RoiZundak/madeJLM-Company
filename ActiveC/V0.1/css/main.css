@@ -122,8 +122,9 @@ Our style
 }
 
 tr.border_bottom td {
-    border-bottom:1pt solid grey;
-    border-bottom-width: 100%;
+    border-bottom: 1px solid rgba(255, 0, 0, .5);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
 }
 .head{
 	display:inline-block;
