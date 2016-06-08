@@ -96,7 +96,7 @@
 
 			$curr_job="";
 			if($row['current_work']!=="")
-				$curr_job=$row['first_name']." is currently working at ".$row['current_work'];
+				$curr_job=$row['first_name']." is currently working at ".$row['current_work'].".";
 
 			echo "
 			<table>
