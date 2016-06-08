@@ -103,8 +103,8 @@
 
 			echo "
 			<table>
-			    <tr>
-			        <td>
+			    <th>
+			        <td class='line_td'>
 			            <img class='head_image' src =".$img_src." width ='120px' height='110px'>
                     </td>
                     <td>
@@ -123,12 +123,7 @@
 							</div>
 						</td>
                     </td>
-                 	<th >
-						<td class ='line_td'>
-						
-						</td>
-					</th>
-                </tr>
+                </th>
                  <tr>
                 	<td>
                 		".$sentence."
