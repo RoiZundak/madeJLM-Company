@@ -322,10 +322,9 @@
 			//adds a label and input text containing skill value
 			function addSkillToList(skill_to_add,years)
 			{
-				alert(years);
 				$('#add_skill').after(function() 
 				{
-				  return'<br><label class=\'skillsLabel\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+'</label><input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
+				  return'<br><label class=\'skillsLabel\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+','+ years +'</label><input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add +','+ years + '\' id=\'skill_'+skill_to_add+'\'>  ' 
 				});
 			}
 			
