@@ -47,15 +47,12 @@
 			$sentence="";
 			$sql_degree="SELECT name FROM degree WHERE id =".$row['degree_id'];
 			$sql_college="SELECT name FROM college WHERE id =".$row['college_id'];;
-			//$college_name = $databaseConnection->query($sql_college);
-			//$degree_name = $databaseConnection->query($sql_degree);
 			$sql_skills = "SELECT skill_id FROM student_skills WHERE student_id = ".$row['ID'];
 			$all_skills = "";
 			$list_skills=array();
 
 			foreach ($databaseConnection->query($sql_skills) as $skill)
 			{
-				//$all_skills+="<span class='skill_item'> ".$skill[$name]."</span>";
 				array_push($list_skills,$skill['skill_id']);
 			}
 			$skills_name ="SELECT name FROM skills WHERE id IN (".implode(',',$list_skills).")";
@@ -65,7 +62,6 @@
 				{
 					$all_skills.="<span class='skill_item'> ".$skill['name']."</span>";
 				}
-
 			}
 			$college_name="";
 			foreach ($databaseConnection->query($sql_college) as $college)
@@ -78,9 +74,7 @@
 				$degree_name=$degree['name'];
 			}
 
-
-			print_r($degree_name);
-			print_r($college_name);
+			$sentence="Studies for a ".$degree_name." in ".$row[basic_education_subject]." at ".$college_name;
 			echo "
 			<table>
 			    <tr>
@@ -98,6 +92,11 @@
 							</div>
 						</td>
                     </td>   
+                </tr>
+                 <tr>
+                	<td>
+                		".$sentence."
+					</td>
                 </tr>
                 <tr>
                 	<td>
