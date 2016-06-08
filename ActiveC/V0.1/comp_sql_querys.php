@@ -39,7 +39,7 @@
              *
              * <!--$row[\'Email\']-->
              */
-            $maito_string = "\"<a href = \"mailto:".$row['Email']."?subject=Hello!". $row['first_name'] ." \"  >\"".$row['Email']."\"</a>\"";
+            $maito_string = "\"<a href = \"mailto:".$row['Email']."?subject=Hello! ". $row['first_name'] ."  >".$row['Email']."</a>\"";
 			echo
 				"<table>
 					<tr >
@@ -49,7 +49,7 @@
 		
 						<td class ='line_td'>
 							<p>
-								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2><br >
+								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2><br >    
 							<div id='mailDiv'>
 								
 								
