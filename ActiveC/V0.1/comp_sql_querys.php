@@ -132,6 +132,7 @@
 
 			echo "
 			<table>
+				<!--First Line: Picture+ Bubbles -->
 			    <tr>
 			    
 			        <td  width=\"100%\">
@@ -146,17 +147,21 @@
                     </td>
                       
 				</tr>
-				
+				<!--Second Line: Phone + Mail-->
 				<tr>
 					<div id='contact'>
-					<td>
+						<td>
 							". $phone_number ."
-					</td>
-					<td >	
-							<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >Show Mail </button>			
-					</td>	   
+						</td>
+						
+						<td >	
+							<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
+								Show Mail
+							</button>			
+						</td>	
+					 </div>  
                 </tr>
-                 <tr>
+                 <tr width='100%'>
                 	<td>
                 		" . $sentence . "
 					</td>
