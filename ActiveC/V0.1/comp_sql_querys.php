@@ -79,7 +79,7 @@
                     	".$git_string."
 						".$link_string."
 						<!--cv-->
-						<td>
+						<td class='line_td'>
 							<div id='mailDiv'>
 								<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>			
 							</div>
