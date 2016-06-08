@@ -37,6 +37,8 @@
                 $newDateTime = date('h:i A', strtotime($currentDateTime));
 
                 echo $newDateTime;
+                echo "<br>";
+                echo $newTime;
 
 
                 if($newTime < $newDateTime)
