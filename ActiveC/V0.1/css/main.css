@@ -121,11 +121,10 @@ Our style
     margin-right: 20px;
 }
 
-.line_td{
-	border-bottom-color : grey;
-	border-bottom-width : 1px;
-	border-bottom-style : solid;
-	width: 100%;
+tr.border_bottom td {
+    border-bottom:1pt solid black;
+
+
 }
 .head{
 	display:inline-block;
