@@ -55,16 +55,22 @@
                     	".$git_string."
 						".$link_string."
 						<!--cv-->
+						<tr>
+							<div id='mailDiv'>
+								<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>			
+							</div>
+						</tr>
+						
                     </td>   
                 </tr>
-                <tr>
+                <!--<tr>
                 	<td>
 						<div id='mailDiv'>
 							<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>			
 						</div>
 					</td>
                 
-                </tr>
+                </tr>-->
                 
 			</table>
 			";
