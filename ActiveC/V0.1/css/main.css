@@ -109,6 +109,12 @@ Our style
 #bubble{
     float: right;
 }
+#phoneNumber{
+    margin-top: 5px;
+}
+#mailDiv{
+    margin-top: 5px;
+}
 .line_td{
 	border-bottom-color : grey;
 	border-bottom-width : 1px;
