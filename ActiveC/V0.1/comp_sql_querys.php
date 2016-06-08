@@ -49,7 +49,7 @@
 			$sql_college="SELECT name FROM college WHERE id =".$row['college_id'];;
 			$college_name = $databaseConnection->query($sql_college);
 			$degree_name = $databaseConnection->query($sql_degree);
-			$sql_skills = "SELECT * FROM student_skills WHERE student_id = ".$row['ID']." AND status=1";
+			$sql_skills = "SELECT * FROM student_skills WHERE student_id = ".$row['ID'];
 			$all_skills = array();
 
 			foreach ($databaseConnection->query($sql_skills) as $skill)
@@ -78,7 +78,7 @@
                 <tr>
                 	<td>
                 		
-						$sentence = 
+					 
 					</td>
                 </tr>
                 
