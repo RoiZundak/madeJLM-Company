@@ -18,11 +18,11 @@ echo
             Skills
         </div>
 
-        <div class="filters" id="linkedin">
+        <div class="filters" id="has_linkedin">
             Has Linkedin
         </div>
 
-        <div class='filters' id="clear">
+        <div class='filters' id="clr_filter">
             Clear Filter's
         </div>
     </div>
