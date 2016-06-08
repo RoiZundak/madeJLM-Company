@@ -175,9 +175,9 @@
                 <tr>
                 	<td>
                 		<!--<div style='font-family:Arial Black;width:100%;'> -->
-							<h4>.".$sum."</h4>.".$summary." 
-							<h4>.".$exp."</h4>.".$exprience." 
-						</div>
+							<h4><b>".$sum."</h4></b>".$summary." 
+							<h4><b>".$exp."</h4></b>".$exprience." 
+						<!--</div>-->
                 	</td>
                 </tr>
                 
