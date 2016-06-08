@@ -90,9 +90,9 @@
 			}
 
 			$phone_number="";
-			if ($row['phone_number'] !== "")
+			if ($row['phone_number'] !== "0" )
 				$phone_number=$row['phone_number'];
-			
+
 			$sentence="Studies for a ".$degree_name." in ".$row['basic_education_subject']." at ".$college_name." with GPA of ".$row['grade_average']." and has ".$row['semesters_left']." semesters left.";
 			$job_per=$row['first_name']." is avaliable for ";
 			switch($row['job_percent'])
@@ -110,12 +110,21 @@
 					$job_per .= "a freelancer job.";
 					break;
 				default:
-					$job_per = $row['first_name'] . "hasn't entered a preference for job percent ";
+					$job_per = $row['first_name'] . " hasn't entered a preference for job percent ";
 			}
 
 			$curr_job="";
 			if($row['current_work']!=="")
 				$curr_job=$row['first_name']." is currently working at ".$row['current_work'].".";
+
+
+			$summary="";
+			if($row['summary']!=="")
+				$summary="Summary: ".$row['summary'];
+
+			$exprience="";
+			if($row['experience']!=="")
+				$summary="Experience: ".$row['experience'];
 
 			echo "
 			<table>
@@ -161,8 +170,8 @@
                 <tr>
                 	<td>
                 		<!--<div style='font-family:Arial Black;width:100%;'> -->
-							<h4>Summary: </h4>".$row['summary']."
-							<h4>Experience: </h4>".$row['experience']."
+							".$summary." </h4>
+							".$exprience." </h4>
 						</div>
                 	</td>
                 </tr>
