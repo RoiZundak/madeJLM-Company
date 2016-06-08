@@ -49,12 +49,20 @@
 			$sql_college="SELECT name FROM college WHERE id =".$row['college_id'];;
 			$college_name = $databaseConnection->query($sql_college);
 			$degree_name = $databaseConnection->query($sql_degree);
-			$sql_skills = "SELECT * FROM student_skills WHERE student_id = ".$row['ID'];
+			$sql_skills = "SELECT skill_id FROM student_skills WHERE student_id = ".$row['ID'];
 			$all_skills = "";
+			$list_skills=array();
 
 			foreach ($databaseConnection->query($sql_skills) as $skill)
 			{
-				$all_skills+="<span class='skill_item'> ".$skill[$name]."</span>";
+				//$all_skills+="<span class='skill_item'> ".$skill[$name]."</span>";
+				array_push($list_skills,$skill['skill_id']);
+			}
+			$skills_name ="SELECT name from skills WHERE id IN (".implode(',',$list_skills).")";
+
+			foreach ($databaseConnection->query($skills_name) as $skill)
+			{
+				$all_skills+="<span class='skill_item'> ".$skill['name']."</span>";
 			}
 
 			echo "
