@@ -136,7 +136,7 @@
 						" . $link_string . "
 						" . $cv_file . "
 						<td>
-							<p><i class=\"fa fa-phone\"></i> <abbr title=\"Phone\">P</abbr>:" . $phone_number . "</p>
+							<p><i class=\"fa fa-phone\"></i> <abbr title=\"Phone\">P</abbr>: 0" . $phone_number . "</p>
 						</td>
 						<td>
 							<div id='mailDiv'>
