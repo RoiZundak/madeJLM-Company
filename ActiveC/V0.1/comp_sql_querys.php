@@ -25,20 +25,20 @@
 			$maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" . $row['Email'] . "</a>\"";
 			$link_string = "";
 			if ($row['linkedin'] !== "") {
-				$link_string = "<td>
+				$link_string = "
 								<a href=\"" . $row['linkedin'] . "\">
 								<img title=\"LinkedIn\" alt=\"LinkedIn\" src=\"https://socialmediawidgets.files.wordpress.com/2014/03/07_linkedin.png\" width=\"35\" height=\"35\" />
 								</a>
- 							</td>";
+ 								";
 			}
 
 			$git_string = "";
 			if ($row['github'] !== "") {
-				$git_string = "<td>
+				$git_string = "
 								<a href=\"" . $row['github'] . "\">
 								<img title=\"Github\" alt=\"Github\" src=\"http://image000.flaticon.com/icons/svg/25/25231.svg\" width=\"35\" height=\"35\" />
 								</a>
- 							</td>";
+ 							";
 			}
 			$cv_file = "";
 			if ($row['cv'] !== "")
@@ -139,9 +139,7 @@
 			            " . $git_string . "
 						" . $link_string . "
 						" . $cv_file . "
-                    </td>
-                    
-                    
+                    </td>  
 				</tr>
 				
 				<tr>
