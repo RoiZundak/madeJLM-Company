@@ -150,6 +150,7 @@ label {
 .speech {
     float: left;
     margin-right: 50px;
+    margin-top: 30px;
     text-align: center;
     line-height: 100px;
     background-color:white;
