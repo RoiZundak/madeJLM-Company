@@ -113,7 +113,7 @@
                     $d=strtotime("+3 Minutes");
                     $newTime =  date($newDateTime, $d);
 
-                    $sql_update="UPDATE company SET block = $newTime WHERE username = '".$username."'";
+                    $sql_update="UPDATE company SET block = date($newTime) WHERE username = '".$username."'";
                     $update = $databaseConnection ->prepare($sql_update);
                     $update->execute();
                 }
