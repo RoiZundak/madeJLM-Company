@@ -34,7 +34,9 @@
                 echo $newTime ;
 
                 $currentDateTime = $results['block'];
-                $newDateTime = date('h:i A', strtotime($currentDateTime));
+                $newDateTime = date('Y-m-d h:i:sa', strtotime($currentDateTime));
+                $d=strtotime("+3 Minutes");
+                $newTime =  date($newDateTime, $d);
 
                 echo $newDateTime;
                 echo "<br>";
@@ -99,13 +101,19 @@
                     echo "<script>
                         alert('You tried too much. Try again in few minuts.');
                     </script>";
+
+
+
                     $sql_update="UPDATE company SET attempt = 0 WHERE username = '".$username."'";
                     $update = $databaseConnection ->prepare($sql_update);
                     $update->execute();
 
-                    $d=strtotime("+15 minutes");
+                    $currentDateTime = $results['block'];
+                    $newDateTime = date('Y-m-d h:i:sa', strtotime($currentDateTime));
+                    $d=strtotime("+3 Minutes");
+                    $newTime =  date($newDateTime, $d);
 
-                    $sql_update="UPDATE company SET block = NOW() WHERE username = '".$username."'";
+                    $sql_update="UPDATE company SET block = $newTime WHERE username = '".$username."'";
                     $update = $databaseConnection ->prepare($sql_update);
                     $update->execute();
                 }
