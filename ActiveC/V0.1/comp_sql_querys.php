@@ -73,7 +73,7 @@
 			{
 				$degree_name=$degree['name'];
 			}
-
+			$phone_number=$row['phone_number'];
 			$sentence="Studies for a ".$degree_name." in ".$row['basic_education_subject']." at ".$college_name." with GPA of ".$row['grade_average']." and has ".$row['semesters_left']." semesters left.";
 			$job_per=$row['first_name']." is avaliable for ";
 			switch($row['job_percent'])
@@ -110,6 +110,9 @@
                     	".$git_string."
 						".$link_string."
 						".$cv_file."
+						<td>
+							".$phone_number."
+						</td>
 						<td>
 							<div id='mailDiv'>
 								<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>			
