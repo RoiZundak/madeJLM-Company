@@ -48,26 +48,24 @@
 			<table>
 			    <tr>
 			        <td>
-			            <img src =".$img_src." width ='120px' height='110px'>
+			            <img class='head_image' src =".$img_src." width ='120px' height='110px'>
                     </td>
                     <td>
-                        <h2>".$row['first_name']." ".$row['last_name']."</h2>
-                    </td>
-                    <!--cv-->
+                    	<h2>".$row['first_name']." ".$row['last_name']."</h2>
+                    	".$git_string."
+						".$link_string."
+						<!--cv-->
+						<br><br>
+						<div id='mailDiv'>
+								<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>			
+						</div>
+                    </td>    
+                    <!--<br>
                     <td>
-                    
-                    </td>
-              		".$git_string."
-					".$link_string."
-					
-					<tr>
-						<td>
 							<div id='mailDiv'>
 								<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>			
 							</div>
-						</td>
-					</tr>
-					
+					</td>-->
                 </tr>
 			
 			</table>
@@ -143,8 +141,7 @@
 		$p_ass = md5($p_ass);
 
 		//PDO SYTLE :
-		date_default_timezone_set("Asia/Jerusalem");
-		$records = $databaseConnection->prepare('INSERT INTO company (username, email, password,created) VALUES (:user,:mail,:password, date("Y-m-d h:i:sa") )');
+		$records = $databaseConnection->prepare('INSERT INTO company (username, email, password,created) VALUES (:user,:mail,:password,NOW() )');
 		$records->bindParam(':user', $name);
 		$records->bindParam(':mail', $mail);
 		$records->bindParam(':password', $p_ass);
