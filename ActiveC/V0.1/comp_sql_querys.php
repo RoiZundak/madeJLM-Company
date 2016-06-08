@@ -193,7 +193,7 @@
                 	<td>
 							<h4><b>" . $sum . "</h4></b>" . $summary . "
 							<script>
-							document.getElementById(\"MyTable\").deleteRow(6);
+							document.getElementById(\"MyTable\").deleteRow(4);
 							</script>
 					</td>
 					
