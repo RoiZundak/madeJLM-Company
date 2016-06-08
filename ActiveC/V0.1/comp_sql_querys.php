@@ -50,12 +50,13 @@
 			$college_name = $databaseConnection->query($sql_college);
 			$degree_name = $databaseConnection->query($sql_degree);
 			$sql_skills = "SELECT * FROM student_skills WHERE student_id = ".$row['ID'];
-			$all_skills = array();
+			$all_skills = "";
 
 			foreach ($databaseConnection->query($sql_skills) as $skill)
 			{
-				array_push($all_skills, $skills[name]);
+				$all_skills+="<span class='skill_item'> ".$skill[$name]."</span>";
 			}
+
 			echo "
 			<table>
 			    <tr>
@@ -77,7 +78,7 @@
                 </tr>
                 <tr>
                 	<td>
-                		
+                		".$all_skills."
 					 
 					</td>
                 </tr>
