@@ -47,8 +47,8 @@
 			$sentence="";
 			$sql_degree="SELECT name FROM degree WHERE id =".$row['degree_id'];
 			$sql_college="SELECT name FROM college WHERE id =".$row['college_id'];;
-			$college_name = $databaseConnection->query($sql_college);
-			$degree_name = $databaseConnection->query($sql_degree);
+			//$college_name = $databaseConnection->query($sql_college);
+			//$degree_name = $databaseConnection->query($sql_degree);
 			$sql_skills = "SELECT skill_id FROM student_skills WHERE student_id = ".$row['ID'];
 			$all_skills = "";
 			$list_skills=array();
@@ -67,6 +67,18 @@
 				}
 
 			}
+			$college_name="";
+			foreach ($databaseConnection->query($sql_college) as $college)
+			{
+				$college_name=$college['name'];
+			}
+			$degree_name="";
+			foreach ($databaseConnection->query($sql_degree) as $degree)
+			{
+				$degree_name=$degree['name'];
+			}
+
+
 			print_r($degree_name);
 			print_r($college_name);
 			echo "
