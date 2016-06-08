@@ -68,7 +68,7 @@
 				foreach ($databaseConnection->query($skills_name) as $skill) {
 					for ($i = 0; $i < $len; $i++) {
 						if ($skill['id'] === $list_skills_bck[$i]) {
-							$all_skills .= "<span class='skill_item'> " . $skill['name'] . " for " . $list_skills_years[$i] . "</span>";
+							$all_skills .= "<span class='skill_item'> " . $skill['name'] . " for " .$list_skills_years[$i]. " years.</span>";
 						}
 					}
 
