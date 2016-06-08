@@ -138,7 +138,7 @@
                 </tr>
                 <tr>
                 	<td>
-                		<div style='font-family:Arial Black;width:100%;'> 
+                		<!--<div style='font-family:Arial Black;width:100%;'> -->
 							<h3>Summary: </h3>".$row['summary']."
 							<h3>Experience: </h3>".$row['experience']."
 						</div>
