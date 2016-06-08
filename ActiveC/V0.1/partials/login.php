@@ -31,9 +31,9 @@
                 $currentDateTime = $results['block'];
                 $newDateTime = date('Y-m-d  h:i:sa', strtotime($currentDateTime));
 
-                echo "<script>
-            alert('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh');
-                </script>";
+                echo $newTime;
+                echo "<br>";
+                echo $newDateTime;
 
                 if($newTime < $newDateTime)
                 {
