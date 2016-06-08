@@ -199,74 +199,69 @@
 
 	}
     //Update password
-    if($func=="8"){
+    if($func=="8")
+	{
         $pass1 =$_POST['new_pass'] ;
         $pass2 =$_POST['new_pass_conf'] ;
         $mail = $_POST['e_mail'];
-        if(strcmp($pass1,$pass2)!=0 ){
-            echo "passwords does not match , ";
-            // TODO redirect to index.html
+        if(strcmp($pass1,$pass2)!=0 )
+		{
+            echo "<script>
+			alert('Passwords does not match.Redirecting to ADMIN page..');
+            window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/templates/adminBasic.html'; </script>";
             exit;
         }
         //PDO STYLE :
         $records = $databaseConnection->prepare("UPDATE company SET password ='".md5($pass1)."'".
             ",f_pass='',f_exp=0 WHERE email = '$mail'");
-        if ( $records->execute()==true){
+        if ( $records->execute()==true)
             echo "Updated !";
-        }else{
+        else
             echo "Failed.";
-        }
     }
 
 
-if($func=="9")
-{
-    $sql = 'SELECT * FROM skills';
-    echo "<script>
-        //adds a label and input text containing skill value
-        function addSkillToList(skill_to_add){
-            $('#add_skill').after(function() {
-              return'<label class=\'skills\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+'</label> <br> <input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
-            });
-        }
-        
-        
-        $( \"#form_skills\" ).submit(function( event ) {
-                event.preventDefault();
-              var str = $(\"#form_skills\").serialize();
-              xmlhttp.onreadystatechange = function() {
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById(\"show_all\").innerHTML = xmlhttp.responseText;
-                    }
-                };
-            xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
-            xmlhttp.send();
-        });
+	if($func=="9")
+	{
+		$sql = 'SELECT * FROM skills';
+		echo "<script>
+			//adds a label and input text containing skill value
+			function addSkillToList(skill_to_add)
+			{
+				$('#add_skill').after(function() {
+				  return'<label class=\'skills\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+'</label> <br> <input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
+				});
+			}
+			
+			
+			$( \"#form_skills\" ).submit(function( event ) 
+			{
+					event.preventDefault();
+				  var str = $(\"#form_skills\").serialize();
+				  xmlhttp.onreadystatechange = function() {
+						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+							document.getElementById(\"show_all\").innerHTML = xmlhttp.responseText;
+						}
+					};
+				xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
+				xmlhttp.send();
+			});
+			</script>";
 
-
-
-        
-        
-        </script>";
-
-    echo "
+		echo "
 			<form method='post' id= 'form_skills' action='./comp_sql_querys.php?func=10'>	
 			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
 			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value);$(\"#skill_input\").val(\"\");'>
-
+	
 			<datalist id=\"skills_list\">";
-    foreach ($databaseConnection->query($sql) as $row)
-    {
-        echo '<option value='.$row['name'].'>';
-    }
-    echo "</datalist>
-<br>
-                <input type=\"submit\" value=\"Filter\" id=\"submit_skills\">
-                </form>";
-}
+			foreach ($databaseConnection->query($sql) as $row)
+				echo '<option value='.$row['name'].'>';
 
-
-
+			echo "</datalist>
+		<br>
+			<input type=\"submit\" value=\"Filter\" id=\"submit_skills\">
+			</form>";
+	}
 
 	if($func=="10")
 	{
