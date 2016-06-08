@@ -25,10 +25,8 @@
 
             if(count($results) > 0 && $results['block'] != null)
             {
-               echo" <script>
-                    alert('ccchhhhhheeeeckkkkkk');
-                </script>";
-                $d=strtotime("-2 Minutes -4 hours");
+
+                $d=strtotime("-15 Minutes -4 hours");
                 $newTime =  date("Y-m-d h:i:sa", $d);
 
                 echo $newTime ;

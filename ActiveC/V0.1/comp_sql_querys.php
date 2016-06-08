@@ -472,5 +472,14 @@
 		$update = $databaseConnection ->prepare($sql_update);
 		$update->execute();
 	}
+    if($func=="12")
+    {
+        $row_id =$_POST['row_id_reset'] ;
+        $newPassword =$_POST['new_pass'] ;
+        $sql_update_pass = "UPDATE company SET password ='".md5($newPassword)."' WHERE id='".$row_id."'";
+        $update = $databaseConnection ->prepare($sql_update);
+        $update->execute();
+    }
+
 ?>
 
