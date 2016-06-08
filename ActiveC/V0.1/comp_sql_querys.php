@@ -74,7 +74,25 @@
 				$degree_name=$degree['name'];
 			}
 
-			$sentence="Studies for a ".$degree_name." in ".$row['basic_education_subject']." at ".$college_name." for ".$row['basic_education_year']." with ".$row['semesters_left']." semesters left";
+			$sentence="Studies for a ".$degree_name." in ".$row['basic_education_subject']." at ".$college_name." with GPA of ".$row['grade_average']." and has ".$row['semesters_left']." semesters left.";
+			$job_per=$row['first_name']." is avaliable for ";
+			switch($row['job_percent'])
+			{
+				case 1:
+					$job_per.="a half time job.";
+					break;
+				case 2:
+					$job_per.="a full time job.";
+					break;
+				case 3:
+					$job_per.="working in shifts.";
+					break;
+				case 4:
+					$job_per.="a freelancer job.";
+					break;
+				default:
+					$job_per=$row['first_name']."hasn't entered a preference for job percent ";
+			}
 			echo "
 			<table>
 			    <tr>
@@ -96,6 +114,11 @@
                  <tr>
                 	<td>
                 		".$sentence."
+					</td>
+                </tr>
+                 <tr>
+                	<td>
+                		".$job_per."
 					</td>
                 </tr>
                 <tr>
