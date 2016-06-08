@@ -124,11 +124,11 @@
                     if(target.id.indexOf("std_mail_") != -1 )
                     {
                         id =target.id.substring(target.id.lastIndexOf("_")+1,target.id.length); //student id
-                        xmlhttp.onreadystatechange = function ()
+                        /*xmlhttp.onreadystatechange = function ()
                         {
                             if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                                 document.getElementById("show_all").innerHTML = xmlhttp.responseText;
-                        };
+                        };*/
                         xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "11", true);
                         xmlhttp.send();
                     }
