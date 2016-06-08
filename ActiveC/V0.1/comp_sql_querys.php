@@ -160,7 +160,7 @@
 						</td>	
                 </tr>
                 	<!--Third Line: Sentence-->
-                 <tr width='100%'>
+                 <tr >
                 		" . $sentence . "
                 </tr>
                  <tr>
