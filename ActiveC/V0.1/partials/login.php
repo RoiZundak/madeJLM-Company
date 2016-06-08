@@ -18,7 +18,7 @@
 
         if($errMsg == '')
         {
-            $records = $databaseConnection->prepare('SELECT id,username,password FROM  company WHERE username = :username');
+            $records = $databaseConnection->prepare('SELECT * FROM  company WHERE username = :username');
             $records->bindParam(':username', $username);
             $records->execute();
             $results = $records->fetch(PDO::FETCH_ASSOC);
@@ -51,9 +51,12 @@
                 $sql_update="UPDATE company SET attempt = attempt + 1 WHERE username = '".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
-                
-                if($results['attempt'] >= 5)
+
+                if( intval( $results['attempt'] )>= 5)
                 {
+                    echo "<script>
+                        alert('You tried too much. Try again in few minuts.');
+                    </script>";
                     $sql_update="UPDATE company SET attempt = 0 WHERE username = '".$username."'";
                     $d=strtotime("+15 minutes");
                     $sql_update="UPDATE company SET block = NOW() WHERE username = '".$username."'";
