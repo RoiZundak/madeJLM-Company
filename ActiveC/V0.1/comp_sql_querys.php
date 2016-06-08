@@ -74,7 +74,7 @@
 				$degree_name=$degree['name'];
 			}
 
-			$sentence="Studies for a ".$degree_name." in ".$row['basic_education_subject']." at ".$college_name." with AVG grades- ".$row['grade_average'].". There are ".$row['semesters_left']." semesters left";
+			$sentence="Studies for a ".$degree_name." in ".$row['basic_education_subject']." at ".$college_name." with AVG grades- ".$row['grade_average'].". There is ".$row['semesters_left']." semesters left";
 			echo "
 			<table>
 			    <tr>
