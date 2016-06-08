@@ -135,7 +135,7 @@
 			}
 //<i class="fa fa-phone"></i> <abbr title="Phone"></abbr>:
 			echo "
-			<table border=1 frame=void rules=rows>
+			<table border=1 frame=void rules=rows id = 'MyTable'>
 				<!--First Line: Picture+ Bubbles -->
 			    <tr>
 			    
@@ -192,6 +192,9 @@
                 <tr class=\"border_bottom\">
                 	<td>
 							<h4><b>" . $sum . "</h4></b>" . $summary . "
+							<script>
+							document.getElementById(\"MyTable\").deleteRow(6);
+							</script>
 					</td>
 					
 					<td>
