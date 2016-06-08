@@ -138,14 +138,9 @@
                 </tr>
                 <tr>
                 	<td>
-                		".$all_skills."
-					</td>
-                </tr>
-                <tr>
-                	<td>
                 		<div style='font-family:Arial Black;width:100%;'> 
-							<h1>Summary: </h1>".$row['summary']."
-							<h1>Experience: </h1>".$row['experience']."
+							<h3>Summary: </h3>".$row['summary']."
+							<h3>Experience: </h3>".$row['experience']."
 						</div>
                 	</td>
                 </tr>
