@@ -154,7 +154,7 @@
 						
 						</td>
 						
-						<td >
+						<td <td id='mail'>>
 							". $phone_number ."
 							<div id='mailDiv'>
                                 <button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
@@ -164,6 +164,7 @@
 						</td>	
 					 </div>  
                 </tr>
+                	<!--Third Line: Sentence-->
                  <tr width='100%'>
                 	<td>
                 		" . $sentence . "
