@@ -62,10 +62,9 @@
 			print_r($skills_name);
 			foreach ($databaseConnection->query($skills_name) as $skill)
 			{
-                print_r("vdsvdsvd");
 				$all_skills+="<span class='skill_item'> ".$skill['name']."</span>";
 			}
-
+            print_r($all_skills);
 			echo "
 			<table>
 			    <tr>
