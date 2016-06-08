@@ -59,11 +59,15 @@
 				array_push($list_skills,$skill['skill_id']);
 			}
 			$skills_name ="SELECT name FROM skills WHERE id IN (".implode(',',$list_skills).")";
-			print_r($skills_name);
-			foreach ($databaseConnection->query($skills_name) as $skill)
+			//print_r($skills_name);
+			if($skills_name != "")
 			{
-				$all_skills+="<span class='skill_item'> ".$skill['name']."</span>";
+				foreach ($databaseConnection->query($skills_name) as $skill)
+				{
+					$all_skills+="<span class='skill_item'> ".$skill['name']."</span>";
+				}
 			}
+
 
 			echo "
 			<table>
