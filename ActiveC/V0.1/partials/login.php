@@ -47,6 +47,7 @@ if(!empty($_POST['username']))
             //update company counter enters
             $sql_update="UPDATE company SET counter_enters = counter_enters + 1 WHERE username = '".$username."'";
             $update = $databaseConnection ->prepare($sql_update);
+            $update->execute();
             //$_SESSION['username'] = $username;
             echo("<a id='re_route_main' href ='../#/main'></a>
                  <script>                  
