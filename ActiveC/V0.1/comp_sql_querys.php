@@ -25,7 +25,8 @@
 			}else{
 				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
 			}
-			echo "<table>
+			echo /** @lang text */
+				"<table>
 					<tr >
 						<td >
 							<img src=".$img_src." width='120px' height='110px'>
@@ -39,13 +40,13 @@
 								     function myFunc(email)
 								    	{
 											$('#mailDiv').html(email);
-											xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q." \"&func=\"11\", true);
+											xmlhttp.open('GET', 'comp_sql_querys.php?q=\" ".$q.' "&func="11", true);
 											xmlhttp.send();
 								    	}
 								
 								</script>
-								
-								<button class=\"filters\"  id = \"but\" onclick=\"myFunc('hhhhh');\"> Show Me Mail! </button>
+								<button class="filters"  onclick="$(\'#mailDiv\').html(\'mailto:\'+\''.$row['Email']."');\">Show Me Mail! </button>
+								<!--<button class=\"filters\"  id = \"but\" onclick=\"myFunc('hhhhh');\"> Show Me Mail! </button>-->
 					
 								
 							</div>
