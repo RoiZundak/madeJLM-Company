@@ -27,6 +27,9 @@
             {
                 //update company counter enters
                 $sql_update="UPDATE company SET counter_enters = counter_enters + 1 WHERE username = '".$username."'";
+                if($results['attempt'] > 0) {
+                    $sql_update = "UPDATE company SET attempt = 0 WHERE username = '" . $username . "'";
+                }
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
                 echo("<a id='re_route_main' href ='../#/main'></a>
@@ -37,12 +40,35 @@
                     ");
                 exit;
             }
-            else
+            else if(count($results) > 0 && $password !== $results['password'])
             {
-                $errMsg .= 'Username and Password are not found<br>';
+                $errMsg .= 'Incorrect Password<br>';
+                $sql_update="UPDATE company SET attempt = attempt + 1 WHERE username = '".$username."'";
+
+                if($results['attempt'] >= 5)
+                {
+                    $sql_update="UPDATE company SET attempt = 0 WHERE username = '".$username."'";
+                    $d=strtotime("+15 minutes");
+                    $records = $databaseConnection->prepare('INSERT INTO company (block) VALUES (date("Y-m-d h:i:sa", $d))');
+                }
+
                 echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
-                        alert('Wrong Password Or User Name.');
+                        alert('Incorrect Password.');
+                        localStorage.clear();
+                        document.getElementById(\"re_route_login\").click();
+                    </script>
+                ");
+                exit;
+
+            }
+            else
+            {
+                $errMsg .= 'Username is not found<br>';
+
+                echo("<a id='re_route_login' href ='../#/login'></a>
+                    <script>
+                        alert('Username is not found.');
                         localStorage.clear();
                         document.getElementById(\"re_route_login\").click();
                     </script>
