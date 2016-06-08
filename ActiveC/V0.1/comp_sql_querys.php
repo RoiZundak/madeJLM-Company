@@ -60,7 +60,10 @@
 			}
 			$list_skills_bck = $list_skills;
 			$skills_name = "SELECT * FROM skills WHERE id IN (" . implode(',', $list_skills) . ")";
-			if (count($list_skills) > 0) {
+			$show_all_skills="";
+			if (count($list_skills) > 0)
+			{
+				$show_all_skills ="skill list:";
 				$len = count($list_skills_bck);
 				foreach ($databaseConnection->query($skills_name) as $skill) {
 					for ($i = 0; $i < $len; $i++) {
@@ -71,6 +74,7 @@
 
 				}
 			}
+			$show_all_skills.=" ".$all_skills;
 			$college_name = "";
 			foreach ($databaseConnection->query($sql_college) as $college) {
 				$college_name = $college['name'];
@@ -157,7 +161,7 @@
                 </tr>
                 <tr>
                 	<td>
-                		" . $all_skills . "
+                		".$show_all_skills."
 					</td>
                 </tr>
                 <tr>
