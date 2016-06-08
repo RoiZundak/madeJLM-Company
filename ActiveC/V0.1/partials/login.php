@@ -25,7 +25,7 @@
 
             if(count($results) > 0 && $results['block'] != null)
             {
-                $d=strtotime("+1 Minutes -4 hours");
+                $d=strtotime("+2 Minutes -4 hours");
                 $newTime =  date("Y-m-d h:i:sa", $d);
 
                 $currentDateTime = $results['block'];
@@ -80,7 +80,7 @@
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
 
-                if( intval( $results['attempt'] )>= 5)
+                if( intval( $results['attempt'] )>= 4)
                 {
                     echo "<script>
                         alert('You tried too much. Try again in few minuts.');
