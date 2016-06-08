@@ -29,6 +29,7 @@ Our style
     float: left;
     margin-top: 1%;
     margin-left: 1%;
+    margin-bottom: 1%;
     height: 30px;
 	width:150px;
     text-align: center;
@@ -42,7 +43,7 @@ Our style
 	font-size:1.1em;
 }
 .filters:hover{
-    background-color:chartreuse;
+    background-color:black;
     color: white;
 }
 #show_stud {
@@ -83,7 +84,7 @@ Our style
 
     position: absolute;
     z-index: 10;
-    margin-left: 100px;
+    margin-left: 1%;
     height: auto;
     width: auto;
 
