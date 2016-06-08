@@ -107,6 +107,15 @@ Our style
 .row > *{
     float: right;
 }
+#bubble{
+    float: right;
+}
+#phoneNumber{
+    margin-top: 10px;
+}
+#mailDiv{
+    margin-top: 5px;
+}
 .line_td{
 	border-bottom-color : grey;
 	border-bottom-width : 1px;
@@ -131,9 +140,11 @@ Our style
 
 
 .head_image{
+    float: left;
 	width:120px;
 	height:120px;
 	margin-left:5px;
+    margin-top:5px;
     border-radius: 60px;
     -webkit-border-radius: 60px;
     -moz-border-radius: 60px;
