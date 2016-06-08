@@ -17,9 +17,9 @@
         <div class="filters" id="has_linkedin"> Has Linkedin </div>
         <div class='filters' id="clr_filter"> Clear Filter's</div>
     </div>
+    <div id = "skill_std" class='speech' class='skills'> </div>
 
     <div id = "show_stud"> </div>
-    <div id = "skill_std" class='speech' class='skills'> </div>
     <div id = "show_all">
 
 
