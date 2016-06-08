@@ -138,10 +138,10 @@
 			        
 			            <img class='head_image' src =" . $img_src . " width ='120px' height='110px'>
 			            
-     			        <h2 >" . $row['first_name'] . " " . $row['last_name'] . "</h2>
+			            <div id='bubble'>
+     			        	<h2 >" . $row['first_name'] . " " . $row['last_name'] . "</h2>
 
-			            <div >
-			            " . $git_string . "  " . $link_string . "   " . $cv_file . "
+				            " . $git_string . "  " . $link_string . "   " . $cv_file . "
 						</div>
                     </td>
                       
