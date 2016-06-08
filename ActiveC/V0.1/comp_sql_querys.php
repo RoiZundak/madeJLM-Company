@@ -159,10 +159,9 @@
 							</button>			
 						</td>	
                 </tr>
-                 <tr >
-                	<td width='100%'>
+                	<!--Third Line: Sentence-->
+                 <tr width='100%'>
                 		" . $sentence . "
-					</td>
                 </tr>
                  <tr>
                 	<td>
