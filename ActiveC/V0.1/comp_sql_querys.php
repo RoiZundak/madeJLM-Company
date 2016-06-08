@@ -328,7 +328,6 @@
 				});
 			}
 			
-			
 			$( \"#form_skills\" ).submit(function( event ) 
 			{
 				event.preventDefault();
@@ -348,8 +347,17 @@
 			
 			
 			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
+			<input type=\"text\" list=\"years_list\" id='years_input' class='skills'>
 			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value);$(\"#skill_input\").val(\"\");'>
-		
+	
+			<datalist id ='years_list'>
+			<option value='less then 1 year'></option>
+			<option value='1 year'></option>
+			<option value='2 years'></option>
+			<option value='3 years'></option>
+			<option value='more then 3 years'></option>
+			</datalist>
+			
 			<datalist id=\"skills_list\">";
 			foreach ($databaseConnection->query($sql) as $row)
 				echo '<option value='.$row['name'].'>';
