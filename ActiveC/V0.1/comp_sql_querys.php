@@ -98,6 +98,7 @@
 			if($row['current_work']!=="")
 				$curr_job=$row['first_name']." is currently working at ".$row['current_work'].".";
 
+			$cv_file="<a href='".$row['cv']."' download='".$row['first_name'].$row['last_name']."'> Download CV </a>'";
 			echo "
 			<table>
 			    <tr>
@@ -108,7 +109,7 @@
                     	<h2>".$row['first_name']." ".$row['last_name']."</h2>
                     	".$git_string."
 						".$link_string."
-						<!--cv-->
+						".$cv_file."
 						<td>
 							<div id='mailDiv'>
 								<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>			
