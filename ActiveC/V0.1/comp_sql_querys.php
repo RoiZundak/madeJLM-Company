@@ -192,9 +192,6 @@
                 <tr class=\"border_bottom\">
                 	<td>
 							<h4><b>" . $sum . "</h4></b>" . $summary . "
-							<script>
-							document.getElementById(\"MyTable\").deleteRow(4);
-							</script>
 					</td>
 					
 					<td>
