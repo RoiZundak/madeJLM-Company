@@ -268,59 +268,55 @@ if($func=="9")
 
 
 
-if($func=="10"){
-    $skills_arr=array();
-    foreach($_GET as $key => $value){
-        if (strstr($key, 'skill_')) {
-            array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
-        }
-    }
-    if(count($skills_arr)==0){
-        //no skills were selected
-        exit;
-    }
-    $skills_id=array();
-    $sql = "SELECT id FROM skills WHERE name IN (".implode(',',$skills_arr).") AND status = 1";
-    foreach ($databaseConnection->query($sql) as $row) {
-        array_push($skills_id,'\''.$row[0].'\'');
-    }
-    if(count($skills_id)==0){
-        //could not get skills id
-        exit;
-    }
-    $sql = "SELECT student_id FROM student_skills WHERE skill_id  IN (".implode(',',$skills_id).")" ;
-    $students_id =array();
-    foreach ($databaseConnection->query($sql) as $row) {
-        array_push($students_id,'\''.$row[0].'\'');
-    }
-    if(count($students_id)==0){
-        //noBody has that skill !
-        exit;
-    }
-    $sql = "SELECT * FROM student WHERE ID IN(".implode(',',$students_id).")" ;
-    $img_src = "../img/profilepic.png";
-    foreach ($databaseConnection->query($sql) as $row) {
-        $img_src ="";
-        if(  $row['profile']=="" ){
-            $img_src = "./img/profilepic.png";
-        }else{
-            $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
-        }
-        echo "<div class='head' id='head_".$row['ID']."' > ";
-        echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
-        print_r($row['first_name']);
-        echo "</div>";
-    }
-}
+	if($func=="10")
+	{
+		$skills_arr=array();
+		foreach($_GET as $key => $value)
+		{
+			if (strstr($key, 'skill_'))
+				array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
+		}
+		if(count($skills_arr)==0) //no skills were selected
+			exit;
+		$skills_id=array();
+		$sql = "SELECT id FROM skills WHERE name IN (".implode(',',$skills_arr).") AND status = 1";
+		foreach ($databaseConnection->query($sql) as $row)
+			array_push($skills_id,'\''.$row[0].'\'');
 
-if($func=="11")
-{
-	$q = intval($_GET['q']); //student id
-	$sql_update="UPDATE student SET counter_contact = counter_contact + 1 WHERE ID = '".$q."'";
-	$update = $databaseConnection ->prepare($sql_update);
-	$update->execute();
-}
+		if(count($skills_id)==0) //could not get skills id
+			exit;
 
+		$sql = "SELECT student_id FROM student_skills WHERE skill_id  IN (".implode(',',$skills_id).")" ;
+		$students_id =array();
+		foreach ($databaseConnection->query($sql) as $row)
+			array_push($students_id,'\''.$row[0].'\'');
 
+		if(count($students_id)==0) //noBody has that skill !
+			exit;
+
+		$sql = "SELECT * FROM student WHERE ID IN(".implode(',',$students_id).")" ;
+		$img_src = "../img/profilepic.png";
+		foreach ($databaseConnection->query($sql) as $row)
+		{
+			$img_src ="";
+			if(  $row['profile']=="" )
+				$img_src = "./img/profilepic.png";
+			else
+				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+			
+			echo "<div class='head' id='head_".$row['ID']."' > ";
+			echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+			print_r($row['first_name']);
+			echo "</div>";
+		}
+	}
+
+	if($func=="11")
+	{
+		$q = intval($_GET['q']); //student id
+		$sql_update="UPDATE student SET counter_contact = counter_contact + 1 WHERE ID = '".$q."'";
+		$update = $databaseConnection ->prepare($sql_update);
+		$update->execute();
+	}
 ?>
 
