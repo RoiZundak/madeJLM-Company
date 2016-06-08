@@ -61,9 +61,10 @@
 			$list_skills_bck = $list_skills;
 			$skills_name = "SELECT * FROM skills WHERE id IN (" . implode(',', $list_skills) . ")";
 			$show_all_skills="";
+			$all_skills="";
 			if (count($list_skills) > 0)
 			{
-				$show_all_skills ="skill list:";
+				$show_all_skills ="Skills list:";
 				$len = count($list_skills_bck);
 				foreach ($databaseConnection->query($skills_name) as $skill) {
 					for ($i = 0; $i < $len; $i++) {
@@ -74,7 +75,7 @@
 
 				}
 			}
-			$show_all_skills.=" ".$all_skills;
+			//$show_all_skills.=" ".$all_skills;
 			$college_name = "";
 			foreach ($databaseConnection->query($sql_college) as $college) {
 				$college_name = $college['name'];
@@ -161,7 +162,7 @@
                 </tr>
                 <tr>
                 	<td>
-                		".$show_all_skills."
+                		<h4><b>".$show_all_skills."</b></h4> ".$all_skills.";
 					</td>
                 </tr>
                 <tr>
@@ -390,8 +391,9 @@
 		{
 			if (strstr($key, 'skill_')){
                 if(strstr($value,',')){
-                    $skill = substr($value,0,strpos($value,','));
-                    $time = substr($value,strpos($value,',')+2);
+                    $skill = substr($value,0,strpos($value,','));//eg. 'javascript'
+                    $time = substr($value,strpos($value,',')+2); //eg. '3 years'
+                    $time = substr($time ,0 , strpos($time,' '));//eg. '3'
                     echo "skill :  ".$skill." time : ".$time."<br>";
                 }else{
                     array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
@@ -401,7 +403,6 @@
             }
 
 		}
-        exit;
 		if(count($skills_arr)==0) //no skills were selected
 			exit;
 		$skills_id=array();
