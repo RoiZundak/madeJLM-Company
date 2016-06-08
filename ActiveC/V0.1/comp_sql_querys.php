@@ -127,7 +127,21 @@
 			$phone_number="";
 			if($row['phone_number'] !=="0")
 			{
-                $phone_number= "\"<a href =  callto:0" . $row['phone_number'] . "  >0" . $row['phone_number'] . "</a>\"";
+                //$phone_number= "\"<a href =  callto:0" . $row['phone_number'] . "  >0" . $row['phone_number'] . "</a>\"";
+
+
+                $phone_number = "<script type=\"text/javascript\" src=\"https://secure.skypeassets.com/i/scom/js/skype-uri.js\"></script>
+<div id=\"SkypeButton_Call_ohayon109_1\">
+ <script type=\"text/javascript\">
+ Skype.ui({
+ \"name\": \"call\",
+ \"element\": \"SkypeButton_Call_ohayon109_1\",
+ \"participants\": [\"ohayon109\"]
+ });
+ </script>
+</div>";
+
+
 				//$phone_number="<a href=\"callto:0" . $row['phone_number']."'>Call with skype</a> or call ".$row['phone_number'];
 			}
 //<i class="fa fa-phone"></i> <abbr title="Phone"></abbr>:
