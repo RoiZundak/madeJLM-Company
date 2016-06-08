@@ -34,7 +34,7 @@
                 echo $newTime ;
 
                 $currentDateTime = $results['block'];
-                $newDateTime = date('h:i A', strtotime($currentDateTime));
+                $newDateTime = date('Y-m-d h:i A', strtotime($currentDateTime));
 
                 echo $newDateTime;
 
