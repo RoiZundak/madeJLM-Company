@@ -245,7 +245,7 @@ if($func=="9")
               var str = $(\"#form_skills\").serialize();
               xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById(\"std_info\").innerHTML = xmlhttp.responseText;
+                        document.getElementById(\"show_all\").innerHTML = xmlhttp.responseText;
                     }
                 };
             xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
