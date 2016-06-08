@@ -78,7 +78,7 @@
                 <tr>
                 	<td>
                 		
-						$sentence = 
+					 
 					</td>
                 </tr>
                 
