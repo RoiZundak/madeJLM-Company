@@ -46,7 +46,7 @@
 		}
 			echo "
 			<table>
-			    <tr class ='line_td'>
+			    <tr>
 			        <td>
 			            <img class='head_image' src =".$img_src." width ='120px' height='110px'>
                     </td>
@@ -62,6 +62,12 @@
 						</div>
 					</td>
                 </tr>
+                
+                <th>
+                	<tr class ='line_td'>
+					</tr>
+                </th>
+                
 			</table>
 			";
 	}
