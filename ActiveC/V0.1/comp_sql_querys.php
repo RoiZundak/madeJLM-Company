@@ -390,13 +390,29 @@
 		{
 			if (strstr($key, 'skill_')){
                 if(strstr($value,',')){
+
                     $skill = substr($value,0,strpos($value,','));//eg. 'javascript'
                     $time = substr($value,strpos($value,',')+2); //eg. '3 years'
                     $time = substr($time ,0 , strpos($time,' '));//eg. '3'
-                    echo "skill :  ".$skill." time : ".$time."<br>";
+                    //more , less , All ,1 ,2, 3
+                    switch ($time){
+                        case 'All':
+                            $time='0';
+                            break;
+                        case 'less':
+                            $time = '-1';
+                            break;
+                        case 'more':
+                            $time='+3';
+                            break;
+                        default:
+
+                    }
+                    array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
+                    array_push($time_arr,'\''.$time.'\'');
                 }else{
                     array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
-                    array_push($time_arr,'\''.$value.'\'');
+                    array_push($time_arr,'0');
                 }
 
             }
