@@ -23,47 +23,28 @@
 				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
 
             $maito_string = "\"<a href =  mailto:".$row['Email']."  >".$row['Email']."</a>\"";
-			echo
-				"<table>
-					<tr >
-						<td >
-							<img src=".$img_src." width='120px' height='110px'>
-						</td>
-		
-						<td class ='line_td'>
-							<p>
-								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2><br >    
-							<div id='mailDiv'>
-								<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>			
-							</div>
-						   </p>
-						</td>
-					</tr>
-		
-					<th >
-						<td class ='line_td'>
-						
-						</td>
-					</th>
-					";
-					echo "<table id='show_student_info'>
-							<tr>
-							<th>Firstname</th>
-							<th>Lastname</th>
-							<th>basic education years</th>
-							<th>subject</th>
-							<th>semesters left</th>
-							</tr>";
-		
-					echo "<tr>";
-					echo "<td>" . $row['first_name'] . "</td>";
-					echo "<td>" . $row['last_name'] . "</td>";
-					echo "<td>" . $row['basic_education_years'] . "</td>";
-					echo "<td>" . $row['basic_education_subject'] . "</td>";
-					echo "<td>" . $row['semesters_left'] . "</td>";
-					echo "</tr>";
-					echo "</table>";
-				}
+			echo "
+			<table>
+			    <tr>
+			        <td>
+			            <img src =".$img_src." width ='120px' height='110px'>
+                    </td>
+                    <td>
+                        <h2>".$row['first_name']." ".$row['last_name']."</h2>
+                    </td>
+                    <td>//cv
+                    
+                    </td>
+                    <td>//github
+                    
+                    </td>
+                    <td>//linkedin
+                    
+                    </td>
+                </tr>
+			
+			</table>
+			";
 	}
 
 	//filter Git
