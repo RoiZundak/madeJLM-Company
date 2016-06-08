@@ -48,7 +48,7 @@
 			<table>
 			    <tr>
 			        <td>
-			            <img src =".$img_src." width ='120px' height='110px'>
+			            <img class='head_image' src =".$img_src." width ='120px' height='110px'>
                     </td>
                     <tr>
                     	<td>
@@ -143,8 +143,7 @@
 		$p_ass = md5($p_ass);
 
 		//PDO SYTLE :
-		date_default_timezone_set("Asia/Jerusalem");
-		$records = $databaseConnection->prepare('INSERT INTO company (username, email, password,created) VALUES (:user,:mail,:password,date("Y-m-d h:i:sa") )');
+		$records = $databaseConnection->prepare('INSERT INTO company (username, email, password,created) VALUES (:user,:mail,:password,NOW() )');
 		$records->bindParam(':user', $name);
 		$records->bindParam(':mail', $mail);
 		$records->bindParam(':password', $p_ass);
