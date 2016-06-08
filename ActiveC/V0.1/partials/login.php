@@ -32,6 +32,7 @@
                 $newTime =  date("Y-m-d h:i:sa", $d);
 
                 echo $newTime;
+                echo $results['block'];
 
 
                 if($newTime < $results['block'])
