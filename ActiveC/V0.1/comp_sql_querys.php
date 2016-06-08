@@ -387,8 +387,11 @@
 		$skills_arr=array();
 		foreach($_GET as $key => $value)
 		{
-			if (strstr($key, 'skill_'))
-				array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
+			if (strstr($key, 'skill_')){
+                array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
+                echo $value;
+            }
+
 		}
 		if(count($skills_arr)==0) //no skills were selected
 			exit;
