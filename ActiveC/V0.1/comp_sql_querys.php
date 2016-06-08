@@ -61,9 +61,10 @@
 			$list_skills_bck = $list_skills;
 			$skills_name = "SELECT * FROM skills WHERE id IN (" . implode(',', $list_skills) . ")";
 			$show_all_skills="";
+			$all_skills="";
 			if (count($list_skills) > 0)
 			{
-				$show_all_skills ="skill list:";
+				$show_all_skills ="Skills list: ";
 				$len = count($list_skills_bck);
 				foreach ($databaseConnection->query($skills_name) as $skill) {
 					for ($i = 0; $i < $len; $i++) {
@@ -74,7 +75,7 @@
 
 				}
 			}
-			$show_all_skills.=" ".$all_skills;
+			//$show_all_skills.=" ".$all_skills;
 			$college_name = "";
 			foreach ($databaseConnection->query($sql_college) as $college) {
 				$college_name = $college['name'];
@@ -135,7 +136,7 @@
 						" . $link_string . "
 						" . $cv_file . "
 						<td>
-							" . $phone_number . "
+							<p><i class=\"fa fa-phone\"></i> <abbr title=\"Phone\">P</abbr>:" . $phone_number . "</p>
 						</td>
 						<td>
 							<div id='mailDiv'>
@@ -161,7 +162,7 @@
                 </tr>
                 <tr>
                 	<td>
-                		".$show_all_skills."
+                		<h4><b>".$show_all_skills."</b></h4> ".$all_skills."
 					</td>
                 </tr>
                 <tr>
