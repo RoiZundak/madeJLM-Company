@@ -49,7 +49,9 @@
             {
                 $errMsg .= 'Incorrect Password<br>';
                 $sql_update="UPDATE company SET attempt = attempt + 1 WHERE username = '".$username."'";
-
+                $update = $databaseConnection ->prepare($sql_update);
+                $update->execute();
+                
                 if($results['attempt'] >= 5)
                 {
                     $sql_update="UPDATE company SET attempt = 0 WHERE username = '".$username."'";
