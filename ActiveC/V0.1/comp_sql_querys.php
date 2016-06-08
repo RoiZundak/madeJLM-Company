@@ -47,7 +47,7 @@
 			echo "
 			<table>
 			    <tr>
-			        <td>
+			        <td class ='line_td'>
 			            <img class='head_image' src =".$img_src." width ='120px' height='110px'>
                     </td>
                     <td>
