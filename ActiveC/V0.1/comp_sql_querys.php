@@ -359,7 +359,7 @@
 				<option value='3'>3 years</option>
 				<option value='3+'>more then 3 years</option>
 			</select>
-			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value,document.getElementById(\"years_input\").value);$(\"#skill_input\").val(\"\");'>
+			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value,document.getElementById(\"years_input\").innerHTML);$(\"#skill_input\").val(\"\");'>
 
 			
 			
