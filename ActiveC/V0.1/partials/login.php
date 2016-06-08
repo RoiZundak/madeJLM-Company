@@ -35,7 +35,7 @@
                 echo "<br>";
                 echo $newDateTime;
 
-                if($newTime < $newDateTime)
+                if($newTime > $newDateTime)
                 {
 
 
