@@ -90,7 +90,7 @@ Our style
 
 }
 
-label {  width: 40px; }
+label { display: inline-block; width: 40px; }
 
 #skill_input{
     width: 70%;
