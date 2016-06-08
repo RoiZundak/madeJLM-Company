@@ -209,8 +209,8 @@
         if(strcmp($pass1,$pass2)!=0 )
 		{
             echo "<script>
-			alert('Passwords does not match.Redirecting to ADMIN page..');
-            window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/templates/adminBasic.html'; </script>";
+			alert('Passwords does not match.Redirecting to login page..');
+            window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login'; </script>";
             exit;
         }
         //PDO STYLE :
