@@ -57,6 +57,10 @@ Our style
     max-width: 45%;
     min-height: 80%;
     max-height: 80%;
+    overflow: auto;
+    overflow-x: hidden;
+
+
 }
 
 #show_all {

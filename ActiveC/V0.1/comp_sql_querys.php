@@ -149,7 +149,6 @@
 				
 				<!--Second Line: Phone + Mail-->
 				<tr>
-				<div class='line_td'>
 						<td id='phoneDiv'>
 						    <button id = 'std_phone_" . $row['ID'] . "' class='filters' onclick='$(\"#phoneDiv\").html(\"" . $phone_number . "\");' >
 								Show Phone
@@ -161,7 +160,6 @@
 								Show Mail
 							</button>			
 						</td>
-				</div>
                 </tr>
                 
                 	<!--Third Line: Sentence-->
