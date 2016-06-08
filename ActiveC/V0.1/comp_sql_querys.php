@@ -53,16 +53,19 @@
                     <td>
                         <h2>".$row['first_name']." ".$row['last_name']."</h2>
                     </td>
-                    
-                    <td>//cv
+                    <!--cv-->
+                    <td>
                     
                     </td>
               		".$git_string."
 					".$link_string."
 					
-					<div id='mailDiv'>
-						<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>			
-					</div>
+					<td>
+						<div id='mailDiv'>
+							<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>			
+						</div>
+					</td>
+					
                 </tr>
 			
 			</table>
