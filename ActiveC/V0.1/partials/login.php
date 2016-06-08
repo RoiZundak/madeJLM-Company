@@ -25,11 +25,19 @@
 
             if(count($results) > 0 && $results['block'] != null)
             {
+               echo" <script>
+                    alert('ccchhhhhheeeeckkkkkk');
+                </script>";
                 $d=strtotime("+2 Minutes -4 hours");
                 $newTime =  date("Y-m-d h:i:sa", $d);
 
+                echo $newTime ;
+
                 $currentDateTime = $results['block'];
-                $newDateTime = date('Y-m-d  h:i:sa', strtotime($currentDateTime));
+                $newDateTime = date('h:i A', strtotime($currentDateTime));
+
+                echo $newDateTime;
+
 
                 if($newTime < $newDateTime)
                 {
@@ -73,6 +81,10 @@
                 exit;
             }
 
+           // $q = "SELECT attempts, (CASE when block is not NULL and DATE_ADD(LastLogin, INTERVAL ".TIME_PERIOD.
+              //  " MINUTE)>NOW() then 1 else 0 end) as Denied FROM ".TBL_ATTEMPTS." WHERE ip = '$value'";
+
+
             else if(count($results) > 0 && $password !== $results['password'])
             {
                 $errMsg .= 'Incorrect Password<br>';
@@ -80,7 +92,7 @@
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
 
-                if( intval( $results['attempt'] )>= 4)
+                if( intval( $results['attempt'] )>= 5)
                 {
                     echo "<script>
                         alert('You tried too much. Try again in few minuts.');
