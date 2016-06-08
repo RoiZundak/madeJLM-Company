@@ -121,11 +121,7 @@ Our style
     margin-right: 20px;
 }
 
-tr.border_bottom td {
-    border-bottom:1pt solid black;
 
-
-}
 .head{
 	display:inline-block;
 	width:140px;
@@ -211,6 +207,26 @@ label {
     background-image: -o-linear-gradient(top, #18AEDB, #a5defb);
     background-image: linear-gradient(to bottom, #18AEDB, #a5defb);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#18AEDB, endColorstr=#a5defb);
 }
+
+
+
+
+table {
+    border-collapse: collapse;
+}
+tr {
+    border: solid;
+    border-width: 1px 0;
+}
+
+
+
+
+
+
+
+
+
 
 
 input[type=submit]{
@@ -456,10 +472,7 @@ table {
 	font-size:1.1em;
 }
 
-table, td, th {
-    border: 1px solid white;
 
-}
 
 td {text-align: left;
 }
