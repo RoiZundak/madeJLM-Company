@@ -57,7 +57,10 @@ Our style
     max-width: 45%;
     min-height: 80%;
     max-height: 80%;
-    overflow: auto;
+    overflow: hidden;
+    -ms-overflow-x: auto; /* IE8 */
+    overflow-x: auto;
+
 
 }
 
