@@ -89,6 +89,9 @@ Our style
     width: auto;
 
 }
+
+label {  width: 40px; }
+
 #skill_input{
     width: 70%;
     height: 30px;
