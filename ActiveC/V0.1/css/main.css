@@ -47,7 +47,6 @@ Our style
     color: white;
 }
 #show_stud {
-    background-color: #33FF33;
     float:right;
     opacity: 0.7;
     border-left-style: outset;
@@ -110,12 +109,10 @@ Our style
 #bubble{
     float: right;
 }
-#phoneNumber{
-    margin-top: 30px;
-}
-#mailDiv{
+#contact{
     margin-top: 5px;
 }
+
 .line_td{
 	border-bottom-color : grey;
 	border-bottom-width : 1px;
