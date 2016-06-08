@@ -44,7 +44,7 @@
 								    	}
 								
 								</script>
-								<button type=\"button\"  onclick=\"$('#mailDiv').html('".$row['Email']."');\">
+								<button type=\"button\"  onclick=\"$('#mailDiv').html(\"mailto:\"'".$row['Email']."');\">Show Me Mail! </button>
 								<!--<button class=\"filters\"  id = \"but\" onclick=\"myFunc('hhhhh');\"> Show Me Mail! </button>-->
 					
 								
