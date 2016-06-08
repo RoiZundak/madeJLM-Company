@@ -23,6 +23,16 @@
 				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
 
             $maito_string = "\"<a href =  mailto:".$row['Email']."  >".$row['Email']."</a>\"";
+			$link_string="";
+			if ($row['linkedin'] !== "")
+			{
+				$link_string="<td>
+								<a href=\"".$row['linkedin']."\">
+								<img title=\"LinkedIn\" alt=\"LinkedIn\" src=\"https://socialmediawidgets.files.wordpress.com/2014/03/07_linkedin.png\" width=\"35\" height=\"35\" />
+								</a>
+ 							</td>";
+			}
+		}
 			echo "
 			<table>
 			    <tr>
@@ -32,15 +42,14 @@
                     <td>
                         <h2>".$row['first_name']." ".$row['last_name']."</h2>
                     </td>
+                    
                     <td>//cv
                     
                     </td>
                     <td>//github
                     
                     </td>
-                    <td>//linkedin
-                    
-                    </td>
+					".$link_string."
                 </tr>
 			
 			</table>
