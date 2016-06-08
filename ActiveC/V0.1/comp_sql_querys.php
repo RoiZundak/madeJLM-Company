@@ -53,7 +53,7 @@
 							<div id='mailDiv'>
 								
 								
-								<button class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>
+								<button id = 'std_mail_b' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>
 								<!--<button class=\"filters\"  id = \"but\" onclick=\"myFunc('hhhhh');\"> Show Me Mail! </button>-->
 					
 								

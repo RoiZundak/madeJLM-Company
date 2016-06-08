@@ -130,6 +130,7 @@ echo
                         xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "4", true);
                         xmlhttp.send();
                     }
+                //std_mail_b
                 }
                 , false);
         </script>
