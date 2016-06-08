@@ -68,7 +68,6 @@
 
 			}
 
-
 			echo "
 			<table>
 			    <tr>
@@ -85,7 +84,7 @@
 								<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>			
 							</div>
 						</td>
-						
+						".$row['summery']."
                     </td>   
                 </tr>
                 <tr>
