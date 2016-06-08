@@ -127,7 +127,7 @@
 			$phone_number="";
 			if($row['phone_number'] !=="0")
 			{
-				$phone_number="<i class=\"fa fa-phone\"></i> <abbr title=\"Phone\"></abbr>: 0" . $row['phone_number'];
+				$phone_number="\"<i class=\"fa fa-phone\"></i> <abbr title=\"Phone\"></abbr>: 0" . $row['phone_number']."\"";
 			}
 
 			echo "
@@ -148,12 +148,16 @@
 				</tr>
 				<!--Second Line: Phone + Mail-->
 				<tr>
-						<td id='phone'>
-						". $phone_number ."
+						<td >
+						<div id='phoneDiv'>
+						    <button id = 'std_phone_" . $row['ID'] . "' class='filters' onclick='$(\"#phoneDiv\").html(" . $phone_number . ");' >
+								Show Phone
+							</button>
+						    
+						</div>
 						</td>
 						
-						<td id='mail'>
-							
+						<td id='mailDiv'>
 							<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
 								Show Mail
 							</button>			
