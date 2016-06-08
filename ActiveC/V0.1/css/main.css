@@ -83,7 +83,7 @@ Our style
 #skill_std{
 
     position: absolute;
-
+    z-index: 10;
     margin-left: 1%;
     height: auto;
     width: auto;
