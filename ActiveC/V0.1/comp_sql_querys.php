@@ -322,7 +322,7 @@
 			//adds a label and input text containing skill value
 			function addSkillToList(skill_to_add,years)
 			{
-				var skill_years='skill_to_add';
+				var skill_years=skill_to_add;
 				if (years!='')
 					skill_years+=', '+ years;
 				
