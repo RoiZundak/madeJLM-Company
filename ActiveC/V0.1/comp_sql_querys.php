@@ -125,14 +125,17 @@
 			}
 
 			$phone_number="";
+            $phone_button="";
 			if($row['phone_number'] !=="0")
 			{
-                $phone_number= "\"<a href =  callto:0" . $row['phone_number'] . "  >0" . $row['phone_number'] . "</a>\"";
-				//$phone_number="<a href=\"callto:0" . $row['phone_number']."'>Call with skype</a> or call ".$row['phone_number'];
+                $phone_number= "\"<a href =  callto://+972" . $row['phone_number'] . "  >0" . $row['phone_number'] . "</a>\"";
+                $phone_button="<button id = 'std_phone_" . $row['ID'] . "' class='filters' onclick='$(\"#phoneDiv\").html(" . $phone_number . ");' >
+								Show Phone
+								</button>";
 			}
 //<i class="fa fa-phone"></i> <abbr title="Phone"></abbr>:
 			echo "
-			<table>
+			<table border=1 frame=void rules=rows>
 				<!--First Line: Picture+ Bubbles -->
 			    <tr>
 			    
@@ -151,11 +154,8 @@
 				<!--Second Line: Phone + Mail-->
 				<tr class=\"border_bottom\">
 						<td id='phoneDiv'>
-						    <button id = 'std_phone_" . $row['ID'] . "' class='filters' onclick='$(\"#phoneDiv\").html(" . $phone_number . ");' >
-								Show Phone
-							</button>
+						    ".$phone_button."
 						</td>
-						
 						<td id='mailDiv'>
 							<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
 								Show Mail

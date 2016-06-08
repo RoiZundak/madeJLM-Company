@@ -121,9 +121,7 @@ Our style
     margin-right: 20px;
 }
 
-tr.border_bottom td {
-    margin-bottom: 5px;
-}
+
 .head{
 	display:inline-block;
 	width:140px;
@@ -209,6 +207,42 @@ label {
     background-image: -o-linear-gradient(top, #18AEDB, #a5defb);
     background-image: linear-gradient(to bottom, #18AEDB, #a5defb);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#18AEDB, endColorstr=#a5defb);
 }
+
+
+
+
+table {
+    border-collapse: collapse;
+    margin-top:2px;
+    width: 100%;
+    font-size:1.1em;
+}
+tr {
+    border: solid;
+    border-width: 1px 0;
+    min-height:30% ;
+    border-color: #84C6EC;
+}
+
+    td {
+    padding-top: .5em;
+    padding-bottom: .5em;
+        text-align: left;
+}
+
+
+tr:first-child {
+    border-top: none;
+}
+tr:last-child {
+    border-bottom: none;
+}
+
+
+
+
+
+
 
 
 input[type=submit]{
@@ -447,20 +481,8 @@ footer {
     }
 }
 
-table {
-	margin-top:2px;
-    width: 100%;
-    border-collapse: collapse;
-	font-size:1.1em;
-}
 
-table, td, th {
-    border: 1px solid white;
 
-}
-
-td {text-align: left;
-}
 #show_student_info{
     border: black solid thin;
 }
