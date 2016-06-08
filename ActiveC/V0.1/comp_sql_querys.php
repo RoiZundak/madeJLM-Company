@@ -79,20 +79,25 @@
 			switch($row['job_percent'])
 			{
 				case 1:
-					$job_per.="a half time job.";
+					$job_per .= "a half time job.";
 					break;
 				case 2:
-					$job_per.="a full time job.";
+					$job_per .= "a full time job.";
 					break;
 				case 3:
-					$job_per.="working in shifts.";
+					$job_per .= "working in shifts.";
 					break;
 				case 4:
-					$job_per.="a freelancer job.";
+					$job_per .= "a freelancer job.";
 					break;
 				default:
-					$job_per=$row['first_name']."hasn't entered a preference for job percent ";
+					$job_per = $row['first_name'] . "hasn't entered a preference for job percent ";
 			}
+
+			$curr_job="";
+			if($row['current_work']!=="")
+				$curr_job=$row['first_name']." is currently working at ".$row['current_work'];
+
 			echo "
 			<table>
 			    <tr>
@@ -119,6 +124,11 @@
                  <tr>
                 	<td>
                 		".$job_per."
+					</td>
+                </tr>
+                <tr>
+                	<td>
+                		".$curr_job."
 					</td>
                 </tr>
                 <tr>
