@@ -14,89 +14,79 @@
 		//PDO STYLE :
 		$sql="SELECT * FROM student WHERE ID = '".$q."' LIMIT 1";
 		$img_src = "../img/profilepic.png";
-		foreach ($databaseConnection->query($sql) as $row) 
+		foreach ($databaseConnection->query($sql) as $row)
 		{
-			$img_src ="";
-			if(  $row['profile']=="" )
+			$img_src = "";
+			if ($row['profile'] == "")
 				$img_src = "./img/profilepic.png";
 			else
-				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+				$img_src = "../../../MadeinJLM-students/mockup/" . $row['profile'];
 
-            $maito_string = "\"<a href =  mailto:".$row['Email']."  >".$row['Email']."</a>\"";
-			$link_string="";
-			if ($row['linkedin'] !== "")
-			{
-				$link_string="<td>
-								<a href=\"".$row['linkedin']."\">
+			$maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" . $row['Email'] . "</a>\"";
+			$link_string = "";
+			if ($row['linkedin'] !== "") {
+				$link_string = "<td>
+								<a href=\"" . $row['linkedin'] . "\">
 								<img title=\"LinkedIn\" alt=\"LinkedIn\" src=\"https://socialmediawidgets.files.wordpress.com/2014/03/07_linkedin.png\" width=\"35\" height=\"35\" />
 								</a>
  							</td>";
 			}
 
-			$git_string="";
-			if ($row['github'] !== "")
-			{
-				$git_string="<td>
-								<a href=\"".$row['github']."\">
+			$git_string = "";
+			if ($row['github'] !== "") {
+				$git_string = "<td>
+								<a href=\"" . $row['github'] . "\">
 								<img title=\"Github\" alt=\"Github\" src=\"http://image000.flaticon.com/icons/svg/25/25231.svg\" width=\"35\" height=\"35\" />
 								</a>
  							</td>";
 			}
-			$cv_file="";
-			if($row['cv'] !=="")
-				$cv_file="<a href='".$row['cv']."' download='".$row['first_name'].$row['last_name']."'> <img title=\"Cv\" alt=\"Cv\" src=\"http://rambase.com/wp-content/uploads/2014/08/file-manager-logo.png\" width=\"35\" height=\"35\" /> </a>";
+			$cv_file = "";
+			if ($row['cv'] !== "")
+				$cv_file = "<a href='" . $row['cv'] . "' download='" . $row['first_name'] . $row['last_name'] . "'> <img title=\"Cv\" alt=\"Cv\" src=\"http://rambase.com/wp-content/uploads/2014/08/file-manager-logo.png\" width=\"35\" height=\"35\" /> </a>";
 
-		}
-			$sentence="";
-			$sql_degree="SELECT name FROM degree WHERE id =".$row['degree_id'];
-			$sql_college="SELECT name FROM college WHERE id =".$row['college_id'];;
-			$sql_skills = "SELECT * FROM student_skills WHERE student_id = ".$row['ID'];
+			$sentence = "";
+			$sql_degree = "SELECT name FROM degree WHERE id =" . $row['degree_id'];
+			$sql_college = "SELECT name FROM college WHERE id =" . $row['college_id'];;
+			$sql_skills = "SELECT * FROM student_skills WHERE student_id = " . $row['ID'];
 			$all_skills = "";
-			$list_skills=array();       //skills ids
-            $list_skills_bck=array();   //backup skills id for further use
-            $list_skills_years=array(); //keep years of knowledge
+			$list_skills = array();       //skills ids
+			$list_skills_bck = array();   //backup skills id for further use
+			$list_skills_years = array(); //keep years of knowledge
 
 
-
-			foreach ($databaseConnection->query($sql_skills) as $skill)
-			{
-                array_push($list_skills,$skill['skill_id']);
-                array_push($list_skills_years,$skill['years']);
+			foreach ($databaseConnection->query($sql_skills) as $skill) {
+				array_push($list_skills, $skill['skill_id']);
+				array_push($list_skills_years, $skill['years']);
 			}
-            $list_skills_bck=$list_skills;
-			$skills_name ="SELECT * FROM skills WHERE id IN (".implode(',',$list_skills).")";
-			if (count($list_skills)>0)
-			{
-                $len =count($list_skills_bck);
-				foreach ($databaseConnection->query($skills_name) as $skill)
-				{
-                    for($i=0;$i<$len;$i++){
-                        if($skill['id'] === $list_skills_bck[$i]){
-                            $all_skills.="<span class='skill_item'> ".$skill['name']." for ".$list_skills_years[$i]."</span>";
-                        }
-                    }
+			$list_skills_bck = $list_skills;
+			$skills_name = "SELECT * FROM skills WHERE id IN (" . implode(',', $list_skills) . ")";
+			if (count($list_skills) > 0) {
+				$len = count($list_skills_bck);
+				foreach ($databaseConnection->query($skills_name) as $skill) {
+					for ($i = 0; $i < $len; $i++) {
+						if ($skill['id'] === $list_skills_bck[$i]) {
+							$all_skills .= "<span class='skill_item'> " . $skill['name'] . " for " . $list_skills_years[$i] . "</span>";
+						}
+					}
 
 				}
 			}
-			$college_name="";
-			foreach ($databaseConnection->query($sql_college) as $college)
-			{
-				$college_name=$college['name'];
+			$college_name = "";
+			foreach ($databaseConnection->query($sql_college) as $college) {
+				$college_name = $college['name'];
 			}
-			$degree_name="";
-			foreach ($databaseConnection->query($sql_degree) as $degree)
-			{
-				$degree_name=$degree['name'];
+			$degree_name = "";
+			foreach ($databaseConnection->query($sql_degree) as $degree) {
+				$degree_name = $degree['name'];
 			}
 
-			$phone_number="";
-			if ($row['phone_number'] !== "0" )
-				$phone_number=$row['phone_number'];
+			$phone_number = "";
+			if ($row['phone_number'] !== "0")
+				$phone_number = $row['phone_number'];
 
-			$sentence="Studies for a ".$degree_name." in ".$row['basic_education_subject']." at ".$college_name." with GPA of ".$row['grade_average']." and has ".$row['semesters_left']." semesters left.";
-			$job_per=$row['first_name']." is avaliable for ";
-			switch($row['job_percent'])
-			{
+			$sentence = "Studies for a " . $degree_name . " in " . $row['basic_education_subject'] . " at " . $college_name . " with GPA of " . $row['grade_average'] . " and has " . $row['semesters_left'] . " semesters left.";
+			$job_per = $row['first_name'] . " is avaliable for ";
+			switch ($row['job_percent']) {
 				case 1:
 					$job_per .= "a half time job.";
 					break;
@@ -113,76 +103,75 @@
 					$job_per = $row['first_name'] . " hasn't entered a preference for job percent ";
 			}
 
-			$curr_job="";
-			if($row['current_work']!=="")
-				$curr_job=$row['first_name']." is currently working at ".$row['current_work'].".";
+			$curr_job = "";
+			if ($row['current_work'] !== "")
+				$curr_job = $row['first_name'] . " is currently working at " . $row['current_work'] . ".";
 
-			$summary_="";
-			if($row['summary']!=="")
-			{
-				$sum="Summary: ";
-				$summary=$row['summary'];
+			$summary_ = "";
+			if ($row['summary'] !== "") {
+				$sum = "Summary: ";
+				$summary = $row['summary'];
 			}
 
-			$exprience="";
-			if($row['experience']!=="")
-			{
-				$exp="Experience: ";
-				$exprience =$row['experience'];
+			$exprience = "";
+			if ($row['experience'] !== "") {
+				$exp = "Experience: ";
+				$exprience = $row['experience'];
 			}
 
 			echo "
 			<table>
 			    <tr>
 			        <td>
-			            <img class='head_image' src =".$img_src." width ='120px' height='110px'>
+			            <img class='head_image' src =" . $img_src . " width ='120px' height='110px'>
                     </td>
                     <td class ='line_td'>
-                    	<h2>".$row['first_name']." ".$row['last_name']."</h2>
-                    	".$git_string."
-						".$link_string."
-						".$cv_file."
+                    	<h2>" . $row['first_name'] . " " . $row['last_name'] . "</h2>
+                    	" . $git_string . "
+						" . $link_string . "
+						" . $cv_file . "
 						<td>
-							".$phone_number."
+							" . $phone_number . "
 						</td>
 						<td>
 							<div id='mailDiv'>
-								<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>			
+								<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >Show Mail </button>			
 							</div>
 						</td>
                     </td>   
                 </tr>
                  <tr>
                 	<td>
-                		".$sentence."
+                		" . $sentence . "
 					</td>
                 </tr>
                  <tr>
                 	<td>
-                		".$job_per."
+                		" . $job_per . "
 					</td>
                 </tr>
                 <tr>
                 	<td>
-                		".$curr_job."
+                		" . $curr_job . "
 					</td>
                 </tr>
                 <tr>
                 	<td>
-                		".$all_skills."
+                		" . $all_skills . "
 					</td>
                 </tr>
                 <tr>
                 	<td>
                 		<!--<div style='font-family:Arial Black;width:100%;'> -->
-							<h4><b>".$sum."</h4></b>".$summary." 
-							<h4><b>".$exp."</h4></b>".$exprience." 
+							<h4><b>" . $sum . "</h4></b>" . $summary . " 
+							<h4><b>" . $exp . "</h4></b>" . $exprience . " 
 						<!--</div>-->
                 	</td>
                 </tr>
                 
 			</table>
 			";
+		}
 	}
 
 	//filter Git
