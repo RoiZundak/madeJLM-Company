@@ -67,7 +67,8 @@
 				}
 
 			}
-
+			print_r($degree_name);
+			print_r($college_name);
 			echo "
 			<table>
 			    <tr>
