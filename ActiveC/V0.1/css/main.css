@@ -194,16 +194,6 @@ label {
     background-image: linear-gradient(to bottom, #18AEDB, #a5defb);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#18AEDB, endColorstr=#a5defb);
 }
 
-#hey{
-    background-color: #33FF33;
-}
-
-#tableDiv{
-  background-color: #210D73;
-}
-
-#submitDiv{
-}
 
 input[type=submit]{
 
