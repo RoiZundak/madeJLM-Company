@@ -14,6 +14,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     // Pages
 
       .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
+      .when("/ActiveC", {templateUrl: "partials/about.html", controller: "PageCtrl"})
       .when("/login", {templateUrl: "partials/login.html", controller: "PageCtrl"})
       .when("/faq", {templateUrl: "partials/faq.html", controller: "PageCtrl"})
       .when("/main", {templateUrl: "partials/main.php", controller: "PageCtrl"})
