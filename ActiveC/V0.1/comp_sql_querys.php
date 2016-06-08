@@ -45,8 +45,8 @@
 
 		}
 			$sentence="";
-			$sql_degree="SELECT name FROM degree WHRER id =".$row['degree_id'];
-			$sql_college="SELECT name FROM college WHRER id =".$row['college_id'];;
+			$sql_degree="SELECT name FROM degree WHERE id =".$row['degree_id'];
+			$sql_college="SELECT name FROM college WHERE id =".$row['college_id'];;
 			$college_name = $databaseConnection->query($sql_college);
 			$degree_name = $databaseConnection->query($sql_degree);
 			$sql_skills = "SELECT * FROM student_skills WHERE student_id = ".$row['ID']."AND status=1";
