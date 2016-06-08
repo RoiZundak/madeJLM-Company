@@ -146,6 +146,24 @@ label {
     height:15px;
 }
 
+
+.speech {
+    float: left;
+    margin-right: 50px;
+    margin-top: 30px;
+    text-align: center;
+    line-height: 100px;
+    background-color:white;
+    border: 8px solid #666;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    -webkit-box-shadow: 2px 2px 4px #888;
+    -moz-box-shadow: 2px 2px 4px #888;
+    box-shadow: 2px 2px 4px #888;
+}
+
+
 #add_skill{
     height: 15px;
     text-align: center;
@@ -204,22 +222,6 @@ input[type=submit]:hover{
 }
 
 
-
-.speech {
-    float: left;
-    margin-top: 200px;
-    margin-right: 50px;
-    text-align: center;
-    line-height: 100px;
-    background-color:white;
-    border: 8px solid #666;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
-    -webkit-box-shadow: 2px 2px 4px #888;
-    -moz-box-shadow: 2px 2px 4px #888;
-    box-shadow: 2px 2px 4px #888;
-}
 
 
 
