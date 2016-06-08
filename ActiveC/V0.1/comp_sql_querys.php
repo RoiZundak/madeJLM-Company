@@ -4,7 +4,6 @@
 
 	$func = intval($_GET['func']);
 
-
 	//show single student
 	if($func=="1")
 	{
@@ -21,11 +20,10 @@
 		foreach ($databaseConnection->query($sql) as $row) 
 		{
 			$img_src ="";
-			if(  $row['profile']=="" ){
+			if(  $row['profile']=="" )
 				$img_src = "./img/profilepic.png";
-			}else{
+			else
 				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
-			}
 
             $maito_string = "\"<a href =  mailto:".$row['Email']."  >".$row['Email']."</a>\"";
 			echo
@@ -47,7 +45,6 @@
 					</tr>
 		
 					<th >
-		
 						<td class ='line_td'><p>
 						<p>
 							<h4>Professional Experince:</h4>
@@ -75,75 +72,70 @@
 					echo "</table>";
 				}
 	}
+
 	//filter Git
-
-
-	if($func=="2"){
-
-			//PDO STYLE :
-			$sql = "SELECT * FROM student WHERE github<>''";
-			$img_src = "../img/profilepic.png";
-			foreach ($databaseConnection->query($sql) as $row) {
-				$img_src ="";
-				if(  $row['profile']=="" ){
-					$img_src = "./img/profilepic.png";
-				}else{
-					$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
-				}
-				echo "<div class='head' id='head_".$row['ID']."' > ";
-				echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
-				print_r($row['first_name']);
-				echo "</div>";
-			}
-
-
-			
-	}
-	//filter has instatution
-	if($func=="3"){
-		
+	if($func=="2")
+	{
 		//PDO STYLE :
-		$sql = "SELECT * FROM student WHERE linkedin<>''";
+		$sql = "SELECT * FROM student WHERE github<>''";
 		$img_src = "../img/profilepic.png";
-		foreach ($databaseConnection->query($sql) as $row) {
+		foreach ($databaseConnection->query($sql) as $row)
+		{
 			$img_src ="";
-			if(  $row['profile']=="" ){
+			if(  $row['profile']=="" )
 				$img_src = "./img/profilepic.png";
-			}else{
+			else
 				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
-			}
 			echo "<div class='head' id='head_".$row['ID']."' > ";
 			echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
 			print_r($row['first_name']);
 			echo "</div>";
 		}
-
-
 	}
+
+	//filter has instatution
+	if($func=="3")
+	{
+		//PDO STYLE :
+		$sql = "SELECT * FROM student WHERE linkedin<>''";
+		$img_src = "../img/profilepic.png";
+		foreach ($databaseConnection->query($sql) as $row)
+		{
+			$img_src ="";
+			if(  $row['profile']=="" )
+				$img_src = "./img/profilepic.png";
+			else
+				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+			echo "<div class='head' id='head_".$row['ID']."' > ";
+			echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+			print_r($row['first_name']);
+			echo "</div>";
+		}
+	}
+
 	//clear
-	if($func=="4") {
-
-
+	if($func=="4")
+	{
 		//PDO STYLE :
 		$sql = 'SELECT * FROM student WHERE Activated=1';
 		$img_src = "../img/profilepic.png";
-		foreach ($databaseConnection->query($sql) as $row) {
+		foreach ($databaseConnection->query($sql) as $row)
+		{
 			$img_src = "";
-			if ($row['profile'] == "") {
+			if ($row['profile'] == "")
 				$img_src = "./img/profilepic.png";
-			} else {
+			else
 				$img_src = "../../../MadeinJLM-students/mockup/" . $row['profile'];
-			}
 			echo "<div class='head' id='head" . $row['ID'] . "' > ";
 			echo "<img class='head_image' id='headimage_" . $row['ID'] . "' src='" . $img_src . "' width='120px' height='110px'>";
 			print_r($row['first_name']);
 			echo "</div>";
 		}
-
 	}
 
-//ADD new company
-	if($func=="5"){
+	//ADD new company
+	if($func=="5")
+	{
 		$name =$_POST["username"] ;
 		$mail =$_POST['e_mail'];
 		$p_ass = $_POST['password'];
@@ -154,13 +146,13 @@
 		$records->bindParam(':user', $name);
 		$records->bindParam(':mail', $mail);
 		$records->bindParam(':password', $p_ass);
-		if ( $records->execute()==true){
+		if ( $records->execute()==true)
+		{
 			$newId = $databaseConnection->lastInsertId();
 			echo "Great! ".$name." was added to the db with ID = ".$newId;
-		}else{
-			echo "Failed to add a new company, please try again.";
 		}
-
+		else
+			echo "Failed to add a new company, please try again.";
 	}
 
 	//DELETE company (by id)
@@ -229,7 +221,8 @@
 			//adds a label and input text containing skill value
 			function addSkillToList(skill_to_add)
 			{
-				$('#add_skill').after(function() {
+				$('#add_skill').after(function() 
+				{
 				  return'<label class=\'skills\' for=\'skill_'+skill_to_add+'\'>'+skill_to_add+'</label> <br> <input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_to_add + '\' id=\'skill_'+skill_to_add+'\'>  ' 
 				});
 			}
@@ -237,13 +230,13 @@
 			
 			$( \"#form_skills\" ).submit(function( event ) 
 			{
-					event.preventDefault();
-				  var str = $(\"#form_skills\").serialize();
-				  xmlhttp.onreadystatechange = function() {
-						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-							document.getElementById(\"show_all\").innerHTML = xmlhttp.responseText;
-						}
-					};
+				event.preventDefault();
+				var str = $(\"#form_skills\").serialize();
+				xmlhttp.onreadystatechange = function() 
+				{
+					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+						document.getElementById(\"show_all\").innerHTML = xmlhttp.responseText;
+				};
 				xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
 				xmlhttp.send();
 			});
