@@ -28,10 +28,11 @@
                echo" <script>
                     alert('ccchhhhhheeeeckkkkkk');
                 </script>";
-                $d=strtotime("+15 minutes");
+                $d=strtotime("+2 Minutes");
                 $newTime =  date("Y-m-d h:i:sa", $d);
 
                 echo $newTime;
+
 
                 if($newTime < $results['block'])
                 {
