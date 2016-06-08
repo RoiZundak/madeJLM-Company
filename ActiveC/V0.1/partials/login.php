@@ -33,11 +33,7 @@
 
                 $currentDateTime = $results['block'];
                 $newDateTime = date('Y-m-d h:i:sa', strtotime($currentDateTime));
-
-                echo $newDateTime;
-                echo "<br>";
-                echo $newTime;
-
+                
 
                 if($newTime < $newDateTime)
                 {
