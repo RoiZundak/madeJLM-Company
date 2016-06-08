@@ -149,6 +149,7 @@ label {
 
 
 .speech {
+    position: relative;
     float: left;
     margin-right: 50px;
     margin-top: 45px;
@@ -196,6 +197,9 @@ label {
 
 
 input[type=submit]{
+    position: relative;
+    bottom: 20px;
+    right: 20px;
     background-color: #3b5998;
     width:70%;
     margin-left: 5px;
