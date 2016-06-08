@@ -90,14 +90,13 @@ Our style
 
 }
 
-label { display: block; width: 20%; margin-left: 40%; }
+label { display: block; width: 20%; margin-left: 40%;margin-top: 2%}
 
 #skill_input{
     width: 70%;
     height: 30px;
     float: left;
     margin-top: 3%;
-    margin-bottom: 20px;
     margin-left: 8%;
     background-color: ghostwhite;
 
