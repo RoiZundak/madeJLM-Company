@@ -49,7 +49,7 @@
                 {
                     $sql_update="UPDATE company SET attempt = 0 WHERE username = '".$username."'";
                     $d=strtotime("+15 minutes");
-                    $records = $databaseConnection->prepare('INSERT INTO company (block) VALUES (date("Y-m-d h:i:sa", $d))');
+                    $sql_update="UPDATE company SET block = date(\"Y-m-d h:i:sa\", $d) WHERE username = '".$username."'";
                 }
 
                 echo("<a id='re_route_login' href ='../#/login'></a>
