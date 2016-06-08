@@ -148,7 +148,7 @@
 				</tr>
 				
 				<!--Second Line: Phone + Mail-->
-				<tr>
+				<tr class=\"border_bottom\">
 						<td id='phoneDiv'>
 						    <button id = 'std_phone_" . $row['ID'] . "' class='filters' onclick='$(\"#phoneDiv\").html(\"" . $phone_number . "\");' >
 								Show Phone
@@ -164,14 +164,14 @@
                 
                 	<!--Third Line: Sentence-->
                 	
-                 <tr >
+                 <tr class=\"border_bottom\">
                 	<td>
                 		" . $sentence . "
 					</td>
                 </tr>
                 
                 <!--Four Line: JobPer + CurrJob-->
-                 <tr>
+                 <tr class=\"border_bottom\">
                 	<td>
                 		" . $job_per . "
 					</td>
@@ -182,13 +182,13 @@
                 </tr>
                 
                 <!--Fifth Line: All Skills + ShowAll-->
-                <tr>
+                <tr class=\"border_bottom\">
                 	<td>
                 		<h4><b>".$show_all_skills."</b></h4> ".$all_skills."
 					</td>
                 </tr>
                 <!--Six Line: Sum + Experince-->
-                <tr>
+                <tr class=\"border_bottom\">
                 	<td>
 							<h4><b>" . $sum . "</h4></b>" . $summary . "
 					</td>
