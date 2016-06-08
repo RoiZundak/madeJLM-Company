@@ -160,7 +160,7 @@
 		$p_ass = md5($p_ass);
 
 		//PDO SYTLE :
-		$records = $databaseConnection->prepare('INSERT INTO company (username, email, password,created) VALUES (:user,:mail,:password,date("Y-m-d h:i:sa")');
+		$records = $databaseConnection->prepare('INSERT INTO company (username, email, password,created) VALUES (:user,:mail,:password,NOW() )');
 		$records->bindParam(':user', $name);
 		$records->bindParam(':mail', $mail);
 		$records->bindParam(':password', $p_ass);
@@ -285,6 +285,7 @@ if($func=="10"){
         }
     }
     if(count($skills_arr)==0){
+        //no skills were selected
         exit;
     }
     $skills_id=array();
@@ -293,6 +294,7 @@ if($func=="10"){
         array_push($skills_id,'\''.$row[0].'\'');
     }
     if(count($skills_id)==0){
+        //could not get skills id
         exit;
     }
     $sql = "SELECT student_id FROM student_skills WHERE skill_id  IN (".implode(',',$skills_id).")" ;
@@ -301,6 +303,7 @@ if($func=="10"){
         array_push($students_id,'\''.$row[0].'\'');
     }
     if(count($students_id)==0){
+        //noBody has that skill !
         exit;
     }
     $sql = "SELECT * FROM student WHERE ID IN(".implode(',',$students_id).")" ;
