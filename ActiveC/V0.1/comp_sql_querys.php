@@ -315,6 +315,7 @@ if($func=="10"){
 
 if($func=="11")
 {
+	echo "<script>'heyyyyyyy'<script/>";
 	$q = intval($_GET['q']); //student id
 	$sql_update="UPDATE student SET counter_contact = counter_contact + 1 WHERE ID = '".$q."'";
 	$update = $databaseConnection ->prepare($sql_update);
