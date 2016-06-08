@@ -23,6 +23,32 @@
             $records->execute();
             $results = $records->fetch(PDO::FETCH_ASSOC);
 
+            if(count($results) > 0 && $results['block'] != null)
+            {
+                $now = date("H:i:s", time());
+                $newTime = strtotime("$now -15 minutes");
+
+                if($newTime < $results['block'])
+                {
+                    $errMsg .= 'Time block<br>';
+
+                    echo("<a id='re_route_login' href ='../#/login'></a>
+                    <script>
+                        alert('Your block time did not over yet.');
+                        document.getElementById(\"re_route_login\").click();
+                    </script>
+                     ");
+                    exit;
+
+                }
+                else
+                {
+                    $sql_update = "UPDATE company SET block = null WHERE username = '" . $username . "'";
+                    $update = $databaseConnection ->prepare($sql_update);
+                    $update->execute();
+                }
+            }
+
             if(count($results) > 0 && $password === $results['password'] )
             {
                 //update company counter enters
@@ -31,7 +57,7 @@
                     $update = $databaseConnection ->prepare($sql_update);
                     $update->execute();
                 }
-                
+
                 $sql_update="UPDATE company SET counter_enters = counter_enters + 1 WHERE username = '".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
