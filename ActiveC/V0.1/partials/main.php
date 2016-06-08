@@ -30,6 +30,7 @@
             $databaseConnection =connect_to_db();
             //get all students
             $sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC';
+        
             $img_src = "../img/profilepic.png";
             foreach ($databaseConnection->query($sql) as $row)
             {
