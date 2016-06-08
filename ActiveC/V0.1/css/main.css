@@ -194,9 +194,7 @@ label {
     background-image: linear-gradient(to bottom, #18AEDB, #a5defb);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#18AEDB, endColorstr=#a5defb);
 }
 
-#add{
-    margin-top: 100px;
-}
+
 input[type=submit]{
     background-color: #3b5998;
     width:70%;
