@@ -36,7 +36,7 @@
 			$git_string="";
 			if ($row['github'] !== "")
 			{
-				$link_string="<td>
+				$git_string="<td>
 								<a href=\"".$row['github']."\">
 								<img title=\"Github\" alt=\"Github\" src=\"http://image000.flaticon.com/icons/svg/25/25231.svg\" width=\"35\" height=\"35\" />
 								</a>
