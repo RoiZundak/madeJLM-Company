@@ -8,12 +8,9 @@
 	if($func=="1")
 	{
 		$q = intval($_GET['q']);
-		
 		$sql_update="UPDATE student SET counter_view = counter_view + 1 WHERE ID = '".$q."'";
 		$update = $databaseConnection ->prepare($sql_update);
 		$update->execute();
-		//UPDATE student SET counter_contact = counter_contact + 1;
-
 		//PDO STYLE :
 		$sql="SELECT * FROM student WHERE ID = '".$q."' LIMIT 1";
 		$img_src = "../img/profilepic.png";
@@ -37,20 +34,16 @@
 							<p>
 								<h2>" . $row['first_name'] ." ". $row['last_name'] . "</h2><br >    
 							<div id='mailDiv'>
-								<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>
-								<!--<button class=\"filters\"  id = \"but\" onclick=\"myFunc('hhhhh');\"> Show Me Mail! </button>-->			
+								<button id = 'std_mail_".$row['ID']."' class='filters' onclick='$(\"#mailDiv\").html(".$maito_string.");' >Show Mail </button>			
 							</div>
 						   </p>
 						</td>
 					</tr>
 		
 					<th >
-						<td class ='line_td'><p>
-						<p>
-							<h4>Professional Experince:</h4>
-							2015- Peresnt : NOC operator, Deltathree ,INC.</br>
-							2009-2015:Intel Corp.</br>
-						</td></p>
+						<td class ='line_td'>
+						
+						</td>
 					</th>
 					";
 					echo "<table id='show_student_info'>
