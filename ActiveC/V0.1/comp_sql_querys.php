@@ -196,6 +196,10 @@
 					
 					<td>
 							<h4><b>" . $exp . "</h4></b>" . $exprience . " 
+							<script>
+							if($exp == ' ')
+								<br>
+							</script>
                 	</td>
                 </tr>
                 
