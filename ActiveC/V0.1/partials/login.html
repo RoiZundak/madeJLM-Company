@@ -32,16 +32,17 @@
                 }
 
             });
-            function checkLS()
-            {
-                if($('#login').val() != localStorage.usrname)
-                {
-                    localStorage.usrname = $('#login').val();
-                    localStorage.password = $('#password').val();
-                }
-            }
+
         });
 
+        function checkLS()
+        {
+            if($('#login').val() != localStorage.usrname)
+            {
+                localStorage.usrname = $('#login').val();
+                localStorage.password = $('#password').val();
+            }
+        }
     </script>
     <div id="login_form">
         <br>
