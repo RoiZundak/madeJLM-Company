@@ -50,20 +50,32 @@
 			$sentence="";
 			$sql_degree="SELECT name FROM degree WHERE id =".$row['degree_id'];
 			$sql_college="SELECT name FROM college WHERE id =".$row['college_id'];;
-			$sql_skills = "SELECT skill_id FROM student_skills WHERE student_id = ".$row['ID'];
+			$sql_skills = "SELECT * FROM student_skills WHERE student_id = ".$row['ID'];
 			$all_skills = "";
-			$list_skills=array();
+			$list_skills=array();       //skills ids
+            $list_skills_bck=array();   //backup skills id for further use
+            $list_skills_years=array(); //keep years of knowledge
+
+
 
 			foreach ($databaseConnection->query($sql_skills) as $skill)
 			{
-				array_push($list_skills,$skill['skill_id']);
+                array_push($list_skills,$skill['skill_id']);
+                array_push($list_skills_years,$skill['years']);
 			}
-			$skills_name ="SELECT name FROM skills WHERE id IN (".implode(',',$list_skills).")";
+            $list_skills_bck=$list_skills;
+			$skills_name ="SELECT * FROM skills WHERE id IN (".implode(',',$list_skills).")";
 			if (count($list_skills)>0)
 			{
+                $len =count($list_skills_bck);
 				foreach ($databaseConnection->query($skills_name) as $skill)
 				{
-					$all_skills.="<span class='skill_item'> ".$skill['name']."</span>";
+                    for($i=0;$i<$len;$i++){
+                        if($skill['id'] === $list_skills_bck[$i]){
+                            $all_skills.="<span class='skill_item'> ".$skill['name']." for ".$list_skills_years[$i]."</span>";
+                        }
+                    }
+
 				}
 			}
 			$college_name="";
