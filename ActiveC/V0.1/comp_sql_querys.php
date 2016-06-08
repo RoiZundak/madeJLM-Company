@@ -407,7 +407,10 @@
 		foreach($_GET as $key => $value)
 		{
 			if (strstr($key, 'skill_')){
-
+                if(strstr($value,',')) {
+                    $skill = substr($value, 0, strpos($value, ','));//eg. 'javascript'
+                    array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
+                }
                /* if(strstr($value,',')){
 
                     $skill = substr($value,0,strpos($value,','));//eg. 'javascript'
