@@ -186,9 +186,7 @@
                 <tr class=\"border_bottom\">
                 	<td>
                 		<h4><b>".$show_all_skills."</b></h4> ".$all_skills."
-                		<script>
-                		document.getElementById(\"myTable\").deleteRow(3);
-                		</script>
+             
 					</td>
                 </tr>
                 <!--Six Line: Sum + Experince-->
