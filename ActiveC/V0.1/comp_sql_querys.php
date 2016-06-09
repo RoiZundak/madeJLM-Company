@@ -161,7 +161,7 @@
 			}
 
 			echo "
-			<table id ='myTable' border=1 frame=void rules=rows>
+			<table >
 				<!--First Line: Picture+ Bubbles -->
 			    <tr>
 			    
@@ -178,7 +178,7 @@
 				
 				<!--Second Line: Phone + Mail-->
 				<tr class=\"border_bottom\">
-						<td id='phoneDiv'>
+						<td>
 						    <!--".$phone_button."-->
 						    ".$phone_number."
 						</td>
@@ -209,7 +209,7 @@
                 </tr>
                 
                 <!--Fifth Line: All Skills + ShowAll-->
-                <tr id ='skill_tr' >
+                <tr class=\"border_bottom\">
                 	<td>
                 		<h4><b>".$show_all_skills."</b></h4> ".$all_skills."
              
