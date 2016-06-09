@@ -155,7 +155,7 @@ if($func=="1")
 		{
 			$phone_number="0".$row['phone_number'];
 			$phone_pic = "<div> 
-				<img src=\"./img/telephoneIcon.jpg\" width='35' height='35' onclick='$(\"#phoneDiv\").html('0'+".$phone_number.");'/>
+				<img src=\"./img/telephoneIcon.jpg\" width='35' height='35' onclick='$(\"#phoneDiv\").html(".$phone_number.");'/>
 				</div>";
 		}
 
