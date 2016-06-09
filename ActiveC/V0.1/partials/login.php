@@ -100,11 +100,16 @@
                     $update = $databaseConnection ->prepare($sql_update);
                     $update->execute();
 
-                    $d=strtotime("+15 minutes");
 
                     $sql_update="UPDATE company SET block = NOW() WHERE username = '".$username."'";
                     $update = $databaseConnection ->prepare($sql_update);
                     $update->execute();
+
+                   echo " <script>
+                    localStorage.clear();
+                    document.getElementById(\"re_route_login\").click();
+                    </script>";
+                    exit;
                 }
 
                 echo("<a id='re_route_login' href ='../#/login'></a>
