@@ -36,8 +36,8 @@ $databaseConnection->query($sql);
 			$link_string = "";
 			if ($row['linkedin'] !== "") {
 				$link_string = "
-								
-								<a href=\"" . $row['linkedin'] . "\" style=\"text-decoration:none;\"><span style=\"font: 80% Arial,sans-serif; color:#0783B6;\"><img src=\"http://s.c.lnkd.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png\" width=\"50\" height=\"35\" style=\"vertical-align:middle;\" border=\"0\"></span></a>
+								<a href=\"" . $row['linkedin'] . "\">
+								<img title=\"LinkedIn\" alt=\"LinkedIn\" src=\"./img/linkedinIcon.png\" width=\"40\" height=\"40\" />
 								</a>
  								";
 			}
@@ -46,7 +46,7 @@ $databaseConnection->query($sql);
 			if ($row['github'] !== "") {
 				$git_string = "
 								<a href=\"" . $row['github'] . "\">
-								<img title=\"Github\" alt=\"Github\" src=\"http://image000.flaticon.com/icons/svg/25/25231.svg\" width=\"35\" height=\"35\" />
+								<img title=\"Github\" alt=\"Github\" src=\"./img/GithubIcon.png\" width=\"40\" height=\"40\" />
 								</a>
  							";
 			}
@@ -148,7 +148,7 @@ $databaseConnection->query($sql);
 			}
 //<i class="fa fa-phone"></i> <abbr title="Phone"></abbr>:
 			echo "
-			<table >
+			<table id ='myTable' border=1 frame=void rules=rows>
 				<!--First Line: Picture+ Bubbles -->
 			    <tr>
 			    
