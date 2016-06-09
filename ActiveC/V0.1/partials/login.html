@@ -17,7 +17,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center" >
-                    <h2 class="mb-40">Sign in</h2>
+                    <h2 class="mb-40">Log in</h2>
                     <uib-alert ng-show="alerts.login.msg != null" type="{{alerts.login.type}}" close="closeAlert('login')"><span ng-bind-html="alerts.login.msg"></span></uib-alert>
                     <form class="text-left mb-40" action="http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/partials/login.php" method="post">
                         <div class="form-group">
@@ -26,13 +26,13 @@
                         <div class="form-group">
                             <input type="password" class="form-control" placeholder="Password" name="password" required>
                         </div>
-                        <!--
+
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" value="remember-me"> Remember me
                             </label>
                         </div>
-                        -->
+
                         <button type="submit" class="btn btn-block btn-jlm">Sign in <i class="fa fa-angle-double-right"></i></button>
                     </form>
                     <p class="text-left">Have you forgot your password? <a href="http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/forgot">Click here</a></p>
