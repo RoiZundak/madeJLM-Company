@@ -159,7 +159,8 @@ if($func=="1")
 		{
 			$phone_number=$row['phone_number'];
 			$phone_pic = "<div> 
-				<img id = 'std_phone_" . $row['ID'] . "' class='bubbels' src=\"./img/telephoneIcon.jpg\" width='35' height='35' onclick='$(\"#phoneDiv\").html(".$zero.$phone_number.");'/>
+				
+				<img id = 'std_phone_" . $row['ID'] . "' class='bubbels' src=\"./img/telephoneIcon.jpg\" width='35' height='35' onclick='$(\"#phoneDiv\").html(\"0".$phone_number."\");'/>
 				</div>";
 		}
 
