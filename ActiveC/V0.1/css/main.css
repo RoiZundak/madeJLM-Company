@@ -226,6 +226,8 @@ tr {
     border: solid;
     border-width: 1px 0;
     border-color: #84C6EC;
+    min-height: 10px;
+    max-height: 10px;
 }
 
     td {
@@ -235,6 +237,8 @@ tr {
 
 
 tr:first-child {
+    min-height: 10px;
+    max-height: 10px;
     border-top: none;
 }
 tr:last-child {
