@@ -28,8 +28,15 @@
             //db connect
             require_once "../php/db_connect.php";
             $databaseConnection =connect_to_db();
-
-
+        /*Hebrew*/
+        $sql="SET character_set_client=utf8";
+          $databaseConnection->query($sql);
+        $sql="SET character_set_connection=utf8";
+            $databaseConnection->query($sql);
+        $sql="SET character_set_database=utf8";
+          $databaseConnection->query($sql);
+        $sql="SET character_set_results=utf8";
+         $databaseConnection->query($sql);
 
 
             //get all students
