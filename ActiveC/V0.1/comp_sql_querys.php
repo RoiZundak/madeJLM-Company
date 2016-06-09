@@ -147,6 +147,7 @@ if($func=="1")
                             Show Phone
                             </button>"; */
 		}
+		
 		echo "
 			<table id ='myTable' border=1 frame=void rules=rows>
 				<!--First Line: Picture+ Bubbles -->
