@@ -449,8 +449,8 @@
                 $skill = substr($value, 0, strpos($value, ','));//eg. 'javascript'
                 array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
 
-                $skill = substr($value, strpos($value, ','), );//eg. 'javascript'
-                array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
+                $time = substr($value, strpos($value, ','), strlen($skill));//eg. 'javascript'
+                array_push($skills_arr,'\''.$time.'\'');//eg. 'javascript'
 
 
                /* if(strstr($value,',')){
