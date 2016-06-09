@@ -14,154 +14,141 @@
 
 	$func = intval($_GET['func']);
 
-	//show single student
-	if($func=="1")
+//show single student
+if($func=="1")
+{
+	$q = intval($_GET['q']);
+	$sql_update="UPDATE student SET counter_view = counter_view + 1 WHERE ID = '".$q."'";
+	$update = $databaseConnection ->prepare($sql_update);
+	$update->execute();
+	//PDO STYLE :
+	$sql="SELECT * FROM student WHERE ID = '".$q."' LIMIT 1";
+	$img_src = "../img/profilepic.png";
+	foreach ($databaseConnection->query($sql) as $row)
 	{
-		$q = intval($_GET['q']);
-		$sql_update="UPDATE student SET counter_view = counter_view + 1 WHERE ID = '".$q."'";
-		$update = $databaseConnection ->prepare($sql_update);
-		$update->execute();
-		//PDO STYLE :
-		$sql="SELECT * FROM student WHERE ID = '".$q."' LIMIT 1";
-		$img_src = "../img/profilepic.png";
-		foreach ($databaseConnection->query($sql) as $row)
+		$img_src = "";
+		if ($row['profile'] == "")
+			$img_src = "./img/profilepic.png";
+		else
+			$img_src = "../../../MadeinJLM-students/mockup/" . $row['profile'];
+		$maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" .$row['Email']. "</a>\"";
+		$link_string = "";
+		if ($row['linkedin'] !== "")
 		{
-			$img_src = "";
-			if ($row['profile'] == "")
-				$img_src = "./img/profilepic.png";
-			else
-				$img_src = "../../../MadeinJLM-students/mockup/" . $row['profile'];
-
-			$maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" .$row['Email']. "</a>\"";
-			$link_string = "";
-			if ($row['linkedin'] !== "")
-			{
-				$link_string = "<a href=\"" . $row['linkedin'] . "\">
+			$link_string = "<a href=\"" . $row['linkedin'] . "\">
 								<img title=\"LinkedIn\" alt=\"LinkedIn\" src=\"./img/LinkedinIcon.png\" width=\"35\" height=\"35\" />
 								</a>
  								";
-			}
-
-			$git_string = "";
-			if ($row['github'] !== "")
-			{
-				$git_string = "<a href=\"" . $row['github'] . "\">
-								<img title=\"Github\" alt=\"Github\" src=\"./img/GithubIcon.png\" width=\"35\" height=\"35\" />
+		}
+		$git_string = "";
+		if ($row['github'] !== "")
+		{
+			$git_string = "<a href=\"" . $row['github'] . "\">
+								<img title=\"Github\" alt=\"Github\" src=\"./img/GitHub-Mark-64.png\" width=\"35\" height=\"35\" />
 								</a>
  							";
-			}
-			//$cv_file = "";
-			//if ($row['cv'] !== "")
-				//$cv_file = "<a href='" . $row['cv'] . "' download='" . $row['first_name'] . $row['last_name'] . "'> <img title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\" width=\"40\" height=\"40\" /> </a>";
-			$cv_file = "";
-			if ($row['cv'] !== "")
-				$cv_file = "<a href='".$row['cv']."' download='" .$row['first_name']. $row['last_name'] . "'> <img title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\" width=\"35\" height=\"35\" /> </a>";
-
-			$sentence = "";
-			$sql_degree = "SELECT name FROM degree WHERE id =" . $row['degree_id'];
-			$sql_college = "SELECT name FROM college WHERE id =" . $row['college_id'];;
-			$sql_skills = "SELECT * FROM student_skills WHERE student_id = " . $row['ID'];
-			$all_skills = "";
-			$list_skills = array();       //skills ids
-			$list_skills_bck = array();   //backup skills id for further use
-			$list_skills_years = array(); //keep years of knowledge
-
-
-			foreach ($databaseConnection->query($sql_skills) as $skill) {
-				array_push($list_skills, $skill['skill_id']);
-				array_push($list_skills_years, $skill['years']);
-			}
-			$list_skills_bck = $list_skills;
-			$skills_name = "SELECT * FROM skills WHERE id IN (" . implode(',', $list_skills) . ")";
-			$show_all_skills="";
-			$all_skills="";
-			if (count($list_skills) > 0)
+		}
+		//$cv_file = "";
+		//if ($row['cv'] !== "")
+		//$cv_file = "<a href='" . $row['cv'] . "' download='" . $row['first_name'] . $row['last_name'] . "'> <img title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\" width=\"40\" height=\"40\" /> </a>";
+		$cv_file = "";
+		if ($row['cv'] !== "")
+			$cv_file = "<a href='".$row['cv']."' download='" .$row['first_name']. $row['last_name'] . "'> <img title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\" width=\"35\" height=\"35\" /> </a>";
+		$sentence = "";
+		$sql_degree = "SELECT name FROM degree WHERE id =" . $row['degree_id'];
+		$sql_college = "SELECT name FROM college WHERE id =" . $row['college_id'];;
+		$sql_skills = "SELECT * FROM student_skills WHERE student_id = " . $row['ID'];
+		$all_skills = "";
+		$list_skills = array();       //skills ids
+		$list_skills_bck = array();   //backup skills id for further use
+		$list_skills_years = array(); //keep years of knowledge
+		foreach ($databaseConnection->query($sql_skills) as $skill) {
+			array_push($list_skills, $skill['skill_id']);
+			array_push($list_skills_years, $skill['years']);
+		}
+		$list_skills_bck = $list_skills;
+		$skills_name = "SELECT * FROM skills WHERE id IN (" . implode(',', $list_skills) . ")";
+		$show_all_skills="";
+		$all_skills="";
+		if (count($list_skills) > 0)
+		{
+			$show_all_skills ="Skills list: ";
+			$len = count($list_skills_bck);
+			foreach ($databaseConnection->query($skills_name) as $skill)
 			{
-				$show_all_skills ="Skills list: ";
-				$len = count($list_skills_bck);
-				foreach ($databaseConnection->query($skills_name) as $skill)
+				for ($i = 0; $i < $len; $i++)
 				{
-					for ($i = 0; $i < $len; $i++)
-					{
-						if ($skill['id'] === $list_skills_bck[$i]) {
-							$all_skills .= "<span class='skill_item'> " . $skill['name'] . " for " .$list_skills_years[$i]. " years.</span>";
-						}
+					if ($skill['id'] === $list_skills_bck[$i]) {
+						$all_skills .= "<span class='skill_item'> " . $skill['name'] . " for " .$list_skills_years[$i]. " years.</span>";
 					}
-
 				}
 			}
-			else
-			{
-				$show_all_skills ="Skills list: ";
-				$all_skills=$row['first_name']." hasn't entred any skills yet.";
-            }
-			//$show_all_skills.=" ".$all_skills;
-			$college_name = "";
-			foreach ($databaseConnection->query($sql_college) as $college) {
-				$college_name = $college['name'];
-			}
-			$degree_name = "";
-			foreach ($databaseConnection->query($sql_degree) as $degree) {
-				$degree_name = $degree['name'];
-			}
-
-			$phone_number = "";
-			if ($row['phone_number'] !== "0")
-				$phone_number = $row['phone_number'];
-
-			$sentence = "Studies for a " . $degree_name . " in " . $row['basic_education_subject'] . " at " . $college_name . " with GPA of " . $row['grade_average'] . " and has " . $row['semesters_left'] . " semesters left.";
-			$job_per = $row['first_name'] . " is avaliable for ";
-			switch ($row['job_percent'])
-			{
-				case 1:
-					$job_per .= "a half time job.";
-					break;
-				case 2:
-					$job_per .= "a full time job.";
-					break;
-				case 3:
-					$job_per .= "working in shifts.";
-					break;
-				case 4:
-					$job_per .= "a freelancer job.";
-					break;
-				default:
-					$job_per = $row['first_name'] . " hasn't entered a preference for job percent ";
-			}
-
-			$curr_job = "";
-			if ($row['current_work'] !== "")
-				$curr_job = $row['first_name'] . " is currently working at " . $row['current_work'] . ".";
-
-			$summary_ = "";
-			if ($row['summary'] !== "")
-			{
-				$sum = "Summary: ";
-				$summary = $row['summary'];
-			}
-
-			$exprience = "";
-			if ($row['experience'] !== "")
-			{
-				$exp = "Experience: ";
-				$exprience = $row['experience'];
-			}
-
-			$phone_number="";
-            //$phone_button="";
-			if($row['phone_number'] !=="0")
-			{
-				$phone_number='<p><i class="fa fa-phone"></i> <abbr title="Phone"></abbr>: 0'.$row['phone_number'].'</p>';
-				//<i class="fa fa-phone"></i> <abbr title="Phone"></abbr>:
-				/*
-                $phone_number= "\"<a href =  callto://+972" . $row['phone_number'] . "  >0" . $row['phone_number'] . "</a>\"";
-                $phone_button="<button id = 'std_phone_" . $row['ID'] . "' class='filters' onclick='$(\"#phoneDiv\").html(" . $phone_number . ");' >
-								Show Phone
-								</button>"; */
-			}
-
-			echo "
-			<table >
+		}
+		else
+		{
+			$show_all_skills ="Skills list: ";
+			$all_skills=$row['first_name']." hasn't entred any skills yet.";
+		}
+		//$show_all_skills.=" ".$all_skills;
+		$college_name = "";
+		foreach ($databaseConnection->query($sql_college) as $college) {
+			$college_name = $college['name'];
+		}
+		$degree_name = "";
+		foreach ($databaseConnection->query($sql_degree) as $degree) {
+			$degree_name = $degree['name'];
+		}
+		$phone_number = "";
+		if ($row['phone_number'] !== "0")
+			$phone_number = $row['phone_number'];
+		$sentence = "Studies for a " . $degree_name . " in " . $row['basic_education_subject'] . " at " . $college_name . " with GPA of " . $row['grade_average'] . " and has " . $row['semesters_left'] . " semesters left.";
+		$job_per = $row['first_name'] . " is avaliable for ";
+		switch ($row['job_percent'])
+		{
+			case 1:
+				$job_per .= "a half time job.";
+				break;
+			case 2:
+				$job_per .= "a full time job.";
+				break;
+			case 3:
+				$job_per .= "working in shifts.";
+				break;
+			case 4:
+				$job_per .= "a freelancer job.";
+				break;
+			default:
+				$job_per = $row['first_name'] . " hasn't entered a preference for job percent ";
+		}
+		$curr_job = "";
+		if ($row['current_work'] !== "")
+			$curr_job = $row['first_name'] . " is currently working at " . $row['current_work'] . ".";
+		$summary_ = "";
+		if ($row['summary'] !== "")
+		{
+			$sum = "Summary: ";
+			$summary = $row['summary'];
+		}
+		$exprience = "";
+		if ($row['experience'] !== "")
+		{
+			$exp = "Experience: ";
+			$exprience = $row['experience'];
+		}
+		$phone_number="";
+		//$phone_button="";
+		if($row['phone_number'] !=="0")
+		{
+			$phone_number='<p><i class="fa fa-phone"></i> <abbr title="Phone"></abbr>: 0'.$row['phone_number'].'</p>';
+			//<i class="fa fa-phone"></i> <abbr title="Phone"></abbr>:
+			/*
+            $phone_number= "\"<a href =  callto://+972" . $row['phone_number'] . "  >0" . $row['phone_number'] . "</a>\"";
+            $phone_button="<button id = 'std_phone_" . $row['ID'] . "' class='filters' onclick='$(\"#phoneDiv\").html(" . $phone_number . ");' >
+                            Show Phone
+                            </button>"; */
+		}
+		echo "
+			<table id ='myTable' border=1 frame=void rules=rows>
 				<!--First Line: Picture+ Bubbles -->
 			    <tr>
 			    
@@ -178,11 +165,11 @@
 				
 				<!--Second Line: Phone + Mail-->
 				<tr class=\"border_bottom\">
-						<td id='first'>
+						<td id='phoneDiv'>
 						    <!--".$phone_button."-->
 						    ".$phone_number."
 						</td>
-						<td id='mailDiv' >
+						<td id='mailDiv'>
 							<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
 								Show Mail
 							</button>			
@@ -192,36 +179,35 @@
                 	<!--Third Line: Sentence-->
                 	
                  <tr class=\"border_bottom\">
-                	<td width='100%'>
+                	<td>
                 		" . $sentence . "
 					</td>
                 </tr>
                 
                 <!--Four Line: JobPer + CurrJob-->
                  <tr class=\"border_bottom\">
-                	<td >
+                	<td>
                 		" . $job_per . "
 					</td>
-
-                	<td >
+                	<td>
                 		" . $curr_job . "
 					</td>
                 </tr>
                 
                 <!--Fifth Line: All Skills + ShowAll-->
-                <tr class=\"border_bottom\">
-                	<td  width='100%'>
+                <tr id ='skill_tr' >
+                	<td>
                 		<h4><b>".$show_all_skills."</b></h4> ".$all_skills."
              
 					</td>
                 </tr>
                 <!--Six Line: Sum + Experince-->
                 <tr class=\"border_bottom\">
-                	<td id='sum'>
+                	<td>
 							<h4><b>" . $sum . "</h4></b>" . $summary . "
 					</td>
 					
-					<td id='second'>
+					<td>
 							<h4><b>" . $exp . "</h4></b>" . $exprience . " 
 						
                 	</td>
@@ -229,8 +215,8 @@
                 
 			</table>
 			";
-		}
 	}
+}
 
 	//filter Git
 	if($func=="2")
@@ -481,7 +467,7 @@
 
 		if(count($skills_id)==0) //could not get skills id
 			exit;
-
+        print_r($skills_arr);
 		$std_id=array();
 		foreach($skills_arr as $skill=>$time)
 		{
