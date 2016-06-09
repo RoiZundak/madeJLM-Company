@@ -157,6 +157,14 @@ if($func=="1")
 				</div>";
 		}
 
+		$mail_pic="";
+		if($row['Email']!=="")
+		{
+			$$mail_pic=$row['Email'];
+			$mail_pic = "<div> 
+				<img src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" . $maito_string . ");'/>
+				</div>";
+		}
 
 
 		echo "
@@ -183,9 +191,10 @@ if($func=="1")
 						    ".$phone_pic."
 						</td>
 						<td id='mailDiv'>
-							<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
+							<!--<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
 								Show Mail
-							</button>			
+							</button>-->
+							".$mail_pic."
 						</td>
                 </tr>
                 
