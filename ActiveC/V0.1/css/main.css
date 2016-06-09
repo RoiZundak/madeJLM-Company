@@ -492,10 +492,10 @@ footer {
     box-shadow: inset 0 10px 15px 0 #3e3e3e;
 }
 
-h3 {
+h2 {
     margin-top: 45px;
     margin-left: 50px;
-    text-align: left;
+    text-align: center;
     position: relative;
     left: +20px;
 
