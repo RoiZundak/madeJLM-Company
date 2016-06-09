@@ -158,10 +158,6 @@
                 $phone_button="<button id = 'std_phone_" . $row['ID'] . "' class='filters' onclick='$(\"#phoneDiv\").html(" . $phone_number . ");' >
 								Show Phone
 								</button>"; */
-				$phone_button="<form action=\'demo_form.asp\'>
-  								First name: <input type=\"text\" name=\"fname\"><br>
-  								<input type=\"image\" src=\"submit.gif\" alt=\"Submit\" width=\"48\" height=\"48\">
-								</form>"
 			}
 
 			echo "
@@ -409,7 +405,7 @@
 				</script>";
 
 		echo "
-				<form  method='post' id= 'form_skills' class='skills' action='./comp_sql_querys.php?func=10'>	
+				<form method='post' id= 'form_skills' class='skills' action='./comp_sql_querys.php?func=10'>	
 				
 				
 				<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
@@ -495,6 +491,7 @@
 			$complete_query->bindParam(':time',$time);
 			$complete_query->execute();
 			$id=$complete_query->fetchAll();
+            print_r($id."<br>");
 			array_push($std_id,$id);
 		}
 
@@ -506,6 +503,7 @@
         }
 
 		$sql = "SELECT * FROM student WHERE ID IN(".implode(',',$std_id).") ORDER BY profile_strength DESC" ;
+        print_r($sql);
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{

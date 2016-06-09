@@ -12,8 +12,11 @@
     if(!empty($_POST['username']))
     {
         $errMsg = '';
+        //username and password sent from Form
+        $username = trim($_POST['username']);
+        $password = trim($_POST['password']);
 
-        if (trim($username) == '' || trim($password) == '')
+        if ($username == '' || $password == '')
         {
             $errMsg .= 'empty Fields<br>';
             echo " <script>
@@ -24,11 +27,6 @@
             exit;
 
         }
-
-        //username and password sent from Form
-        $username = trim($_POST['username']);
-        $password = trim($_POST['password']);
-
 
         if($username == 'Example@example.com') {
             $errMsg .= 'You must enter your Username<br>';
