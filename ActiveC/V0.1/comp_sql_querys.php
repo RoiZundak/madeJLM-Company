@@ -160,9 +160,9 @@ if($func=="1")
 		$mail_pic="";
 		if($row['Email']!=="")
 		{
-			$$mail_pic=$row['Email'];
+			$mail=$row['Email'];
 			$mail_pic = "<div> 
-				<img src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" . $maito_string . ");'/>
+				<img src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" . $mail . ");'/>
 				</div>";
 		}
 
@@ -180,10 +180,7 @@ if($func=="1")
 				            	" .$git_string. "  " .$link_string. "   " .$cv_file. " 
 							</div>
 						<td>
-							<div id='bubble_buttons'> 
-								" .$mail_pic. " " .$phone_pic. "
-							</div>
-							
+							".$mail_pic.$phone_pic."
 						</td>
                     </td>
                       
