@@ -182,21 +182,6 @@ if($func=="1")
                     </td>
                       
 				</tr>
-				
-				<!--Second Line: Phone + Mail-->
-				<tr class=\"border_bottom\">
-						<td id='phoneDiv'>
-						    <!--".$phone_button."
-						    ".$phone_number."-->
-						    ".$phone_pic."
-						</td>
-						<td id='mailDiv'>
-							<!--<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
-								Show Mail
-							</button>-->
-							".$mail_pic."
-						</td>
-                </tr>
                 
                 	<!--Third Line: Sentence-->
                 	
