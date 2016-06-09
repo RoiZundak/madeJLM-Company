@@ -89,6 +89,10 @@ body{
     overflow: auto;
     overflow-x: hidden;
 }
+.skills{
+    overflow: auto;
+    overflow-x: hidden;
+}
 
 #skill_std{
 
@@ -97,6 +101,8 @@ body{
     margin-left: 1%;
     height: auto;
     width: auto;
+    overflow: auto;
+    overflow-x: hidden;
 
 }
 
