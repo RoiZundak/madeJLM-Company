@@ -235,17 +235,18 @@ tr {
 
 }
 td {
-
-        text-align: left;
+    text-align: left;
 }
-
+#sum{
+    margin-right: 20px;
+}
 tr:first-child {
     height: 20px;
     border-top: none;
 }
 tr:last-child {
     border-bottom: none;
-    margin-right: 10px;
+
 }
 
 
