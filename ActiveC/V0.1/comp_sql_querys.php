@@ -75,7 +75,6 @@
 
 				}
 			}else{
-                echo"Hellow world!";
                 echo "<script>
                     alert('vsdvds');
                     $('#skill_tr').css('border-bottom','none');
