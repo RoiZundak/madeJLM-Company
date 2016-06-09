@@ -44,7 +44,7 @@ if($func=="1")
 		if ($row['github'] !== "")
 		{
 			$git_string = "<a href=\"" . $row['github'] . "\">
-								<img title=\"Github\" alt=\"Github\" src=\"./img/GitHub-Mark-64.png\" width=\"35\" height=\"35\" />
+								<img title=\"Github\" alt=\"Github\" src=\"./img/GithubIcon.png\" width=\"35\" height=\"35\" />
 								</a>
  							";
 		}
