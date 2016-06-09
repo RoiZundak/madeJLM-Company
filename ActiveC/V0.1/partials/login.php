@@ -17,6 +17,17 @@
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
 
+        if (strlen($username) > 0 && strlen(trim($username)) == 0 || strlen($password) > 0 && strlen(trim($password)) == 0)
+        {
+            $errMsg .= 'empty Fields<br>';
+            echo " <script>
+                        localStorage.clear();
+                        window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                        setTimeout(function(){ alert('Insert user name or password');},5);
+                    </script>";
+            exit;
+
+        }
 
         if($username == 'Example@example.com') {
             $errMsg .= 'You must enter your Username<br>';
