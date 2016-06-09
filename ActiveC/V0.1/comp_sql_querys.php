@@ -380,9 +380,7 @@
 				//adds a label and input text containing skill value
 				function addSkillToList(skill_to_add,years_text,years_value)
 				{
-					var skill_years=skill_to_add;
-					if (years!='')
-						skill_years+=', '+ years_text;
+					var skill_years = skill_to_add +', '+ years_text;
 					
 					$('#add_skill').after(function() 
 					{
@@ -448,10 +446,13 @@
 		foreach($_GET as $key => $value)
 		{
 			if (strstr($key, 'skill_')){
-                if(strstr($value,',')) {
-                    $skill = substr($value, 0, strpos($value, ','));//eg. 'javascript'
-                    array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
-                }
+                $skill = substr($value, 0, strpos($value, ','));//eg. 'javascript'
+                array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
+
+                $skill = substr($value, strpos($value, ','), );//eg. 'javascript'
+                array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
+
+
                /* if(strstr($value,',')){
 
                     $skill = substr($value,0,strpos($value,','));//eg. 'javascript'
