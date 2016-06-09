@@ -17,6 +17,7 @@
         $username = trim($_POST['username']);
 
         if($username == 'Example@example.com') {
+            echo"<script>alert('gfknlknlsnbs')</script>";
             $errMsg .= 'You must enter your Username<br>';
             echo " <script>
                         localStorage.clear();
