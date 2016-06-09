@@ -22,7 +22,7 @@
             echo " <script>
                         localStorage.clear();
                         window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                        setTimeout(function(){ alert('You must enter your Username');},100);
+                        setTimeout(function(){ alert('You must enter your Username');},5);
                     </script>";
             exit;
         }
