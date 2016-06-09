@@ -82,7 +82,7 @@ if($func=="1")
 				for ($i = 0; $i < $len; $i++)
 				{
 					if ($skill['id'] === $list_skills_bck[$i]) {
-						$all_skills .= "<span class='skill_item'> "*" " . $skill['name'] . " for " .$list_skills_years[$i]. " years</span><br>";
+						$all_skills .= "<span class='skill_item'> &#9989 " . $skill['name'] . " for " .$list_skills_years[$i]. " years</span><br>";
 					}
 				}
 			}
