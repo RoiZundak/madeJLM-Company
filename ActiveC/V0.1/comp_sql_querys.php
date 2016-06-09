@@ -74,7 +74,11 @@
 					}
 
 				}
-			}
+			}else{
+                echo "<script>
+                    $('#skill_tr').css('border-bottom','none');
+                </script>";
+            }
 			//$show_all_skills.=" ".$all_skills;
 			$college_name = "";
 			foreach ($databaseConnection->query($sql_college) as $college) {
@@ -183,7 +187,7 @@
                 </tr>
                 
                 <!--Fifth Line: All Skills + ShowAll-->
-                <tr class=\"border_bottom\">
+                <tr class=\"border_bottom\" id ='skill_tr'>
                 	<td>
                 		<h4><b>".$show_all_skills."</b></h4> ".$all_skills."
              
