@@ -85,10 +85,7 @@
 
 				}
 			}else{
-                echo "<script>
-                    alert('jjjjjjjjjjjjj');
-                    $('#skill_tr').css('border-bottom','none');
-                </script>";
+				$show_all_skills ="Skills list is Empty ";
             }
 			//$show_all_skills.=" ".$all_skills;
 			$college_name = "";
