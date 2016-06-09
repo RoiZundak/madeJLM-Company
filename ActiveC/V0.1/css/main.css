@@ -375,7 +375,9 @@ body {
     color: #3b5998;
 }
 
-
+.linkedin-link a: {
+    color: #007fb1;
+}
 
 .twitter-link a:hover {
     color: #39a9e0;
@@ -418,7 +420,7 @@ body {
 }
 #login_form{
     background-color:rgba(255,255,255,0.5);
-    width:20%;
+    width:40%;
     height:100%;
     margin:auto;
 }
