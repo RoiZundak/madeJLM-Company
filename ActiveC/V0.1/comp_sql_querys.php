@@ -408,7 +408,7 @@
 				<form  method='post' id= 'form_skills' class='skills' action='./comp_sql_querys.php?func=10'>	
 				
 				
-				<input scrolling=\"yes\" type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
+				<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
 				<select id='years_input' class='skills'>
 					<option value='0' selected='selected'>All years of experience</option>
 					<option value='-1'>less then 1 year</option>

@@ -92,8 +92,7 @@ body{
 }
 #form_skills{
     width: 90%;
-    overflow: auto;
-    overflow-x: hidden;
+
 }
 
 
@@ -104,14 +103,9 @@ body{
     margin-left: 1%;
     height: auto;
     width: auto;
-    overflow: auto;
-    overflow-x: hidden;
 
 }
-.skills_speech{
-    overflow: auto;
-    overflow-x: hidden;
-}
+
 
 .skillsLabel { display: block; width: 80%; margin-left: 10%;margin-top: 5%}
 
@@ -122,8 +116,6 @@ body{
     margin-top: 3%;
     margin-left: 8%;
     background-color: ghostwhite;
-    overflow: auto;
-    overflow-x: hidden;
 
 }
 
