@@ -89,10 +89,7 @@ body{
     overflow: auto;
     overflow-x: hidden;
 }
-.skills{
-    overflow: auto;
-    overflow-x: hidden;
-}
+
 
 #skill_std{
 
@@ -104,6 +101,10 @@ body{
     overflow: auto;
     overflow-x: hidden;
 
+}
+.skills speech{
+    overflow: auto;
+    overflow-x: hidden;
 }
 
 .skillsLabel { display: block; width: 80%; margin-left: 10%;margin-top: 5%}
