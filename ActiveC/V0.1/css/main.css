@@ -86,7 +86,10 @@ body{
 }
 #form_skills{
     width: 90%;
+    overflow: auto;
+    overflow-x: hidden;
 }
+
 
 #skill_std{
 
@@ -95,7 +98,13 @@ body{
     margin-left: 1%;
     height: auto;
     width: auto;
+    overflow: auto;
+    overflow-x: hidden;
 
+}
+.skills speech{
+    overflow: auto;
+    overflow-x: hidden;
 }
 
 .skillsLabel { display: block; width: 80%; margin-left: 10%;margin-top: 5%}
@@ -181,6 +190,7 @@ label {
     -webkit-box-shadow: 2px 2px 4px #888;
     -moz-box-shadow: 2px 2px 4px #888;
     box-shadow: 2px 2px 4px #888;
+
 }
 
 
