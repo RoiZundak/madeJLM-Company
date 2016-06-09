@@ -149,7 +149,7 @@ if($func=="1")
                             </button>";
 		}*/
 
-		$zero="0";
+		$zero='0';
 		$phone_pic="";
 		if($row['phone_number']!=="")
 		{
