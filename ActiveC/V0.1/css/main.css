@@ -226,10 +226,13 @@ tr {
     border: solid;
     border-width: 1px 0;
     border-color: #84C6EC;
-    height: 30px;
+    height: 40px;
 
 }
+.border_bottom{
+    height: 40px;
 
+}
     td {
 
         text-align: left;
