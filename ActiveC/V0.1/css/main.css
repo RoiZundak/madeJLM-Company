@@ -10,6 +10,12 @@ body{
     height:270px;
     margin-left: 100px;
 }
+
+#activec_about_logo{
+    width:250px;
+    height:200px;
+    margin-left: 120px;
+}
 .img-responsive-team{
     width : 200px;
     height:200px;
@@ -86,7 +92,9 @@ body{
 }
 #form_skills{
     width: 90%;
+
 }
+
 
 #skill_std{
 
@@ -97,6 +105,7 @@ body{
     width: auto;
 
 }
+
 
 .skillsLabel { display: block; width: 80%; margin-left: 10%;margin-top: 5%}
 
@@ -181,6 +190,7 @@ label {
     -webkit-box-shadow: 2px 2px 4px #888;
     -moz-box-shadow: 2px 2px 4px #888;
     box-shadow: 2px 2px 4px #888;
+
 }
 
 
