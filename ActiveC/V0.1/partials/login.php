@@ -15,9 +15,10 @@
 
         //username and password sent from Form
         $username = trim($_POST['username']);
+        $password = trim($_POST['password']);
+
 
         if($username == 'Example@example.com') {
-            echo"<script>alert('gfknlknlsnbs')</script>";
             $errMsg .= 'You must enter your Username<br>';
             echo " <script>
                         localStorage.clear();
@@ -28,6 +29,7 @@
         }
 
         if($password == '688822292') {
+            echo"<script>alert('gfknlknlsnbs')</script>";
             $errMsg .= 'You must enter your Password<br>';
             echo " <script>
                         localStorage.clear();
