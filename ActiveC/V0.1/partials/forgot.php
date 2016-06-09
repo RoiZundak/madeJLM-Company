@@ -18,7 +18,11 @@
     foreach($databaseConnection->query($sql) as $row)
         $username=$row['username'];
     if($username===""){//no such user!
-        echo "<script>alert('Email: ".$email." was not found, please try again.');</script>";
+        echo "<script>
+            window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/forgot';
+                setTimeout(function(){alert('Email: ".$email." was not found, please try again.');},100);
+            </script>";
+        exit;
     }
     //Create a random string
     $length = 13;
