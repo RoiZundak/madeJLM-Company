@@ -14,9 +14,12 @@
 
     //Get username from 'company' table
     $sql = "SELECT * FROM company WHERE email = '$email'";
+    $username="";
     foreach($databaseConnection->query($sql) as $row)
         $username=$row['username'];
-
+    if($username===""){//no such user!
+        echo "<script>alert('Email: '.$email.' was not found, please try again.');</script>";
+    }
     //Create a random string
     $length = 13;
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -43,6 +46,9 @@
     //Send mail.
     $sent_mail = mail($email, "Forget Password - ActiveC", $message, $headers);
     if($sent_mail)
-        echo " Email has been sent.";
+        echo " <script> 
+                window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                setTimeout(function(){alert('Email has been sent');},100);
+                </script>";
     
 ?>
