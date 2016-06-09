@@ -421,7 +421,7 @@
 				<option value='3'>3 years</option>
 				<option value='3+'>more then 3 years</option>
 			</select>
-			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value,$(\"#years_input option:selected\").text());$(\"#skill_input\").val(\"\");'>
+			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value,document.getElementById(\"years_input\").value);$(\"#skill_input\").val(\"\");'>
 
 			
 			
@@ -442,8 +442,7 @@
 
 	if($func=="10")
 	{
-        $skills_arr=array();
-        $time_arr=array();
+        $skills_arr=array(array());
 		foreach($_GET as $key => $value)
 		{
 			if (strstr($key, 'skill_')){
