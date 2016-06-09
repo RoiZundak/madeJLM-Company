@@ -66,7 +66,7 @@
             $records->execute();
             //$results = $records->fetch(PDO::FETCH_ASSOC);
             $results=$records->fetchAll();
-
+            print_r($results);
 
              /*
              $student_id_query = "SELECT student_id FROM student_skills WHERE skill_id=:skill AND years=:time";
