@@ -38,7 +38,7 @@
 			{
 				$link_string = "
 								<a href=\"" . $row['linkedin'] . "\">
-								<img title=\"LinkedIn\" alt=\"LinkedIn\" src=\"./img/linkedinIcon.png\" width=\"40\" height=\"40\" />
+								<img title=\"LinkedIn\" alt=\"LinkedIn\" src=\"./img/linkedinIcon.png\" width=\"35\" height=\"35\" />
 								</a>
  								";
 			}
@@ -48,7 +48,7 @@
 			{
 				$git_string = "
 								<a href=\"" . $row['github'] . "\">
-								<img title=\"Github\" alt=\"Github\" src=\"./img/GithubIcon.png\" width=\"40\" height=\"40\" />
+								<img title=\"Github\" alt=\"Github\" src=\"./img/GithubIcon.png\" width=\"35\" height=\"35\" />
 								</a>
  							";
 			}
