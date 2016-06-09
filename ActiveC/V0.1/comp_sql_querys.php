@@ -183,6 +183,7 @@ if($func=="1")
 				
 				<!--Second Line: Phone + Mail-->
 				<!--<tr class=\"border_bottom\">-->
+					<div>
 						<td id='mailDiv'>
 							".$mail_pic."			
 						</td>
@@ -190,6 +191,7 @@ if($func=="1")
 						<td id='phoneDiv'>
 						    ".$phone_pic."
 						</td>
+					</div>
 						
                 <!--</tr>-->
                 
