@@ -16,6 +16,17 @@ function connect_to_db(){
     try {
         $databaseConnection = new PDO('mysql:host='._HOST_NAME_.';dbname='._DATABASE_NAME_, _USER_NAME_, _DB_PASSWORD);
         $databaseConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $sql="SET character_set_client=utf8";
+        $databaseConnection->query($sql);
+        $sql="SET character_set_connection=utf8";
+        $databaseConnection->query($sql);
+        $sql="SET character_set_database=utf8";
+        $databaseConnection->query($sql);
+        $sql="SET character_set_results=utf8";
+        $databaseConnection->query($sql);
+        $sql="SET character_set_server=utf8";﻿
+        $databaseConnection->query($sql);
         return $databaseConnection;
     } catch(PDOException $e) {
         echo 'ERROR: ' . $e->getMessage();
