@@ -182,18 +182,15 @@ if($func=="1")
 				<!--</tr>-->
 				
 				<!--Second Line: Phone + Mail-->
-				<!--<tr class=\"border_bottom\">-->
-					<div>
+				<tr class=\"border_bottom\">
 						<td id='mailDiv'>
 							".$mail_pic."			
 						</td>
 						
 						<td id='phoneDiv'>
 						    ".$phone_pic."
-						</td>
-					</div>
-						
-                <!--</tr>-->
+						</td>						
+                </tr>
                 
                 	<!--Third Line: Sentence-->
                 	
