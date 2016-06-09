@@ -178,11 +178,11 @@
 				
 				<!--Second Line: Phone + Mail-->
 				<tr class=\"border_bottom\">
-						<td>
+						<td id='first'>
 						    <!--".$phone_button."-->
 						    ".$phone_number."
 						</td>
-						<td id='mailDiv'>
+						<td id='mailDiv' >
 							<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
 								Show Mail
 							</button>			
@@ -192,25 +192,25 @@
                 	<!--Third Line: Sentence-->
                 	
                  <tr class=\"border_bottom\">
-                	<td>
+                	<td width='100%'>
                 		" . $sentence . "
 					</td>
                 </tr>
                 
                 <!--Four Line: JobPer + CurrJob-->
                  <tr class=\"border_bottom\">
-                	<td>
+                	<td >
                 		" . $job_per . "
 					</td>
 
-                	<td>
+                	<td >
                 		" . $curr_job . "
 					</td>
                 </tr>
                 
                 <!--Fifth Line: All Skills + ShowAll-->
                 <tr class=\"border_bottom\">
-                	<td>
+                	<td  width='100%'>
                 		<h4><b>".$show_all_skills."</b></h4> ".$all_skills."
              
 					</td>
@@ -221,7 +221,7 @@
 							<h4><b>" . $sum . "</h4></b>" . $summary . "
 					</td>
 					
-					<td>
+					<td id='second'>
 							<h4>" . $exp . "</h4>" . $exprience . " 
 						
                 	</td>
