@@ -59,11 +59,23 @@
         $email=trim($_POST['username']);
         if($errMsg == '')
         {
-            $records = $databaseConnection->prepare('SELECT * FROM  company WHERE username = :username OR username=:email');
+            $name_or_mail="SELECT * FROM  company WHERE username = :username OR Email=:username";
+            $records = $databaseConnection->prepare($name_or_mail);
             $records->bindParam(':username', $username);
-            $records->bindParam(':email', $email);
+            //$records->bindParam(':email', $email);
             $records->execute();
-            $results = $records->fetch(PDO::FETCH_ASSOC);
+            //$results = $records->fetch(PDO::FETCH_ASSOC);
+            $results=$records->fetchAll();
+
+
+             /*
+             $student_id_query = "SELECT student_id FROM student_skills WHERE skill_id=:skill AND years=:time";
+			$complete_query= $databaseConnection->prepare($student_id_query);
+			$complete_query->bindParam(':skill',$skill);
+			$complete_query->bindParam(':time',$time);
+			$complete_query->execute();
+			$id=$complete_query->fetchAll();
+             */
 
             if(count($results) > 0 && $results['block'] != null)
             {
