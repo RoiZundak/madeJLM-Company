@@ -138,7 +138,7 @@
                         xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "4", true);
                         xmlhttp.send();
                     }
-                    if(target.id.indexOf("std_mail_") != -1 )
+                    if(target.id.indexOf("std_mail_") != -1 || target.id.indexOf("std_phone_") !=-1 )
                     {
                         id =target.id.substring(target.id.lastIndexOf("_")+1,target.id.length); //student id
                         xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "11", true);
