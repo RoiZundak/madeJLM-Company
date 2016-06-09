@@ -98,9 +98,9 @@ if($func=="1")
 		foreach ($databaseConnection->query($sql_degree) as $degree) {
 			$degree_name = $degree['name'];
 		}
-		$phone_number = "";
-		if ($row['phone_number'] !== "0")
-			$phone_number = $row['phone_number'];
+		//$phone_number = "";
+		//if ($row['phone_number'] !== "0")
+			//$phone_number = $row['phone_number'];
 		$sentence = "Studies for a " . $degree_name . " in " . $row['basic_education_subject'] . " at " . $college_name . " with GPA of " . $row['grade_average'] . " and has " . $row['semesters_left'] . " semesters left.";
 		$job_per = $row['first_name'] . " is avaliable for ";
 		switch ($row['job_percent'])
@@ -139,7 +139,7 @@ if($func=="1")
 		//$phone_button="";
 		if($row['phone_number'] !=="0")
 		{
-			$phone_number='<p><i class="fa fa-phone"></i> <abbr title="Phone"></abbr>: 0'.$row['phone_number'].'</p>';
+			$phone_number='<p><i class="fa fa-phone"></i> <abbr title="Phone"></abbr>: '.$row['phone_number'].'</p>';
 			//<i class="fa fa-phone"></i> <abbr title="Phone"></abbr>:
 			/*
             $phone_number= "\"<a href =  callto://+972" . $row['phone_number'] . "  >0" . $row['phone_number'] . "</a>\"";
@@ -147,6 +147,7 @@ if($func=="1")
                             Show Phone
                             </button>"; */
 		}
+		
 		echo "
 			<table id ='myTable' border=1 frame=void rules=rows>
 				<!--First Line: Picture+ Bubbles -->
@@ -441,7 +442,7 @@ if($func=="1")
             }
 
 		}
-		
+		print_r($skills_arr."<br>End first<br>");
 		
 		if(count($skills_arr)==0) //no skills were selected
         {
@@ -458,7 +459,7 @@ if($func=="1")
 			$id=$complete_query->fetchAll();
 			array_push($skills_id,$id);
 		}
-
+        print_r($skills_arr."<br>End 2nd<br>");
 		$len=count($skills_arr);
 		for($i=1;$i<$len;$i++)
 		{
@@ -467,7 +468,7 @@ if($func=="1")
 
 		if(count($skills_id)==0) //could not get skills id
 			exit;
-        print_r($skills_arr);
+        print_r($skills_arr."<br>End 3rd<br>");
 		$std_id=array();
 		foreach($skills_arr as $skill=>$time)
 		{
