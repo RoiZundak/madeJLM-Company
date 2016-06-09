@@ -217,12 +217,12 @@
                 </tr>
                 <!--Six Line: Sum + Experince-->
                 <tr class=\"border_bottom\">
-                	<td>
+                	<td id='sum'>
 							<h4><b>" . $sum . "</h4></b>" . $summary . "
 					</td>
 					
 					<td>
-							<h4><b>" . $exp . "</h4></b>" . $exprience . " 
+							<h4>" . $exp . "</h4>" . $exprience . " 
 						
                 	</td>
                 </tr>
