@@ -249,15 +249,6 @@ tr:last-child {
     margin-right: 20px;
     padding-right: 20px;
 }
-
-
-
-
-
-
-
-
-
 input[type=submit]{
 
     background-color: #3b5998;
@@ -288,13 +279,6 @@ input[type=submit]:hover{
     background-image: -o-linear-gradient(top, #18AEDB, #a5defb);
     background-image: linear-gradient(to bottom, #18AEDB, #a5defb);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#18AEDB, endColorstr=#a5defb);
 }
-
-
-
-
-
-
-
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -308,16 +292,6 @@ input[type=submit]:hover{
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
-/*
-Custom CSS for...d
-'Modern Business' HTML Theme by Start Bootstrap
-
-All Start Bootstrap themes are licensed under Apache 2.0. 
-For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap.com!
-*/
-
-/* Global Styles */
-
 html, body {
     height: 100%;
 }
@@ -351,7 +325,6 @@ body {
 
 .section-colored {
     background-color: #e1e1e1;
-    /* change this to change the background color of a colored section */
 }
 
 .sidebar {
@@ -364,7 +337,6 @@ body {
     border: 1px solid #cccccc;
 }
 
-/* Half Page Height Carousel Customization */
 .carousel {
     height: 50%;
 }
@@ -490,7 +462,6 @@ footer {
 
     .carousel {
         height: 70%;
-        /* increases the carousel height so it looks good on phones */
     }
 }
 

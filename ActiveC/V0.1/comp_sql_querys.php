@@ -46,7 +46,7 @@
 			if ($row['github'] !== "")
 			{
 				$git_string = "<a href=\"" . $row['github'] . "\">
-								<img title=\"Github\" alt=\"Github\" src=\"./img/GihubIcon.png\" width=\"35\" height=\"35\" />
+								<img title=\"Github\" alt=\"Github\" src=\"./img/GithubIcon.png\" width=\"35\" height=\"35\" />
 								</a>
  							";
 			}
@@ -377,109 +377,88 @@
 	{
 		$sql = 'SELECT * FROM skills';
 		echo "<script>
-			//adds a label and input text containing skill value
-			function addSkillToList(skill_to_add,years)
-			{
-				var skill_years=skill_to_add;
-				if (years!='')
-					skill_years+=', '+ years;
+				//adds a label and input text containing skill value
+				function addSkillToList(skill_to_add,years_text,years_value)
+				{
+					var skill_years = skill_to_add +', '+ years_text;
+					
+					$('#add_skill').after(function() 
+					{
+					  return'<br><label class=\'skillsLabel\' for=\'skill_'+skill_to_add+'\'>'+skill_years +'</label><input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ years_value + '\' id=\'skill_'+skill_to_add+'\'>  ' 
+					});
+				}
 				
-				$('#add_skill').after(function() 
+				$( \"#form_skills\" ).submit(function( event ) 
 				{
-				  return'<br><label class=\'skillsLabel\' for=\'skill_'+skill_to_add+'\'>'+skill_years +'</label><input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_years + '\' id=\'skill_'+skill_to_add+'\'>  ' 
+					event.preventDefault();
+					var str = $(\"#form_skills\").serialize();
+					xmlhttp.onreadystatechange = function() 
+					{
+						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+							if(xmlhttp.responseText!=''){
+									document.getElementById(\"show_all\").innerHTML = xmlhttp.responseText;
+							}
+						}
+							
+					};
+					xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
+					xmlhttp.send();
 				});
-			}
-			
-			$( \"#form_skills\" ).submit(function( event ) 
-			{
-				event.preventDefault();
-				var str = $(\"#form_skills\").serialize();
-				xmlhttp.onreadystatechange = function() 
-				{
-					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					    if(xmlhttp.responseText!=''){
-                                document.getElementById(\"show_all\").innerHTML = xmlhttp.responseText;
-                        }
-					}
-						
-				};
-				xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
-				xmlhttp.send();
-			});
-			</script>";
+				</script>";
 
 		echo "
-			<form method='post' id= 'form_skills' class='skills' action='./comp_sql_querys.php?func=10'>	
-			
-			
-			<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
-			<select id='years_input' class='skills'>
-				<option value='0' selected='selected'>All years of experience</option>
-				<option value='-1'>less then 1 year</option>
-				<option value='1'>1 year</option>
-				<option value='2'>2 years</option>
-				<option value='3'>3 years</option>
-				<option value='3+'>more then 3 years</option>
-			</select>
-			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value,$(\"#years_input option:selected\").text());$(\"#skill_input\").val(\"\");'>
-
-			
-			
-			<datalist id=\"skills_list\">";
-			foreach ($databaseConnection->query($sql) as $row)
-				echo '<option value='.$row['name'].'>';
-
-			echo "</datalist>
-			
-			<br>
-		
+				<form method='post' id= 'form_skills' class='skills' action='./comp_sql_querys.php?func=10'>	
+				
+				
+				<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
+				<select id='years_input' class='skills'>
+					<option value='0' selected='selected'>All years of experience</option>
+					<option value='-1'>less then 1 year</option>
+					<option value='1'>1 year</option>
+					<option value='2'>2 years</option>
+					<option value='3'>3 years</option>
+					<option value='3+'>more then 3 years</option>
+				</select>
 	
-			<input type=\"submit\" value=\"Filter\" id=\"submit_skills\">
+				<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value,$(\"#years_input option:selected\").text(),document.getElementById(\"years_input\").value);$(\"#skill_input\").val(\"\");'>
+	
+				<!--<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value,document.getElementById(\"years_input\").value);$(\"#skill_input\").val(\"\");'>-->
+	
+				
+				<datalist id=\"skills_list\">";
+		foreach ($databaseConnection->query($sql) as $row)
+			echo '<option value='.$row['name'].'>';
+
+		echo "</datalist>
+				
+				<br>
 			
-			
-			</form>";
+		
+				<input type=\"submit\" value=\"Filter\" id=\"submit_skills\">
+				
+				
+				</form>";
 	}
 
 	if($func=="10")
 	{
         $skills_arr=array();
-        $time_arr=array();
 		foreach($_GET as $key => $value)
 		{
 			if (strstr($key, 'skill_')){
-                if(strstr($value,',')) {
-                    $skill = substr($value, 0, strpos($value, ','));//eg. 'javascript'
-                    array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
-                }
-               /* if(strstr($value,',')){
+                $skill = substr($value, 0, strpos($value, ','));//eg. 'javascript'
+                $time = substr($value, strpos($value, ','), strlen($skill));//eg. 'javascript'
+				echo('skill:'.$skill.' time:'.$skill.'<br>');
+                
+                array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
+                array_push($skills_arr,'\''.$time.'\'');//eg. 'javascript'
 
-                    $skill = substr($value,0,strpos($value,','));//eg. 'javascript'
-                    $time = substr($value,strpos($value,',')+2); //eg. '3 years'
-                    $time = substr($time ,0 , strpos($time,' '));//eg. '3'
-                    //more , less , All ,1 ,2, 3
-                    switch ($time){
-                        case 'All':
-                            $time='0';
-                            break;
-                        case 'less':
-                            $time = '-1';
-                            break;
-                        case 'more':
-                            $time='+3';
-                            break;
-                        default:
-
-                    }
-                    array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
-                    array_push($time_arr,'\''.$time.'\'');
-                }else{
-                    array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
-                    array_push($time_arr,'0');
-                }*/
-
+				$temp_array=array($skill,$time); //create new array that contains time && skills
+				array_push($skills_arr,$temp_array);
             }
 
 		}
+		print_r($skills_arr);
 		if(count($skills_arr)==0) //no skills were selected
         {
             exit;
