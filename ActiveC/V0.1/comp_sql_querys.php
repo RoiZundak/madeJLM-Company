@@ -381,7 +381,6 @@
 				function addSkillToList(skill_to_add,years_text,years_value)
 				{
 					var skill_years = skill_to_add +', '+ years_text;
-					console.log('value : '+years_value);
 					$('#add_skill').after(function() 
 					{
 					  return'<br><label class=\'skillsLabel\' for=\'skill_'+skill_to_add+'\'>'+skill_years +'</label><input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ years_value + '\' id=\'skill_'+skill_to_add+'\'>  ' 
@@ -391,6 +390,7 @@
 				{
 					event.preventDefault();
 					var str = $(\"#form_skills\").serialize();
+					alert(str);
 					xmlhttp.onreadystatechange = function() 
 					{
 						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
