@@ -60,7 +60,6 @@
             $name_or_mail="SELECT * FROM  company WHERE username = :username OR email=:username";
             $records = $databaseConnection->prepare($name_or_mail);
             $records->bindParam(':username', $username);
-            //$records->bindParam(':email', $username);
             $records->execute();
             $results = $records->fetch(PDO::FETCH_ASSOC);
 
@@ -86,7 +85,7 @@
                 }
                 else
                 {
-                    $sql_update = "UPDATE company SET block = null WHERE username = '" . $username . "'";
+                    $sql_update = "UPDATE company SET block = null WHERE username = '".$username."' OR email='".$username."'";
                     $update = $databaseConnection ->prepare($sql_update);
                     $update->execute();
                 }
