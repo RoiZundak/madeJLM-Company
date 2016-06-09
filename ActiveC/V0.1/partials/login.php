@@ -56,10 +56,10 @@
 
         //$student_mail="";
         //$row=$databaseConnection->query($sql);
-        $email=trim($_POST['username']);
+        //$email=trim($_POST['username']);
         if($errMsg == '')
         {
-            $name_or_mail="SELECT * FROM  company WHERE username = :username OR Email=:username";
+            $name_or_mail="SELECT * FROM  company WHERE username = :username OR email=:username";
             $records = $databaseConnection->prepare($name_or_mail);
             $records->bindParam(':username', $username);
             //$records->bindParam(':email', $email);
