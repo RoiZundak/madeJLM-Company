@@ -179,9 +179,7 @@ if($func=="1")
 						<div id='bubble'>
 				            " .$git_string. "  " .$link_string. "   " .$cv_file. " 
 						</div>
-						<div>
 							".$mail_pic.$phone_pic."
-						</div>
                     </td>
                       
 				</tr>
