@@ -20,9 +20,9 @@
     if($username===""){//no such user!
         echo "<script>
             window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/forgot';
-                setTimeout(function(){alert('Email: ".$email." was not found, please try again.');},100);
+                alert('Email: ".$email." was not found, please try again.');
             </script>";
-        exit;
+
     }
     //Create a random string
     $length = 13;
@@ -51,8 +51,8 @@
     $sent_mail = mail($email, "Forget Password - ActiveC", $message, $headers);
     if($sent_mail)
         echo " <script> 
+                alert('Email has been sent');
                 window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                setTimeout(function(){alert('Email has been sent');},100);
                 </script>";
     
 ?>
