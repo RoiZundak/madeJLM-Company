@@ -60,7 +60,7 @@
             if(count($results) > 0 && $results['block'] != null)
             {
 
-                $d=strtotime("-15 Minutes -4 hours");
+                $d=strtotime("-5 Minutes -4 hours"); // time deffrence betweem time and date 
                 $newTime =  date("Y-m-d h:i:sa", $d);
 
                 $currentDateTime = $results['block'];
@@ -131,7 +131,7 @@
                         localStorage.clear();
                         //document.getElementById(\"re_route_login\").click();
                         window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                        setTimeout(function(){ alert('You tried too much. Try again in few minuts.');},100);
+                        setTimeout(function(){ alert('You tried too much. Try again in 5 minuts.');},100);
                     </script>";
                     exit;
                 }
