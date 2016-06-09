@@ -1,6 +1,6 @@
 <?php
-echo
-"<script> 
+    echo
+    "<script> 
             var name = sessionStorage.getItem('username');
             if ( name === 'null' || name === 'Not_Valid_User_Name' ) 
             {
@@ -25,35 +25,35 @@ echo
 
 
         <?php
-        //db connect
-        require_once "../php/db_connect.php";
-        $databaseConnection =connect_to_db();
-        //get all students
-        $sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC';
-
-        $img_src = "../img/profilepic.png";
-        foreach ($databaseConnection->query($sql) as $row)
-        {
-            if(  $row['profile']=="" )
-                $img_src = "../V0.1/img/profilepic.png";
-            else
-                $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
-            echo "<div class='head' id='head_".$row['ID']."' > ";
-            echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
-            print_r($row['first_name']);
-            echo "</div>";
-        }
+            //db connect
+            require_once "../php/db_connect.php";
+            $databaseConnection =connect_to_db();
+            //get all students
+            $sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC';
+        
+            $img_src = "../img/profilepic.png";
+            foreach ($databaseConnection->query($sql) as $row)
+            {
+                if(  $row['profile']=="" )
+                    $img_src = "../V0.1/img/profilepic.png";
+                else
+                    $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+                echo "<div class='head' id='head_".$row['ID']."' > ";
+                echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+                print_r($row['first_name']);
+                echo "</div>";
+            }
         ?>
         <script>
             var id="-1";
             $("#skill_std").hide();
             document.addEventListener('click', function(e)
-                {
+            {
                     e = e || window.event;
                     var target = e.target || e.srcElement;
                     if (window.XMLHttpRequest) // code for IE7+, Firefox, Chrome, Opera, Safari
                         xmlhttp = new XMLHttpRequest();
-                    else // code for IE6, IE5
+                     else // code for IE6, IE5
                         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 
                     if (target.className !== "skills")
@@ -111,7 +111,7 @@ echo
                         xmlhttp.open("GET","comp_sql_querys.php?q="+id+"&func="+"3",true);
                         xmlhttp.send();
                     }
-                    if(target.id == "clr_filter" )
+                    if(target.id == "clr_filter" ) 
                     {
                         xmlhttp.onreadystatechange = function ()
                         {
