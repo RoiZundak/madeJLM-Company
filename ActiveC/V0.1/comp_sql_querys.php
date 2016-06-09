@@ -153,7 +153,7 @@ if($func=="1")
 		$phone_pic="";
 		if($row['phone_number']!=="")
 		{
-			$phone_number=$zero.$row['phone_number'];
+			$phone_number=$row['phone_number'];
 			$phone_pic = "<div> 
 				<img src=\"./img/telephoneIcon.jpg\" width='35' height='35' onclick='$(\"#phoneDiv\").html(".$phone_number.");'/>
 				</div>";
@@ -182,7 +182,7 @@ if($func=="1")
 						<td id='phoneDiv'>
 						    <!--".$phone_button."
 						    ".$phone_number."-->
-						    ".$phone_pic."
+						    ".$zero.".".$phone_pic."
 						</td>
 						<td id='mailDiv'>
 							<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
