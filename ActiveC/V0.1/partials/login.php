@@ -29,7 +29,6 @@
         }
 
         if($password == '688822292') {
-            echo"<script>alert('gfknlknlsnbs')</script>";
             $errMsg .= 'You must enter your Password<br>';
             echo " <script>
                         localStorage.clear();
