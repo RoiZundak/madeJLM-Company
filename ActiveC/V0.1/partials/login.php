@@ -31,9 +31,8 @@
             $errMsg .= 'You must enter your Password<br>';
             echo " <script>
                         localStorage.clear();
-                        setTimeout(function(){ alert('You must enter your Password');},100);
                         window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                        
+                         setTimeout(function(){ alert('You must enter your Password');},5);
                     </script>";
             exit;
         }
