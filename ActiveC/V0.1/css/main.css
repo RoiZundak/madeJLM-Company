@@ -233,11 +233,10 @@ tr {
     height: 50px;
 
 }
-    td {
+td {
+    text-align: left;
 
-        text-align: left;
 }
-
 
 tr:first-child {
     height: 20px;
@@ -246,6 +245,11 @@ tr:first-child {
 tr:last-child {
     border-bottom: none;
 }
+#sum{
+    margin-right: 20px;
+    padding-right: 20px;
+}
+
 
 
 

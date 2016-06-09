@@ -88,7 +88,7 @@
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
 
-                if( intval( $results['attempt'] )>= 2)
+                if( intval( $results['attempt'] )>= 4)
                 {
                     echo "<script>
                         alert('You tried too much. Try again in few minuts.');

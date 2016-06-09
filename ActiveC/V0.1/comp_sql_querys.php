@@ -161,7 +161,7 @@
 			}
 
 			echo "
-			<table id ='myTable' border=1 frame=void rules=rows>
+			<table >
 				<!--First Line: Picture+ Bubbles -->
 			    <tr>
 			    
@@ -178,11 +178,11 @@
 				
 				<!--Second Line: Phone + Mail-->
 				<tr class=\"border_bottom\">
-						<td id='phoneDiv'>
+						<td id='first'>
 						    <!--".$phone_button."-->
 						    ".$phone_number."
 						</td>
-						<td id='mailDiv'>
+						<td id='mailDiv' >
 							<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
 								Show Mail
 							</button>			
@@ -192,36 +192,36 @@
                 	<!--Third Line: Sentence-->
                 	
                  <tr class=\"border_bottom\">
-                	<td>
+                	<td width='100%'>
                 		" . $sentence . "
 					</td>
                 </tr>
                 
                 <!--Four Line: JobPer + CurrJob-->
                  <tr class=\"border_bottom\">
-                	<td>
+                	<td >
                 		" . $job_per . "
 					</td>
 
-                	<td>
+                	<td >
                 		" . $curr_job . "
 					</td>
                 </tr>
                 
                 <!--Fifth Line: All Skills + ShowAll-->
-                <tr id ='skill_tr' >
-                	<td>
+                <tr class=\"border_bottom\">
+                	<td  width='100%'>
                 		<h4><b>".$show_all_skills."</b></h4> ".$all_skills."
              
 					</td>
                 </tr>
                 <!--Six Line: Sum + Experince-->
                 <tr class=\"border_bottom\">
-                	<td>
+                	<td id='sum'>
 							<h4><b>" . $sum . "</h4></b>" . $summary . "
 					</td>
 					
-					<td>
+					<td id='second'>
 							<h4><b>" . $exp . "</h4></b>" . $exprience . " 
 						
                 	</td>
