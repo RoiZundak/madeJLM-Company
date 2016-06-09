@@ -10,7 +10,7 @@ if(isset($_POST['submit'])) {
     if (!empty($_POST['contact_message'])    && !empty($_POST['contact_name'])   && !empty($_POST['contact_email']) ) {
         $number="";
         if(  !empty($_POST['contact_phone']) ){
-            $number.= /** @lang text */
+            $number.= 
                 "<br>Phone Number:".$_POST['contact_phone'];
         }
         $message = $_POST['contact_message'].
