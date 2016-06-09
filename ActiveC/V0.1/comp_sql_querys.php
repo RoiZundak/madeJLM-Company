@@ -33,7 +33,6 @@ if($func=="1")
 			$img_src = "../../../MadeinJLM-students/mockup/" . $row['profile'];
 		$maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" .$row['Email']. "</a>\"";
 
-		//bubbels
 		$link_string = "";
 		if ($row['linkedin'] !== "")
 		{
@@ -154,13 +153,12 @@ if($func=="1")
                             </button>";
 		}*/
 
-		$zero='2';
 		$phone_pic="";
 		if($row['phone_number']!=="")
 		{
 			$phone_number=$row['phone_number'];
 			$phone_pic = "<div> 
-				<img id = 'std_phone_" . $row['ID'] . "' class='bubbels' src=\"./img/telephoneIcon.jpg\" width='35' height='35' onclick='$(\"#phoneDiv\").html(".$zero.$phone_number.");'/>
+				<img id = 'std_phone_" . $row['ID'] . "' class='bubbels' src=\"./img/telephoneIcon.jpg\" width='35' height='35' onclick='$(\"#phoneDiv\").html(".$phone_number.");'/>
 				</div>";
 		}
 
@@ -172,7 +170,7 @@ if($func=="1")
 				<img id='std_mail_" . $row['ID'] . "' class='bubbels' src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" . $maito_string . ");'/>
 				</div>";
 		}
-		
+
 		echo "
 			<table id ='myTable' border=1 frame=void rules=rows>
 				<!--First Line: Picture+ Bubbles -->
