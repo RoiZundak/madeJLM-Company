@@ -199,11 +199,11 @@
                 
                 <!--Four Line: JobPer + CurrJob-->
                  <tr class=\"border_bottom\">
-                	<td width='95%'>
+                	<td>
                 		" . $job_per . "
 					</td>
 
-                	<td width='5%'>
+                	<td>
                 		" . $curr_job . "
 					</td>
                 </tr>

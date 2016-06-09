@@ -234,11 +234,10 @@ tr {
     height: 50px;
 
 }
-    td {
+td {
 
         text-align: left;
 }
-
 
 tr:first-child {
     height: 20px;
@@ -246,6 +245,7 @@ tr:first-child {
 }
 tr:last-child {
     border-bottom: none;
+    margin-right: 10px;
 }
 
 
