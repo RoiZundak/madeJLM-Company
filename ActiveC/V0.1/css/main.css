@@ -122,6 +122,7 @@ body{
 
 #bubble{
     float: right;
+    width: auto;
 
 }
 #phone {
