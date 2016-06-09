@@ -193,7 +193,7 @@
                 </tr>
                 
                 <!--Fifth Line: All Skills + ShowAll-->
-                <tr class=\"border_bottom\" id ='skill_tr'>
+                <tr id ='skill_tr' >
                 	<td>
                 		<h4><b>".$show_all_skills."</b></h4> ".$all_skills."
              
