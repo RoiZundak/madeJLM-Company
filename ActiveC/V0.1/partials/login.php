@@ -15,24 +15,26 @@
 
         //username and password sent from Form
         $username = trim($_POST['username']);
+        $password = trim($_POST['password']);
+
 
         if($username == 'Example@example.com') {
             $errMsg .= 'You must enter your Username<br>';
             echo " <script>
                         localStorage.clear();
                         window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                        setTimeout(function(){ alert('Insert User name');},100);
+                        setTimeout(function(){ alert('You must enter your Username');},5);
                     </script>";
             exit;
         }
 
         if($password == '688822292') {
+            echo"<script>alert('gfknlknlsnbs')</script>";
             $errMsg .= 'You must enter your Password<br>';
             echo " <script>
                         localStorage.clear();
-                        //document.getElementById(\"re_route_login\").click();
                         window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                        setTimeout(function(){ alert('Insert Password.');},100);
+                         setTimeout(function(){ alert('You must enter your Password');},5);
                     </script>";
             exit;
         }
