@@ -37,7 +37,7 @@ $databaseConnection->query($sql);
 			if ($row['linkedin'] !== "") {
 				$link_string = "
 								<a href=\"" . $row['linkedin'] . "\">
-								<img title=\"LinkedIn\" alt=\"LinkedIn\" src=\"https://socialmediawidgets.files.wordpress.com/2014/03/07_linkedin.png\" width=\"35\" height=\"35\" />
+								<a href=\"https://il.linkedin.com/pub/roi-cohen/96/643/99a\" style=\"text-decoration:none;\"><span style=\"font: 80% Arial,sans-serif; color:#0783B6;\"><img src=\"http://s.c.lnkd.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png\" width=\"20\" height=\"15\" alt=\"View Roi Cohen's LinkedIn profile\" style=\"vertical-align:middle;\" border=\"0\">&nbsp;View Roi Cohen's profile</span></a>
 								</a>
  								";
 			}
