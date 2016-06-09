@@ -36,8 +36,7 @@
 			$link_string = "";
 			if ($row['linkedin'] !== "")
 			{
-				$link_string = "
-								<a href=\"" . $row['linkedin'] . "\">
+				$link_string = "<a href=\"" . $row['linkedin'] . "\">
 								<img title=\"LinkedIn\" alt=\"LinkedIn\" src=\"./img/linkedinIcon.png\" width=\"35\" height=\"35\" />
 								</a>
  								";
@@ -46,16 +45,15 @@
 			$git_string = "";
 			if ($row['github'] !== "")
 			{
-				$git_string = "
-								<a href=\"" . $row['github'] . "\">
+				$git_string = "<a href=\"" . $row['github'] . "\">
 								<img title=\"Github\" alt=\"Github\" src=\"./img/GithubIcon.png\" width=\"35\" height=\"35\" />
 								</a>
  							";
 			}
-			$cv_file = "";
-			if ($row['cv'] !== "")
+			//$cv_file = "";
+			//if ($row['cv'] !== "")
 				//$cv_file = "<a href='" . $row['cv'] . "' download='" . $row['first_name'] . $row['last_name'] . "'> <img title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\" width=\"40\" height=\"40\" /> </a>";
-				$cv_file = "";
+			$cv_file = "";
 			if ($row['cv'] !== "")
 				$cv_file = "<a href='" .$row['cv']. "' download='" .$row['first_name']. $row['last_name'] . "'> <img title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\" width=\"35\" height=\"35\" /> </a>";
 
