@@ -125,7 +125,7 @@ body{
 }
 
 #bubble_buttons{
-    float:right;
+    float:left;
 }
 #phone {
     margin-top: 10px;
