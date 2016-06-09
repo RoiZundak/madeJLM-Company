@@ -106,8 +106,10 @@
                     $update->execute();
 
                    echo " <script>
-                    localStorage.clear();
-                    document.getElementById(\"re_route_login\").click();
+                        localStorage.clear();
+                        //document.getElementById(\"re_route_login\").click();
+                        window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                        setTimeout(function(){alert('You have successfully logout.Redirecting to Login page..');},100);
                     </script>";
                     exit;
                 }
