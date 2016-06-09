@@ -236,9 +236,11 @@ tr {
 }
 td {
     text-align: left;
+    margin-right: 20px;
+    padding-right: 20px;
 }
 #sum{
-    margin-right: 20px;
+
 }
 tr:first-child {
     height: 20px;
