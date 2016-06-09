@@ -102,7 +102,7 @@ body{
     overflow-x: hidden;
 
 }
-.skills speech{
+.skills_speech{
     overflow: auto;
     overflow-x: hidden;
 }
@@ -116,6 +116,8 @@ body{
     margin-top: 3%;
     margin-left: 8%;
     background-color: ghostwhite;
+    overflow: auto;
+    overflow-x: hidden;
 
 }
 

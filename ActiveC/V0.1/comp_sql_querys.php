@@ -405,7 +405,7 @@
 				</script>";
 
 		echo "
-				<form method='post' id= 'form_skills' class='skills' action='./comp_sql_querys.php?func=10'>	
+				<form scrolling=\"yes\" method='post' id= 'form_skills' class='skills' action='./comp_sql_querys.php?func=10'>	
 				
 				
 				<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
