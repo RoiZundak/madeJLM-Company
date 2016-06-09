@@ -222,7 +222,7 @@
 					</td>
 					
 					<td id='second'>
-							<h4>" . $exp . "</h4>" . $exprience . " 
+							<h4><b>" . $exp . "</h4></b>" . $exprience . " 
 						
                 	</td>
                 </tr>
