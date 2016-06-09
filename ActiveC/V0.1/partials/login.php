@@ -17,11 +17,27 @@
         $username = trim($_POST['username']);
         $password = md5(trim($_POST['password']));
 
-        if($username == 'Example@example.com')
+        if($username == 'Example@example.com') {
             $errMsg .= 'You must enter your Username<br>';
+            echo " <script>
+                        localStorage.clear();
+                        //document.getElementById(\"re_route_login\").click();
+                        window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                        setTimeout(function(){ alert('Insert User name');},100);
+                    </script>";
+            exit;
+        }
 
-        if($password == '688822292')
+        if($password == '688822292') {
             $errMsg .= 'You must enter your Password<br>';
+            echo " <script>
+                        localStorage.clear();
+                        //document.getElementById(\"re_route_login\").click();
+                        window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                        setTimeout(function(){ alert('Insert Password.');},100);
+                    </script>";
+            exit;
+        }
 
         if($errMsg == '')
         {
@@ -91,9 +107,6 @@
 
                 if( intval( $results['attempt'] )>= 4)
                 {
-                    echo "<script>
-                        alert('You tried too much. Try again in few minuts.');
-                    </script>";
                     $sql_update="UPDATE company SET attempt = 0 WHERE username = '".$username."'";
                     $update = $databaseConnection ->prepare($sql_update);
                     $update->execute();
@@ -107,7 +120,7 @@
                         localStorage.clear();
                         //document.getElementById(\"re_route_login\").click();
                         window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                        setTimeout(function(){alert('You have successfully logout.Redirecting to Login page..');},100);
+                        setTimeout(function(){ alert('You tried too much. Try again in few minuts.');},100);
                     </script>";
                     exit;
                 }
