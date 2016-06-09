@@ -66,8 +66,6 @@
             $records->bindParam(':email', $email);
             $records->execute();
             $results = $records->fetch(PDO::FETCH_ASSOC);
-            //$results=$records->fetchAll();
-            echo "<script>alert('.$results.')</script>";
 
              /*
              $student_id_query = "SELECT student_id FROM student_skills WHERE skill_id=:skill AND years=:time";
