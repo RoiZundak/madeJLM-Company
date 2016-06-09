@@ -67,7 +67,7 @@
             $records->execute();
             //$results = $records->fetch(PDO::FETCH_ASSOC);
             $results=$records->fetchAll();
-            echo ".$results.";
+            echo alert(".$results.");
 
              /*
              $student_id_query = "SELECT student_id FROM student_skills WHERE skill_id=:skill AND years=:time";
@@ -129,7 +129,7 @@
 
             else if(count($results) > 0 && $password !== $results['password'])
             {
-                $errMsg .= 'Incorrect Password<br>';
+                $errMsg .= 'Incorrect Password 1<br>';
                 $sql_update="UPDATE company SET attempt = attempt + 1 WHERE username = '".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
@@ -156,7 +156,7 @@
 
                 echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
-                        alert('Incorrect Password.');
+                        alert('Incorrect Password 2.');
                         localStorage.clear();
                         document.getElementById(\"re_route_login\").click();
                     </script>
