@@ -226,6 +226,7 @@ table {
     border-collapse: collapse;
     margin-top:2px;
     width: 100%;
+    background-color: red;
     font-size:1.1em;
 }
 
