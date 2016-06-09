@@ -48,9 +48,7 @@ if($func=="1")
 								</a>
  							";
 		}
-		//$cv_file = "";
-		//if ($row['cv'] !== "")
-		//$cv_file = "<a href='" . $row['cv'] . "' download='" . $row['first_name'] . $row['last_name'] . "'> <img title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\" width=\"40\" height=\"40\" /> </a>";
+		
 		$cv_file = "";
 		if ($row['cv'] !== "")
 			$cv_file = "<a href='".$row['cv']."' download='" .$row['first_name']. $row['last_name'] . "'> <img title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\" width=\"35\" height=\"35\" /> </a>";
