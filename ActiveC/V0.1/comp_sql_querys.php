@@ -179,7 +179,8 @@
 				<!--Second Line: Phone + Mail-->
 				<tr class=\"border_bottom\">
 						<td id='phoneDiv'>
-						    ".$phone_button."
+						    <!--".$phone_button."-->
+						    ".$phone_number."
 						</td>
 						<td id='mailDiv'>
 							<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
