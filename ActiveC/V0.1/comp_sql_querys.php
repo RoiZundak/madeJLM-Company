@@ -445,8 +445,7 @@
 		foreach($_GET as $key => $value)
 		{
 			if (strstr($key, 'skill_')){
-                $skill = substr($key, strpos($value, '_')+1,strlen($key) );//eg. 'javascript'
-                //$time = substr($value, strpos($value, ','), strlen($skill));//eg. 'javascript'
+                $skill = substr($key, strpos($key, '_')+1,strlen($key) );//eg. 'javascript'
 				echo('skill:'.$skill.' time:'.$value.'<br>');
                 
                 array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
