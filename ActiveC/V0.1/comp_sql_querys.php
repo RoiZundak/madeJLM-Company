@@ -378,15 +378,15 @@
 		$sql = 'SELECT * FROM skills';
 		echo "<script>
 			//adds a label and input text containing skill value
-			function addSkillToList(skill_to_add,years)
+			function addSkillToList(skill_to_add,years_text,years_value)
 			{
 				var skill_years=skill_to_add;
 				if (years!='')
-					skill_years+=', '+ years;
+					skill_years+=', '+ years_text;
 				
 				$('#add_skill').after(function() 
 				{
-				  return'<br><label class=\'skillsLabel\' for=\'skill_'+skill_to_add+'\'>'+skill_years +'</label><input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ skill_years + '\' id=\'skill_'+skill_to_add+'\'>  ' 
+				  return'<br><label class=\'skillsLabel\' for=\'skill_'+skill_to_add+'\'>'+skill_years +'</label><input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ years_value + '\' id=\'skill_'+skill_to_add+'\'>  ' 
 				});
 			}
 			
@@ -421,7 +421,7 @@
 				<option value='3'>3 years</option>
 				<option value='3+'>more then 3 years</option>
 			</select>
-			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value,$(\"#years_input option:selected\").text());$(\"#skill_input\").val(\"\");'>
+			<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value,$(\"#years_input option:selected\").text(),document.getElementById(\"years_input\").value);$(\"#skill_input\").val(\"\");'>
 
 			
 			
