@@ -179,17 +179,17 @@ if($func=="1")
 						</div>
                     </td>
                       
-				</tr>
+				<!--</tr>-->
 				
 				<!--Second Line: Phone + Mail-->
-				<tr class=\"border_bottom\">
+				<!--<tr class=\"border_bottom\">-->
 						<td id='phoneDiv'>
 						    ".$phone_pic."
 						</td>
 						<td id='mailDiv'>
 							".$mail_pic."			
 						</td>
-                </tr>
+                <!--</tr>-->
                 
                 	<!--Third Line: Sentence-->
                 	
