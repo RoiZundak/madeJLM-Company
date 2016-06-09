@@ -76,7 +76,7 @@
                     $errMsg .= 'Time block<br>';
                     echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
-                        alert('Sorry. Your user is blocked. you should wait');
+                        alert('Sorry. Your user is blocked. you should wait 5 minutes untill you can try again');
                         document.getElementById(\"re_route_login\").click();
                     </script>
                      ");
