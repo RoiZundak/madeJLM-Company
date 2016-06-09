@@ -221,9 +221,7 @@ table {
     width: 100%;
     font-size:1.1em;
 }
-.emptyElement:after{
-    content: "\00a0";
-}
+
 tr {
     border: solid;
     border-width: 1px 0;
