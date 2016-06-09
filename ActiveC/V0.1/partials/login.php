@@ -54,10 +54,7 @@
             exit;
         }
         $password = md5(trim($_POST['password']));
-
-        //$student_mail="";
-        //$row=$databaseConnection->query($sql);
-        //$email=trim($_POST['username']);
+        
         if($errMsg == '')
         {
             $name_or_mail="SELECT * FROM  company WHERE username = :username OR email=:email";
