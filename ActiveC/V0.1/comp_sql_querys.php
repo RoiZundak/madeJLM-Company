@@ -86,7 +86,7 @@
 				}
 			}else{
 				$show_all_skills ="Skills list: ";
-				$all_skills="There is not skill found.";
+				$all_skills=$row['first_name']." hasn't entred any skills yet.";
             }
 			//$show_all_skills.=" ".$all_skills;
 			$college_name = "";
