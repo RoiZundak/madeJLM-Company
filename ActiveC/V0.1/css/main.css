@@ -236,20 +236,21 @@ tr {
 }
 td {
     text-align: left;
-    margin-right: 20px;
-    padding-right: 20px;
-}
-#sum{
 
 }
+
 tr:first-child {
     height: 20px;
     border-top: none;
 }
 tr:last-child {
     border-bottom: none;
-
 }
+#sum{
+    margin-right: 20px;
+    padding-right: 20px;
+}
+
 
 
 
