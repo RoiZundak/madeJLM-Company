@@ -441,7 +441,7 @@ if($func=="1")
             }
 
 		}
-		
+		print_r($skills_arr."<br>End first<br>");
 		
 		if(count($skills_arr)==0) //no skills were selected
         {
@@ -458,7 +458,7 @@ if($func=="1")
 			$id=$complete_query->fetchAll();
 			array_push($skills_id,$id);
 		}
-
+        print_r($skills_arr."<br>End 2nd<br>");
 		$len=count($skills_arr);
 		for($i=1;$i<$len;$i++)
 		{
@@ -467,7 +467,7 @@ if($func=="1")
 
 		if(count($skills_id)==0) //could not get skills id
 			exit;
-        print_r($skills_arr);
+        print_r($skills_arr."<br>End 3rd<br>");
 		$std_id=array();
 		foreach($skills_arr as $skill=>$time)
 		{
