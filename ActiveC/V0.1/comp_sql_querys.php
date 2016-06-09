@@ -84,12 +84,7 @@
 					}
 
 				}
-			}else{
-                echo "<script>
-                    alert('vsdvds');
-                    $('#skill_tr').css('border-bottom','none');
-                </script>";
-            }
+			}
 			//$show_all_skills.=" ".$all_skills;
 			$college_name = "";
 			foreach ($databaseConnection->query($sql_college) as $college) {
