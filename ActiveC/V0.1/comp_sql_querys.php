@@ -491,7 +491,7 @@
 			$complete_query->bindParam(':time',$time);
 			$complete_query->execute();
 			$id=$complete_query->fetchAll();
-            print_r($id."<br>");
+            print_r($id[0]."<br>");
 			array_push($std_id,$id);
 		}
 
