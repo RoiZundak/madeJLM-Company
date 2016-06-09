@@ -381,7 +381,7 @@
 				function addSkillToList(skill_to_add,years_text,years_value)
 				{
 					var skill_years = skill_to_add +', '+ years_text;
-					
+					console.log('value : '+years_value);
 					$('#add_skill').after(function() 
 					{
 					  return'<br><label class=\'skillsLabel\' for=\'skill_'+skill_to_add+'\'>'+skill_years +'</label><input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ years_value + '\' id=\'skill_'+skill_to_add+'\'>  ' 
@@ -449,7 +449,7 @@
 			if (strstr($key, 'skill_')){
                 $skill = substr($value, 0, strpos($value, ','));//eg. 'javascript'
                 $time = substr($value, strpos($value, ','), strlen($skill));//eg. 'javascript'
-                
+
                 array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
                 array_push($skills_arr,'\''.$time.'\'');//eg. 'javascript'
 
