@@ -149,13 +149,13 @@ if($func=="1")
                             </button>";
 		}*/
 
-		$zero='0';
+		$zero='2';
 		$phone_pic="";
 		if($row['phone_number']!=="")
 		{
 			$phone_number=$row['phone_number'];
 			$phone_pic = "<div> 
-				<img src=\"./img/telephoneIcon.jpg\" width='35' height='35' onclick='$(\"#phoneDiv\").html(".$zero.$phone_number.");'/>
+				<img src=\"./img/telephoneIcon.jpg\" width='35' height='35' onclick='$(\"#phoneDiv\").html('0'.".$phone_number.");'/>
 				</div>";
 		}
 
