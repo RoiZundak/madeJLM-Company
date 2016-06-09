@@ -15,13 +15,11 @@
 
         //username and password sent from Form
         $username = trim($_POST['username']);
-        $password = md5(trim($_POST['password']));
 
         if($username == 'Example@example.com') {
             $errMsg .= 'You must enter your Username<br>';
             echo " <script>
                         localStorage.clear();
-                        //document.getElementById(\"re_route_login\").click();
                         window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
                         setTimeout(function(){ alert('Insert User name');},100);
                     </script>";
@@ -38,6 +36,8 @@
                     </script>";
             exit;
         }
+        $password = md5(trim($_POST['password']));
+
 
         if($errMsg == '')
         {
