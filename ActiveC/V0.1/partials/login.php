@@ -20,8 +20,8 @@
             $errMsg .= 'You must enter your Username<br>';
             echo " <script>
                         localStorage.clear();
+                        setTimeout(function(){ alert('You must enter your Username');},100);
                         window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                        setTimeout(function(){ alert('Insert User name');},100);
                     </script>";
             exit;
         }
@@ -30,9 +30,9 @@
             $errMsg .= 'You must enter your Password<br>';
             echo " <script>
                         localStorage.clear();
-                        //document.getElementById(\"re_route_login\").click();
+                        setTimeout(function(){ alert('You must enter your Password');},100);
                         window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                        setTimeout(function(){ alert('Insert Password.');},100);
+                        
                     </script>";
             exit;
         }
