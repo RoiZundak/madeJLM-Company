@@ -158,6 +158,10 @@
                 $phone_button="<button id = 'std_phone_" . $row['ID'] . "' class='filters' onclick='$(\"#phoneDiv\").html(" . $phone_number . ");' >
 								Show Phone
 								</button>"; */
+				$phone_button="<form action=\'demo_form.asp\'>
+  								First name: <input type=\"text\" name=\"fname\"><br>
+  								<input type=\"image\" src=\"submit.gif\" alt=\"Submit\" width=\"48\" height=\"48\">
+								</form>"
 			}
 
 			echo "
@@ -440,6 +444,7 @@
 
 	if($func=="10")
 	{
+		$skills_id=array();
         $skills_arr=array();
 		foreach($_GET as $key => $value)
 		{
@@ -454,32 +459,53 @@
             }
 
 		}
-		print_r($skills_arr);
+		
+		
 		if(count($skills_arr)==0) //no skills were selected
         {
             exit;
         }
 
 		$skills_id=array();
-		$sql = "SELECT id FROM skills WHERE name IN (".implode(',',$skills_arr).") AND status = 1";
-		foreach ($databaseConnection->query($sql) as $row)
-			array_push($skills_id,'\''.$row[0].'\'');
+		foreach($skills_arr as $skill=>$time)
+		{
+			$id_query = "SELECT id FROM skills WHERE name=:skill AND status = 1 LIMIT 1";
+			$complete_query= $databaseConnection->prepare($id_query);
+			$complete_query->bindParam(':skill',$skill);
+			$complete_query->execute();
+			$id=$complete_query->fetchAll();
+			array_push($skills_id,$id);
+		}
+
+		$len=count($skills_arr);
+		for($i=1;$i<$len;$i++)
+		{
+			$skills_arr[$i][0]=$skills_id[$i];
+		}
 
 		if(count($skills_id)==0) //could not get skills id
 			exit;
 
-		$sql = "SELECT student_id FROM student_skills WHERE skill_id  IN (".implode(',',$skills_id).")" ;
-		$students_id =array();
-		foreach ($databaseConnection->query($sql) as $row)
-			array_push($students_id,'\''.$row[0].'\'');
+		$std_id=array();
+		foreach($skills_arr as $skill=>$time)
+		{
+			$student_id_query = "SELECT student_id FROM student_skills WHERE skill_id=:skill AND years=:time";
+			$complete_query= $databaseConnection->prepare($student_id_query);
+			$complete_query->bindParam(':skill',$skill);
+			$complete_query->bindParam(':time',$time);
+			$complete_query->execute();
+			$id=$complete_query->fetchAll();
+			array_push($std_id,$id);
+		}
 
-		if(count($students_id)==0) //noBody has that skill !
+
+		if(count($std_id)==0) //noBody has that skill !
         {
             echo 'No results were found, please try again with different filters';
             exit;
         }
 
-		$sql = "SELECT * FROM student WHERE ID IN(".implode(',',$students_id).") ORDER BY profile_strength DESC" ;
+		$sql = "SELECT * FROM student WHERE ID IN(".implode(',',$std_id).") ORDER BY profile_strength DESC" ;
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
