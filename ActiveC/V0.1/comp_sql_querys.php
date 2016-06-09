@@ -222,7 +222,7 @@
 					</td>
 					
 					<td>
-							<h4><b>" . $exp . "</h4></b>" . $exprience . " 
+							<h4>" . $exp . "</h4>" . $exprience . " 
 						
                 	</td>
                 </tr>
