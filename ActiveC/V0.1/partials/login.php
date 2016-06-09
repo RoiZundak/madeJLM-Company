@@ -54,24 +54,15 @@
             exit;
         }
         $password = md5(trim($_POST['password']));
-        
+
         if($errMsg == '')
         {
-            $name_or_mail="SELECT * FROM  company WHERE username = :username OR email=:email";
+            $name_or_mail="SELECT * FROM  company WHERE username = :username OR email=:username";
             $records = $databaseConnection->prepare($name_or_mail);
             $records->bindParam(':username', $username);
-            $records->bindParam(':email', $username);
+            //$records->bindParam(':email', $username);
             $records->execute();
             $results = $records->fetch(PDO::FETCH_ASSOC);
-
-             /*
-             $student_id_query = "SELECT student_id FROM student_skills WHERE skill_id=:skill AND years=:time";
-			$complete_query= $databaseConnection->prepare($student_id_query);
-			$complete_query->bindParam(':skill',$skill);
-			$complete_query->bindParam(':time',$time);
-			$complete_query->execute();
-			$id=$complete_query->fetchAll();
-             */
 
             if(count($results) > 0 && $results['block'] != null)
             {
