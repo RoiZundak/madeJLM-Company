@@ -228,7 +228,9 @@ label {
     background-image: -o-linear-gradient(top, #18AEDB, #a5defb);
     background-image: linear-gradient(to bottom, #18AEDB, #a5defb);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#18AEDB, endColorstr=#a5defb);
 }
-
+#login_img{
+    background-repeat: no-repeat;
+}
 
 
 
