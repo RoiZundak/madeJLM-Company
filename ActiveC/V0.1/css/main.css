@@ -124,15 +124,11 @@ body{
     float: right;
 
 }
-#phone{
+#phone {
     margin-top: 10px;
     margin-right: 20px;
     padding-right: 10px;
     text-align: right;
-}
-#mail{
-    margin-top: 10px;
-    margin-right: 20px;
 }
 
 
