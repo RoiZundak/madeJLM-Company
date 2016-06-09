@@ -86,7 +86,7 @@
 				}
 			}else{
                 echo "<script>
-                    alert('vsdvds');
+                    alert('jjjjjjjjjjjjj');
                     $('#skill_tr').css('border-bottom','none');
                 </script>";
             }
@@ -198,7 +198,7 @@
                 </tr>
                 
                 <!--Fifth Line: All Skills + ShowAll-->
-                <tr class=\"border_bottom\" id ='skill_tr'>
+                <tr id ='skill_tr' class=\"border_bottom\" >
                 	<td>
                 		<h4><b>".$show_all_skills."</b></h4> ".$all_skills."
              
@@ -225,7 +225,7 @@
 	if($func=="2")
 	{
 		//PDO STYLE :
-		$sql = "SELECT * FROM student WHERE github<>''";
+		$sql = "SELECT * FROM student WHERE github<>'' ORDER BY profile_strength DESC";
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
@@ -245,7 +245,7 @@
 	if($func=="3")
 	{
 		//PDO STYLE :
-		$sql = "SELECT * FROM student WHERE linkedin<>''";
+		$sql = "SELECT * FROM student WHERE linkedin<>'' ORDER BY profile_strength DESC";
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
@@ -265,7 +265,7 @@
 	if($func=="4")
 	{
 		//PDO STYLE :
-		$sql = 'SELECT * FROM student WHERE Activated=1';
+		$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC';
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
@@ -493,7 +493,7 @@
             exit;
         }
 
-		$sql = "SELECT * FROM student WHERE ID IN(".implode(',',$students_id).")" ;
+		$sql = "SELECT * FROM student WHERE ID IN(".implode(',',$students_id).") ORDER BY profile_strength DESC" ;
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
