@@ -19,32 +19,37 @@
         if ($username == '' || $password == '')
         {
             $errMsg .= 'empty Fields<br>';
-            echo " <script>
-                        localStorage.clear();
-                        window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                        setTimeout(function(){ alert('Username or password required');},5);
-                    </script>";
+            echo
+                " <script>
+                    localStorage.clear();
+                    window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                    setTimeout(function(){ alert('Username or password required');},5);
+                </script>";
             exit;
 
         }
 
-        if($username == 'Example@example.com') {
+        if($username == 'Example@example.com')
+        {
             $errMsg .= 'You must enter your Username<br>';
-            echo " <script>
-                        localStorage.clear();
-                        window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                        setTimeout(function(){ alert('You must enter your Username');},5);
-                    </script>";
+            echo
+                " <script>
+                    localStorage.clear();
+                    window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                    setTimeout(function(){ alert('You must enter your Username');},5);
+                </script>";
             exit;
         }
 
-        if($password == '688822292') {
+        if($password == '688822292')
+        {
             $errMsg .= 'You must enter your Password<br>';
-            echo " <script>
-                        localStorage.clear();
-                        window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                         setTimeout(function(){ alert('You must enter your Password');},5);
-                    </script>";
+            echo
+                " <script>
+                    localStorage.clear();
+                    window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                     setTimeout(function(){ alert('You must enter your Password');},5);
+                </script>";
             exit;
         }
         $password = md5(trim($_POST['password']));
@@ -59,21 +64,18 @@
 
             if(count($results) > 0 && $results['block'] != null)
             {
-
                 $d=strtotime("-5 Minutes -4 hours"); // time deffrence betweem time and date 
                 $newTime =  date("Y-m-d h:i:sa", $d);
 
                 $currentDateTime = $results['block'];
                 $newDateTime = date('Y-m-d h:i:sa', strtotime($currentDateTime));
-                
 
                 if($newTime < $newDateTime)
                 {
                     $errMsg .= 'Time block<br>';
-
                     echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
-                        alert('Your block time did not over yet.');
+                        alert('Sorry. Your user is blocked. you should wait');
                         document.getElementById(\"re_route_login\").click();
                     </script>
                      ");
