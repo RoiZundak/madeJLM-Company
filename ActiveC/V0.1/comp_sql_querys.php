@@ -150,7 +150,7 @@
             //$phone_button="";
 			if($row['phone_number'] !=="0")
 			{
-				$phone_number='<p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: 0'."$phone_number".'</p>';
+				$phone_number='<p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: 0'.$row['phone_number'].'</p>';
 				//<i class="fa fa-phone"></i> <abbr title="Phone"></abbr>:
 				/*
                 $phone_number= "\"<a href =  callto://+972" . $row['phone_number'] . "  >0" . $row['phone_number'] . "</a>\"";
