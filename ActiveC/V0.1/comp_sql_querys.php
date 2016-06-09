@@ -180,9 +180,8 @@ if($func=="1")
 				            " .$git_string. "  " .$link_string. "   " .$cv_file. " 
 						</div>
 						<div>
-							".$mail_pic."
+							".$mail_pic.$phone_pic."
 						</div>
-						<div> ".$phone_pic." </div>
                     </td>
                       
 				</tr>
