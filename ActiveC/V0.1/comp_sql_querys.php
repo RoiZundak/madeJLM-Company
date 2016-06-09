@@ -2,14 +2,14 @@
 	require_once "php/db_connect.php";
 	$databaseConnection =connect_to_db();
 	/*Hebrew*/
-$sql="SET character_set_client=utf8";
-$databaseConnection->query($sql);
-$sql="SET character_set_connection=utf8";
-$databaseConnection->query($sql);
-$sql="SET character_set_database=utf8";
-$databaseConnection->query($sql);
-$sql="SET character_set_results=utf8";
-$databaseConnection->query($sql);
+	$sql="SET character_set_client=utf8";
+	$databaseConnection->query($sql);
+	$sql="SET character_set_connection=utf8";
+	$databaseConnection->query($sql);
+	$sql="SET character_set_database=utf8";
+	$databaseConnection->query($sql);
+	$sql="SET character_set_results=utf8";
+	$databaseConnection->query($sql);
 
 
 	$func = intval($_GET['func']);
@@ -34,7 +34,8 @@ $databaseConnection->query($sql);
 
 			$maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" . $row['Email'] . "</a>\"";
 			$link_string = "";
-			if ($row['linkedin'] !== "") {
+			if ($row['linkedin'] !== "")
+			{
 				$link_string = "
 								<a href=\"" . $row['linkedin'] . "\">
 								<img title=\"LinkedIn\" alt=\"LinkedIn\" src=\"./img/linkedinIcon.png\" width=\"40\" height=\"40\" />
@@ -43,7 +44,8 @@ $databaseConnection->query($sql);
 			}
 
 			$git_string = "";
-			if ($row['github'] !== "") {
+			if ($row['github'] !== "")
+			{
 				$git_string = "
 								<a href=\"" . $row['github'] . "\">
 								<img title=\"Github\" alt=\"Github\" src=\"./img/GithubIcon.png\" width=\"40\" height=\"40\" />
@@ -76,15 +78,19 @@ $databaseConnection->query($sql);
 			{
 				$show_all_skills ="Skills list: ";
 				$len = count($list_skills_bck);
-				foreach ($databaseConnection->query($skills_name) as $skill) {
-					for ($i = 0; $i < $len; $i++) {
+				foreach ($databaseConnection->query($skills_name) as $skill)
+				{
+					for ($i = 0; $i < $len; $i++)
+					{
 						if ($skill['id'] === $list_skills_bck[$i]) {
 							$all_skills .= "<span class='skill_item'> " . $skill['name'] . " for " .$list_skills_years[$i]. " years.</span>";
 						}
 					}
 
 				}
-			}else{
+			}
+			else
+			{
 				$show_all_skills ="Skills list: ";
 				$all_skills=$row['first_name']." hasn't entred any skills yet.";
             }
@@ -104,7 +110,8 @@ $databaseConnection->query($sql);
 
 			$sentence = "Studies for a " . $degree_name . " in " . $row['basic_education_subject'] . " at " . $college_name . " with GPA of " . $row['grade_average'] . " and has " . $row['semesters_left'] . " semesters left.";
 			$job_per = $row['first_name'] . " is avaliable for ";
-			switch ($row['job_percent']) {
+			switch ($row['job_percent'])
+			{
 				case 1:
 					$job_per .= "a half time job.";
 					break;
@@ -126,27 +133,32 @@ $databaseConnection->query($sql);
 				$curr_job = $row['first_name'] . " is currently working at " . $row['current_work'] . ".";
 
 			$summary_ = "";
-			if ($row['summary'] !== "") {
+			if ($row['summary'] !== "")
+			{
 				$sum = "Summary: ";
 				$summary = $row['summary'];
 			}
 
 			$exprience = "";
-			if ($row['experience'] !== "") {
+			if ($row['experience'] !== "")
+			{
 				$exp = "Experience: ";
 				$exprience = $row['experience'];
 			}
 
 			$phone_number="";
-            $phone_button="";
+            //$phone_button="";
 			if($row['phone_number'] !=="0")
 			{
+				$phone_number='<p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: 0'."$phone_number".'</p>';
+				//<i class="fa fa-phone"></i> <abbr title="Phone"></abbr>:
+				/*
                 $phone_number= "\"<a href =  callto://+972" . $row['phone_number'] . "  >0" . $row['phone_number'] . "</a>\"";
                 $phone_button="<button id = 'std_phone_" . $row['ID'] . "' class='filters' onclick='$(\"#phoneDiv\").html(" . $phone_number . ");' >
 								Show Phone
-								</button>";
+								</button>"; */
 			}
-//<i class="fa fa-phone"></i> <abbr title="Phone"></abbr>:
+
 			echo "
 			<table id ='myTable' border=1 frame=void rules=rows>
 				<!--First Line: Picture+ Bubbles -->
