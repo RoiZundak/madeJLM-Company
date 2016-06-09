@@ -440,7 +440,8 @@ if($func=="1")
 				$temp_array=array($skill,$value); //create new array that contains time && skills
                 print_r($temp_array);
 				$len = count($skills_arr)-1;
-				array_push($skills_arr[$len],$temp_array);
+				for ($i=1;$i<$len;$i++)
+					array_push($skills_arr[$i],$temp_array);
             }
 
 		}
