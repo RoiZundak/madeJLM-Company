@@ -147,7 +147,17 @@ if($func=="1")
                             Show Phone
                             </button>"; */
 		}
-		
+
+
+		$phone_pic="";
+		if($row['phone_number']!=="0") {
+			$phone_pic = "<div> 
+				<img id='std_phone_" . $row['ID'] . "' class='filters' src=\"./img/telephoneIcon.jpg\" width='35' height='35' onclick='$(\"#phoneDiv\").html(" . $phone_number . ");'/>
+				</div>";
+		}
+
+
+
 		echo "
 			<table id ='myTable' border=1 frame=void rules=rows>
 				<!--First Line: Picture+ Bubbles -->
@@ -167,8 +177,9 @@ if($func=="1")
 				<!--Second Line: Phone + Mail-->
 				<tr class=\"border_bottom\">
 						<td id='phoneDiv'>
-						    <!--".$phone_button."-->
-						    ".$phone_number."
+						    <!--".$phone_button."
+						    ".$phone_number."-->
+						    ".$phone_pic."
 						</td>
 						<td id='mailDiv'>
 							<button id = 'std_mail_" . $row['ID'] . "' class='filters' onclick='$(\"#mailDiv\").html(" . $maito_string . ");' >
