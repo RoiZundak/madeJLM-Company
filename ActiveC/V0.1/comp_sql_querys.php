@@ -467,7 +467,7 @@ if($func=="1")
 
 		if(count($skills_id)==0) //could not get skills id
 			exit;
-
+        print_r($skills_arr);
 		$std_id=array();
 		foreach($skills_arr as $skill=>$time)
 		{
