@@ -18,7 +18,7 @@
     foreach($databaseConnection->query($sql) as $row)
         $username=$row['username'];
     if($username===""){//no such user!
-        echo "<script>alert('Email: '.$email.' was not found, please try again.');</script>";
+        echo "<script>alert('Email: ".$email." was not found, please try again.);</script>";
     }
     //Create a random string
     $length = 13;
