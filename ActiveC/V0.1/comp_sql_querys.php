@@ -32,7 +32,7 @@
 			else
 				$img_src = "../../../MadeinJLM-students/mockup/" . $row['profile'];
 
-			$maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" . $row['Email'] . "</a>\"";
+			$maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" .$row['Email']. "</a>\"";
 			$link_string = "";
 			if ($row['linkedin'] !== "")
 			{
