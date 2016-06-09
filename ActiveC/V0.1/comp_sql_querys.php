@@ -48,7 +48,7 @@ if($func=="1")
 								</a>
  							";
 		}
-		
+
 		$cv_file = "";
 		if ($row['cv'] !== "")
 			$cv_file = "<a href='".$row['cv']."' download='" .$row['first_name']. $row['last_name'] . "'> <img title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\" width=\"35\" height=\"35\" /> </a>";
@@ -174,15 +174,22 @@ if($func=="1")
 			            <img class='head_image' src =" . $img_src . " width ='120px' height='110px'>
 			            
      			        	<h2 >" . $row['first_name'] . " " . $row['last_name'] . "</h2>
-							<div id='bubble'>
-				            	" .$git_string. "  " .$link_string. "   " .$cv_file. " 
-							</div>
-						<td>
-							" .$mail_pic. " " .$phone_pic. "
-						</td>
+						<div id='bubble'>
+				            " . $git_string . "  " . $link_string . "   " . $cv_file . "
+						</div>
                     </td>
                       
 				</tr>
+				
+				<!--Second Line: Phone + Mail-->
+				<tr class=\"border_bottom\">
+						<td id='phoneDiv'>
+						    ".$phone_pic."
+						</td>
+						<td id='mailDiv'>
+							".$mail_pic."			
+						</td>
+                </tr>
                 
                 	<!--Third Line: Sentence-->
                 	
