@@ -25,6 +25,16 @@ if(isset($_POST['submit'])) {
             $number.
             "<br>Email: ".$_POST['contact_email'];
     }
+    if(trim($_POST['contact_message']) == '' || trim($_POST['contact_name']) == '' || trim() == '' || trim($_POST['contact_message']) == '')
+    {
+        echo("<a id='re_route' href ='../#/contact'>
+                    <script>
+                        document.getElementById(\"re_route\").click();
+                        alert('One of the fields contain only spaces.');
+                    </script>
+                </a>");
+        exit;
+    }
     $headers = 'From: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
         'Reply-To: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
