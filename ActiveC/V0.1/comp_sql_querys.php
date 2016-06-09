@@ -84,7 +84,10 @@
 					}
 
 				}
-			}
+			}else{
+				$show_all_skills ="Skills list: ";
+				$all_skills="There is not skill found.";
+            }
 			//$show_all_skills.=" ".$all_skills;
 			$college_name = "";
 			foreach ($databaseConnection->query($sql_college) as $college) {
