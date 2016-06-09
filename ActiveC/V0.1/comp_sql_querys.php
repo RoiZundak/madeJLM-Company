@@ -177,7 +177,7 @@ if($func=="1")
 			            
      			        	<h2 >" . $row['first_name'] . " " . $row['last_name'] . "</h2>
 						<div id='bubble'>
-				            " . $git_string . "  " . $link_string . "   " . $cv_file . "
+				            ".$phone_pic."  " .$git_string. "  " .$link_string. "   " .$cv_file. " ".$mail_pic."
 						</div>
                     </td>
                       
