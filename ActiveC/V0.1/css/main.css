@@ -375,7 +375,7 @@ body {
     color: #3b5998;
 }
 
-.linkedin-link a:hover {
+.linkedin-link a: {
     color: #007fb1;
 }
 
