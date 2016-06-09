@@ -15,12 +15,11 @@
 
         if (trim($username) == '' || trim($password) == '')
         {
-            echo"<script>alert('fffffffffffffff');</script>";
             $errMsg .= 'empty Fields<br>';
             echo " <script>
                         localStorage.clear();
                         window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                        setTimeout(function(){ alert('Insert user name or password');},5);
+                        setTimeout(function(){ alert('Username or password required');},5);
                     </script>";
             exit;
 
