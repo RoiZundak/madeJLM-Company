@@ -1,6 +1,16 @@
 <?php
 	require_once "php/db_connect.php";
 	$databaseConnection =connect_to_db();
+	/*Hebrew*/
+	$sql="SET character_set_client=utf8";
+		$databaseConnection->query($sql);
+	$sql="SET character_set_connection=utf8";
+		$databaseConnection->query($sql);
+	$sql="SET character_set_database=utf8";
+		$databaseConnection->query($sql);
+	$sql="SET character_set_results=utf8";
+		$databaseConnection->query($sql);
+
 
 	$func = intval($_GET['func']);
 
@@ -215,7 +225,7 @@
 	if($func=="2")
 	{
 		//PDO STYLE :
-		$sql = "SELECT * FROM student WHERE github<>''";
+		$sql = "SELECT * FROM student WHERE github<>'' ORDER BY profile_strength DESC";
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
@@ -235,7 +245,7 @@
 	if($func=="3")
 	{
 		//PDO STYLE :
-		$sql = "SELECT * FROM student WHERE linkedin<>''";
+		$sql = "SELECT * FROM student WHERE linkedin<>'' ORDER BY profile_strength DESC";
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
@@ -255,7 +265,7 @@
 	if($func=="4")
 	{
 		//PDO STYLE :
-		$sql = 'SELECT * FROM student WHERE Activated=1';
+		$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC';
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
@@ -483,7 +493,7 @@
             exit;
         }
 
-		$sql = "SELECT * FROM student WHERE ID IN(".implode(',',$students_id).")" ;
+		$sql = "SELECT * FROM student WHERE ID IN(".implode(',',$students_id).") ORDER BY profile_strength DESC" ;
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{

@@ -28,17 +28,16 @@
             //db connect
             require_once "../php/db_connect.php";
             $databaseConnection =connect_to_db();
-
+        /*Hebrew*/
         $sql="SET character_set_client=utf8";
-        $databaseConnection->query($sql);
+          $databaseConnection->query($sql);
         $sql="SET character_set_connection=utf8";
-        $databaseConnection->query($sql);
+            $databaseConnection->query($sql);
         $sql="SET character_set_database=utf8";
-        $databaseConnection->query($sql);
+          $databaseConnection->query($sql);
         $sql="SET character_set_results=utf8";
-        $databaseConnection->query($sql);
-        $sql="SET character_set_server=utf8";﻿
-        $databaseConnection->query($sql);
+         $databaseConnection->query($sql);
+
 
             //get all students
             $sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC';
