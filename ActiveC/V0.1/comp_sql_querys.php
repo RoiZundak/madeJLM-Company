@@ -443,12 +443,13 @@
 
 	if($func=="10")
 	{
-        $skills_arr=array(array());
+        $skills_arr=array();
 		foreach($_GET as $key => $value)
 		{
 			if (strstr($key, 'skill_')){
                 $skill = substr($value, 0, strpos($value, ','));//eg. 'javascript'
                 $time = substr($value, strpos($value, ','), strlen($skill));//eg. 'javascript'
+				echo('skill:'.$skill.' time:'.$skill.'<br>');
                 
                 array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
                 array_push($skills_arr,'\''.$time.'\'');//eg. 'javascript'
