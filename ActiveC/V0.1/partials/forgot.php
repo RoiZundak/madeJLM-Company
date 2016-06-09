@@ -22,7 +22,7 @@
             window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/forgot';
                 setTimeout(function(){alert('Email: ".$email." was not found, please try again.');},100);
             </script>";
-        exit;
+        
     }
     //Create a random string
     $length = 13;
