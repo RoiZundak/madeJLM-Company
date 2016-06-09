@@ -375,7 +375,9 @@ body {
     color: #3b5998;
 }
 
-
+.linkedin-link a: {
+    color: #007fb1;
+}
 
 .twitter-link a:hover {
     color: #39a9e0;
