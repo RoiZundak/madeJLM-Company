@@ -98,9 +98,9 @@ if($func=="1")
 		foreach ($databaseConnection->query($sql_degree) as $degree) {
 			$degree_name = $degree['name'];
 		}
-		$phone_number = "";
-		if ($row['phone_number'] !== "0")
-			$phone_number = $row['phone_number'];
+		//$phone_number = "";
+		//if ($row['phone_number'] !== "0")
+			//$phone_number = $row['phone_number'];
 		$sentence = "Studies for a " . $degree_name . " in " . $row['basic_education_subject'] . " at " . $college_name . " with GPA of " . $row['grade_average'] . " and has " . $row['semesters_left'] . " semesters left.";
 		$job_per = $row['first_name'] . " is avaliable for ";
 		switch ($row['job_percent'])
@@ -139,7 +139,7 @@ if($func=="1")
 		//$phone_button="";
 		if($row['phone_number'] !=="0")
 		{
-			$phone_number='<p><i class="fa fa-phone"></i> <abbr title="Phone"></abbr>: 0'.$row['phone_number'].'</p>';
+			$phone_number='<p><i class="fa fa-phone"></i> <abbr title="Phone"></abbr>: '.$row['phone_number'].'</p>';
 			//<i class="fa fa-phone"></i> <abbr title="Phone"></abbr>:
 			/*
             $phone_number= "\"<a href =  callto://+972" . $row['phone_number'] . "  >0" . $row['phone_number'] . "</a>\"";
