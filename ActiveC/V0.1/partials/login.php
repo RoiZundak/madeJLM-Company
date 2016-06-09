@@ -13,10 +13,6 @@
     {
         $errMsg = '';
 
-        //username and password sent from Form
-        $username = trim($_POST['username']);
-        $password = trim($_POST['password']);
-
         if (strlen($username) > 0 && strlen(trim($username)) == 0 || strlen($password) > 0 && strlen(trim($password)) == 0)
         {
             echo"<script>alert('fffffffffffffff');</script>";
@@ -29,6 +25,11 @@
             exit;
 
         }
+
+        //username and password sent from Form
+        $username = trim($_POST['username']);
+        $password = trim($_POST['password']);
+
 
         if($username == 'Example@example.com') {
             $errMsg .= 'You must enter your Username<br>';
