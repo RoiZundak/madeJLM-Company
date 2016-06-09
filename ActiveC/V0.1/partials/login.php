@@ -95,13 +95,13 @@
             {
 
                 if($results['attempt'] > 0) {
-                    $sql_update = "UPDATE company SET attempt = 0 WHERE username = '".$username."'";
+                    $sql_update = "UPDATE company SET attempt = 0 WHERE username = '".$username."' OR email='".$username."'";
                     $update = $databaseConnection ->prepare($sql_update);
                     $update->execute();
                 }
 
                 //update company counter enters
-                $sql_update="UPDATE company SET counter_enters = counter_enters + 1 WHERE username = '".$username."'";
+                $sql_update="UPDATE company SET counter_enters = counter_enters + 1 WHERE username = '".$username."' OR email='".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
                 echo("<a id='re_route_main' href ='../#/main'></a>
@@ -116,18 +116,18 @@
             else if(count($results) > 0 && $password !== $results['password'])
             {
                 $errMsg .= 'Incorrect Password 1<br>';
-                $sql_update="UPDATE company SET attempt = attempt + 1 WHERE username = '".$username."'";
+                $sql_update="UPDATE company SET attempt = attempt + 1 WHERE username = '".$username."' OR email='".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
 
                 if( intval( $results['attempt'] )>= 4)
                 {
-                    $sql_update="UPDATE company SET attempt = 0 WHERE username = '".$username."'";
+                    $sql_update="UPDATE company SET attempt = 0 WHERE username = '".$username."' OR email='".$username."'";
                     $update = $databaseConnection ->prepare($sql_update);
                     $update->execute();
 
 
-                    $sql_update="UPDATE company SET block = NOW() WHERE username = '".$username."'";
+                    $sql_update="UPDATE company SET block = NOW() WHERE username = '".$username."' OR email='".$username."'";
                     $update = $databaseConnection ->prepare($sql_update);
                     $update->execute();
 
