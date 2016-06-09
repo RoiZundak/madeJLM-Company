@@ -10,6 +10,12 @@ body{
     height:270px;
     margin-left: 100px;
 }
+
+#activec_about_logo{
+    width:270px;
+    height:200px;
+    margin-left: 120px;
+}
 .img-responsive-team{
     width : 200px;
     height:200px;
