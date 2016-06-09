@@ -493,6 +493,7 @@ footer {
 }
 
 h2 {
+    font-family: 'Trocchi', serif; font-size: 45px;
     margin-top: 45px;
     margin-left: 50px;
     text-align: center;
