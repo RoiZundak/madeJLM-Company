@@ -181,7 +181,7 @@ if($func=="1")
 				            	" .$git_string. "  " .$link_string. "   " .$cv_file. " 
 							</div>
 								".$mail_pic.$phone_pic."
-						<td>
+						</td>
                     </td>
                       
 				</tr>
