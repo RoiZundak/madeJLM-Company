@@ -38,11 +38,32 @@ body{
 
 .filters{
     float: left;
-    height: 35px;
-	width:35px;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    height: 30px;
+    width:150px;
+    text-align: center;
     cursor: pointer;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
+    transition-property: background, border-radius;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
+    font-size:1.1em;
+}
+.filters:hover{
+    background-color:black;
+    color: white;
 }
 
+.bubbels{
+    float: left;
+    height: 35px;
+    width:35px;
+    cursor: pointer;
+}
 #show_stud {
     float:right;
     opacity: 0.7;

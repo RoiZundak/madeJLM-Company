@@ -160,7 +160,7 @@ if($func=="1")
 		{
 			$phone_number=$row['phone_number'];
 			$phone_pic = "<div> 
-				<img id = 'std_phone_" . $row['ID'] . "' class='filters' src=\"./img/telephoneIcon.jpg\" width='35' height='35' onclick='$(\"#phoneDiv\").html(".$zero.$phone_number.");'/>
+				<img id = 'std_phone_" . $row['ID'] . "' class='bubbels' src=\"./img/telephoneIcon.jpg\" width='35' height='35' onclick='$(\"#phoneDiv\").html(".$zero.$phone_number.");'/>
 				</div>";
 		}
 
@@ -169,7 +169,7 @@ if($func=="1")
 		{
 			$$mail_pic=$row['Email'];
 			$mail_pic = "<div> 
-				<img id='std_mail_" . $row['ID'] . "' class='filters' src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" . $maito_string . ");'/>
+				<img id='std_mail_" . $row['ID'] . "' class='bubbels' src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" . $maito_string . ");'/>
 				</div>";
 		}
 
