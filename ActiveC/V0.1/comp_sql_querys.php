@@ -37,7 +37,7 @@
 			if ($row['linkedin'] !== "")
 			{
 				$link_string = "<a href=\"" . $row['linkedin'] . "\">
-								<img title=\"LinkedIn\" alt=\"LinkedIn\" src=\"./img/linkedinIcon.png\" width=\"35\" height=\"35\" />
+								<img title=\"LinkedIn\" alt=\"LinkedIn\" src=\"./img/LinkedinIcon.png\" width=\"35\" height=\"35\" />
 								</a>
  								";
 			}
