@@ -158,6 +158,10 @@
                 $phone_button="<button id = 'std_phone_" . $row['ID'] . "' class='filters' onclick='$(\"#phoneDiv\").html(" . $phone_number . ");' >
 								Show Phone
 								</button>"; */
+				$phone_button="<form action=\'demo_form.asp\'>
+  								First name: <input type=\"text\" name=\"fname\"><br>
+  								<input type=\"image\" src=\"submit.gif\" alt=\"Submit\" width=\"48\" height=\"48\">
+								</form>"
 			}
 
 			echo "
