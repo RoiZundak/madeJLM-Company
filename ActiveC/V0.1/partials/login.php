@@ -19,6 +19,7 @@
 
         if (strlen($username) > 0 && strlen(trim($username)) == 0 || strlen($password) > 0 && strlen(trim($password)) == 0)
         {
+            echo"<script>alert('fffffffffffffff');</script>";
             $errMsg .= 'empty Fields<br>';
             echo " <script>
                         localStorage.clear();
