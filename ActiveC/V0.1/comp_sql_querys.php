@@ -103,7 +103,7 @@ if($func=="1")
 		}
 
 		if ($degree_name=="" || $row['basic_education_subject']=="" || $college_name=="" || $row['grade_average'] || $row['semesters_left'])
-			$sentence = $row['first_name']. "hasn't fulfilled all the basic information fields. for more Information, contact with ".$row['first_name'];
+			$sentence = $row['first_name']. " hasn't fulfilled all the basic information fields. for more Information, contact with ".$row['first_name'].".";
 		else
 			$sentence = "Studies for a " . $degree_name . " in " . $row['basic_education_subject'] . " at " . $college_name . " with GPA of " . $row['grade_average'] . " and has " . $row['semesters_left'] . " semesters left.";
 
