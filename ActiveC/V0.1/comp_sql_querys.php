@@ -440,6 +440,7 @@
 				</form>";
 	}
 
+
 	if($func=="10")
 	{
         $skills_arr=array(array());
@@ -447,9 +448,9 @@
 		{
 			if (strstr($key, 'skill_')){
                 $skill = substr($value, 0, strpos($value, ','));//eg. 'javascript'
-                array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
-
                 $time = substr($value, strpos($value, ','), strlen($skill));//eg. 'javascript'
+                
+                array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
                 array_push($skills_arr,'\''.$time.'\'');//eg. 'javascript'
 
 
