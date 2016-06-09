@@ -65,8 +65,8 @@
             $records->bindParam(':username', $username);
             $records->bindParam(':email', $email);
             $records->execute();
-            //$results = $records->fetch(PDO::FETCH_ASSOC);
-            $results=$records->fetchAll();
+            $results = $records->fetch(PDO::FETCH_ASSOC);
+            //$results=$records->fetchAll();
             echo "<script>alert('.$results.')</script>";
 
              /*
