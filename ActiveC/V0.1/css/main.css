@@ -494,10 +494,10 @@ footer {
 
 h3 {
     margin-top: 45px;
-    margin-left: 60px;
+    margin-left: 50px;
     text-align: left;
     position: relative;
-    left: -60px;
+    left: +20px;
 
 }
 
