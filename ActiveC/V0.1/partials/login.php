@@ -54,11 +54,14 @@
         }
         $password = md5(trim($_POST['password']));
 
-
+        $student_mail="";
+        $row=$databaseConnection->query($sql);
+        $email=$row['Email'];
         if($errMsg == '')
         {
-            $records = $databaseConnection->prepare('SELECT * FROM  company WHERE username = :username');
+            $records = $databaseConnection->prepare('SELECT * FROM  company WHERE username = :username OR username=:email');
             $records->bindParam(':username', $username);
+            $records->bindParam(':email', $email);
             $records->execute();
             $results = $records->fetch(PDO::FETCH_ASSOC);
 
