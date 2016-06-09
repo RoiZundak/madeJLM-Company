@@ -76,7 +76,7 @@
                     $errMsg .= 'Time block<br>';
                     echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
-                        alert('Sorry. Your user is blocked. you should wait 5 minutes untill you can try again');
+                        alert('Sorry. Your user is blocked. Please try again in 5 minutes');
                         document.getElementById(\"re_route_login\").click();
                     </script>
                      ");
@@ -135,7 +135,7 @@
                         localStorage.clear();
                         //document.getElementById(\"re_route_login\").click();
                         window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                        setTimeout(function(){ alert('You tried too much. Try again in 5 minuts.');},100);
+                        setTimeout(function(){ alert('You tried too much. please try again in 5 minuts.');},100);
                     </script>";
                     exit;
                 }
