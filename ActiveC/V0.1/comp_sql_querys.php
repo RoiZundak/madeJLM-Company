@@ -172,8 +172,7 @@ if($func=="1")
 				<img id='std_mail_" . $row['ID'] . "' class='bubbels' src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" . $maito_string . ");'/>
 				</div>";
 		}
-
-
+		
 		echo "
 			<table id ='myTable' border=1 frame=void rules=rows>
 				<!--First Line: Picture+ Bubbles -->
