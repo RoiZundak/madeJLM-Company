@@ -1,7 +1,15 @@
+@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
 
 /*
 Our style
 */
+body{
+    font-family: "Alef Hebrew",
+    “Helvetica Neue”,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
 #madeinJlm_about_logo{
     width:270px;
     height:270px;
