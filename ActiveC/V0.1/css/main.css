@@ -420,7 +420,7 @@ body {
 }
 #login_form{
     background-color:rgba(255,255,255,0.5);
-    width:40%;
+    width:20%;
     height:100%;
     margin:auto;
 }
@@ -492,14 +492,12 @@ footer {
     box-shadow: inset 0 10px 15px 0 #3e3e3e;
 }
 
-h2 {
-    font-family: 'Trocchi', serif; font-size: 45px;
-    color: white;
+h3 {
     margin-top: 45px;
-    margin-left: 50px;
-    text-align: center;
+    margin-left: 60px;
+    text-align: left;
     position: relative;
-
+    left: -60px;
 
 }
 
