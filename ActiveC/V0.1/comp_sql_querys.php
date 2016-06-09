@@ -76,6 +76,7 @@
 				}
 			}else{
                 echo "<script>
+                    alert('vsdvds');
                     $('#skill_tr').css('border-bottom','none');
                 </script>";
             }
