@@ -14,7 +14,7 @@
         $errMsg = '';
         //username and password sent from Form
         $username = trim($_POST['username']);
-        $email=trim($_POST['username']);
+        //$email=trim($_POST['username']);
         $password = trim($_POST['password']);
 
         if ($username == '' || $password == '')
@@ -63,7 +63,7 @@
             $name_or_mail="SELECT * FROM  company WHERE username = :username OR email=:email";
             $records = $databaseConnection->prepare($name_or_mail);
             $records->bindParam(':username', $username);
-            $records->bindParam(':email', $email);
+            $records->bindParam(':email', $username);
             $records->execute();
             $results = $records->fetch(PDO::FETCH_ASSOC);
 
