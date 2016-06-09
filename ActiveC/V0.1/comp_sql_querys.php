@@ -390,7 +390,6 @@
 				{
 					event.preventDefault();
 					var str = $(\"#form_skills\").serialize();
-					alert(str);
 					xmlhttp.onreadystatechange = function() 
 					{
 						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -446,8 +445,7 @@
 		{
 			if (strstr($key, 'skill_')){
                 $skill = substr($key, strpos($key, '_')+1,strlen($key) );//eg. 'javascript'
-				echo('skill:'.$skill.' time:'.$value.'<br>');
-                
+                //
                 array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
                 array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
 
