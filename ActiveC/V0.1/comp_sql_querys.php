@@ -32,6 +32,8 @@ if($func=="1")
 		else
 			$img_src = "../../../MadeinJLM-students/mockup/" . $row['profile'];
 		$maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" .$row['Email']. "</a>\"";
+
+		//bubbels
 		$link_string = "";
 		if ($row['linkedin'] !== "")
 		{
@@ -52,6 +54,7 @@ if($func=="1")
 		$cv_file = "";
 		if ($row['cv'] !== "")
 			$cv_file = "<a href='".$row['cv']."' download='" .$row['first_name']. $row['last_name'] . "'> <img title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\" width=\"35\" height=\"35\" /> </a>";
+
 		$sentence = "";
 		$sql_degree = "SELECT name FROM degree WHERE id =" . $row['degree_id'];
 		$sql_college = "SELECT name FROM college WHERE id =" . $row['college_id'];;
@@ -60,7 +63,9 @@ if($func=="1")
 		$list_skills = array();       //skills ids
 		$list_skills_bck = array();   //backup skills id for further use
 		$list_skills_years = array(); //keep years of knowledge
-		foreach ($databaseConnection->query($sql_skills) as $skill) {
+
+		foreach ($databaseConnection->query($sql_skills) as $skill)
+		{
 			array_push($list_skills, $skill['skill_id']);
 			array_push($list_skills_years, $skill['years']);
 		}
@@ -77,7 +82,7 @@ if($func=="1")
 				for ($i = 0; $i < $len; $i++)
 				{
 					if ($skill['id'] === $list_skills_bck[$i]) {
-						$all_skills .= "<span class='skill_item'> " . $skill['name'] . " for " .$list_skills_years[$i]. " years.</span>";
+						$all_skills .= "<span class='skill_item'> " . $skill['name'] . " for " .$list_skills_years[$i]. " years.</span><br>";
 					}
 				}
 			}
