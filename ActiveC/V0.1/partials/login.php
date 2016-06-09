@@ -54,9 +54,9 @@
         }
         $password = md5(trim($_POST['password']));
 
-        $student_mail="";
-        $row=$databaseConnection->query($sql);
-        $email=$row['Email'];
+        //$student_mail="";
+        //$row=$databaseConnection->query($sql);
+        $email=trim($_POST['username']);
         if($errMsg == '')
         {
             $records = $databaseConnection->prepare('SELECT * FROM  company WHERE username = :username OR username=:email');
