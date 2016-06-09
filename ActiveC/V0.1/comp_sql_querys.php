@@ -390,7 +390,6 @@
 				{
 					event.preventDefault();
 					var str = $(\"#form_skills\").serialize();
-					alert(str);
 					xmlhttp.onreadystatechange = function() 
 					{
 						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -445,12 +444,10 @@
 		foreach($_GET as $key => $value)
 		{
 			if (strstr($key, 'skill_')){
-                $skill = substr($value, 0, strpos($value, ','));//eg. 'javascript'
-                $time = substr($value, strpos($value, ','), strlen($skill));//eg. 'javascript'
-				echo('skill:'.$skill.' time:'.$skill.'<br>');
-                
+                $skill = substr($key, strpos($key, '_')+1,strlen($key) );//eg. 'javascript'
+                //
                 array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
-                array_push($skills_arr,'\''.$time.'\'');//eg. 'javascript'
+                array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
 
 				$temp_array=array($skill,$time); //create new array that contains time && skills
 				array_push($skills_arr,$temp_array);
