@@ -148,7 +148,7 @@ $databaseConnection->query($sql);
 			}
 //<i class="fa fa-phone"></i> <abbr title="Phone"></abbr>:
 			echo "
-			<table id ='myTable' border=1 frame=void rules=rows>
+			<table >
 				<!--First Line: Picture+ Bubbles -->
 			    <tr>
 			    
