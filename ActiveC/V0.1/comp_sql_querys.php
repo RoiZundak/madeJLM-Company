@@ -225,7 +225,7 @@ $databaseConnection->query($sql);
 	if($func=="2")
 	{
 		//PDO STYLE :
-		$sql = "SELECT * FROM student WHERE github<>''";
+		$sql = "SELECT * FROM student WHERE github<>'' ORDER BY profile_strength DESC";
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
@@ -245,7 +245,7 @@ $databaseConnection->query($sql);
 	if($func=="3")
 	{
 		//PDO STYLE :
-		$sql = "SELECT * FROM student WHERE linkedin<>''";
+		$sql = "SELECT * FROM student WHERE linkedin<>'' ORDER BY profile_strength DESC";
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
@@ -265,7 +265,7 @@ $databaseConnection->query($sql);
 	if($func=="4")
 	{
 		//PDO STYLE :
-		$sql = 'SELECT * FROM student WHERE Activated=1';
+		$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC';
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
@@ -493,7 +493,7 @@ $databaseConnection->query($sql);
             exit;
         }
 
-		$sql = "SELECT * FROM student WHERE ID IN(".implode(',',$students_id).")" ;
+		$sql = "SELECT * FROM student WHERE ID IN(".implode(',',$students_id).") ORDER BY profile_strength DESC" ;
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
