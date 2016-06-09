@@ -180,7 +180,10 @@ if($func=="1")
 				            	" .$git_string. "  " .$link_string. "   " .$cv_file. " 
 							</div>
 						<td>
-							".$mail_pic.$phone_pic."
+							<div id='bubble_buttons'> 
+								" .$mail_pic. " " .$phone_pic. "
+							</div>
+							
 						</td>
                     </td>
                       
