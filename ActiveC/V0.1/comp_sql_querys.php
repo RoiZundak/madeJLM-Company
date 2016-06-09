@@ -453,36 +453,12 @@
                 array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
                 array_push($skills_arr,'\''.$time.'\'');//eg. 'javascript'
 
-
-               /* if(strstr($value,',')){
-
-                    $skill = substr($value,0,strpos($value,','));//eg. 'javascript'
-                    $time = substr($value,strpos($value,',')+2); //eg. '3 years'
-                    $time = substr($time ,0 , strpos($time,' '));//eg. '3'
-                    //more , less , All ,1 ,2, 3
-                    switch ($time){
-                        case 'All':
-                            $time='0';
-                            break;
-                        case 'less':
-                            $time = '-1';
-                            break;
-                        case 'more':
-                            $time='+3';
-                            break;
-                        default:
-
-                    }
-                    array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
-                    array_push($time_arr,'\''.$time.'\'');
-                }else{
-                    array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
-                    array_push($time_arr,'0');
-                }*/
-
+				$temp_array=array($skill,$time); //create new array that contains time && skills
+				array_push($skills_arr,$temp_array);
             }
 
 		}
+		print_r($skills_arr);
 		if(count($skills_arr)==0) //no skills were selected
         {
             exit;
