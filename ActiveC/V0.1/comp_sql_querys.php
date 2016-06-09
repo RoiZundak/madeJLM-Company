@@ -430,7 +430,9 @@ if($func=="1")
         $skills_arr=array();
 		foreach($_GET as $key => $value)
 		{
+            echo "itr";
 			if (strstr($key, 'skill_')){
+                echo "ation<br>";
                 $skill = substr($key, strpos($key, '_')+1,strlen($key) );//eg. 'javascript'
                 //
                 array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
