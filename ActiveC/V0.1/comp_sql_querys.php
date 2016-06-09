@@ -445,12 +445,12 @@
 		foreach($_GET as $key => $value)
 		{
 			if (strstr($key, 'skill_')){
-                $skill = substr($value, 0, strpos($value, ','));//eg. 'javascript'
-                $time = substr($value, strpos($value, ','), strlen($skill));//eg. 'javascript'
-				echo('skill:'.$skill.' time:'.$skill.'<br>');
+                $skill = substr($key, strpos($value, '_')+1,strlen($key) );//eg. 'javascript'
+                //$time = substr($value, strpos($value, ','), strlen($skill));//eg. 'javascript'
+				echo('skill:'.$skill.' time:'.$value.'<br>');
                 
                 array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
-                array_push($skills_arr,'\''.$time.'\'');//eg. 'javascript'
+                array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
 
 				$temp_array=array($skill,$time); //create new array that contains time && skills
 				array_push($skills_arr,$temp_array);
