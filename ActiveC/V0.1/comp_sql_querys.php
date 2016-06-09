@@ -37,7 +37,7 @@ $databaseConnection->query($sql);
 			if ($row['linkedin'] !== "") {
 				$link_string = "
 								
-								<a href=\"" . $row['linkedin'] . "\" style=\"text-decoration:none;\"><span style=\"font: 80% Arial,sans-serif; color:#0783B6;\"><img src=\"http://s.c.lnkd.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png\" width=\"40\" height=\"30\" style=\"vertical-align:middle;\" border=\"0\"></span></a>
+								<a href=\"" . $row['linkedin'] . "\" style=\"text-decoration:none;\"><span style=\"font: 80% Arial,sans-serif; color:#0783B6;\"><img src=\"http://s.c.lnkd.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png\" width=\"50\" height=\"35\" style=\"vertical-align:middle;\" border=\"0\"></span></a>
 								</a>
  								";
 			}
