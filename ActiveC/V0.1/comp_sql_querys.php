@@ -440,7 +440,6 @@
 				</form>";
 	}
 
-
 	if($func=="10")
 	{
         $skills_arr=array();
