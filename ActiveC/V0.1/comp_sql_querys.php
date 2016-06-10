@@ -163,7 +163,7 @@ if($func=="1")
 		echo "
 			<table id ='myTable' border=1 frame=void rules=rows>
 				<!--First Line: Picture+ Bubbles -->
-			    <tr>
+			    <tr width=\"100%\">
 			    
 			        <td  width=\"100%\">
 			            <img class='head_image' src =" . $img_src . " width ='120px' height='110px'>
