@@ -146,8 +146,7 @@ if($func=="1")
             $phone_number="\"<a href =  callto:" . $row['phone_number'] . "  >" .$row['phone_number']. "</a>\"";
             $phone_pic = "<img id = 'std_phone_" .
 				$row['ID'] . "' class='bubbels' src=\"./img/telephoneIcon.jpg\"
-				 width='35' height='35' onclick='$(\"#phoneDiv\").html(".$phone_number.");'/>
-";
+				 width='35' height='35' onclick='$(\"#phoneDiv\").html(".$phone_number.");'/>&#8209";
         }
 
 		$mail_pic="";
@@ -157,7 +156,7 @@ if($func=="1")
             $maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" .$row['Email']. "</a>\"";
 			$mail_pic = "<img id='std_mail_" . $row['ID'] .
 				"' class='bubbels'  src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" .
-				$maito_string . ");'/>";
+				$maito_string . ");'/>&#8209";
 		}
 
 		echo "
@@ -171,31 +170,18 @@ if($func=="1")
      			        	<h2 >" . $row['first_name'] . " " . $row['last_name'] . "</h2>
 						
 				            " . $git_string . "  " . $link_string . "  " . $cv_file . "
-				             
-				           <div id='mailDiv'>
-				             ".$mail_pic."
-				             </div>
+				            
 				            <div id='phoneDiv'>"
 								.$phone_pic."
 							</div>
-				         
-
-						
+							 
+				           <div id='mailDiv'>
+				             ".$mail_pic."
+				            </div>
+				    
+				         		
                     </td>
-                      
-				<!--</tr>-->
-				
-				<!--Second Line: Phone + Mail
-				<tr class=\"border_bottom\">
-						<td id='mailDiv'>
-									
-						</td>
-						
-						<td id='phoneDiv'>
-						
-						</td>						
-                </tr>
-                -->
+
                 	<!--Third Line: Sentence-->
                 	
                  <tr class=\"border_bottom\">
