@@ -497,7 +497,7 @@ if($func=="1")
 			$id=$complete_query->fetchAll();
             echo "For ".$skills_arr[$i][0]." :";
             foreach ($id as $row_id){
-                echo $row_id[0].", "
+                echo $row_id[0].", ";
             }
             echo "<br>";
 			array_push($std_id,$id);
