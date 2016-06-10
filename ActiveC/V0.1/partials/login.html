@@ -26,8 +26,8 @@
                                 }
                                 else {
                                     $('#remember_me').removeAttr('checked');
-                                    $('#login').val(' ');
-                                    $('#password').val(' ');
+                                    $('#login').val('');
+                                    $('#password').val('');
                                 }
 
                                 $('#remember_me').click(function() {
@@ -38,8 +38,8 @@
                                         localStorage.chkbx = $('#remember_me').val();
                                     }
                                     else {
-                                        localStorage.usrname = ' ';
-                                        localStorage.password = ' ';
+                                        localStorage.usrname = '';
+                                        localStorage.password = '';
                                         localStorage.chkbx = '';
                                     }
                                 });
