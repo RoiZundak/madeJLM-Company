@@ -485,13 +485,10 @@ if($func=="1")
                 $len = count($id);
                 for ($j=0;$j<$len;$j++){
                     $std_id[$j]=$id[$j][0];
-                    echo $std_id[$j].", ";
                 }
                 continue;
 
             }
-
-
             $temp_arr=array();
             foreach ($id as $recived_line){
                 foreach ($std_id as $already_in){
@@ -520,7 +517,6 @@ if($func=="1")
         }
 
 		$sql = "SELECT * FROM student WHERE ID IN(".implode(',',$std_id).") ORDER BY profile_strength DESC" ;
-        print_r($sql);
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
