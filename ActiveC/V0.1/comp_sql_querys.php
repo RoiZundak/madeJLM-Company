@@ -432,6 +432,7 @@ if($func=="1")
 
 	if($func=="10")
 	{
+        echo " making sure ";
         $skills_arr=array(array());
         $i=0;
 		foreach($_GET as $key => $value)
