@@ -472,8 +472,8 @@ if($func=="1")
 		$std_id=array();
         for($i=0;$i<$len;$i++)
 		{
+            echo "<br> skill : ".$skills_arr[$i][0] . " time : " . $skills_arr[$i][1];
 			$student_id_query = "SELECT student_id FROM student_skills WHERE skill_id=:skill AND years=:time";
-            print_r($student_id_query);
 			$complete_query= $databaseConnection->prepare($student_id_query);
 			$complete_query->bindParam(':skill',$skills_arr[$i][0]);
 			$complete_query->bindParam(':time',$skills_arr[$i][1]);
