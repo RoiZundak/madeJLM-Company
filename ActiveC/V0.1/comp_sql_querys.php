@@ -464,7 +464,7 @@ if($func=="1")
             $complete_query->bindParam(':skill',$skills_arr[$i][0]);
             $complete_query->execute();
             $id=$complete_query->fetch();
-            echo " id #".$i." is :".$id[0]."<br>";
+            //echo " id #".$i." is :".$id[0]."<br>";
             $skills_id[$i] = $id[0];
         }
 		/*foreach($skills_arr as $skill=>$time)
@@ -495,7 +495,11 @@ if($func=="1")
 			$complete_query->bindParam(':time',$skills_arr[$i][1]);
 			$complete_query->execute();
 			$id=$complete_query->fetchAll();
-            print_r($id[0][0]."<br>");
+            echo "For ".$skills_arr[$i][0]." :";
+            foreach ($id as $row_id){
+                echo $row_id[0].", "
+            }
+            echo "<br>";
 			array_push($std_id,$id);
 		}
 
