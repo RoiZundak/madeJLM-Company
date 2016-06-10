@@ -461,7 +461,7 @@ if($func=="1")
             $id=$complete_query->fetch();
             $skills_id[$i] = $id[0];
         }
-		$len=count($skills_arr);
+		$len=count($skills_id);
         if($len===0){
             echo" stop here.";
             exit;
