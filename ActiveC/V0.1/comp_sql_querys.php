@@ -468,9 +468,6 @@ if($func=="1")
             $id=$complete_query->fetchAll();
             array_push($skills_id,$id);
         }
-
-
-
 		/*foreach($skills_arr as $skill=>$time)
 		{
 			$id_query = "SELECT id FROM skills WHERE name=:skill AND status = 1 LIMIT 1";
@@ -480,12 +477,12 @@ if($func=="1")
 			$id=$complete_query->fetchAll();
 			array_push($skills_id,$id);
 		}*/
-        print_r($skills_id."<br>End 2nd<br>");
         //print_r($skills_arr."<br>End 2nd<br>");
 		$len=count($skills_arr);
 		for($i=1;$i<$len;$i++)
 		{
 			$skills_arr[$i][0]=$skills_id[$i];
+            print_r($skills_arr[$i][0].",".$skills_arr[$i][1]."<br>");
 		}
 
 		if(count($skills_id)==0) //could not get skills id
