@@ -503,11 +503,18 @@ if($func=="1")
                 foreach ($std_id as $already_in){
                     echo "<br>".$recived_line[0]." == ? == ".$already_in;
                     if($recived_line[0] === $already_in){
+                        echo "insert : ".$already_in; 
                         array_push($temp_arr, $already_in);
+                        break;
                     }
                 }
             }
-            $std_id=$temp_arr;
+            $std_id=array();
+            $temp_len = count($temp_arr);
+            for($i=0;$i<$temp_len ;$i++) {
+                array_push($std_id, array_push($temp_arr));
+            }
+            //$std_id=$temp_arr;
 
 		}
 
