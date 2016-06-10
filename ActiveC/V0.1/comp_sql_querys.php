@@ -543,7 +543,9 @@ if($func=="1")
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
-			$img_src ="";
+            
+            echo "<br> ok <br>";
+			/*$img_src ="";
 			if(  $row['profile']=="" )
 				$img_src = "./img/profilepic.png";
 			else
@@ -552,7 +554,7 @@ if($func=="1")
 			echo "<div class='head' id='head_".$row['ID']."' > ";
 			echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
 			print_r($row['first_name']);
-			echo "</div>";
+			echo "</div>";*/
 		}
 	}
     //increment student contact stats
