@@ -449,10 +449,6 @@ if($func=="1")
 					<option value='4'>3 years</option>
 					<option value='5'>more then 3 years</option>
 				</select>
-		
-				<!--<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value,document.getElementById(\"years_input\").value);$(\"#skill_input\").val(\"\");'>-->
-	
-				
 				<datalist id=\"skills_list\">";
                 foreach ($databaseConnection->query($sql) as $row)
                     echo '<option value='.$row['name'].'>';
@@ -475,7 +471,6 @@ if($func=="1")
                 $skills_arr[$i][1]=$value;
                 $i++;
             }
-
 		}
         $length = count($skills_arr);
 		if($length==0) //no skills were selected
@@ -485,7 +480,6 @@ if($func=="1")
         }
 
 		$skills_id=array();
-
         for($i=0;$i<$length ; $i++){
             $id_query = "SELECT id FROM skills WHERE name=:skill AND status = 1 LIMIT 1";
             $complete_query= $databaseConnection->prepare($id_query);
@@ -520,13 +514,12 @@ if($func=="1")
 			$complete_query->execute();
 			$id=$complete_query->fetchAll();
 
-            if($i ===0 ){
+            if($i === 0 ){
                 $len = count($id);
                 for ($j=0;$j<$len;$j++){
                     $std_id[$j]=$id[$j][0];
                 }
                 continue;
-
             }
             $temp_arr=array();
             foreach ($id as $recived_line){

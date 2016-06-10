@@ -531,6 +531,7 @@ h3 {
 @charset "utf-8";
 
 /* general style */
+/*
 * {
     border-color: #e1e1e1;
     border-style: solid;
@@ -538,6 +539,7 @@ h3 {
     zoom: 1;
     -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
+*/
 *:focus {
     outline: none !important;
 }
