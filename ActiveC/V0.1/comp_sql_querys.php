@@ -140,8 +140,6 @@ if($func=="1")
 			$exprience = $row['experience'];
 		}
 		$phone_number="";
-
-		$zero='2';
 		$phone_pic="";
         if($row['phone_number']!=="")
         {
@@ -232,7 +230,7 @@ if($func=="1")
 }
 
 	//filter Git
-	if($func=="2")
+	/*if($func=="2")
 	{
 		//PDO STYLE :
 		$sql = "SELECT * FROM student WHERE github<>'' ORDER BY profile_strength DESC";
@@ -249,9 +247,9 @@ if($func=="1")
 			print_r($row['first_name']);
 			echo "</div>";
 		}
-	}
+	}*/
 
-	//filter has instatution
+	//filter Linkedin
 	if($func=="3")
 	{
 		//PDO STYLE :
@@ -370,7 +368,6 @@ if($func=="1")
         else
             echo "Failed.";
     }
-
 
 	if($func=="9")
 	{
