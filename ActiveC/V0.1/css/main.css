@@ -964,7 +964,9 @@ img-crop canvas {
     -ms-transform: translate3d(0, 0, 0);
     -o-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    height: 2%;
     z-index: 999;
+
 }
 .ac-container .ac-menu {
     border: 1px solid #ccc;
