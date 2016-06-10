@@ -179,11 +179,11 @@ if($func=="1")
 				<!--Second Line: Phone + Mail
 				<tr class=\"border_bottom\">
 						<td id='mailDiv'>
-							".$mail_pic."			
+									
 						</td>
 						
 						<td id='phoneDiv'>
-						    ".$phone_pic."
+						
 						</td>						
                 </tr>
                 -->
