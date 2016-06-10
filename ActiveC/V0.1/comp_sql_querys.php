@@ -156,7 +156,7 @@ if($func=="1")
 		{
             $maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" .$row['Email']. "</a>\"";
 			$mail_pic = "<img id='std_mail_" . $row['ID'] .
-				"' class='bubbels' id='mailDiv' src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" .
+				"' class='bubbels'  src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" .
 				$maito_string . ");'/>";
 		}
 
@@ -170,7 +170,10 @@ if($func=="1")
 			            
      			        	<h2 >" . $row['first_name'] . " " . $row['last_name'] . "</h2>
 						
-				            " . $git_string . "  " . $link_string . "   " . $cv_file . " ".$mail_pic." ".$phone_pic."
+				            " . $git_string . "  " . $link_string . "  " . $cv_file . " ".$phone_pic."
+				            <div id='mailDiv'>
+				             ".$mail_pic."
+				             </div>
 
 						
                     </td>
