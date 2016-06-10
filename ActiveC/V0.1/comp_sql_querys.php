@@ -91,7 +91,7 @@ if($func=="1")
 			$show_all_skills ="Skills list: ";
 			$all_skills=$row['first_name']." hasn't entred any skills yet.";
 		}
-		//$show_all_skills.=" ".$all_skills;
+		//Build data sentence :
 		$college_name = "";
 		foreach ($databaseConnection->query($sql_college) as $college) {
 			$college_name = $college['name'];
@@ -100,12 +100,44 @@ if($func=="1")
 		foreach ($databaseConnection->query($sql_degree) as $degree) {
 			$degree_name = $degree['name'];
 		}
-
+        $sentence = "Studies ";
+        if($degree_name!==""){
+            $sentence.="for a ". $degree_name;
+            if($row['basic_education_subject']!==""){
+                $sentence.="in ". $row['basic_education_subject']." ";
+            }
+        }else{
+            //no degree
+            if($row['basic_education_subject']!==""){
+                $sentence.= $row['basic_education_subject']." ";
+            }
+        }
+        if($college_name!==""){
+            $sentence.="at ". $college_name." ";
+        }
+        if($row['grade_average']!==""){
+            if($sentence === "Studies "){
+                $sentence="Has a GPA of ". $row['grade_average']." ";
+            }else{
+                $sentence.="with a GPA of ". $row['grade_average']." ";
+            }
+        }
+        if($row['grade_average']!==""){
+            $sentence.=" and has " . $row['semesters_left'] . " semesters left";
+        }
+        if($sentence === "Studies "){
+            $sentence = $row['first_name']. " hasn't fulfilled all the basic information fields. for more Information, contact with ".$row['first_name'].".";
+        }else{
+            $sentence.=".";
+        }
+/*
 		if ($degree_name=="" || $row['basic_education_subject']=="" || $college_name=="" || $row['grade_average']=="" || $row['semesters_left']=="")
 			$sentence = $row['first_name']. " hasn't fulfilled all the basic information fields. for more Information, contact with ".$row['first_name'].".";
 		else
 			$sentence = "Studies for a " . $degree_name . " in " . $row['basic_education_subject'] . " at " . $college_name . " with GPA of " . $row['grade_average'] . " and has " . $row['semesters_left'] . " semesters left.";
+*/
 
+        //build 2nd sentence:
 		$job_per = $row['first_name'] . " is avaliable for ";
 		switch ($row['job_percent'])
 		{
