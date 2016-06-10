@@ -444,25 +444,34 @@ if($func=="1")
 			if (strstr($key, 'skill_')){
                 $skill = substr($key, strpos($key, '_')+1,strlen($key) );//eg. 'javascript'
 
-                //array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
-                //array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
-				//$temp_array=array($skill,$value); //create new array that contains time && skills
-               // print_r($temp_array);
                 $skills_arr[count($skills_arr)-1][0]=$skill;
                 $skills_arr[count($skills_arr)-1][1]=$value;
             }
 
 		}
-        print_r($skills_arr[0][0]."<br>End first<br>");
-        print_r($skills_arr[0][1]."<br>End first<br>");
-		
-		if(count($skills_arr)==0) //no skills were selected
+        //print_r($skills_arr[0][0]."<br>End first<br>");
+        //print_r($skills_arr[0][1]."<br>End first<br>");
+        $length = count($skills_arr);
+		if($length==0) //no skills were selected
         {
+            echo "<script>alert('no skills slected bloack in form ! as required')</script>"
             exit;
         }
 
 		$skills_id=array();
-		foreach($skills_arr as $skill=>$time)
+
+        for($i=0;$i<$length ; $i++){
+            $id_query = "SELECT id FROM skills WHERE name=:skill AND status = 1 LIMIT 1";
+            $complete_query= $databaseConnection->prepare($id_query);
+            $complete_query->bindParam(':skill',$skills_arr[$i][0]);
+            $complete_query->execute();
+            $id=$complete_query->fetchAll();
+            array_push($skills_id,$id);
+        }
+
+
+
+		/*foreach($skills_arr as $skill=>$time)
 		{
 			$id_query = "SELECT id FROM skills WHERE name=:skill AND status = 1 LIMIT 1";
 			$complete_query= $databaseConnection->prepare($id_query);
@@ -470,8 +479,10 @@ if($func=="1")
 			$complete_query->execute();
 			$id=$complete_query->fetchAll();
 			array_push($skills_id,$id);
-		}
-        print_r($skills_arr."<br>End 2nd<br>");
+		}*/
+        print_r($skills_arr[0][0]."<br>End 2nd<br>");
+        print_r($skills_arr[0][1]."<br>End 2nd<br>");
+        //print_r($skills_arr."<br>End 2nd<br>");
 		$len=count($skills_arr);
 		for($i=1;$i<$len;$i++)
 		{
