@@ -465,7 +465,7 @@ if($func=="1")
             $complete_query->bindParam(':skill',$skills_arr[$i][0]);
             $complete_query->execute();
             $id=$complete_query->fetchAll();
-            echo " id #".$id." is :".$id;
+            echo " id #".$i." is :".$id."<br>";
             $skills_id[$i] = $id;
         }
 		/*foreach($skills_arr as $skill=>$time)
