@@ -454,7 +454,7 @@ if($func=="1")
         $length = count($skills_arr);
 		if($length==0) //no skills were selected
         {
-            echo "<script>alert('no skills slected bloack in form ! as required')</script>"
+            echo "<script>alert('no skills slected bloack in form ! as required')</script>";
             exit;
         }
 
