@@ -177,7 +177,7 @@ if($func=="1")
 		if($row['Email']!=="")
 		{
             $maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" .$row['Email']. "</a>\"";
-			$$mail_pic=$row['Email'];
+			//$$mail_pic=$row['Email'];
 			$mail_pic = "<div> 
 				<img id='std_mail_" . $row['ID'] . "' class='bubbels' src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" . $maito_string . ");'/>
 				</div>";
