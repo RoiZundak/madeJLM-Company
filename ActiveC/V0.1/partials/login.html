@@ -15,6 +15,35 @@
                     <h2 class="mb-40">Log in</h2>
                     <uib-alert ng-show="alerts.login.msg != null" type="{{alerts.login.type}}" close="closeAlert('login')"><span ng-bind-html="alerts.login.msg"></span></uib-alert>
                     <form class="text-left mb-40" action="http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/partials/login.php" method="post">
+
+                        <script>
+                            $(function() {
+                                if (localStorage.chkbx && localStorage.chkbx != '') {
+                                    $('#remember_me').attr('checked', 'checked');
+                                    $('#login').val(localStorage.usrname);
+                                    $('#password').val(localStorage.password);
+                                }
+                                else {
+                                    $('#remember_me').removeAttr('checked');
+                                    $('#login').val('Example@example.com');
+                                    $('#password').val('688822292');
+                                }
+
+                                $('#remember_me').click(function() {
+                                    if ($('#remember_me').is(':checked')) {
+                                        // save username and password
+                                        localStorage.usrname = $('#login').val();
+                                        localStorage.password = $('#password').val();
+                                        localStorage.chkbx = $('#remember_me').val();
+                                    }
+                                    else {
+                                        localStorage.usrname = 'Example@example.com';
+                                        localStorage.password = '688822292';
+                                        localStorage.chkbx = '';
+                                    }
+                                });
+                            });
+                        </script>
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="User name" name="username" required>
                         </div>
@@ -24,7 +53,7 @@
 
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" value="remember-me"> Remember me
+                                <input type="checkbox" value="remember-me" id="remember_me"> Remember me
                             </label>
                         </div>
 
