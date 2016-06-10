@@ -487,10 +487,7 @@ footer {
     }
 }
 
-header {
-    background: #333 url('../img/0919_jerusalem10[1].jpg');
-    background-size: 100%;
-}
+
 
 #show_student_info{
     border: black solid thin;
@@ -622,10 +619,7 @@ h2, h3, h4 {
     color: #FFF;
 }
 /* header style */
-header {
-    background: #333 url('../img/0919_jerusalem10[1].jpg');
-    background-size: 100%;
-}
+
 header #logo {
     display: block;
     width:24%;
