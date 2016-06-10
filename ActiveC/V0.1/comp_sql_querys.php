@@ -462,6 +462,10 @@ if($func=="1")
             $skills_id[$i] = $id[0];
         }
 		$len=count($skills_arr);
+        if($len===0){
+            echo" stop here.";
+            exit;
+        }
 		for($i=0;$i<$len;$i++)
 		{
 			$skills_arr[$i][0]=$skills_id[$i];
