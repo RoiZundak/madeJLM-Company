@@ -495,7 +495,7 @@ if($func=="1")
 			$complete_query->bindParam(':time',$skills_arr[$i][1]);
 			$complete_query->execute();
 			$id=$complete_query->fetchAll();
-            print_r($id[0]."<br>");
+            print_r($id[0][0]."<br>");
 			array_push($std_id,$id);
 		}
 
