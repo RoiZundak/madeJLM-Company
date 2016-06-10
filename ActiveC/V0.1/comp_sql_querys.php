@@ -474,6 +474,7 @@ if($func=="1")
 		$std_id=array();
         for($i=0;$i<$length;$i++)
 		{
+            echo "---".$skills_arr[$i][1]. "---";
             if ($skills_arr[$i][1]===0 ){
                 echo "sql without time ";
                 $student_id_query = "SELECT student_id FROM student_skills WHERE skill_id=:skill";
