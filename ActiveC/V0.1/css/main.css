@@ -26,6 +26,9 @@ body{
 }
 #term{
     overflow: auto;
+    overflow-x: hidden;
+    text-align: center;
+
 }
 
 .img-responsive-team{
