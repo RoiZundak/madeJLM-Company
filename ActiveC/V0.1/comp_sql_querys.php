@@ -432,7 +432,6 @@ if($func=="1")
 
 	if($func=="10")
 	{
-        echo " function #10 ";
         $skills_arr=array(array());
         $i=0;
 		foreach($_GET as $key => $value)
@@ -448,7 +447,7 @@ if($func=="1")
         $length = count($skills_arr);
 		if($length==0) //no skills were selected
         {
-            echo "<script>alert('no skills slected bloack in form ! as required')</script>";
+            echo "<script>alert('no skills slected block in form ! as required')</script>";
             exit;
         }
 
@@ -474,6 +473,7 @@ if($func=="1")
         for($i=0;$i<$len;$i++)
 		{
 			$student_id_query = "SELECT student_id FROM student_skills WHERE skill_id=:skill AND years=:time";
+            print_r($student_id_query);
 			$complete_query= $databaseConnection->prepare($student_id_query);
 			$complete_query->bindParam(':skill',$skills_arr[$i][0]);
 			$complete_query->bindParam(':time',$skills_arr[$i][1]);
