@@ -37,7 +37,7 @@ if($func=="1")
 		if ($row['linkedin'] !== "")
 		{
 			$link_string = "<a href=\"" . $row['linkedin'] . "\">
-								<img title=\"LinkedIn\" alt=\"LinkedIn\" src=\"./img/LinkedinIcon.png\" width=\"35\" height=\"35\" />
+								<img class=\"bubbels\" title=\"LinkedIn\" alt=\"LinkedIn\" src=\"./img/LinkedinIcon.png\"  />
 								</a>
  								";
 		}
@@ -45,14 +45,14 @@ if($func=="1")
 		if ($row['github'] !== "")
 		{
 			$git_string = "<a href=\"" . $row['github'] . "\">
-								<img title=\"Github\" alt=\"Github\" src=\"./img/GithubIcon.png\" width=\"35\" height=\"35\" />
+								<img class=\"bubbels\" title=\"Github\" alt=\"Github\" src=\"./img/GithubIcon.png\"  />
 								</a>
  							";
 		}
 
 		$cv_file = "";
 		if ($row['cv'] !== "")
-			$cv_file = "<a href='".$row['cv']."' download='" .$row['first_name']. $row['last_name'] . "'> <img title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\" width=\"35\" height=\"35\" /> </a>";
+			$cv_file = "<a href='".$row['cv']."' download='" .$row['first_name']. $row['last_name'] . "'> <img class=\"bubbels\" title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\" /> </a>";
 
 		$sentence = "";
 		$sql_degree = "SELECT name FROM degree WHERE id =" . $row['degree_id'];
@@ -144,10 +144,9 @@ if($func=="1")
         if($row['phone_number']!=="")
         {
             $phone_number="\"<a href =  callto:" . $row['phone_number'] . "  >" .$row['phone_number']. "</a>\"";
-            $phone_pic = "<div> 
-				
-				<img id = 'std_phone_" . $row['ID'] . "' class='bubbels' src=\"./img/telephoneIcon.jpg\" width='35' height='35' onclick='$(\"#phoneDiv\").html(".$phone_number.");'/>
-				</div>";
+            $phone_pic = "<img id = 'std_phone_" .
+				$row['ID'] . "' class='bubbels' src=\"./img/telephoneIcon.jpg\"
+				 width='35' height='35' onclick='$(\"#phoneDiv\").html(".$phone_number.");'/>";
         }
 
 		$mail_pic="";
@@ -155,38 +154,34 @@ if($func=="1")
 		if($row['Email']!=="")
 		{
             $maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" .$row['Email']. "</a>\"";
-			$mail_pic = "<div> 
-				<img id='std_mail_" . $row['ID'] . "' class='bubbels' src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" . $maito_string . ");'/>
-				</div>";
+			$mail_pic = "<img id='std_mail_" . $row['ID'] .
+				"' class='bubbels'  src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" .
+				$maito_string . ");'/>";
 		}
 
 		echo "
 			<table id ='myTable' border=1 frame=void rules=rows>
 				<!--First Line: Picture+ Bubbles -->
-			    <tr>
+			    <tr width=\"100%\">
 			    
 			        <td  width=\"100%\">
 			            <img class='head_image' src =" . $img_src . " width ='120px' height='110px'>
 			            
      			        	<h2 >" . $row['first_name'] . " " . $row['last_name'] . "</h2>
-						<div id='bubble'>
-				            " . $git_string . "  " . $link_string . "   " . $cv_file . " ".$mail_pic." ".$phone_pic."
-						</div>
+						
+				            " . $git_string . "  " . $link_string . "  " . $cv_file . "
+				            
+				            <div id='phoneDiv'>"
+								.$phone_pic."
+							</div>
+							 
+				           <div id='mailDiv'>
+				             ".$mail_pic."
+				            </div>
+				    
+				         		
                     </td>
-                      
-				<!--</tr>-->
-				
-				<!--Second Line: Phone + Mail
-				<tr class=\"border_bottom\">
-						<td id='mailDiv'>
-									
-						</td>
-						
-						<td id='phoneDiv'>
-						
-						</td>						
-                </tr>
-                -->
+
                 	<!--Third Line: Sentence-->
                 	
                  <tr class=\"border_bottom\">
@@ -386,17 +381,17 @@ if($func=="1")
 				{
 					event.preventDefault();
 					var str = $(\"#form_skills\").serialize();
-					alert(str);
 					xmlhttp.onreadystatechange = function() 
 					{
 						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 							if(xmlhttp.responseText!=''){
-									document.getElementById(\"show_all\").innerHTML = xmlhttp.responseText;
+                                document.getElementById(\"show_all\").innerHTML = xmlhttp.responseText;
 							}
 						}
 							
 					};
-					xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
+					xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\",true);
+					//xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
 					xmlhttp.send();
 				});
 				</script>";
@@ -437,6 +432,7 @@ if($func=="1")
 
 	if($func=="10")
 	{
+        echo " function #10 ";
         $skills_arr=array(array());
         $i=0;
 		foreach($_GET as $key => $value)
@@ -488,7 +484,7 @@ if($func=="1")
                 echo "first : ";
                 $len = count($id);
                 for ($j=0;$j<$len;$j++){
-                    $std_id[$j]=$row_id[0];
+                    $std_id[$j]=$id[$j][0];
                     echo $std_id[$j].", ";
                 }
                 echo "<br>";
@@ -500,15 +496,28 @@ if($func=="1")
             $temp_arr=array();
             foreach ($id as $recived_line){
                 foreach ($std_id as $already_in){
+                    echo "<br>".$recived_line[0]." == ? == ".$already_in;
                     if($recived_line[0] === $already_in){
+                        echo "insert : ".$already_in; 
                         array_push($temp_arr, $already_in);
+                        break;
                     }
                 }
             }
-            $std_id=$temp_arr;
+            $std_id=array();
+            $temp_len = count($temp_arr);
+            for($i=0;$i<$temp_len-1 ;$i++) {
+                array_push($std_id, array_push($temp_arr));
+            }
+            //$std_id=$temp_arr;
 
 		}
-
+        echo "<br>printing std_id at the end : ";
+        $temp_len = count($std_id);
+        for($i=0;$i<$temp_len ;$i++) {
+           echo $std_id[$i]." , ";
+        }
+        echo "<br>";
 
 		if(count($std_id)==0) //noBody has that skill !
         {
@@ -521,7 +530,9 @@ if($func=="1")
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
-			$img_src ="";
+            
+            echo "<br> ok <br>";
+			/*$img_src ="";
 			if(  $row['profile']=="" )
 				$img_src = "./img/profilepic.png";
 			else
@@ -530,7 +541,7 @@ if($func=="1")
 			echo "<div class='head' id='head_".$row['ID']."' > ";
 			echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
 			print_r($row['first_name']);
-			echo "</div>";
+			echo "</div>";*/
 		}
 	}
     //increment student contact stats
