@@ -437,8 +437,8 @@ if($func=="1")
 
 	if($func=="10")
 	{
-		$skills_id=array(array());
-        $skills_arr=array();
+		$skills_id=array();
+        $skills_arr=array(array());
 		foreach($_GET as $key => $value)
 		{
 			if (strstr($key, 'skill_')){
@@ -448,11 +448,12 @@ if($func=="1")
                 array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
 				$temp_array=array($skill,$value); //create new array that contains time && skills
                 print_r($temp_array);
-				$skills_arr[count($skills_arr)-1][]=$temp_array;
+				$skills_arr[count($skills_arr)-1]=$temp_array;
             }
 
 		}
-		print_r($skills_arr."<br>End first<br>");
+        print_r($skills_arr[0][0]."<br>End first<br>");
+        print_r($skills_arr[0][1]."<br>End first<br>");
 		
 		if(count($skills_arr)==0) //no skills were selected
         {
