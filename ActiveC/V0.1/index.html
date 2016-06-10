@@ -64,7 +64,13 @@
 <!-- Vendor: Angular, followed by our custom Javascripts -->
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.min.js"></script>
-
+<script type = "text/javascript">
+    if((navigator.vendor.length > 5) && (navigator.vendor.toLowerCase().indexOf("google inc") > -1)) {
+        window.location.replace("somepage.html"); // if chrome
+    } else {
+        alert("I am an alert box!");
+        window.location.replace("someotherpage.html)"; // all other browsers
+</script>
 <!-- Our Website Javascripts -->
 <script src="js/main.js"></script>
 </div>
