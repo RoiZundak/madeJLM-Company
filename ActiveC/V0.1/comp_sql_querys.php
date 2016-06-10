@@ -511,13 +511,18 @@ if($func=="1")
             }
             $std_id=array();
             $temp_len = count($temp_arr);
-            for($i=0;$i<$temp_len ;$i++) {
+            for($i=0;$i<$temp_len-1 ;$i++) {
                 array_push($std_id, array_push($temp_arr));
             }
             //$std_id=$temp_arr;
 
 		}
-
+        echo "<br>printing std_id at the end : ";
+        $temp_len = count($std_id);
+        for($i=0;$i<$temp_len ;$i++) {
+           echo $std_id[$i]." , ";
+        }
+        echo "<br>";
 
 		if(count($std_id)==0) //noBody has that skill !
         {
