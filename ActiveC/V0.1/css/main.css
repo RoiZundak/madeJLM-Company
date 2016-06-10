@@ -20,6 +20,8 @@ body{
 #login_img{
     background-repeat: no-repeat;
     width:100%;
+    background-attachment: fixed;
+    background-position: 70% 90%;
     height: 450px;
 }
 
