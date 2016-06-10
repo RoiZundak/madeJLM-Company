@@ -409,8 +409,7 @@ if($func=="1")
 				function addSkillToList(skill_to_add,years_text,years_value)
 				{
 					var skill_years = skill_to_add +', '+ years_text;
-					//$('#add_skill').after(function() 
-					$('#form_skills').after(function() 
+					$('#input_div').after(function() 
 					{
 					  return'<br><label class=\'skillsLabel\' for=\'skill_'+skill_to_add+'\'>'+skill_years +'</label><input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ years_value + '\' id=\'skill_'+skill_to_add+'\'>  ' 
 					});
@@ -439,8 +438,7 @@ if($func=="1")
 
 		echo "
 				<form method='post' id= 'form_skills' class='skills' action='./comp_sql_querys.php?func=10'>	
-				
-				
+				<div id='input_div'>
 				<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
 				<select id='years_input' class='skills'>
 					<option value='0' selected='selected'>All years of experience</option>
@@ -457,17 +455,12 @@ if($func=="1")
 	
 				
 				<datalist id=\"skills_list\">";
-		foreach ($databaseConnection->query($sql) as $row)
-			echo '<option value='.$row['name'].'>';
-
-		echo "</datalist>
-				
-				<br>
-			
-		
+                foreach ($databaseConnection->query($sql) as $row)
+                    echo '<option value='.$row['name'].'>';
+                //close datalist , input_div and form , add submit input
+                echo "</datalist><br>
+                    </div>
 				<input type=\"submit\" value=\"Filter\" id=\"submit_skills\">
-				
-				
 				</form>";
 	}
 
