@@ -452,7 +452,7 @@ if($func=="1")
             }
 
 		}
-		print_r($skills_arr."<br>End first<br>");
+		print_r($skills_arr[0]."<br>End first<br>");
 		
 		if(count($skills_arr)==0) //no skills were selected
         {
