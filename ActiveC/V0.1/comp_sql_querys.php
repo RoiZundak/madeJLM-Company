@@ -531,7 +531,6 @@ if($func=="1")
                 $len = count($id);
                 for ($j=0;$j<$len;$j++){
                     $std_id[$j]=$id[$j][0];
-                    echo " first : ".$id[$j][0];
                 }
                 continue;
 
