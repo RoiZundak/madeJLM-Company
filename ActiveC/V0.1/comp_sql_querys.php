@@ -488,7 +488,7 @@ if($func=="1")
                 echo "first : ";
                 $len = count($id);
                 for ($j=0;$j<$len;$j++){
-                    $std_id[$j]=$row_id[0];
+                    $std_id[$j]=$id[$i];
                     echo $std_id[$j].", ";
                 }
                 echo "<br>";
