@@ -513,7 +513,7 @@ if($func=="1")
             $std_id=array();
             $temp_len = count($temp_arr);
             for($i=0;$i<$temp_len-1 ;$i++) {
-                array_push($std_id, array_push($temp_arr));
+                array_push($std_id, array_pop($temp_arr));
             }
             //$std_id=$temp_arr;
 
