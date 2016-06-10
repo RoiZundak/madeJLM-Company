@@ -479,7 +479,7 @@ if($func=="1")
 		}*/
         //print_r($skills_arr."<br>End 2nd<br>");
 		$len=count($skills_arr);
-		for($i=1;$i<$len;$i++)
+		for($i=0;$i<$len;$i++)
 		{
 			$skills_arr[$i][0]=$skills_id[$i];
             print_r($skills_arr[$i][0].",".$skills_arr[$i][1]."<br>");
