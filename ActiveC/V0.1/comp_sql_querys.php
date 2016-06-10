@@ -501,6 +501,7 @@ if($func=="1")
             $temp_arr=array();
             foreach ($id as $recived_line){
                 foreach ($std_id as $already_in){
+                    echo "<br>".$recived_line[0]." == ? == ".$already_in;
                     if($recived_line[0] === $already_in){
                         array_push($temp_arr, $already_in);
                     }
