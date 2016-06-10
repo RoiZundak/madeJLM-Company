@@ -437,7 +437,6 @@ if($func=="1")
 
 	if($func=="10")
 	{
-		$skills_id=array();
         $skills_arr=array(array());
 		foreach($_GET as $key => $value)
 		{
@@ -466,7 +465,9 @@ if($func=="1")
             $complete_query->bindParam(':skill',$skills_arr[$i][0]);
             $complete_query->execute();
             $id=$complete_query->fetchAll();
-            array_push($skills_id,$id);
+            //array_push($skills_id,$id);
+            echo " id #".$id." is :".$id;
+            $skills_id[$i] = $id;
         }
 		/*foreach($skills_arr as $skill=>$time)
 		{
