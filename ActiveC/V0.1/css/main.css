@@ -21,7 +21,10 @@ body{
     background-repeat: no-repeat;
     width:100%;
 }
-
+#term{
+    margin-left: 5%;
+    margin-right: 5%;
+}
 
 .img-responsive-team{
     width : 200px;
