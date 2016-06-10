@@ -34,6 +34,7 @@ body{
     border-style: solid;
     border-color: grey;
     border-width: 1px;
+    width: 100%;
 }
 .img-responsive-team{
     width : 200px;
@@ -225,7 +226,7 @@ label {
     text-align: center;
     width: 20px;
     background-color: #cccccc;
-    margin-top: 3%;
+    margin-top: 1%;
     margin-left: 2px;
     float: right;
     border:1px solid #090B29; ;padding: 1px 1px 1px 1px; -webkit-border-radius: 2px; -moz-border-radius: 2px;border-radius: 2px;   display:inline-block;text-shadow: -1px -1px 0 rgba(82,255,255,0.3);font-weight:bold; color: #575757;
