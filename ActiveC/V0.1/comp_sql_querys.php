@@ -170,13 +170,13 @@ if($func=="1")
 			            
      			        	<h2 >" . $row['first_name'] . " " . $row['last_name'] . "</h2>
 						<div id='bubble'>
-				            " . $git_string . "  " . $link_string . "   " . $cv_file . "
+				            " . $git_string . "  " . $link_string . "   " . $cv_file . " ".$mail_pic." ".$phone_pic."
 						</div>
                     </td>
                       
 				<!--</tr>-->
 				
-				<!--Second Line: Phone + Mail-->
+				<!--Second Line: Phone + Mail
 				<tr class=\"border_bottom\">
 						<td id='mailDiv'>
 							".$mail_pic."			
@@ -186,7 +186,7 @@ if($func=="1")
 						    ".$phone_pic."
 						</td>						
                 </tr>
-                
+                -->
                 	<!--Third Line: Sentence-->
                 	
                  <tr class=\"border_bottom\">
