@@ -503,12 +503,11 @@ if($func=="1")
             for($i=0;$i<$temp_len ;$i++) {
                 array_push($std_id, array_pop($temp_arr));
             }
-            //$std_id=$temp_arr;
 		}
-        $temp_len = count($std_id);
+       /* $temp_len = count($std_id);
         for($i=0;$i<$temp_len ;$i++) {
            echo $std_id[$i]." , ";
-        }
+        }*/
 
 		if(count($std_id)==0) //noBody has that skill !
         {
