@@ -381,12 +381,12 @@ if($func=="1")
 				{
 					event.preventDefault();
 					var str = $(\"#form_skills\").serialize();
-					alert(str);
 					xmlhttp.onreadystatechange = function() 
 					{
 						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 							if(xmlhttp.responseText!=''){
-									document.getElementById(\"show_all\").innerHTML = xmlhttp.responseText;
+                                alert(xmlhttp.responseText);
+                                document.getElementById(\"show_all\").innerHTML = xmlhttp.responseText;
 							}
 						}
 							
@@ -432,6 +432,7 @@ if($func=="1")
 
 	if($func=="10")
 	{
+        echo " function #10 ";
         $skills_arr=array(array());
         $i=0;
 		foreach($_GET as $key => $value)
