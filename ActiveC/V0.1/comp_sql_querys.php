@@ -170,23 +170,23 @@ if($func=="1")
 			            
      			        	<h2 >" . $row['first_name'] . " " . $row['last_name'] . "</h2>
 						<div id='bubble'>
-				            " . $git_string . "  " . $link_string . "   " . $cv_file . "
+				            " . $git_string . "  " . $link_string . "   " . $cv_file . " ".$mail_pic." ".$phone_pic."
 						</div>
                     </td>
                       
 				<!--</tr>-->
 				
-				<!--Second Line: Phone + Mail-->
+				<!--Second Line: Phone + Mail
 				<tr class=\"border_bottom\">
 						<td id='mailDiv'>
-							".$mail_pic."			
+									
 						</td>
 						
 						<td id='phoneDiv'>
-						    ".$phone_pic."
+						
 						</td>						
                 </tr>
-                
+                -->
                 	<!--Third Line: Sentence-->
                 	
                  <tr class=\"border_bottom\">
@@ -408,11 +408,11 @@ if($func=="1")
 				<input type=\"text\" list=\"skills_list\" id='skill_input' class='skills'>
 				<select id='years_input' class='skills'>
 					<option value='0' selected='selected'>All years of experience</option>
-					<option value='-1'>less then 1 year</option>
-					<option value='1'>1 year</option>
-					<option value='2'>2 years</option>
-					<option value='3'>3 years</option>
-					<option value='3+'>more then 3 years</option>
+					<option value='1'>less then 1 year</option>
+					<option value='2'>1 year</option>
+					<option value='3'>2 years</option>
+					<option value='4'>3 years</option>
+					<option value='5'>more then 3 years</option>
 				</select>
 	
 				<input type=\"button\" id = 'add_skill' value = \"+\" class='skills' onclick='addSkillToList(document.getElementById(\"skill_input\").value,$(\"#years_input option:selected\").text(),document.getElementById(\"years_input\").value);$(\"#skill_input\").val(\"\");'>
@@ -464,30 +464,17 @@ if($func=="1")
             $complete_query->bindParam(':skill',$skills_arr[$i][0]);
             $complete_query->execute();
             $id=$complete_query->fetch();
-            //echo " id #".$i." is :".$id[0]."<br>";
             $skills_id[$i] = $id[0];
         }
-		/*foreach($skills_arr as $skill=>$time)
-		{
-			$id_query = "SELECT id FROM skills WHERE name=:skill AND status = 1 LIMIT 1";
-			$complete_query= $databaseConnection->prepare($id_query);
-			$complete_query->bindParam(':skill',$skill);
-			$complete_query->execute();
-			$id=$complete_query->fetchAll();
-			array_push($skills_id,$id);
-		}*/
-        //print_r($skills_arr."<br>End 2nd<br>");
 		$len=count($skills_arr);
 		for($i=0;$i<$len;$i++)
 		{
 			$skills_arr[$i][0]=$skills_id[$i];
-            print_r($skills_arr[$i][0].",".$skills_arr[$i][1]."<br>");
 		}
 
 		if(count($skills_id)==0) //could not get skills id
 			exit;
 		$std_id=array();
-        //$skills_arr = ksort($skills_arr);
         for($i=0;$i<$len;$i++)
 		{
 			$student_id_query = "SELECT student_id FROM student_skills WHERE skill_id=:skill AND years=:time";
@@ -498,12 +485,17 @@ if($func=="1")
 			$id=$complete_query->fetchAll();
 
             if($i ===0 ){
+                echo "first : ";
                 $len = count($id);
                 for ($j=0;$j<$len;$j++){
                     $std_id[$j]=$row_id[0];
+                    echo $std_id[$j].", ";
                 }
+                echo "<br>";
                 continue;
+
             }
+
 
             $temp_arr=array();
             foreach ($id as $recived_line){
