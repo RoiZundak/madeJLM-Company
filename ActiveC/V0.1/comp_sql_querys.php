@@ -390,8 +390,8 @@ if($func=="1")
 						}
 							
 					};
-					xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\",true);
-					//xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
+					//xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\",true);
+					xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
 					xmlhttp.send();
 				});
 				</script>";
