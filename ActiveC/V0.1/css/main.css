@@ -953,6 +953,10 @@ img-crop canvas {
 /* end skills */
 
 /* suggest */
+.down_footer{
+    height: 4%;
+}
+
 .ac-container {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
