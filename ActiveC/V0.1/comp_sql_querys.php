@@ -476,12 +476,14 @@ if($func=="1")
 		{
             if ($skills_arr[$i][1]===0 ){
                 $student_id_query = "SELECT student_id FROM student_skills WHERE skill_id=:skill";
-            }else{
+                $complete_query= $databaseConnection->prepare($student_id_query);
+                $complete_query->bindParam(':skill',$skills_arr[$i][0]);
+            }else {
                 $student_id_query = "SELECT student_id FROM student_skills WHERE skill_id=:skill AND years=:time";
+                $complete_query = $databaseConnection->prepare($student_id_query);
+                $complete_query->bindParam(':skill', $skills_arr[$i][0]);
+                $complete_query->bindParam(':time', $skills_arr[$i][1]);
             }
-			$complete_query= $databaseConnection->prepare($student_id_query);
-			$complete_query->bindParam(':skill',$skills_arr[$i][0]);
-			$complete_query->bindParam(':time',$skills_arr[$i][1]);
 			$complete_query->execute();
 			$id=$complete_query->fetchAll();
 
