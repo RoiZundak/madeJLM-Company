@@ -440,6 +440,7 @@ if($func=="1")
 			if (strstr($key, 'skill_')){
                 $skill = substr($key, strpos($key, '_')+1,strlen($key) );//eg. 'javascript'
                 $skills_arr[$i][0]=$skill;
+                echo "first here : ".$skill;
                 $skills_arr[$i][1]=$value;
                 $i++;
             }
@@ -461,6 +462,7 @@ if($func=="1")
             $complete_query->execute();
             $id=$complete_query->fetch();
             $skills_id[$i] = $id[0];
+            echo " here : ".$id[0]."<br>" ;
         }
 		$len=count($skills_id);
         if($len===0){
@@ -470,7 +472,7 @@ if($func=="1")
 		for($i=0;$i<$len;$i++)
 		{
 			$skills_arr[$i][0]=$skills_id[$i];
-            echo " also here : ".$skills_id[$i]."<br>" ;
+            echo " <br>And here : ".$skills_id[$i]."<br>" ;
 		}
 
 		$std_id=array();
