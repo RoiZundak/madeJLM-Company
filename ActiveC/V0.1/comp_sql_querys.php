@@ -444,11 +444,12 @@ if($func=="1")
 			if (strstr($key, 'skill_')){
                 $skill = substr($key, strpos($key, '_')+1,strlen($key) );//eg. 'javascript'
 
-                array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
-                array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
-				$temp_array=array($skill,$value); //create new array that contains time && skills
-                print_r($temp_array);
-				$skills_arr[count($skills_arr)-1]=$temp_array;
+                //array_push($skills_arr,'\''.$skill.'\'');//eg. 'javascript'
+                //array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
+				//$temp_array=array($skill,$value); //create new array that contains time && skills
+               // print_r($temp_array);
+                $skills_arr[count($skills_arr)-1][0]=$skill;
+                $skills_arr[count($skills_arr)-1][1]=$value;
             }
 
 		}
