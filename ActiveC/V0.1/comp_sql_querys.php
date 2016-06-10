@@ -481,6 +481,7 @@ if($func=="1")
                 $complete_query= $databaseConnection->prepare($student_id_query);
                 $complete_query->bindParam(':skill',$skills_arr[$i][0]);
             }else {
+                echo" still here...";
                 $student_id_query = "SELECT student_id FROM student_skills WHERE skill_id=:skill AND years=:time";
                 $complete_query = $databaseConnection->prepare($student_id_query);
                 $complete_query->bindParam(':skill', $skills_arr[$i][0]);
