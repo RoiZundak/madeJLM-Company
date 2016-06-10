@@ -409,7 +409,8 @@ if($func=="1")
 				function addSkillToList(skill_to_add,years_text,years_value)
 				{
 					var skill_years = skill_to_add +', '+ years_text;
-					$('#add_skill').after(function() 
+					//$('#add_skill').after(function() 
+					$('#form_skills').after(function() 
 					{
 					  return'<br><label class=\'skillsLabel\' for=\'skill_'+skill_to_add+'\'>'+skill_years +'</label><input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ years_value + '\' id=\'skill_'+skill_to_add+'\'>  ' 
 					});
@@ -550,11 +551,6 @@ if($func=="1")
                 array_push($std_id, array_pop($temp_arr));
             }
 		}
-       /* $temp_len = count($std_id);
-        for($i=0;$i<$temp_len ;$i++) {
-           echo $std_id[$i]." , ";
-        }*/
-
 		if(count($std_id)==0) //noBody has that skill !
         {
             echo 'No results were found, please try again with different filters';
