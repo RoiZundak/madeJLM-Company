@@ -26,8 +26,8 @@
                                 }
                                 else {
                                     $('#remember_me').removeAttr('checked');
-                                    $('#login').val('Example@example.com');
-                                    $('#password').val('688822292');
+                                    $('#login').val(' ');
+                                    $('#password').val(' ');
                                 }
 
                                 $('#remember_me').click(function() {
@@ -38,8 +38,8 @@
                                         localStorage.chkbx = $('#remember_me').val();
                                     }
                                     else {
-                                        localStorage.usrname = 'Example@example.com';
-                                        localStorage.password = '688822292';
+                                        localStorage.usrname = ' ';
+                                        localStorage.password = ' ';
                                         localStorage.chkbx = '';
                                     }
                                 });
