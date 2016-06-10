@@ -142,7 +142,7 @@
 
                 echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
-                        alert('Incorrect Password 2.');
+                        alert('Incorrect Password');
                         localStorage.clear();
                         document.getElementById(\"re_route_login\").click();
                     </script>
