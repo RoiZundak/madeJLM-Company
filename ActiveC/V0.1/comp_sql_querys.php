@@ -31,7 +31,7 @@ if($func=="1")
 			$img_src = "./img/profilepic.png";
 		else
 			$img_src = "../../../MadeinJLM-students/mockup/" . $row['profile'];
-		$maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" .$row['Email']. "</a>\"";
+
 
 		$link_string = "";
 		if ($row['linkedin'] !== "")
@@ -165,7 +165,7 @@ if($func=="1")
 		}*/
         if($row['phone_number']!=="")
         {
-            $phone_number="\"TestTest<a href=\'Test\'>Test</a>\"";
+            $phone_number="\"<a href =  callto:" . $row['phone_number'] . "  >" .$row['phone_number']. "</a>\"";
             $phone_pic = "<div> 
 				
 				<img id = 'std_phone_" . $row['ID'] . "' class='bubbels' src=\"./img/telephoneIcon.jpg\" width='35' height='35' onclick='$(\"#phoneDiv\").html(".$phone_number.");'/>
@@ -173,8 +173,10 @@ if($func=="1")
         }
 
 		$mail_pic="";
+
 		if($row['Email']!=="")
 		{
+            $maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" .$row['Email']. "</a>\"";
 			$$mail_pic=$row['Email'];
 			$mail_pic = "<div> 
 				<img id='std_mail_" . $row['ID'] . "' class='bubbels' src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" . $maito_string . ");'/>
