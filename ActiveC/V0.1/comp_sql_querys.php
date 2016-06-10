@@ -115,14 +115,14 @@ if($func=="1")
         if($college_name!==""){
             $sentence.="at ". $college_name." ";
         }
-        if($row['grade_average']!==""){
+        if($row['grade_average']!=="" ){
             if($sentence === "Studies "){
                 $sentence="Has a GPA of ". $row['grade_average']." ";
             }else{
                 $sentence.="with a GPA of ". $row['grade_average']." ";
             }
         }
-        if($row['grade_average']!==""){
+        if($row['semesters_left']!==""){
             $sentence.=" and has " . $row['semesters_left'] . " semesters left";
         }
         if($sentence === "Studies "){
