@@ -487,6 +487,7 @@ if($func=="1")
 		if(count($skills_id)==0) //could not get skills id
 			exit;
 		$std_id=array();
+        $skills_arr = ksort($skills_arr);
         for($i=0;$i<$len;$i++)
 		{
 			$student_id_query = "SELECT student_id FROM student_skills WHERE skill_id=:skill AND years=:time";
@@ -495,12 +496,25 @@ if($func=="1")
 			$complete_query->bindParam(':time',$skills_arr[$i][1]);
 			$complete_query->execute();
 			$id=$complete_query->fetchAll();
-            echo "For ".$skills_arr[$i][0]." :";
-            foreach ($id as $row_id){
-                echo $row_id[0].", ";
+
+            if($i ===0 ){
+                $len = count($id);
+                for ($j=0;$j<$len;$j++){
+                    $std_id[$j]=$row_id[0];
+                }
+                continue;
             }
-            echo "<br>";
-			array_push($std_id,$id);
+
+            $temp_arr=array();
+            foreach ($id as $recived_line){
+                foreach ($std_id as $already_in){
+                    if($recived_line[0] === $already_in){
+                        array_push($temp_arr, $already_in);
+                    }
+                }
+            }
+            $std_id=$temp_arr;
+
 		}
 
 
