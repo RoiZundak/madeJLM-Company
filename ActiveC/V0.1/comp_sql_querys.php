@@ -155,15 +155,22 @@ if($func=="1")
 
 		$zero='2';
 		$phone_pic="";
-		if($row['phone_number']!=="")
+		/*if($row['phone_number']!=="")
 		{
-            //$row['phone_number']
-			$phone_number="<a href='callto://+972505900789'>check it out!</a>";
+			$phone_number=$row['phone_number'];
 			$phone_pic = "<div> 
 				
 				<img id = 'std_phone_" . $row['ID'] . "' class='bubbels' src=\"./img/telephoneIcon.jpg\" width='35' height='35' onclick='$(\"#phoneDiv\").html(\"".$phone_number."\");'/>
 				</div>";
-		}
+		}*/
+        if($row['phone_number']!=="")
+        {
+            $phone_number="\"<a href='callto://+972505900789'>check it out!</a>\"";
+            $phone_pic = "<div> 
+				
+				<img id = 'std_phone_" . $row['ID'] . "' class='bubbels' src=\"./img/telephoneIcon.jpg\" width='35' height='35' onclick='$(\"#phoneDiv\").html(".$phone_number.");'/>
+				</div>";
+        }
 
 		$mail_pic="";
 		if($row['Email']!=="")
