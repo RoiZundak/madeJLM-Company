@@ -487,7 +487,7 @@ if($func=="1")
 		if(count($skills_id)==0) //could not get skills id
 			exit;
 		$std_id=array();
-        $skills_arr = ksort($skills_arr);
+        //$skills_arr = ksort($skills_arr);
         for($i=0;$i<$len;$i++)
 		{
 			$student_id_query = "SELECT student_id FROM student_skills WHERE skill_id=:skill AND years=:time";
