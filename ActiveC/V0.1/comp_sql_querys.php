@@ -448,7 +448,7 @@ if($func=="1")
                 array_push($skills_arr,'\''.$value.'\'');//eg. 'javascript'
 				$temp_array=array($skill,$value); //create new array that contains time && skills
                 print_r($temp_array);
-				$skills_arr[count($skills_arr)-1][]=$temp_array;
+				$skills_arr[count($skills_arr)-1]=$temp_array;
             }
 
 		}
