@@ -123,7 +123,12 @@ if($func=="1")
             }
         }
         if($row['semesters_left']!==""){
-            $sentence.=" and has " . $row['semesters_left'] . " semesters left";
+            if($sentence === "Studies "){
+                $sentence="Has " . $row['semesters_left'] . " semesters left";
+            }else{
+                $sentence.=" and has " . $row['semesters_left'] . " semesters left";
+            }
+
         }
         if($sentence === "Studies "){
             $sentence = $row['first_name']. " hasn't fulfilled all the basic information fields. for more Information, contact with ".$row['first_name'].".";
