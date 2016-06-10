@@ -30,7 +30,11 @@ body{
     text-align: center;
 
 }
-
+#input_div{
+    border-style: solid;
+    border-color: grey;
+    border-width: 1px;
+}
 .img-responsive-team{
     width : 200px;
     height:200px;
