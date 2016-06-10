@@ -541,6 +541,7 @@ if($func=="1")
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
+            
             echo "<br> ok <br>";
 			/*$img_src ="";
 			if(  $row['profile']=="" )
