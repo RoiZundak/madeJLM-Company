@@ -470,12 +470,11 @@ if($func=="1")
 		for($i=0;$i<$len;$i++)
 		{
 			$skills_arr[$i][0]=$skills_id[$i];
+            echo " also here : ".$skills_id[$i]."<br>" ;
 		}
 
-		if(count($skills_id)==0) //could not get skills id
-			exit;
 		$std_id=array();
-        for($i=0;$i<$len;$i++)
+        for($i=0;$i<$length;$i++)
 		{
             echo "<br> skill : ".$skills_arr[$i][0] . " time : " . $skills_arr[$i][1];
 			$student_id_query = "SELECT student_id FROM student_skills WHERE skill_id=:skill AND years=:time";
