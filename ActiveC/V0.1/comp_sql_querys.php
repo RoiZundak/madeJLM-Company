@@ -460,7 +460,6 @@ if($func=="1")
             $complete_query->execute();
             $id=$complete_query->fetch();
             $skills_id[$i] = $id[0];
-            echo " here : ".$id[0]."<br>" ;
         }
 		$len=count($skills_id);
         if($len===0){
@@ -483,13 +482,11 @@ if($func=="1")
 			$id=$complete_query->fetchAll();
 
             if($i ===0 ){
-                echo "first : ";
                 $len = count($id);
                 for ($j=0;$j<$len;$j++){
                     $std_id[$j]=$id[$j][0];
                     echo $std_id[$j].", ";
                 }
-                echo "<br>";
                 continue;
 
             }
@@ -499,7 +496,6 @@ if($func=="1")
             foreach ($id as $recived_line){
                 foreach ($std_id as $already_in){
                     if($recived_line[0] === $already_in){
-                        echo "insert : ".$already_in; 
                         array_push($temp_arr, $already_in);
                         break;
                     }
@@ -512,12 +508,10 @@ if($func=="1")
             }
             //$std_id=$temp_arr;
 		}
-        echo "<br>printing std_id at the end : ";
         $temp_len = count($std_id);
         for($i=0;$i<$temp_len ;$i++) {
            echo $std_id[$i]." , ";
         }
-        echo "<br>";
 
 		if(count($std_id)==0) //noBody has that skill !
         {
@@ -530,9 +524,7 @@ if($func=="1")
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
-            
-            echo "<br> ok <br>";
-			/*$img_src ="";
+			$img_src ="";
 			if(  $row['profile']=="" )
 				$img_src = "./img/profilepic.png";
 			else
@@ -541,7 +533,7 @@ if($func=="1")
 			echo "<div class='head' id='head_".$row['ID']."' > ";
 			echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
 			print_r($row['first_name']);
-			echo "</div>";*/
+			echo "</div>";
 		}
 	}
     //increment student contact stats
