@@ -227,7 +227,7 @@ label {
     width: 20px;
     background-color: #cccccc;
     margin-top: 3%;
-    margin-right: 2%;
+    margin-right: 5%;
     float: right;
     border:1px solid #090B29; ;padding: 1px 1px 1px 1px; -webkit-border-radius: 2px; -moz-border-radius: 2px;border-radius: 2px;   display:inline-block;text-shadow: -1px -1px 0 rgba(82,255,255,0.3);font-weight:bold; color: #575757;
     background-color: #f2f9fe; background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f9fe), to(#d6f0fd));
