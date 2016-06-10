@@ -18,6 +18,7 @@
 
                         <script>
                             $(function() {
+                                alert("Inside function");
                                 if (localStorage.chkbx && localStorage.chkbx != '') {
                                     $('#remember_me').attr('checked', 'checked');
                                     $('#login').val(localStorage.usrname);
