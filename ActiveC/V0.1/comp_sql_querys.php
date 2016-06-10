@@ -140,29 +140,9 @@ if($func=="1")
 			$exprience = $row['experience'];
 		}
 		$phone_number="";
-		//$phone_button="";
-		/*
-		if($row['phone_number'] !=="0")
-		{
-			$phone_number='<p><i class="fa fa-phone"></i> <abbr title="Phone"></abbr>: '.$row['phone_number'].'</p>';
-			//<i class="fa fa-phone"></i> <abbr title="Phone"></abbr>:
-			/*
-            $phone_number= "\"<a href =  callto://+972" . $row['phone_number'] . "  >0" . $row['phone_number'] . "</a>\"";
-            $phone_button="<button id = 'std_phone_" . $row['ID'] . "' class='filters' onclick='$(\"#phoneDiv\").html(" . $phone_number . ");' >
-                            Show Phone
-                            </button>";
-		}*/
 
 		$zero='2';
 		$phone_pic="";
-		/*if($row['phone_number']!=="")
-		{
-			$phone_number=$row['phone_number'];
-			$phone_pic = "<div> 
-				
-				<img id = 'std_phone_" . $row['ID'] . "' class='bubbels' src=\"./img/telephoneIcon.jpg\" width='35' height='35' onclick='$(\"#phoneDiv\").html(\"".$phone_number."\");'/>
-				</div>";
-		}*/
         if($row['phone_number']!=="")
         {
             $phone_number="\"<a href =  callto:" . $row['phone_number'] . "  >" .$row['phone_number']. "</a>\"";
@@ -177,7 +157,6 @@ if($func=="1")
 		if($row['Email']!=="")
 		{
             $maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" .$row['Email']. "</a>\"";
-			//$$mail_pic=$row['Email'];
 			$mail_pic = "<div> 
 				<img id='std_mail_" . $row['ID'] . "' class='bubbels' src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" . $maito_string . ");'/>
 				</div>";
