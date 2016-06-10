@@ -157,7 +157,8 @@ if($func=="1")
 		$phone_pic="";
 		if($row['phone_number']!=="")
 		{
-			$phone_number="<a href=\"callto://+972".$row['phone_number']."\">check it out!</a>";
+            //$row['phone_number']
+			$phone_number="<a href='callto://+972505900789'>check it out!</a>";
 			$phone_pic = "<div> 
 				
 				<img id = 'std_phone_" . $row['ID'] . "' class='bubbels' src=\"./img/telephoneIcon.jpg\" width='35' height='35' onclick='$(\"#phoneDiv\").html(\"".$phone_number."\");'/>
