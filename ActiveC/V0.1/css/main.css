@@ -24,7 +24,9 @@ body{
     background-position: 70% 90%;
     height: 480px;
 }
-
+#term{
+    overflow: auto;
+}
 
 .img-responsive-team{
     width : 200px;
