@@ -20,9 +20,16 @@ body{
 #login_img{
     background-repeat: no-repeat;
     width:100%;
-    height: 20%;
+    background-attachment: fixed;
+    background-position: 70% 90%;
+    height: 14%;
 }
+#term{
+    overflow: auto;
+    overflow-x: hidden;
+    text-align: center;
 
+}
 
 .img-responsive-team{
     width : 200px;
@@ -428,13 +435,7 @@ body {
     font-style: italic;
 }
 
-/*#login_container{
-    width:100%;
-    height:590px;
-    background-image: url("../img/Jerusalem.jpg");
-    background-attachment: fixed;
-    background-position: 70% 90%;
-}*/
+
 #login_form{
     background-color:rgba(255,255,255,0.5);
     width:20%;
@@ -952,6 +953,10 @@ img-crop canvas {
 /* end skills */
 
 /* suggest */
+.down_footer{
+    height: 4%;
+}
+
 .ac-container {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
@@ -963,7 +968,9 @@ img-crop canvas {
     -ms-transform: translate3d(0, 0, 0);
     -o-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    height: 2%;
     z-index: 999;
+
 }
 .ac-container .ac-menu {
     border: 1px solid #ccc;
