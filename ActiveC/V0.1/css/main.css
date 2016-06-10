@@ -21,6 +21,9 @@ body{
     background-repeat: no-repeat;
     width:100%;
 }
+#term{
+    margin-left: 1%;
+}
 
 .img-responsive-team{
     width : 200px;
