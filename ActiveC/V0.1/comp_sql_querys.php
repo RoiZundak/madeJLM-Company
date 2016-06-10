@@ -37,7 +37,7 @@ if($func=="1")
 		if ($row['linkedin'] !== "")
 		{
 			$link_string = "<a href=\"" . $row['linkedin'] . "\">
-								<img title=\"LinkedIn\" alt=\"LinkedIn\" src=\"./img/LinkedinIcon.png\" width=\"35\" height=\"35\" />
+								<img class=\"bubbels\" title=\"LinkedIn\" alt=\"LinkedIn\" src=\"./img/LinkedinIcon.png\"  />
 								</a>
  								";
 		}
@@ -45,14 +45,14 @@ if($func=="1")
 		if ($row['github'] !== "")
 		{
 			$git_string = "<a href=\"" . $row['github'] . "\">
-								<img title=\"Github\" alt=\"Github\" src=\"./img/GithubIcon.png\" width=\"35\" height=\"35\" />
+								<img class=\"bubbels\" title=\"Github\" alt=\"Github\" src=\"./img/GithubIcon.png\"  />
 								</a>
  							";
 		}
 
 		$cv_file = "";
 		if ($row['cv'] !== "")
-			$cv_file = "<a href='".$row['cv']."' download='" .$row['first_name']. $row['last_name'] . "'> <img title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\" width=\"35\" height=\"35\" /> </a>";
+			$cv_file = "<a href='".$row['cv']."' download='" .$row['first_name']. $row['last_name'] . "'> <img class=\"bubbels\" title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\" /> </a>";
 
 		$sentence = "";
 		$sql_degree = "SELECT name FROM degree WHERE id =" . $row['degree_id'];
