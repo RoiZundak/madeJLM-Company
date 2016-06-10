@@ -25,7 +25,6 @@
                                     $('#password').val(localStorage.password);
                                 }
                                 else {
-                                    alert("Remember Me Checked");
                                     $('#remember_me').removeAttr('checked');
                                     $('#login').val('Example@example.com');
                                     $('#password').val('688822292');
@@ -33,7 +32,6 @@
 
                                 $('#remember_me').click(function() {
                                     if ($('#remember_me').is(':checked')) {
-                                        alert("Remember Me Checked2");
                                         // save username and password
                                         localStorage.usrname = $('#login').val();
                                         localStorage.password = $('#password').val();
@@ -55,7 +53,7 @@
                                 }
                             }
                         </script>
-                        <div class="form-group" id="login_form">
+                        <div class="form-group" >
                             <input type="text" class="form-control" placeholder="User name" id="login" name="username" required>
                         </div>
                         <div class="form-group">
