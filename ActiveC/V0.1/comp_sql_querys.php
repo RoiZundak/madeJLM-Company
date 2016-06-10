@@ -156,7 +156,7 @@ if($func=="1")
             $maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" .$row['Email']. "</a>\"";
 			$mail_pic = "<img id='std_mail_" . $row['ID'] .
 				"' class='bubbels'  src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" .
-				$maito_string . ");'/>&#8209";
+				$maito_string . ");'/>";
 		}
 
 		echo "
