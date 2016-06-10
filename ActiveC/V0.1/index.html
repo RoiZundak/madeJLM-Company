@@ -47,10 +47,14 @@
 </head>
 <div>
 <body ng-app="tutorialWebApp" id="body">
-<!--[if lt IE 7]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-    your browser</a> to improve your experience.</p>
-<![endif]-->
+<script type = "text/javascript">
+    if((navigator.vendor.length > 5) && (navigator.vendor.toLowerCase().indexOf("google inc") > -1)) {
+        //window.location.replace("#/"); // if chrome
+    } else {
+        alert("Oops! you are currently not using Google's chrome browser.");
+        window.location.replace("#/FAQ"); // all other browsers
+    }
+</script>
 
 <!-- Our Website Content Goes Here -->
 <div ng-include='"templates/header.html"'></div>
@@ -64,14 +68,6 @@
 <!-- Vendor: Angular, followed by our custom Javascripts -->
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.min.js"></script>
-<script type = "text/javascript">
-    if((navigator.vendor.length > 5) && (navigator.vendor.toLowerCase().indexOf("google inc") > -1)) {
-        window.location.replace("#/"); // if chrome
-    } else {
-        alert("I am an alert box!");
-        window.location.replace("#/FAQ"); // all other browsers
-    }
-</script>
 <!-- Our Website Javascripts -->
 <script src="js/main.js"></script>
 </div>
