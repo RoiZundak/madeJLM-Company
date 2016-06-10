@@ -145,7 +145,7 @@ if($func=="1")
         {
             $phone_number="\"<a href =  callto:" . $row['phone_number'] . "  >" .$row['phone_number']. "</a>\"";
             $phone_pic = "<img id = 'std_phone_" .
-				$row['ID'] . "' class='bubbels' id='phoneDiv' src=\"./img/telephoneIcon.jpg\"
+				$row['ID'] . "' class='bubbels' src=\"./img/telephoneIcon.jpg\"
 				 width='35' height='35' onclick='$(\"#phoneDiv\").html(".$phone_number.");'/>
 ";
         }
@@ -170,7 +170,10 @@ if($func=="1")
 			            
      			        	<h2 >" . $row['first_name'] . " " . $row['last_name'] . "</h2>
 						
-				            " . $git_string . "  " . $link_string . "  " . $cv_file . " ".$phone_pic."
+				            " . $git_string . "  " . $link_string . "  " . $cv_file . " 
+				            <div id='phoneDiv'>"
+								.$phone_pic."
+							</div>
 				            <div id='mailDiv'>
 				             ".$mail_pic."
 				             </div>
