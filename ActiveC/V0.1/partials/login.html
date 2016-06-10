@@ -17,7 +17,6 @@
                     <form class="text-left mb-40" action="http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/partials/login.php" method="post">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="User name" name="username" required>
-                            asda
                         </div>
                         <script>
                             sessionStorage.removeItem('username');
@@ -55,6 +54,7 @@
 
                             function checkLS()
                             {
+                                alert("Inside checkLS")
                                 if($('#login').val() != localStorage.usrname)
                                 {
                                     localStorage.usrname = $('#login').val();
