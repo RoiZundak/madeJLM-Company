@@ -443,15 +443,12 @@ if($func=="1")
 		{
 			if (strstr($key, 'skill_')){
                 $skill = substr($key, strpos($key, '_')+1,strlen($key) );//eg. 'javascript'
-                echo "!".$i."!";
                 $skills_arr[$i][0]=$skill;
                 $skills_arr[$i][1]=$value;
                 $i++;
             }
 
 		}
-        //print_r($skills_arr[0][0]."<br>End first<br>");
-        //print_r($skills_arr[0][1]."<br>End first<br>");
         $length = count($skills_arr);
 		if($length==0) //no skills were selected
         {
@@ -489,14 +486,13 @@ if($func=="1")
 
 		if(count($skills_id)==0) //could not get skills id
 			exit;
-        print_r($skills_arr."<br>End 3rd<br>");
 		$std_id=array();
-		foreach($skills_arr as $skill=>$time)
+        for($i=0;$i<$len;$i++)
 		{
 			$student_id_query = "SELECT student_id FROM student_skills WHERE skill_id=:skill AND years=:time";
 			$complete_query= $databaseConnection->prepare($student_id_query);
-			$complete_query->bindParam(':skill',$skill);
-			$complete_query->bindParam(':time',$time);
+			$complete_query->bindParam(':skill',$skills_arr[$i][0]);
+			$complete_query->bindParam(':time',$skills_arr[$i][1]);
 			$complete_query->execute();
 			$id=$complete_query->fetchAll();
             print_r($id[0]."<br>");
