@@ -418,6 +418,9 @@ if($func=="1")
 				{
 					event.preventDefault();
 					var str = $(\"#form_skills\").serialize();
+					if (str.includes(\"skill_\")==false) {
+					    return;
+					}
 					xmlhttp.onreadystatechange = function() 
 					{
 						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
