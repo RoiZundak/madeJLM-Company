@@ -480,8 +480,7 @@ if($func=="1")
 			$id=$complete_query->fetchAll();
 			array_push($skills_id,$id);
 		}*/
-        print_r($skills_arr[0][0]."<br>End 2nd<br>");
-        print_r($skills_arr[0][1]."<br>End 2nd<br>");
+        print_r($skills_id."<br>End 2nd<br>");
         //print_r($skills_arr."<br>End 2nd<br>");
 		$len=count($skills_arr);
 		for($i=1;$i<$len;$i++)
