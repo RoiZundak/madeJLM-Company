@@ -170,13 +170,15 @@ if($func=="1")
 			            
      			        	<h2 >" . $row['first_name'] . " " . $row['last_name'] . "</h2>
 						
-				            " . $git_string . "  " . $link_string . "  " . $cv_file . " 
+				            " . $git_string . "  " . $link_string . "  " . $cv_file . "
+				             
+				           <div id='mailDiv'>
+				             ".$mail_pic."
+				             </div>
 				            <div id='phoneDiv'>"
 								.$phone_pic."
 							</div>
-				            <div id='mailDiv'>
-				             ".$mail_pic."
-				             </div>
+				         
 
 						
                     </td>
