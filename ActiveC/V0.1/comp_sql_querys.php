@@ -102,7 +102,7 @@ if($func=="1")
 		}
         $sentence = "Studies ";
         if($degree_name!==""){
-            $sentence.="for a ". $degree_name;
+            $sentence.="for a ". $degree_name." ";
             if($row['basic_education_subject']!==""){
                 $sentence.="in ". $row['basic_education_subject']." ";
             }
