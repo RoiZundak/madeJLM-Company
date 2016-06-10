@@ -399,7 +399,8 @@ if($func=="1")
 					{
 						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 							if(xmlhttp.responseText!=''){
-									document.getElementById(\"show_all\").innerHTML = xmlhttp.responseText;
+                                alert(xmlhttp.responseText);
+                                document.getElementById(\"show_all\").innerHTML = xmlhttp.responseText;
 							}
 						}
 							
