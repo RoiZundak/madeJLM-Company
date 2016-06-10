@@ -442,7 +442,7 @@ if($func=="1")
 		{
 			if (strstr($key, 'skill_')){
                 $skill = substr($key, strpos($key, '_')+1,strlen($key) );//eg. 'javascript'
-
+                echo "!".(count($skills_arr)-1)."!";
                 $skills_arr[count($skills_arr)-1][0]=$skill;
                 $skills_arr[count($skills_arr)-1][1]=$value;
             }
