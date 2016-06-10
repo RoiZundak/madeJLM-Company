@@ -145,7 +145,7 @@ if($func=="1")
         {
             $phone_number="\"<a href =  callto:" . $row['phone_number'] . "  >" .$row['phone_number']. "</a>\"";
             $phone_pic = "<img id = 'std_phone_" .
-				$row['ID'] . "' class='bubbels' src=\"./img/telephoneIcon.jpg\"
+				$row['ID'] . "' class='bubbels' id='phoneDiv' src=\"./img/telephoneIcon.jpg\"
 				 width='35' height='35' onclick='$(\"#phoneDiv\").html(".$phone_number.");'/>
 ";
         }
@@ -156,7 +156,7 @@ if($func=="1")
 		{
             $maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" .$row['Email']. "</a>\"";
 			$mail_pic = "<img id='std_mail_" . $row['ID'] .
-				"' class='bubbels' src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" .
+				"' class='bubbels' id='mailDiv' src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" .
 				$maito_string . ");'/>";
 		}
 
