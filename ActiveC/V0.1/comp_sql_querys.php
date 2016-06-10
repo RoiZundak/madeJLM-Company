@@ -432,7 +432,6 @@ if($func=="1")
 
 	if($func=="10")
 	{
-        echo " function #10 ";
         $skills_arr=array(array());
         $i=0;
 		foreach($_GET as $key => $value)
@@ -448,7 +447,7 @@ if($func=="1")
         $length = count($skills_arr);
 		if($length==0) //no skills were selected
         {
-            echo "<script>alert('no skills slected bloack in form ! as required')</script>";
+            echo "<script>alert('no skills slected block in form ! as required')</script>";
             exit;
         }
 
