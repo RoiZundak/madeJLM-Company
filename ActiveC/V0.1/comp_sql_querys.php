@@ -475,7 +475,6 @@ if($func=="1")
 		$std_id=array();
         for($i=0;$i<$length;$i++)
 		{
-            echo"<br>start it.".$i;
 			$student_id_query = "SELECT student_id FROM student_skills WHERE skill_id=:skill AND years=:time";
 			$complete_query= $databaseConnection->prepare($student_id_query);
 			$complete_query->bindParam(':skill',$skills_arr[$i][0]);
@@ -508,11 +507,10 @@ if($func=="1")
             }
             $std_id=array();
             $temp_len = count($temp_arr);
-            for($i=0;$i<$temp_len-1 ;$i++) {
+            for($i=0;$i<$temp_len ;$i++) {
                 array_push($std_id, array_pop($temp_arr));
             }
             //$std_id=$temp_arr;
-            echo"<br>end it.".$i;
 		}
         echo "<br>printing std_id at the end : ";
         $temp_len = count($std_id);
