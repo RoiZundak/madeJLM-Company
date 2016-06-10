@@ -384,8 +384,8 @@ if($func=="1")
 					xmlhttp.onreadystatechange = function() 
 					{
 						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+						alert(\"in\");
 							if(xmlhttp.responseText!=''){
-                                alert(xmlhttp.responseText);
                                 document.getElementById(\"show_all\").innerHTML = xmlhttp.responseText;
 							}
 						}
