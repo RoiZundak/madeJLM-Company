@@ -496,7 +496,13 @@ body {
         height: 70%;
     }
 }
-
+.myFooter{
+    background-color:black;
+    color:white;
+    max-height:50px;
+    min-height:50px;
+    text-align:center;
+}
 
 
 #show_student_info{
