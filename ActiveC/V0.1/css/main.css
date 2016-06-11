@@ -1019,8 +1019,8 @@ img-crop canvas {
 }
 
 #unsupported_browser{
-    height: 90%;
-    width: 90%;
+    height: 85%;
+    width: 100%;
     background-repeat: no-repeat;
     background-image: url("../img/roas.jpg");
 
