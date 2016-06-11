@@ -577,22 +577,8 @@ if($func=="1")
         $update->execute();
     }
     //list all students
-    if($func == "13"){
-        /*
-            semesters_left
-            college_id
-            job_percent
-            current_work
-            summary
-            experience
-            linkedin
-            github
-                cv
-                counter_view
-                    counter_contact
-                        grade_average
-                            profile_strength
-			*/
+    if($func == "13")
+	{
         echo"<table style=\"width:100%\">
 			<tr>
 			  	<td>id</td>
@@ -605,7 +591,6 @@ if($func=="1")
 			  	<td>LastLogin</td>
 			  	<td>basic_education_subject</td>
 			  	<td>degree_id</td>
-			  	
 			  	<td>semesters_left</td>
 			  	<td>college_id</td>
 			  	<td>job_percent</td>
@@ -614,7 +599,6 @@ if($func=="1")
 			  	<td>experience</td>
 			  	<td>linkedin</td>
 			  	<td>github</td>
-			  	
 			  	<td>cv</td>
 			  	<td>counter_view</td>
 			  	<td>counter_contact</td>
@@ -630,13 +614,27 @@ if($func=="1")
             echo "<td>".$row['ID']."</td>";
             echo "<td>".$row['first_name']."</td>";
             echo "<td>".$row['last_name']."</td>";
+			echo "<td>".$row['last_name']."</td>";
+			echo "<td>".$row['Email']."</td>";
             echo "<td>".$row['phone_number']."</td>";
             echo "<td>".$row['Activated']."</td>";
             echo "<td>".$row['RegDate']."</td>";
 			echo "<td>".$row['LastLogin']."</td>";
 			echo "<td>".$row['basic_education_subject']."</td>";
 			echo "<td>".$row['degree_id']."</td>";
-
+			echo "<td>".$row['semesters_left']."</td>";
+			echo "<td>".$row['college_id']."</td>";
+			echo "<td>".$row['job_percent']."</td>";
+			echo "<td>".$row['current_work']."</td>";
+			echo "<td>".$row['summary']."</td>";
+			echo "<td>".$row['experience']."</td>";
+			echo "<td>".$row['linkedin']."</td>";
+			echo "<td>".$row['github']."</td>";
+			echo "<td>".$row['cv']."</td>";
+			echo "<td>".$row['counter_view']."</td>";
+			echo "<td>".$row['counter_contact']."</td>";
+			echo "<td>".$row['grade_average']."</td>";
+			echo "<td>".$row['profile_strength']."</td>";
             echo "</tr>";
         }
         echo"</table>";
