@@ -23,6 +23,9 @@ body{
     background-attachment: fixed;
     background-position: 70% 90%;
     height: 14%;
+    background: #333 url('../img/jlm_pic.jpg');
+    background-size: 100%;
+
 }
 #term{
     overflow: auto;
@@ -163,14 +166,14 @@ body{
 
 
 .head{
-	display:inline-block;
-	width:140px;
-	height:140px;
-	margin:auto;
-	padding:5px;
-	cursor:pointer;
-	text-align:center;
-	font-size:1.1em;
+    display:inline-block;
+    width:140px;
+    height:140px;
+    margin:auto;
+    padding:5px;
+    cursor:pointer;
+    text-align:center;
+    font-size:1.1em;
     transition-property: background, border-radius;
     transition-duration: 300ms;
     transition-timing-function: linear;
@@ -181,9 +184,9 @@ body{
 
 .head_image{
     float: left;
-	width:120px;
-	height:120px;
-	margin-left:5px;
+    width:120px;
+    height:120px;
+    margin-left:5px;
     margin-top:5px;
     border-radius: 60px;
     -webkit-border-radius: 60px;
@@ -464,7 +467,7 @@ body {
     margin-top: 100px;
     margin-left: 30px;
 }
- p > input[type="text"]{
+p > input[type="text"]{
     margin-left: 30px;
 }
 .login-button{
@@ -496,9 +499,17 @@ body {
         height: 70%;
     }
 }
-
-
-
+.myFooter{
+    background: linear-gradient(#3c3c3c, #222222);
+    color:white;
+    max-height:50px;
+    min-height:50px;
+    text-align:center;
+    padding-top:1%;
+}
+#link{
+    color: #84C6EC;
+}
 #show_student_info{
     border: black solid thin;
 }
@@ -536,15 +547,7 @@ h3 {
 @charset "utf-8";
 
 /* general style */
-/*
-* {
-    border-color: #e1e1e1;
-    border-style: solid;
-    border-width: 0;
-    zoom: 1;
-    -webkit-tap-highlight-color:rgba(0,0,0,0);
-}
-*/
+
 *:focus {
     outline: none !important;
 }
@@ -1024,34 +1027,36 @@ img-crop canvas {
     height: 85%;
     width: 100%;
     background-repeat: no-repeat;
-    background-image: url("../img/roas.jpg");
-
+    background-image: url("../img/images.jpg");
     color: #333333;
-
     margin: .2em 0 .4em 0;
-
-
-
 }
 
 #head_line_b{
 
-    line-height: 90%;
-    font-family: times, Times New Roman, times-roman, georgia, serif;
+    line-height: 95%;
     font-size: 75px;
-    margin-left: 10%;
+    margin-left: 7%;
     letter-spacing: -2px;
-    font-weight: 700;
+    font-weight: 900;
 }
 #sec_head_line_b
 {
-    /*left: -10%;*/
-    font: bold 34px "Century Schoolbook", Georgia, Times, serif;
+
+    font-weight: 600;
     font-size: 50px;
 }
 .lead{
-    font-size: 35px;
+    font-weight: 600;
+    font-size: 27px;
+    margin-left: 7%;
+    line-height: 80%;
 
+}
+.lead1{
+    left: -60px;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 
