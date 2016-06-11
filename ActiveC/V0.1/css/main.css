@@ -23,6 +23,9 @@ body{
     background-attachment: fixed;
     background-position: 70% 90%;
     height: 14%;
+    background: #333 url('../img/jlm_pic.jpg');
+    background-size: 100%;
+
 }
 #term{
     overflow: auto;
@@ -163,14 +166,14 @@ body{
 
 
 .head{
-	display:inline-block;
-	width:140px;
-	height:140px;
-	margin:auto;
-	padding:5px;
-	cursor:pointer;
-	text-align:center;
-	font-size:1.1em;
+    display:inline-block;
+    width:140px;
+    height:140px;
+    margin:auto;
+    padding:5px;
+    cursor:pointer;
+    text-align:center;
+    font-size:1.1em;
     transition-property: background, border-radius;
     transition-duration: 300ms;
     transition-timing-function: linear;
@@ -181,9 +184,9 @@ body{
 
 .head_image{
     float: left;
-	width:120px;
-	height:120px;
-	margin-left:5px;
+    width:120px;
+    height:120px;
+    margin-left:5px;
     margin-top:5px;
     border-radius: 60px;
     -webkit-border-radius: 60px;
@@ -464,7 +467,7 @@ body {
     margin-top: 100px;
     margin-left: 30px;
 }
- p > input[type="text"]{
+p > input[type="text"]{
     margin-left: 30px;
 }
 .login-button{
@@ -544,15 +547,7 @@ h3 {
 @charset "utf-8";
 
 /* general style */
-/*
-* {
-    border-color: #e1e1e1;
-    border-style: solid;
-    border-width: 0;
-    zoom: 1;
-    -webkit-tap-highlight-color:rgba(0,0,0,0);
-}
-*/
+
 *:focus {
     outline: none !important;
 }
