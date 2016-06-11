@@ -497,7 +497,7 @@ body {
     }
 }
 .myFooter{
-    background-color:black;
+    background: linear-gradient(#3c3c3c, #222222);
     color:white;
     max-height:50px;
     min-height:50px;
