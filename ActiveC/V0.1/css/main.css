@@ -1015,8 +1015,7 @@ img-crop canvas {
 }
 
 #unsupported_browser{
-
-    font-size: 24px;
+    color: #33FF33;
 
 }
 
