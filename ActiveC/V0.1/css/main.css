@@ -496,7 +496,13 @@ body {
         height: 70%;
     }
 }
-
+.myFooter{
+    background-color:black;
+    color:white;
+    max-height:50px;
+    min-height:50px;
+    text-align:center;
+}
 
 
 #show_student_info{
@@ -1050,7 +1056,10 @@ img-crop canvas {
     font-size: 50px;
 }
 .lead{
-    font-size: 35px;
+    font: bold 34px "Century Schoolbook", Georgia, Times, serif;
+    font-size: 27px;
+    margin-left: 10%;
+    line-height: 80%;
 
 }
 
