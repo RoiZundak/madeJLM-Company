@@ -103,7 +103,7 @@ if(isset($_POST['submit'])) {
                 Jerusalem, Israel<br>
             </p>
 
-            <p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: (972) 548044784</p>
+            <p><i class="fa fa-phone"></i> P: (972) 548044784</p>
 
             <p><i class="fa fa-envelope-o"></i> <abbr title="Email">E</abbr>:  ActiveC.madejlm@Gmail.com</p>
 
