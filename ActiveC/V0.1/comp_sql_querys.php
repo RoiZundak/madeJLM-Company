@@ -390,10 +390,15 @@ if($func=="3") {
 				function addSkillToList(skill_to_add,years_text,years_value)
 				{
 					var skill_years = skill_to_add +', '+ years_text;
+					var str = $(\"#form_skills\").serialize();
+					if(str.indexOf(skill_to_add)>0){
+					    $('label[for=skill_'+skill_to_add+']').remove();
+                        $('#skill_'+skill_to_add).remove();
+					}
 					$('#input_div').after(function() 
-					{
-					  return'<br><label class=\'skillsLabel\' for=\'skill_'+skill_to_add+'\'>'+skill_years +'</label><input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ years_value + '\' id=\'skill_'+skill_to_add+'\'>  ' 
-					});
+                    {
+                      return'<br><label class=\'skillsLabel\' for=\'skill_'+skill_to_add+'\'>'+skill_years +'</label><input name=\'skill_'+skill_to_add+'\' type=\'text\' class=\'skills\' style=\'display:none;\' value=\''+ years_value + '\' id=\'skill_'+skill_to_add+'\'>  ' 
+                    });
 				}
 				$( \"#form_skills\" ).submit(function( event ) 
 				{
