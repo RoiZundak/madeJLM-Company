@@ -23,6 +23,9 @@ body{
     background-attachment: fixed;
     background-position: 70% 90%;
     height: 14%;
+    background: #333 url('../img/jlm_pic.jpg');
+    background-size: 100%;
+
 }
 #term{
     overflow: auto;
