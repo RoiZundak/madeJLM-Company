@@ -1031,13 +1031,8 @@ img-crop canvas {
     width: 100%;
     background-repeat: no-repeat;
     background-image: url("../img/images.jpg");
-
     color: #333333;
-
     margin: .2em 0 .4em 0;
-
-
-
 }
 
 #head_line_b{
