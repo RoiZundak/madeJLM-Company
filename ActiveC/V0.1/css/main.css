@@ -1022,7 +1022,7 @@ img-crop canvas {
     font-weight: 900;
     color: #ED9C2A;
 }
-
+/* style to 404 unsupported browser*/
 #unsupported_browser{
     height: 85%;
     width: 100%;
