@@ -11,276 +11,275 @@
 	$sql="SET character_set_results=utf8";
 	$databaseConnection->query($sql);
 
-
 	$func = intval($_GET['func']);
 
-//show single student
-if($func=="1")
-{
-	$q = intval($_GET['q']);
-	$sql_update="UPDATE student SET counter_view = counter_view + 1 WHERE ID = '".$q."'";
-	$update = $databaseConnection ->prepare($sql_update);
-	$update->execute();
-	//PDO STYLE :
-	$sql="SELECT * FROM student WHERE ID = '".$q."' LIMIT 1";
-	$img_src = "../img/profilepic.png";
-	foreach ($databaseConnection->query($sql) as $row)
-	{
-		$img_src = "";
-		if ($row['profile'] == "")
-			$img_src = "./img/profilepic.png";
-		else
-			$img_src = "../../../MadeinJLM-students/mockup/" . $row['profile'];
-
-
-		$link_string = "";
-		if ($row['linkedin'] !== "")
-		{
-			$link_string = "<a href=\"" . $row['linkedin'] . "\">
-								<img class=\"bubbels\" title=\"LinkedIn\" alt=\"LinkedIn\" src=\"./img/LinkedinIcon.png\"  />
-								</a>
- 								";
-		}
-		$git_string = "";
-		if ($row['github'] !== "")
-		{
-			$git_string = "<a href=\"" . $row['github'] . "\">
-								<img class=\"bubbels\" title=\"Github\" alt=\"Github\" src=\"./img/GithubIcon.png\"  />
-								</a>
- 							";
-		}
-
-		$cv_file = "";
-		if ($row['cv'] !== "")
-			$cv_file = "<a href='../../../MadeinJLM-students/mockup/API/Student/getCV?id=".$row['ID']."' download='" .$row['first_name']. $row['last_name'] . "'> <img class=\"bubbels\" title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\"/> </a>";
-
-		
-		$sentence = "";
-		$sql_degree = "SELECT name FROM degree WHERE id =" . $row['degree_id'];
-		$sql_college = "SELECT name FROM college WHERE id =" . $row['college_id'];;
-		$sql_skills = "SELECT * FROM student_skills WHERE student_id = " . $row['ID'];
-		$all_skills = "";
-		$list_skills = array();       //skills ids
-		$list_skills_bck = array();   //backup skills id for further use
-		$list_skills_years = array(); //keep years of knowledge
-
-		foreach ($databaseConnection->query($sql_skills) as $skill)
-		{
-			array_push($list_skills, $skill['skill_id']);
-			array_push($list_skills_years, $skill['years']);
-		}
-		$list_skills_bck = $list_skills;
-		$skills_name = "SELECT * FROM skills WHERE id IN (" . implode(',', $list_skills) . ")";
-		$show_all_skills="";
-		$all_skills="";
-		if (count($list_skills) > 0)
-		{
-			$show_all_skills ="Skills list: ";
-			$len = count($list_skills_bck);
-			foreach ($databaseConnection->query($skills_name) as $skill)
-			{
-				for ($i = 0; $i < $len; $i++)
-				{
-					if ($skill['id'] === $list_skills_bck[$i]) {
-						$all_skills .= "<span class='skill_item'> &#10003 " . $skill['name'] . " for " .$list_skills_years[$i]. " years</span><br>";
-					}
-				}
-			}
-		}
-		else
-		{
-			$show_all_skills ="Skills list: ";
-			$all_skills=$row['first_name']." hasn't entred any skills yet.";
-		}
-		//Build data sentence :
-		$college_name = "";
-		foreach ($databaseConnection->query($sql_college) as $college) {
-			$college_name = $college['name'];
-		}
-		$degree_name = "";
-		foreach ($databaseConnection->query($sql_degree) as $degree) {
-			$degree_name = $degree['name'];
-		}
-        $sentence = "Studies ";
-        if($degree_name!==""){
-            $sentence.="for a ". $degree_name." ";
-            if($row['basic_education_subject']!==""){
-                $sentence.="in ". $row['basic_education_subject']." ";
-            }
-        }else{
-            //no degree
-            if($row['basic_education_subject']!==""){
-                $sentence.= $row['basic_education_subject']." ";
-            }
-        }
-        if($college_name!==""){
-            $sentence.="at ". $college_name." ";
-        }
-        if($row['grade_average']!=="" && intval($row['grade_average'])!==0){
-            if($sentence === "Studies "){
-                $sentence="Has a GPA of ". $row['grade_average']." ";
-            }else{
-                $sentence.="with a GPA of ". $row['grade_average']." ";
-            }
-        }
-        if($row['semesters_left']!=="" && intval($row['semesters_left'])!==0){
-            if($sentence === "Studies "){
-                $sentence="Has " . $row['semesters_left'] . " semesters left";
-            }else{
-                $sentence.=" and has " . $row['semesters_left'] . " semesters left";
-            }
-
-        }
-        if($sentence === "Studies "){
-            $sentence = $row['first_name']. " hasn't fulfilled all the basic information fields. for more Information, contact with ".$row['first_name'].".";
-        }else{
-            $sentence.=".";
-        }
-/*
-		if ($degree_name=="" || $row['basic_education_subject']=="" || $college_name=="" || $row['grade_average']=="" || $row['semesters_left']=="")
-			$sentence = $row['first_name']. " hasn't fulfilled all the basic information fields. for more Information, contact with ".$row['first_name'].".";
-		else
-			$sentence = "Studies for a " . $degree_name . " in " . $row['basic_education_subject'] . " at " . $college_name . " with GPA of " . $row['grade_average'] . " and has " . $row['semesters_left'] . " semesters left.";
-*/
-
-        //build 2nd sentence:
-		$job_per = $row['first_name'] . " is avaliable for ";
-		switch ($row['job_percent'])
-		{
-			case 1:
-				$job_per .= "a half time job.";
-				break;
-			case 2:
-				$job_per .= "a full time job.";
-				break;
-			case 3:
-				$job_per .= "working in shifts.";
-				break;
-			case 4:
-				$job_per .= "a freelancer job.";
-				break;
-			default:
-				$job_per = $row['first_name'] . " hasn't entered a preference for job percent.";
-		}
-		$curr_job = "";
-		if ($row['current_work'] !== "")
-			$curr_job = $row['first_name'] . " is currently working at " . $row['current_work'] . ".";
-		$summary_ = "";
-		if ($row['summary'] !== "")
-		{
-			$sum = "Summary: ";
-			$summary = $row['summary'];
-		}
-		$exprience = "";
-		if ($row['experience'] !== "")
-		{
-			$exp = "Experience: ";
-			$exprience = $row['experience'];
-		}
-		$phone_number="";
-		$phone_pic="";
-        if($row['phone_number']!=="")
+    //show single student
+    if($func=="1")
+    {
+        $q = intval($_GET['q']);
+        $sql_update="UPDATE student SET counter_view = counter_view + 1 WHERE ID = '".$q."'";
+        $update = $databaseConnection ->prepare($sql_update);
+        $update->execute();
+        //PDO STYLE :
+        $sql="SELECT * FROM student WHERE ID = '".$q."' LIMIT 1";
+        $img_src = "../img/profilepic.png";
+        foreach ($databaseConnection->query($sql) as $row)
         {
-            $phone_number="\"<a href =  callto:" . $row['phone_number'] . "  >" .$row['phone_number']. "</a>\"";
-            $phone_pic = "<img id = 'std_phone_" .
-				$row['ID'] . "' class='bubbels' src=\"./img/telephoneIcon.jpg\"
-				 width='35' height='35' onclick='$(\"#phoneDiv\").html(".$phone_number.");'/>";
+            $img_src = "";
+            if ($row['profile'] == "")
+                $img_src = "./img/profilepic.png";
+            else
+                $img_src = "../../../MadeinJLM-students/mockup/" . $row['profile'];
+
+
+            $link_string = "";
+            if ($row['linkedin'] !== "")
+            {
+                $link_string = "<a href=\"" . $row['linkedin'] . "\">
+                                    <img class=\"bubbels\" title=\"LinkedIn\" alt=\"LinkedIn\" src=\"./img/LinkedinIcon.png\"  />
+                                    </a>
+                                    ";
+            }
+            $git_string = "";
+            if ($row['github'] !== "")
+            {
+                $git_string = "<a href=\"" . $row['github'] . "\">
+                                    <img class=\"bubbels\" title=\"Github\" alt=\"Github\" src=\"./img/GithubIcon.png\"  />
+                                    </a>
+                                ";
+            }
+
+            $cv_file = "";
+            if ($row['cv'] !== "")
+                $cv_file = "<a href='../../../MadeinJLM-students/mockup/API/Student/getCV?id=".$row['ID']."' download='" .$row['first_name']. $row['last_name'] . "'> <img class=\"bubbels\" title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\"/> </a>";
+
+
+            $sentence = "";
+            $sql_degree = "SELECT name FROM degree WHERE id =" . $row['degree_id'];
+            $sql_college = "SELECT name FROM college WHERE id =" . $row['college_id'];;
+            $sql_skills = "SELECT * FROM student_skills WHERE student_id = " . $row['ID'];
+            $all_skills = "";
+            $list_skills = array();       //skills ids
+            $list_skills_bck = array();   //backup skills id for further use
+            $list_skills_years = array(); //keep years of knowledge
+
+            foreach ($databaseConnection->query($sql_skills) as $skill)
+            {
+                array_push($list_skills, $skill['skill_id']);
+                array_push($list_skills_years, $skill['years']);
+            }
+            $list_skills_bck = $list_skills;
+            $skills_name = "SELECT * FROM skills WHERE id IN (" . implode(',', $list_skills) . ")";
+            $show_all_skills="";
+            $all_skills="";
+            if (count($list_skills) > 0)
+            {
+                $show_all_skills ="Skills list: ";
+                $len = count($list_skills_bck);
+                foreach ($databaseConnection->query($skills_name) as $skill)
+                {
+                    for ($i = 0; $i < $len; $i++)
+                    {
+                        if ($skill['id'] === $list_skills_bck[$i]) {
+                            $all_skills .= "<span class='skill_item'> &#10003 " . $skill['name'] . " for " .$list_skills_years[$i]. " years</span><br>";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                $show_all_skills ="Skills list: ";
+                $all_skills=$row['first_name']." hasn't entred any skills yet.";
+            }
+            //Build data sentence :
+            $college_name = "";
+            foreach ($databaseConnection->query($sql_college) as $college) {
+                $college_name = $college['name'];
+            }
+            $degree_name = "";
+            foreach ($databaseConnection->query($sql_degree) as $degree) {
+                $degree_name = $degree['name'];
+            }
+            $sentence = "Studies ";
+            if($degree_name!==""){
+                $sentence.="for a ". $degree_name." ";
+                if($row['basic_education_subject']!==""){
+                    $sentence.="in ". $row['basic_education_subject']." ";
+                }
+            }else{
+                //no degree
+                if($row['basic_education_subject']!==""){
+                    $sentence.= $row['basic_education_subject']." ";
+                }
+            }
+            if($college_name!==""){
+                $sentence.="at ". $college_name." ";
+            }
+            if($row['grade_average']!=="" && intval($row['grade_average'])!==0){
+                if($sentence === "Studies "){
+                    $sentence="Has a GPA of ". $row['grade_average']." ";
+                }else{
+                    $sentence.="with a GPA of ". $row['grade_average']." ";
+                }
+            }
+            if($row['semesters_left']!=="" && intval($row['semesters_left'])!==0){
+                if($sentence === "Studies "){
+                    $sentence="Has " . $row['semesters_left'] . " semesters left";
+                }else{
+                    $sentence.=" and has " . $row['semesters_left'] . " semesters left";
+                }
+
+            }
+            if($sentence === "Studies "){
+                $sentence = $row['first_name']. " hasn't fulfilled all the basic information fields. for more Information, contact with ".$row['first_name'].".";
+            }else{
+                $sentence.=".";
+            }
+    /*
+            if ($degree_name=="" || $row['basic_education_subject']=="" || $college_name=="" || $row['grade_average']=="" || $row['semesters_left']=="")
+                $sentence = $row['first_name']. " hasn't fulfilled all the basic information fields. for more Information, contact with ".$row['first_name'].".";
+            else
+                $sentence = "Studies for a " . $degree_name . " in " . $row['basic_education_subject'] . " at " . $college_name . " with GPA of " . $row['grade_average'] . " and has " . $row['semesters_left'] . " semesters left.";
+    */
+
+            //build 2nd sentence:
+            $job_per = $row['first_name'] . " is avaliable for ";
+            switch ($row['job_percent'])
+            {
+                case 1:
+                    $job_per .= "a half time job.";
+                    break;
+                case 2:
+                    $job_per .= "a full time job.";
+                    break;
+                case 3:
+                    $job_per .= "working in shifts.";
+                    break;
+                case 4:
+                    $job_per .= "a freelancer job.";
+                    break;
+                default:
+                    $job_per = $row['first_name'] . " hasn't entered a preference for job percent.";
+            }
+            $curr_job = "";
+            if ($row['current_work'] !== "")
+                $curr_job = $row['first_name'] . " is currently working at " . $row['current_work'] . ".";
+            $summary_ = "";
+            if ($row['summary'] !== "")
+            {
+                $sum = "Summary: ";
+                $summary = $row['summary'];
+            }
+            $exprience = "";
+            if ($row['experience'] !== "")
+            {
+                $exp = "Experience: ";
+                $exprience = $row['experience'];
+            }
+            $phone_number="";
+            $phone_pic="";
+            if($row['phone_number']!=="")
+            {
+                $phone_number="\"<a href =  callto:" . $row['phone_number'] . "  >" .$row['phone_number']. "</a>\"";
+                $phone_pic = "<img id = 'std_phone_" .
+                    $row['ID'] . "' class='bubbels' src=\"./img/telephoneIcon.jpg\"
+                     width='35' height='35' onclick='$(\"#phoneDiv\").html(".$phone_number.");'/>";
+            }
+
+            $mail_pic="";
+
+            if($row['Email']!=="")
+            {
+                $maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" .$row['Email']. "</a>\"";
+                $mail_pic = "<img id='std_mail_" . $row['ID'] .
+                    "' class='bubbels'  src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" .
+                    $maito_string . ");'/>";
+            }
+
+            echo "
+                <table id ='myTable' border=1 frame=void rules=rows>
+                    <!--First Line: Picture+ Bubbles -->
+                    <tr width=\"100%\">
+                    
+                        <td  width=\"100%\">
+                            <img class='head_image' src =" . $img_src . " width ='120px' height='110px'>
+                            
+                                <h2 >" . $row['first_name'] . " " . $row['last_name'] . "</h2>
+                            
+                                " . $git_string . "  " . $link_string . "  " . $cv_file . "
+                                
+                                <div id='phoneDiv'>"
+                                    .$phone_pic."
+                                </div>
+                                 
+                               <div id='mailDiv'>
+                                 ".$mail_pic."
+                                </div>
+                        
+                                    
+                        </td>
+    
+                        <!--Third Line: Sentence-->
+                        
+                     <tr class=\"border_bottom\">
+                        <td>
+                            " . $sentence . "
+                        </td>
+                    </tr>
+                    
+                    <!--Four Line: JobPer + CurrJob-->
+                     <tr class=\"border_bottom\">
+                        <td>
+                            " . $job_per . "
+                        </td>
+                        <td>
+                            " . $curr_job . "
+                        </td>
+                    </tr>
+                    
+                    <!--Fifth Line: All Skills + ShowAll-->
+                    <tr id ='skill_tr' >
+                        <td>
+                            <h4><b>".$show_all_skills."</b></h4> ".$all_skills."
+                 
+                        </td>
+                    </tr>
+                    <!--Six Line: Sum + Experince-->
+                    <tr class=\"border_bottom\">
+                        <td>
+                                <h4><b>" . $sum . "</h4></b>" . $summary . "
+                        </td>
+                        
+                        <td>
+                                <h4><b>" . $exp . "</h4></b>" . $exprience . " 
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+                ";
         }
-
-		$mail_pic="";
-
-		if($row['Email']!=="")
-		{
-            $maito_string = "\"<a href =  mailto:" . $row['Email'] . "  >" .$row['Email']. "</a>\"";
-			$mail_pic = "<img id='std_mail_" . $row['ID'] .
-				"' class='bubbels'  src=\"./img/mailIcon.png\" width='35' height='35' onclick='$(\"#mailDiv\").html(" .
-				$maito_string . ");'/>";
-		}
-
-		echo "
-			<table id ='myTable' border=1 frame=void rules=rows>
-				<!--First Line: Picture+ Bubbles -->
-			    <tr width=\"100%\">
-			    
-			        <td  width=\"100%\">
-			            <img class='head_image' src =" . $img_src . " width ='120px' height='110px'>
-			            
-     			        	<h2 >" . $row['first_name'] . " " . $row['last_name'] . "</h2>
-						
-				            " . $git_string . "  " . $link_string . "  " . $cv_file . "
-				            
-				            <div id='phoneDiv'>"
-								.$phone_pic."
-							</div>
-							 
-				           <div id='mailDiv'>
-				             ".$mail_pic."
-				            </div>
-				    
-				         		
-                    </td>
-
-                	<!--Third Line: Sentence-->
-                	
-                 <tr class=\"border_bottom\">
-                	<td>
-                		" . $sentence . "
-					</td>
-                </tr>
-                
-                <!--Four Line: JobPer + CurrJob-->
-                 <tr class=\"border_bottom\">
-                	<td>
-                		" . $job_per . "
-					</td>
-                	<td>
-                		" . $curr_job . "
-					</td>
-                </tr>
-                
-                <!--Fifth Line: All Skills + ShowAll-->
-                <tr id ='skill_tr' >
-                	<td>
-                		<h4><b>".$show_all_skills."</b></h4> ".$all_skills."
-             
-					</td>
-                </tr>
-                <!--Six Line: Sum + Experince-->
-                <tr class=\"border_bottom\">
-                	<td>
-							<h4><b>" . $sum . "</h4></b>" . $summary . "
-					</td>
-					
-					<td>
-							<h4><b>" . $exp . "</h4></b>" . $exprience . " 
-						
-                	</td>
-                </tr>
-                
-			</table>
-			";
-	}
-}
+    }
 
 
-//filter Linkedin
-if($func=="3") {
-		//PDO STYLE :
-		$sql = "SELECT * FROM student WHERE linkedin<>'' ORDER BY profile_strength DESC";
-		$img_src = "../img/profilepic.png";
-		foreach ($databaseConnection->query($sql) as $row)
-		{
-			$img_src ="";
-			if(  $row['profile']=="" )
-				$img_src = "./img/profilepic.png";
-			else
-				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
-			echo "<div class='head' id='head_".$row['ID']."' > ";
-			echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
-			print_r($row['first_name']);
-			echo "</div>";
-		}
-	}
+    //filter Linkedin
+    if($func=="3") {
+            //PDO STYLE :
+            $sql = "SELECT * FROM student WHERE linkedin<>'' ORDER BY profile_strength DESC";
+            $img_src = "../img/profilepic.png";
+            foreach ($databaseConnection->query($sql) as $row)
+            {
+                $img_src ="";
+                if(  $row['profile']=="" )
+                    $img_src = "./img/profilepic.png";
+                else
+                    $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+                echo "<div class='head' id='head_".$row['ID']."' > ";
+                echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+                print_r($row['first_name']);
+                echo "</div>";
+            }
+        }
 
 	//clear
 	if($func=="4")
@@ -544,6 +543,7 @@ if($func=="3") {
 			echo "</div>";
 		}
 	}
+
     //increment student contact stats
 	if($func=="11")
 	{
@@ -552,6 +552,7 @@ if($func=="3") {
 		$update = $databaseConnection ->prepare($sql_update);
 		$update->execute();
 	}
+
     //reset company password
     if($func=="12")
     {
@@ -561,6 +562,7 @@ if($func=="3") {
         $update = $databaseConnection ->prepare($sql_update);
         $update->execute();
     }
+
     //list all students
     if($func == "13")
 	{
@@ -623,6 +625,7 @@ if($func=="3") {
         }
         echo"</table>";
     }
+
     //Remove student
     if($func == "14"){
         $row_number =$_POST["student_id"] ;
@@ -634,6 +637,7 @@ if($func=="3") {
         else
             echo "Failed to DELETE student, please make sure you have the correct ID.";
     }
+
     //Change student status
     if($func == "15"){
         $id =$_POST['std_id'] ;
