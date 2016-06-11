@@ -1019,4 +1019,14 @@ img-crop canvas {
 
 }
 
+#head_line_b{
+    color: #ff6600;
+    transition: .5s;
+    -moz-transition: .5s:
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    font-family: 'Muli', sans-serif;
+}
+
+
 /* end suggest */
