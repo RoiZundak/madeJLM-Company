@@ -12,13 +12,13 @@
 
 
     <section class="main-context">
+        <div id="login_img"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center" >
                     <h2 class="mb-40">Log in</h2>
                     <uib-alert ng-show="alerts.login.msg != null" type="{{alerts.login.type}}" close="closeAlert('login')"><span ng-bind-html="alerts.login.msg"></span></uib-alert>
                     <form class="text-left mb-40" action="http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/partials/login.php" method="post">
-                        <div id="login_img"></div>
                         <script>
                             sessionStorage.removeItem('username');
                             $(function() {
