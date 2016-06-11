@@ -52,8 +52,7 @@ if($func=="1")
 
 		$cv_file = "";
 		if ($row['cv'] !== "")
-			//" .$row['first_name']. $row['last_name'] . "
-			$cv_file = "<a href='../../../MadeinJLM-students/mockup/API/Student/getCV?id=".$row['ID']."' download='lalaal'> <img class=\"bubbels\" title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\"/> </a>";
+			$cv_file = "<a href='../../../MadeinJLM-students/mockup/API/Student/getCV?id=".$row['ID']."' download='" .$row['first_name']. $row['last_name'] . "'> <img class=\"bubbels\" title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\"/> </a>";
 
 		
 		$sentence = "";
