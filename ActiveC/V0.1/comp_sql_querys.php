@@ -50,11 +50,10 @@ if($func=="1")
  							";
 		}
 
-		/*
 		$cv_file = "";
 		if ($row['cv'] !== "")
-			$cv_file = "<a href='".$row['cv']."' download='" .$row['first_name']. $row['last_name'] . "'> <img class=\"bubbels\" title=\"Cv\" alt=\"Cv\" src='../../../MadeinJLM-students/mockup/API/Student/getCV?id='".$row['ID']."> </a>";
-		*/
+			$cv_file = "<a href='".$row['cv']."' download='" .$row['first_name']. $row['last_name'] . "'> <img class=\"bubbels\" title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\"/> </a>";
+
 		
 		$sentence = "";
 		$sql_degree = "SELECT name FROM degree WHERE id =" . $row['degree_id'];
