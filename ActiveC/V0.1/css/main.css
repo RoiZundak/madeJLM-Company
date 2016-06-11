@@ -966,7 +966,10 @@ img-crop canvas {
 
 /* suggest */
 .down_footer{
-    height: 2%;
+    max-height: 1%;
+}
+.ng-scope{
+    max-height: 1%;
 }
 
 .ac-container {
