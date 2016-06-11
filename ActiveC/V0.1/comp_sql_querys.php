@@ -210,7 +210,7 @@ if($func=="1")
 						
 				            " . $git_string . "  " . $link_string . "  " . $cv_file . "
 				            
-				            <div id='phoneDiv'>
+				            <div id='phoneDiv'>"
 								.$phone_pic."
 							</div>
 							 
