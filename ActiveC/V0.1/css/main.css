@@ -486,6 +486,7 @@ body {
 /* Footer Styles */
 footer {
     margin: 10px 0;
+    max-height: 1%;
 }
 
 /* Responsive Styles */
@@ -525,7 +526,7 @@ h3 {
 
 }
 
-#std_table,#std_table>td{
+#std_table > *{
     border: 1px solid black;
     border-collapse: collapse;
 }
@@ -966,8 +967,9 @@ img-crop canvas {
 
 /* suggest */
 .down_footer{
-    height: 4%;
+    height: 2%;
 }
+
 
 .ac-container {
     -webkit-backface-visibility: hidden;
@@ -1019,21 +1021,35 @@ img-crop canvas {
 }
 
 #unsupported_browser{
-    height: 100%;
+    height: 85%;
     width: 100%;
+    background-repeat: no-repeat;
     background-image: url("../img/roas.jpg");
+
+    color: #333333;
+
+    margin: .2em 0 .4em 0;
+
+
 
 }
 
 #head_line_b{
-    font: bold 34px "Century Schoolbook", Georgia, Times, serif;
-    color: black;
+
     line-height: 90%;
-    margin: .2em 0 .4em 0;
-    text-align: center;
-    font-size: 60px;
+    font-family: times, Times New Roman, times-roman, georgia, serif;
+    font-size: 130px;
+    margin-left: 10%;
     letter-spacing: -2px;
+    font-weight: 700;
 }
+#sec_head_line_b
+{
+    /*left: -10%;*/
+    font: bold 34px "Century Schoolbook", Georgia, Times, serif;
+    font-size: 60px;
+}
+
 
 
 /* end suggest */
