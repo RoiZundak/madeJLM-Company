@@ -1046,14 +1046,12 @@ img-crop canvas {
 }
 #sec_head_line_b
 {
-    /*left: -10%;*/
-    /*font: bold 34px "Century Schoolbook", Georgia, Times, serif;*/
+
     font-weight: 600;
     font-size: 50px;
 }
 .lead{
     font-weight: 600;
-    /*font: bold 34px "Century Schoolbook", Georgia, Times, serif;*/
     font-size: 27px;
     margin-left: 7%;
     line-height: 80%;
