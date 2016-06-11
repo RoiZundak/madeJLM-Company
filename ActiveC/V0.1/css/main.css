@@ -1013,4 +1013,21 @@ img-crop canvas {
     font-weight: 900;
     color: #ED9C2A;
 }
+
+#unsupported_browser{
+    color: #33FF33;
+
+}
+
+#head_line_b{
+    font: bold 34px "Century Schoolbook", Georgia, Times, serif;
+    color: #333;
+    line-height: 90%;
+    margin: .2em 0 .4em 0;
+    text-align: center;
+    font-size: 37px;
+    letter-spacing: -2px;
+}
+
+
 /* end suggest */
