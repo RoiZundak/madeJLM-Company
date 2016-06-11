@@ -484,7 +484,7 @@ body {
     margin-left: 80px;
 }
 /* Footer Styles */
-footer {
+.footer {
     margin: 10px 0;
     max-height: 1%;
 }
