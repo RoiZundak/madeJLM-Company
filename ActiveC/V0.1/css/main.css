@@ -1032,36 +1032,33 @@ img-crop canvas {
     width: 100%;
     background-repeat: no-repeat;
     background-image: url("../img/images.jpg");
-
     color: #333333;
-
     margin: .2em 0 .4em 0;
-
-
-
 }
 
 #head_line_b{
 
-    line-height: 90%;
-    font-family: times, Times New Roman, times-roman, georgia, serif;
+    line-height: 95%;
     font-size: 75px;
     margin-left: 7%;
     letter-spacing: -2px;
-    font-weight: 700;
+    font-weight: 900;
 }
 #sec_head_line_b
 {
-    /*left: -10%;*/
-    font: bold 34px "Century Schoolbook", Georgia, Times, serif;
+
+    font-weight: 600;
     font-size: 50px;
 }
 .lead{
-    font: bold 34px "Century Schoolbook", Georgia, Times, serif;
+    font-weight: 600;
     font-size: 27px;
     margin-left: 7%;
     line-height: 80%;
 
+}
+.lead1{
+    left: -60px;
 }
 
 
