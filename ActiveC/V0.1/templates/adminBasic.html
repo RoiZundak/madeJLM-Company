@@ -61,5 +61,15 @@
         <h3>List all Students </h3>
         <button type="submit" name = "submit" class="login-button">Login</button>
     </form>
+    <br><br>
+    <!-- Remove Student -->
+    <form method="post" action="../comp_sql_querys.php?func=14" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
+        <h3>Remove Student by id </h3>
+        <p>
+            <label for="student_id">Student's id : </label>
+            <input type="number" min="0" name="student_id" id="student_id">
+        </p>
+        <button type="submit" name = "submit" class="login-button">Login</button>
+    </form>
 </body>
 </html>

@@ -641,5 +641,16 @@ if($func=="1")
         }
         echo"</table>";
     }
+    //Remove student
+    if($func == "14"){
+        $row_number =$_POST["student_id"] ;
+        //PDO STYLE :
+        $records = $databaseConnection->prepare('DELETE FROM student WHERE ID= :row_id');
+        $records->bindParam(':row_id', $row_number);
+        if ( $records->execute()==true)
+            echo "Great! student #".$row_number." was DELETED from the db ";
+        else
+            echo "Failed to DELETE student, please make sure you have the correct ID.";
+    }
 ?>
 
