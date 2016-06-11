@@ -115,7 +115,7 @@ if($func=="1")
         if($college_name!==""){
             $sentence.="at ". $college_name." ";
         }
-        if($row['grade_average']!=="" ){
+        if($row['grade_average']!=="" && intval($row['grade_average'])!==0){
             if($sentence === "Studies "){
                 $sentence="Has a GPA of ". $row['grade_average']." ";
             }else{
