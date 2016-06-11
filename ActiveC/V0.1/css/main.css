@@ -486,6 +486,7 @@ body {
 /* Footer Styles */
 footer {
     margin: 10px 0;
+    max-height: 1%;
 }
 
 /* Responsive Styles */
