@@ -103,9 +103,9 @@ if(isset($_POST['submit'])) {
                 Jerusalem, Israel<br>
             </p>
 
-            <p><i class="fa fa-phone"></i> P: (972) 548044784</p>
+            <p><i class="fa fa-phone"></i> Phone : (972) 548044784</p>
 
-            <p><i class="fa fa-envelope-o"></i> <abbr title="Email">E</abbr>:  ActiveC.madejlm@Gmail.com</p>
+            <p><i class="fa fa-envelope-o"></i> E-mail : ActiveC.madejlm@Gmail.com</p>
 
 
             <p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: 24/7</p>
