@@ -67,7 +67,7 @@ if(isset($_POST['submit'])) {
         <div class="col-sm-8">
             <h3>Let's Get In Touch!</h3>
 
-            <p>If you like to register or anything else</p>
+            <p>We're happy to answer any questions you have or provide you with estimate. Jusr send us a message in the form below with any questions you may have.</p>
 
             <form role="form" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>"  >
                 <div class="row">
