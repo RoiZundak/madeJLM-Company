@@ -122,7 +122,7 @@ if($func=="1")
                 $sentence.="with a GPA of ". $row['grade_average']." ";
             }
         }
-        if($row['semesters_left']!==""){
+        if($row['semesters_left']!=="" && intval($row['semesters_left'])!==0){
             if($sentence === "Studies "){
                 $sentence="Has " . $row['semesters_left'] . " semesters left";
             }else{
