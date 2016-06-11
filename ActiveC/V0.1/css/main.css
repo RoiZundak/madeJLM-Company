@@ -1015,13 +1015,15 @@ img-crop canvas {
 }
 
 #unsupported_browser{
-    color: #33FF33;
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/roas.jpg");
 
 }
 
 #head_line_b{
     font: bold 34px "Century Schoolbook", Georgia, Times, serif;
-    color: #333;
+    color: black;
     line-height: 90%;
     margin: .2em 0 .4em 0;
     text-align: center;
