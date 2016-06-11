@@ -1027,7 +1027,7 @@ img-crop canvas {
     color: black;
 
     margin: .2em 0 .4em 0;
-    text-align: center;
+
 
 
 }
@@ -1041,6 +1041,8 @@ img-crop canvas {
 }
 #sec_head_line_b
 {
+    text-align: center;
+
     font-size: 60px;
 }
 
