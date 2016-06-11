@@ -22,10 +22,8 @@
     //Get username from 'company' table
     $sql = "SELECT * FROM company WHERE email = '$email'";
     $username="";
-    echo "cdscsd";
     foreach($databaseConnection->query($sql) as $row){
         $username=$row['username'];
-        echo "in username : ".$row['username'];
     }
 
     if($username===""){//no such user!
