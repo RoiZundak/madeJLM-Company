@@ -1024,7 +1024,7 @@ img-crop canvas {
 }
 /* style to 404 unsupported browser*/
 #unsupported_browser{
-    height: 85%;
+    height: 70%;
     width: 100%;
     background-repeat: no-repeat;
     background-image: url("../img/images.jpg");
