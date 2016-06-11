@@ -525,6 +525,10 @@ h3 {
 
 }
 
+#std_table,#std_table>td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
 
 /*
 /*  Student's side css */
