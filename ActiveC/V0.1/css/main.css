@@ -484,7 +484,7 @@ body {
     margin-left: 80px;
 }
 /* Footer Styles */
-footer {
+.footer {
     margin: 10px 0;
     max-height: 1%;
 }
@@ -1038,7 +1038,7 @@ img-crop canvas {
 
     line-height: 90%;
     font-family: times, Times New Roman, times-roman, georgia, serif;
-    font-size: 130px;
+    font-size: 75px;
     margin-left: 10%;
     letter-spacing: -2px;
     font-weight: 700;
@@ -1047,7 +1047,7 @@ img-crop canvas {
 {
     /*left: -10%;*/
     font: bold 34px "Century Schoolbook", Georgia, Times, serif;
-    font-size: 60px;
+    font-size: 50px;
 }
 
 
