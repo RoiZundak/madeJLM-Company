@@ -166,14 +166,14 @@ body{
 
 
 .head{
-	display:inline-block;
-	width:140px;
-	height:140px;
-	margin:auto;
-	padding:5px;
-	cursor:pointer;
-	text-align:center;
-	font-size:1.1em;
+    display:inline-block;
+    width:140px;
+    height:140px;
+    margin:auto;
+    padding:5px;
+    cursor:pointer;
+    text-align:center;
+    font-size:1.1em;
     transition-property: background, border-radius;
     transition-duration: 300ms;
     transition-timing-function: linear;
@@ -184,9 +184,9 @@ body{
 
 .head_image{
     float: left;
-	width:120px;
-	height:120px;
-	margin-left:5px;
+    width:120px;
+    height:120px;
+    margin-left:5px;
     margin-top:5px;
     border-radius: 60px;
     -webkit-border-radius: 60px;
@@ -467,7 +467,7 @@ body {
     margin-top: 100px;
     margin-left: 30px;
 }
- p > input[type="text"]{
+p > input[type="text"]{
     margin-left: 30px;
 }
 .login-button{
@@ -505,9 +505,11 @@ body {
     max-height:50px;
     min-height:50px;
     text-align:center;
+    padding-top:1%;
 }
-
-
+#link{
+    color: #84C6EC;
+}
 #show_student_info{
     border: black solid thin;
 }
@@ -545,15 +547,7 @@ h3 {
 @charset "utf-8";
 
 /* general style */
-/*
-* {
-    border-color: #e1e1e1;
-    border-style: solid;
-    border-width: 0;
-    zoom: 1;
-    -webkit-tap-highlight-color:rgba(0,0,0,0);
-}
-*/
+
 *:focus {
     outline: none !important;
 }
@@ -1061,6 +1055,8 @@ img-crop canvas {
 }
 .lead1{
     left: -60px;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 
