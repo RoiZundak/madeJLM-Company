@@ -1024,7 +1024,7 @@ img-crop canvas {
     background-repeat: no-repeat;
     background-image: url("../img/roas.jpg");
 
-    color: #575757;
+    color: #333333;
 
     margin: .2em 0 .4em 0;
 
@@ -1039,6 +1039,7 @@ img-crop canvas {
     font-size: 100px;
     margin-left: 10%;
     letter-spacing: -2px;
+    font-weight: bold;
 }
 #sec_head_line_b
 {
