@@ -576,6 +576,51 @@ if($func=="1")
         $update = $databaseConnection ->prepare($sql_update);
         $update->execute();
     }
+    //list all students
+    if($func == "13"){
+        /*
 
+            LastLogin
+			basic_education_subject
+			degree_id
+            semesters_left
+            college_id
+            job_percent
+            current_work
+            summary
+            experience
+            linkedin
+            github
+                cv
+                counter_view
+                    counter_contact
+                        grade_average
+                            profile_strength
+			*/
+        echo"<table style=\"width:100%\">
+			<tr>
+			  	<td>id</td>
+			  	<td>First Name</td>
+			  	<td>Last Name</td>
+			  	<td>e-Mail</td>
+			  	<td>Phone</td>
+			  	<td>Activated</td>
+			  	<td>RegDate</td>
+			</tr>";
+        $sql = "SELECT * FROM student";
+        //PDO STYLE :
+        foreach ($databaseConnection->query($sql) as $row)
+        {
+            echo "<tr> ";
+            echo "<td>".$row['ID']."</td>";
+            echo "<td>".$row['first_name']."</td>";
+            echo "<td>".$row['last_name']."</td>";
+            echo "<td>".$row['phone_number']."</td>";
+            echo "<td>".$row['Activated']."</td>";
+            echo "<td>".$row['RegDate']."</td>";
+            echo "</tr>";
+        }
+        echo"</table>";
+    }
 ?>
 
