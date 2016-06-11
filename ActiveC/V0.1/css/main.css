@@ -1033,9 +1033,14 @@ img-crop canvas {
     line-height: 90%;
     margin: .2em 0 .4em 0;
     text-align: center;
-    font-size: 60px;
+    font-size: 75px;
     letter-spacing: -2px;
 }
+#sec_head_line_b
+{
+    font-size: 60px;
+}
+
 
 
 /* end suggest */
