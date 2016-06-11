@@ -1023,7 +1023,7 @@ img-crop canvas {
     width: 100%;
     background-repeat: no-repeat;
     background-image: url("../img/roas.jpg");
-    font: bold 34px "Century Schoolbook", Georgia, Times, serif;
+
     color: #575757;
 
     margin: .2em 0 .4em 0;
@@ -1036,13 +1036,14 @@ img-crop canvas {
 
     line-height: 90%;
     left: -10%;
+    font-family: Georgia, 'Times New Roman', serif;
     font-size: 75px;
     letter-spacing: -2px;
 }
 #sec_head_line_b
 {
     left: -10%;
-
+    font: bold 34px "Century Schoolbook", Georgia, Times, serif;
     font-size: 60px;
 }
 
