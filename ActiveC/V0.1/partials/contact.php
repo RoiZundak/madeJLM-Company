@@ -67,9 +67,7 @@ if(isset($_POST['submit'])) {
         <div class="col-sm-8">
             <h3>Let's Get In Touch!</h3>
 
-            <p>We are a group of students, and this product is a project that we made for madeinJlm.
-                To contact us you can either use the git system or our ActiveC e-mail.
-                Our private e-mails are provided but not for technical support.</p>
+            <p></p>
 
             <form role="form" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>"  >
                 <div class="row">
