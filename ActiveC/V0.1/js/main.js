@@ -24,9 +24,10 @@ app.config(['$routeProvider', function ($routeProvider) {
 	  .when("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"})
       .when("/signout", {templateUrl: "partials/signout.php", controller: "PageCtrl"})
       //.when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
-      .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
+      //.when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
       .when("/terms", {templateUrl: "partials/termOfUse.html", controller: "BlogCtrl"})
       .when("/reset", {templateUrl: "partials/reset_password.php", controller: "PageCtrl"})
+      .when("/404_Unsupported", {templateUrl: "partials/404_Unsupported Browser.html", controller: "PageCtrl"})
 
   // else 404
     .otherwise({redirectTo: "404"});
