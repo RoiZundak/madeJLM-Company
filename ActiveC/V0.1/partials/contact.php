@@ -98,16 +98,16 @@ if(isset($_POST['submit'])) {
         </div>
         <div class="col-sm-4">
             <h3>ActiveC</h3>
-            <p><i class="fa fa-building-o"></i>
-                Yefe Nof st.  Jerusalem, Israel<br>
-
-            </p>
 
             <p><i class="fa fa-phone"></i> Phone : (972) 548044784</p>
 
             <p><i class="fa fa-envelope-o"></i> E-mail : ActiveC.madejlm@Gmail.com</p>
 
+            <p><i class="fa fa-building-o"></i>
+                Yefe Nof st.<br>
+                <div id = "cont_add ">Jerusalem, Israel<br></div>
 
+            </p>
             <!--<p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: 24/7</p>-->
             <ul class="list-unstyled list-inline list-social-icons">
                 <li class="tooltip-social facebook-link"><a href="https://www.facebook.com/MadeinJLM/?pnref=lhc&__mref=message_bubble" data-toggle="tooltip"

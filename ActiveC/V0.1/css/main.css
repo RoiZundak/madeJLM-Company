@@ -1008,6 +1008,10 @@ footer {
     font-weight: 900;
     color: #ED9C2A;
 }
+#cont_add{
+    margin-left: 1%;
+}
+
 /* style to 404 unsupported browser*/
 #unsupported_browser{
     height: 70%;
