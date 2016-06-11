@@ -1020,7 +1020,13 @@ img-crop canvas {
 }
 
 #head_line_b{
-    font-family: 'Open Sans Condensed', sans-serif; font-size: 48px; color: #333;
+    font: bold 34px "Century Schoolbook", Georgia, Times, serif;
+    color: #333;
+    line-height: 90%;
+    margin: .2em 0 .4em 0;
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: -2px;
 }
 
 
