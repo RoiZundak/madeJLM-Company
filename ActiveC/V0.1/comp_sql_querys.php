@@ -633,5 +633,16 @@ if($func=="1")
         else
             echo "Failed to DELETE student, please make sure you have the correct ID.";
     }
+    //Change student status
+    if($func == "15"){
+        $id =$_POST['std_id'] ;
+        $op =$_POST['state_op'] ;
+        //PDO STYLE :
+        $records = $databaseConnection->prepare("UPDATE student SET Activated ='".$op."' WHERE ID = '$id'");
+        if ( $records->execute()==true)
+            echo "Updated !";
+        else
+            echo "Failed.";
+    }
 ?>
 

@@ -71,5 +71,22 @@
         </p>
         <button type="submit" name = "submit" class="login-button">Login</button>
     </form>
+    <br><br>
+    <!-- Update Student activation-->
+    <form method="post" action="../comp_sql_querys.php?func=15" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
+        <h3>Update Student activation </h3>
+        <p>
+            <label for="std_id">Student's id : </label>
+            <input type="number" min="0" name="std_id" id="std_id">
+        </p>
+        <p>
+            <label for="std_id">Student's id : </label>
+            <select name="state_op">
+                <option value="0">suspended</option>
+                <option value="1" selected="selected" >Activated</option>
+            </select>
+        </p>
+        <button type="submit" name = "submit" class="login-button">Login</button>
+    </form>
 </body>
 </html>
