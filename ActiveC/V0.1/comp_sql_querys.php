@@ -579,10 +579,6 @@ if($func=="1")
     //list all students
     if($func == "13"){
         /*
-
-            LastLogin
-			basic_education_subject
-			degree_id
             semesters_left
             college_id
             job_percent
@@ -606,6 +602,25 @@ if($func=="1")
 			  	<td>Phone</td>
 			  	<td>Activated</td>
 			  	<td>RegDate</td>
+			  	<td>LastLogin</td>
+			  	<td>basic_education_subject</td>
+			  	<td>degree_id</td>
+			  	
+			  	<td>semesters_left</td>
+			  	<td>college_id</td>
+			  	<td>job_percent</td>
+			  	<td>current_work</td>
+			  	<td>summary</td>
+			  	<td>experience</td>
+			  	<td>linkedin</td>
+			  	<td>github</td>
+			  	
+			  	<td>cv</td>
+			  	<td>counter_view</td>
+			  	<td>counter_contact</td>
+			  	<td>grade_average</td>
+			  	<td>profile_strength</td>
+			  	
 			</tr>";
         $sql = "SELECT * FROM student";
         //PDO STYLE :
@@ -618,6 +633,10 @@ if($func=="1")
             echo "<td>".$row['phone_number']."</td>";
             echo "<td>".$row['Activated']."</td>";
             echo "<td>".$row['RegDate']."</td>";
+			echo "<td>".$row['LastLogin']."</td>";
+			echo "<td>".$row['basic_education_subject']."</td>";
+			echo "<td>".$row['degree_id']."</td>";
+
             echo "</tr>";
         }
         echo"</table>";
