@@ -99,8 +99,8 @@ if(isset($_POST['submit'])) {
         <div class="col-sm-4">
             <h3>ActiveC</h3>
             <p><i class="fa fa-building-o"></i>
-                Yefe Nof st.<br>
-                Jerusalem, Israel<br>
+                Yefe Nof st.  Jerusalem, Israel<br>
+
             </p>
 
             <p><i class="fa fa-phone"></i> Phone : (972) 548044784</p>
