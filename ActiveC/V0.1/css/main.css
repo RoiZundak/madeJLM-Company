@@ -1015,12 +1015,19 @@ img-crop canvas {
 }
 
 #unsupported_browser{
-    font-family: Papyrus, fantasy;
-    font-size: 24px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 500;
-    line-height: 26.4px;
+    color: #33FF33;
+
 }
+
+#head_line_b{
+    font: bold 34px "Century Schoolbook", Georgia, Times, serif;
+    color: #333;
+    line-height: 90%;
+    margin: .2em 0 .4em 0;
+    text-align: center;
+    font-size: 60px;
+    letter-spacing: -2px;
+}
+
 
 /* end suggest */
