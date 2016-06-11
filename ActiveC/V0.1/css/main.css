@@ -1053,6 +1053,7 @@ img-crop canvas {
 }
 .lead{
     font-size: 27px;
+    font: bold 34px "Century Schoolbook", Georgia, Times, serif;
     margin-left: 10%;
 
 }
