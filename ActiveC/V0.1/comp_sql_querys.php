@@ -614,7 +614,6 @@ if($func=="1")
             echo "<td>".$row['ID']."</td>";
             echo "<td>".$row['first_name']."</td>";
             echo "<td>".$row['last_name']."</td>";
-			echo "<td>".$row['last_name']."</td>";
 			echo "<td>".$row['Email']."</td>";
             echo "<td>".$row['phone_number']."</td>";
             echo "<td>".$row['Activated']."</td>";
