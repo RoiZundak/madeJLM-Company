@@ -52,8 +52,7 @@ if($func=="1")
 
 		$cv_file = "";
 		if ($row['cv'] !== "")
-			//" .$row['first_name']. $row['last_name'] . "
-			$cv_file = "<a href='../../../MadeinJLM-students/mockup/API/Student/getCV?id=".$row['ID']."' download='lalaal'> <img class=\"bubbels\" title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\"/> </a>";
+			$cv_file = "<a href='../../../MadeinJLM-students/mockup/API/Student/getCV?id=".$row['ID']."' download='" .$row['first_name']. $row['last_name'] . "'> <img class=\"bubbels\" title=\"Cv\" alt=\"Cv\" src=\"./img/CVIcon.png\"/> </a>";
 
 		
 		$sentence = "";
@@ -210,7 +209,7 @@ if($func=="1")
 						
 				            " . $git_string . "  " . $link_string . "  " . $cv_file . "
 				            
-				            <div id='phoneDiv'>
+				            <div id='phoneDiv'>"
 								.$phone_pic."
 							</div>
 							 
@@ -577,6 +576,81 @@ if($func=="1")
         $update = $databaseConnection ->prepare($sql_update);
         $update->execute();
     }
+    //list all students
+    if($func == "13"){
+        /*
+            semesters_left
+            college_id
+            job_percent
+            current_work
+            summary
+            experience
+            linkedin
+            github
+                cv
+                counter_view
+                    counter_contact
+                        grade_average
+                            profile_strength
+			*/
+        echo"<table style=\"width:100%\">
+			<tr>
+			  	<td>id</td>
+			  	<td>First Name</td>
+			  	<td>Last Name</td>
+			  	<td>e-Mail</td>
+			  	<td>Phone</td>
+			  	<td>Activated</td>
+			  	<td>RegDate</td>
+			  	<td>LastLogin</td>
+			  	<td>basic_education_subject</td>
+			  	<td>degree_id</td>
+			  	
+			  	<td>semesters_left</td>
+			  	<td>college_id</td>
+			  	<td>job_percent</td>
+			  	<td>current_work</td>
+			  	<td>summary</td>
+			  	<td>experience</td>
+			  	<td>linkedin</td>
+			  	<td>github</td>
+			  	
+			  	<td>cv</td>
+			  	<td>counter_view</td>
+			  	<td>counter_contact</td>
+			  	<td>grade_average</td>
+			  	<td>profile_strength</td>
+			  	
+			</tr>";
+        $sql = "SELECT * FROM student";
+        //PDO STYLE :
+        foreach ($databaseConnection->query($sql) as $row)
+        {
+            echo "<tr> ";
+            echo "<td>".$row['ID']."</td>";
+            echo "<td>".$row['first_name']."</td>";
+            echo "<td>".$row['last_name']."</td>";
+            echo "<td>".$row['phone_number']."</td>";
+            echo "<td>".$row['Activated']."</td>";
+            echo "<td>".$row['RegDate']."</td>";
+			echo "<td>".$row['LastLogin']."</td>";
+			echo "<td>".$row['basic_education_subject']."</td>";
+			echo "<td>".$row['degree_id']."</td>";
 
+            echo "</tr>";
+        }
+        echo"</table>";
+    }
+    //Remove student
+    if($func == "14"){
+        $row_number =$_POST["student_id"] ;
+        //PDO STYLE :
+        $records = $databaseConnection->prepare('DELETE FROM student WHERE ID= :row_id');
+        $records->bindParam(':row_id', $row_number);
+        if ( $records->execute()==true)
+            echo "Great! student #".$row_number." was DELETED from the db ";
+        else
+            echo "Failed to DELETE student, please make sure you have the correct ID.";
+    }
 ?>
 
