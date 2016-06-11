@@ -579,7 +579,7 @@ if($func=="1")
     //list all students
     if($func == "13")
 	{
-        echo"<table style=\"width:100%\">
+        echo"<table id='std_table' style=\"width:100%\">
 			<tr>
 			  	<td>id</td>
 			  	<td>First Name</td>
