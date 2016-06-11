@@ -966,11 +966,9 @@ img-crop canvas {
 
 /* suggest */
 .down_footer{
-    max-height: 1%;
+    height: 2%;
 }
-.ng-scope{
-    max-height: 1%;
-}
+
 
 .ac-container {
     -webkit-backface-visibility: hidden;
