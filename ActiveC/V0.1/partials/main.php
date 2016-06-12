@@ -44,23 +44,28 @@
           $databaseConnection->query($sql);
         $sql="SET character_set_results=utf8";
          $databaseConnection->query($sql);
+            $temp=0;
+        //$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC '; WORKING QUERY
+            while($temp<2){
+                $sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC LIMIT 3 OFFSET '.($temp*3);
 
+                $img_src = "../img/profilepic.png";
+                foreach ($databaseConnection->query($sql) as $row)
+                {
+                    if(  $row['profile']=="" )
+                        $img_src = "../V0.1/img/profilepic.png";
+                    else
+                        $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+                    echo "<div class='head' id='head_".$row['ID']."' > ";
+                    echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+                    print_r($row['first_name']);
+                    echo "</div>";
+                }
 
-            //get all students
-            $sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC';
-        
-            $img_src = "../img/profilepic.png";
-            foreach ($databaseConnection->query($sql) as $row)
-            {
-                if(  $row['profile']=="" )
-                    $img_src = "../V0.1/img/profilepic.png";
-                else
-                    $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
-                echo "<div class='head' id='head_".$row['ID']."' > ";
-                echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
-                print_r($row['first_name']);
-                echo "</div>";
+                $temp++;
             }
+            //get all students
+
         ?>
         <script>
             var id="-1";
