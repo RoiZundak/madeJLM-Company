@@ -46,10 +46,11 @@
          $databaseConnection->query($sql);
             $temp=0;
         //$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC '; WORKING QUERY
-            while($temp<2){
-                $sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC LIMIT 3 OFFSET '.($temp*3);
+            while(true){
+                $sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC LIMIT 200 OFFSET '.($temp*200);
 
                 $img_src = "../img/profilepic.png";
+                $count_recived=0;
                 foreach ($databaseConnection->query($sql) as $row)
                 {
                     if(  $row['profile']=="" )
@@ -60,8 +61,11 @@
                     echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
                     print_r($row['first_name']);
                     echo "</div>";
+                    $count_recived++;
                 }
-
+                if($count_recived != 200){
+                    break;
+                }
                 $temp++;
             }
             //get all students
