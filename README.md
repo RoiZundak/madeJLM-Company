@@ -35,7 +35,7 @@ Please visit our wiki for furthur project info:
 - [Iteration 0 - ZFR](../../wiki/ZFR)
 - [Iteration 1 - MVP](../../wiki/MVP)
 - [Iteration 2 - USM](../../wiki/USM)
-- [Iteration 3 - UIS](../../wiki/UIS)
+- [Iteration 3 - SIS](../../wiki/SIS)
 - [Iteration 4 - FTC ](../../wiki/FTC)
 
 
