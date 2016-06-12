@@ -99,7 +99,7 @@ if(isset($_POST['submit'])) {
         <div class="col-sm-4">
             <h3>ActiveC</h3>
 
-            <p><i class="fa fa-phone"></i> Phone : (972) 548044784</p>
+            <p><i class="fa fa-phone"></i> Phone : <a href="callto:0548044784">(972) 548044784</a></p>
 
             <p><i class="fa fa-envelope-o"></i> E-mail : ActiveC.madejlm@Gmail.com</p>
 
