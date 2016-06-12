@@ -47,7 +47,7 @@
             $temp=0;
         $bulk_size =200;
         //$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC '; WORKING QUERY
-            while(true){
+            while($temp<1){
                 $sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC LIMIT '.$bulk_size.' OFFSET '.($temp*$bulk_size);
 
                 $img_src = "../img/profilepic.png";
