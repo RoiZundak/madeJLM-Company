@@ -45,7 +45,7 @@
         $sql="SET character_set_results=utf8";
          $databaseConnection->query($sql);
             $temp=0;
-        $bulk_size =500;
+        $bulk_size =200;
         //$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC '; WORKING QUERY
             while(true){
                 $sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC LIMIT '.$bulk_size.' OFFSET '.($temp*$bulk_size);
