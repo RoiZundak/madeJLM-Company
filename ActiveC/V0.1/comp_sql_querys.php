@@ -266,9 +266,8 @@
     //filter Linkedin
     if($func=="3") {
             //PDO STYLE :
-
-            $img_src = "../img/profilepic.png";
-
+        $temp=0;
+        $img_src = "../img/profilepic.png";
         while($temp<1){
                 $sql = "SELECT * FROM student WHERE linkedin<>'' ORDER BY profile_strength DESC LIMIT '.$bulk_size.' OFFSET '.($temp*$bulk_size)";
                 foreach ($databaseConnection->query($sql) as $row)
@@ -293,21 +292,31 @@
 	//clear
 	if($func=="4")
 	{
-		//PDO STYLE :
-		$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC';
-		$img_src = "../img/profilepic.png";
-		foreach ($databaseConnection->query($sql) as $row)
-		{
-			$img_src = "";
-			if ($row['profile'] == "")
-				$img_src = "./img/profilepic.png";
-			else
-				$img_src = "../../../MadeinJLM-students/mockup/" . $row['profile'];
-			echo "<div class='head' id='head" . $row['ID'] . "' > ";
-			echo "<img class='head_image' id='headimage_" . $row['ID'] . "' src='" . $img_src . "' width='120px' height='110px'>";
-			print_r($row['first_name']);
-			echo "</div>";
-		}
+        while($temp<1){
+            $sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC LIMIT '.$bulk_size.' OFFSET '.($temp*$bulk_size);
+
+            $img_src = "../img/profilepic.png";
+            $count_recived=0;
+            foreach ($databaseConnection->query($sql) as $row)
+            {
+                if(  $row['profile']=="" )
+                    $img_src = "../V0.1/img/profilepic.png";
+                else
+                    $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+                echo "<div class='head' id='head_".$row['ID']."' > ";
+                echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+                print_r($row['first_name']);
+                echo "</div>";
+                $count_recived++;
+            }
+            if($count_recived != $bulk_size){
+                break;
+            }
+            $temp++;
+        }
+
+
+
 	}
 
 	//ADD new company
