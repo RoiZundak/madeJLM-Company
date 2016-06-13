@@ -1,7 +1,7 @@
 <!****************************************************************************
 ********************************************************************************
 ********************************************************************************
-***************************Contact Us Page-HTML*********************************
+***************************Contact Us Page-PHP*********************************
 ********************************************************************************
 ********************************************************************************
 *****************************************************************************-->
@@ -67,8 +67,8 @@ if(isset($_POST['submit'])) {
         <div class="col-sm-8">
             <h3><img src ="./img/envelope.jpg" width="17px" height="17px"> Let's Get In Touch!</h3>
 
-            <p>We're happy to answer any questions you have or provide you with estimate.
-                Just send us a message in the form below with any questions you may have.</p>
+            <p>We're happy to answer any questions you have.<<br>
+                Just send us a message in the form below and we'll get back to yau as soon as possible.</p>
 
             <form role="form" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>"  >
                 <div class="row">
