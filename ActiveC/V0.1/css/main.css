@@ -213,8 +213,8 @@ label {
     height: 200px;
     text-align: center;
     background-color:white;
-    border-bottom: 8px solid #666;
-    border-top: 8px solid #666;
+    border-bottom: 8px solid #3c3c3c ;
+    border-top: 8px solid #3c3c3c;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
