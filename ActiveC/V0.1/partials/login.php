@@ -24,7 +24,7 @@
             echo
                 " <script>
                     localStorage.clear();
-                    window.location='#/login';
+                    window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
                     setTimeout(function(){ alert('Username or password required');},100);
                 </script>";
             exit;
