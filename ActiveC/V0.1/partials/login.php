@@ -20,10 +20,11 @@
         if ($username == '' || $password == '')
         {
             $errMsg .= 'empty Fields<br>';
+            // window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
             echo
                 " <script>
                     localStorage.clear();
-                    window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                    window.location='#/login';
                     setTimeout(function(){ alert('Username or password required');},5);
                 </script>";
             exit;
