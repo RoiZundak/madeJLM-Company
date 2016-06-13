@@ -406,6 +406,9 @@
 				//adds a label and input text containing skill value
 				function addSkillToList(skill_to_add,years_text,years_value)
 				{
+				    if(skill_to_add==''){
+				        return;
+				    }
 					var skill_years = skill_to_add +', '+ years_text;
 					var str = $(\"#form_skills\").serialize();
 					if(str.indexOf(skill_to_add)>0){
@@ -480,7 +483,7 @@
         $length = count($skills_arr);
 		if($length==0) //no skills were selected
         {
-            echo "<script>alert('no skills slected block in form ! as required')</script>";
+            echo "<script>alert('no skills slected block in form ! as required');</script>";
             exit;
         }
         //GET SKILLS ID
