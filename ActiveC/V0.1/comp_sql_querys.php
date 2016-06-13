@@ -269,7 +269,7 @@
         $temp=0;
         $img_src = "../img/profilepic.png";
         while($temp<1){
-                $sql = "SELECT * FROM student WHERE linkedin<>'' ORDER BY profile_strength DESC LIMIT '.$bulk_size.' OFFSET '.($temp*$bulk_size)";
+                $sql = "SELECT * FROM student WHERE linkedin<>'' ORDER BY profile_strength DESC LIMIT ".$bulk_size." OFFSET ".($temp*$bulk_size);
                 foreach ($databaseConnection->query($sql) as $row)
                 {
                     $img_src ="";
