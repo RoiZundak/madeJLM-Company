@@ -429,6 +429,8 @@
 						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 							if(xmlhttp.responseText!=''){
                                 document.getElementById(\"show_all\").innerHTML = xmlhttp.responseText;
+							}else{
+							    document.getElementById(\"show_all\").innerHTML = 'nothing to show , please try again';
 							}
 						}
 							
@@ -481,7 +483,7 @@
             echo "<script>alert('no skills slected block in form ! as required')</script>";
             exit;
         }
-
+        //GET SKILLS ID
 		$skills_id=array();
         for($i=0;$i<$length ; $i++){
             $id_query = "SELECT id FROM skills WHERE name=:skill AND status = 1 LIMIT 1";
@@ -496,11 +498,12 @@
             echo" stop here.";
             exit;
         }
+        //OVERRIDE SKILL_NAME WITH SKILL_ID
 		for($i=0;$i<$len;$i++)
 		{
 			$skills_arr[$i][0]=$skills_id[$i];
 		}
-
+        //GET STUDENTS FOR EACH SKILL, USE "AND"
 		$std_id=array();
         for($i=0;$i<$length;$i++)
 		{
