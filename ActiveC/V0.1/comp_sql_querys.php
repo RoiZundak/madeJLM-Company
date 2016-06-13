@@ -545,7 +545,7 @@
             exit;
         }
 
-		$sql = "SELECT * FROM student WHERE ID IN(".implode(',',$std_id).") ORDER BY profile_strength DESC" ;
+		/*$sql = "SELECT * FROM student WHERE ID IN(".implode(',',$std_id).") ORDER BY profile_strength DESC" ;
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
@@ -560,12 +560,11 @@
 			print_r($row['first_name']);
 			echo "</div>";
 		}
-
-
+        */
         $temp=0;
         //$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC '; WORKING QUERY
         while($temp<1){
-            $sql = "SELECT * FROM student WHERE ID IN(".implode(',',$std_id).") ORDER BY profile_strength DESC LIMIT ".$bulk_size." OFFSET ".($temp*$bulk_size);
+            $sql = 'SELECT * FROM student WHERE Activated=1 AND ID IN(".implode(\',\',$std_id).") ORDER BY  profile_strength DESC LIMIT '.$bulk_size.' OFFSET '.($temp*$bulk_size);
 
             $img_src = "../img/profilepic.png";
             $count_recived=0;
@@ -586,7 +585,6 @@
             }
             $temp++;
         }
-        
 
 
 
