@@ -25,7 +25,7 @@
                 " <script>
                     localStorage.clear();
                     window.location='#/login';
-                    setTimeout(function(){ alert('Username or password required');},5);
+                    setTimeout(function(){ alert('Username or password required');},100);
                 </script>";
             exit;
 
