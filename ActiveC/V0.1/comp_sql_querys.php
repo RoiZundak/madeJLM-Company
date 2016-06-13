@@ -506,7 +506,7 @@
 		{
 			$skills_arr[$i][0]=$skills_id[$i];
 		}
-        //GET STUDENTS FOR EACH SKILL, USE "AND"
+        //GET STUDENTS ID FOR EACH SKILL, USE "AND"
 		$std_id=array();
         for($i=0;$i<$length;$i++)
 		{
@@ -522,7 +522,10 @@
             }
 			$complete_query->execute();
 			$id=$complete_query->fetchAll();
-
+            if(count($id)==0){
+                echo 'No results were found, please try again with different filters';
+                exit;
+            }
             if($i === 0 ){
                 $len = count($id);
                 for ($j=0;$j<$len;$j++){
