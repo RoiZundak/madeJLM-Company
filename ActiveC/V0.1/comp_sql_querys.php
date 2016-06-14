@@ -228,13 +228,14 @@
                         </td>
                     </tr>
                     
-                    <!--Four Line: JobPer + CurrJob-->
+                    <!--Four Line: JobPer-->
                      <tr class=\"border_bottom\">
                         <td>
                             " . $job_per . "
                         </td>
                         
                     </tr>
+                     <!--Four point five Line:  CurrJob-->
                     <tr class=\"border_bottom\">
                         <td>
                             " . $curr_job . "
