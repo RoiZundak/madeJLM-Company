@@ -30,10 +30,9 @@ if(!empty($_POST['username']))
         exit;
 
     }
-    echo"lalal";
-    exit;
     if($errMsg == '')
     {
+        echo "<br> in query :";
         $name_or_mail="SELECT * FROM  admin WHERE  email=:email";
         $records = $databaseConnection->prepare($name_or_mail);
         $records->bindParam(':email', $username);
@@ -42,6 +41,8 @@ if(!empty($_POST['username']))
 
         if(count($results) > 0 && $password === $results['Password'] )
         {
+            echo "<br> rerout Ok";
+            exit;
             echo " <script>
                         window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/adminPage';
                     </script>";
@@ -49,6 +50,8 @@ if(!empty($_POST['username']))
         } else
         {
             //TODO: edit message
+            echo "<br> rerout Bad";
+            exit;
             echo " <script>
                         localStorage.clear();
                         window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/loginAdmin';
