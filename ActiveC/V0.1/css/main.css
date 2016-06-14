@@ -27,15 +27,20 @@ body{
     background-size: 100%;
 
 }
+/* ADMIN PAGE SETTINGS */
+#admin_wrap{
+    width : 100%;
+}
 .admin_wrap_cmp{
     width: 45%;
-    float:left;
+    display:inline-block;
 }
 
 .admin_wrap_std{
     width: 45%;
-    float:right;
+    display:inline-block;
 }
+/*END ADMIN PAGE*/
 #term{
     overflow: auto;
     overflow-x: hidden;
