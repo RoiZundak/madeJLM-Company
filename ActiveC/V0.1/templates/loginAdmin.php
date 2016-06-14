@@ -16,7 +16,8 @@ if(!empty($_POST['username']))
     $username = trim($_POST['username']);
     //$email=trim($_POST['username']);
     $password = trim($_POST['password']);
-
+    echo "user name :".$username;
+    echo "<br>password :".$password;
     if ($username == '' || $password == '' || $username == 'Example@example.com' || $password == '688822292')
     {
         $errMsg .= 'empty Fields<br>';
@@ -29,7 +30,8 @@ if(!empty($_POST['username']))
         exit;
 
     }
-
+    echo"lalal";
+    exit;
     if($errMsg == '')
     {
         $name_or_mail="SELECT * FROM  admin WHERE  email=:email";
