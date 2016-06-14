@@ -16,8 +16,7 @@ if(!empty($_POST['username']))
     $username = trim($_POST['username']);
     //$email=trim($_POST['username']);
     $password = trim($_POST['password']);
-    echo "user name :".$username;
-    echo "<br>password :".$password;
+    $password = md5($password);
     if ($username == '' || $password == '' || $username == 'Example@example.com' || $password == '688822292')
     {
         $errMsg .= 'empty Fields<br>';
@@ -41,8 +40,6 @@ if(!empty($_POST['username']))
 
         if(count($results) > 0 && $password === $results['Password'] )
         {
-            echo "<br> rerout Ok";
-            exit;
             echo " <script>
                         window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/adminPage';
                     </script>";
@@ -50,8 +47,6 @@ if(!empty($_POST['username']))
         } else
         {
             //TODO: edit message
-            echo "<br> rerout Bad";
-            exit;
             echo " <script>
                         localStorage.clear();
                         window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/loginAdmin';
