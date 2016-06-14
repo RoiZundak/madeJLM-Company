@@ -233,10 +233,15 @@
                         <td>
                             " . $job_per . "
                         </td>
+                        
+                    </tr>
+                    <tr class=\"border_bottom\">
                         <td>
                             " . $curr_job . "
                         </td>
+                        
                     </tr>
+                    
                     
                     <!--Fifth Line: All Skills + ShowAll-->
                     <tr id ='skill_tr' >
