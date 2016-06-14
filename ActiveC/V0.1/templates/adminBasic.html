@@ -9,6 +9,14 @@
     <h1>Admin Page !</h1>
         <br><br>
 <div class = 'admin_wrap_cmp' >
+
+    <!-- List all companys -->
+    <form method="post" action="../comp_sql_querys.php?func=7" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
+        <h3>List all Companys </h3>
+        <button type="submit" name = "submit" class="login-button">Show</button>
+    </form>
+    <br><br>
+
     <!-- ADD a new company -->
     <form method="post" action="../comp_sql_querys.php?func=5" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
         <h3>Add a new company</h3>
@@ -50,12 +58,6 @@
             <input type="number" min="0" name="row_id" id="new_pass">
         </p>
         <button type="submit" name = "submit" class="login-button">Reset</button>
-    </form>
-    <br><br>
-    <!-- List all companys -->
-    <form method="post" action="../comp_sql_querys.php?func=7" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
-        <h3>List all Companys </h3>
-        <button type="submit" name = "submit" class="login-button">Show</button>
     </form>
     <br><br>
 </div>
