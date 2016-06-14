@@ -104,12 +104,20 @@ if(!empty($_POST['username']))
             $sql_update="UPDATE company SET counter_enters = counter_enters + 1 WHERE username = '".$username."' OR email='".$username."'";
             $update = $databaseConnection ->prepare($sql_update);
             $update->execute();
-            echo("<a id='re_route_main' href ='../#/main'></a>
+            /*echo("<a id='re_route_main' href ='../#/main'></a>
                      <script>                  
                         sessionStorage.setItem('username', '".$username."');
                         document.getElementById(\"re_route_main\").click();
                     </script>
                     ");
+            */
+
+            echo " <script>
+                        localStorage.clear();
+                        //document.getElementById(\"re_route_login\").click();
+                        window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/loginAdmin';
+                        setTimeout(function(){ alert('You tried too much. please try again in 5 minuts.');},100);
+                    </script>";
             exit;
         }
 
