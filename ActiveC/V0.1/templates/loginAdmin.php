@@ -140,7 +140,7 @@ if(!empty($_POST['username']))
                 exit;
             }
 
-            echo("<a id='re_route_login' href ='../#/loginAdmin'></a>
+            echo("<a id='re_route_login' href ='../#/adminBasic'></a>
                     <script>
                         alert('Incorrect Password');
                         localStorage.clear();
