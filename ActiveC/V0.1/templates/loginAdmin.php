@@ -23,7 +23,7 @@ if(!empty($_POST['username']))
         echo
         " <script>
                     localStorage.clear();
-                    window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/loginAdmin';
+                    window.location='#/loginAdmin';
                     setTimeout(function(){ alert('Username or password required');},100);
                 </script>";
         exit;
@@ -36,7 +36,7 @@ if(!empty($_POST['username']))
         echo
         " <script>
                     localStorage.clear();
-                    window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/loginAdmin';
+                    window.location='#/loginAdmin';
                     setTimeout(function(){ alert('You must enter your Username');},5);
                 </script>";
         exit;
@@ -48,7 +48,7 @@ if(!empty($_POST['username']))
         echo
         " <script>
                     localStorage.clear();
-                    window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/loginAdmin';
+                    window.location='#/loginAdmin';
                      setTimeout(function(){ alert('You must enter your Password');},5);
                 </script>";
         exit;
@@ -57,13 +57,13 @@ if(!empty($_POST['username']))
 
     if($errMsg == '')
     {
-        $name_or_mail="SELECT * FROM  company WHERE username = :username OR email=:username";
+        $name_or_mail="SELECT * FROM  admin WHERE username = :username OR email=:username";
         $records = $databaseConnection->prepare($name_or_mail);
         $records->bindParam(':username', $username);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
 
-        if(count($results) > 0 && $results['block'] != null)
+        if(count($results) > 0 && $results['block'] != null)//user exists but blocked
         {
             $d=strtotime("-5 Minutes -4 hours"); // time deffrence betweem time and date 
             $newTime =  date("Y-m-d h:i:sa", $d);
@@ -85,25 +85,32 @@ if(!empty($_POST['username']))
             }
             else
             {
+                /*TODO : CHANGE HERE !
                 $sql_update = "UPDATE company SET block = null WHERE username = '".$username."' OR email='".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
+                */
             }
         }
 
         if(count($results) > 0 && $password === $results['password'] )
         {
+            //user exists and not blocked
 
             if($results['attempt'] > 0) {
+                /* TODO : change here also
                 $sql_update = "UPDATE company SET attempt = 0 WHERE username = '".$username."' OR email='".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
+                */
             }
 
             //update company counter enters
-            $sql_update="UPDATE company SET counter_enters = counter_enters + 1 WHERE username = '".$username."' OR email='".$username."'";
+            /*TODO: also here
+             * $sql_update="UPDATE company SET counter_enters = counter_enters + 1 WHERE username = '".$username."' OR email='".$username."'";
             $update = $databaseConnection ->prepare($sql_update);
             $update->execute();
+            */
             /*echo("<a id='re_route_main' href ='../#/main'></a>
                      <script>                  
                         sessionStorage.setItem('username', '".$username."');
@@ -114,9 +121,8 @@ if(!empty($_POST['username']))
 
             echo " <script>
                         localStorage.clear();
-                        //document.getElementById(\"re_route_login\").click();
                         window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/adminPage';
-                        setTimeout(function(){ alert('You tried too much. please try again in 5 minuts.');},100);
+                       
                     </script>";
             exit;
         }

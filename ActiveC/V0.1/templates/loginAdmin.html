@@ -18,12 +18,12 @@
                 <uib-alert ng-show="alerts.login.msg != null" type="{{alerts.login.type}}" close="closeAlert('login')"><span ng-bind-html="alerts.login.msg"></span></uib-alert>
                 <form class="text-left mb-40" action="http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/templates/loginAdmin.php" method="post">
                     <script>
-                        sessionStorage.removeItem('username');
+                        sessionStorage.removeItem('username_admin');
                         $(function() {
-                            if (localStorage.chkbx && localStorage.chkbx != '') {
+                            if (localStorage.chkbx_admin && localStorage.chkbx_admin != '') {
                                 $('#remember_me').attr('checked', 'checked');
-                                $('#login').val(localStorage.usrname);
-                                $('#password').val(localStorage.password);
+                                $('#login').val(localStorage.username_admin);
+                                $('#password').val(localStorage.password_admin);
                             }
                             else {
                                 $('#remember_me').removeAttr('checked');
@@ -34,23 +34,23 @@
                             $('#remember_me').click(function() {
                                 if ($('#remember_me').is(':checked')) {
                                     // save username and password
-                                    localStorage.usrname = $('#login').val();
-                                    localStorage.password = $('#password').val();
-                                    localStorage.chkbx = $('#remember_me').val();
+                                    localStorage.username_admin = $('#login').val();
+                                    localStorage.password_admin = $('#password').val();
+                                    localStorage.chkbx_admin = $('#remember_me').val();
                                 }
                                 else {
-                                    localStorage.usrname = '';
-                                    localStorage.password = '';
-                                    localStorage.chkbx = '';
+                                    localStorage.username_admin = '';
+                                    localStorage.password_admin = '';
+                                    localStorage.chkbx_admin = '';
                                 }
                             });
                         });
                         function checkLS()
                         {
-                            if($('#login').val() != localStorage.usrname)
+                            if($('#login').val() != localStorage.username_admin)
                             {
-                                localStorage.usrname = $('#login').val();
-                                localStorage.password = $('#password').val();
+                                localStorage.username_admin = $('#login').val();
+                                localStorage.password_admin = $('#password').val();
                             }
                         }
                     </script>
