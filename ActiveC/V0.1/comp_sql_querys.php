@@ -406,7 +406,7 @@
 				//adds a label and input text containing skill value
 				function addSkillToList(skill_to_add,years_text,years_value)
 				{
-				    var obj  =$('#skills_list').find('option[value=\"'+skill_to_add+'\"');
+				    var obj  =$('#skills_list').find('option[value=\"'+skill_to_add+'\"]');
 				    if(skill_to_add=='' || obj==null ||obj.length==0){
 				        return;
 				    }
