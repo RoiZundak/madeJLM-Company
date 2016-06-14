@@ -48,6 +48,23 @@
         $bulk_size =200;
         //$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC '; WORKING QUERY
             while($temp<1){
+
+                /*
+                 * $stmt = $pdo->prepare('SELECT * FROM employees WHERE name = :name');
+
+$stmt->execute(array('name' => $name));
+
+foreach ($stmt as $row) {
+    // do something with $row
+}
+                 * ($temp*$bulk_size)
+                 *$stmt= $databaseConnection->prepare('SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC LIMIT :bulk_size OFFSET :off_set');
+                $stmt->bindParam(':bulk_size', $bulk_size);
+                $stmt->bindParam(':off_set', $temp*$bulk_size);
+                 *
+                 */
+
+
                 $sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC LIMIT '.$bulk_size.' OFFSET '.($temp*$bulk_size);
 
                 $img_src = "../img/profilepic.png";
