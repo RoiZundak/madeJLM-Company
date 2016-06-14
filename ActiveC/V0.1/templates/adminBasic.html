@@ -8,6 +8,7 @@
 <body>
     <h1>Admin Page !</h1>
         <br><br>
+
     <!-- ADD a new company -->
     <form method="post" action="../comp_sql_querys.php?func=5" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
         <h3>Add a new company</h3>
@@ -24,17 +25,17 @@
             <label for="pass_new">Password: </label>
             <input type="password" name="password" id="pass_new">
         </p>
-        <button type="submit" name = "submit" class="login-button">Login</button>
+        <button type="submit" name = "submit" class="login-button">Add</button>
     </form>
     <br><br>
     <!-- Remove company -->
-    <form method="post" action="../comp_sql_querys.php?func=6" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
+    <form method="post" action="./comp_sql_querys.php?func=6" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
         <h3>Remove Company by id </h3>
         <p>
             <label for="row_id">Company's id : </label>
             <input type="number" min="0" name="row_id" id="row_id">
         </p>
-        <button type="submit" name = "submit" class="login-button">Login</button>
+        <button type="submit" name = "submit" class="login-button">Remove</button>
     </form>
     <br><br>
     <!-- Reset company password-->
@@ -48,7 +49,7 @@
             <label for="new_pass">New Password : </label>
             <input type="number" min="0" name="row_id" id="new_pass">
         </p>
-        <button type="submit" name = "submit" class="login-button">Login</button>
+        <button type="submit" name = "submit" class="login-button">Reset</button>
     </form>
     <br><br>
     <!-- List all companys -->
@@ -58,9 +59,9 @@
     </form>
     <br><br>
     <!-- List all Students -->
-    <form method="post" action="../comp_sql_querys.php?func=13" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
+    <form method="post" action="./comp_sql_querys.php?func=13" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
         <h3>List all Students </h3>
-        <button type="submit" name = "submit" class="login-button">Login</button>
+        <button type="submit" name = "submit" class="login-button">Show</button>
     </form>
     <br><br>
     <!-- Remove Student -->
@@ -70,7 +71,7 @@
             <label for="student_id">Student's id : </label>
             <input type="number" min="0" name="student_id" id="student_id">
         </p>
-        <button type="submit" name = "submit" class="login-button">Login</button>
+        <button type="submit" name = "submit" class="login-button">Remove</button>
     </form>
     <br><br>
     <!-- Update Student activation-->
@@ -87,7 +88,7 @@
                 <option value="1" selected="selected" >Activated</option>
             </select>
         </p>
-        <button type="submit" name = "submit" class="login-button">Login</button>
+        <button type="submit" name = "submit" class="login-button">Update</button>
     </form>
 </body>
 </html>
