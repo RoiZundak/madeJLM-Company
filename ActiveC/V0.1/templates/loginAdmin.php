@@ -6,6 +6,7 @@
 ********************************************************************************
 *****************************************************************************-->
 <?php
+echo " INSIDE login admin php";exit;
 require_once "../php/db_connect.php";
 $databaseConnection =connect_to_db();
 
