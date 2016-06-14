@@ -8,7 +8,7 @@
 <body>
     <h1>Admin Page !</h1>
         <br><br>
-
+<div class = 'admin_wrap_cmp' >
     <!-- ADD a new company -->
     <form method="post" action="../comp_sql_querys.php?func=5" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
         <h3>Add a new company</h3>
@@ -55,9 +55,11 @@
     <!-- List all companys -->
     <form method="post" action="../comp_sql_querys.php?func=7" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
         <h3>List all Companys </h3>
-        <button type="submit" name = "submit" class="login-button">Login</button>
+        <button type="submit" name = "submit" class="login-button">Show</button>
     </form>
     <br><br>
+</div>
+    <div class="admin_wrap_std">
     <!-- List all Students -->
     <form method="post" action="./comp_sql_querys.php?func=13" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
         <h3>List all Students </h3>
@@ -90,5 +92,6 @@
         </p>
         <button type="submit" name = "submit" class="login-button">Update</button>
     </form>
+    </div>
 </body>
 </html>
