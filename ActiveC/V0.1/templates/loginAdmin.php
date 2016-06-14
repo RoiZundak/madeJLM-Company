@@ -115,7 +115,7 @@ if(!empty($_POST['username']))
             echo " <script>
                         localStorage.clear();
                         //document.getElementById(\"re_route_login\").click();
-                        window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/loginAdmin';
+                        window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/adminPage';
                         setTimeout(function(){ alert('You tried too much. please try again in 5 minuts.');},100);
                     </script>";
             exit;
