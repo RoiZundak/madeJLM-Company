@@ -1025,6 +1025,8 @@ footer {
 }
 #cont_add{
     padding-left: 9px;
+    left: -10px;
+    position: static;
 }
 
 /* style to 404 unsupported browser*/
