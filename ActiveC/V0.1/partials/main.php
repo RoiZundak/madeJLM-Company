@@ -11,7 +11,7 @@
             var name = sessionStorage.getItem('username');
             if ( name === 'null' || name === 'Not_Valid_User_Name' ) 
             {
-                window.location='http://job.madeinjlm.org/#/login';
+                window.location='#/login';
                 setTimeout(function(){alert('You Must login first');},100);
             }
     </script>";
