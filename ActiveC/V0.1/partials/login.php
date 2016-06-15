@@ -26,7 +26,7 @@
         }
 
         //username and password sent from Form
-        $username = trim($_POST['username']);
+        $username = strtolower(trim($_POST['username']));
         $password = trim($_POST['password']);
 
 

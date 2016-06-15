@@ -295,14 +295,16 @@
 	//ADD new company
 	if($func=="5")
 	{
-		$name =$_POST["username"] ;
+		$name =strtolower($_POST["username"]);
+		$org_name = $_POST["username"] ;
 		$mail =$_POST['e_mail'];
 		$p_ass = $_POST['password'];
 		$p_ass = md5($p_ass);
 
 		//PDO SYTLE :
-		$records = $databaseConnection->prepare('INSERT INTO company (username, email, password,created) VALUES (:user,:mail,:password,NOW() )');
+		$records = $databaseConnection->prepare('INSERT INTO company (org_username, username, email, password,created) VALUES (:orguser,:user,:mail,:password,NOW() )');
 		$records->bindParam(':user', $name);
+		$records->bindParam(':orguser', $org_name);
 		$records->bindParam(':mail', $mail);
 		$records->bindParam(':password', $p_ass);
 		if ( $records->execute()==true)
