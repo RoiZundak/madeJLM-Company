@@ -11,7 +11,7 @@
             var name = sessionStorage.getItem('username');
             if ( name === 'null' || name === 'Not_Valid_User_Name' ) 
             {
-                window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                window.location='http://job.madeinjlm.org/#/login';
                 setTimeout(function(){alert('You Must login first');},100);
             }
     </script>";
@@ -44,23 +44,50 @@
           $databaseConnection->query($sql);
         $sql="SET character_set_results=utf8";
          $databaseConnection->query($sql);
+            $temp=0;
+        $bulk_size =200;
+        //$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC '; WORKING QUERY
+            while($temp<1){
+
+                /*
+                 * $stmt = $pdo->prepare('SELECT * FROM employees WHERE name = :name');
+
+$stmt->execute(array('name' => $name));
+
+foreach ($stmt as $row) {
+    // do something with $row
+}
+                 * ($temp*$bulk_size)
+                 *$stmt= $databaseConnection->prepare('SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC LIMIT :bulk_size OFFSET :off_set');
+                $stmt->bindParam(':bulk_size', $bulk_size);
+                $stmt->bindParam(':off_set', $temp*$bulk_size);
+                 *
+                 */
 
 
-            //get all students
-            $sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC';
-        
-            $img_src = "../img/profilepic.png";
-            foreach ($databaseConnection->query($sql) as $row)
-            {
-                if(  $row['profile']=="" )
-                    $img_src = "../V0.1/img/profilepic.png";
-                else
-                    $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
-                echo "<div class='head' id='head_".$row['ID']."' > ";
-                echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
-                print_r($row['first_name']);
-                echo "</div>";
+                $sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC LIMIT '.$bulk_size.' OFFSET '.($temp*$bulk_size);
+
+                $img_src = "../img/profilepic.png";
+                $count_recived=0;
+                foreach ($databaseConnection->query($sql) as $row)
+                {
+                    if(  $row['profile']=="" )
+                        $img_src = "../V0.1/img/profilepic.png";
+                    else
+                        $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+                    echo "<div class='head' id='head_".$row['ID']."' > ";
+                    echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+                    print_r($row['first_name']);
+                    echo "</div>";
+                    $count_recived++;
+                }
+                if($count_recived != $bulk_size){
+                    break;
+                }
+                $temp++;
             }
+            //get all students
+
         ?>
         <script>
             var id="-1";
@@ -138,7 +165,7 @@
                         xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "4", true);
                         xmlhttp.send();
                     }
-                    if(target.id.indexOf("std_mail_") != -1 )
+                    if(target.id.indexOf("std_mail_") != -1 || target.id.indexOf("std_phone_") !=-1 )
                     {
                         id =target.id.substring(target.id.lastIndexOf("_")+1,target.id.length); //student id
                         xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "11", true);

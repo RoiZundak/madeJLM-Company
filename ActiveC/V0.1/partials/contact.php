@@ -1,7 +1,7 @@
 <!****************************************************************************
 ********************************************************************************
 ********************************************************************************
-***************************Contact Us Page-HTML*********************************
+***************************Contact Us Page-PHP*********************************
 ********************************************************************************
 ********************************************************************************
 *****************************************************************************-->
@@ -25,7 +25,7 @@ if(isset($_POST['submit'])) {
             $number.
             "<br>Email: ".$_POST['contact_email'];
     }
-    if(trim($_POST['contact_message']) == '' || trim($_POST['contact_name']) == '' || trim() == '' || trim($_POST['contact_message']) == '')
+    if(trim($_POST['contact_message']) == '' || trim($_POST['contact_name']) == ''  || trim($_POST['contact_message']) == '')
     {
         echo("<a id='re_route' href ='../#/contact'>
                     <script>
@@ -65,11 +65,10 @@ if(isset($_POST['submit'])) {
 
     <div class="_row">
         <div class="col-sm-8">
-            <h3>Let's Get In Touch!</h3>
+            <h3><img src ="./img/envelope.jpg" width="17px" height="17px"> Let's Get In Touch!</h3>
 
-            <p>We are a group of students, and this product is a project that we made for madeinJlm.
-                To contact us you can either use the git system or our ActiveC e-mail.
-                Our private e-mails are provided but not for technical support.</p>
+            <p>We're happy to answer any questions you have!<br>
+                Just send us a message in the form below and we'll get back to yau as soon as possible.</p>
 
             <form role="form" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>"  >
                 <div class="row">
@@ -83,7 +82,7 @@ if(isset($_POST['submit'])) {
                     </div>
                     <div class="form-group col-lg-4">
                         <label for="input3">Phone Number</label>
-                        <input type="tel" name="contact_phone" class="form-control" id="input3">
+                        <input type="text" minlength="9" maxlength="10" pattern="([0][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]|[0][5][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])"  name="contact_phone" class="form-control" id="input3">
                     </div>
                     <div class="clearfix"></div>
                     <div class="form-group col-lg-12">
@@ -99,17 +98,17 @@ if(isset($_POST['submit'])) {
         </div>
         <div class="col-sm-4">
             <h3>ActiveC</h3>
-            <p>
+
+            <p><i class="fa fa-phone"></i> Phone : <a href="callto:0548044784">(972) 548044784</a></p>
+
+            <p><i class="fa fa-envelope-o"></i> E-mail : ActiveC.madejlm@Gmail.com</p>
+
+            <p><i class="fa fa-building-o"></i>
                 Yefe Nof st.<br>
-                Jerusalem, Israel<br>
+                <div id = "cont_add ">Jerusalem, Israel<br></div>
+
             </p>
-
-            <p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: (972) 548044784</p>
-
-            <p><i class="fa fa-envelope-o"></i> <abbr title="Email" id="mail" ">E: </abbr>  ActiveC.madejlm@Gmail.com</p>
-
-
-            <p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: 24/7</p>
+            <!--<p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: 24/7</p>-->
             <ul class="list-unstyled list-inline list-social-icons">
                 <li class="tooltip-social facebook-link"><a href="https://www.facebook.com/MadeinJLM/?pnref=lhc&__mref=message_bubble" data-toggle="tooltip"
                                                             data-placement="top" title="Facebook"><i

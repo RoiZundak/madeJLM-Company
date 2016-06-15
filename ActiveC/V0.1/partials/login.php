@@ -12,70 +12,72 @@
     if(!empty($_POST['username']))
     {
         $errMsg = '';
-
-        if (trim($username) == '' || trim($password) == '')
-        {
-            $errMsg .= 'empty Fields<br>';
-            echo " <script>
-                        localStorage.clear();
-                        window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                        setTimeout(function(){ alert('Username or password required');},5);
-                    </script>";
-            exit;
-
-        }
-
         //username and password sent from Form
-        $username = strtolower(trim($_POST['username']));
+        $username = trim($_POST['username']);
+        //$email=trim($_POST['username']);
         $password = trim($_POST['password']);
 
+        if ($username == '' || $password == '')
+        {
+            $errMsg .= 'empty Fields<br>';
+            // window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+            echo
+                " <script>
+                    localStorage.clear();
+                    window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                    setTimeout(function(){ alert('Username or password required');},100);
+                </script>";
+            exit;
 
-        if($username == 'Example@example.com') {
+        }
+
+        if($username == 'Example@example.com')
+        {
             $errMsg .= 'You must enter your Username<br>';
-            echo " <script>
-                        localStorage.clear();
-                        window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                        setTimeout(function(){ alert('You must enter your Username');},5);
-                    </script>";
+            echo
+                " <script>
+                    localStorage.clear();
+                    window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                    setTimeout(function(){ alert('You must enter your Username');},5);
+                </script>";
             exit;
         }
 
-        if($password == '688822292') {
+        if($password == '688822292')
+        {
             $errMsg .= 'You must enter your Password<br>';
-            echo " <script>
-                        localStorage.clear();
-                        window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                         setTimeout(function(){ alert('You must enter your Password');},5);
-                    </script>";
+            echo
+                " <script>
+                    localStorage.clear();
+                    window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                     setTimeout(function(){ alert('You must enter your Password');},5);
+                </script>";
             exit;
         }
         $password = md5(trim($_POST['password']));
 
-
         if($errMsg == '')
         {
-            $records = $databaseConnection->prepare('SELECT * FROM  company WHERE username = :username');
+            $name_or_mail="SELECT * FROM  company WHERE username = :username OR email=:username";
+            $records = $databaseConnection->prepare($name_or_mail);
             $records->bindParam(':username', $username);
             $records->execute();
             $results = $records->fetch(PDO::FETCH_ASSOC);
 
             if(count($results) > 0 && $results['block'] != null)
             {
-
-                $d=strtotime("-15 Minutes -4 hours");
+                $d=strtotime("-5 Minutes -4 hours"); // time deffrence betweem time and date 
                 $newTime =  date("Y-m-d h:i:sa", $d);
 
                 $currentDateTime = $results['block'];
                 $newDateTime = date('Y-m-d h:i:sa', strtotime($currentDateTime));
-                
 
                 if($newTime < $newDateTime)
                 {
                     $errMsg .= 'Time block<br>';
-
                     echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
-                        alert('Your block time did not over yet.');
+                        alert('Sorry. Your user is blocked. Please try again in 5 minutes');
                         document.getElementById(\"re_route_login\").click();
                     </script>
                      ");
@@ -84,7 +86,7 @@
                 }
                 else
                 {
-                    $sql_update = "UPDATE company SET block = null WHERE username = '" . $username . "'";
+                    $sql_update = "UPDATE company SET block = null WHERE username = '".$username."' OR email='".$username."'";
                     $update = $databaseConnection ->prepare($sql_update);
                     $update->execute();
                 }
@@ -92,14 +94,15 @@
 
             if(count($results) > 0 && $password === $results['password'] )
             {
-                //update company counter enters
+
                 if($results['attempt'] > 0) {
-                    $sql_update = "UPDATE company SET attempt = 0 WHERE username = '" . $username . "'";
+                    $sql_update = "UPDATE company SET attempt = 0 WHERE username = '".$username."' OR email='".$username."'";
                     $update = $databaseConnection ->prepare($sql_update);
                     $update->execute();
                 }
 
-                $sql_update="UPDATE company SET counter_enters = counter_enters + 1 WHERE username = '".$username."'";
+                //update company counter enters
+                $sql_update="UPDATE company SET counter_enters = counter_enters + 1 WHERE username = '".$username."' OR email='".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
                 echo("<a id='re_route_main' href ='../#/main'></a>
@@ -113,19 +116,19 @@
 
             else if(count($results) > 0 && $password !== $results['password'])
             {
-                $errMsg .= 'Incorrect Password<br>';
-                $sql_update="UPDATE company SET attempt = attempt + 1 WHERE username = '".$username."'";
+                $errMsg .= 'Incorrect Password 1<br>';
+                $sql_update="UPDATE company SET attempt = attempt + 1 WHERE username = '".$username."' OR email='".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
 
                 if( intval( $results['attempt'] )>= 4)
                 {
-                    $sql_update="UPDATE company SET attempt = 0 WHERE username = '".$username."'";
+                    $sql_update="UPDATE company SET attempt = 0 WHERE username = '".$username."' OR email='".$username."'";
                     $update = $databaseConnection ->prepare($sql_update);
                     $update->execute();
 
 
-                    $sql_update="UPDATE company SET block = NOW() WHERE username = '".$username."'";
+                    $sql_update="UPDATE company SET block = NOW() WHERE username = '".$username."' OR email='".$username."'";
                     $update = $databaseConnection ->prepare($sql_update);
                     $update->execute();
 
@@ -133,14 +136,14 @@
                         localStorage.clear();
                         //document.getElementById(\"re_route_login\").click();
                         window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                        setTimeout(function(){ alert('You tried too much. Try again in few minuts.');},100);
+                        setTimeout(function(){ alert('You tried too much. please try again in 5 minuts.');},100);
                     </script>";
                     exit;
                 }
 
                 echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
-                        alert('Incorrect Password.');
+                        alert('Incorrect Password');
                         localStorage.clear();
                         document.getElementById(\"re_route_login\").click();
                     </script>

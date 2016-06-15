@@ -13,7 +13,7 @@
 Our Email
 Activec.madeJlm@gmail.com
 
-## [Issue Board(Two weeks Trial)](https://huboard.com/RoiZundak/madeJLM-Company/#/milestones)
+## [Issue Board](https://huboard.com/RoiZundak/madeJLM-Company/#/milestones)
 
 ## Disclaimer
 This project is developed as part of the requirements for a [software engineering course](https://github.com/jce-il/se-class/wiki) at the software engineering department - [Azrieli College of Engineering](http://www.jce.ac.il/), Jerusalem, Israel.
@@ -35,8 +35,8 @@ Please visit our wiki for furthur project info:
 - [Iteration 0 - ZFR](../../wiki/ZFR)
 - [Iteration 1 - MVP](../../wiki/MVP)
 - [Iteration 2 - USM](../../wiki/USM)
-- [Iteration 3 - UIS](../../wiki/UIS)
-- [Iteration 4 - ](../../wiki/UIS)
+- [Iteration 3 - SIS](../../wiki/SIS)
+- [Iteration 4 - FTC ](../../wiki/FTC)
 
 
 

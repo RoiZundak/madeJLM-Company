@@ -7,8 +7,10 @@
 <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js"> <!--<![endif]-->
+
 <head>
     <meta charset="utf-8" />
+    <link rel="icon" href="/apple-touch-icon-60x60.png">
     <style>@font-face{font-family: myFirstFont;src:url(Quicksand-Regular.otf);}div{font-family: myFirstFont;}</style>
 
     <!-- Meta-Information -->
@@ -34,10 +36,16 @@
 </head>
 <div>
 <body ng-app="tutorialWebApp" id="body">
-<!--[if lt IE 7]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-    your browser</a> to improve your experience.</p>
-<![endif]-->
+<script type = "text/javascript">
+    if((navigator.vendor.length > 5) && (navigator.vendor.toLowerCase().indexOf("google inc") > -1)) {
+        //window.location.replace("#/"); // if chrome
+    } else {
+        //alert("Oops! This site does not support your current browser,\n please consider moving to chrome.");
+       // setTimeout(function(){alert('Oops! This site does not support your current browser.');},100);
+        //window.location.replace("#/FAQ"); // all other browsers
+        window.location='partials/404_Unsupported_Browser.html';
+    }
+</script>
 
 <!-- Our Website Content Goes Here -->
 <div ng-include='"templates/header.html"'></div>
@@ -51,7 +59,6 @@
 <!-- Vendor: Angular, followed by our custom Javascripts -->
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.min.js"></script>
-
 <!-- Our Website Javascripts -->
 <script src="js/main.js"></script>
 </div>

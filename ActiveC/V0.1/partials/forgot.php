@@ -22,8 +22,10 @@
     //Get username from 'company' table
     $sql = "SELECT * FROM company WHERE email = '$email'";
     $username="";
-    foreach($databaseConnection->query($sql) as $row)
+    foreach($databaseConnection->query($sql) as $row){
         $username=$row['username'];
+    }
+
     if($username===""){//no such user!
         echo "<script>
             window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/forgot';

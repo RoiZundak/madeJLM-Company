@@ -14,8 +14,10 @@ app.config(['$routeProvider', function ($routeProvider) {
     // Pages
 
       .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
-      .when("/ActiveC", {templateUrl: "job.madeinjlm.org/MadeinJLM-students/mockup/companies", controller: "PageCtrl"})
+      .when("/ActiveC", {templateUrl: "partials/about.html", controller: "PageCtrl"})
       .when("/login", {templateUrl: "partials/login.html", controller: "PageCtrl"})
+      .when("/loginAdmin", {templateUrl: "templates/loginAdmin.html", controller: "PageCtrl"})
+      .when("/adminPage", {templateUrl: "templates/adminBasic.html", controller: "PageCtrl"})
       .when("/faq", {templateUrl: "partials/faq.html", controller: "PageCtrl"})
       .when("/main", {templateUrl: "partials/main.php", controller: "PageCtrl"})
       .when("/forgot", {templateUrl: "partials/forgot.html", controller: "PageCtrl"})
@@ -24,9 +26,12 @@ app.config(['$routeProvider', function ($routeProvider) {
 	  .when("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"})
       .when("/signout", {templateUrl: "partials/signout.php", controller: "PageCtrl"})
       //.when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
-      .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
+      //.when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
+      .when("/terms", {templateUrl: "partials/termOfUse.html", controller: "BlogCtrl"})
       .when("/reset", {templateUrl: "partials/reset_password.php", controller: "PageCtrl"})
+     // .when("/404_Unsupported", {templateUrl: "partials/404_Unsupported Browser.html", controller: "PageCtrl"})
 
+          
   // else 404
     .otherwise({redirectTo: "404"});
 }]);

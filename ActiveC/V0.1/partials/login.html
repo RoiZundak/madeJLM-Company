@@ -5,78 +5,74 @@
 ********************************************************************************
 ********************************************************************************
 *****************************************************************************-->
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-<div id ="login_container">
-    <script>
-        sessionStorage.removeItem('username');
-        $(function()
-        {
-            if (localStorage.chkbx && localStorage.chkbx != '')
-            {
-                $('#remember_me').attr('checked', 'checked');
-                $('#login').val(localStorage.usrname);
-                $('#password').val(localStorage.password);
-            }
-            else
-            {
-                $('#remember_me').removeAttr('checked');
-                $('#login').val('Example@example.com');
-                $('#password').val('688822292');
-            }
 
-            $('#remember_me').click(function()
-            {
-                if ($('#remember_me').is(':checked'))
-                {
-                    // save username and password
-                    localStorage.usrname = $('#login').val();
-                    localStorage.password = $('#password').val();
-                    localStorage.chkbx = $('#remember_me').val();
-                } else
-                {
-                    localStorage.usrname = 'Example@example.com';
-                    localStorage.password = '688822292';
-                    localStorage.chkbx = '';
-                }
-            });
-        });
+<!-- Login page in student's side format -->
 
-        function checkLS()
-        {
-            if($('#login').val() != localStorage.usrname)
-            {
-                localStorage.usrname = $('#login').val();
-                localStorage.password = $('#password').val();
-            }
-        }
-    </script>
-    <div id="login_form">
-        <br>
-        <h3 id = "login_">Login</h3>
-        <form class="login" action="partials/login.php" method="post">
-            <p>
-                <label for="login">UserName: </label><br>
-                <input type="text" name="username" id="login" value="Example@example.com" onfocus="if($(this).val()=='Example@example.com')$(this).val('')" onblur="if($(this).val()=='')$(this).val('Example@example.com')">
-            </p>
+   <!-- <img id = "login_img" src="./img/jlm_pic.jpg" alt="main_img" > -->
 
-            <p>
-                <label for="password">Password: </label><br>
-                <input  type="password" name="password" id="password" value="688822292" onfocus="if($(this).val()=='688822292')$(this).val('')" onblur="if($(this).val()=='')$(this).val('688822292')">
-            </p>
+<div id="login_img"></div>
+    <section class="main-context">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center" >
+                    <h2 class="mb-40">Log in</h2>
+                    <uib-alert ng-show="alerts.login.msg != null" type="{{alerts.login.type}}" close="closeAlert('login')"><span ng-bind-html="alerts.login.msg"></span></uib-alert>
+                    <form class="text-left mb-40" action="http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/partials/login.php" method="post">
+                        <script>
+                            sessionStorage.removeItem('username');
+                            $(function() {
+                                if (localStorage.chkbx && localStorage.chkbx != '') {
+                                    $('#remember_me').attr('checked', 'checked');
+                                    $('#login').val(localStorage.usrname);
+                                    $('#password').val(localStorage.password);
+                                }
+                                else {
+                                    $('#remember_me').removeAttr('checked');
+                                    $('#login').val('');
+                                    $('#password').val('');
+                                }
 
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="remember-me" id="remember_me"> Remember me
-                </label>
+                                $('#remember_me').click(function() {
+                                    if ($('#remember_me').is(':checked')) {
+                                        // save username and password
+                                        localStorage.usrname = $('#login').val();
+                                        localStorage.password = $('#password').val();
+                                        localStorage.chkbx = $('#remember_me').val();
+                                    }
+                                    else {
+                                        localStorage.usrname = '';
+                                        localStorage.password = '';
+                                        localStorage.chkbx = '';
+                                    }
+                                });
+                            });
+                            function checkLS()
+                            {
+                                if($('#login').val() != localStorage.usrname)
+                                {
+                                    localStorage.usrname = $('#login').val();
+                                    localStorage.password = $('#password').val();
+                                }
+                            }
+                        </script>
+                        <div class="form-group" >
+                            <input type="text" class="form-control" placeholder="User name" id="login" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+                        </div>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="remember-me" id="remember_me"> Remember me
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-block btn-jlm" onclick = "checkLS();">Submit <i class="fa fa-angle-double-right"></i></button>
+                    </form>
+                    <p class="text-left">Have you forgot your password? <a href="http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/forgot">Click here</a></p>
+                </div>
             </div>
-
-            <p class="login-submit">
-                <button type="submit" onclick = "checkLS();" name = "submit" class="login-button">Login</button>
-            </p>
-            <p class="forgot-password"><a href="#/forgot">Forgot your password?</a></p>
-            <br>
-            <p class="forgot-password"><a href="#/contact">Contact Us</a></p>
-        </form>
-    </div>
-</div>
+        </div>
+    </section>
 
