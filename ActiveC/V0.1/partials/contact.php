@@ -32,7 +32,7 @@ if(isset($_POST['submit'])) {
     echo("<a id='re_route' href ='../#/contact'>
                     <script>
                         document.getElementById(\"re_route\").click();
-                        alert('One of the fields contain only spaces.');
+                        alert('One of the fields is empty or contain only spaces.');
                     </script>
                 </a>");
     exit;
@@ -44,14 +44,18 @@ if(isset($_POST['submit'])) {
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
     $sent_mail = mail($to, $subject, $message, $headers);
     $_POST = array();
-    if ( ! $sent_mail){
+
+    if ( ! $sent_mail)
+    {
         echo("<a id='re_route' href ='../#/contact'>
                     <script>
                         document.getElementById(\"re_route\").click();
                         alert('Mail was not sent, please try again.');
                     </script>
                 </a>");
-    }else{
+    }
+    else
+    {
         echo("<a id='re_route' href ='../#/contact'>
                     <script>
                         document.getElementById(\"re_route\").click();
