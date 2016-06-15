@@ -25,7 +25,16 @@ if(isset($_POST['submit'])) {
             $number.
             "<br>Email: ".$_POST['contact_email'];
     }
-if(trim($_POST['contact_message']) == '' || trim($_POST['contact_name']) == ''  || trim($_POST['contact_message']) == '') {
+
+    if(trim($_POST['contact_message']) == '')
+    {
+        echo "All fields are required, please fill <a href=\"\">the form</a> again.";
+    }
+
+
+
+
+  /*  if(trim($_POST['contact_message']) == '' || trim($_POST['contact_name']) == ''  || trim($_POST['subject']) == '') {
     echo("<a id='re_route' href ='../#/contact'>
                     <script>
                         document.getElementById(\"re_route\").click();
@@ -33,7 +42,7 @@ if(trim($_POST['contact_message']) == '' || trim($_POST['contact_name']) == ''  
                     </script>
                 </a>");
     exit;
-}
+}*/
     $headers = 'From: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
         'Reply-To: jobmadeinjlm@server.thinksmart.co.il' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
