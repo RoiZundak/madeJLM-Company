@@ -30,7 +30,8 @@
         echo "<script>
             //window.location='http://job.madeinjlm.org/#/forgot';
                 window.location ='#/forgot';
-                alert('Email: ".$email." was not found, please try again.');
+               //alert('Email: ".$email." was not found, please try again.');
+                setTimeout(function(){alert('Email: ".$email." was not found, please try again.');},150);
             </script>";
 
     }
