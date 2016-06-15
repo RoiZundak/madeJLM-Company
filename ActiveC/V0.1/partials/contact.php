@@ -12,7 +12,7 @@ $databaseConnection =connect_to_db();
 $_SESSION['login_user']="Contact";
 if(isset($_POST['submit'])) {
     $to      = 'Activec.madejlm@gmail.com';
-    $subject = 'Contact mail from company';
+    $subject = $_POST['subject'].
     if (!empty($_POST['contact_message'])    && !empty($_POST['contact_name'])   && !empty($_POST['contact_email']) ) {
         $number="";
         if(  !empty($_POST['contact_phone']) ){
