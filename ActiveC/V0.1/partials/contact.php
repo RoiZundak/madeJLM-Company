@@ -84,7 +84,7 @@ if(isset($_POST['submit'])) {
                         <label for="input3">Phone Number</label>
                         <input type="text" minlength="9" maxlength="10" pattern="([0][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]|[0][5][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])"  name="contact_phone" class="form-control" id="input3">
                     </div>
-                    <div class= "form-group col-lg-9">
+                    <div class= "form-group col-lg-12">
                         <label for="input5">Subject</label>
                         <input type="text" name="subject" class="form-control" id="input5" required>
                     </div>
