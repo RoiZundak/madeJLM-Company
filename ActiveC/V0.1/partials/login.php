@@ -136,7 +136,7 @@
                         localStorage.clear();
                         //document.getElementById(\"re_route_login\").click();
                         window.location='#/login';
-                        setTimeout(function(){ alert('You tried too much. please try again in 5 minuts.');},100);
+                        setTimeout(function(){ alert('You have tried too much. please try again in 5 minutes.');},100);
                     </script>";
                     exit;
                 }
@@ -157,7 +157,7 @@
 
                 echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
-                        alert('Username  not found.');
+                        alert('Username not found.');
                         localStorage.clear();
                         document.getElementById(\"re_route_login\").click();
                     </script>
