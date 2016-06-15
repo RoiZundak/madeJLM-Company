@@ -396,7 +396,7 @@
         if(strcmp($pass1,$pass2)!=0 )
 		{
             echo "<script>
-			window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+			window.location='#/login';
             setTimeout(function(){alert('Passwords does not match.Redirecting to login page..');},100);</script>";
             exit;
         }
