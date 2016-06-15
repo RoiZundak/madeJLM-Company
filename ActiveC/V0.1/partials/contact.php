@@ -29,6 +29,7 @@ if(isset($_POST['submit'])) {
     if(trim($_POST['contact_message']) == '')
     {
         echo "All fields are required, please fill <a href=\"\">the form</a> again.";
+        exit;
     }
 
 
