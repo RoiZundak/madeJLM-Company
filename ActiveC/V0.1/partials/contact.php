@@ -25,7 +25,14 @@ if(isset($_POST['submit'])) {
             $number.
             "<br>Email: ".$_POST['contact_email'];
     }
-    if(trim($_POST['contact_message']) == ''||trim($_POST['subject']) == '' || trim($_POST['contact_name']) == ''  || trim($_POST['contact_message']) == '')
+    if(trim($_POST['contact_message']) == '') {
+        echo "All fields are required, please fill <a href=\"\">the form again.";
+        <script>
+             alert('the massage is empty.');
+        </script>
+        </a>
+    }
+    if(trim($_POST['subject']) == '' || trim($_POST['contact_name']) == ''  || trim($_POST['contact_message']) == '')
     {
         echo("<a id='re_route' href ='../#/contact'>
                     <script>
