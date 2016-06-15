@@ -28,7 +28,8 @@
 
     if($username===""){//no such user!
         echo "<script>
-            window.location='http://job.madeinjlm.org/#/forgot';
+            //window.location='http://job.madeinjlm.org/#/forgot';
+                window.location ='#/forgot';
                 alert('Email: ".$email." was not found, please try again.');
             </script>";
 
@@ -60,8 +61,8 @@
     $sent_mail = mail($email, "Forget Password - ActiveC", $message, $headers);
     if($sent_mail)
         echo " <script> 
-                alert('Email has been sent');
-                window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                window.location='#/login';
+                setTimeout(function(){alert('Email has been sent.');},150);
                 </script>";
     
 ?>
