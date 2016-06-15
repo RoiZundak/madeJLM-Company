@@ -27,10 +27,9 @@ if(isset($_POST['submit'])) {
     }
     if(trim($_POST['contact_message']) == '')
     {
-        <script>
-             document.getElementById("re_route").click();
-              alert('One of the fields contain only spaces.');
-        </script>
+
+        echo "All fields are required, please fill <a href=\"\">the form</a> again.";
+
     }
 
     if(trim($_POST['subject']) == '' || trim($_POST['contact_name']) == ''  || trim($_POST['contact_message']) == '')
