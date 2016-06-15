@@ -135,7 +135,7 @@
                    echo " <script>
                         localStorage.clear();
                         //document.getElementById(\"re_route_login\").click();
-                        window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                        window.location='http://job.madeinjlm.org/#/login';
                         setTimeout(function(){ alert('You tried too much. please try again in 5 minuts.');},100);
                     </script>";
                     exit;
