@@ -16,7 +16,7 @@ if(isset($_POST['submit'])) {
     if (!empty($_POST['contact_message'])    && !empty($_POST['contact_name'])   && !empty($_POST['contact_email']) ) {
         $number="";
         if(  !empty($_POST['contact_phone']) ){
-            $number.= 
+            $number.=
                 "<br>Phone Number:".$_POST['contact_phone'];
         }
         $message = $_POST['contact_message'].
@@ -105,7 +105,7 @@ if(isset($_POST['submit'])) {
 
             <p><i class="fa fa-building-o"></i>
                 Yefe Nof st.<br>
-                <div id = "cont_add ">Jerusalem, Israel<br></div>
+            <div id = "cont_add ">Jerusalem, Israel<br></div>
 
             </p>
             <!--<p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: 24/7</p>-->
