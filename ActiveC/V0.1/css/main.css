@@ -1069,6 +1069,7 @@ footer {
 .btn-primary{
     color: white;
     background-color: #3c3c3c;
+    border-color: #A9A9A9;
 
 }
 .btn-primary:hover
