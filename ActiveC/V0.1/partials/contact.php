@@ -9,6 +9,7 @@
 require_once "../php/db_connect.php";
 $databaseConnection =connect_to_db();
 
+
 $_SESSION['login_user']="Contact";
 if(isset($_POST['submit'])) {
     $to      = 'Activec.madejlm@gmail.com';
