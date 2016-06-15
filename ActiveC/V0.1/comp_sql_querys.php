@@ -12,7 +12,8 @@
 	$databaseConnection->query($sql);
 
 	$func = intval($_GET['func']);
-
+    $bulk_size=200;
+    $temp=0;
     //show single student
     if($func=="1")
     {
@@ -227,15 +228,21 @@
                         </td>
                     </tr>
                     
-                    <!--Four Line: JobPer + CurrJob-->
+                    <!--Four Line: JobPer-->
                      <tr class=\"border_bottom\">
                         <td>
                             " . $job_per . "
                         </td>
+                        
+                    </tr>
+                     <!--Four point five Line:  CurrJob-->
+                    <tr class=\"border_bottom\">
                         <td>
                             " . $curr_job . "
                         </td>
+                        
                     </tr>
+                    
                     
                     <!--Fifth Line: All Skills + ShowAll-->
                     <tr id ='skill_tr' >
@@ -244,12 +251,16 @@
                  
                         </td>
                     </tr>
-                    <!--Six Line: Sum + Experince-->
+                    <!--Six Line: Summary-->
                     <tr class=\"border_bottom\">
                         <td>
                                 <h4><b>" . $sum . "</h4></b>" . $summary . "
                         </td>
-                        
+
+                    </tr>
+                    <!--Seven'th Line:  Experince-->
+                    <tr class=\"border_bottom\">
+
                         <td>
                                 <h4><b>" . $exp . "</h4></b>" . $exprience . " 
                             
@@ -265,47 +276,64 @@
     //filter Linkedin
     if($func=="3") {
             //PDO STYLE :
-            $sql = "SELECT * FROM student WHERE linkedin<>'' ORDER BY profile_strength DESC";
+        $temp=0;
+        $img_src = "../img/profilepic.png";
+        while($temp<1){
+                $sql = "SELECT * FROM student WHERE linkedin<>'' ORDER BY profile_strength DESC LIMIT ".$bulk_size." OFFSET ".($temp*$bulk_size);
+                foreach ($databaseConnection->query($sql) as $row)
+                {
+                    $img_src ="";
+                    if(  $row['profile']=="" )
+                        $img_src = "./img/profilepic.png";
+                    else
+                        $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+                    echo "<div class='head' id='head_".$row['ID']."' > ";
+                    echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+                    print_r($row['first_name']);
+                    echo "</div>";
+                    $count_recived++;
+                }
+                if($count_recived != $bulk_size){
+                    break;
+                }
+                $temp++;
+            }
+        }
+	//clear
+	if($func=="4")
+	{
+        while($temp<1){
+            $sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC LIMIT '.$bulk_size.' OFFSET '.($temp*$bulk_size);
+
             $img_src = "../img/profilepic.png";
+            $count_recived=0;
             foreach ($databaseConnection->query($sql) as $row)
             {
-                $img_src ="";
                 if(  $row['profile']=="" )
-                    $img_src = "./img/profilepic.png";
+                    $img_src = "../V0.1/img/profilepic.png";
                 else
                     $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
                 echo "<div class='head' id='head_".$row['ID']."' > ";
                 echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
                 print_r($row['first_name']);
                 echo "</div>";
+                $count_recived++;
             }
+            if($count_recived != $bulk_size){
+                break;
+            }
+            $temp++;
         }
 
-	//clear
-	if($func=="4")
-	{
-		//PDO STYLE :
-		$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC';
-		$img_src = "../img/profilepic.png";
-		foreach ($databaseConnection->query($sql) as $row)
-		{
-			$img_src = "";
-			if ($row['profile'] == "")
-				$img_src = "./img/profilepic.png";
-			else
-				$img_src = "../../../MadeinJLM-students/mockup/" . $row['profile'];
-			echo "<div class='head' id='head" . $row['ID'] . "' > ";
-			echo "<img class='head_image' id='headimage_" . $row['ID'] . "' src='" . $img_src . "' width='120px' height='110px'>";
-			print_r($row['first_name']);
-			echo "</div>";
-		}
+
+
 	}
 
 	//ADD new company
 	if($func=="5")
 	{
-		$name =$_POST["username"] ;
-		$mail =$_POST['e_mail'];
+		$name =strtolower($_POST["username"]);
+		$mail = strtolower($_POST['e_mail']);
 		$p_ass = $_POST['password'];
 		$p_ass = md5($p_ass);
 
@@ -388,6 +416,10 @@
 				//adds a label and input text containing skill value
 				function addSkillToList(skill_to_add,years_text,years_value)
 				{
+				    var obj  =$('#skills_list').find('option[value=\"'+skill_to_add+'\"]');
+				    if(skill_to_add=='' || obj==null ||obj.length==0){
+				        return;
+				    }
 					var skill_years = skill_to_add +', '+ years_text;
 					var str = $(\"#form_skills\").serialize();
 					if(str.indexOf(skill_to_add)>0){
@@ -411,6 +443,8 @@
 						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 							if(xmlhttp.responseText!=''){
                                 document.getElementById(\"show_all\").innerHTML = xmlhttp.responseText;
+							}else{
+							    document.getElementById(\"show_all\").innerHTML = 'nothing to show , please try again';
 							}
 						}
 							
@@ -460,10 +494,10 @@
         $length = count($skills_arr);
 		if($length==0) //no skills were selected
         {
-            echo "<script>alert('no skills slected block in form ! as required')</script>";
+            echo "<script>alert('no skills slected block in form ! as required');</script>";
             exit;
         }
-
+        //GET SKILLS ID
 		$skills_id=array();
         for($i=0;$i<$length ; $i++){
             $id_query = "SELECT id FROM skills WHERE name=:skill AND status = 1 LIMIT 1";
@@ -478,11 +512,12 @@
             echo" stop here.";
             exit;
         }
+        //OVERRIDE SKILL_NAME WITH SKILL_ID
 		for($i=0;$i<$len;$i++)
 		{
 			$skills_arr[$i][0]=$skills_id[$i];
 		}
-
+        //GET STUDENTS ID FOR EACH SKILL, USE "AND"
 		$std_id=array();
         for($i=0;$i<$length;$i++)
 		{
@@ -498,7 +533,10 @@
             }
 			$complete_query->execute();
 			$id=$complete_query->fetchAll();
-
+            if(count($id)==0){
+                echo 'No results were found, please try again with different filters';
+                exit;
+            }
             if($i === 0 ){
                 $len = count($id);
                 for ($j=0;$j<$len;$j++){
@@ -527,7 +565,7 @@
             exit;
         }
 
-		$sql = "SELECT * FROM student WHERE ID IN(".implode(',',$std_id).") ORDER BY profile_strength DESC" ;
+		/*$sql = "SELECT * FROM student WHERE ID IN(".implode(',',$std_id).") ORDER BY profile_strength DESC" ;
 		$img_src = "../img/profilepic.png";
 		foreach ($databaseConnection->query($sql) as $row)
 		{
@@ -542,6 +580,34 @@
 			print_r($row['first_name']);
 			echo "</div>";
 		}
+        */
+        $temp=0;
+        //$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC '; WORKING QUERY
+        while($temp<1){
+            $sql = 'SELECT * FROM student WHERE Activated=1 AND ID IN('.implode(",",$std_id).') ORDER BY  profile_strength DESC LIMIT '.$bulk_size.' OFFSET '.($temp*$bulk_size);
+
+            $img_src = "../img/profilepic.png";
+            $count_recived=0;
+            foreach ($databaseConnection->query($sql) as $row)
+            {
+                if(  $row['profile']=="" )
+                    $img_src = "../V0.1/img/profilepic.png";
+                else
+                    $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
+                echo "<div class='head' id='head_".$row['ID']."' > ";
+                echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
+                print_r($row['first_name']);
+                echo "</div>";
+                $count_recived++;
+            }
+            if($count_recived != $bulk_size){
+                break;
+            }
+            $temp++;
+        }
+
+
+
 	}
 
     //increment student contact stats

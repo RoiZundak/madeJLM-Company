@@ -13,18 +13,19 @@
     {
         $errMsg = '';
         //username and password sent from Form
-        $username = trim($_POST['username']);
+        $username = strtolower(trim($_POST['username']));
         //$email=trim($_POST['username']);
         $password = trim($_POST['password']);
 
         if ($username == '' || $password == '')
         {
             $errMsg .= 'empty Fields<br>';
+            // window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
             echo
                 " <script>
                     localStorage.clear();
                     window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                    setTimeout(function(){ alert('Username or password required');},5);
+                    setTimeout(function(){ alert('Username or password required');},100);
                 </script>";
             exit;
 
