@@ -22,7 +22,7 @@
         //second : expiration date has already passed
         //third : code is not the same in db and link
         echo "<script>
-			window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+			window.location='#/login';
             setTimeout(function(){alert('This link has expired.Redirecting to login page..');},100);</script>";
         exit;
     }
