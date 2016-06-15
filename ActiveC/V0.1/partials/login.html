@@ -17,7 +17,7 @@
                 <div class="col-md-6 col-md-offset-3 text-center" >
                     <h2 class="mb-40">Log in</h2>
                     <uib-alert ng-show="alerts.login.msg != null" type="{{alerts.login.type}}" close="closeAlert('login')"><span ng-bind-html="alerts.login.msg"></span></uib-alert>
-                    <form class="text-left mb-40" action="http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/partials/login.php" method="post">
+                    <form class="text-left mb-40" action="partials/login.php" method="post">
                         <script>
                             sessionStorage.removeItem('username');
                             $(function() {
@@ -70,7 +70,7 @@
 
                         <button type="submit" class="btn btn-block btn-jlm" onclick = "checkLS();">Submit <i class="fa fa-angle-double-right"></i></button>
                     </form>
-                    <p class="text-left">Have you forgot your password? <a href="http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/forgot">Click here</a></p>
+                    <p class="text-left">Have you forgot your password? <a href="#/forgot">Click here</a></p>
                 </div>
             </div>
         </div>
