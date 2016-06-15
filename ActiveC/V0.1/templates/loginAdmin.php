@@ -41,7 +41,7 @@ if(!empty($_POST['username']))
         if(count($results) > 0 && $password === $results['Password'] )
         {
             echo " <script>
-                        window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/adminPage';
+                        window.location='#/adminPage';
                     </script>";
             exit;
         } else
@@ -49,7 +49,7 @@ if(!empty($_POST['username']))
             //TODO: edit message
             echo " <script>
                         localStorage.clear();
-                        window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/loginAdmin';
+                        window.location='#/loginAdmin';
                         setTimeout(function(){ alert('you shall not pass!');},100);
                     </script>";
             exit;
