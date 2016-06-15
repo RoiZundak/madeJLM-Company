@@ -24,7 +24,7 @@
             echo
                 " <script>
                     localStorage.clear();
-                    window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+                    window.location='#/login';
                     setTimeout(function(){ alert('Username or password required');},100);
                 </script>";
             exit;
@@ -37,8 +37,8 @@
             echo
                 " <script>
                     localStorage.clear();
-                    window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                    setTimeout(function(){ alert('You must enter your Username');},5);
+                    window.location='#/login';
+                    setTimeout(function(){ alert('You must enter your Username');},100);
                 </script>";
             exit;
         }
@@ -49,8 +49,8 @@
             echo
                 " <script>
                     localStorage.clear();
-                    window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-                     setTimeout(function(){ alert('You must enter your Password');},5);
+                    window.location='#/login';
+                     setTimeout(function(){ alert('You must enter your Password');},100);
                 </script>";
             exit;
         }
@@ -135,7 +135,7 @@
                    echo " <script>
                         localStorage.clear();
                         //document.getElementById(\"re_route_login\").click();
-                        window.location='http://job.madeinjlm.org/#/login';
+                        window.location='#/login';
                         setTimeout(function(){ alert('You tried too much. please try again in 5 minuts.');},100);
                     </script>";
                     exit;
@@ -157,7 +157,7 @@
 
                 echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
-                        alert('Username is not found.');
+                        alert('Username  not found.');
                         localStorage.clear();
                         document.getElementById(\"re_route_login\").click();
                     </script>
