@@ -1066,6 +1066,11 @@ footer {
     font-weight: 600;
 }
 
+.btn-primary{
+    color: white;
+    background-color: black;
+
+}
 
 
 
