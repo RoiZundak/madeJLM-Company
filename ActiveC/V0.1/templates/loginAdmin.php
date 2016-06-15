@@ -31,7 +31,7 @@ if(!empty($_POST['username']))
     }
     if($errMsg == '')
     {
-        echo "<br> in query :";
+        //echo "<br> in query :";
         $name_or_mail="SELECT * FROM  admin WHERE  email=:email";
         $records = $databaseConnection->prepare($name_or_mail);
         $records->bindParam(':email', $username);
