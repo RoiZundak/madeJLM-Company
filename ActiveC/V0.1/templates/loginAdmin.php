@@ -41,7 +41,7 @@ if(!empty($_POST['username']))
         if(count($results) > 0 && $password === $results['Password'] )
         {
             echo " <script>
-                        window.location='#/loginAdmin';
+                        window.location='#/adminPage';
                     </script>";
             exit;
         } else
