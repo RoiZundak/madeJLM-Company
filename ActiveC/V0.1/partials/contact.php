@@ -98,7 +98,7 @@ if(isset($_POST['submit'])) {
                     </div>
                     <div class="form-group col-lg-12">
                         <input type="hidden" name="save" value="contact">
-                        <button type="submit" name ="submit" class="btn btn-primary" >Submit<i class="fa fa-envelope-o"></i></button>
+                        <button type="submit" name ="submit" class="btn btn-primary" >Submit <i class="fa fa-envelope-o"></i></button>
                     </div>
                 </div>
             </form>
