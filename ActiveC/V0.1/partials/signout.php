@@ -8,7 +8,7 @@
 <?php
     echo
     "<script>
-             window.location='#/login';
+             window.location='http://job.madeinjlm.org/#/login';
              var name = sessionStorage.getItem('username');
              //if there is no user connected, skip those lines
              if ( name !== 'null' && name !== 'Not_Valid_User_Name' ) 
