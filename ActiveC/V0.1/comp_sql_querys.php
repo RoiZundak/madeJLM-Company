@@ -571,14 +571,12 @@
         }
         $temp=0;
         //$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC '; WORKING QUERY
-        $imp_str ='('.implode(",",$std_id).')';
 
 
         while($temp<1){
             echo "imp_str is : ".$imp_str . "<br>";
-            $sql = 'SELECT * FROM student WHERE Activated=1 AND ID IN :id_arr ORDER BY  profile_strength DESC LIMIT '.$bulk_size.' OFFSET '.($temp*$bulk_size);
+            $sql = 'SELECT * FROM student WHERE Activated=1 AND ID IN '.implode(",",$std_id).' ORDER BY  profile_strength DESC LIMIT '.$bulk_size.' OFFSET '.($temp*$bulk_size);
             $stmt = $databaseConnection->prepare($sql);
-            $stmt->bindParam(':id_arr', $imp_str, PDO::PARAM_STR);
             $stmt->execute();
             $result = $stmt->fetchAll();
 
