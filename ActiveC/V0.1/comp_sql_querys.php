@@ -579,6 +579,7 @@
             $stmt = $databaseConnection->prepare($sql);
             $stmt->bindParam(':id_arr', $imp_str);
             $stmt->execute();
+            $stmt =debugDumpParams();
             $result = $stmt->fetchAll();
 
             $img_src = "../img/profilepic.png";
