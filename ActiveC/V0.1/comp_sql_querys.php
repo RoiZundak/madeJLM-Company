@@ -23,9 +23,12 @@
         $update->bindParam(":id",$q);
         $update->execute();
         //PDO STYLE :
-        $sql="SELECT * FROM student WHERE ID = '".$q."' LIMIT 1";
+        $sql="SELECT * FROM student WHERE ID = :id LIMIT 1";
+        $update = $databaseConnection ->prepare($sql);
+        $update->bindParam(":id",$q);
+        $result = $update->fetchAll();
         $img_src = "../img/profilepic.png";
-        foreach ($databaseConnection->query($sql) as $row)
+        foreach ($result as $row)
         {
             $img_src = "";
             if ($row['profile'] == "")
