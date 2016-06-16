@@ -42,7 +42,7 @@ if(!empty($_POST['username']))
         {
             echo " OK ! trying to redirect you now...
                     <script>
-                        window.location='#/adminPage';
+                        window.location='../#/adminPage';
                     </script>";
             exit;
         } else
