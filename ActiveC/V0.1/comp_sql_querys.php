@@ -401,9 +401,14 @@
             exit;
         }
         //PDO STYLE :
-        $records = $databaseConnection->prepare("UPDATE company SET password ='".md5($pass1)."'".
-            ",f_pass='',f_exp=0 WHERE email = '$mail'");
-        if ( $records->execute()==true)
+        $sql = "UPDATE company SET password = :pass, 
+            f_pass = '', 
+            f_exp = 0,  
+            WHERE email = :email";
+        $stmt = $databaseConnection->prepare($sql);
+        $stmt->bindParam(':pass', md5($pass1), PDO::PARAM_STR);
+        $stmt->bindParam(':email',$mail, PDO::PARAM_STR);
+        if ( $stmt->execute()==true)
             echo "Updated !";
         else
             echo "Failed.";
@@ -564,31 +569,21 @@
             echo 'No results were found, please try again with different filters';
             exit;
         }
-
-		/*$sql = "SELECT * FROM student WHERE ID IN(".implode(',',$std_id).") ORDER BY profile_strength DESC" ;
-		$img_src = "../img/profilepic.png";
-		foreach ($databaseConnection->query($sql) as $row)
-		{
-			$img_src ="";
-			if(  $row['profile']=="" )
-				$img_src = "./img/profilepic.png";
-			else
-				$img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
-			
-			echo "<div class='head' id='head_".$row['ID']."' > ";
-			echo "<img class='head_image' id='headimage_".$row['ID']. "' src='".$img_src."' width='120px' height='110px'>";
-			print_r($row['first_name']);
-			echo "</div>";
-		}
-        */
         $temp=0;
         //$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC '; WORKING QUERY
+        $imp_str =implode(",",$std_id);
+
+
         while($temp<1){
-            $sql = 'SELECT * FROM student WHERE Activated=1 AND ID IN('.implode(",",$std_id).') ORDER BY  profile_strength DESC LIMIT '.$bulk_size.' OFFSET '.($temp*$bulk_size);
+            $sql = 'SELECT * FROM student WHERE Activated=1 AND ID IN(:id_arr) ORDER BY  profile_strength DESC LIMIT '.$bulk_size.' OFFSET '.($temp*$bulk_size);
+            $stmt = $databaseConnection->prepare($sql);
+            $stmt->bindParam(':id_arr', $imp_str);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
 
             $img_src = "../img/profilepic.png";
             $count_recived=0;
-            foreach ($databaseConnection->query($sql) as $row)
+            foreach ($result as $row)
             {
                 if(  $row['profile']=="" )
                     $img_src = "../V0.1/img/profilepic.png";
@@ -716,6 +711,7 @@
             echo "Failed.";
     }
 
+    //Add new skill
     if($func == "16"){
         $name =$_POST["skill_name"];
         //PDO SYTLE :
