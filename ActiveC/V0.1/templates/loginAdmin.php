@@ -40,7 +40,8 @@ if(!empty($_POST['username']))
 
         if(count($results) > 0 && $password === $results['Password'] )
         {
-            echo " <script>
+            echo " OK ! trying to redirect you now...
+                    <script>
                         window.location='#/adminPage';
                     </script>";
             exit;
