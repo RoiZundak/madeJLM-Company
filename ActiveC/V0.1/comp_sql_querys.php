@@ -26,6 +26,7 @@
         $sql="SELECT * FROM student WHERE ID = :id LIMIT 1";
         $update = $databaseConnection ->prepare($sql);
         $update->bindParam(":id",$q);
+        $update->execute();
         $result = $update->fetchAll();
         $img_src = "../img/profilepic.png";
         foreach ($result as $row)
