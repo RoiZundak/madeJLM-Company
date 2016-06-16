@@ -50,7 +50,7 @@ if(!empty($_POST['username']))
             //TODO: edit message
             echo " <script>
                         localStorage.clear();
-                        window.location='#/loginAdmin';
+                        window.location='../#/loginAdmin';
                         setTimeout(function(){ alert('you shall not pass!');},100);
                     </script>";
             exit;
