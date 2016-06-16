@@ -609,9 +609,12 @@
 	{
 		$id = intval($_GET['q']); //student id
 		$sql_update="UPDATE student SET counter_contact = counter_contact + 1 WHERE ID = :id";
-        $stmt->bindParam(':id',$id);
+
 		$update = $databaseConnection ->prepare($sql_update);
-		$update->execute();
+        $update->bindParam(':id',$id);
+		if( $update->execute() ==false){
+            echo" shit, try again";
+        }
 	}
 
     //reset company password
