@@ -571,7 +571,7 @@
         }
         $temp=0;
         //$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC '; WORKING QUERY
-        $imp_str ="(".implode(",",$std_id).")";
+        $imp_str ='('.implode(",",$std_id).')';
 
 
         while($temp<1){
