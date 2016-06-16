@@ -607,8 +607,9 @@
     //increment student contact stats
 	if($func=="11")
 	{
-		$q = intval($_GET['q']); //student id
-		$sql_update="UPDATE student SET counter_contact = counter_contact + 1 WHERE ID = '".$q."'";
+		$id = intval($_GET['q']); //student id
+		$sql_update="UPDATE student SET counter_contact = counter_contact + 1 WHERE ID = :id";
+        $stmt->bindParam(':id',$id);
 		$update = $databaseConnection ->prepare($sql_update);
 		$update->execute();
 	}
