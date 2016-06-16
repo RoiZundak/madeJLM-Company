@@ -18,8 +18,9 @@
     if($func=="1")
     {
         $q = intval($_GET['q']);
-        $sql_update="UPDATE student SET counter_view = counter_view + 1 WHERE ID = '".$q."'";
+        $sql_update="UPDATE student SET counter_view = counter_view + 1 WHERE ID = :id";
         $update = $databaseConnection ->prepare($sql_update);
+        $update->bindParam(":id",$q);
         $update->execute();
         //PDO STYLE :
         $sql="SELECT * FROM student WHERE ID = '".$q."' LIMIT 1";
@@ -612,9 +613,8 @@
 
 		$update = $databaseConnection ->prepare($sql_update);
         $update->bindParam(':id',$id);
-		if( $update->execute() ==false){
-            echo" shit, try again";
-        }
+		$update->execute() ;
+
 	}
 
     //reset company password
@@ -622,8 +622,10 @@
     {
         $row_id =$_POST['row_id_reset'] ;
         $newPassword =$_POST['new_pass'] ;
-        $sql_update_pass = "UPDATE company SET password ='".md5($newPassword)."' WHERE id='".$row_id."'";
+        $sql_update_pass = "UPDATE company SET password = :pass WHERE id=:id";
         $update = $databaseConnection ->prepare($sql_update);
+        $update->bindParam(':id',$row_id);
+        $update->bindParam(':pass',md5($newPassword));
         $update->execute();
     }
 
@@ -707,7 +709,9 @@
         $id =$_POST['std_id'] ;
         $op =$_POST['state_op'] ;
         //PDO STYLE :
-        $records = $databaseConnection->prepare("UPDATE student SET Activated ='".$op."' WHERE ID = '$id'");
+        $records = $databaseConnection->prepare("UPDATE student SET Activated =:active WHERE ID = :id");
+        $update->bindParam(':id',$id);
+        $update->bindParam(':active',$op);
         if ( $records->execute()==true)
             echo "Updated !";
         else
