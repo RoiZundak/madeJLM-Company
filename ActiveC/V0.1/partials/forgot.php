@@ -20,9 +20,13 @@
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
     //Get username from 'company' table
-    $sql = "SELECT * FROM company WHERE email = '$email'";
+    $sql = "SELECT * FROM company WHERE email = :email";
+    $stmt = $databaseConnection->prepare($sql);
+    $stmt->bindParam(":email",$email);
+    $stmt->execute();
+    $result = $stmt->fetchAll();
     $username="";
-    foreach($databaseConnection->query($sql) as $row){
+    foreach($result as $row){
         $username=$row['username'];
     }
 
