@@ -19,13 +19,15 @@
                         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 
                     xmlhttp.onreadystatechange = function (){
-                        alert("11");
                         if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                             document.getElementById("comp").innerHTML = xmlhttp.responseText;
                     };
                     xmlhttp.open("GET", "comp_sql_querys.php?q=0&func=" + "17", true);
                     xmlhttp.send();
                 </script>
+            </div>
+            <div class="form-group" >
+                <button type="submit" name = "submit" class="login-button">Show All</button>
             </div>
         </div><br>
     </form><br>
@@ -47,6 +49,9 @@
                     xmlhttp.open("GET", "comp_sql_querys.php?q=0&func=" + "18", true);
                     xmlhttp.send();
                 </script>
+            </div>
+            <div class="form-group" >
+                <button type="submit" name = "submit" class="login-button">Show All</button>
             </div>
         </div><br>
     </form><br>
