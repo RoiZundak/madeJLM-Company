@@ -2,7 +2,7 @@
 	require_once "php/db_connect.php";
 	$databaseConnection =connect_to_db();
 	/*Hebrew*/
-	$sql="SET character_set_client=utf8";
+EntrancesET character_set_client=utf8";
 	$databaseConnection->query($sql);
 	$sql="SET character_set_connection=utf8";
 	$databaseConnection->query($sql);
@@ -740,18 +740,20 @@
     if($func=="17"){
     echo"<table style=\"width:100%\">
 			<tr>
-			  	<td>id</td>
-			  	<td>Comp. Name</td>
-			  	<td>e-Mail</td>
+			  	<td>Id</td>
+			  	<td>Company Name</td>
+			  	<td>Entrnces</td>
 			</tr>";
-    $sql = "SELECT * FROM company";
-    //PDO STYLE :
+     $sql = "SELECT username,counter_enters FROM company ORDER BY counter_enters DESC LIMIT 10";
+
+
+        //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
     {
         echo "<tr> ";
         echo "<td>".$row['id']."</td>";
         echo "<td>".$row['username']."</td>";
-        echo "<td>".$row['email']."</td>";
+        echo "<td>".$row['counter_enters']."</td>";
         echo "</tr>";
     }
     echo"</table>";
@@ -762,17 +764,22 @@
     echo"<table style=\"width:100%\">
 			<tr>
 			  	<td>id</td>
-			  	<td>Comp. Name</td>
-			  	<td>e-Mail</td>
+			  	<td>first_name</td>
+			  	<td>last_name</td>
+			  	<td>counter_view</td>
+			  	<td>profile_strength</td>
 			</tr>";
-    $sql = "SELECT * FROM company";
-    //PDO STYLE :
+     $sql = "SELECT first_name,last_name,counter_view,profile_strength FROM student ORDER BY counter_enters DESC LIMIT 10";
+
+        //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
     {
         echo "<tr> ";
         echo "<td>".$row['id']."</td>";
-        echo "<td>".$row['username']."</td>";
-        echo "<td>".$row['email']."</td>";
+        echo "<td>".$row['first_name']."</td>";
+        echo "<td>".$row['last_name']."</td>";
+        echo "<td>".$row['counter_enters']."</td>";
+        echo "<td>".$row['profile_strength']."</td>";
         echo "</tr>";
     }
     echo"</table>";
