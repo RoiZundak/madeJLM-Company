@@ -31,15 +31,18 @@ body{
 #admin_wrap{
     width : 100%;
 }
-.admin_wrap_cmp{
+.admin_wrap_cmp_Left{
     width: 40%;
+    float:left;
 }
-
+.admin_wrap_cmp_right{
+    width: 40%;
+    float:right;
+}
 .adminForm{
     text-align: center;
     margin: auto;
     padding:0 10%;
-
 
 }
 /*END ADMIN PAGE*/
