@@ -32,13 +32,9 @@ body{
     width : 100%;
 }
 .admin_wrap_cmp{
-    width: 60%;
+    width: 40%;
 }
 
-.admin_wrap_std{
-    width: 45%;
-    display:inline-block;
-}
 .adminForm{
     text-align: center;
     margin: auto;
