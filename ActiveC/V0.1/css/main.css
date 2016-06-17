@@ -28,7 +28,7 @@ body{
 
 }
 /* ADMIN PAGE SETTINGS */
-#admin_wrap{
+.admin_wrap{
     width : 100%;
 }
 .admin_wrap_cmp_left{
