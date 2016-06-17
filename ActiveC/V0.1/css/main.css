@@ -40,6 +40,12 @@ body{
     width: 45%;
     display:inline-block;
 }
+.adminForm{
+    width: 5%;
+    text-align: center;
+    margin: auto;
+
+}
 /*END ADMIN PAGE*/
 #term{
     overflow: auto;
