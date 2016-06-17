@@ -350,10 +350,20 @@
 		if ( $records->execute()==true)
 		{
 			$newId = $databaseConnection->lastInsertId();
-			echo "Great! ".$name." was added to the db with ID = ".$newId;
+            echo "
+            <script>
+            window.location='#/login';
+            setTimeout(function(){alert('Great! ".$name." was added to the db with ID = ".$newId."');},100);
+            </script>
+            ";
 		}
 		else
-			echo "Failed to add a new company, please try again.";
+            echo "
+            <script>
+            window.location='#/login';
+                setTimeout(function(){alert('Sorry , we could not add this company');},100);
+            </script>
+            ";
 	}
 
 	//DELETE company (by id)
@@ -365,9 +375,19 @@
 		$records = $databaseConnection->prepare('DELETE FROM company WHERE id= :row_id');
 		$records->bindParam(':row_id', $row_number);
 		if ( $records->execute()==true)
-			echo "Great! Company #".$row_number." was DELETED from the db ";
+            echo "
+            <script>
+            window.location='#/login';
+            setTimeout(function(){alert('Great! Company #".$row_number." was DELETED from the db ');},100);
+            </script>
+            ";
 		else
-			echo "Failed to DELETE company, please make sure you have the correct ID.";
+            echo "
+            <script>
+            window.location='#/login';
+            setTimeout(function(){alert('Sorry , we could not delete this company');},100);
+            </script>
+            ";
 	}
 
 	//echo ALL companies
@@ -393,7 +413,7 @@
 		echo"</table>";
 	}
 
-    //Update password
+    //Update Company password
     if($func=="8")
 	{
         $pass1 =$_POST['new_pass'] ;
@@ -415,9 +435,19 @@
         $stmt->bindParam(':pass', md5($pass1), PDO::PARAM_STR);
         $stmt->bindParam(':email',$mail, PDO::PARAM_STR);
         if ( $stmt->execute()==true)
-            echo "Updated !";
+            echo "
+            <script>
+            window.location='#/login';
+            setTimeout(function(){alert('Password was updated.');},100);
+            </script>
+            ";
         else
-            echo "Failed.";
+            echo "
+            <script>
+            window.location='#/login';
+            setTimeout(function(){alert('Failed to update');},100);
+            </script>
+            ";
     }
 
 	if($func=="9")
@@ -622,7 +652,7 @@
 
 	}
 
-    //reset company password
+    //reset company password -ADMIN
     if($func=="12")
     {
         $row_id =$_POST['row_id_reset'] ;
@@ -631,7 +661,21 @@
         $update = $databaseConnection ->prepare($sql_update);
         $update->bindParam(':id',$row_id);
         $update->bindParam(':pass',md5($newPassword));
-        $update->execute();
+        if( $update->execute()==true){
+            echo "
+            <script>
+            window.location='#/adminPage';
+            setTimeout(function(){alert('Password has changed');},100);
+            </script>
+            ";
+        }else{
+            echo "
+            <script>
+            window.location='#/adminPage';
+            setTimeout(function(){alert('Something went wrong, please try again.');},100);
+            </script>
+            ";
+        }
     }
 
     //list all students
@@ -703,10 +747,20 @@
         //PDO STYLE :
         $records = $databaseConnection->prepare('DELETE FROM student WHERE ID= :row_id');
         $records->bindParam(':row_id', $row_number);
-        if ( $records->execute()==true)
-            echo "Great! student #".$row_number." was DELETED from the db ";
+        if ( $records->execute()==true && count($records->fetchAll()))
+            echo "
+                <script>
+                window.location='#/adminPage';
+                setTimeout(function(){alert('Great! student #".$row_number." was DELETED from the db ');},100);
+                </script>
+                ";
         else
-            echo "Failed to DELETE student, please make sure you have the correct ID.";
+            echo "
+                <script>
+                window.location='#/adminPage';
+                setTimeout(function(){alert('Failed to DELETE student, please make sure you have the correct ID.');},100);
+                </script>
+                ";
     }
 
     //Change student status
@@ -718,9 +772,19 @@
         $update->bindParam(':id',$id);
         $update->bindParam(':active',$op);
         if ( $records->execute()==true)
-            echo "Updated !";
+            echo "
+                <script>
+                window.location='#/adminPage';
+                setTimeout(function(){alert('Updated');},100);
+                </script>
+                ";
         else
-            echo "Failed.";
+            echo "
+                <script>
+                window.location='#/adminPage';
+                setTimeout(function(){alert('Failed');},100);
+                </script>
+                ";
     }
 
     //Add new skill
@@ -732,10 +796,20 @@
         if ( $records->execute()==true)
         {
             $newId = $databaseConnection->lastInsertId();
-            echo "Great! ".$name." was added to the db with ID = ".$newId;
+            echo "
+                <script>
+                window.location='#/adminPage';
+                setTimeout(function(){alert('Great! ".$name." was added to the db with ID = ".$newId."');},100);
+                </script>
+                ";
         }
         else
-            echo "Failed to add a new company, please try again.";
+            echo "
+                <script>
+                window.location='#/adminPage';
+                setTimeout(function(){alert('Failed');},100);
+                </script>
+                ";
     }
     //Top 10 Companies
     if($func=="17"){
