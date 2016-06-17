@@ -19,6 +19,7 @@
                         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 
                     xmlhttp.onreadystatechange = function (){
+                        alert("11");
                         if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                             document.getElementById("comp").innerHTML = xmlhttp.responseText;
                     };
