@@ -744,7 +744,7 @@
 			  	<td>Company Name</td>
 			  	<td>Entrnces</td>
 			</tr>";
-     $sql = "SELECT username,counter_enters FROM company ORDER BY counter_enters DESC LIMIT 10";
+     $sql = "SELECT id,username,counter_enters FROM company ORDER BY counter_enters DESC LIMIT 10";
 
 
         //PDO STYLE :
@@ -769,7 +769,7 @@
 			  	<td>counter_view</td>
 			  	<td>profile_strength</td>
 			</tr>";
-     $sql = "SELECT first_name,last_name,counter_view,profile_strength FROM student ORDER BY profile_strength DESC LIMIT 10";
+     $sql = "SELECT id,first_name,last_name,counter_view,profile_strength FROM student ORDER BY profile_strength DESC LIMIT 10";
 
         //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
