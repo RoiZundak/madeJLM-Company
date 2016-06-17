@@ -12,12 +12,13 @@
 
     <!-- List all companys -->
     <form method="post" action="./comp_sql_querys.php?func=7" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
-        <div class="form-group" >
-        <h3>List all Companys </h3>
-        <button type="submit" name = "submit" class="login-button">Show</button>
+        <div class="adminForm">
+            <h3>List all Companys </h3>
+            <div class="form-group" >
+                <button type="submit" name = "submit" class="login-button">Show</button>
+            </div>
         </div>
-
-    </form>
+    </form> <br>
 
     <!-- ADD a new company -->
     <form method="post" action="./comp_sql_querys.php?func=5" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
@@ -33,9 +34,8 @@
             <input type="password" class="form-control" id="pass_new" placeholder="Password" name="password" >
         </div>
         <button type="submit" name = "submit" class="login-button">Add</button>
-    </div><br><br>
-    </form>
-
+    </div><br>
+    </form><br>
     <!-- Remove company -->
     <form method="post" action="./comp_sql_querys.php?func=6" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
         <h3>Remove Company by id </h3>
