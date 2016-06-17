@@ -11,12 +11,11 @@
     <form method="post" action="./comp_sql_querys.php?func=17" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
         <div class="adminForm">
             <h3>Top 10 Companies</h3>
-            <div class="form-group">
-                <input type="text"  class="form-control"  id="topC" name="topC" >
+            <div class="form-group" id="comp">
                 <script>
                     xmlhttp.onreadystatechange = function (){
                         if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                            document.getElementById("topC").innerHTML = xmlhttp.responseText;
+                            document.getElementById("comp").innerHTML = xmlhttp.responseText;
                     };
                     xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "17", true);
                     xmlhttp.send();
@@ -28,12 +27,11 @@
     <form method="post" action="./comp_sql_querys.php?func=18" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
         <div class="adminForm">
             <h3>Top 10 Students</h3>
-            <div class="form-group">
-                <input type="text"  class="form-control" id="topS" name="topS" >
+            <div class="form-group" id="stud">
                 <script>
                     xmlhttp.onreadystatechange = function (){
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                        document.getElementById("topS").innerHTML = xmlhttp.responseText;
+                        document.getElementById("stud").innerHTML = xmlhttp.responseText;
                     };
                     xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "18", true);
                     xmlhttp.send();
