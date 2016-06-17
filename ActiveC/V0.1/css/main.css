@@ -31,14 +31,6 @@ body{
 .admin_wrap{
     width : 100%;
 }
-.admin_wrap_cmp_left{
-    width: 40%;
-    float:left;
-}
-.admin_wrap_cmp_right{
-    width: 40%;
-    float:right;
-}
 .adminForm{
     text-align: center;
     margin: auto;

@@ -5,11 +5,8 @@
     <link rel="icon" href="/apple-touch-icon-60x60.png">
     <style>@font-face{font-family: myFirstFont; src:url(../Quicksand-Regular.otf);}div{font-family: myFirstFont;}</style>
 </head>
-<body class="admin_wrap">
+<body id="admin_wrap">
     <h1>Admin Page !</h1><br>
-
-    <div class = 'admin_wrap_cmp_left' >
-
     <!-- List all companys -->
          <form method="post" action="./comp_sql_querys.php?func=7" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
              <div class="adminForm">
@@ -60,9 +57,6 @@
                 <button type="submit" name = "submit" class="login-button">Reset</button>
              </div><br>
          </form><br>
-
-    </div>
-    <div class="admin_wrap_cmp_right">
     <!-- List all Students -->
         <form method="post" action="./comp_sql_querys.php?func=13" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
             <div class="adminForm">
@@ -71,7 +65,7 @@
                     <button type="submit" name = "submit" class="login-button">Show</button>
                 </div>
             </div><br>
-        </form><br>
+        </form>
 
     <!-- Remove Student -->
         <form method="post" action="./comp_sql_querys.php?func=14" style="width:40%;background-color:lightgrey;border-width: thin;border-style: solid " >
@@ -111,6 +105,6 @@
                 <button type="submit" name = "submit" class="login-button">Update</button>
             </div><br>
         </form><br>
-    </div>
+
 </body>
 </html>
