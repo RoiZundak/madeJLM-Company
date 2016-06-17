@@ -42,7 +42,7 @@ if(!empty($_POST['username']))
         {
             echo " OK ! trying to redirect you now...
                     <script>
-                        sessionStorage.setItem('username_Admin',".$username.");
+                        sessionStorage.setItem('username_Admin','".$username."');
                         window.location='../#/adminPage';
                     </script>";
             exit;
