@@ -736,5 +736,47 @@
         else
             echo "Failed to add a new company, please try again.";
     }
+    //Top 10 Companies
+    if($func=="17"){
+    echo"<table style=\"width:100%\">
+			<tr>
+			  	<td>id</td>
+			  	<td>Comp. Name</td>
+			  	<td>e-Mail</td>
+			</tr>";
+    $sql = "SELECT * FROM company";
+    //PDO STYLE :
+    foreach ($databaseConnection->query($sql) as $row)
+    {
+        echo "<tr> ";
+        echo "<td>".$row['id']."</td>";
+        echo "<td>".$row['username']."</td>";
+        echo "<td>".$row['email']."</td>";
+        echo "</tr>";
+    }
+    echo"</table>";
+    }
+
+    //Top 10 Students
+    if($func=="18") {
+    echo"<table style=\"width:100%\">
+			<tr>
+			  	<td>id</td>
+			  	<td>Comp. Name</td>
+			  	<td>e-Mail</td>
+			</tr>";
+    $sql = "SELECT * FROM company";
+    //PDO STYLE :
+    foreach ($databaseConnection->query($sql) as $row)
+    {
+        echo "<tr> ";
+        echo "<td>".$row['id']."</td>";
+        echo "<td>".$row['username']."</td>";
+        echo "<td>".$row['email']."</td>";
+        echo "</tr>";
+    }
+    echo"</table>";
+}
+
 ?>
 
