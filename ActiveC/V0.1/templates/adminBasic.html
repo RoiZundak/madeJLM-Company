@@ -22,7 +22,7 @@
                         if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                             document.getElementById("comp").innerHTML = xmlhttp.responseText;
                     };
-                    xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "17", true);
+                    xmlhttp.open("GET", "comp_sql_querys.php?q=0&func=" + "17", true);
                     xmlhttp.send();
                 </script>
             </div>
@@ -43,7 +43,7 @@
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                         document.getElementById("stud").innerHTML = xmlhttp.responseText;
                     };
-                    xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "18", true);
+                    xmlhttp.open("GET", "comp_sql_querys.php?q=0&func=" + "18", true);
                     xmlhttp.send();
                 </script>
             </div>
