@@ -767,9 +767,9 @@
 			  	<td>first_name</td>
 			  	<td>last_name</td>
 			  	<td>counter_view</td>
-			  	<td>profile_strength</td>
+			  	<td>counter_contact</td>
 			</tr>";
-     $sql = "SELECT id,first_name,last_name,counter_view,profile_strength FROM student ORDER BY profile_strength DESC LIMIT 10";
+     $sql = "SELECT id,first_name,last_name,counter_view,counter_contact FROM student ORDER BY counter_contact DESC LIMIT 10";
 
         //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
@@ -778,8 +778,8 @@
         echo "<td>".$row['id']."</td>";
         echo "<td>".$row['first_name']."</td>";
         echo "<td>".$row['last_name']."</td>";
-        echo "<td>".$row['counter_enters']."</td>";
-        echo "<td>".$row['profile_strength']."</td>";
+        echo "<td>".$row['counter_view']."</td>";
+        echo "<td>".$row['counter_contact']."</td>";
         echo "</tr>";
     }
     echo"</table>";
