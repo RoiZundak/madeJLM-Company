@@ -379,14 +379,15 @@
 			  	<td>Comp. Name</td>
 			  	<td>e-Mail</td>
 			</tr>";
-		$sql = "SELECT * FROM company";
+		$sql = "SELECT * FROM company ORDER BY counter_enters DESC";
 		//PDO STYLE :
 		foreach ($databaseConnection->query($sql) as $row)
 		{
 			echo "<tr> ";
-				echo "<td>".$row['id']."</td>";
-				echo "<td>".$row['username']."</td>";
-				echo "<td>".$row['email']."</td>";
+                echo "<td>".$row['id']."</td>";
+                echo "<td>".$row['username']."</td>";
+                echo "<td>".$row['email']."</td>";
+                echo "<td>".$row['counter_enters']."</td>";
 			echo "</tr>";
 		}
 		echo"</table>";
@@ -772,54 +773,6 @@
      $sql = "SELECT id,first_name,last_name,counter_view,counter_contact FROM student ORDER BY counter_contact DESC LIMIT 10";
 
         //PDO STYLE :
-    foreach ($databaseConnection->query($sql) as $row)
-    {
-        echo "<tr> ";
-        echo "<td>".$row['id']."</td>";
-        echo "<td>".$row['first_name']."</td>";
-        echo "<td>".$row['last_name']."</td>";
-        echo "<td>".$row['counter_view']."</td>";
-        echo "<td>".$row['counter_contact']."</td>";
-        echo "</tr>";
-    }
-    echo"</table>";
-}
-//Show Top DESC company
-
-if($func=="19"){
-    echo"<table style=\"width:100%\">
-			<tr>
-			  	<td>Id</td>
-			  	<td>Company Name</td>
-			  	<td>Entrnces</td>
-			</tr>";
-    $sql = "SELECT id,username,counter_enters FROM company ORDER BY counter_enters DESC";
-
-
-    //PDO STYLE :
-    foreach ($databaseConnection->query($sql) as $row)
-    {
-        echo "<tr> ";
-        echo "<td>".$row['id']."</td>";
-        echo "<td>".$row['username']."</td>";
-        echo "<td>".$row['counter_enters']."</td>";
-        echo "</tr>";
-    }
-    echo"</table>";
-}
-//Show Top DESC student
-if($func=="20") {
-    echo"<table style=\"width:100%\">
-			<tr>
-			  	<td>id</td>
-			  	<td>first_name</td>
-			  	<td>last_name</td>
-			  	<td>counter_view</td>
-			  	<td>counter_contact</td>
-			</tr>";
-    $sql = "SELECT id,first_name,last_name,counter_view,counter_contact FROM student ORDER BY counter_contact DESC";
-
-    //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
     {
         echo "<tr> ";
