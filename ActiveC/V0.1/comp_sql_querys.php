@@ -769,7 +769,7 @@ EntrancesET character_set_client=utf8";
 			  	<td>counter_view</td>
 			  	<td>profile_strength</td>
 			</tr>";
-     $sql = "SELECT first_name,last_name,counter_view,profile_strength FROM student ORDER BY counter_enters DESC LIMIT 10";
+     $sql = "SELECT first_name,last_name,counter_view,profile_strength FROM student ORDER BY profile_strength DESC LIMIT 10";
 
         //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
