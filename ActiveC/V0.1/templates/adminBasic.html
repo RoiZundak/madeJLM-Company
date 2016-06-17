@@ -13,8 +13,15 @@
             <h3>Top 10 Companies</h3>
             <div class="form-group">
                 <input type="text"  class="form-control"  id="topC" name="topC" >
+                <script>
+                    xmlhttp.onreadystatechange = function (){
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                            document.getElementById("topC").innerHTML = xmlhttp.responseText;
+                    };
+                    xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "17", true);
+                    xmlhttp.send();
+                </script>
             </div>
-            <button type="submit" name = "submit" class="login-button">Show All</button>
         </div><br>
     </form><br>
     <!--Top 10 Student-->
@@ -23,8 +30,15 @@
             <h3>Top 10 Students</h3>
             <div class="form-group">
                 <input type="text"  class="form-control" id="topS" name="topS" >
+                <script>
+                    xmlhttp.onreadystatechange = function (){
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        document.getElementById("topS").innerHTML = xmlhttp.responseText;
+                    };
+                    xmlhttp.open("GET", "comp_sql_querys.php?q=" + id + "&func=" + "18", true);
+                    xmlhttp.send();
+                </script>
             </div>
-            <button type="submit" name = "submit" class="login-button">ShowAll</button>
         </div><br>
     </form><br>
 
