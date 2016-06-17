@@ -41,9 +41,10 @@ body{
     display:inline-block;
 }
 .adminForm{
-    width: 5%;
     text-align: center;
     margin: auto;
+    padding:0 10%;
+
 
 }
 /*END ADMIN PAGE*/
