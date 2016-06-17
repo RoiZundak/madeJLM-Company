@@ -5,6 +5,14 @@
     <link rel="icon" href="/apple-touch-icon-60x60.png">
     <style>@font-face{font-family: myFirstFont; src:url(../Quicksand-Regular.otf);}div{font-family: myFirstFont;}</style>
 </head>
+<script>
+    var name = sessionStorage.getItem('username_Admin');
+    if ( name === 'null' || name === 'Not_Valid_User_Name' )
+    {
+        window.location='#/loginAdmin';
+        setTimeout(function(){alert('You Must login first');},100);
+    }
+</script>
 <body id="admin_wrap">
     <h1>Admin Page !</h1><br>
     <!--Top 10 Companies-->
