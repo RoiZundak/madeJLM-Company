@@ -66,6 +66,7 @@
                     </p>
                     <?php
                         echo "<input type ='hidden' name='e_mail' value='".$_GET['mail']."'>";
+                        echo "<input type ='hidden' name='type_b' value='".$_GET['t']."'>";
                     ?>
 
                     <button type="submit" name = "submit" class="login-button">Login</button>
