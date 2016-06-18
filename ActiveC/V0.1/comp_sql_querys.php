@@ -932,6 +932,7 @@
             $reason = "3";
         else
             $reason = $row['reason'];
+        echo $row['time'];
         $date= date("F j, Y, g:i a",$row['time']);
         echo "<tr > ";
         echo "<td>".$row['ID']."</td>";
