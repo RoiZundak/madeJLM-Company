@@ -9,13 +9,28 @@
     //connect to db
     require_once "../php/db_connect.php";
     $databaseConnection =connect_to_db();
+    if($_GET['t']==1 || $_GET['t']=="1"){
+        $table = "company";
+    }else{
+        $table = "admin";
+    }
 
-    $sql = "SELECT * FROM company WHERE email = '".$_GET['mail']."'";
-    foreach($databaseConnection->query($sql) as $row)
-    {
+
+
+    if($table === "company"){
+        $sql = "SELECT * FROM company WHERE email = :email";
+    }else{
+        $sql = "SELECT * FROM admin WHERE Email = :email";
+    }
+    $stmt = $databaseConnection->prepare($sql);
+    $stmt->bindParam(":email",$_GET['mail']);
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+    foreach($result as $row){
         $exp = $row['f_exp'];
         $code = $row ['f_pass'];
     }
+
     if($exp !=$_GET['e'] || $exp <= time() || strcmp ($code , $_GET['p'])!=0 )
     {
         //first condition : someone is trying something fishy.
