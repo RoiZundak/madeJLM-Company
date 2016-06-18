@@ -437,6 +437,7 @@
             setTimeout(function(){alert('Passwords does not match.Redirecting to login page..');},100);</script>";
             exit;
         }
+        $new_pass =md5($pass1);
         if($type==1 || $type=="1"){
             $sql = "UPDATE company SET password = :pass, 
             f_pass = '', 
@@ -449,7 +450,7 @@
             WHERE Email = :email";
         }
         $stmt = $databaseConnection->prepare($sql);
-        $stmt->bindParam(':pass', md5($pass1), PDO::PARAM_STR);
+        $stmt->bindParam(':pass', $new_pass , PDO::PARAM_STR);
         $stmt->bindParam(':email',$mail, PDO::PARAM_STR);
         if ( $stmt->execute()==true)
             echo "

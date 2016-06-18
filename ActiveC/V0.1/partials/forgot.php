@@ -27,10 +27,10 @@
 
     if($table == "company"){
         //Get username from 'company' table
-        $sql = "SELECT * FROM company WHERE email = :email";
+        $sql = "SELECT * FROM company WHERE email = :email LIMIT 1";
     }else{
         //Get username from 'company' table
-        $sql = "SELECT * FROM admin WHERE Email = :email";
+        $sql = "SELECT * FROM admin WHERE Email = :email LIMIT 1";
     }
     $stmt = $databaseConnection->prepare($sql);
     $stmt->bindParam(":email",$email);
