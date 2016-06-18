@@ -874,8 +874,8 @@
 			  	<td>LastLogin</td>
 			  	<td>Reason<td>
 			</tr>";
-    $sql = "SELECT ID,first_name,last_name,Email,phone_number,LastLogin FROM student,student_turn_off 
-            WHERE student_turn_off.ID=student.ID ";
+    $sql = "SELECT student.ID,first_name,last_name,Email,phone_number,LastLogin,reason,description FROM student,student_turn_off 
+              WHERE student_turn_off.ID=student.ID ";
     //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
     {
@@ -907,8 +907,8 @@
 			  	<td>LastLogin</td>
 			  	<td>Reason<td>
 			</tr>";
-    $sql = "SELECT ID,first_name,last_name,Email,phone_number,LastLogin FROM student,student_turn_off 
-            WHERE student_turn_off.ID=student.ID ";
+    $sql = "SELECT student.ID,first_name,last_name,Email,phone_number,LastLogin,reason,description FROM student,student_turn_off 
+              WHERE student_turn_off.ID=student.ID ORDER BY LastLogin LIMIT 10";
     //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
     {
