@@ -113,13 +113,15 @@
                         document.getElementById(\"re_route_main\").click();
                         $('#btnSuccess').click(function(e) {
                           e.preventDefault();
-                          $.smkAlert({
-                            text: 'Welcome Back !',
-                            type: 'success',
-                            position:'top-left'
-                          });
+                          
                         });
-                        document.getElementById(\"btnSuccess\").click();
+                         setTimeout(function(){ $.smkAlert({
+                                                    text: 'Welcome Back !   ',
+                                                    type: 'success',
+                                                    position:'top-left'
+                                                  });
+                                                  },100);
+                        
                     </script>
                     ");
                 exit;
