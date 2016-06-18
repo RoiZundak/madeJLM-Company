@@ -831,7 +831,6 @@
     }
     //Top 10 Companies
     if($func=="17"){
-        sleep(2);
     echo"<table style=\"width:100%\">
 			<tr>
 			  	<td>Id</td>
@@ -855,7 +854,6 @@
 
     //Top 10 Students
     if($func=="18") {
-        sleep(2);
     echo"<table style=\"width:100%\">
 			<tr>
 			  	<td>id</td>
@@ -882,7 +880,6 @@
 
     //Deactivate students
     if($func == "19") {
-        sleep(2);
         echo"<table style=\"width:100%\">
 			<tr>
 			  	<td>id</td>
@@ -914,10 +911,6 @@
 }
     //Top 10 Last Deactivate students
     if($func == "20") {
-        echo" <h3>Deactivate students</h3>
-            <h4>Reason 1: I found a job, Thanks to JLM.</h4>
-            <h4>Reason 2: I found a job, Without this site help.</h4>
-            <h4>Reason 3: Other.</h4>";
         echo"<table style=\"width:100%\">
 			<tr >
 			  	<td>id</td>
@@ -935,9 +928,10 @@
     foreach ($databaseConnection->query($sql) as $row)
     {
         $reason ="";
-        if($row['reason']===9|| $row['reason']==="9"){
+        if($row['reason']===9|| $row['reason']==="9")
             $reason = "3";
-        }
+        else
+            $reason = $row['reason'];
         echo "<tr > ";
         echo "<td>".$row['ID']."</td>";
         echo "<td>".$row['first_name']."</td>";
