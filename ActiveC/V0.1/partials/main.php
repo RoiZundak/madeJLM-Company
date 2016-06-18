@@ -12,9 +12,6 @@
     {
         window.location='#/login';
         setTimeout(function(){alert('You Must login first');},100);
-    }else
-    {
-        alert("Keep going");
     }
 </script>
 <div id="main_wrap">

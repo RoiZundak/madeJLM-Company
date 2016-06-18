@@ -12,9 +12,8 @@
 
     }
     else{
-        alert("from login to main.");
         window.location='#/main';
-        throw new Error();
+        throw new Error(); // Stop page from loading so session will not delete (12 lines down)
     }
 </script>
 <div id="login_img"></div>
