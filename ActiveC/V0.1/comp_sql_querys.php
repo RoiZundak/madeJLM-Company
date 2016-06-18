@@ -863,7 +863,7 @@
 
     //Deactivate students
     if($func == "19") {
-    echo"<table id='std_table' style=\"width:100%\">
+    echo"<table id='std_table' align=\"center\" style=\"width:100%\">
 			<tr>
 			  	<td>id</td>
 			  	<td>First Name</td>
@@ -873,7 +873,6 @@
 			  	<td>time</td>
 			  	<td>e-Mail</td>
 			  	<td>Phone</td>
-
 			</tr>";
     $sql = "SELECT Distinct student.ID,first_name,last_name,reason,description,time,Email,phone_number FROM student,student_turn_off 
               WHERE student_turn_off.student_id=student.ID  ORDER BY time DESC";
@@ -889,14 +888,13 @@
         echo "<td>".$row['time']."</td>";
         echo "<td>".$row['Email']."</td>";
         echo "<td>".$row['phone_number']."</td>";
-
         echo "</tr>";
     }
     echo"</table>";
 }
     //Top 10 Last Deactivate students
     if($func == "20") {
-        echo"<table id='std_table' style=\"width:100%\">
+        echo"<table id='std_table' align=\"center\" style=\"width:100%\">
 			<tr>
 			  	<td>id</td>
 			  	<td>First Name</td>
@@ -906,8 +904,6 @@
 			  	<td>Time<td>
 			  	<td>e-Mail</td>
 			  	<td>Phone</td>
-
-
 			</tr>";
     $sql = "SELECT Distinct student.ID,first_name,last_name,reason,description,time,Email,phone_number FROM student,student_turn_off 
               WHERE student_turn_off.student_id=student.ID  ORDER BY time DESC LIMIT 10 ";
@@ -923,8 +919,6 @@
         echo "<td>".$row['time']."</td>";
         echo "<td>".$row['Email']."</td>";
         echo "<td>".$row['phone_number']."</td>";
-
-
         echo "</tr>";
     }
     echo"</table>";
