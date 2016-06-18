@@ -863,8 +863,9 @@
     //Deactivate students
     if($func == "19") {
     echo"<table id='std_table' style=\"width:100%\">
-            <tr bgcolor=\"#FF0000\">Reason 1:I found a job, Thanks to JLM.</tr>
-            <tr bgcolor=\"#FF0000\">Reason 2:I found a job, Without this site help.</tr>
+            <tr >Reason 1:I found a job, Thanks to JLM.</tr>
+            <tr>Reason 2:I found a job, Without this site help.</tr>
+            <tr>Reason 3:other.</tr>
 			<tr>
 			  	<td>id</td>
 			  	<td>First Name</td>
@@ -896,8 +897,9 @@
     //Top 10 Last Deactivate students
     if($func == "20") {
         echo"<table id='std_table' style=\"width:100%\">
-            <tr bgcolor=\"#FF0000\">Reason 1:I found a job, Thanks to JLM.</tr>
-            <tr bgcolor=\"#FF0000\">Reason 2:I found a job, Without this site help.</tr>
+            <tr>Reason 1:I found a job, Thanks to JLM.</tr>
+            <tr>Reason 2:I found a job, Without this site help.</tr>
+            <tr>Reason 3:other.</tr>
 			<tr>
 			  	<td>id</td>
 			  	<td>First Name</td>
