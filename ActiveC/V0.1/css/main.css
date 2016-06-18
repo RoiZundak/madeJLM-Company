@@ -44,6 +44,9 @@ body{
     text-align: center;
 
 }
+h4 {
+    text-align: left;
+}
 #input_div{
     border-bottom-style: solid;
     border--bottomcolor: grey;
