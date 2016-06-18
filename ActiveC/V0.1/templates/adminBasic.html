@@ -135,15 +135,41 @@
             </div><br>
         </form><br>
     <!-- ADD new skill-->
-        <form method="post" action="./comp_sql_querys.php?func=16" style="background-color:lightgrey;border-width: thin;border-style: solid " >
-            <div class="adminForm">
-                <h3>Add a new skill to list </h3>
-                <div class="form-group" >
-                    <input type="text" min="0" class="form-control" id="skill_name" placeholder="Skills name " name="skill_name" >
-                </div>
-                <button type="submit" name = "submit" class="login-button">Update</button>
-            </div><br>
-        </form><br>
+    <form method="post" action="./comp_sql_querys.php?func=16" style="background-color:lightgrey;border-width: thin;border-style: solid " >
+        <div class="adminForm">
+            <h3>Add a new skill to list </h3>
+            <div class="form-group" >
+                <input type="text" min="0" class="form-control" id="skill_name" placeholder="Skills name " name="skill_name" >
+            </div>
+            <button type="submit" name = "submit" class="login-button">Update</button>
+        </div><br>
+    </form><br>
+
+    <!-- Deactivate students-->
+    <form method="post" action="./comp_sql_querys.php?func=19" style="background-color:lightgrey;border-width: thin;border-style: solid " >
+
+        <div class="adminForm">
+            <h3>Top Last 10 Deactivate students</h3>
+            <div class="form-group" id="deactivate">
+                <script>
+                    if (window.XMLHttpRequest) // code for IE7+, Firefox, Chrome, Opera, Safari
+                        xmlhttp = new XMLHttpRequest();
+                    else // code for IE6, IE5
+                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+
+                    xmlhttp.onreadystatechange = function (){
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                            document.getElementById("deactivate").innerHTML = xmlhttp.responseText;
+                    };
+                    xmlhttp.open("GET", "comp_sql_querys.php?q=0&func=" + "20", true);
+                    xmlhttp.send();
+                </script>
+            </div>
+            <div class="form-group" >
+                <button type="submit" name = "submit" class="login-button">Show All</button>
+            </div>
+        </div><br>
+    </form><br>
 
 </body>
 </html>
