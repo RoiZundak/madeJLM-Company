@@ -15,7 +15,7 @@
     }
     $('#btnSuccess').click(function(e) {
         e.preventDefault();
-        $.smkAlert({
+        smkAlert({
             text: 'Alert type "success"',
             type: 'success',
             position:'top-left'
