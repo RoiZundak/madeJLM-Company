@@ -868,7 +868,7 @@
 			  	<td>id</td>
 			  	<td>First Name</td>
 			  	<td>Last Name</td>
-			  	<td>Num.Reason<td>
+			  	<td>Num.Reason</td>
 			  	<td>Description<td>
 			  	<td>time</td>
 			  	<td>e-Mail</td>
@@ -899,9 +899,9 @@
 			  	<td>id</td>
 			  	<td>First Name</td>
 			  	<td>Last Name</td>
-			  	<td>Num.Reason<td>
-			  	<td>Description<td>
-			  	<td>Time<td>
+			  	<td>Num.Reason</td>
+			  	<td>Description</td>
+			  	<td>Time</td>
 			  	<td>e-Mail</td>
 			  	<td>Phone</td>
 			</tr>";
