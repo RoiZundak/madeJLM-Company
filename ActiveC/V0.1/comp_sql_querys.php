@@ -398,6 +398,7 @@
 			  	<td>id</td>
 			  	<td>Comp. Name</td>
 			  	<td>e-Mail</td>
+			  	<td>Counter Enters</td>
 			</tr>";
 		$sql = "SELECT * FROM company ORDER BY counter_enters DESC";
 		//PDO STYLE :
