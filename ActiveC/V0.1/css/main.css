@@ -1074,6 +1074,16 @@ footer {
     background-color:#575757;
 }
 
+.terms_of_use
+{
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    column-count: 2;
+    -webkit-column-fill: auto; /* Chrome, Safari, Opera */
+    column-fill: auto;
+}
+}
+
+
 
 
 
