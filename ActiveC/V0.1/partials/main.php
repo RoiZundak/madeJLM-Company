@@ -16,7 +16,6 @@
 </script>
 
 <div id="main_wrap">
-
     <div id= "filter_main">
         <div class="filters" id="skills"> Skills </div>
         <div class="filters" id="has_linkedin"> Has Linkedin </div>

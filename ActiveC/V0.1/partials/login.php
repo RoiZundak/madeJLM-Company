@@ -107,6 +107,7 @@
                 $update->execute();
                 echo("<a id='re_route_main' href ='../#/main'></a>
                      <script>                  
+
                         sessionStorage.setItem('username', '".$username."');
                         document.getElementById(\"re_route_main\").click();
                     </script>
