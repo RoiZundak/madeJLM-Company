@@ -932,7 +932,7 @@
             $reason = "3";
         else
             $reason = $row['reason'];
-        $date= date('M j Y g:i A', strtotime($row['ID']));
+        $date= date('M, j  Y , g:i A', strtotime($row['ID']));
         echo "<tr > ";
         echo "<td>".$row['ID']."</td>";
         echo "<td>".$row['first_name']."</td>";
