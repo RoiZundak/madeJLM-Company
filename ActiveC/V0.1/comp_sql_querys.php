@@ -860,6 +860,71 @@
     }
     echo"</table>";
 }
-
+    //Deactivate students
+    if($func == "19") {
+    echo"<table id='std_table' style=\"width:100%\">
+            <tr bgcolor=\"#FF0000\">Reason 1:I found a job, Thanks to JLM.</tr>
+            <tr bgcolor=\"#FF0000\">Reason 2:I found a job, Without this site help.</tr>
+			<tr>
+			  	<td>id</td>
+			  	<td>First Name</td>
+			  	<td>Last Name</td>
+			  	<td>e-Mail</td>
+			  	<td>Phone</td>
+			  	<td>LastLogin</td>
+			  	<td>Reason<td>
+			</tr>";
+    $sql = "SELECT ID,first_name,last_name,Email,phone_number,LastLogin,status FROM student,student_turn_off 
+            WHERE student_turn_off.ID=student.ID ";
+    //PDO STYLE :
+    foreach ($databaseConnection->query($sql) as $row)
+    {
+        echo "<tr> ";
+        echo "<tr> ";
+        echo "<tr> ";
+        echo "<td>".$row['ID']."</td>";
+        echo "<td>".$row['first_name']."</td>";
+        echo "<td>".$row['last_name']."</td>";
+        echo "<td>".$row['Email']."</td>";
+        echo "<td>".$row['phone_number']."</td>";
+        echo "<td>".$row['LastLogin']."</td>";
+        echo "<td>".$row['status']."</td>";
+        echo "</tr>";
+    }
+    echo"</table>";
+}
+    //Top 10 Last Deactivate students
+    if($func == "20") {
+        echo"<table id='std_table' style=\"width:100%\">
+            <tr bgcolor=\"#FF0000\">Reason 1:I found a job, Thanks to JLM.</tr>
+            <tr bgcolor=\"#FF0000\">Reason 2:I found a job, Without this site help.</tr>
+			<tr>
+			  	<td>id</td>
+			  	<td>First Name</td>
+			  	<td>Last Name</td>
+			  	<td>e-Mail</td>
+			  	<td>Phone</td>
+			  	<td>LastLogin</td>
+			  	<td>Reason<td>
+			</tr>";
+    $sql = "SELECT ID,first_name,last_name,Email,phone_number,LastLogin,status FROM student,student_turn_off 
+            WHERE student_turn_off.ID=student.ID RDER BY LastLogin DESC LIMIT 10";
+    //PDO STYLE :
+    foreach ($databaseConnection->query($sql) as $row)
+    {
+        echo "<tr> ";
+        echo "<tr> ";
+        echo "<tr> ";
+        echo "<td>".$row['ID']."</td>";
+        echo "<td>".$row['first_name']."</td>";
+        echo "<td>".$row['last_name']."</td>";
+        echo "<td>".$row['Email']."</td>";
+        echo "<td>".$row['phone_number']."</td>";
+        echo "<td>".$row['LastLogin']."</td>";
+        echo "<td>".$row['status']."</td>";
+        echo "</tr>";
+    }
+    echo"</table>";
+}
 ?>
 
