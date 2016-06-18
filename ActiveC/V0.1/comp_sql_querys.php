@@ -174,11 +174,14 @@
                 $curr_job = $row['first_name'] . " Hasn't entered current job position. ";
 
             $summary_ = "";
+            $sum = "Summary: ";
             if ($row['summary'] !== "")
             {
-                $sum = "Summary: ";
                 $summary = $row['summary'];
             }
+            else
+                $summary = $row['first_name'] . " Hasn't entered personal-info Summary. ";
+
             $exprience = "";
             $exp = "Experience: ";
             if ($row['experience'] !== "")
