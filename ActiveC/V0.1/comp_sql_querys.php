@@ -874,7 +874,7 @@
 			  	<td>LastLogin</td>
 			  	<td>Reason<td>
 			</tr>";
-    $sql = "SELECT ID,first_name,last_name,Email,phone_number,LastLogin,status FROM student,student_turn_off 
+    $sql = "SELECT ID,first_name,last_name,Email,phone_number,LastLogin FROM student,student_turn_off 
             WHERE student_turn_off.ID=student.ID ";
     //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
@@ -907,7 +907,7 @@
 			  	<td>LastLogin</td>
 			  	<td>Reason<td>
 			</tr>";
-    $sql = "SELECT ID,first_name,last_name,Email,phone_number,LastLogin,status FROM student,student_turn_off 
+    $sql = "SELECT ID,first_name,last_name,Email,phone_number,LastLogin FROM student,student_turn_off 
             WHERE student_turn_off.ID=student.ID ";
     //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
