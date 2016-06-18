@@ -441,12 +441,12 @@
         if($type==1 || $type=="1"){
             $sql = "UPDATE company SET password = :pass, 
             f_pass = '', 
-            f_exp = 0,  
+            f_exp = 0 
             WHERE email = :email";
         }else{
             $sql = "UPDATE admin SET Password = :pass, 
             f_pass = '', 
-            f_exp = 0,  
+            f_exp = 0
             WHERE Email = :email";
         }
         $stmt = $databaseConnection->prepare($sql);
