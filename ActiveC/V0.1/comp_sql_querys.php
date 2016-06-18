@@ -170,6 +170,9 @@
             $curr_job = "";
             if ($row['current_work'] !== "")
                 $curr_job = $row['first_name'] . " is currently working at " . $row['current_work'] . ".";
+            else
+                $curr_job = $row['first_name'] . " Hasn't entered current job position. ";
+
             $summary_ = "";
             if ($row['summary'] !== "")
             {
@@ -177,11 +180,14 @@
                 $summary = $row['summary'];
             }
             $exprience = "";
+            $exp = "Experience: ";
             if ($row['experience'] !== "")
             {
-                $exp = "Experience: ";
                 $exprience = $row['experience'];
             }
+            else
+                $exprience = $row['first_name'] . " Hasn't entered job experience.";
+
             $phone_number="";
             $phone_pic="";
             if($row['phone_number']!=="")
