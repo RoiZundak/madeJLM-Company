@@ -860,6 +860,7 @@
     }
     echo"</table>";
 }
+
     //Deactivate students
     if($func == "19") {
     echo"<table id='std_table' style=\"width:100%\">
@@ -902,6 +903,7 @@
 			  	<td>Last Name</td>
 			  	<td>Num.Reason<td>
 			  	<td>Description<td>
+			  	<td>Time<td>
 			  	<td>e-Mail</td>
 			  	<td>Phone</td>
 
