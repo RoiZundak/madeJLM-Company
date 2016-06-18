@@ -84,8 +84,11 @@
                         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 
                     xmlhttp.onreadystatechange = function (){
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        alert("state :"+xmlhttp.readyState + " stat "+xmlhttp.status );
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
                             document.getElementById("deactivate").innerHTML = xmlhttp.responseText;
+                        }
+
                     };
                     xmlhttp.open("GET", "comp_sql_querys.php?q=0&func=" + "20", true);
                     xmlhttp.send();
