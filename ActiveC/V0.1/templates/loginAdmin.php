@@ -47,7 +47,6 @@ if(!empty($_POST['username']))
             exit;
         } else
         {
-            //TODO: edit message
             echo " <script>
                         localStorage.clear();
                         window.location='../#/loginAdmin';
