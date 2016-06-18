@@ -15,39 +15,6 @@
 </script>
 <body id="admin_wrap">
     <h1>Admin Page !</h1><br>
-    <!-- Deactivate students-->
-    <form method="post" action="./comp_sql_querys.php?func=19" style="background-color:lightgrey;border-width: thin;border-style: solid " >
-        <div class="adminForm">
-            <h3>Latest Deactivated</h3>
-            <div class="form-group" >
-                <h5>Reason 1: I found a job, Thanks to JLM.</h5>
-                <h5>Reason 2: I found a job, Without this site help.</h5>
-                <h5>Reason 9: Other.</h5>
-            </div>
-            <div class="form-group" id="deactivate">
-                <script>
-                    if (window.XMLHttpRequest) // code for IE7+, Firefox, Chrome, Opera, Safari
-                        xmlhttp = new XMLHttpRequest();
-                    else // code for IE6, IE5
-                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-
-                    xmlhttp.onreadystatechange = function (){
-                        alert("state :"+xmlhttp.readyState + " stat "+xmlhttp.status );
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-                            document.getElementById("deactivate").innerHTML = xmlhttp.responseText;
-                        }
-
-                    };
-                    xmlhttp.open("GET", "comp_sql_querys.php?q=0&func=" + "20", true);
-                    xmlhttp.send();
-                    setTimeout(function(){},200);
-                </script>
-            </div>
-            <div class="form-group" >
-                <button type="submit" name = "submit" class="login-button">Show All</button>
-            </div>
-        </div><br>
-    </form><br>
     <!--Top 10 Companies-->
     <form method="post" action="./comp_sql_querys.php?func=7" style="background-color:lightgrey;border-width: thin;border-style: solid " >
 
@@ -56,17 +23,16 @@
             <div class="form-group" id="comp">
                 <script>
                     if (window.XMLHttpRequest) // code for IE7+, Firefox, Chrome, Opera, Safari
-                        xmlhttp = new XMLHttpRequest();
+                        xmlhttp2 = new XMLHttpRequest();
                     else // code for IE6, IE5
-                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                        xmlhttp2 = new ActiveXObject("Microsoft.XMLHTTP");
 
-                    xmlhttp.onreadystatechange = function (){
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                            document.getElementById("comp").innerHTML = xmlhttp.responseText;
+                    xmlhttp2.onreadystatechange = function (){
+                        if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200)
+                            document.getElementById("comp").innerHTML = xmlhttp2.responseText;
                     };
-                    xmlhttp.open("GET", "comp_sql_querys.php?q=0&func=" + "17", true);
-                    xmlhttp.send();
-                    setTimeout(function(){},100);
+                    xmlhttp2.open("GET", "comp_sql_querys.php?q=0&func=" + "17", true);
+                    xmlhttp2.send();
                 </script>
             </div>
             <div class="form-group" >
@@ -93,6 +59,38 @@
                     xmlhttp.open("GET", "comp_sql_querys.php?q=0&func=" + "18", true);
                     xmlhttp.send();
                     setTimeout(function(){},100);
+                </script>
+            </div>
+            <div class="form-group" >
+                <button type="submit" name = "submit" class="login-button">Show All</button>
+            </div>
+        </div><br>
+    </form><br>
+    <!-- Deactivate students-->
+    <form method="post" action="./comp_sql_querys.php?func=19" style="background-color:lightgrey;border-width: thin;border-style: solid " >
+        <div class="adminForm">
+            <h3>Latest Deactivated</h3>
+            <div class="form-group" >
+                <h5>Reason 1: I found a job, Thanks to JLM.</h5>
+                <h5>Reason 2: I found a job, Without this site help.</h5>
+                <h5>Reason 9: Other.</h5>
+            </div>
+            <div class="form-group" id="deactivate">
+                <script>
+                    if (window.XMLHttpRequest) // code for IE7+, Firefox, Chrome, Opera, Safari
+                        xmlhttp1 = new XMLHttpRequest();
+                    else // code for IE6, IE5
+                        xmlhttp1 = new ActiveXObject("Microsoft.XMLHTTP");
+
+                    xmlhttp1.onreadystatechange = function (){
+                        alert("state :"+xmlhttp1.readyState + " stat "+xmlhttp1.status );
+                        if (xmlhttp1.readyState == 4 && xmlhttp1.status == 200){
+                            document.getElementById("deactivate").innerHTML = xmlhttp1.responseText;
+                        }
+
+                    };
+                    xmlhttp1.open("GET", "comp_sql_querys.php?q=0&func=" + "20", true);
+                    xmlhttp1.send();
                 </script>
             </div>
             <div class="form-group" >
