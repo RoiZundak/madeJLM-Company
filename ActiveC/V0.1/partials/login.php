@@ -106,9 +106,20 @@
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
                 echo("<a id='re_route_main' href ='../#/main'></a>
+                <a href=\"\" class=\"btn btn-success\" id=\"btnSuccess\"></a>
                      <script>                  
+                     
                         sessionStorage.setItem('username', '".$username."');
                         document.getElementById(\"re_route_main\").click();
+                        $('#btnSuccess').click(function(e) {
+                          e.preventDefault();
+                          $.smkAlert({
+                            text: 'Welcome Back !',
+                            type: 'success',
+                            position:'top-left'
+                          });
+                        });
+                        document.getElementById(\"btnSuccess\").click();
                     </script>
                     ");
                 exit;
