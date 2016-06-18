@@ -864,7 +864,7 @@
     //Deactivate students
     if($func == "19") {
     echo"<table id='std_table' align=\"center\" style=\"width:100%\">
-			<tr>
+			<tr align=\"center\">
 			  	<td>id</td>
 			  	<td>First Name</td>
 			  	<td>Last Name</td>
@@ -879,7 +879,7 @@
     //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
     {
-        echo "<tr> ";
+        echo "<tr align=\"center\"> ";
         echo "<td>".$row['ID']."</td>";
         echo "<td>".$row['first_name']."</td>";
         echo "<td>".$row['last_name']."</td>";
@@ -895,7 +895,7 @@
     //Top 10 Last Deactivate students
     if($func == "20") {
         echo"<table id='std_table' align=\"center\" style=\"width:100%\">
-			<tr>
+			<tr align=\"center\">
 			  	<td>id</td>
 			  	<td>First Name</td>
 			  	<td>Last Name</td>
@@ -910,7 +910,7 @@
     //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
     {
-        echo "<tr> ";
+        echo "<tr align=\"center\"> ";
         echo "<td>".$row['ID']."</td>";
         echo "<td>".$row['first_name']."</td>";
         echo "<td>".$row['last_name']."</td>";
