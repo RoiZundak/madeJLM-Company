@@ -9,6 +9,12 @@
     //connect to db
     require_once "../php/db_connect.php";
     $databaseConnection =connect_to_db();
+    $table = "";
+    if($_GET['t']==1 || $_GET['t']=="1"){
+        $table = "company";
+    }else{
+        $table = "admin";
+    }
 
     //get email from form.
     $email=$_POST['email'];
@@ -19,15 +25,25 @@
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-    //Get username from 'company' table
-    $sql = "SELECT * FROM company WHERE email = :email";
+    if($table == "company"){
+        //Get username from 'company' table
+        $sql = "SELECT * FROM company WHERE email = :email";
+    }else{
+        //Get username from 'company' table
+        $sql = "SELECT * FROM admin WHERE Email = :email";
+    }
     $stmt = $databaseConnection->prepare($sql);
     $stmt->bindParam(":email",$email);
     $stmt->execute();
     $result = $stmt->fetchAll();
     $username="";
     foreach($result as $row){
-        $username=$row['username'];
+        if($table === "company"){
+            $username=$row['username'];
+        }else{
+            $username=$row['first_name'];
+        }
+
     }
 
     if($username===""){//no such user!
@@ -50,16 +66,24 @@
     //experation : +24H from when the link was sent.
     $expire=time()+(24*60*60);
 
-    //UPDATE THE DB to save the newly created data
-    $sql = "UPDATE company SET f_pass='".$randomString."' , f_exp = '".$expire."' WHERE email = '$email'";
+    if($table === "company"){
+        //UPDATE THE DB to save the newly created data
+        $sql = "UPDATE company SET f_pass='".$randomString."' , f_exp = '".$expire."' WHERE email = :email";
+    }else{
+        //UPDATE THE DB to save the newly created data
+        $sql = "UPDATE admin SET f_pass='".$randomString."' , f_exp = '".$expire."' WHERE Email = :email";
+    }
+
     // Prepare statement
     $stmt = $databaseConnection->prepare($sql);
+    //bind parameters
+    $stmt->bindParam(":email",$email);
     // execute the query
     $stmt->execute();
 
     //Build email message :
     $message="Hi "  .$username .",<br>".
-        "To reset your password <a href='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/partials/reset_password.php?p=".$randomString."&mail=".$email."&e=".$expire."'>click here </a><br>".
+        "To reset your password <a href='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/partials/reset_password.php?t=".$_GET['t']."&p=".$randomString."&mail=".$email."&e=".$expire."'>click here </a><br>".
         "This link has 24 hours limitation. <br>".
         "If you don't know why you have received this mail, please ignore it.";
     //Send mail.
