@@ -908,7 +908,7 @@
 			  	<td>Reason<td>
 			</tr>";
     $sql = "SELECT ID,first_name,last_name,Email,phone_number,LastLogin,status FROM student,student_turn_off 
-            WHERE student_turn_off.ID=student.ID RDER BY LastLogin DESC";
+            WHERE student_turn_off.ID=student.ID ORDER BY LastLogin DESC LIMIT 10";
     //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
     {
