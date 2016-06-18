@@ -883,7 +883,7 @@
     //Deactivate students
     if($func == "19") {
         sleep(2);
-    echo"<table style=\"width:100%\">
+        echo"<table style=\"width:100%\">
 			<tr>
 			  	<td>id</td>
 			  	<td>First Name</td>
