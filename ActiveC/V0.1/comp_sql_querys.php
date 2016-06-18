@@ -874,7 +874,7 @@
 			  	<td>Description<td>
 			</tr>";
     $sql = "SELECT Distinct student.ID,first_name,last_name,Email,phone_number,time,reason,description FROM student,student_turn_off 
-              WHERE student_turn_off.student_id=student.ID  ";
+              WHERE student_turn_off.student_id=student.ID  ORDER BY time DESC";
     //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
     {
@@ -885,7 +885,7 @@
         echo "<td>".$row['Email']."</td>";
         echo "<td>".$row['phone_number']."</td>";
         echo "<td>".$row['time']."</td>";
-        echo "<td>".$row['status']."</td>";
+        echo "<td>".$row['reason']."</td>";
         echo "<td>".$row['description']."</td>";
         echo "</tr>";
     }
@@ -905,7 +905,7 @@
 			  	<td>Description<td>
 			</tr>";
     $sql = "SELECT Distinct student.ID,first_name,last_name,Email,phone_number,time,reason,description FROM student,student_turn_off 
-              WHERE student_turn_off.student_id=student.ID  ORDER BY time LIMIT 10";
+              WHERE student_turn_off.student_id=student.ID  ORDER BY time DESC LIMIT 10 ";
     //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
     {
@@ -916,7 +916,7 @@
         echo "<td>".$row['Email']."</td>";
         echo "<td>".$row['phone_number']."</td>";
         echo "<td>".$row['time']."</td>";
-        echo "<td>".$row['status']."</td>";
+        echo "<td>".$row['reason']."</td>";
         echo "<td>".$row['description']."</td>";
 
         echo "</tr>";
