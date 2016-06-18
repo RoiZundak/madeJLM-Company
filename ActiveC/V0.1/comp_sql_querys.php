@@ -863,6 +863,10 @@
 
     //Deactivate students
     if($func == "19") {
+        echo" <h3>Deactivate students</h3>
+            <h4>Reason 1: I found a job, Thanks to JLM.</h4>
+            <h4>Reason 2: I found a job, Without this site help.</h4>
+            <h4>Reason 3: Other.</h4>";
     echo"<table id='std_table' style=\"width:100%\">
 			<tr>
 			  	<td>id</td>
