@@ -23,7 +23,7 @@ if(!empty($_POST['username']))
         echo
         " <script>
                     localStorage.clear();
-                    window.location='#/loginAdmin';
+                    window.location='../#/loginAdmin';
                     setTimeout(function(){ alert('Username or password required');},100);
                 </script>";
         exit;
@@ -52,7 +52,7 @@ if(!empty($_POST['username']))
             echo " <script>
                         localStorage.clear();
                         window.location='../#/loginAdmin';
-                        setTimeout(function(){ alert('you shall not pass!');},100);
+                        setTimeout(function(){ alert('Wrong Username or password');},100);
                     </script>";
             exit;
         }
