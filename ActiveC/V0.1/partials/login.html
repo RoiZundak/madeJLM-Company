@@ -9,7 +9,13 @@
 <!-- Login page in student's side format -->
 
    <!-- <img id = "login_img" src="./img/jlm_pic.jpg" alt="main_img" > -->
-
+<script>
+    var name = sessionStorage.getItem('username');
+    if ( name === 'null' || name === 'Not_Valid_User_Name' ){}
+    else{
+        window.location='#/main';
+    }
+</script>
 <div id="login_img"></div>
     <section class="main-context">
         <div class="container">
