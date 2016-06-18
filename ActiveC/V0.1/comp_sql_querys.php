@@ -831,7 +831,6 @@
     }
     //Top 10 Companies
     if($func=="17"){
-        sleep(2);
     echo"<table style=\"width:100%\">
 			<tr>
 			  	<td>Id</td>
@@ -881,11 +880,6 @@
 
     //Deactivate students
     if($func == "19") {
-        sleep(2);
-        echo" <h3>Deactivate students</h3>
-            <h4>Reason 1: I found a job, Thanks to JLM.</h4>
-            <h4>Reason 2: I found a job, Without this site help.</h4>
-            <h4>Reason 3: Other.</h4>";
     echo"<table style=\"width:100%\">
 			<tr>
 			  	<td>id</td>
@@ -898,7 +892,7 @@
 			  	<td>Phone</td>
 			</tr>";
     $sql = "SELECT Distinct student.ID,first_name,last_name,reason,description,time,Email,phone_number FROM student,student_turn_off 
-              WHERE student_turn_off.student_id=student.ID  GROUP BY ID ORDER BY time DESC";
+              WHERE student_turn_off.student_id=student.ID  ORDER BY time DESC";
     //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
     {
@@ -917,7 +911,6 @@
 }
     //Top 10 Last Deactivate students
     if($func == "20") {
-        sleep(2);
         echo"<table style=\"width:100%\">
 			<tr >
 			  	<td>id</td>
