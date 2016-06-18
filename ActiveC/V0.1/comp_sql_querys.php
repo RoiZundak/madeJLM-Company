@@ -429,6 +429,7 @@
         $pass1 =$_POST['new_pass'] ;
         $pass2 =$_POST['new_pass_conf'] ;
         $mail = $_POST['e_mail'];
+        $type = $_POST['type_b'];
         if(strcmp($pass1,$pass2)!=0 )
 		{
             echo "<script>
@@ -436,11 +437,17 @@
             setTimeout(function(){alert('Passwords does not match.Redirecting to login page..');},100);</script>";
             exit;
         }
-        //PDO STYLE :
-        $sql = "UPDATE company SET password = :pass, 
+        if($type==1 || $type=="1"){
+            $sql = "UPDATE company SET password = :pass, 
             f_pass = '', 
             f_exp = 0,  
             WHERE email = :email";
+        }else{
+            $sql = "UPDATE admin SET Password = :pass, 
+            f_pass = '', 
+            f_exp = 0,  
+            WHERE Email = :email";
+        }
         $stmt = $databaseConnection->prepare($sql);
         $stmt->bindParam(':pass', md5($pass1), PDO::PARAM_STR);
         $stmt->bindParam(':email',$mail, PDO::PARAM_STR);

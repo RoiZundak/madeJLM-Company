@@ -14,9 +14,6 @@
     }else{
         $table = "admin";
     }
-
-
-
     if($table === "company"){
         $sql = "SELECT * FROM company WHERE email = :email";
     }else{
