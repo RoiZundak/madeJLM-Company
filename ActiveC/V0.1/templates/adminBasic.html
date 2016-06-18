@@ -83,7 +83,6 @@
                         xmlhttp1 = new ActiveXObject("Microsoft.XMLHTTP");
 
                     xmlhttp1.onreadystatechange = function (){
-                        alert("state :"+xmlhttp1.readyState + " stat "+xmlhttp1.status );
                         if (xmlhttp1.readyState == 4 && xmlhttp1.status == 200){
                             document.getElementById("deactivate").innerHTML = xmlhttp1.responseText;
                         }
