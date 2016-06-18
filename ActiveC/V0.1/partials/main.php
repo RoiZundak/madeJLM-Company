@@ -13,10 +13,18 @@
         window.location='#/login';
         setTimeout(function(){alert('You Must login first');},100);
     }
+    $('#btnSuccess').click(function(e) {
+        e.preventDefault();
+        $.smkAlert({
+            text: 'Alert type "success"',
+            type: 'success',
+            position:'top-left'
+        });
+    });
 </script>
 
 <div id="main_wrap">
-
+    <a href="" class="btn btn-success" id="btnSuccess"></a>
     <div id= "filter_main">
         <div class="filters" id="skills"> Skills </div>
         <div class="filters" id="has_linkedin"> Has Linkedin </div>
