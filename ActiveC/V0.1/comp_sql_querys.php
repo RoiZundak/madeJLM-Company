@@ -869,10 +869,11 @@
 			  	<td>Last Name</td>
 			  	<td>e-Mail</td>
 			  	<td>Phone</td>
-			  	<td>LastLogin</td>
-			  	<td>Reason<td>
+			  	<td>time</td>
+			  	<td>Num.Reason<td>
+			  	<td>Description<td>
 			</tr>";
-    $sql = "SELECT student.ID,first_name,last_name,Email,phone_number,LastLogin,reason,description FROM student,student_turn_off 
+    $sql = "SELECT student.ID,first_name,last_name,Email,phone_number,time,reason,description FROM student,student_turn_off 
               WHERE student_turn_off.ID=student.ID ";
     //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
@@ -883,8 +884,10 @@
         echo "<td>".$row['last_name']."</td>";
         echo "<td>".$row['Email']."</td>";
         echo "<td>".$row['phone_number']."</td>";
-        echo "<td>".$row['LastLogin']."</td>";
+        echo "<td>".$row['time']."</td>";
         echo "<td>".$row['status']."</td>";
+        echo "<td>".$row['description']."</td>";
+
         echo "</tr>";
     }
     echo"</table>";
@@ -898,11 +901,12 @@
 			  	<td>Last Name</td>
 			  	<td>e-Mail</td>
 			  	<td>Phone</td>
-			  	<td>LastLogin</td>
-			  	<td>Reason<td>
+			  	<td>Time</td>
+			  	<td>Num.Reason<td>
+			  	<td>Description<td>
 			</tr>";
     $sql = "SELECT student.ID,first_name,last_name,Email,phone_number,LastLogin,reason,description FROM student,student_turn_off 
-              WHERE student_turn_off.ID=student.ID ORDER BY LastLogin LIMIT 10";
+              WHERE student_turn_off.ID=student.ID ORDER BY time LIMIT 10";
     //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
     {
@@ -912,8 +916,10 @@
         echo "<td>".$row['last_name']."</td>";
         echo "<td>".$row['Email']."</td>";
         echo "<td>".$row['phone_number']."</td>";
-        echo "<td>".$row['LastLogin']."</td>";
+        echo "<td>".$row['time']."</td>";
         echo "<td>".$row['status']."</td>";
+        echo "<td>".$row['description']."</td>";
+
         echo "</tr>";
     }
     echo"</table>";
