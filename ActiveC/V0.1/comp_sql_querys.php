@@ -860,20 +860,26 @@
     }
     echo"</table>";
 }
+
     //Deactivate students
     if($func == "19") {
+        echo" <h3>Deactivate students</h3>
+            <h4>Reason 1: I found a job, Thanks to JLM.</h4>
+            <h4>Reason 2: I found a job, Without this site help.</h4>
+            <h4>Reason 3: Other.</h4>";
     echo"<table id='std_table' style=\"width:100%\">
 			<tr>
 			  	<td>id</td>
 			  	<td>First Name</td>
 			  	<td>Last Name</td>
+			  	<td>Num.Reason</td>
+			  	<td>Description</td>
+			  	<td>time</td>
 			  	<td>e-Mail</td>
 			  	<td>Phone</td>
-			  	<td>LastLogin</td>
-			  	<td>Reason<td>
 			</tr>";
-    $sql = "SELECT student.ID,first_name,last_name,Email,phone_number,LastLogin,reason,description FROM student,student_turn_off 
-              WHERE student_turn_off.ID=student.ID ";
+    $sql = "SELECT Distinct student.ID,first_name,last_name,reason,description,time,Email,phone_number FROM student,student_turn_off 
+              WHERE student_turn_off.student_id=student.ID  ORDER BY time DESC";
     //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
     {
@@ -881,39 +887,42 @@
         echo "<td>".$row['ID']."</td>";
         echo "<td>".$row['first_name']."</td>";
         echo "<td>".$row['last_name']."</td>";
+        echo "<td>".$row['reason']."</td>";
+        echo "<td>".$row['description']."</td>";
+        echo "<td>".$row['time']."</td>";
         echo "<td>".$row['Email']."</td>";
         echo "<td>".$row['phone_number']."</td>";
-        echo "<td>".$row['LastLogin']."</td>";
-        echo "<td>".$row['status']."</td>";
         echo "</tr>";
     }
     echo"</table>";
 }
     //Top 10 Last Deactivate students
     if($func == "20") {
-        echo"<table id='std_table' style=\"width:100%\">
-			<tr>
+        echo"<table id='std_table'  style=\"width:100%\">
+			<tr >
 			  	<td>id</td>
 			  	<td>First Name</td>
 			  	<td>Last Name</td>
+			  	<td>Num.Reason</td>
+			  	<td>Description</td>
+			  	<td>Time</td>
 			  	<td>e-Mail</td>
 			  	<td>Phone</td>
-			  	<td>LastLogin</td>
-			  	<td>Reason<td>
 			</tr>";
-    $sql = "SELECT student.ID,first_name,last_name,Email,phone_number,LastLogin,reason,description FROM student,student_turn_off 
-              WHERE student_turn_off.ID=student.ID ORDER BY LastLogin LIMIT 10";
+    $sql = "SELECT Distinct student.ID,first_name,last_name,reason,description,time,Email,phone_number FROM student,student_turn_off 
+              WHERE student_turn_off.student_id=student.ID  ORDER BY time DESC LIMIT 10 ";
     //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
     {
-        echo "<tr> ";
+        echo "<tr > ";
         echo "<td>".$row['ID']."</td>";
         echo "<td>".$row['first_name']."</td>";
         echo "<td>".$row['last_name']."</td>";
+        echo "<td>".$row['reason']."</td>";
+        echo "<td>".$row['description']."</td>";
+        echo "<td>".$row['time']."</td>";
         echo "<td>".$row['Email']."</td>";
         echo "<td>".$row['phone_number']."</td>";
-        echo "<td>".$row['LastLogin']."</td>";
-        echo "<td>".$row['status']."</td>";
         echo "</tr>";
     }
     echo"</table>";
