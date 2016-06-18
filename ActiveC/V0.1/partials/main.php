@@ -7,12 +7,12 @@
 *****************************************************************************-->
 
 <script>
-var name = sessionStorage.getItem('username');
-if ( name === 'null' || name === 'Not_Valid_User_Name' )
-{
-window.location='#/login';
-setTimeout(function(){alert('You Must login first');},100);
-}
+    var name = sessionStorage.getItem('username');
+    if ( name === 'null' || name === 'Not_Valid_User_Name' )
+    {
+    window.location='#/login';
+    setTimeout(function(){alert('You Must login first');},100);
+    }
 </script>
 <div id="main_wrap">
 
@@ -32,36 +32,18 @@ setTimeout(function(){alert('You Must login first');},100);
             //db connect
             require_once "../php/db_connect.php";
             $databaseConnection =connect_to_db();
-        /*Hebrew*/
-        $sql="SET character_set_client=utf8";
-          $databaseConnection->query($sql);
-        $sql="SET character_set_connection=utf8";
-            $databaseConnection->query($sql);
-        $sql="SET character_set_database=utf8";
-          $databaseConnection->query($sql);
-        $sql="SET character_set_results=utf8";
-         $databaseConnection->query($sql);
-            $temp=0;
-        $bulk_size =200;
-        //$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC '; WORKING QUERY
-            while($temp<1){
-
-                /*
-                 * $stmt = $pdo->prepare('SELECT * FROM employees WHERE name = :name');
-
-$stmt->execute(array('name' => $name));
-
-foreach ($stmt as $row) {
-    // do something with $row
-}
-                 * ($temp*$bulk_size)
-                 *$stmt= $databaseConnection->prepare('SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC LIMIT :bulk_size OFFSET :off_set');
-                $stmt->bindParam(':bulk_size', $bulk_size);
-                $stmt->bindParam(':off_set', $temp*$bulk_size);
-                 *
-                 */
-
-
+            /*Hebrew*/
+            $sql="SET character_set_client=utf8";
+              $databaseConnection->query($sql);
+            $sql="SET character_set_connection=utf8";
+                $databaseConnection->query($sql);
+            $sql="SET character_set_database=utf8";
+              $databaseConnection->query($sql);
+            $sql="SET character_set_results=utf8";
+             $databaseConnection->query($sql);
+                $temp=0;
+            $bulk_size =200;
+            while(true){
                 $sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC LIMIT '.$bulk_size.' OFFSET '.($temp*$bulk_size);
 
                 $img_src = "../img/profilepic.png";

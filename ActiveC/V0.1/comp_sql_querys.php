@@ -283,7 +283,7 @@
             //PDO STYLE :
         $temp=0;
         $img_src = "../img/profilepic.png";
-        while($temp<1){
+        while(true){
                 $sql = "SELECT * FROM student WHERE linkedin<>'' ORDER BY profile_strength DESC LIMIT ".$bulk_size." OFFSET ".($temp*$bulk_size);
                 foreach ($databaseConnection->query($sql) as $row)
                 {
@@ -307,7 +307,7 @@
 	//clear
 	if($func=="4")
 	{
-        while($temp<1){
+        while(true){
             $sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC LIMIT '.$bulk_size.' OFFSET '.($temp*$bulk_size);
 
             $img_src = "../img/profilepic.png";
@@ -609,7 +609,7 @@
         //$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC '; WORKING QUERY
 
 
-        while($temp<1){
+        while(true){
             $sql = 'SELECT * FROM student WHERE Activated=1 AND ID IN ('.implode(",",$std_id).') ORDER BY  profile_strength DESC LIMIT '.$bulk_size.' OFFSET '.($temp*$bulk_size);
             $stmt = $databaseConnection->prepare($sql);
             $stmt->bindParam(':id_arr', $imp_str);
