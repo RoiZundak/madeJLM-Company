@@ -13,6 +13,12 @@
         window.location='#/login';
         setTimeout(function(){alert('You Must login first');},100);
     }
+    swal({
+        title: "Error!",
+        text: "Here's my error message!",
+        type: "error",
+        confirmButtonText: "Cool"
+    });
 </script>
 
 <div id="main_wrap">
