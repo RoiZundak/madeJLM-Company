@@ -869,7 +869,7 @@
 			  	<td>First Name</td>
 			  	<td>Last Name</td>
 			  	<td>Num.Reason</td>
-			  	<td>Description<td>
+			  	<td>Description</td>
 			  	<td>time</td>
 			  	<td>e-Mail</td>
 			  	<td>Phone</td>
