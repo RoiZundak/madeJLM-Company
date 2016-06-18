@@ -831,6 +831,7 @@
     }
     //Top 10 Companies
     if($func=="17"){
+        sleep(2);
     echo"<table style=\"width:100%\">
 			<tr>
 			  	<td>Id</td>
@@ -880,6 +881,7 @@
 
     //Deactivate students
     if($func == "19") {
+        sleep(2);
         echo" <h3>Deactivate students</h3>
             <h4>Reason 1: I found a job, Thanks to JLM.</h4>
             <h4>Reason 2: I found a job, Without this site help.</h4>
@@ -915,6 +917,7 @@
 }
     //Top 10 Last Deactivate students
     if($func == "20") {
+        sleep(2);
         echo"<table style=\"width:100%\">
 			<tr >
 			  	<td>id</td>
