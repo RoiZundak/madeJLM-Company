@@ -869,12 +869,12 @@
 			  	<td>Last Name</td>
 			  	<td>Num.Reason<td>
 			  	<td>Description<td>
+			  	<td>time</td>
 			  	<td>e-Mail</td>
 			  	<td>Phone</td>
-			  	<td>time</td>
 
 			</tr>";
-    $sql = "SELECT Distinct student.ID,first_name,last_name,reason,description,Email,phone_number,time FROM student,student_turn_off 
+    $sql = "SELECT Distinct student.ID,first_name,last_name,reason,description,time,Email,phone_number FROM student,student_turn_off 
               WHERE student_turn_off.student_id=student.ID  ORDER BY time DESC";
     //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
@@ -885,9 +885,9 @@
         echo "<td>".$row['last_name']."</td>";
         echo "<td>".$row['reason']."</td>";
         echo "<td>".$row['description']."</td>";
+        echo "<td>".$row['time']."</td>";
         echo "<td>".$row['Email']."</td>";
         echo "<td>".$row['phone_number']."</td>";
-        echo "<td>".$row['time']."</td>";
 
         echo "</tr>";
     }
@@ -904,10 +904,10 @@
 			  	<td>Description<td>
 			  	<td>e-Mail</td>
 			  	<td>Phone</td>
-			  	<td>Time</td>
+
 
 			</tr>";
-    $sql = "SELECT Distinct student.ID,first_name,last_name,reason,description,Email,phone_number,time FROM student,student_turn_off 
+    $sql = "SELECT Distinct student.ID,first_name,last_name,reason,description,time,Email,phone_number FROM student,student_turn_off 
               WHERE student_turn_off.student_id=student.ID  ORDER BY time DESC LIMIT 10 ";
     //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
@@ -916,11 +916,12 @@
         echo "<td>".$row['ID']."</td>";
         echo "<td>".$row['first_name']."</td>";
         echo "<td>".$row['last_name']."</td>";
-        echo "<td>".$row['Email']."</td>";
-        echo "<td>".$row['phone_number']."</td>";
-        echo "<td>".$row['time']."</td>";
         echo "<td>".$row['reason']."</td>";
         echo "<td>".$row['description']."</td>";
+        echo "<td>".$row['time']."</td>";
+        echo "<td>".$row['Email']."</td>";
+        echo "<td>".$row['phone_number']."</td>";
+
 
         echo "</tr>";
     }
