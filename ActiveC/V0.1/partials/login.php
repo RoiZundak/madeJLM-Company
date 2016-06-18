@@ -116,7 +116,7 @@
 
             else if(count($results) > 0 && $password !== $results['password'])
             {
-                $errMsg .= 'Incorrect Password 1<br>';
+                $errMsg .= 'Incorrect Password <br>';
                 $sql_update="UPDATE company SET attempt = attempt + 1 WHERE username = '".$username."' OR email='".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();

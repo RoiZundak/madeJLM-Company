@@ -14,6 +14,7 @@
         setTimeout(function(){alert('You Must login first');},100);
     }
 </script>
+
 <div id="main_wrap">
 
     <div id= "filter_main">
@@ -26,8 +27,7 @@
 
     <div id = "show_stud"> </div>
     <div id = "show_all">
-
-
+        
         <?php
             //db connect
             require_once "../php/db_connect.php";
@@ -68,6 +68,7 @@
             //get all students
 
         ?>
+        
         <script>
             var id="-1";
             $("#skill_std").hide();

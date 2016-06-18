@@ -56,8 +56,6 @@ if(!empty($_POST['username']))
                     </script>";
             exit;
         }
-
-
     }
 }
 ?>
