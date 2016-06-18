@@ -6,13 +6,11 @@
 ********************************************************************************
 *****************************************************************************-->
 
-<!-- Login page in student's side format -->
-
-   <!-- <img id = "login_img" src="./img/jlm_pic.jpg" alt="main_img" > -->
 <script>
     var name = sessionStorage.getItem('username');
     if ( name === 'null' || name === 'Not_Valid_User_Name' ){}
     else{
+        alert("from login to main.");
         window.location='#/main';
     }
 </script>
