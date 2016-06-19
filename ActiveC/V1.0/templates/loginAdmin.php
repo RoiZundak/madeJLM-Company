@@ -14,7 +14,6 @@ if(!empty($_POST['username']))
     $errMsg = '';
     //username and password sent from Form
     $username = trim($_POST['username']);
-    //$email=trim($_POST['username']);
     $password = trim($_POST['password']);
     $password = md5($password);
     if ($username == '' || $password == '')
