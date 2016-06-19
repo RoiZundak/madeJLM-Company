@@ -16,12 +16,7 @@
              {
                 sessionStorage.setItem('username', 'Not_Valid_User_Name');
                 sessionStorage.setItem('username_Admin', 'Not_Valid_User_Name');
-                setTimeout(function(){swal({
-        title: \"Error!\",
-        text: \"Here's my error message!\",
-        type: \"error\",
-        confirmButtonText: \"Cool\"
-    });},100);
+             setTimeout(function(){alert('You have successfully logout. Redirecting to Login page..');},100);
                 
              }
      </script>";
