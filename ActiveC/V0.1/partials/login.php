@@ -17,7 +17,7 @@ if(!empty($_POST['username']))
     //$email=trim($_POST['username']);
     $password = trim($_POST['password']);
 
-    if ($username == '' || $password == '')
+    /*if ($username == '' || $password == '')
     {
         $errMsg .= 'empty Fields<br>';
         // window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
@@ -52,7 +52,7 @@ if(!empty($_POST['username']))
                     setTimeout(function(){ swal(\"You Must Enter Password!\");},100);
                 </script>";
         exit;
-    }
+    }*/
     $password = md5(trim($_POST['password']));
 
     if($errMsg == '')
@@ -134,7 +134,7 @@ if(!empty($_POST['username']))
 
                 echo " <script>
                         localStorage.clear();
-                        window.location='./#/login';
+                        window.location='../#/login';
                         setTimeout(function(){ swal('You have tried too much. please try again in 5 minutes.');},100);
                     </script>";
                 exit;
@@ -143,7 +143,7 @@ if(!empty($_POST['username']))
             echo("
                     <script>
                         localStorage.clear();
-                        window.location='./#/login';
+                        window.location='../#/login';
                         setTimeout(function(){ swal('Incorrect Passwords.');},100);
                     </script>
                 ");
@@ -154,10 +154,10 @@ if(!empty($_POST['username']))
         {
             $errMsg .= 'Username is not found<br>';
 
-            echo("<a id='re_route_login' href ='../#/login'></a>
+            echo("
                     <script>
                         localStorage.clear();
-                        window.location='#/';
+                        window.location='../#/login';
                         setTimeout(function(){ swal('Username not found.');},100);
                     </script>
                 ");
