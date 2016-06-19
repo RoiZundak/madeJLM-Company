@@ -35,7 +35,7 @@
         //third : code is not the same in db and link
         echo "<script>
 			window.location='#/login';
-            setTimeout(function(){swal('This link has expired.Redirecting to login page..');},100);</script>";
+            setTimeout(function(){alert('This link has expired.Redirecting to login page..');},100);</script>";
         exit;
     }
 ?>
