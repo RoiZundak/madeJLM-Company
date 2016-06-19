@@ -28,11 +28,16 @@ body{
     background-size: 100%;
 
 }
-@media (max-width:1199px)
-{
-    header { background-size: cover;  background: #333 url('../img/jlm_pic.jpg');background-repeat: no-repeat;}
 
-}
+@media only screen and (max-width : 640px) {
+
+    header {
+        background-size: cover;
+        background: #333 url('../img/jlm_pic.jpg');
+        background-repeat: no-repeat;
+        position: absolute;
+
+    }}
 
 /* ADMIN PAGE SETTINGS */
 .admin_wrap{
