@@ -802,7 +802,6 @@
     //Add new skill
     if($func == "16"){
         $name =$_POST["skill_name"];
-        //PDO SYTLE :
         $records = $databaseConnection->prepare('INSERT INTO skills (name, status) VALUES (:name,1)');
         $records->bindParam(':name', $name);
         if ( $records->execute()==true)
