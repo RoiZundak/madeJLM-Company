@@ -14,167 +14,165 @@
     }
 </script>
 <body id="admin_wrap">
-    <h1>Admin Page !</h1><br>
-    <!--Top 10 Companies-->
-    <form method="post" action="./comp_sql_querys.php?func=7" style="background-color:lightgrey;border-width: thin;border-style: solid " >
+<h1>Admin Page !</h1><br>
+<!--Top 10 Companies-->
+<form method="post" action="./comp_sql_querys.php?func=7" style="background-color:lightgrey;border-width: thin;border-style: solid " >
 
     <div class="adminForm">
-            <h3>Top 10 Companies</h3>
-            <div class="form-group" id="comp">
-                <script>
-                    if (window.XMLHttpRequest) // code for IE7+, Firefox, Chrome, Opera, Safari
-                        xmlhttp2 = new XMLHttpRequest();
-                    else // code for IE6, IE5
-                        xmlhttp2 = new ActiveXObject("Microsoft.XMLHTTP");
+        <h3>Top 10 Companies</h3>
+        <div class="form-group" id="comp">
+            <script>
+                if (window.XMLHttpRequest) // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp2 = new XMLHttpRequest();
+                else // code for IE6, IE5
+                    xmlhttp2 = new ActiveXObject("Microsoft.XMLHTTP");
+                xmlhttp2.onreadystatechange = function (){
+                    if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200)
+                        document.getElementById("comp").innerHTML = xmlhttp2.responseText;
+                };
+                xmlhttp2.open("GET", "comp_sql_querys.php?q=0&func=" + "17", true);
+                xmlhttp2.send();
+            </script>
+        </div>
+        <div class="form-group" >
+            <button type="submit" name = "submit" class="login-button">Show All</button>
+        </div>
+    </div><br>
+</form><br>
+<!--Top 10 Student-->
 
-                    xmlhttp2.onreadystatechange = function (){
-                        if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200)
-                            document.getElementById("comp").innerHTML = xmlhttp2.responseText;
-                    };
-                    xmlhttp2.open("GET", "comp_sql_querys.php?q=0&func=" + "17", true);
-                    xmlhttp2.send();
-                </script>
-            </div>
-            <div class="form-group" >
-                <button type="submit" name = "submit" class="login-button">Show All</button>
-            </div>
-        </div><br>
-    </form><br>
-    <!--Top 10 Student-->
-
-    <form method="post" action="./comp_sql_querys.php?func=13" style="background-color:lightgrey;border-width: thin;border-style: solid " >
-        <div class="adminForm">
-            <h3>Top 10 Students</h3>
-            <div class="form-group" id="stud">
-                <script>
-                    if (window.XMLHttpRequest) // code for IE7+, Firefox, Chrome, Opera, Safari
-                        xmlhttp = new XMLHttpRequest();
-                    else // code for IE6, IE5
-                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-
-                    xmlhttp.onreadystatechange = function (){
+<form method="post" action="./comp_sql_querys.php?func=13" style="background-color:lightgrey;border-width: thin;border-style: solid " >
+    <div class="adminForm">
+        <h3>Top 10 Students</h3>
+        <div class="form-group" id="stud">
+            <script>
+                if (window.XMLHttpRequest) // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                else // code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                xmlhttp.onreadystatechange = function (){
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                         document.getElementById("stud").innerHTML = xmlhttp.responseText;
-                    };
-                    xmlhttp.open("GET", "comp_sql_querys.php?q=0&func=" + "18", true);
-                    xmlhttp.send();
-                    setTimeout(function(){},100);
-                </script>
-            </div>
-            <div class="form-group" >
-                <button type="submit" name = "submit" class="login-button">Show All</button>
-            </div>
-        </div><br>
-    </form><br>
-    <!-- Deactivate students-->
-    <form method="post" action="./comp_sql_querys.php?func=19" style="background-color:lightgrey;border-width: thin;border-style: solid " >
-        <div class="adminForm">
-            <h3>Latest Deactivated</h3>
-            <div class="form-group" >
-                <h5>Reason 1: I found a job, Thanks to JLM.</h5>
-                <h5>Reason 2: I found a job, Without this site help.</h5>
-                <h5>Reason 3: Other.</h5>
-            </div>
-            <div class="form-group" id="deactivate">
-                <script>
-                    if (window.XMLHttpRequest) // code for IE7+, Firefox, Chrome, Opera, Safari
-                        xmlhttp1 = new XMLHttpRequest();
-                    else // code for IE6, IE5
-                        xmlhttp1 = new ActiveXObject("Microsoft.XMLHTTP");
-
-                    xmlhttp1.onreadystatechange = function (){
-                        if (xmlhttp1.readyState == 4 && xmlhttp1.status == 200){
-                            document.getElementById("deactivate").innerHTML = xmlhttp1.responseText;
-                        }
-
-                    };
-                    xmlhttp1.open("GET", "comp_sql_querys.php?q=0&func=" + "20", true);
-                    xmlhttp1.send();
-                </script>
-            </div>
-            <div class="form-group" >
-                <button type="submit" name = "submit" class="login-button">Show All</button>
-            </div>
-        </div><br>
-    </form><br>
-    <!-- ADD a new company -->
-         <form method="post" action="./comp_sql_querys.php?func=5" style="background-color:lightgrey;border-width: thin;border-style: solid " >
-            <div class="adminForm">
-            <h3>Add a new company</h3>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="User name" id="user_new" name="username" >
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" placeholder="E-Mail" id="mail_new" name="e_mail" >
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="pass_new" placeholder="Password" name="password" >
-                </div>
+                };
+                xmlhttp.open("GET", "comp_sql_querys.php?q=0&func=" + "18", true);
+                xmlhttp.send();
+                setTimeout(function(){},100);
+            </script>
+        </div>
+        <div class="form-group" >
+            <button type="submit" name = "submit" class="login-button">Show All</button>
+        </div>
+    </div><br>
+</form><br>
+<!-- Deactivate students-->
+<form method="post" action="./comp_sql_querys.php?func=19" style="background-color:lightgrey;border-width: thin;border-style: solid " >
+    <div class="adminForm">
+        <h3>Latest Deactivated</h3>
+        <div class="form-group" >
+            <h5>Reason 1: I found a job, Thanks to JLM.</h5>
+            <h5>Reason 2: I found a job, Without this site help.</h5>
+            <h5>Reason 3: Other.</h5>
+        </div>
+        <div class="form-group" id="deactivate">
+            <script>
+                if (window.XMLHttpRequest) // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp1 = new XMLHttpRequest();
+                else // code for IE6, IE5
+                    xmlhttp1 = new ActiveXObject("Microsoft.XMLHTTP");
+                xmlhttp1.onreadystatechange = function (){
+                    if (xmlhttp1.readyState == 4 && xmlhttp1.status == 200){
+                        document.getElementById("deactivate").innerHTML = xmlhttp1.responseText;
+                    }
+                };
+                xmlhttp1.open("GET", "comp_sql_querys.php?q=0&func=" + "20", true);
+                xmlhttp1.send();
+            </script>
+        </div>
+        <div class="form-group" >
+            <button type="submit" name = "submit" class="login-button">Show All</button>
+        </div>
+    </div><br>
+</form><br>
+<!-- ADD a new company -->
+<form method="post" action="./comp_sql_querys.php?func=5" style="background-color:lightgrey;border-width: thin;border-style: solid " >
+    <div class="adminForm">
+        <h3>Add a new company</h3>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="User name" id="user_new" name="username" >
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" placeholder="E-Mail" id="mail_new" name="e_mail" >
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" id="pass_new" placeholder="Password" name="password" >
+        </div>
         <button type="submit" name = "submit" class="login-button">Add</button>
     </div><br>
-    </form><br>
-    <!-- Remove company -->
-        <form method="post" action="./comp_sql_querys.php?func=6" style="background-color:lightgrey;border-width: thin;border-style: solid " >
-            <div class="adminForm">
-                <h3>Remove Company by id </h3>
-                <div class="form-group">
-                    <input type="number" min="0" class="form-control" placeholder="Company's id" id="row_id" name="row_id" >
-                </div>
-                <button type="submit" name = "submit" class="login-button">Remove</button>
-            </div><br>
-        </form><br>
+</form><br>
+<!-- Remove company -->
+<form method="post" action="./comp_sql_querys.php?func=6" style="background-color:lightgrey;border-width: thin;border-style: solid " >
+    <div class="adminForm">
+        <h3>Remove Company by id </h3>
+        <div class="form-group">
+            <input type="number" min="0" class="form-control" placeholder="Company's id" id="row_id" name="row_id" >
+        </div>
+        <button type="submit" name = "submit" class="login-button">Remove</button>
+    </div><br>
+</form><br>
 
-    <!-- Reset company password-->
-         <form method="post" action="./comp_sql_querys.php?func=12" style="background-color:lightgrey;border-width: thin;border-style: solid " >
-             <div class="adminForm">
-                <h3>Reset password </h3>
-                    <div class="form-group">
-                      <input type="number" min="0" class="form-control" placeholder="Company's id" id="row_id_reset" name="row_id" >
-                     </div>
-                    <div class="form-group">
-                      <input type="number" min="0" class="form-control" id="new_pass" placeholder="Password" name="row_id" >
-                  </div>
-                 <button type="submit" name = "submit" class="login-button">Reset</button>
-             </div><br>
-         </form><br>
-    <!-- Remove Student -->
-        <form method="post" action="./comp_sql_querys.php?func=14" style="background-color:lightgrey;border-width: thin;border-style: solid " >
-            <div class="adminForm">
-                <h3>Remove Student by id </h3>
-                <div class="form-group" >
-                    <input type="number" min="0" class="form-control" id="student_id" placeholder="Student's id " name="student_id" >
-                </div>
-                <button type="submit" name = "submit" class="login-button">Remove</button>
-            </div><br>
-        </form><br>
-
-    <!-- Update Student activation-->
-        <form method="post" action="./comp_sql_querys.php?func=15" style="background-color:lightgrey;border-width: thin;border-style: solid " >
-            <div class="adminForm">
-                <h3>Update Student activation </h3>
-                <div class="form-group" >
-                    <input type="number" min="0" class="form-control" id="std_id" placeholder="Student's id " name="std_id" >
-                </div>
-                <div class="form-group" >
-                    <label for="std_id">Student's id : </label>
-                    <select name="state_op">
-                        <option value="0">suspended</option>
-                        <option value="1" selected="selected" >Activated</option>
-                    </select>
-                </div>
-                <button type="submit" name = "submit" class="login-button">Update</button>
-            </div><br>
-        </form><br>
-    <!-- ADD new skill-->
-    <form method="post" action="./comp_sql_querys.php?func=16" style="background-color:lightgrey;border-width: thin;border-style: solid " >
+<!-- Reset company password-->
+<form method="post" action="./comp_sql_querys.php?func=12" style="background-color:lightgrey;border-width: thin;border-style: solid " >
+    <div class="adminForm">
+        <h3>Reset password </h3>
         <div class="adminForm">
-            <h3>Add a new skill to list </h3>
-            <div class="form-group" >
-                <input type="text" min="0" class="form-control" id="skill_name" placeholder="Skills name " name="skill_name" >
+            <div class="form-group">
+                <input type="number" min="0" class="form-control" placeholder="Company's id" id="row_id_reset" name="row_id" >
             </div>
-            <button type="submit" name = "submit" class="login-button">Update</button>
-        </div><br>
-    </form><br>
+            <div class="form-group">
+                <input type="number" min="0" class="form-control" id="new_pass" placeholder="Password" name="row_id" >
+            </div>
+            <button type="submit" name = "submit" class="login-button">Reset</button>
+        </div>
+    </div><br>
+</form><br>
+<!-- Remove Student -->
+<form method="post" action="./comp_sql_querys.php?func=14" style="background-color:lightgrey;border-width: thin;border-style: solid " >
+    <div class="adminForm">
+        <h3>Remove Student by id </h3>
+        <div class="form-group" >
+            <input type="number" min="0" class="form-control" id="student_id" placeholder="Student's id " name="student_id" >
+        </div>
+        <button type="submit" name = "submit" class="login-button">Remove</button>
+    </div><br>
+</form><br>
+
+<!-- Update Student activation-->
+<form method="post" action="./comp_sql_querys.php?func=15" style="background-color:lightgrey;border-width: thin;border-style: solid " >
+    <div class="adminForm">
+        <h3>Update Student activation </h3>
+        <div class="form-group" >
+            <input type="number" min="0" class="form-control" id="std_id" placeholder="Student's id " name="std_id" >
+        </div>
+        <div class="form-group" >
+            <label for="std_id">Student's id : </label>
+            <select name="state_op">
+                <option value="0">suspended</option>
+                <option value="1" selected="selected" >Activated</option>
+            </select>
+        </div>
+        <button type="submit" name = "submit" class="login-button">Update</button>
+    </div><br>
+</form><br>
+<!-- ADD new skill-->
+<form method="post" action="./comp_sql_querys.php?func=16" style="background-color:lightgrey;border-width: thin;border-style: solid " >
+    <div class="adminForm">
+        <h3>Add a new skill to list </h3>
+        <div class="form-group" >
+            <input type="text" min="0" class="form-control" id="skill_name" placeholder="Skills name " name="skill_name" >
+        </div>
+        <button type="submit" name = "submit" class="login-button">Update</button>
+    </div><br>
+</form><br>
 
 
 
