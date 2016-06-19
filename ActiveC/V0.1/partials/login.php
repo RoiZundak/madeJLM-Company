@@ -97,7 +97,7 @@ if(!empty($_POST['username']))
                 echo " <script>
                         localStorage.clear();
                         window.location='../#/login';
-                        setTimeout(function(){alert('You have tried too much. please try again in 5 minutes.');},100);
+                        setTimeout(function(){alert('You have tried too much. please try again in 5 minutes.');},150);
 
                         
                     </script>";
@@ -109,7 +109,7 @@ if(!empty($_POST['username']))
                     <script>
                         localStorage.clear();
                         window.location='../#/login';
-                        setTimeout(function(){alert('Incorrect Passwords.');},100);
+                        setTimeout(function(){alert('Incorrect Passwords.');},150);
                         
 
                     </script>
