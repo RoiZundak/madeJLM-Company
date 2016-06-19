@@ -289,7 +289,6 @@
 
     //filter Linkedin
     if($func=="3") {
-            //PDO STYLE :
         $temp=0;
         $img_src = "../img/profilepic.png";
         while(true){
@@ -351,7 +350,6 @@
 		$p_ass = $_POST['password'];
 		$p_ass = md5($p_ass);
 
-		//PDO SYTLE :
 		$records = $databaseConnection->prepare('INSERT INTO company (username, email, password,created) VALUES (:user,:mail,:password,NOW() )');
 		$records->bindParam(':user', $name);
 		$records->bindParam(':mail', $mail);
@@ -380,7 +378,6 @@
 	{
 		$row_number =$_POST["row_id"] ;
 
-		//PDO STYLE :
 		$records = $databaseConnection->prepare('DELETE FROM company WHERE id= :row_id');
 		$records->bindParam(':row_id', $row_number);
 		if ( $records->execute()==true)
@@ -410,7 +407,6 @@
 			  	<td>Counter Enters</td>
 			</tr>";
 		$sql = "SELECT * FROM company ORDER BY counter_enters DESC";
-		//PDO STYLE :
 		foreach ($databaseConnection->query($sql) as $row)
 		{
 			echo "<tr> ";
@@ -508,7 +504,7 @@
 						}
 							
 					};
-					//xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\",true);
+
 					xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
 					xmlhttp.send();
 				});
