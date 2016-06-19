@@ -103,13 +103,17 @@ if(!empty($_POST['username'])) {
                     </script>";
                 exit;
             }
+            /****
+             * localStorage.username = '';
+            localStorage.password = '';
+            localStorage.chkbx = '';
+             */
             echo(" 
                     <script>
-                        localStorage.username = '';
-                        localStorage.password = '';
-                        localStorage.chkbx = '';
+                        
                         window.location='#/login';
-                           setTimeout(function(){alert('You Must login first');},100);
+                        setTimeout(function(){alert('You Must login first');},100);
+                    </script>
                 ");
             exit;
 
