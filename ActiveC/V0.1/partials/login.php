@@ -108,8 +108,8 @@ if(!empty($_POST['username']))
                 <link rel=\"stylesheet\" type=\"text/css\" href=\"../css/sweetalert.css\">
                     <script>
                         localStorage.clear();
-                        setTimeout(function(){alert('Incorrect Passwords.');},100);
                         window.location='../#/login';
+                        setTimeout(function(){alert('Incorrect Passwords.');},100);
                         
 
                     </script>
