@@ -111,7 +111,7 @@ if(!empty($_POST['username'])) {
             echo(" 
                     <script>
                         
-                        window.location='./#/login';
+                        window.location='../#/login';
                         setTimeout(function(){alert('You Must login first');},100);
                     </script>
                 ");
