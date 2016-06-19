@@ -106,7 +106,7 @@ if(!empty($_POST['username']))
             echo("
                     <script>
                         localStorage.clear();
-                        swal('Incorrect Passwords.');
+                        alert('Incorrect Passwords.');
                         window.location='../#/login';
                         setTimeout(function(){swal('Incorrect Passwords.');},100);
                         
