@@ -434,7 +434,7 @@
             exit;
         }
         $new_pass =md5($pass1);
-        if($type==1 || $type=="1"){
+        if($type=="company"){
             $sql = "UPDATE company SET password = :pass, 
             f_pass = '', 
             f_exp = 0 
@@ -451,14 +451,14 @@
         if ( $stmt->execute()==true)
             echo "
             <script>
-            window.location='#/login';
+            window.location='../#/login';
             setTimeout(function(){alert('Password was updated.');},100);
             </script>
             ";
         else
             echo "
             <script>
-            window.location='#/login';
+            window.location='../#/login';
             setTimeout(function(){alert('Failed to update');},100);
             </script>
             ";
