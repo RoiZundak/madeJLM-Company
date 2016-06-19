@@ -5,6 +5,7 @@
 ********************************************************************************
 ********************************************************************************
 *****************************************************************************-->
+
 <?php
 echo
 require_once "../php/db_connect.php";
@@ -83,7 +84,7 @@ if(!empty($_POST['username'])) {
             $update = $databaseConnection ->prepare($sql_update);
             $update->execute();
 
-            if( intval( $results['attempt'] )>= 4)
+            if( intval( $results['attempt'] )>= 5)
             {
                 $sql_update="UPDATE company SET attempt = 0 WHERE username = '".$username."' OR email='".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
@@ -109,11 +110,7 @@ if(!empty($_POST['username'])) {
                         localStorage.usrname = '';
                         localStorage.password = '';
                         localStorage.chkbx = '';                             
-                        window.location='../#/login';
-                        alert('Incorrect Passwords.');
-                        
-
-                    </script>
+                        window.location='../#/login';                   
                 ");
             exit;
 
