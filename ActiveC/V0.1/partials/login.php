@@ -144,7 +144,8 @@ if(!empty($_POST['username']))
                     <script>
                         localStorage.clear();
                         window.location='../#/login';
-                        setTimeout(function(){ swal('Incorrect Passwords.');},5);
+                        console.log('dfsfdsf');
+                        setTimeout(function(){ swal('Incorrect Passwords.');},150);
                     </script>
                 ");
             exit;
@@ -156,9 +157,10 @@ if(!empty($_POST['username']))
 
             echo("
                     <script>
+                        console.log('dfsfdsf');
                         localStorage.clear();
                         window.location='../#/login';
-                         setTimeout(function(){ swal('Username not found.');},5)
+                         setTimeout(function(){ swal('Username not found.');},150)
 
                     </script>
                 ");
