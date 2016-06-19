@@ -451,14 +451,14 @@
         if ( $stmt->execute()==true)
             echo "
             <script>
-            window.location='../#/login';
+            window.location='./#/login';
             setTimeout(function(){alert('Password was updated.');},100);
             </script>
             ";
         else
             echo "
             <script>
-            window.location='../#/login';
+            window.location='./#/login';
             setTimeout(function(){alert('Failed to update');},100);
             </script>
             ";
