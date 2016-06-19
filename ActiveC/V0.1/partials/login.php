@@ -95,7 +95,9 @@ if(!empty($_POST['username']))
                 $update->execute();
 
                 echo " <script>
-                        localStorage.clear();
+                        localStorage.usrname = '';
+                        localStorage.password = '';
+                        localStorage.chkbx = '';                             
                         window.location='../#/login';
                         setTimeout(function(){alert('You have tried too much. please try again in 5 minutes.');},150);
                         
@@ -104,7 +106,9 @@ if(!empty($_POST['username']))
             }
             echo(" 
                     <script>
-                        localStorage.clear();
+                        localStorage.usrname = '';
+                        localStorage.password = '';
+                        localStorage.chkbx = '';                             
                         window.location='../#/login';
                         setTimeout(function(){alert('Incorrect Passwords.');},150);
                         
@@ -120,7 +124,9 @@ if(!empty($_POST['username']))
 
             echo("
                     <script>
-                        localStorage.clear();
+                        localStorage.usrname = '';
+                        localStorage.password = '';
+                        localStorage.chkbx = '';                        
                         setTimeout(function(){alert('Username not found.');},100);
                         window.location='../#/login';
                     </script>
