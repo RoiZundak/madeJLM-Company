@@ -25,7 +25,6 @@
                 " <script>
                     localStorage.clear();
                     window.location='#/login';
-                    setTimeout(function(){ alert('username or password required');},100);
                 </script>";
             exit;
 
@@ -38,7 +37,7 @@
                 " <script>
                     localStorage.clear();
                     window.location='#/login';
-                    setTimeout(function(){ alert('You must enter your Username');},100);
+                    setTimeout(function(){ swal(\"You Must Enter Username!\");},100);
                 </script>";
             exit;
         }
@@ -50,7 +49,7 @@
                 " <script>
                     localStorage.clear();
                     window.location='#/login';
-                     setTimeout(function(){ alert('You must enter your Password');},100);
+                    setTimeout(function(){ swal(\"You Must Enter Password!\");},100);
                 </script>";
             exit;
         }
@@ -77,7 +76,7 @@
                     $errMsg .= 'Time block<br>';
                     echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
-                        alert('Sorry. Your user is blocked. Please try again in 5 minutes');
+                         swal('Sorry. Your user is blocked. Please try again in 5 minutes');
                         document.getElementById(\"re_route_login\").click();
                     </script>
                      ");
@@ -135,18 +134,18 @@
 
                    echo " <script>
                         localStorage.clear();
-                        //document.getElementById(\"re_route_login\").click();
                         window.location='#/login';
-                        setTimeout(function(){ alert('You have tried too much. please try again in 5 minutes.');},100);
+                        setTimeout(function(){ swal('You have tried too much. please try again in 5 minutes.');},100);
                     </script>";
                     exit;
                 }
 
                 echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
-                        alert('Incorrect Password');
+                        alert('1');
                         localStorage.clear();
-                        document.getElementById(\"re_route_login\").click();
+                        window.location='#/login';
+                        setTimeout(function(){ swal('Incorrect Passwords.');},100);
                     </script>
                 ");
                 exit;
@@ -158,9 +157,10 @@
 
                 echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
-                        alert('Username not found.');
+                        alert('2');
                         localStorage.clear();
-                        document.getElementById(\"re_route_login\").click();
+                        window.location='#/login';
+                        setTimeout(function(){ swal('Username not found.');},100);
                     </script>
                 ");
                 exit;
