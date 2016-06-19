@@ -9,7 +9,6 @@
 <?php
 require_once "../php/db_connect.php";
 $databaseConnection =connect_to_db();
-
 if(!empty($_POST['username'])) {
     $errMsg = '';
     //username and password sent from Form
@@ -17,7 +16,6 @@ if(!empty($_POST['username'])) {
     //$email=trim($_POST['username']);
     $password = trim($_POST['password']);
     $password = md5(trim($_POST['password']));
-
     if($errMsg == '')
     {
         $name_or_mail="SELECT * FROM  company WHERE username = :username OR email=:username";
@@ -25,15 +23,12 @@ if(!empty($_POST['username'])) {
         $records->bindParam(':username', $username);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
-
         if(count($results) > 0 && $results['block'] != null)
         {
             $d=strtotime("-5 Minutes -4 hours"); // time deffrence betweem time and date
             $newTime =  date("Y-m-d h:i:sa", $d);
-
             $currentDateTime = $results['block'];
             $newDateTime = date('Y-m-d h:i:sa', strtotime($currentDateTime));
-
             if($newTime < $newDateTime)
             {
                 $errMsg .= 'Time block<br>';
@@ -44,7 +39,6 @@ if(!empty($_POST['username'])) {
                     </script>
                      ");
                 exit;
-
             }
             else
             {
@@ -53,7 +47,6 @@ if(!empty($_POST['username'])) {
                 $update->execute();
             }
         }
-
         if(count($results) > 0 && $password === $results['password'] )
         {
             if($results['attempt'] > 0) {
@@ -61,7 +54,6 @@ if(!empty($_POST['username'])) {
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
             }
-
             //update company counter enters
             $sql_update="UPDATE company SET counter_enters = counter_enters + 1 WHERE username = '".$username."' OR email='".$username."'";
             $update = $databaseConnection ->prepare($sql_update);
@@ -74,30 +66,25 @@ if(!empty($_POST['username'])) {
                     ");
             exit;
         }
-
         else if(count($results) > 0 && $password !== $results['password'])
         {
             $errMsg .= 'Incorrect Password <br>';
             $sql_update="UPDATE company SET attempt = attempt + 1 WHERE username = '".$username."' OR email='".$username."'";
             $update = $databaseConnection ->prepare($sql_update);
             $update->execute();
-
             if( intval( $results['attempt'] )>= 5)
             {
                 $sql_update="UPDATE company SET attempt = 0 WHERE username = '".$username."' OR email='".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
-
-
                 $sql_update="UPDATE company SET block = NOW() WHERE username = '".$username."' OR email='".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
-
                 echo " <script>
-                        localStorage.username = '';
+                        localStorage.usrname = '';
                         localStorage.password = '';
                         localStorage.chkbx = '';                             
-                        window.location='#/login';
+                        window.location='../#/login';
                         alert('You have tried too much. please try again in 5 minutes.');
                         
                     </script>";
@@ -105,27 +92,24 @@ if(!empty($_POST['username'])) {
             }
             echo(" 
                     <script>
-                        localStorage.username = '';
+                        localStorage.usrname = '';
                         localStorage.password = '';
                         localStorage.chkbx = '';
-                        window.location='../#/login';
-                        setTimeout(function(){alert('wrong password');},100);
-                    </script>
+                        window.location='../#/login';                   
+                        setTimeout(function(){('Incorrect Password.');},100);
                 ");
             exit;
-
         }
         else
         {
             $errMsg .= 'Username is not found<br>';
-
             echo("
                     <script>
-                        localStorage.username = '';
+                        localStorage.usrname = '';
                         localStorage.password = '';
                         localStorage.chkbx = '';
                         window.location='../#/login';
-                        setTimeout(function(){alert('".$errMsg."');},100);
+                        setTimeout(function(){('Username Not Found.');},100);
                     </script>
                 ");
             exit;
