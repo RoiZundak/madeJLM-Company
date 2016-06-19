@@ -134,17 +134,16 @@
 
                    echo " <script>
                         localStorage.clear();
-                        window.location='#/login';
+                        window.location='./#/login';
                         setTimeout(function(){ swal('You have tried too much. please try again in 5 minutes.');},100);
                     </script>";
                     exit;
                 }
 
-                echo("<a id='re_route_login' href ='../#/login'></a>
+                echo("
                     <script>
-                        alert('1');
                         localStorage.clear();
-                        window.location='#/login';
+                        window.location='./#/login';
                         setTimeout(function(){ swal('Incorrect Passwords.');},100);
                     </script>
                 ");
@@ -157,9 +156,8 @@
 
                 echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
-                        alert('2');
                         localStorage.clear();
-                        window.location='#/login';
+                        window.location='#/';
                         setTimeout(function(){ swal('Username not found.');},100);
                     </script>
                 ");
