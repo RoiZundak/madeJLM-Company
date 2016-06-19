@@ -108,9 +108,9 @@ if(!empty($_POST['username'])) {
                     <script>
                         localStorage.usrname = '';
                         localStorage.password = '';
-                        localStorage.chkbx = '';        
-                        setTimeout(function(){('Incorrect Password.');},100);
+                        localStorage.chkbx = '';
                         window.location='../#/login';                   
+                        setTimeout(function(){('Incorrect Password.');},100);
                 ");
             exit;
 
@@ -123,9 +123,9 @@ if(!empty($_POST['username'])) {
                     <script>
                         localStorage.usrname = '';
                         localStorage.password = '';
-                        localStorage.chkbx = '';                        
-                        setTimeout(function(){('Username Not Found.');},100);
+                        localStorage.chkbx = '';
                         window.location='../#/login';
+                        setTimeout(function(){('Username Not Found.');},100);
                     </script>
                 ");
             exit;
