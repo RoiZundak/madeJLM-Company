@@ -84,7 +84,7 @@ if(!empty($_POST['username'])) {
             $update = $databaseConnection ->prepare($sql_update);
             $update->execute();
 
-            if( intval( $results['attempt'] )>= 4)
+            if( intval( $results['attempt'] )>= 5)
             {
                 $sql_update="UPDATE company SET attempt = 0 WHERE username = '".$username."' OR email='".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
