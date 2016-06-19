@@ -143,8 +143,8 @@ if(!empty($_POST['username']))
             echo("
                     <script>
                         localStorage.clear();
-                        window.location='../#/login';
                         setTimeout(function(){ swal('Incorrect Passwords.');},100);
+                        window.location='../#/login';
                     </script>
                 ");
             exit;
@@ -157,8 +157,8 @@ if(!empty($_POST['username']))
             echo("
                     <script>
                         localStorage.clear();
+                        setTimeout(function(){ swal('Username not found.');},100)
                         window.location='../#/login';
-                        setTimeout(function(){ swal('Username not found.');},100);
                     </script>
                 ");
             exit;
