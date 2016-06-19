@@ -10,12 +10,11 @@
     require_once "../php/db_connect.php";
     $databaseConnection =connect_to_db();
     $table = "";
-    if($_GET['t']==1 || $_GET['t']=="1"){
+    if($_POST['location']==="comp")
         $table = "company";
-    }else{
+    else
         $table = "admin";
-    }
-
+    
     //get email from form.
     $email=$_POST['email'];
     //build email headers  :
@@ -81,15 +80,24 @@
 
     //Build email message :
     $message="Hi "  .$username .",<br>".
-        "To reset your password <a href='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/partials/reset_password.php?t=".$_GET['t']."&p=".$randomString."&mail=".$email."&e=".$expire."'>click here </a><br>".
+        "To reset your password <a href='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/partials/reset_password.php?t=".$table."&p=".$randomString."&mail=".$email."&e=".$expire."'>click here </a><br>".
         "This link has 24 hours limitation. <br>".
         "If you don't know why you have received this mail, please ignore it.";
     //Send mail.
     $sent_mail = mail($email, "Forget Password - ActiveC", $message, $headers);
-    if($sent_mail)
-        echo " <script> 
+    if($sent_mail){
+        if($table ==="company"){
+            echo " <script> 
                 window.location='../#/login';
                 alert('Email has been sent.');
                 </script>";
+        }else{
+            echo " <script> 
+                window.location='../#/loginAdmin';
+                alert('Email has been sent.');
+                </script>";
+        }
+    }
+       
     
 ?>
