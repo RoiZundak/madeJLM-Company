@@ -7,16 +7,10 @@
 *****************************************************************************-->
 <?php
 echo
-    "<script>
-                alert('asdad');
-                setTimeout(function(){ swal('CHECKS');},10000);
-
-     </script>";
 require_once "../php/db_connect.php";
 $databaseConnection =connect_to_db();
 
-if(!empty($_POST['username']))
-{
+if(!empty($_POST['username'])) {
     $errMsg = '';
     //username and password sent from Form
     $username = strtolower(trim($_POST['username']));
