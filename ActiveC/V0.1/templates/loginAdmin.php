@@ -48,9 +48,11 @@ if(!empty($_POST['username']))
         } else
         {
             echo " <script>
-                        localStorage.clear();
+                        localStorage.username_admin = '';
+                        localStorage.password_admin = '';
+                        localStorage.chkbx_admin = '';
                         window.location='../#/loginAdmin';
-                        setTimeout(function(){swal('Wrong username pr password');},100);
+                        setTimeout(function(){alert('Wrong username pr password');},100);
                     </script>";
             exit;
         }
