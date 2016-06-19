@@ -35,7 +35,8 @@ if(!empty($_POST['username'])) {
                 echo("
                     <script>
                         window.location='../#/login';
-                        alert('Sorry. Your user is blocked. Please try again in 5 minutes.');
+                        //alert('Sorry. Your user is blocked. Please try again in 5 minutes.');
+                        setTimeout(function(){swal('Sorry. Your user is blocked. Please try again in 5 minutes.');},100);
                     </script>
                      ");
                 exit;
@@ -85,7 +86,8 @@ if(!empty($_POST['username'])) {
                         localStorage.password = '';
                         localStorage.chkbx = '';                             
                         window.location='#/login';
-                        alert('You have tried too much. please try again in 5 minutes.');
+                        //alert('You have tried too much. please try again in 5 minutes.');
+                        setTimeout(function(){swal('You have tried too much. please try again in 5 minutes.');},100);
                         
                     </script>";
                 exit;
@@ -96,7 +98,8 @@ if(!empty($_POST['username'])) {
                         localStorage.password = '';
                         localStorage.chkbx = '';
                         window.location='../#/login';
-                        setTimeout(function(){alert('wrong password');},100);
+                        //setTimeout(function(){alert('wrong password');},100);
+                        setTimeout(function(){swal('Sorry. Incrorrect password,please try again.');},100);
                     </script>
                 ");
             exit;
@@ -110,7 +113,8 @@ if(!empty($_POST['username'])) {
                         localStorage.password = '';
                         localStorage.chkbx = '';
                         window.location='../#/login';
-                        setTimeout(function(){alert('".$errMsg."');},100);
+                        //setTimeout(function(){alert('".$errMsg."');},100);
+                         setTimeout(function(){swal('Sorry. Incrorrect user name,please try again.');},100);
                     </script>
                 ");
             exit;
