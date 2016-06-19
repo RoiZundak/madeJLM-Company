@@ -95,8 +95,9 @@ if(!empty($_POST['username']))
                 $update->execute();
 
                 echo " <script>
-                        localStorage.clear();
-                        window.location='../#/login';
+                        localStorage.usrname = '';
+                        localStorage.password = '';
+                        localStorage.chkbx = '';                        window.location='../#/login';
                         setTimeout(function(){swal('You have tried too much. please try again in 5 minutes.');},100);
 
                         
@@ -107,7 +108,9 @@ if(!empty($_POST['username']))
                 <script src=\"../css/sweetalert.min.js\"></script>
                 <link rel=\"stylesheet\" type=\"text/css\" href=\"../css/sweetalert.css\">
                     <script>
-                        localStorage.clear();
+                        localStorage.usrname = '';
+                        localStorage.password = '';
+                        localStorage.chkbx = '';
                         setTimeout(function(){swal('Incorrect Passwords.');},100);
                         window.location='../#/login';
                         
@@ -123,7 +126,9 @@ if(!empty($_POST['username']))
             echo ("<script>setTimeout(function(){swal('Username not found.');},100);</script>");
             echo("
                     <script>
-                        localStorage.clear();
+                        localStorage.usrname = '';
+                        localStorage.password = '';
+                        localStorage.chkbx = '';                        
                         window.location='../#/login';
                     </script>
                 ");
