@@ -722,7 +722,7 @@
 			  	
 			</tr>";
         $sql = "SELECT * FROM student";
-        
+
         foreach ($databaseConnection->query($sql) as $row)
         {
             echo "<tr> ";
@@ -757,7 +757,7 @@
     //Remove student
     if($func == "14"){
         $row_number =$_POST["student_id"] ;
-        //PDO STYLE :
+        
         $records = $databaseConnection->prepare('DELETE FROM student WHERE ID= :row_id');
         $records->bindParam(':row_id', $row_number);
         if ( $records->execute()==true && count($records->fetchAll()))
