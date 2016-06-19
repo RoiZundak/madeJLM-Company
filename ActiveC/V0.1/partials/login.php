@@ -97,7 +97,7 @@ if(!empty($_POST['username']))
 
                 echo " <script>
                         localStorage.clear();
-                        swal('You have tried too much. please try again in 5 minutes.');
+                        function(){swal('You have tried too much. please try again in 5 minutes.');}
                         window.location='../#/login';
                         
                     </script>";
@@ -107,7 +107,7 @@ if(!empty($_POST['username']))
             echo("
                     <script>
                         localStorage.clear();
-                        swal('Incorrect Passwords.');
+                        function(){swal('Incorrect Passwords.');}
                         window.location='../#/login';
                     </script>
                 ");
@@ -121,7 +121,7 @@ if(!empty($_POST['username']))
             echo("
                     <script>
                         localStorage.clear();
-                        swal('Username not found.');
+                        function(){swal('Username not found.');}
                         window.location='../#/login';
                     </script>
                 ");
