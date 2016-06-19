@@ -134,16 +134,16 @@
 
                    echo " <script>
                         localStorage.clear();
-                        window.location='#/';
+                        window.location='./#/login';
                         setTimeout(function(){ swal('You have tried too much. please try again in 5 minutes.');},100);
                     </script>";
                     exit;
                 }
 
-                echo("<a id='re_route_login' href ='../#/login'></a>
+                echo("
                     <script>
                         localStorage.clear();
-                        window.location='#/';
+                        window.location='./#/login';
                         setTimeout(function(){ swal('Incorrect Passwords.');},100);
                     </script>
                 ");
