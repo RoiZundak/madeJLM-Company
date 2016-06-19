@@ -28,7 +28,7 @@ body{
     background-size: 100%;
 
 }
-+@media (max-width:1199px)
+@media (max-width:1199px)
 {
     header { background-size: cover;  background: #333 url('../img/jlm_pic.jpg');background-repeat: no-repeat;}
 
