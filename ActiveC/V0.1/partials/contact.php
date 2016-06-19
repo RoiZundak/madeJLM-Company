@@ -119,7 +119,6 @@ if(isset($_POST['submit'])) {
             <div id = "cont_add ">Jerusalem, Israel<br></div>
 
             </p>
-            <!--<p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: 24/7</p>-->
             <ul class="list-unstyled list-inline list-social-icons">
                 <li class="tooltip-social facebook-link"><a href="https://www.facebook.com/MadeinJLM/?pnref=lhc&__mref=message_bubble" data-toggle="tooltip"
                                                             data-placement="top" title="Facebook"><i
@@ -134,6 +133,5 @@ if(isset($_POST['submit'])) {
         </div>
 
     </div>
-    <!-- /.row -->
 
 </div><!-- /.container -->

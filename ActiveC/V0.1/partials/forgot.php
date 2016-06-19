@@ -48,9 +48,8 @@
 
     if($username===""){//no such user!
         echo "<script>
-            //window.location='http://job.madeinjlm.org/#/forgot';
                 window.location ='../#/forgot';
-                setTimeout(function(){alert('Email: ".$email." was not found, please try again.');},100);
+                alert('Email: ".$email." was not found, please try again.');
             </script>";
 
     }
@@ -90,7 +89,7 @@
     if($sent_mail)
         echo " <script> 
                 window.location='../#/login';
-                setTimeout(function(){alert('Email has been sent.');},100);
+                alert('Email has been sent.');
                 </script>";
     
 ?>

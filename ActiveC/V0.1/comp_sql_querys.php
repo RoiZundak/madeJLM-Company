@@ -289,7 +289,6 @@
 
     //filter Linkedin
     if($func=="3") {
-            //PDO STYLE :
         $temp=0;
         $img_src = "../img/profilepic.png";
         while(true){
@@ -351,7 +350,6 @@
 		$p_ass = $_POST['password'];
 		$p_ass = md5($p_ass);
 
-		//PDO SYTLE :
 		$records = $databaseConnection->prepare('INSERT INTO company (username, email, password,created) VALUES (:user,:mail,:password,NOW() )');
 		$records->bindParam(':user', $name);
 		$records->bindParam(':mail', $mail);
@@ -380,7 +378,6 @@
 	{
 		$row_number =$_POST["row_id"] ;
 
-		//PDO STYLE :
 		$records = $databaseConnection->prepare('DELETE FROM company WHERE id= :row_id');
 		$records->bindParam(':row_id', $row_number);
 		if ( $records->execute()==true)
@@ -410,7 +407,6 @@
 			  	<td>Counter Enters</td>
 			</tr>";
 		$sql = "SELECT * FROM company ORDER BY counter_enters DESC";
-		//PDO STYLE :
 		foreach ($databaseConnection->query($sql) as $row)
 		{
 			echo "<tr> ";
@@ -508,7 +504,7 @@
 						}
 							
 					};
-					//xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\",true);
+
 					xmlhttp.open(\"GET\",\"comp_sql_querys.php?func=10&\"+str,true);
 					xmlhttp.send();
 				});
@@ -624,7 +620,6 @@
             exit;
         }
         $temp=0;
-        //$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC '; WORKING QUERY
 
 
         while(true){
@@ -727,7 +722,7 @@
 			  	
 			</tr>";
         $sql = "SELECT * FROM student";
-        //PDO STYLE :
+
         foreach ($databaseConnection->query($sql) as $row)
         {
             echo "<tr> ";
@@ -762,7 +757,7 @@
     //Remove student
     if($func == "14"){
         $row_number =$_POST["student_id"] ;
-        //PDO STYLE :
+
         $records = $databaseConnection->prepare('DELETE FROM student WHERE ID= :row_id');
         $records->bindParam(':row_id', $row_number);
         if ( $records->execute()==true && count($records->fetchAll()))
@@ -785,7 +780,6 @@
     if($func == "15"){
         $id =$_POST['std_id'] ;
         $op =$_POST['state_op'] ;
-        //PDO STYLE :
         $records = $databaseConnection->prepare("UPDATE student SET Activated =:active WHERE ID = :id");
         $update->bindParam(':id',$id);
         $update->bindParam(':active',$op);
@@ -808,7 +802,6 @@
     //Add new skill
     if($func == "16"){
         $name =$_POST["skill_name"];
-        //PDO SYTLE :
         $records = $databaseConnection->prepare('INSERT INTO skills (name, status) VALUES (:name,1)');
         $records->bindParam(':name', $name);
         if ( $records->execute()==true)
@@ -840,7 +833,7 @@
      $sql = "SELECT id,username,counter_enters FROM company ORDER BY counter_enters DESC LIMIT 10";
 
 
-        //PDO STYLE :
+
     foreach ($databaseConnection->query($sql) as $row)
     {
         echo "<tr> ";
@@ -864,7 +857,7 @@
 			</tr>";
      $sql = "SELECT id,first_name,last_name,counter_view,counter_contact FROM student ORDER BY counter_contact DESC LIMIT 10";
 
-        //PDO STYLE :
+
     foreach ($databaseConnection->query($sql) as $row)
     {
         echo "<tr> ";
@@ -893,7 +886,7 @@
 			</tr>";
     $sql = "SELECT Distinct student.ID,first_name,last_name,reason,description,FORMAT(time,'YYYY-MM-DD') AS time,Email,phone_number FROM student,student_turn_off 
               WHERE student_turn_off.student_id=student.ID  ORDER BY time DESC";
-    //PDO STYLE :
+
     foreach ($databaseConnection->query($sql) as $row)
     {
         echo "<tr> ";
@@ -924,7 +917,7 @@
 			</tr>";
     $sql = "SELECT Distinct student.ID,first_name,last_name,reason,description,time,Email,phone_number FROM student,student_turn_off 
               WHERE student_turn_off.student_id=student.ID  GROUP BY ID ORDER BY time DESC LIMIT 10 ";
-    //PDO STYLE :
+    
     foreach ($databaseConnection->query($sql) as $row)
     {
         $reason ="";

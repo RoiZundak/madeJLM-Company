@@ -6,6 +6,12 @@
 ********************************************************************************
 *****************************************************************************-->
 <?php
+echo
+    "<script>
+                alert('asdad');
+                setTimeout(function(){ swal('CHECKS');},10000);
+
+     </script>";
 require_once "../php/db_connect.php";
 $databaseConnection =connect_to_db();
 
@@ -40,7 +46,7 @@ if(!empty($_POST['username']))
                 echo("
                     <script>
                         window.location='../#/login';
-                        setTimeout(function(){alert('Sorry. Your user is blocked. Please try again in 5 minutes.');},100);
+                        alert('Sorry. Your user is blocked. Please try again in 5 minutes.');
                     </script>
                      ");
                 exit;
@@ -99,7 +105,7 @@ if(!empty($_POST['username']))
                         localStorage.password = '';
                         localStorage.chkbx = '';                             
                         window.location='../#/login';
-                        setTimeout(function(){alert('You have tried too much. please try again in 5 minutes.');},150);
+                        alert('You have tried too much. please try again in 5 minutes.');
                         
                     </script>";
                 exit;
@@ -110,7 +116,7 @@ if(!empty($_POST['username']))
                         localStorage.password = '';
                         localStorage.chkbx = '';                             
                         window.location='../#/login';
-                        setTimeout(function(){alert('Incorrect Passwords.');},150);
+                        alert('Incorrect Passwords.');
                         
 
                     </script>
@@ -127,7 +133,7 @@ if(!empty($_POST['username']))
                         localStorage.usrname = '';
                         localStorage.password = '';
                         localStorage.chkbx = '';                        
-                        setTimeout(function(){alert('Username not found.');},100);
+                        alert('Username not found.');
                         window.location='../#/login';
                     </script>
                 ");
