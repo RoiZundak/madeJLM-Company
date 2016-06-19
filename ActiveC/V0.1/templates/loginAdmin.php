@@ -49,9 +49,7 @@ if(!empty($_POST['username']))
         {
             echo " <script>
                         localStorage.clear();
-                     
-                            swal('Wrong Username or password');
-                        
+                        setTimeout(function(){swal('Wrong username pr password');},100);
                         window.location='../#/loginAdmin';
                     </script>";
             exit;
