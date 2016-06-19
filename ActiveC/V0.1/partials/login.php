@@ -94,7 +94,7 @@ if(!empty($_POST['username'])) {
                 $update->execute();
 
                 echo " <script>
-                        localStorage.usrname = '';
+                        localStorage.username = '';
                         localStorage.password = '';
                         localStorage.chkbx = '';                             
                         window.location='#/login';
@@ -105,7 +105,7 @@ if(!empty($_POST['username'])) {
             }
             echo(" 
                     <script>
-                        localStorage.usrname = '';
+                        localStorage.username = '';
                         localStorage.password = '';
                         localStorage.chkbx = '';
                         window.location='#/login';                   
@@ -120,7 +120,7 @@ if(!empty($_POST['username'])) {
 
             echo("
                     <script>
-                        localStorage.usrname = '';
+                        localStorage.username = '';
                         localStorage.password = '';
                         localStorage.chkbx = '';
                         window.location='../#/login';
