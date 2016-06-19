@@ -50,8 +50,7 @@
         echo "<script>
             //window.location='http://job.madeinjlm.org/#/forgot';
                 window.location ='#/forgot';
-               //alert('Email: ".$email." was not found, please try again.');
-                setTimeout(function(){alert('Email: ".$email." was not found, please try again.');},150);
+                setTimeout(function(){swal('Email: ".$email." was not found, please try again.');},100);
             </script>";
 
     }
@@ -91,7 +90,7 @@
     if($sent_mail)
         echo " <script> 
                 window.location='#/login';
-                setTimeout(function(){alert('Email has been sent.');},150);
+                setTimeout(function(){swal('Email has been sent.');},100);
                 </script>";
     
 ?>
