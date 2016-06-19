@@ -37,7 +37,7 @@ if(!empty($_POST['username']))
             if($newTime < $newDateTime)
             {
                 $errMsg .= 'Time block<br>';
-                echo("<a id='re_route_login' href ='../#/login'></a>
+                echo("
                     <script>
                          swal('Sorry. Your user is blocked. Please try again in 5 minutes');
                         document.getElementById(\"re_route_login\").click();
@@ -97,7 +97,7 @@ if(!empty($_POST['username']))
 
                 echo " <script>
                         localStorage.clear();
-                        function(){swal('You have tried too much. please try again in 5 minutes.');}
+                        swal('You have tried too much. please try again in 5 minutes.');
                         window.location='../#/login';
                         
                     </script>";
@@ -107,7 +107,7 @@ if(!empty($_POST['username']))
             echo("
                     <script>
                         localStorage.clear();
-                        function(){swal('Incorrect Passwords.');}
+                        swal('Incorrect Passwords.');
                         window.location='../#/login';
                     </script>
                 ");
@@ -121,7 +121,7 @@ if(!empty($_POST['username']))
             echo("
                     <script>
                         localStorage.clear();
-                        function(){swal('Username not found.');}
+                        swal('Username not found.');
                         window.location='../#/login';
                     </script>
                 ");
