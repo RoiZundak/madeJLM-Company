@@ -722,7 +722,7 @@
 			  	
 			</tr>";
         $sql = "SELECT * FROM student";
-        //PDO STYLE :
+        
         foreach ($databaseConnection->query($sql) as $row)
         {
             echo "<tr> ";
