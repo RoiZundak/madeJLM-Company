@@ -45,6 +45,9 @@ body{
     text-align: center;
 
 }
+h5 {
+    text-align: left;
+}
 #input_div{
     border-bottom-style: solid;
     border--bottomcolor: grey;
@@ -344,7 +347,7 @@ input[type=submit]:hover{
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
-html, body {
+html, body{
     height: 100%;
 }
 
@@ -1082,10 +1085,4 @@ footer {
     -webkit-column-fill: auto; /* Chrome, Safari, Opera */
     column-fill: auto;
 }
-}
-
-
-
-
-
 /* end suggest */

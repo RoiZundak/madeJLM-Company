@@ -25,7 +25,7 @@
                 " <script>
                     localStorage.clear();
                     window.location='#/login';
-                    setTimeout(function(){ alert('Username or password required');},100);
+                    setTimeout(function(){ alert('username or password required');},100);
                 </script>";
             exit;
 
@@ -107,6 +107,7 @@
                 $update->execute();
                 echo("<a id='re_route_main' href ='../#/main'></a>
                      <script>                  
+
                         sessionStorage.setItem('username', '".$username."');
                         document.getElementById(\"re_route_main\").click();
                     </script>
@@ -116,7 +117,7 @@
 
             else if(count($results) > 0 && $password !== $results['password'])
             {
-                $errMsg .= 'Incorrect Password 1<br>';
+                $errMsg .= 'Incorrect Password <br>';
                 $sql_update="UPDATE company SET attempt = attempt + 1 WHERE username = '".$username."' OR email='".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();

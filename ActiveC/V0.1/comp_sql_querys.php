@@ -170,18 +170,27 @@
             $curr_job = "";
             if ($row['current_work'] !== "")
                 $curr_job = $row['first_name'] . " is currently working at " . $row['current_work'] . ".";
+            else
+                $curr_job = $row['first_name'] . " Hasn't entered current job position. ";
+
             $summary_ = "";
+            $sum = "Summary: ";
             if ($row['summary'] !== "")
             {
-                $sum = "Summary: ";
                 $summary = $row['summary'];
             }
+            else
+                $summary = $row['first_name'] . " Hasn't entered personal-info Summary. ";
+
             $exprience = "";
+            $exp = "Experience: ";
             if ($row['experience'] !== "")
             {
-                $exp = "Experience: ";
                 $exprience = $row['experience'];
             }
+            else
+                $exprience = $row['first_name'] . " Hasn't entered job experience.";
+
             $phone_number="";
             $phone_pic="";
             if($row['phone_number']!=="")
@@ -420,6 +429,7 @@
         $pass1 =$_POST['new_pass'] ;
         $pass2 =$_POST['new_pass_conf'] ;
         $mail = $_POST['e_mail'];
+        $type = $_POST['type_b'];
         if(strcmp($pass1,$pass2)!=0 )
 		{
             echo "<script>
@@ -427,13 +437,20 @@
             setTimeout(function(){alert('Passwords does not match.Redirecting to login page..');},100);</script>";
             exit;
         }
-        //PDO STYLE :
-        $sql = "UPDATE company SET password = :pass, 
+        $new_pass =md5($pass1);
+        if($type==1 || $type=="1"){
+            $sql = "UPDATE company SET password = :pass, 
             f_pass = '', 
-            f_exp = 0,  
+            f_exp = 0 
             WHERE email = :email";
+        }else{
+            $sql = "UPDATE admin SET Password = :pass, 
+            f_pass = '', 
+            f_exp = 0
+            WHERE Email = :email";
+        }
         $stmt = $databaseConnection->prepare($sql);
-        $stmt->bindParam(':pass', md5($pass1), PDO::PARAM_STR);
+        $stmt->bindParam(':pass', $new_pass , PDO::PARAM_STR);
         $stmt->bindParam(':email',$mail, PDO::PARAM_STR);
         if ( $stmt->execute()==true)
             echo "
@@ -682,7 +699,7 @@
     //list all students
     if($func == "13")
 	{
-        echo"<table id='std_table' style=\"width:100%\">
+        echo"<table  style=\"width:100%\">
 			<tr>
 			  	<td>id</td>
 			  	<td>First Name</td>
@@ -863,11 +880,7 @@
 
     //Deactivate students
     if($func == "19") {
-        echo" <h3>Deactivate students</h3>
-            <h4>Reason 1: I found a job, Thanks to JLM.</h4>
-            <h4>Reason 2: I found a job, Without this site help.</h4>
-            <h4>Reason 3: Other.</h4>";
-    echo"<table id='std_table' style=\"width:100%\">
+        echo"<table style=\"width:100%\">
 			<tr>
 			  	<td>id</td>
 			  	<td>First Name</td>
@@ -878,7 +891,7 @@
 			  	<td>e-Mail</td>
 			  	<td>Phone</td>
 			</tr>";
-    $sql = "SELECT Distinct student.ID,first_name,last_name,reason,description,time,Email,phone_number FROM student,student_turn_off 
+    $sql = "SELECT Distinct student.ID,first_name,last_name,reason,description,FORMAT(time,'YYYY-MM-DD') AS time,Email,phone_number FROM student,student_turn_off 
               WHERE student_turn_off.student_id=student.ID  ORDER BY time DESC";
     //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
@@ -898,7 +911,7 @@
 }
     //Top 10 Last Deactivate students
     if($func == "20") {
-        echo"<table id='std_table'  style=\"width:100%\">
+        echo"<table style=\"width:100%\">
 			<tr >
 			  	<td>id</td>
 			  	<td>First Name</td>
@@ -910,17 +923,23 @@
 			  	<td>Phone</td>
 			</tr>";
     $sql = "SELECT Distinct student.ID,first_name,last_name,reason,description,time,Email,phone_number FROM student,student_turn_off 
-              WHERE student_turn_off.student_id=student.ID  ORDER BY time DESC LIMIT 10 ";
+              WHERE student_turn_off.student_id=student.ID  GROUP BY ID ORDER BY time DESC LIMIT 10 ";
     //PDO STYLE :
     foreach ($databaseConnection->query($sql) as $row)
     {
+        $reason ="";
+        if($row['reason']===9|| $row['reason']==="9")
+            $reason = "3";
+        else
+            $reason = $row['reason'];
+        $date= date('M, j  Y , g:i A', strtotime($row['time']));
         echo "<tr > ";
         echo "<td>".$row['ID']."</td>";
         echo "<td>".$row['first_name']."</td>";
         echo "<td>".$row['last_name']."</td>";
-        echo "<td>".$row['reason']."</td>";
+        echo "<td>".$reason."</td>";
         echo "<td>".$row['description']."</td>";
-        echo "<td>".$row['time']."</td>";
+        echo "<td>".$date."</td>";
         echo "<td>".$row['Email']."</td>";
         echo "<td>".$row['phone_number']."</td>";
         echo "</tr>";

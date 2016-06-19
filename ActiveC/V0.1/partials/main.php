@@ -13,9 +13,15 @@
         window.location='#/login';
         setTimeout(function(){alert('You Must login first');},100);
     }
+    swal({
+        title: "Error!",
+        text: "Here's my error message!",
+        type: "error",
+        confirmButtonText: "Cool"
+    });
 </script>
-<div id="main_wrap">
 
+<div id="main_wrap">
     <div id= "filter_main">
         <div class="filters" id="skills"> Skills </div>
         <div class="filters" id="has_linkedin"> Has Linkedin </div>
@@ -26,8 +32,7 @@
 
     <div id = "show_stud"> </div>
     <div id = "show_all">
-
-
+        
         <?php
             //db connect
             require_once "../php/db_connect.php";
@@ -68,6 +73,7 @@
             //get all students
 
         ?>
+        
         <script>
             var id="-1";
             $("#skill_std").hide();

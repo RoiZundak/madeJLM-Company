@@ -23,7 +23,7 @@ if(!empty($_POST['username']))
         echo
         " <script>
                     localStorage.clear();
-                    window.location='#/loginAdmin';
+                    window.location='../#/loginAdmin';
                     setTimeout(function(){ alert('Username or password required');},100);
                 </script>";
         exit;
@@ -31,8 +31,7 @@ if(!empty($_POST['username']))
     }
     if($errMsg == '')
     {
-        //echo "<br> in query :";
-        $name_or_mail="SELECT * FROM  admin WHERE  email=:email";
+        $name_or_mail="SELECT * FROM  admin WHERE  email=:email LIMIT 1";
         $records = $databaseConnection->prepare($name_or_mail);
         $records->bindParam(':email', $username);
         $records->execute();
@@ -40,7 +39,7 @@ if(!empty($_POST['username']))
 
         if(count($results) > 0 && $password === $results['Password'] )
         {
-            echo " OK ! trying to redirect you now...
+            echo " OK ! redirect you now...
                     <script>
                         sessionStorage.setItem('username_Admin','".$username."');
                         window.location='../#/adminPage';
@@ -48,16 +47,13 @@ if(!empty($_POST['username']))
             exit;
         } else
         {
-            //TODO: edit message
             echo " <script>
                         localStorage.clear();
                         window.location='../#/loginAdmin';
-                        setTimeout(function(){ alert('you shall not pass!');},100);
+                        setTimeout(function(){ alert('Wrong Username or password');},100);
                     </script>";
             exit;
         }
-
-
     }
 }
 ?>
