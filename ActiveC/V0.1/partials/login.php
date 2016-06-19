@@ -37,9 +37,9 @@ if(!empty($_POST['username']))
             if($newTime < $newDateTime)
             {
                 $errMsg .= 'Time block<br>';
+                echo ("<sctipt>setTimeout(function(){swal('Sorry. Your user is blocked. Please try again in 5 minutes.');},100);</sctipt>");
                 echo("
                     <script>
-                         swal('Sorry. Your user is blocked. Please try again in 5 minutes');
                         document.getElementById(\"re_route_login\").click();
                     </script>
                      ");
@@ -95,19 +95,18 @@ if(!empty($_POST['username']))
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
 
+                echo ("<sctipt>setTimeout(function(){swal('You have tried too much. please try again in 5 minutes.');},100);</sctipt>");
                 echo " <script>
                         localStorage.clear();
-                        swal('You have tried too much. please try again in 5 minutes.');
                         window.location='../#/login';
                         
                     </script>";
                 exit;
             }
-
+            echo ("<sctipt>setTimeout(function(){swal('Incorrect Passwords.');},100);</sctipt>");
             echo("
                     <script>
                         localStorage.clear();
-                        swal('Incorrect Passwords.');
                         window.location='../#/login';
                     </script>
                 ");
@@ -117,11 +116,10 @@ if(!empty($_POST['username']))
         else
         {
             $errMsg .= 'Username is not found<br>';
-
+            echo ("<sctipt>setTimeout(function(){swal('Username not found.');},100);</sctipt>");
             echo("
                     <script>
                         localStorage.clear();
-                        swal('Username not found.');
                         window.location='../#/login';
                     </script>
                 ");
