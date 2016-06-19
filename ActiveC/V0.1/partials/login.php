@@ -6,163 +6,163 @@
 ********************************************************************************
 *****************************************************************************-->
 <?php
-    require_once "../php/db_connect.php";
-    $databaseConnection =connect_to_db();
+require_once "../php/db_connect.php";
+$databaseConnection =connect_to_db();
 
-    if(!empty($_POST['username']))
+if(!empty($_POST['username']))
+{
+    $errMsg = '';
+    //username and password sent from Form
+    $username = strtolower(trim($_POST['username']));
+    //$email=trim($_POST['username']);
+    $password = trim($_POST['password']);
+
+    if ($username == '' || $password == '')
     {
-        $errMsg = '';
-        //username and password sent from Form
-        $username = strtolower(trim($_POST['username']));
-        //$email=trim($_POST['username']);
-        $password = trim($_POST['password']);
-
-        if ($username == '' || $password == '')
-        {
-            $errMsg .= 'empty Fields<br>';
-            // window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-            echo
-                " <script>
+        $errMsg .= 'empty Fields<br>';
+        // window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
+        echo
+        " <script>
                     localStorage.clear();
                     window.location='#/login';
                 </script>";
-            exit;
+        exit;
 
-        }
+    }
 
-        if($username == 'Example@example.com')
-        {
-            $errMsg .= 'You must enter your Username<br>';
-            echo
-                " <script>
+    if($username == 'Example@example.com')
+    {
+        $errMsg .= 'You must enter your Username<br>';
+        echo
+        " <script>
                     localStorage.clear();
                     window.location='#/login';
                     setTimeout(function(){ swal(\"You Must Enter Username!\");},100);
                 </script>";
-            exit;
-        }
+        exit;
+    }
 
-        if($password == '688822292')
-        {
-            $errMsg .= 'You must enter your Password<br>';
-            echo
-                " <script>
+    if($password == '688822292')
+    {
+        $errMsg .= 'You must enter your Password<br>';
+        echo
+        " <script>
                     localStorage.clear();
                     window.location='#/login';
                     setTimeout(function(){ swal(\"You Must Enter Password!\");},100);
                 </script>";
-            exit;
-        }
-        $password = md5(trim($_POST['password']));
+        exit;
+    }
+    $password = md5(trim($_POST['password']));
 
-        if($errMsg == '')
+    if($errMsg == '')
+    {
+        $name_or_mail="SELECT * FROM  company WHERE username = :username OR email=:username";
+        $records = $databaseConnection->prepare($name_or_mail);
+        $records->bindParam(':username', $username);
+        $records->execute();
+        $results = $records->fetch(PDO::FETCH_ASSOC);
+
+        if(count($results) > 0 && $results['block'] != null)
         {
-            $name_or_mail="SELECT * FROM  company WHERE username = :username OR email=:username";
-            $records = $databaseConnection->prepare($name_or_mail);
-            $records->bindParam(':username', $username);
-            $records->execute();
-            $results = $records->fetch(PDO::FETCH_ASSOC);
+            $d=strtotime("-5 Minutes -4 hours"); // time deffrence betweem time and date
+            $newTime =  date("Y-m-d h:i:sa", $d);
 
-            if(count($results) > 0 && $results['block'] != null)
+            $currentDateTime = $results['block'];
+            $newDateTime = date('Y-m-d h:i:sa', strtotime($currentDateTime));
+
+            if($newTime < $newDateTime)
             {
-                $d=strtotime("-5 Minutes -4 hours"); // time deffrence betweem time and date 
-                $newTime =  date("Y-m-d h:i:sa", $d);
-
-                $currentDateTime = $results['block'];
-                $newDateTime = date('Y-m-d h:i:sa', strtotime($currentDateTime));
-
-                if($newTime < $newDateTime)
-                {
-                    $errMsg .= 'Time block<br>';
-                    echo("<a id='re_route_login' href ='../#/login'></a>
+                $errMsg .= 'Time block<br>';
+                echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
                          swal('Sorry. Your user is blocked. Please try again in 5 minutes');
                         document.getElementById(\"re_route_login\").click();
                     </script>
                      ");
-                    exit;
+                exit;
 
-                }
-                else
-                {
-                    $sql_update = "UPDATE company SET block = null WHERE username = '".$username."' OR email='".$username."'";
-                    $update = $databaseConnection ->prepare($sql_update);
-                    $update->execute();
-                }
             }
-
-            if(count($results) > 0 && $password === $results['password'] )
+            else
             {
-
-                if($results['attempt'] > 0) {
-                    $sql_update = "UPDATE company SET attempt = 0 WHERE username = '".$username."' OR email='".$username."'";
-                    $update = $databaseConnection ->prepare($sql_update);
-                    $update->execute();
-                }
-
-                //update company counter enters
-                $sql_update="UPDATE company SET counter_enters = counter_enters + 1 WHERE username = '".$username."' OR email='".$username."'";
+                $sql_update = "UPDATE company SET block = null WHERE username = '".$username."' OR email='".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
-                echo("<a id='re_route_main' href ='../#/main'></a>
+            }
+        }
+
+        if(count($results) > 0 && $password === $results['password'] )
+        {
+
+            if($results['attempt'] > 0) {
+                $sql_update = "UPDATE company SET attempt = 0 WHERE username = '".$username."' OR email='".$username."'";
+                $update = $databaseConnection ->prepare($sql_update);
+                $update->execute();
+            }
+
+            //update company counter enters
+            $sql_update="UPDATE company SET counter_enters = counter_enters + 1 WHERE username = '".$username."' OR email='".$username."'";
+            $update = $databaseConnection ->prepare($sql_update);
+            $update->execute();
+            echo("<a id='re_route_main' href ='../#/main'></a>
                      <script>                  
 
                         sessionStorage.setItem('username', '".$username."');
                         document.getElementById(\"re_route_main\").click();
                     </script>
                     ");
-                exit;
-            }
+            exit;
+        }
 
-            else if(count($results) > 0 && $password !== $results['password'])
+        else if(count($results) > 0 && $password !== $results['password'])
+        {
+            $errMsg .= 'Incorrect Password <br>';
+            $sql_update="UPDATE company SET attempt = attempt + 1 WHERE username = '".$username."' OR email='".$username."'";
+            $update = $databaseConnection ->prepare($sql_update);
+            $update->execute();
+
+            if( intval( $results['attempt'] )>= 4)
             {
-                $errMsg .= 'Incorrect Password <br>';
-                $sql_update="UPDATE company SET attempt = attempt + 1 WHERE username = '".$username."' OR email='".$username."'";
+                $sql_update="UPDATE company SET attempt = 0 WHERE username = '".$username."' OR email='".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
 
-                if( intval( $results['attempt'] )>= 4)
-                {
-                    $sql_update="UPDATE company SET attempt = 0 WHERE username = '".$username."' OR email='".$username."'";
-                    $update = $databaseConnection ->prepare($sql_update);
-                    $update->execute();
 
+                $sql_update="UPDATE company SET block = NOW() WHERE username = '".$username."' OR email='".$username."'";
+                $update = $databaseConnection ->prepare($sql_update);
+                $update->execute();
 
-                    $sql_update="UPDATE company SET block = NOW() WHERE username = '".$username."' OR email='".$username."'";
-                    $update = $databaseConnection ->prepare($sql_update);
-                    $update->execute();
-
-                   echo " <script>
+                echo " <script>
                         localStorage.clear();
-                        window.location='../#/login';
+                        window.location='./#/login';
                         setTimeout(function(){ swal('You have tried too much. please try again in 5 minutes.');},100);
                     </script>";
-                    exit;
-                }
+                exit;
+            }
 
-                echo("
+            echo("
                     <script>
                         localStorage.clear();
-                        window.location='../#/login';
+                        window.location='./#/login';
                         setTimeout(function(){ swal('Incorrect Passwords.');},100);
                     </script>
                 ");
-                exit;
+            exit;
 
-            }
-            else
-            {
-                $errMsg .= 'Username is not found<br>';
+        }
+        else
+        {
+            $errMsg .= 'Username is not found<br>';
 
-                echo("<a id='re_route_login' href ='../#/login'></a>
+            echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
                         localStorage.clear();
                         window.location='#/';
                         setTimeout(function(){ swal('Username not found.');},100);
                     </script>
                 ");
-                exit;
-            }
+            exit;
         }
     }
+}
 ?>
