@@ -833,7 +833,7 @@
      $sql = "SELECT id,username,counter_enters FROM company ORDER BY counter_enters DESC LIMIT 10";
 
 
-        //PDO STYLE :
+        
     foreach ($databaseConnection->query($sql) as $row)
     {
         echo "<tr> ";
