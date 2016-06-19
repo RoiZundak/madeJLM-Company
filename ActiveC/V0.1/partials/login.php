@@ -109,7 +109,7 @@ if(!empty($_POST['username'])) {
                         localStorage.password = '';
                         localStorage.chkbx = '';
                         window.location='#/login';                   
-                        setTimeout(function(){('Incorrect Password.');},100);
+                        setTimeout(function(){alert('Incorrect Password.');},100);
                 ");
             exit;
 
