@@ -434,7 +434,7 @@
             exit;
         }
         $new_pass =md5($pass1);
-        if($type=="company"){
+        if($type==="company"){
             $sql = "UPDATE company SET password = :pass, 
             f_pass = '', 
             f_exp = 0 
