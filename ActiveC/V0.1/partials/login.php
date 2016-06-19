@@ -142,6 +142,7 @@
 
                 echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
+                        alert('1');
                         localStorage.clear();
                         window.location='#/login';
                         setTimeout(function(){ swal('Incorrect Passwords.');},100);
@@ -156,6 +157,7 @@
 
                 echo("<a id='re_route_login' href ='../#/login'></a>
                     <script>
+                        alert('2');
                         localStorage.clear();
                         window.location='#/login';
                         setTimeout(function(){ swal('Username not found.');},100);
