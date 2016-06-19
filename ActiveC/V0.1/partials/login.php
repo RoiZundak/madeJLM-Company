@@ -40,7 +40,7 @@ if(!empty($_POST['username']))
                 echo ("<script>setTimeout(function(){swal('Sorry. Your user is blocked. Please try again in 5 minutes.');},100);</script>");
                 echo("
                     <script>
-                        document.getElementById(\"re_route_login\").click();
+                        window.location='../#/login';
                     </script>
                      ");
                 exit;
@@ -67,11 +67,11 @@ if(!empty($_POST['username']))
             $sql_update="UPDATE company SET counter_enters = counter_enters + 1 WHERE username = '".$username."' OR email='".$username."'";
             $update = $databaseConnection ->prepare($sql_update);
             $update->execute();
-            echo("<a id='re_route_main' href ='../#/main'></a>
+            echo("
                      <script>                  
 
                         sessionStorage.setItem('username', '".$username."');
-                        document.getElementById(\"re_route_main\").click();
+                        window.location='../#/main';
                     </script>
                     ");
             exit;
