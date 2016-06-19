@@ -728,6 +728,7 @@ if($func == "14"){
                 </script>
                 ";
 }
+
 //Change student status
 if($func == "15"){
     $id =$_POST['std_id'] ;
