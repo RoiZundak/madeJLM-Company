@@ -110,17 +110,7 @@ if(!empty($_POST['username'])) {
                         localStorage.usrname = '';
                         localStorage.password = '';
                         localStorage.chkbx = '';                             
-                        window.location='../#/login';
-                    </script>
-                        
-                    <div class=\"confirm\">
-                        <h1>Confirm your action</h1>
-                        <p>Are you really <em>really</em> <strong>really</strong> sure that you want to exit this awesome application?</p>
-                        <button>Cancel</button>
-                         <button autofocus>Confirm</button>
-                    </div>                        
-
-                    
+                        window.location='../#/login';                   
                 ");
             exit;
 
