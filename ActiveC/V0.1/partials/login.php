@@ -8,7 +8,7 @@
 <?php
 echo
     "<script>
-                swal('CHECKS');
+                setTimeout(function(){ swal('CHECKS');},1000);
 
      </script>";
 require_once "../php/db_connect.php";
