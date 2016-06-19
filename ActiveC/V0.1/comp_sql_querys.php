@@ -399,7 +399,7 @@
 	//echo ALL companies
 	if($func=="7")
 	{
-		echo"<table style=\"width:100%\">
+		echo"<table border=\"5\" style=\"width:100%\">
 			<tr>
 			  	<td>id</td>
 			  	<td>Comp. Name</td>
@@ -694,7 +694,7 @@
     //list all students
     if($func == "13")
 	{
-        echo"<table  style=\"width:100%\">
+        echo"<table  border=\"5\" style=\"width:100%\">
 			<tr>
 			  	<td>id</td>
 			  	<td>First Name</td>
@@ -824,7 +824,7 @@
     }
     //Top 10 Companies
     if($func=="17"){
-    echo"<table style=\"width:100%\">
+    echo"<table  style=\"width:100%\">
 			<tr>
 			  	<td>Id</td>
 			  	<td>Company Name</td>
@@ -873,7 +873,7 @@
 
     //Deactivate students
     if($func == "19") {
-        echo"<table style=\"width:100%\">
+        echo"<table border=\"5\" style=\"width:100%\">
 			<tr>
 			  	<td>id</td>
 			  	<td>First Name</td>

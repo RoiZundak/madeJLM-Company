@@ -21,9 +21,11 @@ if(!empty($_POST['username']))
         $errMsg .= 'empty Fields<br>';
         echo
         " <script>
-                    localStorage.clear();
-                    alert('Username or password required');
-                    window.location='../#/loginAdmin';
+                     localStorage.username_admin = '';
+                     localStorage.password_admin = '';
+                     localStorage.chkbx_admin = '';
+                     alert('Username or password required');
+                     window.location='../#/loginAdmin';
                 </script>";
         exit;
 
