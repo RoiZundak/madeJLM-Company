@@ -886,7 +886,7 @@
 			</tr>";
     $sql = "SELECT Distinct student.ID,first_name,last_name,reason,description,FORMAT(time,'YYYY-MM-DD') AS time,Email,phone_number FROM student,student_turn_off 
               WHERE student_turn_off.student_id=student.ID  ORDER BY time DESC";
-    
+
     foreach ($databaseConnection->query($sql) as $row)
     {
         echo "<tr> ";
@@ -917,7 +917,7 @@
 			</tr>";
     $sql = "SELECT Distinct student.ID,first_name,last_name,reason,description,time,Email,phone_number FROM student,student_turn_off 
               WHERE student_turn_off.student_id=student.ID  GROUP BY ID ORDER BY time DESC LIMIT 10 ";
-    //PDO STYLE :
+    
     foreach ($databaseConnection->query($sql) as $row)
     {
         $reason ="";
