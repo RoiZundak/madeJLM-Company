@@ -16,18 +16,7 @@ if(!empty($_POST['username']))
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
     $password = md5($password);
-    if ($username == '' || $password == '')
-    {
-        $errMsg .= 'empty Fields<br>';
-        echo
-        " <script>
-                    localStorage.clear();
-                    alert('Username or password required');
-                    window.location='../#/loginAdmin';
-                </script>";
-        exit;
 
-    }
     if($errMsg == '')
     {
         $name_or_mail="SELECT * FROM  admin WHERE  email=:email LIMIT 1";
@@ -50,8 +39,8 @@ if(!empty($_POST['username']))
                         localStorage.username_admin = '';
                         localStorage.password_admin = '';
                         localStorage.chkbx_admin = '';
-                         alert('Wrong username pr password');
-                        window.location='../#/loginAdmin';
+                         alert('Wrong username or password');
+                        window.location='../#/adminPage';
                     </script>";
             exit;
         }

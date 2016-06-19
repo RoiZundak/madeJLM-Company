@@ -56,7 +56,6 @@ if(!empty($_POST['username'])) {
 
         if(count($results) > 0 && $password === $results['password'] )
         {
-
             if($results['attempt'] > 0) {
                 $sql_update = "UPDATE company SET attempt = 0 WHERE username = '".$username."' OR email='".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
@@ -95,10 +94,10 @@ if(!empty($_POST['username'])) {
                 $update->execute();
 
                 echo " <script>
-                        localStorage.usrname = '';
+                        localStorage.username = '';
                         localStorage.password = '';
                         localStorage.chkbx = '';                             
-                        window.location='../#/login';
+                        window.location='#/login';
                         alert('You have tried too much. please try again in 5 minutes.');
                         
                     </script>";
@@ -106,11 +105,12 @@ if(!empty($_POST['username'])) {
             }
             echo(" 
                     <script>
-                        localStorage.usrname = '';
+                        localStorage.username = '';
                         localStorage.password = '';
                         localStorage.chkbx = '';
-                        window.location='../#/login';                   
-                        setTimeout(function(){('Incorrect Password.');},100);
+                        window.location='../#/login';
+                        setTimeout(function(){alert('wrong password');},100);
+                    </script>
                 ");
             exit;
 
@@ -121,11 +121,11 @@ if(!empty($_POST['username'])) {
 
             echo("
                     <script>
-                        localStorage.usrname = '';
+                        localStorage.username = '';
                         localStorage.password = '';
                         localStorage.chkbx = '';
                         window.location='../#/login';
-                        setTimeout(function(){('Username Not Found.');},100);
+                        setTimeout(function(){alert('".$errMsg."');},100);
                     </script>
                 ");
             exit;
