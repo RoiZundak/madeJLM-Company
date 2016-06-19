@@ -97,7 +97,7 @@ if(!empty($_POST['username'])) {
                         localStorage.usrname = '';
                         localStorage.password = '';
                         localStorage.chkbx = '';                             
-                        window.location='../#/login';
+                        window.location='#/login';
                         alert('You have tried too much. please try again in 5 minutes.');
                         
                     </script>";
