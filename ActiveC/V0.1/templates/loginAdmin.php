@@ -28,7 +28,6 @@ if(!empty($_POST['username']))
                      window.location='../#/loginAdmin';
                 </script>";
         exit;
-
     }
     if($errMsg == '')
     {
