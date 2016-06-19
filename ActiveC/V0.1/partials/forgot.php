@@ -24,7 +24,7 @@
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-    if($table == "company"){
+    if($table === "company"){
         //Get username from 'company' table
         $sql = "SELECT * FROM company WHERE email = :email LIMIT 1";
     }else{
@@ -50,6 +50,7 @@
                 window.location ='../#/forgot';
                 alert('Email: ".$email." was not found, please try again.');
             </script>";
+        exit;
 
     }
     //Create a random string
@@ -85,19 +86,17 @@
         "If you don't know why you have received this mail, please ignore it.";
     //Send mail.
     $sent_mail = mail($email, "Forget Password - ActiveC", $message, $headers);
-    if($sent_mail){
-        if($table ==="company"){
+    if($sent_mail) {
+        if ($table === "company") {
             echo " <script> 
                 window.location='../#/login';
                 alert('Email has been sent.');
                 </script>";
-        }else{
+        } else {
             echo " <script> 
                 window.location='../#/loginAdmin';
                 alert('Email has been sent.');
                 </script>";
         }
     }
-       
-    
 ?>
