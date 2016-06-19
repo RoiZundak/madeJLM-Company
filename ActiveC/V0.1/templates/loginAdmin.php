@@ -23,8 +23,8 @@ if(!empty($_POST['username']))
         echo
         " <script>
                     localStorage.clear();
+                    alert('Username or password required');
                     window.location='../#/loginAdmin';
-                    setTimeout(function(){ alert('Username or password required');},100);
                 </script>";
         exit;
 
@@ -51,8 +51,8 @@ if(!empty($_POST['username']))
                         localStorage.username_admin = '';
                         localStorage.password_admin = '';
                         localStorage.chkbx_admin = '';
+                         alert('Wrong username pr password');
                         window.location='../#/loginAdmin';
-                        setTimeout(function(){alert('Wrong username pr password');},100);
                     </script>";
             exit;
         }
