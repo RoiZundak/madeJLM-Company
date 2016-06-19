@@ -28,9 +28,10 @@ body{
     background-size: 100%;
 
 }
-@media only screen and (min-width : 320px) and (max-width : 480px) {
-    background:url('../img/jlm_pic.jpg') no-repeat center center fixed  ;
-}
++@media (max-width:1199px)
+{
+    header { background-size: cover;  }
+
 /* ADMIN PAGE SETTINGS */
 .admin_wrap{
     width : 100%;
