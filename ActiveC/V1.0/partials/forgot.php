@@ -81,7 +81,7 @@
 
     //Build email message :
     $message="Hi "  .$username .",<br>".
-        "To reset your password <a href='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/partials/reset_password.php?t=".$_GET['t']."&p=".$randomString."&mail=".$email."&e=".$expire."'>click here </a><br>".
+        "To reset your password <a href='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V1.0/partials/reset_password.php?t=".$_GET['t']."&p=".$randomString."&mail=".$email."&e=".$expire."'>click here </a><br>".
         "This link has 24 hours limitation. <br>".
         "If you don't know why you have received this mail, please ignore it.";
     //Send mail.

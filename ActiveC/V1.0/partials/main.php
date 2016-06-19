@@ -50,7 +50,7 @@
                 foreach ($databaseConnection->query($sql) as $row)
                 {
                     if(  $row['profile']=="" )
-                        $img_src = "../V0.1/img/profilepic.png";
+                        $img_src = "../V1.0/img/profilepic.png";
                     else
                         $img_src="../../../MadeinJLM-students/mockup/".$row['profile'];
                     echo "<div class='head' id='head_".$row['ID']."' > ";
