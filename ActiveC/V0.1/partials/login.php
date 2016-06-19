@@ -7,7 +7,6 @@
 *****************************************************************************-->
 
 <?php
-echo
 require_once "../php/db_connect.php";
 $databaseConnection =connect_to_db();
 
