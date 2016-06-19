@@ -56,7 +56,6 @@ if(!empty($_POST['username'])) {
 
         if(count($results) > 0 && $password === $results['password'] )
         {
-
             if($results['attempt'] > 0) {
                 $sql_update = "UPDATE company SET attempt = 0 WHERE username = '".$username."' OR email='".$username."'";
                 $update = $databaseConnection ->prepare($sql_update);
