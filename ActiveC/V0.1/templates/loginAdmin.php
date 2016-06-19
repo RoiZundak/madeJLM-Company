@@ -17,7 +17,7 @@ if(!empty($_POST['username']))
     //$email=trim($_POST['username']);
     $password = trim($_POST['password']);
     $password = md5($password);
-    if ($username == '' || $password == '' || $username == 'Example@example.com' || $password == '688822292')
+    if ($username == '' || $password == '')
     {
         $errMsg .= 'empty Fields<br>';
         echo
