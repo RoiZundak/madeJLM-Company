@@ -139,8 +139,8 @@ body.stop-scrolling {
     transition: all 0.3s; }
     .sweet-alert input:focus {
       outline: none;
-      box-shadow: 0px 0px 3px #c4e6f5;
-      border: 1px solid #b4dbed; }
+      box-shadow: 0px 0px 3px black;
+      border: 1px solid black; }
       .sweet-alert input:focus::-moz-placeholder {
         transition: opacity 0.3s 0.03s ease;
         opacity: 0.5; }
@@ -208,7 +208,7 @@ body.stop-scrolling {
     .sweet-alert button::-moz-focus-inner {
       border: 0; }
   .sweet-alert[data-has-cancel-button=false] button {
-    box-shadow: none !important; }
+    box-shadow: black; }
   .sweet-alert[data-has-confirm-button=false][data-has-cancel-button=false] {
     padding-bottom: 40px; }
   .sweet-alert .sa-icon {
@@ -266,7 +266,7 @@ body.stop-scrolling {
         bottom: 10px;
         background-color: #F8BB86; }
     .sweet-alert .sa-icon.sa-info {
-      border-color: #C9DAE1; }
+      border-color: black; }
       .sweet-alert .sa-icon.sa-info::before {
         content: "";
         position: absolute;
