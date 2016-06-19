@@ -620,7 +620,6 @@
             exit;
         }
         $temp=0;
-        //$sql = 'SELECT * FROM student WHERE Activated=1 ORDER BY profile_strength DESC '; WORKING QUERY
 
 
         while(true){
