@@ -286,7 +286,6 @@
         }
     }
 
-
     //filter Linkedin
     if($func=="3") {
         $temp=0;
@@ -312,7 +311,8 @@
                 $temp++;
             }
         }
-	//clear
+
+    //clear
 	if($func=="4")
 	{
         while(true){
