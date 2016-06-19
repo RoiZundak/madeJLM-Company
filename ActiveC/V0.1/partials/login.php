@@ -40,7 +40,7 @@ if(!empty($_POST['username']))
                 echo("
                     <script>
                         window.location='../#/login';
-                        setTimeout(function(){swal('Sorry. Your user is blocked. Please try again in 5 minutes.');},100);
+                        setTimeout(function(){alert('Sorry. Your user is blocked. Please try again in 5 minutes.');},100);
                     </script>
                      ");
                 exit;
@@ -97,7 +97,7 @@ if(!empty($_POST['username']))
                 echo " <script>
                         localStorage.clear();
                         window.location='../#/login';
-                        setTimeout(function(){swal('You have tried too much. please try again in 5 minutes.');},100);
+                        setTimeout(function(){alert('You have tried too much. please try again in 5 minutes.');},100);
 
                         
                     </script>";
@@ -108,7 +108,7 @@ if(!empty($_POST['username']))
                 <link rel=\"stylesheet\" type=\"text/css\" href=\"../css/sweetalert.css\">
                     <script>
                         localStorage.clear();
-                        setTimeout(function(){swal('Incorrect Passwords.');},100);
+                        setTimeout(function(){alert('Incorrect Passwords.');},100);
                         window.location='../#/login';
                         
 
@@ -120,10 +120,11 @@ if(!empty($_POST['username']))
         else
         {
             $errMsg .= 'Username is not found<br>';
-            echo ("<script>setTimeout(function(){swal('Username not found.');},100);</script>");
+
             echo("
                     <script>
                         localStorage.clear();
+                        setTimeout(function(){alert('Username not found.');},100);
                         window.location='../#/login';
                     </script>
                 ");
