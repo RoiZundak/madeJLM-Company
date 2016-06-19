@@ -9,7 +9,7 @@
     //connect to db
     require_once "../php/db_connect.php";
     $databaseConnection =connect_to_db();
-    if($_GET['t']==1 || $_GET['t']=="1"){
+    if($_GET['t']=="company"){
         $table = "company";
     }else{
         $table = "admin";
@@ -63,7 +63,7 @@
                     </p>
                     <?php
                         echo "<input type ='hidden' name='e_mail' value='".$_GET['mail']."'>";
-                        echo "<input type ='hidden' name='type_b' value='".$_GET['t']."'>";
+                        echo "<input type ='hidden' name='type_b' value='".$table."'>";
                     ?>
 
                     <button type="submit" name = "submit" class="login-button">Login</button>
