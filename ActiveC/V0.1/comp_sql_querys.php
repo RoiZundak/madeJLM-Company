@@ -757,7 +757,7 @@
     //Remove student
     if($func == "14"){
         $row_number =$_POST["student_id"] ;
-        
+
         $records = $databaseConnection->prepare('DELETE FROM student WHERE ID= :row_id');
         $records->bindParam(':row_id', $row_number);
         if ( $records->execute()==true && count($records->fetchAll()))
@@ -780,7 +780,6 @@
     if($func == "15"){
         $id =$_POST['std_id'] ;
         $op =$_POST['state_op'] ;
-        //PDO STYLE :
         $records = $databaseConnection->prepare("UPDATE student SET Activated =:active WHERE ID = :id");
         $update->bindParam(':id',$id);
         $update->bindParam(':active',$op);
