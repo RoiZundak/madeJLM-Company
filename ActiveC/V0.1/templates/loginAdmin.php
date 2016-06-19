@@ -8,7 +8,6 @@
 <?php
 require_once "../php/db_connect.php";
 $databaseConnection =connect_to_db();
-
 if(!empty($_POST['username']))
 {
     $errMsg = '';
@@ -16,7 +15,19 @@ if(!empty($_POST['username']))
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
     $password = md5($password);
-
+    if ($username == '' || $password == '')
+    {
+        $errMsg .= 'empty Fields<br>';
+        echo
+        " <script>
+                     localStorage.username_admin = '';
+                     localStorage.password_admin = '';
+                     localStorage.chkbx_admin = '';
+                     alert('Username or password required');
+                     window.location='../#/loginAdmin';
+                </script>";
+        exit;
+    }
     if($errMsg == '')
     {
         $name_or_mail="SELECT * FROM  admin WHERE  email=:email LIMIT 1";
@@ -24,7 +35,6 @@ if(!empty($_POST['username']))
         $records->bindParam(':email', $username);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
-
         if(count($results) > 0 && $password === $results['Password'] )
         {
             echo " OK ! redirect you now...
@@ -39,8 +49,8 @@ if(!empty($_POST['username']))
                         localStorage.username_admin = '';
                         localStorage.password_admin = '';
                         localStorage.chkbx_admin = '';
-                         alert('Wrong username or password');
-                        window.location='../#/adminPage';
+                         alert('Wrong username pr password');
+                        window.location='../#/loginAdmin';
                     </script>";
             exit;
         }
