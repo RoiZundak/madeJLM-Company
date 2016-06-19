@@ -23,6 +23,7 @@ body{
     background-attachment: fixed;
     background-position: 70% 90%;
     height: 500px;
+    overflow-x: hidden;
     background: #333 url('../img/jlm_pic.jpg');
     background-size: 100%;
 
