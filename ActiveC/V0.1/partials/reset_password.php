@@ -69,8 +69,5 @@
                     <button type="submit" name = "submit" class="login-button">Login</button>
                 </form>
             </div>
-
         </div>
-
-
     </div>
