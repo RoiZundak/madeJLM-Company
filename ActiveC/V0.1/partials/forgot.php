@@ -48,7 +48,6 @@
 
     if($username===""){//no such user!
         echo "<script>
-            //window.location='http://job.madeinjlm.org/#/forgot';
                 window.location ='../#/forgot';
                 alert('Email: ".$email." was not found, please try again.');
             </script>";
