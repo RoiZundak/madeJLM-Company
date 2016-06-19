@@ -103,11 +103,13 @@ if(!empty($_POST['username']))
                     </script>";
                 exit;
             }
-            echo("
+            echo(" 
+                <script src=\"../css/sweetalert.min.js\"></script>
+                <link rel=\"stylesheet\" type=\"text/css\" href=\"../css/sweetalert.css\">
                     <script>
                         localStorage.clear();
                         alert('Incorrect Passwords.');
-                        window.location='#/login';
+                        window.location='../#/login';
                         setTimeout(function(){swal('Incorrect Passwords.');},100);
                         
 
