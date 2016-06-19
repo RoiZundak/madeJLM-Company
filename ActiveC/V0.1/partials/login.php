@@ -16,43 +16,6 @@
         $username = strtolower(trim($_POST['username']));
         //$email=trim($_POST['username']);
         $password = trim($_POST['password']);
-
-        if ($username == '' || $password == '')
-        {
-            $errMsg .= 'empty Fields<br>';
-            // window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-            echo
-                " <script>
-                    localStorage.clear();
-                    window.location='#/login';
-                </script>";
-            exit;
-
-        }
-
-        if($username == 'Example@example.com')
-        {
-            $errMsg .= 'You must enter your Username<br>';
-            echo
-                " <script>
-                    localStorage.clear();
-                    window.location='#/login';
-                    setTimeout(function(){ swal(\"You Must Enter Username!\");},100);
-                </script>";
-            exit;
-        }
-
-        if($password == '688822292')
-        {
-            $errMsg .= 'You must enter your Password<br>';
-            echo
-                " <script>
-                    localStorage.clear();
-                    window.location='#/login';
-                    setTimeout(function(){ swal(\"You Must Enter Password!\");},100);
-                </script>";
-            exit;
-        }
         $password = md5(trim($_POST['password']));
 
         if($errMsg == '')
@@ -134,7 +97,7 @@
 
                    echo " <script>
                         localStorage.clear();
-                        window.location='./#/login';
+                        window.location='../#/login';
                         setTimeout(function(){ swal('You have tried too much. please try again in 5 minutes.');},100);
                     </script>";
                     exit;
@@ -143,7 +106,7 @@
                 echo("
                     <script>
                         localStorage.clear();
-                        window.location='./#/login';
+                        window.location='../#/login';
                         setTimeout(function(){ swal('Incorrect Passwords.');},100);
                     </script>
                 ");
