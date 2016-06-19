@@ -47,7 +47,6 @@ if($username===""){//no such user!
                 window.location ='../#/forgot';
                 alert('Email: ".$email." was not found, please try again.');
             </script>";
-    exit;
 }
 //Create a random string
 $length = 13;
