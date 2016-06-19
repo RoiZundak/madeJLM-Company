@@ -37,7 +37,7 @@ if(!empty($_POST['username']))
             if($newTime < $newDateTime)
             {
                 $errMsg .= 'Time block<br>';
-                echo ("<sctipt>setTimeout(function(){swal('Sorry. Your user is blocked. Please try again in 5 minutes.');},100);</sctipt>");
+                echo ("<script>setTimeout(function(){swal('Sorry. Your user is blocked. Please try again in 5 minutes.');},100);</script>");
                 echo("
                     <script>
                         document.getElementById(\"re_route_login\").click();
@@ -95,7 +95,7 @@ if(!empty($_POST['username']))
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
 
-                echo ("<sctipt>setTimeout(function(){swal('You have tried too much. please try again in 5 minutes.');},100);</sctipt>");
+                echo ("<script>setTimeout(function(){swal('You have tried too much. please try again in 5 minutes.');},100);</script>");
                 echo " <script>
                         localStorage.clear();
                         window.location='../#/login';
@@ -103,7 +103,7 @@ if(!empty($_POST['username']))
                     </script>";
                 exit;
             }
-            echo ("<sctipt>setTimeout(function(){swal('Incorrect Passwords.');},100);</sctipt>");
+            echo ("<script>setTimeout(function(){swal('Incorrect Passwords.');},100);</script>");
             echo("
                     <script>
                         localStorage.clear();
@@ -116,7 +116,7 @@ if(!empty($_POST['username']))
         else
         {
             $errMsg .= 'Username is not found<br>';
-            echo ("<sctipt>setTimeout(function(){swal('Username not found.');},100);</sctipt>");
+            echo ("<script>setTimeout(function(){swal('Username not found.');},100);</script>");
             echo("
                     <script>
                         localStorage.clear();
