@@ -48,6 +48,7 @@ if($username===""){//no such user!
                 alert('Email: ".$email." was not found, please try again.');
             </script>";
 }
+exit();
 //Create a random string
 $length = 13;
 $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
