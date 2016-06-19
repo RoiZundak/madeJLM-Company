@@ -103,16 +103,13 @@ if(!empty($_POST['username'])) {
                     </script>";
                 exit;
             }
-            /****
-             * localStorage.username = '';
-            localStorage.password = '';
-            localStorage.chkbx = '';
-             */
             echo(" 
                     <script>
-                        
+                        localStorage.username = '';
+                        localStorage.password = '';
+                        localStorage.chkbx = '';
                         window.location='../#/login';
-                        setTimeout(function(){alert('You Must login first');},100);
+                        setTimeout(function(){alert('wrong password');},100);
                     </script>
                 ");
             exit;
@@ -127,8 +124,8 @@ if(!empty($_POST['username'])) {
                         localStorage.username = '';
                         localStorage.password = '';
                         localStorage.chkbx = '';
-                        window.location='#/login';
-                        setTimeout(function(){alert('You Must login first');},100);
+                        window.location='../#/login';
+                        setTimeout(function(){alert('".$errMsg."');},100);
                     </script>
                 ");
             exit;
