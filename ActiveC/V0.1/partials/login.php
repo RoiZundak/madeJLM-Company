@@ -20,7 +20,7 @@ if(!empty($_POST['username']))
 
     if($errMsg == '')
     {
-        $name_or_mail="SELECT * FROM  company WHERE username = :username OR email=:username";
+        $name_or_mail="SELECT * FROM  company WHERE username = :username OR email=:username"; 
         $records = $databaseConnection->prepare($name_or_mail);
         $records->bindParam(':username', $username);
         $records->execute();
