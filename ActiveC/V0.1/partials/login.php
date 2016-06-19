@@ -5,6 +5,7 @@
 ********************************************************************************
 ********************************************************************************
 *****************************************************************************-->
+
 <?php
 echo
 require_once "../php/db_connect.php";
@@ -110,10 +111,16 @@ if(!empty($_POST['username'])) {
                         localStorage.password = '';
                         localStorage.chkbx = '';                             
                         window.location='../#/login';
-                        alert('Incorrect Passwords.');
-                        
-
                     </script>
+                        
+                    <div class=\"confirm\">
+                        <h1>Confirm your action</h1>
+                        <p>Are you really <em>really</em> <strong>really</strong> sure that you want to exit this awesome application?</p>
+                        <button>Cancel</button>
+                         <button autofocus>Confirm</button>
+                    </div>                        
+
+                    
                 ");
             exit;
 
