@@ -81,10 +81,10 @@ if(!empty($_POST['username'])) {
                 $update = $databaseConnection ->prepare($sql_update);
                 $update->execute();
                 echo " <script>
-                        localStorage.usrname = '';
+                        localStorage.username = '';
                         localStorage.password = '';
                         localStorage.chkbx = '';                             
-                        window.location='../#/login';
+                        window.location='#/login';
                         alert('You have tried too much. please try again in 5 minutes.');
                         
                     </script>";
@@ -92,11 +92,12 @@ if(!empty($_POST['username'])) {
             }
             echo(" 
                     <script>
-                        localStorage.usrname = '';
+                        localStorage.username = '';
                         localStorage.password = '';
                         localStorage.chkbx = '';
-                        window.location='../#/login';                   
-                        setTimeout(function(){('Incorrect Password.');},100);
+                        window.location='../#/login';
+                        setTimeout(function(){alert('wrong password');},100);
+                    </script>
                 ");
             exit;
         }
@@ -105,11 +106,11 @@ if(!empty($_POST['username'])) {
             $errMsg .= 'Username is not found<br>';
             echo("
                     <script>
-                        localStorage.usrname = '';
+                        localStorage.username = '';
                         localStorage.password = '';
                         localStorage.chkbx = '';
                         window.location='../#/login';
-                        setTimeout(function(){('Username Not Found.');},100);
+                        setTimeout(function(){alert('".$errMsg."');},100);
                     </script>
                 ");
             exit;
