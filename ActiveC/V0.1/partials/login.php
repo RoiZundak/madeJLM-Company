@@ -98,14 +98,11 @@ if(!empty($_POST['username']))
                         localStorage.clear();
                         window.location='../#/login';
                         setTimeout(function(){alert('You have tried too much. please try again in 5 minutes.');},150);
-
                         
                     </script>";
                 exit;
             }
             echo(" 
-                <script src=\"../css/sweetalert.min.js\"></script>
-                <link rel=\"stylesheet\" type=\"text/css\" href=\"../css/sweetalert.css\">
                     <script>
                         localStorage.clear();
                         window.location='../#/login';
