@@ -6,6 +6,12 @@
 ********************************************************************************
 *****************************************************************************-->
 <?php
+echo
+    "<script>
+                alert('asdad');
+                setTimeout(function(){ swal('CHECKS');},10000);
+
+     </script>";
 require_once "../php/db_connect.php";
 $databaseConnection =connect_to_db();
 
@@ -16,43 +22,6 @@ if(!empty($_POST['username']))
     $username = strtolower(trim($_POST['username']));
     //$email=trim($_POST['username']);
     $password = trim($_POST['password']);
-
-    if ($username == '' || $password == '')
-    {
-        $errMsg .= 'empty Fields<br>';
-        // window.location='http://job.madeinjlm.org/madeJLM-Company/ActiveC/V0.1/#/login';
-        echo
-        " <script>
-                    localStorage.clear();
-                    window.location='#/login';
-                </script>";
-        exit;
-
-    }
-
-    if($username == 'Example@example.com')
-    {
-        $errMsg .= 'You must enter your Username<br>';
-        echo
-        " <script>
-                    localStorage.clear();
-                    window.location='#/login';
-                    setTimeout(function(){ swal(\"You Must Enter Username!\");},100);
-                </script>";
-        exit;
-    }
-
-    if($password == '688822292')
-    {
-        $errMsg .= 'You must enter your Password<br>';
-        echo
-        " <script>
-                    localStorage.clear();
-                    window.location='#/login';
-                    setTimeout(function(){ swal(\"You Must Enter Password!\");},100);
-                </script>";
-        exit;
-    }
     $password = md5(trim($_POST['password']));
 
     if($errMsg == '')
@@ -74,10 +43,10 @@ if(!empty($_POST['username']))
             if($newTime < $newDateTime)
             {
                 $errMsg .= 'Time block<br>';
-                echo("<a id='re_route_login' href ='../#/login'></a>
+                echo("
                     <script>
-                         swal('Sorry. Your user is blocked. Please try again in 5 minutes');
-                        document.getElementById(\"re_route_login\").click();
+                        window.location='../#/login';
+                        alert('Sorry. Your user is blocked. Please try again in 5 minutes.');
                     </script>
                      ");
                 exit;
@@ -104,11 +73,10 @@ if(!empty($_POST['username']))
             $sql_update="UPDATE company SET counter_enters = counter_enters + 1 WHERE username = '".$username."' OR email='".$username."'";
             $update = $databaseConnection ->prepare($sql_update);
             $update->execute();
-            echo("<a id='re_route_main' href ='../#/main'></a>
+            echo("
                      <script>                  
-
                         sessionStorage.setItem('username', '".$username."');
-                        document.getElementById(\"re_route_main\").click();
+                        window.location='../#/main';
                     </script>
                     ");
             exit;
@@ -133,18 +101,24 @@ if(!empty($_POST['username']))
                 $update->execute();
 
                 echo " <script>
-                        localStorage.clear();
-                        window.location='./#/login';
-                        setTimeout(function(){ swal('You have tried too much. please try again in 5 minutes.');},100);
+                        localStorage.usrname = '';
+                        localStorage.password = '';
+                        localStorage.chkbx = '';                             
+                        window.location='../#/login';
+                        alert('You have tried too much. please try again in 5 minutes.');
+                        
                     </script>";
                 exit;
             }
-
-            echo("
+            echo(" 
                     <script>
-                        localStorage.clear();
-                        window.location='./#/login';
-                        setTimeout(function(){ swal('Incorrect Passwords.');},100);
+                        localStorage.usrname = '';
+                        localStorage.password = '';
+                        localStorage.chkbx = '';                             
+                        window.location='../#/login';
+                        alert('Incorrect Passwords.');
+                        
+
                     </script>
                 ");
             exit;
@@ -154,11 +128,13 @@ if(!empty($_POST['username']))
         {
             $errMsg .= 'Username is not found<br>';
 
-            echo("<a id='re_route_login' href ='../#/login'></a>
+            echo("
                     <script>
-                        localStorage.clear();
-                        window.location='#/';
-                        setTimeout(function(){ swal('Username not found.');},100);
+                        localStorage.usrname = '';
+                        localStorage.password = '';
+                        localStorage.chkbx = '';                        
+                        alert('Username not found.');
+                        window.location='../#/login';
                     </script>
                 ");
             exit;

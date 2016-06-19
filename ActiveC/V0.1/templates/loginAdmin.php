@@ -17,14 +17,14 @@ if(!empty($_POST['username']))
     //$email=trim($_POST['username']);
     $password = trim($_POST['password']);
     $password = md5($password);
-    if ($username == '' || $password == '' || $username == 'Example@example.com' || $password == '688822292')
+    if ($username == '' || $password == '')
     {
         $errMsg .= 'empty Fields<br>';
         echo
         " <script>
                     localStorage.clear();
+                    alert('Username or password required');
                     window.location='../#/loginAdmin';
-                    setTimeout(function(){ alert('Username or password required');},100);
                 </script>";
         exit;
 
@@ -48,9 +48,11 @@ if(!empty($_POST['username']))
         } else
         {
             echo " <script>
-                        localStorage.clear();
+                        localStorage.username_admin = '';
+                        localStorage.password_admin = '';
+                        localStorage.chkbx_admin = '';
+                         alert('Wrong username pr password');
                         window.location='../#/loginAdmin';
-                        setTimeout(function(){ alert('Wrong Username or password');},100);
                     </script>";
             exit;
         }

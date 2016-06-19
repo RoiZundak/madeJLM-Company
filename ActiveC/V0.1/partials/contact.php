@@ -32,7 +32,7 @@ if(isset($_POST['submit'])) {
     echo("<a id='re_route' href ='../#/contact'>
                     <script>
                         document.getElementById(\"re_route\").click();
-                        alert('One of the fields is empty or contain only spaces.');
+                        swal('One of the fields is empty or contain only spaces.');
                     </script>
                 </a>");
     exit;
@@ -50,7 +50,7 @@ if(isset($_POST['submit'])) {
         echo("<a id='re_route' href ='../#/contact'>
                     <script>
                         document.getElementById(\"re_route\").click();
-                        alert('Mail was not sent, please try again.');
+                        swal('Mail was not sent, please try again.');
                     </script>
                 </a>");
     }
@@ -59,7 +59,7 @@ if(isset($_POST['submit'])) {
         echo("<a id='re_route' href ='../#/contact'>
                     <script>
                         document.getElementById(\"re_route\").click();
-                        alert('Mail was sent! thank you.');
+                        swal('Mail was sent! thank you.');
                     </script>
                 </a>");
     }
