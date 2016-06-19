@@ -25,7 +25,7 @@
                 " <script>
                     localStorage.clear();
                     window.location='#/login';
-                    setTimeout(function(){ swal({   title: \"Error!\",   text: \"Here's my error message!\",   type: \"error\",   confirmButtonText: \"Cool\" });;},100);
+                    setTimeout(function(){ alert('Username or password required');},100);
                 </script>";
             exit;
 
