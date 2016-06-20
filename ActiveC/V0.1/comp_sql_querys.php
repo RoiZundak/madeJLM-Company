@@ -736,8 +736,8 @@ if($func == "15"){
     $id =$_POST['std_id'] ;
     $op =$_POST['state_op'] ;
     $records = $databaseConnection->prepare("UPDATE student SET Activated =:active WHERE ID = :id");
-    $update->bindParam(':id',$id);
-    $update->bindParam(':active',$op);
+    $records->bindParam(':id',$id);
+    $records->bindParam(':active',$op);
     if ( $records->execute()==true && $records->rowCount()>0)
         echo "
                 <script>
