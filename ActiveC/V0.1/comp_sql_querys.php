@@ -728,7 +728,6 @@ if($func == "14"){
                 <script>
                 alert('Failed to DELETE student, please make sure you have the correct ID.');
                  window.location='./#/adminPage';
-                
                 </script>
                 ";
 }
@@ -739,7 +738,7 @@ if($func == "15"){
     $records = $databaseConnection->prepare("UPDATE student SET Activated =:active WHERE ID = :id");
     $update->bindParam(':id',$id);
     $update->bindParam(':active',$op);
-    if ( $records->execute()==true)
+    if ( $records->execute()==true && $records->rowCount()>0)
         echo "
                 <script>
                 alert('Updated');,100);
