@@ -741,7 +741,7 @@ if($func == "15"){
     if ( $records->execute()==true && $records->rowCount()>0)
         echo "
                 <script>
-                alert('Updated');,100);
+                alert('Updated');
                  window.location='./#/adminPage';
                 </script>
                 ";
