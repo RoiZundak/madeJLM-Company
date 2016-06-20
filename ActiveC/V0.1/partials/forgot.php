@@ -27,7 +27,7 @@ if($table === "company"){
     //Get username from 'company' table
     $sql = "SELECT * FROM company WHERE email = :email LIMIT 1";
 }else{
-    //Get username from 'company' table
+    //Get username from 'admin' table
     $sql = "SELECT * FROM admin WHERE Email = :email LIMIT 1";
 }
 $stmt = $databaseConnection->prepare($sql);
@@ -43,10 +43,17 @@ foreach($result as $row){
     }
 }
 if($username===""){//no such user!
-    echo "<script>
+    if ($table === "company") {
+        echo " <script> 
                 window.location ='../#/forgot';
                 alert('Email: ".$email." was not found, please try again.');
-            </script>";
+                </script>";
+    } else {
+        echo " <script> 
+                window.location ='../#/forgotAdmin';
+                alert('Email: ".$email." was not found, please try again.');
+                </script>";
+    }
 }
 exit();
 //Create a random string
@@ -88,6 +95,18 @@ if($sent_mail) {
         echo " <script> 
                 window.location='../#/loginAdmin';
                 alert('Email has been sent.');
+                </script>";
+    }
+}else{
+    if ($table === "company") {
+        echo " <script> 
+                window.location='../#/login';
+                alert('Email was not sent.please try again.');
+                </script>";
+    } else {
+        echo " <script> 
+                window.location='../#/loginAdmin';
+                alert('Email was not sent.please try again.');
                 </script>";
     }
 }

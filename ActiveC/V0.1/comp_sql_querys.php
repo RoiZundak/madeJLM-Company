@@ -334,8 +334,8 @@ if($func=="5")
         $newId = $databaseConnection->lastInsertId();
         echo "
             <script>
-            window.location='./#/adminPage';
             setTimeout(function(){alert('Great! ".$name." was added to the db with ID = ".$newId."');},100);
+            window.location='./#/adminPage';
             </script>
             ";
     }
@@ -353,11 +353,11 @@ if($func=="6")
     $row_number =$_POST["row_id"] ;
     $records = $databaseConnection->prepare('DELETE FROM company WHERE id= :row_id');
     $records->bindParam(':row_id', $row_number);
-    if ( $records->execute()==true)
+    if ( $records->execute()==true && $records->rowCount() >0)
         echo "
             <script>
-             window.location='./#/adminPage';
             setTimeout(function(){alert('Great! Company #".$row_number." was DELETED from the db ');},100);
+            window.location='./#/adminPage';
             </script>
             ";
     else
@@ -434,6 +434,7 @@ if($func=="8")
             </script>
             ";
 }
+//skills form and functions
 if($func=="9")
 {
     $sql = 'SELECT * FROM skills';
@@ -500,6 +501,7 @@ if($func=="9")
 				<input type=\"submit\" value=\"Filter\" id=\"submit_skills\">
 				</form>";
 }
+//skills - search for students
 if($func=="10")
 {
     $skills_arr=array(array());
@@ -713,7 +715,7 @@ if($func == "14"){
     $row_number =$_POST["student_id"] ;
     $records = $databaseConnection->prepare('DELETE FROM student WHERE ID= :row_id');
     $records->bindParam(':row_id', $row_number);
-    if ( $records->execute()==true && count($records->fetchAll()))
+    if ( $records->execute()==true && $records->rowCount()>0)
         echo "
                 <script>
                  window.location='./#/adminPage';
