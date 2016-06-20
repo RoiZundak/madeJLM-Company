@@ -334,7 +334,7 @@ if($func=="5")
         $newId = $databaseConnection->lastInsertId();
         echo "
             <script>
-            setTimeout(function(){alert('Great! ".$name." was added to the db with ID = ".$newId."');},100);
+            alert('Great! ".$name." was added to the db with ID = ".$newId."');
             window.location='./#/adminPage';
             </script>
             ";
@@ -342,8 +342,8 @@ if($func=="5")
     else
         echo "
             <script>
+               alert('Sorry , we could not add this company');
              window.location='./#/adminPage';
-                setTimeout(function(){alert('Sorry , we could not add this company');},100);
             </script>
             ";
 }
@@ -356,7 +356,7 @@ if($func=="6")
     if ( $records->execute()==true && $records->rowCount() >0)
         echo "
             <script>
-            setTimeout(function(){alert('Great! Company #".$row_number." was DELETED from the db ');},100);
+            alert('Great! Company #".$row_number." was DELETED from the db ');
             window.location='./#/adminPage';
             </script>
             ";
@@ -364,7 +364,7 @@ if($func=="6")
         echo "
             <script>
              window.location='./#/adminPage';
-            setTimeout(function(){alert('Sorry , we could not delete this company');},100);
+            alert('Sorry , we could not delete this company');
             </script>
             ";
 }
@@ -400,8 +400,9 @@ if($func=="8")
     if(strcmp($pass1,$pass2)!=0 )
     {
         echo "<script>
+            alert('Passwords does not match.Redirecting to login page..');
 			window.location='#/login';
-            setTimeout(function(){alert('Passwords does not match.Redirecting to login page..');},100);</script>";
+            </script>";
         exit;
     }
     $new_pass =md5($pass1);
@@ -422,15 +423,15 @@ if($func=="8")
     if ( $stmt->execute()==true)
         echo "
             <script>
+            alert('Password was updated.');
             window.location='./#/login';
-            setTimeout(function(){alert('Password was updated.');},100);
             </script>
             ";
     else
         echo "
             <script>
+            alert('Failed to update');
             window.location='./#/login';
-            setTimeout(function(){alert('Failed to update');},100);
             </script>
             ";
 }
@@ -636,15 +637,15 @@ if($func=="12")
     if( $update->execute()==true){
         echo "
             <script>
+            alert('Password has changed');
              window.location='./#/adminPage';
-            setTimeout(function(){alert('Password has changed');},100);
             </script>
             ";
     }else{
         echo "
             <script>
+            alert('Something went wrong, please try again.');
              window.location='./#/adminPage';
-            setTimeout(function(){alert('Something went wrong, please try again.');},100);
             </script>
             ";
     }
@@ -718,15 +719,16 @@ if($func == "14"){
     if ( $records->execute()==true && $records->rowCount()>0)
         echo "
                 <script>
+                alert('Great! student #".$row_number." was DELETED from the db ');
                  window.location='./#/adminPage';
-                setTimeout(function(){alert('Great! student #".$row_number." was DELETED from the db ');},100);
                 </script>
                 ";
     else
         echo "
                 <script>
+                alert('Failed to DELETE student, please make sure you have the correct ID.');
                  window.location='./#/adminPage';
-                setTimeout(function(){alert('Failed to DELETE student, please make sure you have the correct ID.');},100);
+                
                 </script>
                 ";
 }
@@ -740,15 +742,15 @@ if($func == "15"){
     if ( $records->execute()==true)
         echo "
                 <script>
+                alert('Updated');,100);
                  window.location='./#/adminPage';
-                setTimeout(function(){alert('Updated');},100);
                 </script>
                 ";
     else
         echo "
                 <script>
+                alert('Failed');
                 window.location='./#/adminPage';
-                setTimeout(function(){alert('Failed');},100);
                 </script>
                 ";
 }
@@ -762,16 +764,16 @@ if($func == "16"){
         $newId = $databaseConnection->lastInsertId();
         echo "
                 <script>
+                alert('Great! ".$name." was added to the db with ID = ".$newId."');
                  window.location='./#/adminPage';
-                setTimeout(function(){alert('Great! ".$name." was added to the db with ID = ".$newId."');},100);
                 </script>
                 ";
     }
     else
         echo "
                 <script>
+                alert('Failed');
                  window.location='./#/adminPage';
-                setTimeout(function(){alert('Failed');},100);
                 </script>
                 ";
 }

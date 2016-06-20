@@ -96,7 +96,7 @@ if($sent_mail) {
         echo " <script> 
                 window.location='../#/loginAdmin';
                 alert('Email has been sent.');
-                </script>";
+                </script>"; 
     }
 }else{
     if ($table === "company") {
